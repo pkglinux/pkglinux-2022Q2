@@ -1,0 +1,24 @@
+$NetBSD: distinfo,v 1.31 2022/05/10 20:47:37 markd Exp $
+
+BLAKE2s (cups-2.4.1-source.tar.gz) = cb4872d4f7dec1c2cbad871053cc31354769cde1f9b30deb17ec3cb3dd9407b2
+SHA512 (cups-2.4.1-source.tar.gz) = 74e83728fcc3baf709176442b26711250fd4d4ede1e81e35b02a5607711067e28cd5a05d5bc3337953f6b2236c5a429b13f3a7f1218a08a2d3c30a8c9b0d96fd
+Size (cups-2.4.1-source.tar.gz) = 8113914 bytes
+SHA1 (patch-ae) = b81d7a2ce457f0d6994d6a084c63aa0a870bb881
+SHA1 (patch-ai) = d4aa1b59c77fa2cbf614eb661d9a791311b399c2
+SHA1 (patch-at) = 9517bff0bf2c892f0723a25f243ba188f7781393
+SHA1 (patch-conf-cups-files.conf.in) = b2eccf54e108d8c9e70094acfd9618a66779a84a
+SHA1 (patch-conf_Makefile) = ba1c6f9e5c1bb8074038f65f4d17bf55e556738e
+SHA1 (patch-config-scripts_cups-compiler.m4) = 5446340c9b4976b0814a72e680025f5cab5da54a
+SHA1 (patch-config-scripts_cups-directories.m4) = 272a10e2ae70c589a65d73fe788f62fcbb2392b0
+SHA1 (patch-config-scripts_cups-gssapi.m4) = 8ccde86c99ad5ce96c38ec0c2f76a99dc7f29331
+SHA1 (patch-cups-tls.c) = b02bc528b6d551283373f271529d6f1956e1c7df
+SHA1 (patch-cups_http-addrlist.c) = b8558e6c9a646299e16d7d47ab43bc79f1a0baa0
+SHA1 (patch-cups_thread.c) = 453f8bd9e13b7b824cc7add75ea9ef49b8e0c991
+SHA1 (patch-doc-help-man-cups-files.conf.html) = c26754104788eb619e69e49d6d51bf84ab047876
+SHA1 (patch-man-cups-files.conf.man.in) = 51c06d39e20bf8c39c784fec1f32f6c8100cf821
+SHA1 (patch-scheduler-conf.c) = 3e8dda2dc04c31a58a902c70161724a57bdc3e43
+SHA1 (patch-scheduler-conf.h) = cd5c49579795c69b50abbff2b0f9604ffe8bfa5a
+SHA1 (patch-scheduler-main.c) = a5410c7f78756506d23d705dfa93a756fe3e513e
+SHA1 (patch-scheduler_auth.c) = 686b26286b7ad88363ddc7b394aefbfb3ad26c2d
+SHA1 (patch-scheduler_dirsvc.c) = 1dba98dc171df733acb99e5f31ad838845a917bc
+SHA1 (patch-tools_ippfind.c) = f0774fcf5ece380fd6fa09adb3c068910ddfa367

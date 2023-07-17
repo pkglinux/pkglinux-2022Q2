@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/12/28 12:04:09 adam Exp $
+
+BLAKE2s (nanomsg-1.1.5.tar.gz) = 4aee7ed15ba7e05b194c54e879003627c5693b5c5090ded58532fb9463bd4f72
+SHA512 (nanomsg-1.1.5.tar.gz) = 773b8e169a7accac21414c63972423a249164f5b843c6c65c1b03a2eb90d21da788a98debdeb396dab795e52d30605696bc2cf65e5e05687bf115438d5b22717
+Size (nanomsg-1.1.5.tar.gz) = 310739 bytes

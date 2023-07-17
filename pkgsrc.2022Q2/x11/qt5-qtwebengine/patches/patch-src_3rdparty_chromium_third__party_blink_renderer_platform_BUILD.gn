@@ -1,0 +1,13 @@
+$NetBSD: patch-src_3rdparty_chromium_third__party_blink_renderer_platform_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/third_party/blink/renderer/platform/BUILD.gn
+@@ -2311,7 +2311,7 @@ test("blink_fuzzer_unittests") {
+ 
+   sources = [ "testing/run_all_tests.cc" ]
+ 
+-  if (is_linux || is_chromeos) {
++  if (is_linux || is_chromeos || is_bsd) {
+     deps += [
+       "//third_party/blink/renderer/platform/scheduler:scheduler_fuzzer_tests",
+     ]

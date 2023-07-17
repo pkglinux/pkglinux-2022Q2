@@ -1,0 +1,21 @@
+@comment $NetBSD$
+bin/cpufreq-aperf
+bin/cpufreq-info
+bin/cpufreq-set
+include/cpufreq.h
+lib/libcpufreq.so
+lib/libcpufreq.so.0
+lib/libcpufreq.so.0.0.0
+man/man1/cpufreq-info.1
+man/man1/cpufreq-set.1
+native/bin/cpufreq-aperf
+native/bin/cpufreq-info
+native/bin/cpufreq-set
+native/usr/lib/libcpufreq.so
+native/usr/lib/libcpufreq.so.0
+native/usr/lib/libcpufreq.so.0.0.0
+share/locale/cs/LC_MESSAGES/cpufrequtils.mo
+share/locale/de/LC_MESSAGES/cpufrequtils.mo
+share/locale/fr/LC_MESSAGES/cpufrequtils.mo
+share/locale/it/LC_MESSAGES/cpufrequtils.mo
+share/locale/pt/LC_MESSAGES/cpufrequtils.mo

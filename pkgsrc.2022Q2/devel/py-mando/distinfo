@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/27 11:55:12 adam Exp $
+
+BLAKE2s (mando-0.7.1.tar.gz) = 9144bc78d7501b3a87ba76cee05a690bcfaf250912ff30709d069596a020131b
+SHA512 (mando-0.7.1.tar.gz) = 469ff797d70a2426042ac0a289bbdb04d53ad8f18c6ea58bf361d4aa13611beb77f845fe73f67b459717e1c886fde627f5f039488826b1ca75ca71665fc55772
+Size (mando-0.7.1.tar.gz) = 37868 bytes

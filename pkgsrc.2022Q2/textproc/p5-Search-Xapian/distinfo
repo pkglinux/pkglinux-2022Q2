@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.22 2022/03/01 15:45:37 schmonz Exp $
+
+BLAKE2s (Search-Xapian-1.2.25.5.tar.gz) = 6baf30c9ca8786936b2e5786374de64ca554af91adf69cec042798aa999626e6
+SHA512 (Search-Xapian-1.2.25.5.tar.gz) = 3099ba3f8726029d7a5c916f6b05d2d7cea41534b0f364687c7d9e0212340dca2a313a1ac8e0f6531a7c1084c8833a0e6d45bcff8fec32e0a6e5922bc0bcb81f
+Size (Search-Xapian-1.2.25.5.tar.gz) = 74960 bytes

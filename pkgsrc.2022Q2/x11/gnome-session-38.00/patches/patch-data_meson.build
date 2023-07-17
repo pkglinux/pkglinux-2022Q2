@@ -1,0 +1,20 @@
+$NetBSD$
+
+--- data/meson.build.orig	2020-09-11 20:40:30.588096100 +0000
++++ data/meson.build
+@@ -58,7 +58,6 @@ foreach name: desktops
+   endif
+ 
+   desktop_target = i18n.merge_file(
+-    desktop,
+     type: 'desktop',
+     input: desktop_in,
+     output: desktop,
+@@ -89,7 +88,6 @@ foreach session: sessions
+   )
+ 
+   i18n.merge_file(
+-    session_file,
+     type: 'desktop',
+     input: desktop_in,
+     output: session_file,

@@ -1,0 +1,19 @@
+$NetBSD: distinfo,v 1.1 2020/11/10 12:06:59 nia Exp $
+
+SHA1 (gnome-shell-3.38.1.tar.xz) = 29d70150d37c35abb40e78c1deaedd669dfa9431
+RMD160 (gnome-shell-3.38.1.tar.xz) = e963d1570853308827bfa5d99d425ad0aa63b636
+SHA512 (gnome-shell-3.38.1.tar.xz) = 7ab580f892c4b4dac2fc8625343dfab1bf7a11e148dc01e6e805a5b1ac1d4cb17943b9a3058ec69fc086c270d76ef8073dca494991a5da1dcfa52b42dcc03f01
+Size (gnome-shell-3.38.1.tar.xz) = 1812860 bytes
+SHA1 (patch-data_gnome-shell-dbus-interfaces_gresource_xml) = de2bec04695594c5b1e4b0ecce3284bfd2edfab7
+SHA1 (patch-data_meson.build) = 67b932c9e68b3264e59aefc6f5df53f4210d7f93
+SHA1 (patch-js_misc_loginManager_js) = d37d17dd8a121d5ef5497fccafea954cc797286c
+SHA1 (patch-js_ui_endSessionDialog.js) = 6971df6ee8b65fa827131d92404f6ae817acd84c
+SHA1 (patch-js_ui_main.js) = b4627664ce93a1477cef1a389df7def5404a7998
+SHA1 (patch-js_ui_windowManager.js) = 5ab9f1954a48575ee8541d6a56a32820208bc965
+SHA1 (patch-meson.build) = e6d2e514dcc64c744e308b08190d9e2e20190ac7
+SHA1 (patch-src_calendar-server_meson.build) = 761bf136671dcf2a254b03fb4326b60019d59db1
+SHA1 (patch-src_main.c) = 87482dd812ad2705af05df3ee06ba9fa6d0325de
+SHA1 (patch-src_shell-util.c) = 92fbc695162f7fe735b92eb344215cf0c69e65c6
+SHA1 (patch-subprojects_extensions-app_data_meson.build) = 26906c09aacdb9a7c2c96d8c7ab2e15090d1c78f
+SHA1 (patch-subprojects_extensions-app_data_metainfo_meson.build) = 0023a3c32621d7e98bcf6da7f56fd02658032f82
+SHA1 (patch-subprojects_extensions-tool_src_templates_meson.build) = 4adb7b0cc44defc19aa618c2fbc640befe567e94

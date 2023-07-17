@@ -1,0 +1,5 @@
+/patch-gcc_config_host-darwin.c/1.1/Fri Apr 15 16:56:09 2022//Tpkgsrc-2022Q2
+/patch-gcc_system.h/1.1/Sun Mar 24 11:58:04 2019//Tpkgsrc-2022Q2
+/patch-newlib_libc_posix_collate.c/1.1/Thu Apr 14 00:50:00 2022//Tpkgsrc-2022Q2
+/patch-newlib_libc_posix_regcomp.c/1.1/Thu Apr 14 00:50:00 2022//Tpkgsrc-2022Q2
+D

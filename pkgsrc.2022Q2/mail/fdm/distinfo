@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.18 2022/06/01 21:07:29 leot Exp $
+
+BLAKE2s (fdm-2.1.tar.gz) = 5744cd86e54562bd057e368faf1ec64906eed7dce3d06ec0ee49668c7bc6b787
+SHA512 (fdm-2.1.tar.gz) = 1963c9149039adebf53e8734083c5c17db3522740b857da9e60779890f2e7aca4b0d0eae922ef041201d1bd95e26adb197e56aa142a5d2bd33e58266fd81daea
+Size (fdm-2.1.tar.gz) = 184711 bytes
+SHA1 (patch-Makefile.am) = 2169ebc8e7c920cdf8492ee2039b410f5a6e358c
+SHA1 (patch-shm-mmap.c) = 3cd0c54c982ddd4702ad921ebf5f1b890b503cd4

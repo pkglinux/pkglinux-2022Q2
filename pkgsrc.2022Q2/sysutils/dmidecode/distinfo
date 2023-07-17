@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.33 2022/04/23 20:18:30 tnn Exp $
+
+BLAKE2s (dmidecode-3.3.tar.xz) = d3efcc75cb69f5b6f407f274655e5bc40a497ea246a62303a2b38380cc54d488
+SHA512 (dmidecode-3.3.tar.xz) = dc77f40a7898011cea1b747d4677be2fbe8f52ec6ac460a5656de2f3389eca83bc416d6494acbe759971b5afce37b78f21ab55c34d62b1105b800e31566d1d22
+Size (dmidecode-3.3.tar.xz) = 56372 bytes
+SHA1 (patch-aa) = 4ffeddeb647d07d8d712bab9983c1530e59e6f37
+SHA1 (patch-config.h) = 6ca6459a79ca207ec8b59f0532b2c1db841dc05c
+SHA1 (patch-dmidecode.c) = c89dd2b2499a0caba49956f0653db3d43cfb5150

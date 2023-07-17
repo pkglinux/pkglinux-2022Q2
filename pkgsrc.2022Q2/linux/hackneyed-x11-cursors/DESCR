@@ -1,0 +1,19 @@
+
+Overview
+--------
+
+Hackneyed is a scalable cursor theme mildly resembing old Windows 3.x/NT 3.x cursors. Dark and left-handed versions are also available.
+
+
+Building
+--------
+Minimum dependencies:
+
+* ImageMagick (>=6.8.6 but not 7.0, as it has huge API changes)
+* Inkscape (>=0.92.3)
+* GNU `make` and `bash`
+* `xcursorgen` (part of `xorg-x11-apps`)
+
+* To generate and pack Windows cursors:
+	* A working C compiler;
+...

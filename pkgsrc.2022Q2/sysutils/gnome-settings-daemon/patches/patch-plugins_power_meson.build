@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- plugins/power/meson.build.orig	2020-10-08 20:37:58.204901000 +0000
++++ plugins/power/meson.build
+@@ -76,7 +76,6 @@ if host_is_linux
+   )
+ 
+   i18n.merge_file(
+-    policy,
+     input: policy_in,
+     output: policy,
+     po_dir: po_dir,

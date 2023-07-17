@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/01/25 13:21:43 wiz Exp $
+
+BLAKE2s (unpaddedbase64-2.1.0.zip) = 4863f4388d75cd4ab8c589fc06e3cdd00ccec137e5391dd0fa861060644fe54f
+SHA512 (unpaddedbase64-2.1.0.zip) = a25f4c4a22c53d9b9e5e002fe8bfe383c281fc7889b9f6c80ccb3e43b6eeab1b97a69518d2e7c43993c1e2151bdffbf9501240f1658b7399432ec7286f205839
+Size (unpaddedbase64-2.1.0.zip) = 8804 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:55:24 nia Exp $
+
+BLAKE2s (R/aplpack_1.3.2.tar.gz) = db790513750bc367e1828dcb0c174396022b0c8568266c3c81baae3b11c64d35
+SHA512 (R/aplpack_1.3.2.tar.gz) = 0cd80eec9b79717458c927634ca81f62ed8451684dc6557705f1922e44c9dfcc8f41dba4c18ef200637e4710384586d52bbbfbd1ac7a4569a958b1a4cef708db
+Size (R/aplpack_1.3.2.tar.gz) = 3423583 bytes

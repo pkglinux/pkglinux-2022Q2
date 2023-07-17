@@ -1,0 +1,26 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:49:30 nia Exp $
+
+BLAKE2s (en_dict-20121020.tar.gz) = 9945545f2402d0eb35bd46701e51f191da0b740854d0c8da11d7670aa1ad014f
+SHA512 (en_dict-20121020.tar.gz) = 8418bd02492bfd786c0fab93be4400ef027ec8e9fac02220cc1f653f5eb67f54573a6a84a15baba19bb34ab892745c87df16499d6304ea75009131e2ab3b97f2
+Size (en_dict-20121020.tar.gz) = 630491 bytes
+BLAKE2s (fcitx-4.2.9.6.tar.xz) = b553fa1f9ae8be9c138a658987bf6a90bdda2c6a9d7d19ee572f2cf415ce8adc
+SHA512 (fcitx-4.2.9.6.tar.xz) = b6c2f0cc54eb8dce0ed7b2d3def499aadc863e12a7fa6cf1e79338dac8dfd48c805dbd293ef749eecbecd5453ea6ec3bc66d945ef16330562b39bf99e6fc9470
+Size (fcitx-4.2.9.6.tar.xz) = 1706336 bytes
+BLAKE2s (pinyin.tar.gz) = 80291a3345ae77ad41881515640802777589073e190ed5a9df77307515e83c77
+SHA512 (pinyin.tar.gz) = 1ee19eed3ee58be6cd6562ec363fe3bf630fff5e8820b3bfdd6d4618fceb082695e888dec5366a3685d58706f720e19319d891c223227237aed12674ea982131
+Size (pinyin.tar.gz) = 1608886 bytes
+BLAKE2s (py_stroke-20121124.tar.gz) = 63884e014437272e0079123a6fa8bc90810b43c4d6d2bf763edd9e23ce87534d
+SHA512 (py_stroke-20121124.tar.gz) = d80ff9a3549e07c7a6935e686785f9a076c58f1a782a832ae28ee65e2a213d67f089f450ce09bed87ec2a141c32b9c1fcb83c221ddcab436858fa9009f161fb3
+Size (py_stroke-20121124.tar.gz) = 445601 bytes
+BLAKE2s (py_table-20121124.tar.gz) = 76e90426e63315bbfd804913d7efa4088e8917f68b8b690261997c981ea5246f
+SHA512 (py_table-20121124.tar.gz) = 0fa72ce6820a316e9729bc0d7a08af5ca3468134de9ff1bf0c559a398846a7bcf7313a3609d943e6bab637d930cf45ad9acfe25a8d3df078a774b071a7296486
+Size (py_table-20121124.tar.gz) = 186822 bytes
+BLAKE2s (table.tar.gz) = c4f966243472256e078db4e3e82adf89abad963ad779f242d2d320a19f43a2d6
+SHA512 (table.tar.gz) = 99e1d69c679355fcf3e117a1ef39b131cbd3af841387d2335757247d840b90ff6b7323e16fca98cf7a043033faf250d2e9c6d47b96845d18c278a0cf6f30fec9
+Size (table.tar.gz) = 4144686 bytes
+SHA1 (patch-cmake_FcitxMacro.cmake) = e3dcba315711fc6b96f5620de1e03e096635bab2
+SHA1 (patch-cmake_FindEnchant.cmake) = e2a2572d60515c80ec736dd1d8d07779aa324da0
+SHA1 (patch-src_im_pinyin_data_CMakeLists.txt) = dd17df37a5b6781a645a4190cb8111811f804189
+SHA1 (patch-src_im_table_data_CMakeLists.txt) = 3ef3d05ee036f9bb845b69c97c50ac76cc11478e
+SHA1 (patch-src_lib_fcitx-utils_utils.c) = d89eccbcc8c1ee330efbcddea152db6d2725959b
+SHA1 (patch-src_module_spell_dict_CMakeLists.txt) = 98372bb2c160e9bb8917ea523465924edab2c1e3

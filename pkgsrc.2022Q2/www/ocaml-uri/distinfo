@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/11 10:27:50 jaapb Exp $
+
+BLAKE2s (ocaml-uri-4.2.0.tar.gz) = e4beb73fedaf3ab2b3e3a4a1dc97e7adf8461d8c81b2fb5636c9e07b3df6d6b2
+SHA512 (ocaml-uri-4.2.0.tar.gz) = 25510db4d6a5491ab02e7c62360f91b95e6cd3b5892311c7d3ef159be15906eab849728f96687082852e1ab8ff6e3d9f51831229780abc4ed8cb6acff50aa1b9
+Size (ocaml-uri-4.2.0.tar.gz) = 231300 bytes

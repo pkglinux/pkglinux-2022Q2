@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- messageviewer/CMakeLists.txt.orig	2015-06-25 17:47:38.000000000 +0000
++++ messageviewer/CMakeLists.txt
+@@ -197,6 +197,7 @@ kde4_add_ui_files(libmessageviewer_SRCS
+ kde4_add_library(messageviewer ${LIBRARY_TYPE} ${libmessageviewer_SRCS})
+ 
+ target_link_libraries(messageviewer messagecore kdepim kpgp kleo
++  ${GPGMEPP_PTHREAD_LIBRARIES}
+   ${KDEPIMLIBS_KMIME_LIBS}
+   ${KDEPIMLIBS_KMBOX_LIBS}
+   ${KDEPIMLIBS_AKONADI_LIBS}

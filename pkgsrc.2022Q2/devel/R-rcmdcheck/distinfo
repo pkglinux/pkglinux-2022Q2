@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/29 13:52:36 mef Exp $
+
+BLAKE2s (R/rcmdcheck_1.4.0.tar.gz) = b931d81dd304f76a76eca01202af5af8d700ce26bbbe4dea06eaecffe6bb7b7f
+SHA512 (R/rcmdcheck_1.4.0.tar.gz) = 5afd3d595dc9f4cb80d26ff6fbdbd2e0887d31980e4a48c8e1eceacfe895c0490b11ad631c67bafa473751945abae1806f0099fe38e025851304ebc6648e4cc4
+Size (R/rcmdcheck_1.4.0.tar.gz) = 73522 bytes

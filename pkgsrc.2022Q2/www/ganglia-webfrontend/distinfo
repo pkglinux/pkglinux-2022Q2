@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 11:29:28 nia Exp $
+
+BLAKE2s (ganglia-web-3.7.2.tar.gz) = fe4d489912fc7aa7eb674b464ac2b3b098f66277714fcf21dd89a633ba48be58
+SHA512 (ganglia-web-3.7.2.tar.gz) = 033b00923a4cf7f342a44de9e37da67411992054e7f103fa09d91bbd125fb9066cc4e77ae5011810d7d926e2997b48d30e3d505d83239cd4c0a6b996a7679f8d
+Size (ganglia-web-3.7.2.tar.gz) = 704632 bytes
+SHA1 (patch-Makefile) = c246326e81b3df16b3289891e0b6ad37fb8fca55
+SHA1 (patch-cluster__view.php) = 6a869c46fbbad7d75a3bbfbb7b7a69347653e35a
+SHA1 (patch-conf__default.php.in) = 0d5d9417d20f74bd1b1e3ab4e83738779a19fda1
+SHA1 (patch-eval__conf.php) = ce40cbee4c9867f86a67009074d0d46308dcb561

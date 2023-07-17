@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/04 18:16:40 jaapb Exp $
+
+BLAKE2s (ppx_fail-0.14.0.tar.gz) = bdef3dc90886934099ae28ce89a4f48cf01701b155591ec95284090a3ee7f343
+SHA512 (ppx_fail-0.14.0.tar.gz) = a683430e5cdb50b52846b45d0e25a7b2498f14f34153319cb3ffd30e7b6e493f36790ffc5ea82ec3fbb0281a29e13bb2df10a1754ec32f0e5faad0890b6d211e
+Size (ppx_fail-0.14.0.tar.gz) = 3773 bytes

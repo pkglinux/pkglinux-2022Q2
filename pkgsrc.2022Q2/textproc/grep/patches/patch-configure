@@ -1,0 +1,21 @@
+$NetBSD: patch-configure,v 1.2 2021/08/15 17:08:24 wiz Exp $
+
+* pkgsrc always supplies working grep.
+
+--- configure.orig	2021-08-14 19:53:52.000000000 +0000
++++ configure
+@@ -4258,14 +4258,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+ 
+-if test -n "$GREP" || test -n "$EGREP"; then
+-  as_fn_error $? "no working 'grep' found
+-  A working 'grep' command is needed to build GNU Grep.
+-  This 'grep' should support -e and long lines.
+-  On Solaris 10, install the package SUNWggrp or SUNWxcu4.
+-  On Solaris 11, install the package text/gnu-grep or system/xopen/xcu4." "$LINENO" 5
+-fi
+-
+ 
+ 
+ 

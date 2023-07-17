@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.28 2021/10/26 11:30:26 nia Exp $
+
+BLAKE2s (privoxy-3.0.29-stable-src.tar.gz) = a153b3e25d0f286d342bd06384f41030f645e6a3a334a3be67b3edf08323c0a3
+SHA512 (privoxy-3.0.29-stable-src.tar.gz) = 2f483a37d697738815f4c58a775fbf116a34ac5e0e74d19814252c5ff1572350181066d468327189faf20c92d808d551b0017a9525ec98276330ee539554c1ba
+Size (privoxy-3.0.29-stable-src.tar.gz) = 1830550 bytes
+SHA1 (patch-aa) = d5296d7440b92b76c28136453d098c617d4e439b
+SHA1 (patch-ab) = c54a5845ad76d36ea281697cce17237d1d2ee0bd
+SHA1 (patch-ac) = 2d1a1efc53b4cd017d3ce21080adf1bfcc5cc97c
+SHA1 (patch-ag) = 64957682dbb3ff8b78ef47cc936d591facf9eb3a

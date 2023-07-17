@@ -1,0 +1,25 @@
+$NetBSD: patch-CMakeLists.txt,v 1.4 2021/10/22 22:43:11 nia Exp $
+
+Install configuration files to examples directory.
+
+--- CMakeLists.txt.orig	2021-10-10 16:17:03.000000000 +0000
++++ CMakeLists.txt
+@@ -922,13 +922,13 @@ elseif(NOT APPLE)
+         ENDIF(BUILD_OPENCS)
+ 
+         # Install global configuration files
+-        INSTALL(FILES "${INSTALL_SOURCE}/defaults.bin" DESTINATION "${SYSCONFDIR}" COMPONENT "openmw")
+-        INSTALL(FILES "${INSTALL_SOURCE}/openmw.cfg.install" DESTINATION "${SYSCONFDIR}" RENAME "openmw.cfg" COMPONENT "openmw")
+-        INSTALL(FILES "${INSTALL_SOURCE}/resources/version" DESTINATION "${SYSCONFDIR}" COMPONENT "openmw")
+-        INSTALL(FILES "${INSTALL_SOURCE}/gamecontrollerdb.txt" DESTINATION "${SYSCONFDIR}" COMPONENT "openmw")
++        INSTALL(FILES "${INSTALL_SOURCE}/defaults.bin" DESTINATION "${DATAROOTDIR}/examples/openmw" COMPONENT "openmw")
++        INSTALL(FILES "${INSTALL_SOURCE}/openmw.cfg.install" DESTINATION "${DATAROOTDIR}/examples/openmw" RENAME "openmw.cfg" COMPONENT "openmw")
++        INSTALL(FILES "${INSTALL_SOURCE}/resources/version" DESTINATION "${DATAROOTDIR}/examples/openmw" COMPONENT "openmw")
++        INSTALL(FILES "${INSTALL_SOURCE}/gamecontrollerdb.txt" DESTINATION "${DATAROOTDIR}/examples/openmw" COMPONENT "openmw")
+ 
+         IF(BUILD_OPENCS)
+-            INSTALL(FILES "${INSTALL_SOURCE}/defaults-cs.bin" DESTINATION "${SYSCONFDIR}" COMPONENT "opencs")
++            INSTALL(FILES "${INSTALL_SOURCE}/defaults-cs.bin" DESTINATION "${DATAROOTDIR}/examples/openmw" COMPONENT "opencs")
+         ENDIF(BUILD_OPENCS)
+ 
+         # Install resources

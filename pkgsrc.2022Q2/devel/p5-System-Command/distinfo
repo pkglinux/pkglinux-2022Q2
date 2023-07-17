@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2021/10/26 10:17:32 nia Exp $
+
+BLAKE2s (System-Command-1.121.tar.gz) = 433f6ffc5d9c363da2b818d3e1b239d2f1a56dd49ed8f4f4763b079ea199497b
+SHA512 (System-Command-1.121.tar.gz) = a476fad8487d5c15af4528b8e0169d8176c250c15d1d2d9450bc1ac5bdf53b753787e312830e4995d5b5a28db50d3358e39718f6cad34bcf694e94ad899aefd7
+Size (System-Command-1.121.tar.gz) = 32589 bytes

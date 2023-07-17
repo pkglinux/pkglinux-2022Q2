@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:25:14 nia Exp $
+
+BLAKE2s (matchbox-window-manager-1.1.tar.gz) = c414d3fbd5beea7191ee1453be64e632a3e0aeeb746c41683a21bc85f54beddc
+SHA512 (matchbox-window-manager-1.1.tar.gz) = a9e0ca714b259d92dbf0538a7abc7422a3cab0f9c3878b9a0afc7bea438003a85a8374eef122099bee5e539858b0c1c0611c8df62aac24cf0e5dd562161857cb
+Size (matchbox-window-manager-1.1.tar.gz) = 249825 bytes

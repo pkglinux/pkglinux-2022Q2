@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2022/04/15 04:36:23 markd Exp $
+share/texmf-dist/doc/fonts/pxtxalfa/README
+share/texmf-dist/doc/fonts/pxtxalfa/pxtxalfa-doc.pdf
+share/texmf-dist/doc/fonts/pxtxalfa/pxtxalfa-doc.tex

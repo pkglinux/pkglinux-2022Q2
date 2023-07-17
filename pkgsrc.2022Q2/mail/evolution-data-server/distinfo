@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.94 2022/01/03 08:18:47 cirnatdan Exp $
+
+BLAKE2s (evolution-data-server-3.42.2.tar.xz) = 286c70b5ddaf0450d6a61e3acffbdef51bbaa6b7668164febc463fc54d64838d
+SHA512 (evolution-data-server-3.42.2.tar.xz) = a0329180bac12d9723efd42938335ae46492cdd774358c411e89de3ef34b4d2cdbdb77fb13d8e1ad27a89f9bf64d2f78f3e25e54fbbaa9076dab2d866705de05
+Size (evolution-data-server-3.42.2.tar.xz) = 4622324 bytes
+SHA1 (patch-src_tools_addressbook-export_CMakeLists.txt) = 1e0d65ac17062bfa72ebdc0d1a3fa50f4fd1cdb2

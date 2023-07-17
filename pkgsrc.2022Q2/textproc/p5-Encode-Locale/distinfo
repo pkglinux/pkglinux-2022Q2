@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 11:22:27 nia Exp $
+
+BLAKE2s (Encode-Locale-1.05.tar.gz) = abca0bb12bc83a1162b4c4643626cdf920a42fc65a3816cd21a6cd2d3d962a0a
+SHA512 (Encode-Locale-1.05.tar.gz) = 68ed5732fd3645eca2ea54080067677a48f90fc5a594a1b453a322f3127e67a984d539cb5fd41ac63a03b9dab693c070b65e3c70a2a677dc61b4634f3e212d06
+Size (Encode-Locale-1.05.tar.gz) = 8355 bytes

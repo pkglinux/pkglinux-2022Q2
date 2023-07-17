@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.5 2022/02/11 09:51:15 pho Exp $
+
+BLAKE2s (unicode-transforms-0.4.0.tar.gz) = 36373792f4661908ec0fa049e032ef4614304e2a9ea1d95455d5c4b9896a6443
+SHA512 (unicode-transforms-0.4.0.tar.gz) = 56a718b4912e60270a74da681002010b78c85c6b6313e88202a34630aa6162a105c148cc9a54d3d989335edf02d2bc5be60c5f541b56efd696bc450c00c2b332
+Size (unicode-transforms-0.4.0.tar.gz) = 648786 bytes
+SHA1 (patch-unicode-transforms.cabal) = 18bbfca1a9e7e541b78902a8bc2b4dc1ca38472a

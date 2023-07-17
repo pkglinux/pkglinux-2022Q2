@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:17:29 nia Exp $
+
+BLAKE2s (String-Escape-2010.002.tar.gz) = 76d9cb165c94013c5545097557d3676448a291d18e4fbb3ba034ddfead15d8a1
+SHA512 (String-Escape-2010.002.tar.gz) = 668e196bbd95b4e9e5fc9ae3aebe0e7f1990362973bd027f2f3728f212786bc2104141ced3e024006b3ed22fa6345b968440029c98b87cbc299ac192221724c7
+Size (String-Escape-2010.002.tar.gz) = 11629 bytes

@@ -1,0 +1,15 @@
+$NetBSD: patch-prnt_hpijs_foomatic-rip-hplip,v 1.3 2022/03/13 05:46:55 gutteridge Exp $
+
+perl-5.22 compatibility
+
+--- prnt/hpijs/foomatic-rip-hplip.orig	2019-12-10 05:00:36.000000000 +0000
++++ prnt/hpijs/foomatic-rip-hplip
+@@ -1653,7 +1653,7 @@ if ($#datablob >= 0) {
+ ## if nexessary.
+ 
+ my $dontparse = 0;
+-if ((!defined(@{$dat->{'args'}})) ||
++if ((!@{$dat->{'args'}}) ||
+     ($#{$dat->{'args'}} < 0)) {
+     # We don't have any options, so we do not need to parse the
+     # PostScript data

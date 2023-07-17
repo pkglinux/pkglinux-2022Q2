@@ -1,0 +1,19 @@
+@comment $NetBSD: PLIST,v 1.2 2021/04/24 16:44:13 pho Exp $
+lib/unicode-show-${PKGVERSION}/${HS_VERSION}/package-description
+lib/unicode-show-${PKGVERSION}/${HS_VERSION}/package-id
+lib/${HS_PLATFORM}/libHS${HS_PKGID}-${HS_VER}.so
+lib/${HS_PLATFORM}/${HS_PKGID}/Text/Show/Unicode.dyn_hi
+lib/${HS_PLATFORM}/${HS_PKGID}/Text/Show/Unicode.hi
+lib/${HS_PLATFORM}/${HS_PKGID}/Text/Show/Unicode.p_hi
+lib/${HS_PLATFORM}/${HS_PKGID}/libHS${HS_PKGID}.a
+lib/${HS_PLATFORM}/${HS_PKGID}/libHS${HS_PKGID}_p.a
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/LICENSE
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/Text-Show-Unicode.html
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/doc-index.html
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/haddock-bundle.min.js
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/index.html
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/linuwial.css
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/meta.json
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/quick-jump.css
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/synopsis.png
+share/doc/${HS_PLATFORM}/unicode-show-${PKGVERSION}/html/unicode-show.haddock

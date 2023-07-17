@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.35 2022/05/29 09:39:44 wiz Exp $
+
+BLAKE2s (asciidoc-10.2.0.tar.gz) = b4450bb112bca4f19fa35f27cd8938be72b217d4a808ebee9bb162291c6d34fd
+SHA512 (asciidoc-10.2.0.tar.gz) = 278b4d95af1a93864887fc6a79e38fab431c4a7bf9cca4b734a7ec7cc140c0b804d7182c2002742cb408a2adc68b1f9c8996e930ba2f68a9f8488f75887b00e6
+Size (asciidoc-10.2.0.tar.gz) = 1200416 bytes

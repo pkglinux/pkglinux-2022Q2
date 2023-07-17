@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:44:30 nia Exp $
+
+BLAKE2s (wordwarvi-1.0.2.tar.gz) = 0683d72b53b20f86324b00047a0dc84c32010821d932d96fa5d1fcab7a61c5d6
+SHA512 (wordwarvi-1.0.2.tar.gz) = 231e02b339dc1f73345113ee37ddcd4fc5110e6e4402b46aee60a969c6b554cc59dc4bb6389f2537d1e418489831f84580fadb05df42ebeede7b56945389b86d
+Size (wordwarvi-1.0.2.tar.gz) = 8814650 bytes
+SHA1 (patch-Makefile) = 6bfbabe7d925e0332c482ba5d4d7911e66f22698
+SHA1 (patch-wordwarvi.c) = 2317eaa5f8428b4831182b55723f81971c48c34c

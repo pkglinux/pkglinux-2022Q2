@@ -1,0 +1,14 @@
+$NetBSD: distinfo,v 1.19 2021/10/26 11:06:56 nia Exp $
+
+BLAKE2s (smokeping-2.7.3.tar.gz) = 92044229c8120f3d799d6214f20ae3e8a07c343b8ab1eac37d60b8035db1f3a5
+SHA512 (smokeping-2.7.3.tar.gz) = d46d61539ffdd9cac41391aa813364260f90f84443c328b1c9233ab6ba3a0c157861694614e6c33e18b153f6a6afc0769c5fc7752b3ab52f114d984e53232830
+Size (smokeping-2.7.3.tar.gz) = 6614710 bytes
+SHA1 (patch-Makefile.in) = 9eceb69c516a50b0b48ca5afad8fb8a8a1550d72
+SHA1 (patch-aa) = e1bec9750bcb3dfd9e38e4d5dea5e4bf6359e077
+SHA1 (patch-ab) = 9a14917909b6bfee57109d01dec4b9a89c56f448
+SHA1 (patch-ac) = e0420ee1108e3aa332c7e77970920cce3cc5dafd
+SHA1 (patch-ad) = bfc0d914ef24249dd01651caab27023ef2ac9d89
+SHA1 (patch-ae) = 9529ab685db10d7a4b19d4ccd0f10d0621d2cccf
+SHA1 (patch-af) = 95541f07c1e4bb77c58a9a215d6deae849523fec
+SHA1 (patch-ag) = cacfb3403115cbef3bb211a918482d5ed112fc9a
+SHA1 (patch-bin_Makefile.in) = 434300b628a1db9a583eb61a4389ad79428f98b3

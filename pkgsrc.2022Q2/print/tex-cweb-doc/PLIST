@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.5 2022/04/15 03:28:45 markd Exp $
+man/man1/ctangle.1
+man/man1/ctwill-refsort.1
+man/man1/ctwill-twinx.1
+man/man1/ctwill.1
+man/man1/cweave.1
+man/man1/cweb.1
+man/man1/twill.1

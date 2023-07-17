@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:54:06 nia Exp $
+
+BLAKE2s (mailsync_5.2.1.orig.tar.gz) = 065795444fb92ea5033b6616a7c2161d75f987891f76c3465b65b72902a93652
+SHA512 (mailsync_5.2.1.orig.tar.gz) = 9282cbb6a4ed70ac003ceeace933fda92da3fd6f5bf1058016c138cd81f29918c59ceed615a8f05761f3fd1b32c5b04a0087116cbb75ecf56b8d66ab2c47d14b
+Size (mailsync_5.2.1.orig.tar.gz) = 139967 bytes
+SHA1 (patch-ac) = 168e2342fd2a8018098bc96e66595b489d0b5a50
+SHA1 (patch-ad) = f2fb59051d63982ee9cf80bace545363dd510ee7

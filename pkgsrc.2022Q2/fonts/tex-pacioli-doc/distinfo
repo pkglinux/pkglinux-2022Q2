@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:28:22 nia Exp $
+
+BLAKE2s (tex-pacioli-24947/pacioli.doc.tar.xz) = d88d82047071fa0c657a811297e064e1aa99b005447880aa9fd6b2c6d1802488
+SHA512 (tex-pacioli-24947/pacioli.doc.tar.xz) = 6bfe58a6f13f1e5f59297bfaf6af488759cd099a6fbfa992078569340a185379f4fef79fd77aa97f69468b23a176d6b1b77a547ff6ccb2786f87aba94965f2c6
+Size (tex-pacioli-24947/pacioli.doc.tar.xz) = 25992 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:28:03 nia Exp $
+
+BLAKE2s (tex-gnu-freefont-29349/gnu-freefont.doc.tar.xz) = 4fcf7ae45dabe4ca5e9f708110ca5bf09f605397d24c7c434c18cf1d8f3b6d29
+SHA512 (tex-gnu-freefont-29349/gnu-freefont.doc.tar.xz) = c2b838e146aadf47fce4375870688cb115d361e352d16f3648d2b0e6c30a46bbd7eab45d714e81a5e764e2fc4bbe15931dcce4c9685fca7a4d23d4f8954d02b1
+Size (tex-gnu-freefont-29349/gnu-freefont.doc.tar.xz) = 161272 bytes

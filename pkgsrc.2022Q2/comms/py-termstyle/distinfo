@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:06:05 nia Exp $
+
+BLAKE2s (termstyle-0.1.11.tar.gz) = 030a1ed5ebc02cf05a335b6d154cbb743ab162c8a0552d3cbfadca38c8722111
+SHA512 (termstyle-0.1.11.tar.gz) = 20fa4f3c2402d539ac0586c10f42a7cd9361ce42b90b839189ad4e24a6dffb1effb435bde976707e9b852bcbab106a4fac77158766fca043e3b179964ad3e546
+Size (termstyle-0.1.11.tar.gz) = 4580 bytes

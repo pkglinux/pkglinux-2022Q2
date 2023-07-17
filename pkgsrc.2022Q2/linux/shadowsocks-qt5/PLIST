@@ -1,0 +1,4 @@
+@comment $NetBSD$
+bin/ss-qt5
+share/applications/shadowsocks-qt5.desktop
+share/icons/hicolor/512x512/apps/shadowsocks-qt5.png

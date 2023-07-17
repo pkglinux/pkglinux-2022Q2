@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/09 03:04:35 markd Exp $
+
+BLAKE2s (showlabels.doc.r60877.tar.xz) = 4270dc5f30c149f89d2785d65909fc4d609e37da26cb7e1110b1f83c94cfc7ac
+SHA512 (showlabels.doc.r60877.tar.xz) = 154da3583e03b13794e366926bf4430961e8159558bddd86f8d080f53f12bf3936c4caaff8f4aef131e7d84685145ff5fc8d644134f5c982367cc106ff505066
+Size (showlabels.doc.r60877.tar.xz) = 231580 bytes

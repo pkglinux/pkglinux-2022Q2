@@ -1,0 +1,47 @@
+# $NetBSD$
+
+DISTNAME=	ntfs-3g_ntfsprogs-2017.3.23
+CATEGORIES=	linux
+MASTER_SITES=	https://tuxera.com/opensource/
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://tuxera.com/opensource/
+COMMENT=	safe and fast handling of Windows file systems
+LICENSE=	gnu-gpl-v2
+
+ONLY_FOR_PLATFORM=	Linux-*-*
+
+#USE_LANGUAGES=		c c++
+
+#USE_LIBTOOL=	yes
+USE_TOOLS+=	gmake pkg-config
+USE_TOOLS+=	autoconf automake gmake m4 makeinfo sed:run tar:build perl
+
+PKGCONFIG_OVERRIDE+=	libntfs-3g/libntfs-3g.pc.in
+
+#NO_BUILD=		yes
+#NO_CONFIGURE=		yes
+BLDDIR=			${WRKDIR}/build
+BLDPRE=			${BLDDIR}${PREFIX}
+DSTPRE=			${DESTDIR}${PREFIX}
+
+
+post-extract:
+	${MKDIR} -v ${BLDPRE}
+
+do-configure:
+	cd ${BLDDIR} && ${WRKSRC}/configure	\
+		--prefix=${PREFIX}		\
+		--with-fuse=internal
+
+do-build:
+	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && ${GMAKE} DESTDIR=${BLDDIR} install-strip
+
+do-install:
+	${MKDIR} -v ${DSTPRE}
+	${CP} -av ${BLDPRE}/* ${DSTPRE}
+
+.include "../../devel/libuuid/buildlink3.mk"
+.include "../../mk/bsd.pkg.mk"

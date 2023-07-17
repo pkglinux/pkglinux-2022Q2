@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2022/05/10 08:20:33 jaapb Exp $
+
+BLAKE2s (menhir-20220210.tar.gz) = 73903af264345bbb8cdfa9eee7ce4cfb8c760cea16792781cdf8d3f3df0b2335
+SHA512 (menhir-20220210.tar.gz) = 55af21092fd133c2b3f84589c0f98c9a4ce718cbafaacf82b459a15d0eaee711d82fa269283cab24caaebe2a5a1c75d469650248333a2991323c49d10cfe9e7f
+Size (menhir-20220210.tar.gz) = 1304512 bytes

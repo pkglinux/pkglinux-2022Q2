@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/03 14:52:16 wiz Exp $
+
+BLAKE2s (folks-0.15.5.tar.xz) = 4888575a7e69f9d8084bd4771ad7cc5caae0108d2179d1a82a5bdd29514c9e74
+SHA512 (folks-0.15.5.tar.xz) = 696d158234cc5b4c504491c6e01dc45ed53c4ac02e3e62e637d229207dde396a82a850d143d8615dc838d99c756edfce145405ea3972c556951d6408fb8487ea
+Size (folks-0.15.5.tar.xz) = 492976 bytes

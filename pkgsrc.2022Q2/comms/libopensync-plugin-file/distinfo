@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:06:01 nia Exp $
+
+BLAKE2s (libopensync-plugin-file-0.22.tar.bz2) = a8fe123b29f76d53d6e03f32167d42a72bd132c9d7eeb001876eab183e98e8c2
+SHA512 (libopensync-plugin-file-0.22.tar.bz2) = c8df060db87eb7eeb8e6dff6dc486eb4edd348bc22ec73e7d38930d9a1aef4f40e3d29f4d010ee7671fb1e59615512d92b9a3f3e49b714187c932d196460442e
+Size (libopensync-plugin-file-0.22.tar.bz2) = 216890 bytes

@@ -1,0 +1,11 @@
+$NetBSD$
+
+--- data/scripts/Xsession.orig	2020-11-03 07:41:06.000000000 +0000
++++ data/scripts/Xsession
+@@ -101,5 +101,5 @@ fi
+ if [ -z "$*" ]; then
+     exec xmessage -center -buttons OK:0 -default OK "Sorry, $DESKTOP_SESSION is no valid session."
+ else
+-    exec $@
++    exec ck-launch-session $@
+ fi

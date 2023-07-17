@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:59:38 nia Exp $
+
+BLAKE2s (xrolodex.1.5.motif.tar.Z) = a47fd07d1e9272d2e1bbaaa499e67abb0e55ec28b1709bb4032c202a9fea41ff
+SHA512 (xrolodex.1.5.motif.tar.Z) = e59001b1c7b0440f3476310f443b1fb374dcdf19b10a6ccab6adb98fdafba6833dc2c9c07a9bc0653bd344fa4975f4cb2d5992c42bdcc8d77a19f12725cf19a3
+Size (xrolodex.1.5.motif.tar.Z) = 126075 bytes
+SHA1 (patch-aa) = a719e7a6c9415f1b51d19aae64d6b633eb7b014c
+SHA1 (patch-editor.c) = 529fa624b5991aa8df447a47e8f2b2c28b41fad8
+SHA1 (patch-xrolo.h) = 0cb7ce6f8eac804fa34b84539a233394161a3d3f

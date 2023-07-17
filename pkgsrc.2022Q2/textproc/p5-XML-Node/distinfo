@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 11:22:51 nia Exp $
+
+BLAKE2s (XML-Node-0.11.tar.gz) = d4a221d352af570dd85d3e7b4596bdb7c8a90894afa65957223f1f67e8c801b4
+SHA512 (XML-Node-0.11.tar.gz) = 501a630e166cde7fc7b88552054bd04c2f041741f8b07289ea4f0501233249ad9cf18eed84c6de6e4455ded01dcabfca9e0b912b9023b0bc1d8c8bdde958d6a0
+Size (XML-Node-0.11.tar.gz) = 7937 bytes

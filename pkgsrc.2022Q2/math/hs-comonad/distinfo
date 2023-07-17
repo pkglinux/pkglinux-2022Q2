@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:55:43 nia Exp $
+
+BLAKE2s (comonad-5.0.8.tar.gz) = 13639d9c1a5648a71e88a764d45a65b5f2f92b87e9493607db65588cf725f81c
+SHA512 (comonad-5.0.8.tar.gz) = b823ea36826da74c6ec46cb835493224f62da66516841b9660a04c391dee803c31e140b2c523b563fb51f46509d99cce157b456a88fbaf2371da11933d5d787e
+Size (comonad-5.0.8.tar.gz) = 15227 bytes

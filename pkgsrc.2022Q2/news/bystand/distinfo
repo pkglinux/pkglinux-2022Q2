@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:09:34 nia Exp $
+
+BLAKE2s (bystand-1.2.0.zip) = a69b224b5b3f1763be89927c37e3ba1f70897d27c42f8b0d4689f0f12d4c0c59
+SHA512 (bystand-1.2.0.zip) = 9ee2d9b5b6550f3229fe95eea8b6ade8aeea0fec640149f87f5da72e98e19f572ba392df28eba64aa996fc51d56e593392bdb737024710be85d424ed16b6adb5
+Size (bystand-1.2.0.zip) = 33704 bytes

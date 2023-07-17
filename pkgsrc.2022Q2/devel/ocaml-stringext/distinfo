@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:15:57 nia Exp $
+
+BLAKE2s (stringext-1.6.0.tar.gz) = acfd85a3c18a774f7af60860e961358b7cbda2ec51b3ff6a3109f3391047f4ac
+SHA512 (stringext-1.6.0.tar.gz) = 77af121d915be73b6a6262c8cc62ba712e59b9aef4825d06ed7fdd960c99d9fcbc7681dca526ddf7e4210127966826e913cf1bd4e71bd75584a0b5caf9ac9625
+Size (stringext-1.6.0.tar.gz) = 7842 bytes

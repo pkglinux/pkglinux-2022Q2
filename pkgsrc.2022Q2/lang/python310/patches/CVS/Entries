@@ -1,0 +1,12 @@
+/patch-Lib_ctypes_util.py/1.1/Tue Oct  5 19:07:13 2021//Tpkgsrc-2022Q2
+/patch-Lib_distutils_unixccompiler.py/1.1/Tue Oct  5 19:07:13 2021//Tpkgsrc-2022Q2
+/patch-Lib_lib2to3_pgen2_driver.py/1.1/Tue Oct  5 19:07:13 2021//Tpkgsrc-2022Q2
+/patch-Lib_sysconfig.py/1.1/Tue Oct  5 19:07:13 2021//Tpkgsrc-2022Q2
+/patch-Makefile.pre.in/1.2/Tue Dec  7 09:31:09 2021//Tpkgsrc-2022Q2
+/patch-Modules_socketmodule.c/1.2/Thu Jan 20 13:07:50 2022//Tpkgsrc-2022Q2
+/patch-Modules_socketmodule.h/1.1/Tue Oct  5 19:07:13 2021//Tpkgsrc-2022Q2
+/patch-Python_thread__pthread.h/1.2/Sat Dec 11 10:40:58 2021//Tpkgsrc-2022Q2
+/patch-configure/1.4/Sun Apr  3 10:54:52 2022//Tpkgsrc-2022Q2
+/patch-pyconfig.h.in/1.1/Tue Oct  5 19:07:13 2021//Tpkgsrc-2022Q2
+/patch-setup.py/1.5/Sun Apr  3 10:54:52 2022//Tpkgsrc-2022Q2
+D

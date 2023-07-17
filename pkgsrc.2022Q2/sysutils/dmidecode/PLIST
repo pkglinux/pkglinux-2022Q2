@@ -1,0 +1,6 @@
+@comment $NetBSD: PLIST,v 1.6 2018/10/23 10:16:12 jmcneill Exp $
+man/man8/dmidecode.8
+sbin/dmidecode
+share/doc/dmidecode/AUTHORS
+share/doc/dmidecode/NEWS
+share/doc/dmidecode/README

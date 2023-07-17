@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2022/03/14 12:22:49 gdt Exp $
+
+BLAKE2s (libgeotiff-1.7.1.tar.gz) = a48dd6ed0b8814d281678ced63b39c41fd793db2f422f3105d3f612f83185466
+SHA512 (libgeotiff-1.7.1.tar.gz) = af119040598f4349124848d9788ea1d0d2019e23fc48eaf4b0445320c51e91afa6c7e25b49738bdaf0aa4467a19104b00838d669da27dee77898c489fe5fe4c1
+Size (libgeotiff-1.7.1.tar.gz) = 542779 bytes

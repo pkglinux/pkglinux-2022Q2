@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/05 11:40:16 jaapb Exp $
+
+BLAKE2s (ocaml-cstruct-6.1.0.tar.gz) = 8434742685c445354daf9d42bec07afa0de879fa47bfa21ecf33265847669be5
+SHA512 (ocaml-cstruct-6.1.0.tar.gz) = eb1bcb6a35650f726f888c396f3ca64796ad16c1a7146130f8826004c3cac7e5bef2453821ca95844eaef4b4beab25e3db713e6a1a93f86986fb526f75a4e245
+Size (ocaml-cstruct-6.1.0.tar.gz) = 242509 bytes

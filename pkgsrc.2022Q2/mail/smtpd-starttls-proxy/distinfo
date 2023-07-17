@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/12/22 16:07:30 schmonz Exp $
+
+BLAKE2s (smtpd-starttls-proxy-0.0.1.1.tar.gz) = 4dfa548a4137c0ce4b7447ef3cfd654a235ad6c63fec79389f1b9e5d1d23b2e3
+SHA512 (smtpd-starttls-proxy-0.0.1.1.tar.gz) = 4a8f97a2bb7b1a79a68d5d4fc1c1f0c82e56728b9e0c8c7f6d4383e7d4237a23223043e7df6c10866cc662d85161c4d160b8f4902d45111d1d7478ef508df33e
+Size (smtpd-starttls-proxy-0.0.1.1.tar.gz) = 18091 bytes

@@ -1,0 +1,3 @@
+Accumulates notes (using the \endnote command, which can be
+used as a replacement for \footnote), and places them at the
+end of the section, chapter or document.

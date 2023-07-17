@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:15:25 nia Exp $
+
+BLAKE2s (libnfc-1.7.1.tar.bz2) = 38bf4b1f5a1621c348461eb63cd33b7b168d85e392a134d6ea3fdbb7ade9197f
+SHA512 (libnfc-1.7.1.tar.bz2) = 6a03d197c450c0ab8f2d16ae8c1f80e206fa909ece84a32dbb962acd0f7ef693a419608cdaa4c2207a1d2593599e44479520d7413eace7fca19d3230442e506c
+Size (libnfc-1.7.1.tar.bz2) = 484309 bytes
+SHA1 (patch-configure) = d0860d7617260826dc66895f0da202950bf12afc
+SHA1 (patch-libnfc_buses_uart.c) = 05b50592b0609c6c1c435466d840fee8cedf6fcb
+SHA1 (patch-libnfc_drivers_acr122_pcsc.c) = 448bbf340b0961ba7ffb0bd5f18c343bff7c4329

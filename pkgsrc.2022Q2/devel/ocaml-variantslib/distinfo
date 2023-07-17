@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/04 17:24:19 jaapb Exp $
+
+BLAKE2s (variantslib-0.15.0.tar.gz) = 8dc8b8e606dea4fc5214609a11546bc6b4ff560bc98da82a98759a676e09bfc4
+SHA512 (variantslib-0.15.0.tar.gz) = cf52e19fb16f2021e06ce92799275717401f4959f89f0219c62df1386c036cbaaa1213eed1b80f9e4147681e613bffc5ca8d50987ca45aac791fe3c723e3d692
+Size (variantslib-0.15.0.tar.gz) = 2948 bytes

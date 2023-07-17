@@ -1,0 +1,72 @@
+# $NetBSD: Makefile.common,v 1.66 2022/04/24 15:00:42 nia Exp $
+# used by multimedia/gmplayer/Makefile
+# used by multimedia/mencoder/Makefile
+# used by multimedia/mplayer/Makefile
+#
+# sysutils/mencvcd uses one file from the tarball, please update
+# it when updating this package.
+
+MPLAYER_VERSION=	1.5
+
+DISTNAME=		MPlayer-${MPLAYER_VERSION}
+
+CATEGORIES?=		multimedia
+
+MASTER_SITES=		http://www.mplayerhq.hu/MPlayer/releases/
+EXTRACT_SUFX=		.tar.xz
+
+DIST_SUBDIR=		mplayer
+
+MAINTAINER?=		pkgsrc-users@NetBSD.org
+HOMEPAGE?=		http://www.mplayerhq.hu/
+LICENSE?=		gnu-gpl-v2
+
+#
+# NOTE: gmplayer has its own distinfo file. if you are also updating
+# gmplayer, you must ensure that *both* distinfo files contain the
+# correct, up-to-date files and checksums.
+#
+# NOTE: patches are shared between mplayer and gmplayer!
+#
+
+PATCHDIR=		${.CURDIR}/../../multimedia/mplayer-share/patches
+DISTINFO_FILE=		${.CURDIR}/../../multimedia/mplayer-share/distinfo
+
+USE_TOOLS+=		gmake
+HAS_CONFIGURE=		YES
+
+PTHREAD_OPTS+=		require
+
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS+=	--disable-smb
+CONFIGURE_ARGS+=	--disable-ffmpeg_a
+CONFIGURE_ARGS+=	--yasm=""
+
+# The configure script attempts to test-execute compiled programs in /tmp,
+# but that directory may be mounted as noexec; work this around by setting
+# TMPDIR to ${WRKDIR}
+CONFIGURE_ENV+=		TMPDIR=${WRKDIR}
+
+.include "../../mk/bsd.prefs.mk"
+
+# avoid text relocations caused by asm ops in #if HAVE_SSE4_INTERNAL block
+# in libmpcodecs/vf_ass.c
+.if !empty(MACHINE_PLATFORM:MNetBSD-[89].*-i386)
+CONFIGURE_ARGS+=	--disable-sse4
+.endif
+
+# The configure script misdetects endianness on mipseb
+.if ${OPSYS} == "NetBSD" && ${MACHINE_ARCH} == "mipseb"
+CONFIGURE_ARGS+=	--enable-big-endian
+.endif
+
+.if !empty(MACHINE_PLATFORM:MNetBSD-*-arm*) || \
+    !empty(MACHINE_PLATFORM:MNetBSD-*-earm*)
+
+# autodetect code enables these options on NetBSD/arm but it should not
+CONFIGURE_ARGS+=	--disable-armv5te --disable-armv6 --disable-armv6t2
+.endif
+
+CHECK_PORTABILITY_SKIP+=	ffmpeg/configure
+
+.include "../../multimedia/mplayer-share/options.mk"

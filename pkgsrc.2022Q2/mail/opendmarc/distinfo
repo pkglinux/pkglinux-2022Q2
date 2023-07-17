@@ -1,0 +1,13 @@
+$NetBSD: distinfo,v 1.14 2022/05/12 13:49:28 jperkin Exp $
+
+BLAKE2s (rel-opendmarc-1-4-2.tar.gz) = 7b26aee1966989d89f862a8dd1771ab18c06585dcf2bba8e951d0d89d5324118
+SHA512 (rel-opendmarc-1-4-2.tar.gz) = 415278c6c09460379538ad10ea4033815a677ddad138b8a07609c287360d1739acdba5d1fe07d0e35764850af8a141c0c70a9311254104b93d2c1bbc8b6f7a69
+Size (rel-opendmarc-1-4-2.tar.gz) = 426996 bytes
+SHA1 (patch-libopendmarc_opendmarc__dns.c) = 44a8edc083c922257695835dc6de3d840ee4a7ab
+SHA1 (patch-opendmarc_opendmarc-arcares.c) = cd38a216b2c1b115c78044007d9480168302f5d8
+SHA1 (patch-opendmarc_opendmarc-arcseal.c) = 93e2779d7a46f163d28092ef71faf7bfe7eead39
+SHA1 (patch-opendmarc_opendmarc-config.h) = f488fcccdde9aa1151f6bf65bcadf2564a8acec2
+SHA1 (patch-opendmarc_opendmarc.c) = b23746dc57ac52813311890a569eb1ef6ad64f7e
+SHA1 (patch-opendmarc_opendmarc.conf.5.in) = 86ee7fb06760f9f79cddb7f8e694a0e9fb91750f
+SHA1 (patch-opendmarc_opendmarc.conf.sample) = f1a8f5d55bd6e6a14bce1d900bfd655f1b7243de
+SHA1 (patch-opendmarc_parse.c) = f0dfe945792dcf072b2a34b549814464ccb1f4e9

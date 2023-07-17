@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:45:06 nia Exp $
+
+BLAKE2s (R/osmdata_0.1.6.tar.gz) = 1ebe8132597a2546afb9ce2588fe7939ef1236acdd7ded218c1ae8f5b30891aa
+SHA512 (R/osmdata_0.1.6.tar.gz) = b60563a84750290245d59caf841fa36a7b7c7a6ed96e517b1ca9536ef7900db780a32f5695c3ce7cc21294705e0b43d8f0b5c29856be6b53212c24cbf8ac0710
+Size (R/osmdata_0.1.6.tar.gz) = 2719231 bytes

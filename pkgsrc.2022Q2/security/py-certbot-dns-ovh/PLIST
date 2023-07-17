@@ -1,0 +1,17 @@
+@comment $NetBSD: PLIST,v 1.4 2022/02/10 21:23:33 adam Exp $
+${PYSITELIB}/${EGG_INFODIR}/PKG-INFO
+${PYSITELIB}/${EGG_INFODIR}/SOURCES.txt
+${PYSITELIB}/${EGG_INFODIR}/dependency_links.txt
+${PYSITELIB}/${EGG_INFODIR}/entry_points.txt
+${PYSITELIB}/${EGG_INFODIR}/requires.txt
+${PYSITELIB}/${EGG_INFODIR}/top_level.txt
+${PYSITELIB}/certbot_dns_ovh/__init__.py
+${PYSITELIB}/certbot_dns_ovh/__init__.pyc
+${PYSITELIB}/certbot_dns_ovh/__init__.pyo
+${PYSITELIB}/certbot_dns_ovh/_internal/__init__.py
+${PYSITELIB}/certbot_dns_ovh/_internal/__init__.pyc
+${PYSITELIB}/certbot_dns_ovh/_internal/__init__.pyo
+${PYSITELIB}/certbot_dns_ovh/_internal/dns_ovh.py
+${PYSITELIB}/certbot_dns_ovh/_internal/dns_ovh.pyc
+${PYSITELIB}/certbot_dns_ovh/_internal/dns_ovh.pyo
+${PYSITELIB}/certbot_dns_ovh/py.typed

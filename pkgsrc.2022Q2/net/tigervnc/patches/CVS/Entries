@@ -1,0 +1,10 @@
+/patch-CMakeLists.txt/1.5/Tue Nov 16 15:45:01 2021//Tpkgsrc-2022Q2
+/patch-common_rfb_util.h/1.1/Sun May 16 21:06:43 2021//Tpkgsrc-2022Q2
+/patch-media_CMakeLists.txt/1.1/Sun Feb  8 19:42:09 2015//Tpkgsrc-2022Q2
+/patch-unix_vncserver_vncserver.in/1.1/Sun May 16 21:06:43 2021//Tpkgsrc-2022Q2
+/patch-unix_vncserver_vncsession.c/1.1/Sun May 16 21:06:43 2021//Tpkgsrc-2022Q2
+/patch-unix_xserver_hw_vnc_Makefile.am/1.5/Sun May 16 21:06:43 2021//Tpkgsrc-2022Q2
+/patch-unix_xserver_hw_vnc_vncBlockHandler.c/1.1/Sun May 16 21:06:43 2021//Tpkgsrc-2022Q2
+/patch-unix_xserver_hw_vnc_vncModule.c/1.2/Fri Aug 17 12:36:05 2018//Tpkgsrc-2022Q2
+/patch-unix_xserver_os_inputthread.c/1.1/Sun May 16 21:06:43 2021//Tpkgsrc-2022Q2
+D

@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.12 2021/10/26 11:22:21 nia Exp $
+
+BLAKE2s (mecab-0.996.tar.gz) = 70836317b2d44fbb321c41213d51aa662f426cb1832cc825c93a13684aca4304
+SHA512 (mecab-0.996.tar.gz) = aca6d16f411b9ba9b6687242246aeb28ede6d6c6a9122d4a32da9d8e76e79b5f4af2c8e3b13ad9462b34e9d2994cbd9bbbedebac45609684db9b703da999577f
+Size (mecab-0.996.tar.gz) = 1398663 bytes
+SHA1 (patch-aa) = 063e3eea0530c0ea66761f8357fc1c4de4ab31fd
+SHA1 (patch-ab) = 801df711f04aff5ea1ef1280f7642b36733df8ec

@@ -1,0 +1,95 @@
+$NetBSD: patch-configure,v 1.8 2022/05/14 05:41:00 adam Exp $
+
+* Add "--with-nbsdops" option, NetBSD standard options.
+* Link with util(3) in the case of DragonFly, too.
+* When specified "--with-kerb5" option, test existence of several functions
+  even if there is krb5-config.  krb5-config dosen't give all definitions for
+  functions (HAVE_KRB5_*).
+* Remove setting sysconfdir to "/etc".
+
+--- configure.orig	2022-03-03 18:29:40.000000000 +0000
++++ configure
+@@ -937,6 +937,7 @@ with_incpath
+ with_libpath
+ with_libraries
+ with_csops
++with_nbsdops
+ with_passwd
+ with_skey
+ with_opie
+@@ -1673,7 +1674,7 @@ Fine tuning of the installation director
+   --bindir=DIR            user executables [EPREFIX/bin]
+   --sbindir=DIR           system admin executables [EPREFIX/sbin]
+   --libexecdir=DIR        program executables [EPREFIX/libexec]
+-  --sysconfdir=DIR        read-only single-machine data [/etc]
++  --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
+   --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
+   --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
+   --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
+@@ -1801,6 +1802,7 @@ Optional Packages:
+   --with-libpath          additional places to look for libraries
+   --with-libraries        additional libraries to link with
+   --with-csops            add CSOps standard options
++  --with-nbsdops          add NetBSD standard options
+   --without-passwd        don't use passwd/shadow file for authentication
+   --with-skey[=DIR]       enable S/Key support
+   --with-opie[=DIR]       enable OPIE support
+@@ -5222,6 +5224,23 @@ fi
+ 
+ 
+ 
++# Check whether --with-nbsdops was given.
++if test "${with_nbsdops+set}" = set; then :
++  withval=$with_nbsdops; case $with_nbsdops in
++    yes)       echo 'Adding NetBSD standard options'
++               CHECKSIA=false
++               with_ignore_dot=yes
++               with_env_editor=yes
++               with_tty_tickets=yes
++               ;;
++    no)                ;;
++    *)         echo "Ignoring unknown argument to --with-nbsdops: $with_nbsdops"
++               ;;
++esac
++fi
++
++
++
+ # Check whether --with-passwd was given.
+ if test ${with_passwd+y}
+ then :
+@@ -17655,7 +17674,7 @@ fi
+ 		: ${mansectform='4'}
+ 		: ${mansectmisc='5'}
+ 		;;
+-    *-*-linux*|*-*-k*bsd*-gnu)
++    *-*-linux*|*-*-k*bsd*-gnu|*-*-gnukfreebsd)
+ 		shadow_funcs="getspnam"
+ 		test -z "$with_pam" && AUTH_EXCL_DEF="PAM"
+ 		# Check for SECCOMP_SET_MODE_FILTER in linux/seccomp.h
+@@ -19579,7 +19598,7 @@ then :
+  LOGINCAP_USAGE='[-c class] '; LCMAN=1
+ 	with_logincap=yes
+ 	case "$OS" in
+-	    freebsd*|netbsd*)
++	    dragonfly*|freebsd*|netbsd*)
+ 		SUDO_LIBS="${SUDO_LIBS} -lutil"
+ 		SUDOERS_LIBS="${SUDOERS_LIBS} -lutil"
+ 		;;
+@@ -27725,6 +27744,8 @@ fi
+ rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+ 	AUTH_OBJS="$AUTH_OBJS kerb5.lo"
+     fi
++fi
++if test ${with_kerb5-'no'} != "no"; then
+     _LIBS="$LIBS"
+     LIBS="${LIBS} ${SUDOERS_LIBS}"
+     ac_fn_c_check_func "$LINENO" "krb5_verify_user" "ac_cv_func_krb5_verify_user"
+@@ -32277,7 +32298,6 @@ test "$docdir" = '${datarootdir}/doc/${P
+ test "$localedir" = '${datarootdir}/locale' && localedir='$(datarootdir)/locale'
+ test "$localstatedir" = '${prefix}/var' && localstatedir='$(prefix)/var'
+ test "$runstatedir" = '${localstatedir}/run' && runstatedir='$(localstatedir)/run'
+-test "$sysconfdir" = '${prefix}/etc' && sysconfdir='/etc'
+ 
+ if test X"$INIT_SCRIPT" != X""; then
+     ac_config_files="$ac_config_files etc/init.d/$INIT_SCRIPT"

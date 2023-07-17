@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:47:11 nia Exp $
+
+BLAKE2s (tex-pst-lens-15878/pst-lens.tar.xz) = f297f6046de5e653045c8d9cf360fe1e7ba30a64efb50682e8491ce803ba8320
+SHA512 (tex-pst-lens-15878/pst-lens.tar.xz) = 3c23dede50c9262003063de39e7725bc27c36fba3a11f2ba371adfdddde11fe64e4e2fb8843d082949538978f84f8e7382b3cfb30319c1c3fd20597db2d6cf0a
+Size (tex-pst-lens-15878/pst-lens.tar.xz) = 2052 bytes

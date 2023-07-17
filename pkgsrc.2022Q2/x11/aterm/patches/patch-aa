@@ -1,0 +1,52 @@
+$NetBSD: patch-aa,v 1.8 2018/11/30 17:30:24 nia Exp $
+
+- Use ctype.h functions properly.
+- Don't assume :0 if DISPLAY isn't set.
+
+--- src/main.c.orig	2007-08-01 14:08:29.000000000 +0000
++++ src/main.c
+@@ -196,7 +196,7 @@ xerror_handler (Display * dpy, XErrorEve
+ void
+ color_aliases(int idx)
+ {
+-    if (rs_color[idx] && isdigit(*rs_color[idx])) {
++    if (rs_color[idx] && isdigit((unsigned char)*rs_color[idx])) {
+ 	int             i = atoi(rs_color[idx]);
+ 
+ 	if (i >= 8 && i <= 15) {	/* bright colors */
+@@ -1218,7 +1218,7 @@ set_window_color(int idx, const char *co
+ 	return;
+ 
+ /* handle color aliases */
+-    if (isdigit(*color)) {
++    if (isdigit((unsigned char)*color)) {
+ 	i = atoi(color);
+ 	if (i >= 8 && i <= 15) {	/* bright colors */
+ 	    i -= 8;
+@@ -1435,7 +1435,7 @@ change_font(int init, const char *fontna
+ 		break;
+ 
+ 	    default:
+-		if (fontname[1] != '\0' && !isdigit(fontname[1]))
++		if (fontname[1] != '\0' && !isdigit((unsigned char)fontname[1]))
+ 		    return;
+ 		if (idx < 0 || idx >= (NFONTS))
+ 		    return;
+@@ -2057,9 +2057,14 @@ main(int argc, char *argv[])
+  */
+     get_options(argc, argv);
+ 
+-	if( display_name == NULL )
+-    	if ((display_name = getenv("DISPLAY")) == NULL)
+-			display_name = ":0";
++    if( display_name == NULL )
++	display_name = getenv("DISPLAY");
++
++    if( display_name == NULL )
++    {
++	print_error("DISPLAY variable not set and none given");
++	exit(EXIT_FAILURE);
++    }
+ 
+ #ifdef HAVE_AFTERSTEP
+ #ifdef MyArgs_IS_MACRO	

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (kscreenlocker-5.18.5.tar.xz) = 47d1646b18bf7f5a5508f5108c8c1daddf8a1042059369706e3b637d60e11e49
+SHA512 (kscreenlocker-5.18.5.tar.xz) = 27e2e30c247b4030a618631f50edc8cbdbb26b51adb875a608f93fc4c0f4dff310819042a74170ff024b030dedda89c6a3a14b23aacfc5938db026adde225e47
+Size (kscreenlocker-5.18.5.tar.xz) = 125144 bytes

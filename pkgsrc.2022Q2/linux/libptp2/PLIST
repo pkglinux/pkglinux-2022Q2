@@ -1,0 +1,6 @@
+@comment $NetBSD$
+bin/ptpcam
+include/libptp2/libptp-endian.h
+include/libptp2/libptp-stdint.h
+include/libptp2/ptp.h
+lib/libptp2.la

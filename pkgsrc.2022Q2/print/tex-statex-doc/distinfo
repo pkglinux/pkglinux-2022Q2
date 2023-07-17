@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:14:41 nia Exp $
+
+BLAKE2s (tex-statex-20306/statex.doc.tar.xz) = 21df54d2289c598b0c5ca85c3b4bce70c8f182163d6440fe2ad7d89adb445c4e
+SHA512 (tex-statex-20306/statex.doc.tar.xz) = ce1f239dbbb2023dd42347ffdbd3467562126df56bc05911fa6ad4fa253c4e8ba7d4cc58953030c3ea0e8edcce92136b103bf0de6087317b186097a2cea7ce9c
+Size (tex-statex-20306/statex.doc.tar.xz) = 177208 bytes

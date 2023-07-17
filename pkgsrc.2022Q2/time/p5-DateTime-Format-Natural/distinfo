@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.23 2022/02/14 14:23:01 wen Exp $
+
+BLAKE2s (DateTime-Format-Natural-1.13.tar.gz) = c26d0dce95cde9c4e8a8913069653c5ffce957e541fc1cc7e896b31d2d313aca
+SHA512 (DateTime-Format-Natural-1.13.tar.gz) = 1fb1862232ba32558c573b17a1d167b13c49eb3e118c9a068baf303e627d79f5dc448dbd7d4b402a8de88b9d987c5b798176b5aacdbef3d4a96c5ce33d3aff32
+Size (DateTime-Format-Natural-1.13.tar.gz) = 83127 bytes

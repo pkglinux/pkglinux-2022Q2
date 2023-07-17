@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.62 2022/04/03 07:48:07 ast Exp $
+
+BLAKE2s (Net-DNS-1.33.tar.gz) = db0d4662836dad8444568c23af9dbf526bcceae5ed5903babe8f8c6adc949b96
+SHA512 (Net-DNS-1.33.tar.gz) = cfad879418386b323464c14fd887120229a2f6b68aeb194aea345d65fe6c14ca58b3692fe89b388cccf0b3876d6eaf284ae8c39832543c46990b636f84aef9f4
+Size (Net-DNS-1.33.tar.gz) = 262218 bytes

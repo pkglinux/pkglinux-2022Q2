@@ -1,0 +1,15 @@
+$NetBSD: patch-ab,v 1.5 2020/07/29 10:28:27 mef Exp $
+
+Give proper error message when OS detection failed
+
+--- oschooser.pl.orig	2007-04-09 05:00:00.000000000 +0000
++++ oschooser.pl
+@@ -107,6 +107,8 @@ if (!$auto) {
+ 		}
+ 	else {
+ 		# ask for the operating system name ourselves
++		print "Automatic OS detection failed";
++		exit 9; # Be non-interactive under all circumstances.
+ 		$dashes = "-" x 75;
+ 		print <<EOF;
+ For Webmin to work properly, it needs to know which operating system

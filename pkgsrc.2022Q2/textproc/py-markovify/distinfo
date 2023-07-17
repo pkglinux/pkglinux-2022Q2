@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2022/04/12 18:27:35 nikita Exp $
+
+BLAKE2s (markovify-0.9.4.tar.gz) = 193d510dfb713c84bc8669c3d5188108a14756ffa48bbb7a9007d6feec3199e7
+SHA512 (markovify-0.9.4.tar.gz) = ba05812114788c6572501a03fcc3b983ed78c5ecd65442f4d5684d4a61cab9086a003aa351c2fda72949272ad6d9a08aa5f045eb8dabd09878272bea7ff2ab30
+Size (markovify-0.9.4.tar.gz) = 27850 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/04/07 02:51:03 markd Exp $
+
+BLAKE2s (symbol.r61719.tar.xz) = 055d2312b85654138a10d06aa8f02a5fef4091cb4dcdff9d3ed68b1b634de4e6
+SHA512 (symbol.r61719.tar.xz) = 1a2d3239cf7c9910b19db527d5c2b43af2b399114b3186505e790a139ae5ef82c2ff1ecd5adc858a46febaf2e46e028037ba65bd5b84fec0737edd89d5061c09
+Size (symbol.r61719.tar.xz) = 36104 bytes

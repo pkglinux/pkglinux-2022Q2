@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/14 06:37:42 markd Exp $
+
+BLAKE2s (tkz-fct.r61949.tar.xz) = c6c744c2365e2949960d83909083b56c1398959dc76514db2333fe320b35c3e0
+SHA512 (tkz-fct.r61949.tar.xz) = ce605595518cb9b400a5b49620b5f359de8e0fefbc939d88b8f5aa2113a856ce05f4e9f56bb149c73e5f46c65d7d340a65edd6f1b55f6cca68b10dfaf7e04a87
+Size (tkz-fct.r61949.tar.xz) = 4740 bytes

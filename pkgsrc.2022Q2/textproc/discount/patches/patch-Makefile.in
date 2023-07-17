@@ -1,0 +1,92 @@
+$NetBSD: patch-Makefile.in,v 1.3 2019/06/10 13:32:56 schmonz Exp $
+
+Libtoolize for portability across pkgsrc platforms.
+
+--- Makefile.in.orig	2019-04-15 15:28:20.000000000 +0000
++++ Makefile.in
+@@ -1,3 +1,4 @@
++LIBTOOL=libtool --tag=CC
+ CC=@CC@
+ CFLAGS=@CFLAGS@
+ LDFLAGS=@LDFLAGS@
+@@ -7,8 +8,8 @@ INSTALL_PROGRAM=@INSTALL_PROGRAM@
+ INSTALL_DIR=@INSTALL_DIR@
+ INSTALL_DATA=@INSTALL_DATA@
+ 
+-BUILD=$(CC) -I. $(CFLAGS)
+-LINK=$(CC) -L. $(LDFLAGS)
++BUILD=$(LIBTOOL) --mode=compile $(CC) -I. $(CFLAGS)
++LINK=$(LIBTOOL) --mode=link $(CC) -L. $(LDFLAGS)
+ 
+ .c.o:
+ 	$(BUILD) -c -o $@ $<
+@@ -39,8 +40,10 @@ MAN3PAGES=mkd-callbacks.3 mkd-functions.
+ all: $(PGMS) $(SAMPLE_PGMS) $(TESTFRAMEWORK)
+ 
+ install: $(PGMS) $(DESTDIR)$(BINDIR) $(DESTDIR)$(LIBDIR) $(DESTDIR)$(INCDIR) $(DESTDIR)$(PKGDIR)
+-	$(INSTALL_PROGRAM) $(PGMS) $(DESTDIR)$(BINDIR)
+-	./librarian.sh install libmarkdown VERSION $(DESTDIR)$(LIBDIR)
++	for x in $(PGMS); do \
++	    $(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(BINDIR)/$$x; \
++	done
++	$(LIBTOOL) --mode=install $(BSD_INSTALL_LIB) $(MKDLIB).la $(DESTDIR)$(LIBDIR)/$(MKDLIB).la
+ 	$(INSTALL_DATA) mkdio.h $(DESTDIR)$(INCDIR)
+ 	@MK_PKGCONFIG@$(INSTALL_DATA) $(MKDLIB).pc $(DESTDIR)$(PKGDIR)
+ 
+@@ -49,7 +52,7 @@ install.everything: install install.samp
+ install.samples: $(SAMPLE_PGMS) install $(DESTDIR)$(BINDIR)
+ 	$(INSTALL_DIR) $(DESTDIR)$(MANDIR)/man1
+ 	for x in $(SAMPLE_PGMS); do \
+-	    $(INSTALL_PROGRAM) $$x $(DESTDIR)$(BINDIR)/$(SAMPLE_PFX)$$x; \
++	    $(LIBTOOL) --mode=install $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(BINDIR)/$(SAMPLE_PFX)$$x; \
+ 	    $(INSTALL_DATA) $$x.1 $(DESTDIR)$(MANDIR)/man1/$(SAMPLE_PFX)$$x.1; \
+ 	done
+ 
+@@ -100,19 +103,19 @@ mktags: mktags.o
+ 
+ # example programs
+ @THEME@theme:  theme.o $(COMMON) $(MKDLIB) mkdio.h
+-@THEME@	$(LINK) -o theme theme.o $(COMMON) -lmarkdown @LIBS@
++@THEME@	$(LINK) -o theme theme.o $(COMMON) $(MKDLIB).la @LIBS@
+ 
+ 
+ mkd2html:  mkd2html.o $(MKDLIB) mkdio.h gethopt.h $(COMMON)
+-	$(LINK) -o mkd2html mkd2html.o $(COMMON) -lmarkdown @LIBS@
++	$(LINK) -o mkd2html mkd2html.o $(COMMON) $(MKDLIB).la @LIBS@
+ 
+ markdown: main.o $(COMMON) $(MKDLIB)
+-	$(LINK) -o markdown main.o $(COMMON) -lmarkdown @LIBS@
++	$(LINK) -o markdown main.o $(COMMON) $(MKDLIB).la @LIBS@
+ 	
+ makepage.o: makepage.c mkdio.h
+ 	$(BUILD) -c makepage.c
+ makepage:  makepage.o $(COMMON) $(MKDLIB)
+-	$(LINK) -o makepage makepage.o $(COMMON) -lmarkdown @LIBS@
++	$(LINK) -o makepage makepage.o $(COMMON) $(MKDLIB).la @LIBS@
+ 
+ pgm_options.o: pgm_options.c mkdio.h config.h
+ 	$(BUILD) -c pgm_options.c
+@@ -126,8 +129,12 @@ gethopt.o: gethopt.c
+ main.o: main.c mkdio.h config.h
+ 	$(BUILD) -c main.c
+ 
+-$(MKDLIB): $(OBJS)
+-	./librarian.sh make $(MKDLIB) VERSION $(OBJS)
++libtool-version-info: VERSION
++	awk -F. '{ printf "%d:%d:0\n", $$1 - 1, $$2 }' < VERSION > libtool-version-info
++
++$(MKDLIB): $(MKDLIB).la
++$(MKDLIB).la: $(OBJS) libtool-version-info
++	$(LINK) -o $(MKDLIB).la $(OBJS:S/.o/.lo/g) -version-info `cat libtool-version-info` -rpath $(LIBDIR)
+ 
+ verify: echo tools/checkbits.sh
+ 	@./echo -n "headers ... "; tools/checkbits.sh && echo "GOOD"
+@@ -139,7 +146,7 @@ test:	$(PGMS) $(TESTFRAMEWORK) verify
+ 
+ pandoc_headers.o: tools/pandoc_headers.c config.h
+ 	$(BUILD) -c -o pandoc_headers.o tools/pandoc_headers.c
+-pandoc_headers: pandoc_headers.o
++pandoc_headers: pandoc_headers.o $(COMMON) $(MKDLIB)
+ 	$(LINK) -o pandoc_headers pandoc_headers.o $(COMMON) -lmarkdown 
+ 
+ branch.o: tools/branch.c config.h

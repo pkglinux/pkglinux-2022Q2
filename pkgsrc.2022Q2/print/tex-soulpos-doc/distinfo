@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/09 03:17:44 markd Exp $
+
+BLAKE2s (soulpos.doc.r60772.tar.xz) = 194d98d42fa24b8d164ec21ecf3eaee6a299da1aadd2a97b529197bef5247d46
+SHA512 (soulpos.doc.r60772.tar.xz) = 9577aa2c77e9cafea54eee0ee032acd7c1343d6eb66b76fc25d694b524630bd2f41043187671cd444c9cdd0ccc8b9064e6c71365492cbdbd46517a061efc87cc
+Size (soulpos.doc.r60772.tar.xz) = 177844 bytes

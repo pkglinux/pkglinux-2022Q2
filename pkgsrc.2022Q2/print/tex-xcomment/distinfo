@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:15:07 nia Exp $
+
+BLAKE2s (tex-xcomment-20031/xcomment.tar.xz) = 9af17b9234a4ab5a841d63c5421209acfaef269cb3f62bab2d8961497bb200b4
+SHA512 (tex-xcomment-20031/xcomment.tar.xz) = a5354472d86a8787dc083941e8ae8dc90307512451d0763d45140e5b629ce1b21fdc3de7d1f5ec96daa504b7fe3e73172383edbe44ac997b34f6540c65a5a894
+Size (tex-xcomment-20031/xcomment.tar.xz) = 2336 bytes

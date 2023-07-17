@@ -1,0 +1,10 @@
+/patch-configure/1.6/Tue May 24 11:50:12 2022//Tpkgsrc-2022Q2
+/patch-src_Makefile.in/1.1/Wed May 18 11:20:35 2022//Tpkgsrc-2022Q2
+/patch-src_auth_pool__hba.c/1.2/Wed May 18 11:20:35 2022//Tpkgsrc-2022Q2
+/patch-src_include_pool.h/1.2/Wed Apr 28 09:18:55 2021//Tpkgsrc-2022Q2
+/patch-src_include_utils_fe__ports.h/1.1/Wed Apr 28 09:18:55 2021//Tpkgsrc-2022Q2
+/patch-src_main_pgpool__main.c/1.1/Wed Apr 28 09:18:55 2021//Tpkgsrc-2022Q2
+/patch-src_sample_pgpool.conf.sample/1.4/Wed May 18 11:20:35 2022//Tpkgsrc-2022Q2
+/patch-src_tools_pgproto_read.c/1.1/Wed Apr 28 09:18:55 2021//Tpkgsrc-2022Q2
+/patch-src_watchdog_wd__escalation.c/1.2/Wed Apr 28 09:18:55 2021//Tpkgsrc-2022Q2
+D

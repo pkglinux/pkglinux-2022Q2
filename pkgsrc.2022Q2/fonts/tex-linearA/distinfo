@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/01 20:33:21 markd Exp $
+
+BLAKE2s (lineara.r63169.tar.xz) = 1e96bf4855bb3776d374ae8cb156339a0c1845d148769652be4da4cd7abbde8c
+SHA512 (lineara.r63169.tar.xz) = b87051ba4647ed2f0beb8e5bfe8419d8558421f509cb6eaa931f47a10488dfac4e36b3ece1cfdbf3e46eb431c3d15e7a7005f27522dbc4cfe6de52ce6127bea5
+Size (lineara.r63169.tar.xz) = 151824 bytes

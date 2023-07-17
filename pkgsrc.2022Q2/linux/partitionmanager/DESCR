@@ -1,0 +1,15 @@
+
+KDE Partition Manager is an application to help you manage the disk devices, partitions and file systems on your computer. It allows you to easily create, copy, move, delete, resize without losing data, backup and restore partitions.
+
+A large number of file systems are also supported:
+
+    ext2/3/4, Btrfs, Linux swap
+    Reiserfs
+    F2FS
+    NTFS
+    FAT
+    exFAT
+    LUKS encryption support
+    and more....
+
+zap Back up your data before using this software. KDE Partition Manager is a potentially dangerous program for your data. It has been tested carefully and there are currently no known bugs that could lead to data loss, but nevertheless there is always a chance for an error to occur and you might lose your data.

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.30 2022/06/01 10:48:47 fcambus Exp $
+
+BLAKE2s (dbip-city-lite-2022-06.mmdb.gz) = 09356c3f7500c90c0725e10dc6c36663c6ce26c34dbf8cd790ffc5b39557863b
+SHA512 (dbip-city-lite-2022-06.mmdb.gz) = 14c4f908d7df43a48842928170e3e7ad4d3ba259ed02c335ffa87a74dc51f9adafb580097cc2ddb6a70cb359dfc6cdc2301013a2375b0df8ec14b3ddb09e3827
+Size (dbip-city-lite-2022-06.mmdb.gz) = 47743696 bytes

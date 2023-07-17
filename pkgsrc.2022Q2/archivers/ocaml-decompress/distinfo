@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/03 19:45:12 jaapb Exp $
+
+BLAKE2s (decompress-1.4.3.tar.gz) = 08e926cee62450bbd0bf197792d008acc845b559fe629c748b08940dcbb94421
+SHA512 (decompress-1.4.3.tar.gz) = 0bdb09cc41fde25edd61578295dd1859c149861ff73d6719d76ad4ba409a765c42d3e0f0ee76cc5cccd9624150bff786dba065444b16270fe41924729936db68
+Size (decompress-1.4.3.tar.gz) = 1173917 bytes

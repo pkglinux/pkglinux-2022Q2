@@ -1,0 +1,27 @@
+$NetBSD: patch-wscript,v 1.2 2020/08/15 02:31:28 tnn Exp $
+
+- don't hardcode PREFIX
+
+--- wscript.orig	2020-05-24 03:00:19.000000000 +0000
++++ wscript
+@@ -497,18 +497,10 @@ int main(int argc, char **argv) {
+ 
+     # XXX: hack
+     if ctx.env.DEST_OS in ["freebsd"]:
+-        ctx.env.INCLUDES = ["/usr/local/include"]
+-        ctx.env.LIBPATH = ["/usr/local/lib"]
++        pass
+     elif ctx.env.DEST_OS == "netbsd" and os.path.isdir("/usr/pkg/include"):
+-        ctx.env.INCLUDES = ["/usr/pkg/include"]
+-        ctx.env.LIBPATH = ["/usr/pkg/lib"]
+-        ctx.env.LDFLAGS += ["-rpath=/usr/pkg/lib"]
++        pass
+     elif ctx.env.DEST_OS == "darwin":
+-        # macports location
+-        if os.path.isdir("/opt/local/include"):
+-            ctx.env.INCLUDES = ["/opt/local/include"]
+-        if os.path.isdir("/opt/local/lib"):
+-            ctx.env.LIBPATH = ["/opt/local/lib"]
+         # OS X needs this for IPv6
+         ctx.define("__APPLE_USE_RFC_3542", 1,
+                    comment="Needed for IPv6 support")

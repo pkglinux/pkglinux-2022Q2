@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.12 2021/10/26 10:46:37 nia Exp $
+
+BLAKE2s (GraphViz-2.24.tgz) = 47c551fe77963b61056be809e655d6a587f88c0d06930921840ddf90f46cf926
+SHA512 (GraphViz-2.24.tgz) = b37d1303c243a306443d5adf35d597f4e259cedaa7956d80bdb47cba811ce94e63da6b42a23d192fa9da628d999f1c023911f3f956a575aeabe673f77f3f01d9
+Size (GraphViz-2.24.tgz) = 95475 bytes

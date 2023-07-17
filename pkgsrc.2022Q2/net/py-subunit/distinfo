@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:06:44 nia Exp $
+
+BLAKE2s (python-subunit-1.4.0.tar.gz) = 795ae6ca47b17468014c94b40577245cf9738c2411de7d4b2360eb2ff61a5714
+SHA512 (python-subunit-1.4.0.tar.gz) = 7f8ebf1cfdd7ff22bfd68367cb90dd75e7f3b5f7da71830b304225905e1799ad1ec8f0d41f5f98895c831dc10fe77229137a472b8e8e57ea84c05c66694a5b5b
+Size (python-subunit-1.4.0.tar.gz) = 100059 bytes

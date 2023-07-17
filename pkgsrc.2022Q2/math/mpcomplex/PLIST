@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.2 2018/01/01 22:29:43 rillig Exp $
+include/mpc.h
+info/mpc.info
+lib/libmpc.la
+native/lib/libmpc.a
+native/lib/libmpc.la
+native/lib/libmpc.so
+native/lib/libmpc.so.3
+native/lib/libmpc.so.3.1.0
+native/usr/include/mpc.h

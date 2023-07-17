@@ -1,0 +1,16 @@
+@comment $NetBSD: PLIST,v 1.5 2018/01/01 22:29:58 rillig Exp $
+rtty/bin/Startup
+rtty/bin/agelog
+rtty/bin/agelogs
+rtty/bin/console
+rtty/bin/locbrok
+rtty/bin/rtty
+rtty/bin/startsrv
+rtty/bin/ttysrv
+share/doc/rtty/README
+@comment rtty/bin created above
+@pkgdir rtty/dev
+@pkgdir rtty/sock
+@pkgdir rtty/log
+@pkgdir rtty/pid
+@pkgdir rtty/opt

@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- daemon/meson.build.orig	2021-04-30 11:19:33.189706000 +0000
++++ daemon/meson.build
+@@ -366,7 +366,6 @@ if enable_admin
+   )
+ 
+   i18n.merge_file(
+-    policy,
+     input: policy_in,
+     output: '@BASENAME@',
+     po_dir: po_dir,

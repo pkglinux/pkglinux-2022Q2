@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.42 2022/06/13 15:45:22 wiz Exp $
+
+BLAKE2s (libzip-1.9.0.tar.xz) = 4aa8786c7380da893acc2efdad88f4fc87c018690ee435a3aba224b9ded89748
+SHA512 (libzip-1.9.0.tar.xz) = dd0c7046f5b1faf00690774572982e870edaa1819563f9ebf7caf823c9c5718623576a7135a64c9acfed9cefac5601cf944b7aa0b623986f5c85743f3014b349
+Size (libzip-1.9.0.tar.xz) = 763704 bytes

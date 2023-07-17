@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/11/05 20:45:06 rhialto Exp $
+
+BLAKE2s (fontawesome-free-5.15.0-desktop.zip) = c98d6e393d1fe709394b083078a5866db19863659d43992cd7e8a2a2e5f17c4b
+SHA512 (fontawesome-free-5.15.0-desktop.zip) = 4b63add5c48352f90a0fd378aa8cd002e5d65a88c56f28d6b5bd549d484db9a455131a229a2efea9b8e1026183c7f3db5a617dbc77c727a4e5fff1ebeac3eb16
+Size (fontawesome-free-5.15.0-desktop.zip) = 2274796 bytes

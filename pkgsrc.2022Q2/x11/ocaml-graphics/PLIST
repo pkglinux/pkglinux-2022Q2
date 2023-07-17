@@ -1,0 +1,25 @@
+@comment $NetBSD: PLIST,v 1.11 2019/05/14 16:01:17 jaapb Exp $
+${OCAML_SITELIB}/graphics/META
+${OCAML_SITELIB}/graphics/dune-package
+${PLIST.ocaml-opt}${OCAML_SITELIB}/graphics/graphics.a
+${OCAML_SITELIB}/graphics/graphics.cma
+${OCAML_SITELIB}/graphics/graphics.cmi
+${OCAML_SITELIB}/graphics/graphics.cmt
+${OCAML_SITELIB}/graphics/graphics.cmti
+${PLIST.ocaml-opt}${OCAML_SITELIB}/graphics/graphics.cmx
+${PLIST.ocaml-opt}${OCAML_SITELIB}/graphics/graphics.cmxa
+${PLIST.ocaml-opt}${OCAML_SITELIB}/graphics/graphics.cmxs
+${OCAML_SITELIB}/graphics/graphics.ml
+${OCAML_SITELIB}/graphics/graphics.mli
+${OCAML_SITELIB}/graphics/graphicsX11.cmi
+${OCAML_SITELIB}/graphics/graphicsX11.cmt
+${OCAML_SITELIB}/graphics/graphicsX11.cmti
+${PLIST.ocaml-opt}${OCAML_SITELIB}/graphics/graphicsX11.cmx
+${OCAML_SITELIB}/graphics/graphicsX11.ml
+${OCAML_SITELIB}/graphics/graphicsX11.mli
+${PLIST.ocaml-opt}${OCAML_SITELIB}/graphics/libgraphics_stubs.a
+${OCAML_SITELIB}/graphics/opam
+${OCAML_SITELIB}/stublibs/dllgraphics_stubs.so
+share/doc/graphics/CHANGES.md
+share/doc/graphics/LICENSE
+share/doc/graphics/README.md

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/01/05 21:26:01 wiz Exp $
+
+BLAKE2s (cssutils-2.3.0.tar.gz) = 8ceeae5b5ef226a66c8624e38d2b9ec625320f2b43f4aa678a3b7b98547091c0
+SHA512 (cssutils-2.3.0.tar.gz) = 9919224a61222e860a99ec80e6375a472b89c52af72272c1de7bcd5fd31cf8570a04da7762c62a17a85bef2c41b1c67447583087df4c86c1f8969ad4875a76d2
+Size (cssutils-2.3.0.tar.gz) = 725849 bytes

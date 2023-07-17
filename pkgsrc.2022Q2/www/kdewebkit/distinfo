@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2022/04/25 07:15:40 markd Exp $
+
+BLAKE2s (kdewebkit-5.93.0.tar.xz) = 79e69a7001643ccb62afabadcb26e6de4dfacc4fb42e3b7c91c6706783c70fed
+SHA512 (kdewebkit-5.93.0.tar.xz) = 2625a5a58795cc7619fd7328fd1581a7fea155913a3aa4f911d38ac9be5cc57d79d9115d08a731ca0b4970622fff16f752100ad4ab45f6bd16dfc4b1667952d8
+Size (kdewebkit-5.93.0.tar.xz) = 30088 bytes

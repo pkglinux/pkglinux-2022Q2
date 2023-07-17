@@ -1,0 +1,10 @@
+/patch-Makefile.PL/1.4/Mon May  3 17:12:23 2021//Tpkgsrc-2022Q2
+/patch-lib_FusionInventory_Agent_Task_Inventory_BSD.pm/1.1/Thu May  6 20:25:15 2021//Tpkgsrc-2022Q2
+/patch-lib_FusionInventory_Agent_Task_Inventory_BSD_Alpha.pm/1.1/Thu May  6 20:25:15 2021//Tpkgsrc-2022Q2
+/patch-lib_FusionInventory_Agent_Task_Inventory_BSD_MIPS.pm/1.1/Thu May  6 20:25:15 2021//Tpkgsrc-2022Q2
+/patch-lib_FusionInventory_Agent_Task_Inventory_BSD_SPARC.pm/1.1/Thu May  6 20:25:15 2021//Tpkgsrc-2022Q2
+/patch-lib_FusionInventory_Agent_Task_Inventory_BSD_Storages.pm/1.1/Thu May  6 20:25:15 2021//Tpkgsrc-2022Q2
+/patch-lib_FusionInventory_Agent_Task_Inventory_Generic_PCI.pm/1.1/Thu May  6 20:25:15 2021//Tpkgsrc-2022Q2
+/patch-lib_FusionInventory_Agent_Tools_BSD.pm/1.1/Thu May  6 20:25:15 2021//Tpkgsrc-2022Q2
+/patch-lib_FusionInventory_Agent_Tools_Generic.pm/1.2/Fri May  7 18:27:20 2021//Tpkgsrc-2022Q2
+D

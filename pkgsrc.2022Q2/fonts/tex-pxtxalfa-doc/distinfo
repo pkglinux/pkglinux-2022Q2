@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/15 04:36:23 markd Exp $
+
+BLAKE2s (pxtxalfa.doc.r60847.tar.xz) = 55efbc8ff9dad92657bfbd00d7f2813974c55ee5d3c872a1fc48facff52bf7fb
+SHA512 (pxtxalfa.doc.r60847.tar.xz) = f547cbd3cc4a0e09034e98a27bfedf41e2e2ab9b6561e441d7656b99b6b883bb51f9fa24d731d403133358917428c53489eacf8c7ede08a963ff06c3d0404c1a
+Size (pxtxalfa.doc.r60847.tar.xz) = 209364 bytes

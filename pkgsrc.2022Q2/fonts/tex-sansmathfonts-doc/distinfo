@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/04/09 02:52:01 markd Exp $
+
+BLAKE2s (sansmathfonts.doc.r59673.tar.xz) = d9b88a9f875cad04e42c032c7dddfcecba073bf52fa952ecfad89f2958d3cf78
+SHA512 (sansmathfonts.doc.r59673.tar.xz) = 0aa7efe2afcf020bcb15e185fc402e6a8c65cb7c8b563217cede4ca23f58a5ce4bc3028cdc140a4d9354b62830471d8a8e49f23c8c6e48c161fe859fc60306bb
+Size (sansmathfonts.doc.r59673.tar.xz) = 297124 bytes

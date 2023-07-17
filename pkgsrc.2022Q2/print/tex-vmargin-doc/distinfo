@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:15:05 nia Exp $
+
+BLAKE2s (tex-vmargin-15878/vmargin.doc.tar.xz) = 3d0eed23f15d981b3b25bf0a88bb786240a14a332883d5844f1b1718ce67cfba
+SHA512 (tex-vmargin-15878/vmargin.doc.tar.xz) = bdf1c64542459861d9c8389f2f339c895466ecf106b6acb3b37dc20d13462f1bc31e469baed1154cfc9fd3b76b83773cc02882e0b60fc50ab15a30e1340051c8
+Size (tex-vmargin-15878/vmargin.doc.tar.xz) = 155344 bytes

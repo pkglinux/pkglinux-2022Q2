@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.12 2022/05/05 12:06:10 jaapb Exp $
+
+BLAKE2s (ppx_tools-6.5.tar.gz) = eccabd886c1d88abcebd5119528324831543e049ca740898777a301832a40d1e
+SHA512 (ppx_tools-6.5.tar.gz) = 1dc3f62307690161fc7d9f54715918341429bbe13dd68744e9468b41ab7c15ec95cb865135d11c3e3edc6cfb02658b0c731ce1e7756267cf71143ea8e88318fe
+Size (ppx_tools-6.5.tar.gz) = 19200 bytes

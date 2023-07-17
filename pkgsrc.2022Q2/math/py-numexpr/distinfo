@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.21 2022/01/04 23:35:37 wiz Exp $
+
+BLAKE2s (numexpr-2.8.1.tar.gz) = b615ab70bd587321becffbffbb535547320b76fb91deeb7d00f26d68644f1396
+SHA512 (numexpr-2.8.1.tar.gz) = e948051e2a19530270be4b328625bbd7b51c5030aeb78fe8e58b4bb2f28ff927a579d0e003b9bcb35ced1fa6a7bf507f1b72932a940224c9876dd86d7370d899
+Size (numexpr-2.8.1.tar.gz) = 94824 bytes

@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README
+
+# libndp - Library for Neighbor Discovery Protocol #
+
+This package contains a library which provides a wrapper
+for IPv6 Neighbor Discovery Protocol.  It also provides a tool
+named ndptool for sending and receiving NDP messages.
+
+## Install
+
+    $ ./autogen.sh
+    $ ./configure
+    $ make
+    $ sudo make install
+
+## Authors
+
+* Jiri Pirko <jiri@resnulli.us>
+
+## Internet Resources
+
+* Project Home:     http://www.libndp.org/
+...

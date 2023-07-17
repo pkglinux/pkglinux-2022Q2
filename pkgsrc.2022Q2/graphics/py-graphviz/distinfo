@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.19 2021/12/30 21:20:13 adam Exp $
+
+BLAKE2s (graphviz-0.19.1.zip) = 02f0a389d5cf20c44c109e8bf57df7d552552126a33a3b8906895069c07e6093
+SHA512 (graphviz-0.19.1.zip) = 3aa078887458d7bcd173c46ee6e4d8dbdae0c9103755e61e5a027c18e5d8913990aa16a595e80228607c17db1aa9dffdb93e264cafafc8b6318bc3a87547bc5d
+Size (graphviz-0.19.1.zip) = 247779 bytes

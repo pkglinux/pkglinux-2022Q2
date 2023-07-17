@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:05:59 nia Exp $
+
+BLAKE2s (mate-user-share-1.24.0.tar.xz) = b89937a03505e0f0cc36f6694b8150a60a56b587fd15024f92cfcc1d49471078
+SHA512 (mate-user-share-1.24.0.tar.xz) = 15ede8754bf95ac78844cd9645a43d2deb8419dd550aee5263936d710cd13ce7f4a68cfd53e589c2dd37f87f59c9e8153f8abac711a3a7f88a2e2789dbd4f664
+Size (mate-user-share-1.24.0.tar.xz) = 1008992 bytes

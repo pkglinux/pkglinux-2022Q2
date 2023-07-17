@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:57:00 nia Exp $
+
+BLAKE2s (dbeacon-0.3.9.1.tar.gz) = 4fe330fd04c84d1cb58d2c74a08111c9a764797c3bec85583f62fac31846c3ec
+SHA512 (dbeacon-0.3.9.1.tar.gz) = 1605725b4c49b1f3720e5fb886ec3d2230d416215fa39270207fd801496da1b432c4a803ecac947cdde182f1f54d473a0696644f76fd7bbc050c8dbcdda06447
+Size (dbeacon-0.3.9.1.tar.gz) = 43893 bytes
+SHA1 (patch-contrib_matrix.pl) = 50a5db8c19e7500ef210b873c8dd114edde5dc40
+SHA1 (patch-dbeacon.cpp) = a666e67d9523d7cd2d11cd60b61e01c4f7f933c7
+SHA1 (patch-dbeacon.h) = 8396f6702402100f37cbae30d19cd2b0bb28fb4a
+SHA1 (patch-dbeacon__posix.cpp) = 757a4f91078348a00bbb2258496f3916bec49ef5

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2021/11/10 07:42:38 nia Exp $
+
+BLAKE2s (jack_umidi-1.1.2.tar.gz) = 65827ee21d6274d836d6aabc09399cfa313808030be3f169560be4666db4108c
+SHA512 (jack_umidi-1.1.2.tar.gz) = e6c9ebf5c9397c94764cff45ffc04c5b3c1894ca3b73878982d0e96d7830a77ac29feba868c4764dd7e20d744bc85ba08b5ab38532601d41e8658861f0596793
+Size (jack_umidi-1.1.2.tar.gz) = 6751 bytes

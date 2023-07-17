@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:16:23 nia Exp $
+
+BLAKE2s (Date-Business-1.2.tar.gz) = bac00a99f54e91f76463fd1a2c7054d6de5ae0e3571db2521bb236684283eb37
+SHA512 (Date-Business-1.2.tar.gz) = 325f7e25fbe5662e296ee7400bf9e7089dff04bfb8ada7abac6fe9bd140bd4e54231d35c576b4d2ca86ffbf88db0bf675247a852f1dad9d69e6886468e5e9bae
+Size (Date-Business-1.2.tar.gz) = 8201 bytes
+SHA1 (patch-aa) = 772188d5ac27dffc0b36452ed51267dcc79ed647

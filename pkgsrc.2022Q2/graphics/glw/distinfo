@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:46:13 nia Exp $
+
+BLAKE2s (glw-8.0.0.tar.bz2) = a948b905c10c6ff31e36ee901f9a0adb02bfc02643cc7a5da67a043369ad6350
+SHA512 (glw-8.0.0.tar.bz2) = 09e1352edb16a9a34b9031996c2a1545d69dc690d7eda10a1aad6a7ad9ef0576d0af8a1b7740dba47f9647b7c957c1d7a078b38747d2d2c28ea39314a0e53587
+Size (glw-8.0.0.tar.bz2) = 221136 bytes

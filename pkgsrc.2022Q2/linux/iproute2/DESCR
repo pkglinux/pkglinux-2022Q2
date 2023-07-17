@@ -1,0 +1,22 @@
+
+This is a set of utilities for Linux networking.
+
+Information:
+    https://wiki.linuxfoundation.org/networking/iproute2
+
+Download:
+    http://www.kernel.org/pub/linux/utils/net/iproute2/
+
+Stable version repository:
+    git://git.kernel.org/pub/scm/network/iproute2/iproute2.git
+
+Development repository:
+    git://git.kernel.org/pub/scm/network/iproute2/iproute2-next.git
+
+How to compile this.
+--------------------
+1. libdbm
+
+arpd needs to have the berkeleydb development libraries. For Debian
+users this is the package with a name like libdbX.X-dev.
+...

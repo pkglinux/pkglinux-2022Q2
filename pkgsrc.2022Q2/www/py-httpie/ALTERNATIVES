@@ -1,0 +1,2 @@
+bin/http @PREFIX@/bin/http-@PYVERSSUFFIX@
+bin/https @PREFIX@/bin/https-@PYVERSSUFFIX@

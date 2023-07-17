@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.13 2021/10/26 10:44:17 nia Exp $
+
+BLAKE2s (neverball-1.6.0.tar.gz) = a31813b747ab5695beca3c01c271f71b96fa6f9ab6b7c30e02b4fe7772fbcec0
+SHA512 (neverball-1.6.0.tar.gz) = 174d05308aee3a5e693782c54dd389439752b3597f28193771041d30f6c4236a5d055b2fcca9460b1005e9f000ddb3cbc01b86ea15c2abbf6e5a7996e836f787
+Size (neverball-1.6.0.tar.gz) = 37772911 bytes
+SHA1 (patch-ab) = 3cca20f42390d22c73c03171f725fe562f73cb0d
+SHA1 (patch-share_common.h) = f7f68029ab39d10dd025557c14f122b9980e437c
+SHA1 (patch-share_solid__draw.h) = 85b3271eb10056f19d79688fca305464063752ba

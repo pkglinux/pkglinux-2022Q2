@@ -1,0 +1,10 @@
+@comment $NetBSD$
+bin/synclient
+bin/syndaemon
+include/xorg/synaptics-properties.h
+lib/pkgconfig/xorg-synaptics.pc
+lib/xorg/modules/input/synaptics_drv.la
+man/man1/synclient.1
+man/man1/syndaemon.1
+man/man4/synaptics.4
+share/X11/xorg.conf.d/70-synaptics.conf

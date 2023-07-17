@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/02/05 09:44:04 adam Exp $
+
+BLAKE2s (mkdocs-1.2.3.tar.gz) = c229e9ccefa381446abbbb39d8ca8e9f4c6e116b4cd884de7e92257c38c9d4b2
+SHA512 (mkdocs-1.2.3.tar.gz) = b49e6124df0af4e36647ab78182c33896737e6cd5aa8fa01293ed108c8faa3bd10ccdfc36ca6b594bca8246ec7fba7bb8e9053adf534657500e7b709dc240d5e
+Size (mkdocs-1.2.3.tar.gz) = 6295861 bytes

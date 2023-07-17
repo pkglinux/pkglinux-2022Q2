@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:59:36 nia Exp $
+
+BLAKE2s (wandio-4.2.2.tar.gz) = 9fde39f846f30d7348a42fd161f99ea7fbb763c39b7c8d6873d60f3df8f7f40d
+SHA512 (wandio-4.2.2.tar.gz) = d7a7e423ba8536892d53c42a196984c50f43770ac3b3e3d10fafba4ec642acfbd292372576424aed54045ed3a5a47d6fad1f947be1faf3046b067ae753a4d78f
+Size (wandio-4.2.2.tar.gz) = 441365 bytes

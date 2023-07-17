@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/01/07 19:50:46 nikita Exp $
+
+BLAKE2s (binwalk-2.3.3.tar.gz) = 7e07f398715fada9204e64cfdd2c0998d4ea4e599683e82164c41a0b693ad2ce
+SHA512 (binwalk-2.3.3.tar.gz) = d7e8d576cfc92b1488ceda7d4577aeaaefb2a251a5aca0b4a497da0dff7c6e6e862e0a77346593c77fb4e54b7de3d3a0c1c8c9421ecec8f06aabbc4b336920c5
+Size (binwalk-2.3.3.tar.gz) = 39723775 bytes

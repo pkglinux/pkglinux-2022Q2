@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- sendto/meson.build.orig	2020-10-01 09:19:42.423873000 +0000
++++ sendto/meson.build
+@@ -22,7 +22,6 @@ desktop_in = configure_file(
+ )
+ 
+ i18n.merge_file (
+-  desktop,
+   type: 'desktop',
+   input: desktop_in,
+   output: desktop,

@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (network-manager-applet-1.16.0.tar.xz) = edaae020cde2732041dfb46807375cb9e39b1da5852bba73316ab8948a986e3c
+SHA512 (network-manager-applet-1.16.0.tar.xz) = 0ad8ac1d05cf76b9a82602c6f8f7034ae52fc11bae0b5ee17cf5bd89c6c91ba3ef7b07f770397b22484d54fd69e7a9a73f8c08a4d3d9f492f11d09d0b0379ff5
+Size (network-manager-applet-1.16.0.tar.xz) = 1944244 bytes
+SHA1 (patch-meson.build) = 7d41407ebb243af26a59fc4dad6e20e13ca06098

@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.20 2022/05/23 15:31:34 jaapb Exp $
+
+BLAKE2s (eliom-10.0.0.tar.gz) = 6ee5fd6f4c6e65b97e7534bda387e5437a28527ee921966d60e52087fd62e643
+SHA512 (eliom-10.0.0.tar.gz) = 9b580bd73e2dd5f687428d02dc9abdde5eef4a8d8d0f69309b29fa34389363b5f18f79f1f646e5efca324743096c1124c862fdd4427bc9d97adef6f72bd03f16
+Size (eliom-10.0.0.tar.gz) = 646242 bytes
+SHA1 (patch-pkg_build.ml) = d10092a7e2b3e56230ca9330a99eb2669a75c38d

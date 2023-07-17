@@ -1,0 +1,13 @@
+@comment $NetBSD: PLIST,v 1.4 2020/09/01 14:06:52 taca Exp $
+man/man8/zkt-conf.8
+man/man8/zkt-keyman.8
+man/man8/zkt-ls.8
+man/man8/zkt-signer.8
+sbin/zkt-conf
+sbin/zkt-keyman
+sbin/zkt-ls
+sbin/zkt-signer
+sbin/zkt-soaserial
+share/doc/zkt/README.logging
+share/doc/zkt/README.md
+@pkgdir etc/zkt

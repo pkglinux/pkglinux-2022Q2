@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/03/19 08:47:25 wiz Exp $
+
+BLAKE2s (libdwarf-0.3.4.tar.xz) = 5711d9fe2daf02830930c8b58f684eca28b08e348fa57d1d9946182a3da0d13e
+SHA512 (libdwarf-0.3.4.tar.xz) = 6957e6c696428b7e59c57e48279528ff602c49ab9833e56a4722f173240eb1373ddd20f5c9dae7c25cc64e6c2131d3b7b5abcf3c12614b88858bdc353a441359
+Size (libdwarf-0.3.4.tar.xz) = 2345036 bytes

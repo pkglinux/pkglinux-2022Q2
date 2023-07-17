@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2022/05/11 08:31:33 adam Exp $
+
+BLAKE2s (jaraco.envs-2.4.0.tar.gz) = b8aeb6cb13bf4cb1131a9b0629bdb6ae73ae30843c7f03ae575208bdfb6f8a81
+SHA512 (jaraco.envs-2.4.0.tar.gz) = d4da2a3f8ec9add63a0b2f754523da5b6593d869537e38c33ea86e59105c4be0cea15546897d70b869cf81be709d9b3fa2cfa35bbefcb9ab32a373ea620553aa
+Size (jaraco.envs-2.4.0.tar.gz) = 7101 bytes

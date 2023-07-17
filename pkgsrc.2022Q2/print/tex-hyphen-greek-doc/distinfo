@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:13:37 nia Exp $
+
+BLAKE2s (tex-hyphen-greek-29725/hyphen-greek.doc.tar.xz) = 0533130233992bd7a48a1e7d34edfe8d62d2afeb5e39bbc935ea4c249c98ea18
+SHA512 (tex-hyphen-greek-29725/hyphen-greek.doc.tar.xz) = 279236c8ab7c21651de654bb07bad707f6ee969323b31a276cefe59f50fd335da1a79b4e6bedd6836a64033da8093b2eed24f44bcbfb06f2d443168d019be442
+Size (tex-hyphen-greek-29725/hyphen-greek.doc.tar.xz) = 727512 bytes

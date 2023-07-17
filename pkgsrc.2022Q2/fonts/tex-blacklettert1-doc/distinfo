@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:35 nia Exp $
+
+BLAKE2s (tex-blacklettert1-15878/blacklettert1.doc.tar.xz) = deedf35a2545c78c16198c4a95f80550d2f0388fdbdc3071a3319dd11a00970d
+SHA512 (tex-blacklettert1-15878/blacklettert1.doc.tar.xz) = 615eeb2861d17dd0649fd563a1654e7674de7df66eb0d4d3f3941cb7e4a8d73fc52951d3c25c5d602eb5f150ce93cb7cea72c1039b4f74462bc272484895899b
+Size (tex-blacklettert1-15878/blacklettert1.doc.tar.xz) = 88900 bytes

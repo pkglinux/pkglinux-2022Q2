@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.13 2022/06/15 10:22:46 fcambus Exp $
+
+BLAKE2s (binaryen-109.tar.gz) = fd65fb90aaa3e0cd76a1d8aa606b42b127a9398b0755747e53217d480d934c69
+SHA512 (binaryen-109.tar.gz) = ab4d99d8900cff765c7671ec83b23d54ff3c9691f915c8434799c1e0095f6645ab1e4c3e27cdb192146ed7cf4eb75448deb70b8e292a2692e4e72812126e7f79
+Size (binaryen-109.tar.gz) = 4134622 bytes
+SHA1 (patch-third__party_CMakeLists.txt) = 02f3f7476049348a29e93ebe3bceb2dbba47ebf3

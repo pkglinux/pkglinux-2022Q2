@@ -1,0 +1,12 @@
+$NetBSD: patch-aa,v 1.4 2020/08/27 12:29:11 joerg Exp $
+
+--- Makefile.orig	1999-09-04 17:07:22.000000000 +0000
++++ Makefile
+@@ -2,5 +2,6 @@
+ 
+ PROG=	qsubst
+-DPADD+=	$(LIBTERMCAP}
++WARNS?=	1
++DPADD+=	${LIBTERMCAP}
+ LDADD+=	-ltermcap
+ 

@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (plasma-workspace-5.18.5.tar.xz) = 43dd48b90876752bb8aa1740a37d54d525f7f39cb455eba4aa3f6cf47641f100
+SHA512 (plasma-workspace-5.18.5.tar.xz) = 870cf89649d9498831f4ef9b21d3c07504b7fc7b09b95dd7e0a1d356b41fbfceed1c4f27aa258bcf1e23cfe915d31701c155325fcd4944f9cc957a287ebc1ee2
+Size (plasma-workspace-5.18.5.tar.xz) = 5696256 bytes
+SHA1 (patch-components_CMakeLists.txt) = bfd03b37aacf39e2ab6e04e8087c5e7f17c5540f

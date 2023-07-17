@@ -1,0 +1,15 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:54:26 nia Exp $
+
+BLAKE2s (quickml-0.7.tar.gz) = 76ea8304fa298661d1444239740375eea1327c88f32525bde547a3cbe1ab1e28
+SHA512 (quickml-0.7.tar.gz) = 48d5ef62430f015ccc58e8111e055064ce10bcf9d7cd5520fe615b869143a24419a360bad9fa0b9908f24c3a92172f8e73d8e2362d28aa1f6a086dd104ddb0a8
+Size (quickml-0.7.tar.gz) = 94147 bytes
+SHA1 (patch-Makefile.in) = d1c73befff63dac3f76dad27d70460527f2a1e2a
+SHA1 (patch-lib_quickml_config.rb) = f47e92e2cd2c89c2d400cca8813c5a82466cec18
+SHA1 (patch-lib_quickml_core.rb) = 87226db72c7196bcfa1a7ec5480e52d2e793e45f
+SHA1 (patch-lib_quickml_gettext.rb) = 7bcb17866ce70a722d0e8107a0825e0e576dbf8d
+SHA1 (patch-lib_quickml_mail.rb) = 75a71941d3480f5c6a95889eccf006296851f877
+SHA1 (patch-lib_quickml_server.rb) = b1f540071cd1d89488c03151704abb418201eea4
+SHA1 (patch-lib_quickml_utils.rb) = 1cb00ffacb3045504b1af59113a5a93327b0bad7
+SHA1 (patch-messages.ja) = bf82d499b0498844fcdd1371e240870d5c1a17f0
+SHA1 (patch-quickml-analog.in) = 834d549051bad5495cac7677eb56f4c0c0f38f2e
+SHA1 (patch-quickml.in) = cab3c2b7d4357f4b3870819cbde21faa1fd39944

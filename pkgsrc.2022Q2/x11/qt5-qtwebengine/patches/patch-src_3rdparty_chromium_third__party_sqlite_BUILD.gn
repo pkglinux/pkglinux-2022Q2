@@ -1,0 +1,31 @@
+$NetBSD: patch-src_3rdparty_chromium_third__party_sqlite_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/third_party/sqlite/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/third_party/sqlite/BUILD.gn
+@@ -138,7 +138,7 @@ config("sqlite_warnings") {
+       ]
+     }
+   }
+-  if (is_linux || is_chromeos) {
++  if (is_linux || is_chromeos || is_bsd) {
+     cflags += [
+       # SQLite doesn't believe in compiler warnings, preferring testing.
+       # http://www.sqlite.org/faq.html#q17
+@@ -191,7 +191,7 @@ component("chromium_sqlite3") {
+     }
+   }
+ 
+-  if (is_linux || is_chromeos || is_android) {
++  if (is_linux || is_chromeos || is_android || is_bsd) {
+     defines += [
+       # Linux provides fdatasync(), a faster equivalent of fsync().
+       "fdatasync=fdatasync",
+@@ -344,7 +344,7 @@ group("sqlite_dev") {
+   ]
+ }
+ 
+-if (is_win || is_mac || is_linux || is_chromeos) {
++if (is_win || is_mac || is_linux || is_chromeos || is_bsd) {
+   executable("sqlite_shell") {
+     include_dirs = [
+       # SQLite's shell.c contains an '#include "sqlite3.h", which we want to be

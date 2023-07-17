@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:05:46 nia Exp $
+
+BLAKE2s (socks-0.6.1.tar.gz) = 0ff29b786a3564767c26315989af17d369283266f7f64eae11fb1264f5eb449e
+SHA512 (socks-0.6.1.tar.gz) = ff56c1b356491e36888f9c1b4187fbd0d00485692960a27ec2f03dbd3c3fb961869d99da1f7a301578ab07df30739d8a0d4ae3c7559c83d0e2493d5de158175b
+Size (socks-0.6.1.tar.gz) = 9759 bytes

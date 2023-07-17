@@ -1,0 +1,9 @@
+/patch-etc_init.d.slurm.in/1.1/Sun Apr 22 21:31:09 2018//Tpkgsrc-2022Q2
+/patch-src_plugins_task_affinity_affinity.h/1.1/Sat Feb  1 00:15:02 2020//Tpkgsrc-2022Q2
+/patch-src_slurmd_common_task__plugin.c/1.2/Sat Feb  1 00:15:02 2020//Tpkgsrc-2022Q2
+/patch-src_slurmd_common_task__plugin.h/1.1/Sun Apr 22 21:31:09 2018//Tpkgsrc-2022Q2
+/patch-src_slurmd_slurmd_slurmd.c/1.2/Sat Feb  1 00:15:02 2020//Tpkgsrc-2022Q2
+/patch-src_slurmd_slurmd_slurmd.h/1.1/Sun Apr 22 21:31:09 2018//Tpkgsrc-2022Q2
+/patch-src_slurmd_slurmstepd_io.c/1.1/Sun Apr 22 21:31:09 2018//Tpkgsrc-2022Q2
+/patch-src_slurmd_slurmstepd_task.c/1.2/Sat Feb  1 00:15:02 2020//Tpkgsrc-2022Q2
+D

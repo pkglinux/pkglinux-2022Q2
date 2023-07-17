@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/11/25 08:13:28 adam Exp $
+
+BLAKE2s (python-dotenv-0.19.2.tar.gz) = 173a7038dd5ce04b83ec5f5fe293a2e02b608d566d812ca60f00e158ac883082
+SHA512 (python-dotenv-0.19.2.tar.gz) = da411fa02326ec7407bbb6760dd4e5f22eaca60d725ade3ac89302ec4e33d00fe8c231e8a64d0bc22698a93701143085c098b6703e598c6d8c2e4c57b9bafa20
+Size (python-dotenv-0.19.2.tar.gz) = 31508 bytes

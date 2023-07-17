@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/01/04 12:21:47 schmonz Exp $
+
+BLAKE2s (mblaze-1.2.tar.gz) = 990da5322268c444b78c6fdb6c577755814624f8322a4f4143456dc39b4aced2
+SHA512 (mblaze-1.2.tar.gz) = 32f1ed6332d3b481d501e6f4f64fbd9b74ac26aabf55862da8b2444144e9a39f908143c3ec77b0adce90f08455e7544af9f19458d4e628c36c06ee407d81548a
+Size (mblaze-1.2.tar.gz) = 99578 bytes

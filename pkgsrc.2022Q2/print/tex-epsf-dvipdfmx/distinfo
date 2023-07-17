@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:13:13 nia Exp $
+
+BLAKE2s (tex-epsf-dvipdfmx-35575/epsf-dvipdfmx.tar.xz) = 95d25915733a3b8365a9b3a200480c62bf9c431352f93f18dab5894a778e3ef5
+SHA512 (tex-epsf-dvipdfmx-35575/epsf-dvipdfmx.tar.xz) = 719c7cf25066457e181c40b1f129e72d73fbcc926d27e0e97a2a50c125583eeeadd4435b3399c6afc798a1fe0016ce0ad8e50b42fad5f59e0318a4aaff24f28e
+Size (tex-epsf-dvipdfmx-35575/epsf-dvipdfmx.tar.xz) = 1016 bytes

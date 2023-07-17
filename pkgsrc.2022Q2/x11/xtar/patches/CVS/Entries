@@ -1,0 +1,19 @@
+/patch-Imakefile/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-Xbr_XbrCB.c/1.2/Fri Jan  7 13:02:31 2022//Tpkgsrc-2022Q2
+/patch-Xbr_XbrGfx.c/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-Xbr_XbrList.c/1.1/Fri Jan  7 13:02:31 2022//Tpkgsrc-2022Q2
+/patch-Xbr_XbrList.h/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-Xbr_XbrMenu.c/1.2/Fri Jan  7 13:02:31 2022//Tpkgsrc-2022Q2
+/patch-common_ascii.c/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-common_env.c/1.1/Fri Jan  7 13:02:31 2022//Tpkgsrc-2022Q2
+/patch-common_file.c/1.2/Fri Jan  7 13:02:31 2022//Tpkgsrc-2022Q2
+/patch-common_magic.c/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-common_magic.h/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-common_mkdirhier.c/1.1/Fri Jan  7 13:02:31 2022//Tpkgsrc-2022Q2
+/patch-common_nums.c/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-common_pipe.c/1.2/Fri Jan  7 13:02:31 2022//Tpkgsrc-2022Q2
+/patch-common_regexpr.c/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-common_str.c/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+/patch-common_tmpfile.c/1.2/Fri Jan  7 13:02:31 2022//Tpkgsrc-2022Q2
+/patch-xtar.c/1.1/Fri Jan  7 12:43:14 2022//Tpkgsrc-2022Q2
+D

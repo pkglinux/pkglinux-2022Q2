@@ -1,0 +1,15 @@
+$NetBSD: patch-otherlibs_Makefile.otherlibs.common,v 1.4 2022/05/24 18:25:38 jaapb Exp $
+
+Honor LDFLAGS.
+
+--- otherlibs/Makefile.otherlibs.common.orig	2021-02-24 13:49:29.000000000 +0000
++++ otherlibs/Makefile.otherlibs.common
+@@ -50,7 +50,7 @@ EXTRACFLAGS ?=
+ EXTRACPPFLAGS ?=
+ EXTRACAMLFLAGS ?=
+ LINKOPTS ?=
+-LDOPTS ?=
++LDOPTS ?= -ldopt "$(LDFLAGS)"
+ HEADERS ?=
+ CMIFILES ?= $(CAMLOBJS:.cmo=.cmi)
+ CAMLOBJS_NAT ?= $(CAMLOBJS:.cmo=.cmx)

@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 11:18:36 nia Exp $
+
+BLAKE2s (eltclsh-1.9.tar.gz) = 2deae52cdaf7fc813a21166f6e33b258b1f65cee6e8dd2dc054f13c1f016e478
+SHA512 (eltclsh-1.9.tar.gz) = 7bcde89504257d12131d16609c9f3359c885f28f2f886da61357dcdd8fb615202ecfcb4930ef1bb95c4fec6d69521b4d0e3a9271da58bc69e44ab85651259106
+Size (eltclsh-1.9.tar.gz) = 342659 bytes
+SHA1 (patch-ab) = fc7f724bbfdf4d5b35da1dd52a65a9488c43f4b0
+SHA1 (patch-src_Makefile.in) = 07176f0d97b2ac5b746a4197d2b83bb3dda541c3

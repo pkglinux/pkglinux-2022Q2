@@ -1,0 +1,44 @@
+$NetBSD: patch-src_3rdparty_chromium_net_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/net/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/net/BUILD.gn
+@@ -1242,7 +1242,7 @@ component("net") {
+       ]
+     }
+ 
+-    if (is_linux && !is_chromeos) {
++    if ((is_linux || is_bsd) && !is_chromeos) {
+       sources += [
+         "base/network_change_notifier_linux.cc",
+         "base/network_change_notifier_linux.h",
+@@ -1261,6 +1261,12 @@ component("net") {
+       ]
+     }
+ 
++    if (is_bsd) {
++      sources += [
++        "base/platform_mime_util_linux.cc",
++      ]
++    }
++
+     if (is_mac) {
+       sources += [
+         "base/network_notification_thread_mac.cc",
+@@ -1397,7 +1403,7 @@ component("net") {
+       }
+     }
+ 
+-    if (is_android || is_chromeos) {
++    if (is_android || is_chromeos || is_bsd) {
+       sources += [
+         "base/network_change_notifier_posix.cc",
+         "base/network_change_notifier_posix.h",
+@@ -4565,7 +4571,7 @@ test("net_unittests") {
+     sources += [ "socket/udp_socket_posix_unittest.cc" ]
+   }
+ 
+-  if (is_android || is_chromeos) {
++  if (is_android || is_chromeos || is_bsd) {
+     sources += [ "base/network_change_notifier_posix_unittest.cc" ]
+   }
+ 

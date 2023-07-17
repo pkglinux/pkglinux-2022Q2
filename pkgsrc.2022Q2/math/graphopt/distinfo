@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:55:42 nia Exp $
+
+BLAKE2s (graphopt-0.4.1.tgz) = 75d8a9f27ffe67b0ea129afba87e2adec735dbf20b371300e84f71bde88064b4
+SHA512 (graphopt-0.4.1.tgz) = 1ec1645777a4e8e8f4bb7b1f485ea878485c1cc37ba3f935676c3e9b5fff39d4a192912a2af33e3672079a003fec90f16cf13a03c3415891f956b99cf20e412a
+Size (graphopt-0.4.1.tgz) = 77612 bytes
+SHA1 (patch-src_classes_dotImporter.cc) = 5bdc265514d334cdbedeaad1a6d259d19561cb9e
+SHA1 (patch-src_classes_nodes.cc) = 4ad2a227be7bdaa248dad7cab3321100c79cc3d3
+SHA1 (patch-src_classes_optFileReader.cc) = 00411ffdabc3bc8f5292d561c2c037f96b292c8c
+SHA1 (patch-src_classes_optFileWriter.cc) = fb7226c0df80b675d8b8e741df67aab367fea90b
+SHA1 (patch-src_classes_psExporter.cc) = b9c6caed4a0f2fb887a7b0bce10e8bfacb7088f5
+SHA1 (patch-src_classes_visioExporter.cc) = 7c23259e0947ea1d6c7dcc6a18b58bc221981fd3

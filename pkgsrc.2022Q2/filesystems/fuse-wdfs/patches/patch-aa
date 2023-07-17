@@ -1,0 +1,31 @@
+$NetBSD: patch-aa,v 1.5 2022/01/27 04:15:44 pho Exp $
+
+refuse(3) used to not support -ho in option_list. Already fixed in
+HEAD.
+
+--- src/wdfs-main.c.orig	2007-04-12 08:30:08.000000000 +0000
++++ src/wdfs-main.c
+@@ -137,8 +137,14 @@ static int wdfs_opt_proc(
+ 	switch (key) {
+ 		case KEY_HELP:
+ 			print_help();
++#if !defined(__NetBSD__) || FUSE_H_ >= 20211204
++/*
++ * XXX Using refuse(3), this resulted in abnormal program termination
++ *     with SIG_SEGV.
++ */
+ 			fuse_opt_add_arg(option_list, "-ho");
+ 			call_fuse_main(option_list);
++#endif
+ 			exit(1);
+ 
+ 		case KEY_VERSION:
+@@ -1308,7 +1314,7 @@ static void print_help()
+ /* just a simple wrapper for fuse_main(), because the interface changed...  */
+ static int call_fuse_main(struct fuse_args *args)
+ {
+-#if FUSE_VERSION >= 26
++#if (!defined(__NetBSD__) || FUSE_H_ >= 20211204) && FUSE_VERSION >= 26
+ 	return fuse_main(args->argc, args->argv, &wdfs_operations, NULL);
+ #else
+ 	return fuse_main(args->argc, args->argv, &wdfs_operations);

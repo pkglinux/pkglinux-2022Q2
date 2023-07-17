@@ -1,0 +1,30 @@
+$NetBSD$
+
+--- CMakeLists.txt.orig	2015-06-25 17:47:38.000000000 +0000
++++ CMakeLists.txt
+@@ -100,6 +101,7 @@ set(CMAKE_AUTOMOC ON)
+ find_package(KDE4 4.14.0 REQUIRED)
+ include(KDE4Defaults)
+ 
++find_package(gpgmepp)
+ find_package(KdepimLibs 4.14.10)
+ set_package_properties(KdepimLibs PROPERTIES DESCRIPTION "The KDEPIM libraries" URL "http://www.kde.org" TYPE REQUIRED)
+ 
+@@ -150,7 +152,7 @@ endif()
+ 
+ # If the KDEPIM_ONLY_KLEO option is true
+ if(KDEPIM_ONLY_KLEO)
+-  find_package(QGpgme)
++  find_package(KdepimLibs)
+   set_package_properties(QGpgme PROPERTIES DESCRIPTION "The QGpgME library" URL "http://www.kde.org" TYPE REQUIRED PURPOSE "QGpgME is required to build Kleopatra.")
+ 
+   add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS} ${KDEPIM_DEFINITIONS})
+@@ -172,7 +174,7 @@ else()
+   find_package(ZLIB)
+   set_package_properties(ZLIB PROPERTIES DESCRIPTION "The Zlib compression library" URL "http://www.zlib.net" TYPE REQUIRED)
+ 
+-  find_package(QGpgme)
++  find_package(KdepimLibs)
+   set_package_properties(QGpgme PROPERTIES DESCRIPTION "The QGpgMe library" URL "http://www.kde.org" TYPE RECOMMENDED PURPOSE "QGpgME is required to build KMail, KOrganizer and Kleopatra")
+ 
+   find_package(Grantlee 0.4.0 QUIET CONFIG)

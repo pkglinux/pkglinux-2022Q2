@@ -1,0 +1,22 @@
+$NetBSD$
+
+--- panels/meson.build.orig	2021-03-20 21:52:23.008848700 +0000
++++ panels/meson.build
+@@ -25,8 +25,7 @@ panels = [
+   'sharing',
+   'sound',
+   'universal-access',
+-  'usage',
+-  'user-accounts'
++  'usage'
+ ]
+ 
+ if host_is_linux
+@@ -37,7 +36,6 @@ if host_is_linux_not_s390
+   panels += [
+     'bluetooth',
+     'thunderbolt',
+-    'wacom'
+   ]
+ endif
+ 

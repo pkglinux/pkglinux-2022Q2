@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:44:34 nia Exp $
+
+BLAKE2s (xpat2-1.07-src.tar.gz) = e0ef8631f2e8209c45dbea87e22b5fef30973cc29d923d40a7fa9545aaa4e6da
+SHA512 (xpat2-1.07-src.tar.gz) = 2ac6e966a87d9b35f364a3c523bb10a4f6efe6f0dfd7c1f8bf1f64b35447a63a52b1651ea85b4e1e7d64c197b678f9a29454f1e2c24736c58f849226c000b97a
+Size (xpat2-1.07-src.tar.gz) = 519326 bytes
+SHA1 (patch-aa) = eac6d498efa924cb0aed966a2f3924e7ac432261
+SHA1 (patch-ac) = c7bebfc930d2357fdb7c48aca1d2e8b39e9f1e43

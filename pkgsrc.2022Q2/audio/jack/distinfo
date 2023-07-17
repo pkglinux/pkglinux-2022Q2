@@ -1,0 +1,25 @@
+$NetBSD: distinfo,v 1.32 2022/03/26 22:36:19 tnn Exp $
+
+BLAKE2s (jack2-1.9.19.tar.gz) = aa43a3ae606c00e7c8e047e89250e068717f44fa0443b8531a6d83ca2a9dff71
+SHA512 (jack2-1.9.19.tar.gz) = d8d5fe17e2984959546af3c53f044aa4648860e19ff8ffd54452e87fa6cdfd111f825c57e3df17cb8ed95de8392b6f354b12ded41e3e021a37f07b99a89ba18d
+Size (jack2-1.9.19.tar.gz) = 988780 bytes
+SHA1 (patch-common_JackAudioAdapterFactory.cpp) = 8292a8c88c673136f52a007133278f9b4403839c
+SHA1 (patch-common_memops.c) = 468476c6067595524f492d37f3b761af48e78585
+SHA1 (patch-common_wscript) = 01d21e983f408d0a423f9c5cb9f12c22017ca783
+SHA1 (patch-example-clients_wscript) = 9db0899e797acbc416bfd9e6aba50c70bd5ff0ab
+SHA1 (patch-man_wscript) = bc5ce9481d4c911350f260c069a0ce4be732f526
+SHA1 (patch-netbsd_JackAtomic__os.h) = cd9cc4bf9913b3dedfbb8a2ea34077277e17f85d
+SHA1 (patch-netbsd_JackNetBSDTime.c) = 7cc2504bbd452b703dd062ac5d35f68ffe7e3b0a
+SHA1 (patch-netbsd_JackPlatformPlug__os.h) = f17b0daf4d8a4ef1001b35e6ea1411cfb1b981c2
+SHA1 (patch-netbsd_sun_JackSunAdapter.cpp) = a3680d9dc6bb78c812590f62b1c24a9c78d65b20
+SHA1 (patch-netbsd_sun_JackSunAdapter.h) = 740b36c69d02742eceeb724ba18796664fb1bc2d
+SHA1 (patch-netbsd_sun_JackSunDriver.cpp) = 7ffa6b659b1df8eee4cfaa3da8d170b0c3f49355
+SHA1 (patch-netbsd_sun_JackSunDriver.h) = 9da5fbec2216081876174057f831da4c54e3029e
+SHA1 (patch-posix_JackNetUnixSocket.cpp) = 562242daf7c0f296bfcd03f468518aaf18d995d9
+SHA1 (patch-posix_JackNetUnixSocket.h) = ce9a9255dc0dd423562b94b0fcc1012c8ba3a37e
+SHA1 (patch-posix_JackPosixSemaphore.cpp) = 59425ada11a5cab83159691ae10a23c0d36750ef
+SHA1 (patch-posix_JackPosixThread.h) = 0aa94425ad44cc36fb583e48bdfa9f5f33a5eaa3
+SHA1 (patch-posix_JackSocket.cpp) = 88ae18c3d2cc31a43355ff9b0c78ab13b83bd314
+SHA1 (patch-tests_wscript) = e0bf616175a116df489808cda8cb8c70890d4da0
+SHA1 (patch-tools_wscript) = fab7472b29fc6e46ba1e8ca94c12aa8808b075da
+SHA1 (patch-wscript) = a49c6e7ebd84bb5156576351308676b0b3486492

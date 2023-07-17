@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.5 2021/11/26 08:40:40 pin Exp $
+
+BLAKE2s (opendoas-6.8.1.tar.gz) = b85a68323ab88d02d9a0a1e6eb5591ae46fd9080d5657c466bb14ccd1541f581
+SHA512 (opendoas-6.8.1.tar.gz) = d96fe1cdd70e9211de9996ad05bcf7a127facd02af48f7ab2561869d9d16708f1b61722c6e6b9fe15a62e9ef501e09b1ba444b7b43a066f1895e543ebc9402e7
+Size (opendoas-6.8.1.tar.gz) = 32398 bytes
+SHA1 (patch-GNUmakefile) = d301c0334ce6ac7992d61681e1852a301557d300

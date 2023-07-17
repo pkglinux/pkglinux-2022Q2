@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:20:16 nia Exp $
+
+BLAKE2s (systester-1.5.1.tar.gz) = cc2b82a596883844a1307de32b520c83e4360746878c8380bbdf6daad83d85bd
+SHA512 (systester-1.5.1.tar.gz) = 1bd9f728c98421bce0cb34f737c481dc8fce02aa98e96d69ecfb838d593104c849cb5070eb3ba3d8ea531664bccf469918ea6e417ea7d5350b8cbb4490512f5e
+Size (systester-1.5.1.tar.gz) = 119384 bytes

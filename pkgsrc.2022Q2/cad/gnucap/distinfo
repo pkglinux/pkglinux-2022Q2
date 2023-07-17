@@ -1,0 +1,17 @@
+$NetBSD: distinfo,v 1.17 2021/10/26 10:04:12 nia Exp $
+
+BLAKE2s (gnucap-2006-07-08.tar.gz) = 824de715a7d750d716e4220ee99747da9781bd6197cbc36250e3e38702fb761e
+SHA512 (gnucap-2006-07-08.tar.gz) = 6eb4d54eae7efca48f267e85d53dfeaf504d1f26d61f1a86df24a055a07f3f1525bd2419056a4dcad9f5742566989ac15afda4091b3a531358c7fb854d558cbd
+Size (gnucap-2006-07-08.tar.gz) = 1546670 bytes
+SHA1 (patch-aa) = 60e6484c852adfba3b0bd11a9a5c691e4d228bd7
+SHA1 (patch-ab) = cdb1825722b18784ca54ae0c39183ff0790dc6d9
+SHA1 (patch-man_Makefile.in) = 57ae2e29ff6520e215e0080c536b92d7b361330c
+SHA1 (patch-man_gnucap-man.tex) = 2d643139b271386e68771e40be71a8a6cd1b5335
+SHA1 (patch-modelgen_ap.h) = 323081e63db5148da5706ea8a9470f2c8769467f
+SHA1 (patch-modelgen_io__.h) = 56aa956aa1e49889fea1ad59c2615e7c34f87b4c
+SHA1 (patch-modelgen_mg__.h) = e1464d428a8855124a8ac260041836a043a044ac
+SHA1 (patch-src_ap.h) = a11af959b3e7637a5e49df1c2fc2672ded4dc5df
+SHA1 (patch-src_c__comand.h) = c00405e8f81398ab1bbaea171ee51f5cbcfe5328
+SHA1 (patch-src_declare.h) = a8cea1d2a6866b12a3aa0d91a5f86b14ca7030fa
+SHA1 (patch-src_io__.h) = 06120be26f562dae4ffd57ae784ed15dc298b93a
+SHA1 (patch-src_u__opt.h) = 628878fea102c6b95cbcc2f3ffcf9d9e8b071299

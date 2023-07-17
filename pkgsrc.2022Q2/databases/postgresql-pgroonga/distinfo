@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/24 17:43:21 tnn Exp $
+
+BLAKE2s (pgroonga-2.3.6.tar.gz) = c58e2eeee18ca10e259dc8e9d4f1a23a1c8108960b5558cbcb6b21c07c47b02a
+SHA512 (pgroonga-2.3.6.tar.gz) = 0effe7700e1784e48dab4f9fcc4cd24bb2c1da89679ac50db3d091f3b55e9c1388c8c210a1991437232174c42e30ecf5addc502eb016a9ce4d0a42af7ae49939
+Size (pgroonga-2.3.6.tar.gz) = 478403 bytes

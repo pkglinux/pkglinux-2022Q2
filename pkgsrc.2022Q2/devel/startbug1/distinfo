@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:19:57 nia Exp $
+
+BLAKE2s (starbug1-1.6.01.tar.gz) = 1135f9d94982a8f1a8984a20e2bf55f6378dd9294b0051b8288b1695086a17ab
+SHA512 (starbug1-1.6.01.tar.gz) = 1935e2f0d24d8e33b236513728f6800182aa77f1d137cc3f829bdba429c306ff7e2bf3f16916c712bfcb169c9074616e981ffacf3d991508832139e8cb0ae16a
+Size (starbug1-1.6.01.tar.gz) = 244562 bytes
+SHA1 (patch-Makefile) = 041ba063b20728efece249751dd80e23011ac1f3
+SHA1 (patch-admin.c) = dd1331b88358f2b6bbfcc5a95e3a50040dd64a77
+SHA1 (patch-index.c) = 9b7037343c40c8e2df6f5ebc8e4c6daf79749ee2
+SHA1 (patch-template_ja__JP_qa.template) = 1b35e7332ae0085bb67a4ea675b510cb52667d58
+SHA1 (patch-util.c) = 391bf2238e3614f551d8ae8b4d7fef96e0fbdebd

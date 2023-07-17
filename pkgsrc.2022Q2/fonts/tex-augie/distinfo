@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/07 05:10:38 markd Exp $
+
+BLAKE2s (augie.r61719.tar.xz) = d129ca56cebec7e4ea226662da15f9f42330884553db29bc26cb157493aec47e
+SHA512 (augie.r61719.tar.xz) = a862fc140ee85e9f48908e7251dca78f6f328bb194bc1031ce7b521feabc62bb148764e7574341b9ba39a1bc76bb4a718c3cfa45bba7480aff168eb17661d74a
+Size (augie.r61719.tar.xz) = 62124 bytes

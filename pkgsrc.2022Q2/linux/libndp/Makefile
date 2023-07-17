@@ -1,0 +1,17 @@
+# $NetBSD$
+
+DISTNAME=	libndp-1.7
+CATEGORIES=	linux
+MASTER_SITES=	http://libndp.org/files/
+
+MAINTAINER=	use pkgsrc-users@NetBSD.org
+HOMEPAGE=	http://libndp.org/files/
+COMMENT=	Provides a wrapper for IPv6 Neighbor Discovery Protocol
+LICENSE=	gnu-gpl-v2
+
+GNU_CONFIGURE=	yes
+USE_TOOLS+=	pkg-config
+
+PKGCONFIG_OVERRIDE+=	libndp/libndp.pc.in
+
+.include "../../mk/bsd.pkg.mk"

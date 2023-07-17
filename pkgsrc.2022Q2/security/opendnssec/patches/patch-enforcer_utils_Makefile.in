@@ -1,0 +1,37 @@
+$NetBSD: patch-enforcer_utils_Makefile.in,v 1.5 2019/08/30 08:08:21 he Exp $
+
+Patch to install migration scripts, mirroring Makefile.am.
+
+--- enforcer/utils/Makefile.in.orig	2015-10-05 14:20:51.000000000 +0000
++++ enforcer/utils/Makefile.in
+@@ -789,7 +789,8 @@ info: info-am
+ 
+ info-am:
+ 
+-install-data-am: install-dist_opendnssecdataDATA install-man
++install-data-am: install-data-local install-dist_opendnssecdataDATA \
++	install-man
+ 
+ install-dvi: install-dvi-am
+ 
+@@ -847,6 +848,7 @@ uninstall-man: uninstall-man1
+ 	ctags ctags-am distclean distclean-compile distclean-generic \
+ 	distclean-libtool distclean-tags distdir dvi dvi-am html \
+ 	html-am info info-am install install-am install-binPROGRAMS \
++	install-data-local \
+ 	install-data install-data-am install-dist_opendnssecdataDATA \
+ 	install-dvi install-dvi-am install-exec install-exec-am \
+ 	install-html install-html-am install-info install-info-am \
+@@ -858,6 +860,12 @@ uninstall-man: uninstall-man1
+ 	uninstall-am uninstall-binPROGRAMS \
+ 	uninstall-dist_opendnssecdataDATA uninstall-man uninstall-man1
+ 
++install-data-local: $(EXTRA_DIST)
++	for f in $(EXTRA_DIST); do \
++		$(INSTALL_DATA) "$$f" $(DESTDIR)$(opendnssecdatadir) \
++			|| exit $$?; \
++	done
++
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

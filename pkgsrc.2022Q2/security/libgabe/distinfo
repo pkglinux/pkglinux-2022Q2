@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:17:13 nia Exp $
+
+BLAKE2s (libgabe-1.0.tar.gz) = 3ed50000abc8460c901626f5a277c934e88e04c2c8d40620f5a9ff267d181050
+SHA512 (libgabe-1.0.tar.gz) = 9603d8317a498da3004a43df4ce6bb903a925bf3eecdb465d222748a19f72d2b5f5399194d7bfb7864a7d53bf19a7ece9c599bb57d40692b811d1927fb90ab48
+Size (libgabe-1.0.tar.gz) = 73297 bytes

@@ -1,0 +1,22 @@
+
+Devil's Pie
+===========
+
+Copyright (C) 2002-5, Ross Burton <ross@burtonini.com>
+
+
+A window-matching utility, inspired by Sawfish's "Matched Windows" option and
+the lack such functionality in Metacity. Metacity lacking window matching is not
+a bad thing -- Metacity is a lean window manager, and window manipulation does
+not have to be a window manager task.
+
+Devil's Pie can be configured to detect windows as they are created, and match
+the window to a set of rules. If the window matches the rules, it can perform a
+series of actions on that window. For example, I can make X-Chat appear on all
+workspaces, and make a particular xterm not appear in the pager or task list.
+
+
+Building
+--------
+
+...

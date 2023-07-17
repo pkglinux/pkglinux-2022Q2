@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:20:04 nia Exp $
+
+BLAKE2s (tmake-1.13.tar.gz) = e6b97a2549e5be49a8b27eb9a51268fa523078012f666b9bad96f71a97cdb6bb
+SHA512 (tmake-1.13.tar.gz) = a12038c2c079a6f3b26f5615756d7581649447023e41bef77cc8a17654a9dee145c2eb9d791366f687aaa64bd9336105d6f20a0e26f86e1a9799be1a9aabd0db
+Size (tmake-1.13.tar.gz) = 64191 bytes
+SHA1 (patch-aa) = daa9e10c3ae1dce66620657919e06b2db07049d1
+SHA1 (patch-ab) = b81f6022a9103a9ae0fe3d9adddbf57d374d51d9
+SHA1 (patch-ac) = f5d2d9466946d7be9ef717eb1b32dfc985f8c27e

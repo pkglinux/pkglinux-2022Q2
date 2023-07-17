@@ -1,0 +1,19 @@
+$NetBSD: patch-configure,v 1.2 2022/05/29 17:58:53 fcambus Exp $
+
+--- configure.orig	2022-04-07 16:22:46.000000000 +0000
++++ configure
+@@ -854,10 +854,10 @@ fi
+ 
+ 
+ 
+-ACLOCAL="./missing aclocal"
+-AUTOCONF="./missing autoconf"
+-AUTOMAKE="./missing automake"
+-AUTOHEADER="./missing autoheader"
++ACLOCAL="aclocal"
++AUTOCONF="autoconf"
++AUTOMAKE="automake"
++AUTOHEADER="autoheader"
+ 
+ export CC
+ export CPPFLAGS

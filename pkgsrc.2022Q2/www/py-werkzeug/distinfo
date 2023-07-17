@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.28 2022/04/29 13:36:19 wiz Exp $
+
+BLAKE2s (Werkzeug-2.1.2.tar.gz) = 4ce382b58eb0eaa390db010a310317675cbd50f75ec8d05b88ce2fab4b0c1701
+SHA512 (Werkzeug-2.1.2.tar.gz) = 83c8f930c1166c2228ad4cdacfb150e39f6e4476960fb24ab44d6ee65eca34bfc211c9d45e895e031f0c387fbe4d5c6cae1d3d0fd6b5671aaace50306b9593ed
+Size (Werkzeug-2.1.2.tar.gz) = 835169 bytes

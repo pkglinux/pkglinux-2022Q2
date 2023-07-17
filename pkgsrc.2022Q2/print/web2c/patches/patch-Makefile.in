@@ -1,0 +1,13 @@
+$NetBSD: patch-Makefile.in,v 1.3 2020/03/29 01:02:57 joerg Exp $
+
+--- Makefile.in.orig	2019-02-20 21:54:28.000000000 +0000
++++ Makefile.in
+@@ -2799,7 +2799,7 @@ AM_CFLAGS = $(WARNING_CFLAGS)
+ AM_CXXFLAGS = ## $(WARNING_CXXFLAGS)
+ AM_OBJCXXFLAGS = ## $(WARNING_OBJCXXFLAGS)
+ version = $(WEB2CVERSION)
+-SUBDIRS = doc lib man web2c . window omegafonts otps
++SUBDIRS = doc lib man web2c window omegafonts otps
+ proglib = lib/lib.a
+ 
+ #EXTRA_LIBRARIES += libluasocket.a liblua53socket.a libluajitsocket.a

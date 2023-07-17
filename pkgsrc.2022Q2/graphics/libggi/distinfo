@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.21 2021/10/26 10:46:26 nia Exp $
+
+BLAKE2s (libggi-2.2.2.src.tar.bz2) = 32df4252ded795e6ff2746fbaf5711290e523951aaf4304fac64812e556f1c64
+SHA512 (libggi-2.2.2.src.tar.bz2) = ee2038dc64cea43994fa1ac716f1062462d17b0bbf30fd9a9d2762e7424a43fedc7c573178d9472738a5069ff3bf977ac26957c0c262c51cdf1065b616370975
+Size (libggi-2.2.2.src.tar.bz2) = 1071939 bytes
+SHA1 (patch-aa) = 6c95eaf290d0b2f12f8f026dc3138d74acade317
+SHA1 (patch-ab) = 5ab8c53bf89a1527a0e01311d48b93af61d54a1b
+SHA1 (patch-ad) = 0764cbec555ea68fa55952be8b21fc8508fe97f5
+SHA1 (patch-display_fbdev_Makefile.in) = 88b3965f2ae2637b22e1e1b7f1b441de3c2b36da

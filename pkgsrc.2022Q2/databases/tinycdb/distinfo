@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:10:06 nia Exp $
+
+BLAKE2s (tinycdb-0.78.tar.gz) = e05daffa320fe48d5d688fdd5581e37b87c2764b4192dc61f432c163876ff8ed
+SHA512 (tinycdb-0.78.tar.gz) = 8930086b8e7fddcd4dbd3354c5f5ee05171df68fde1cc222b6c402430042b6e761efbad7e5fa8de18e1d36390f1526cc3e605c5086fe1c363ba1df6c03201553
+Size (tinycdb-0.78.tar.gz) = 36754 bytes
+SHA1 (patch-BSDmakefile) = 3cbd21dd18cbb97003c3034592df0b4f2534174d
+SHA1 (patch-libcdb.pc) = c4e027ab43ce21320c8c81c7a325108fa2aa4fb9

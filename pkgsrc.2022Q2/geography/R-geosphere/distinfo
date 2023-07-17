@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/02 12:40:15 mef Exp $
+
+BLAKE2s (R/geosphere_1.5-14.tar.gz) = 89c6d69e2cce630d9ed628fc0471c1c0874cc6d4d463fd2a512e24f017557369
+SHA512 (R/geosphere_1.5-14.tar.gz) = e3d0c97d77a5713a3b60d95f86e7e25535ee6a46dd89edee680ea582dcfc039bc350ccf74dc96160827ee085486470e66710f9cca016035422b8727c5b8cf652
+Size (R/geosphere_1.5-14.tar.gz) = 797724 bytes

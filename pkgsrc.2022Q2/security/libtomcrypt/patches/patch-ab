@@ -1,0 +1,17 @@
+$NetBSD: patch-ab,v 1.4 2019/07/09 11:20:58 nia Exp $
+
+Use pkgsrc install command.
+
+--- makefile.shared.orig	2018-07-01 20:49:01.000000000 +0000
++++ makefile.shared
+@@ -64,8 +64,8 @@ $(foreach demo, $(strip $(DEMOS)), $(eva
+ 
+ install: $(call print-help,install,Installs the library + headers + pkg-config file) .common_install
+ 	sed -e 's,^prefix=.*,prefix=$(PREFIX),' -e 's,^Version:.*,Version: $(VERSION_PC),' libtomcrypt.pc.in > libtomcrypt.pc
+-	install -p -d $(DESTDIR)$(LIBPATH)/pkgconfig
+-	install -p -m 644 libtomcrypt.pc $(DESTDIR)$(LIBPATH)/pkgconfig/
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(LIBPATH)/pkgconfig
++	$(BSD_INSTALL_DATA) libtomcrypt.pc $(DESTDIR)$(LIBPATH)/pkgconfig/
+ 
+ install_bins: $(call print-help,install_bins,Installs the useful demos ($(USEFUL_DEMOS))) .common_install_bins
+ 

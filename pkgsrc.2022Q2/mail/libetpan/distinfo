@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.26 2021/10/26 10:54:04 nia Exp $
+
+BLAKE2s (libetpan-1.9.4.tar.gz) = be63e52c74fad06e999851dd91e23a39ee0aae2bc2ab8840f8672ff7d002b20a
+SHA512 (libetpan-1.9.4.tar.gz) = 7b7047d084fb4ce0c91821c2ad78e921d6d009106851afb7f5b068713c84ebe6926f6bf7a7423f263eeebef617511e44f6b65448d892bbc058c447235fd55c0f
+Size (libetpan-1.9.4.tar.gz) = 5000025 bytes
+SHA1 (patch-configure.ac) = 9d1562b4dd016fb26372bb437e3f4a0749ab2592
+SHA1 (patch-src_low-level_feed_newsfeed.c) = 962f2059bb13a8f9c40cb6845276ee52e3bcd937

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/01/09 00:28:58 tnn Exp $
+
+BLAKE2s (libva-utils-2.13.0.tar.bz2) = 3bc1288890c4ab6413d4e6eb5dc95bfabe86bfadafba2b4a8154f5da23a38491
+SHA512 (libva-utils-2.13.0.tar.bz2) = 1ee42e4c335978bc5d28efbe9fa899bb84b787455a300a24655bf020c03905eb6af096af0896f73b1d10c1bb58e7464806fc5029be7dacd38f35570db60c37c7
+Size (libva-utils-2.13.0.tar.bz2) = 1045460 bytes

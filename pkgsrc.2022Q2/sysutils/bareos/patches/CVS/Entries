@@ -1,0 +1,27 @@
+/patch-core_CMakeLists.txt/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_cmake_BareosCheckIncludes.cmake/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_cmake_BareosFindAllLibraries.cmake/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_cmake_BareosFindPrograms.cmake/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_cmake_BareosInstallConfigFiles.cmake/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_cmake_BareosSetVariableDefaults.cmake/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_cmake_BareosTimeFunctions.cmake/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_platforms_netbsd_CMakeLists.txt/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_platforms_netbsd_chio-changer/1.3/Wed Aug 11 10:24:05 2021//Tpkgsrc-2022Q2
+/patch-core_scripts_CMakeLists.txt/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_scripts_bareos-config-lib.sh.in/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_cats_make__catalog__backup.pl.in/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_cats_postgresql__queries.inc/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_console_CMakeLists.txt/1.1/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_dird_dird__conf.cc/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_filed_accurate__lmdb.cc/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_findlib_acl.cc/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_findlib_find__one.cc/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_lib_scsi__lli.cc/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_lib_scsi__tapealert.cc/1.2/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_lmdb_mdb.c/1.3/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_plugins_stored_scsicrypto_scsicrypto-sd.cc/1.1/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_plugins_stored_scsitapealert_scsitapealert-sd.cc/1.1/Mon Feb  1 09:08:43 2021//Tpkgsrc-2022Q2
+/patch-core_src_stored_btape.cc/1.2/Mon Feb  1 09:08:44 2021//Tpkgsrc-2022Q2
+/patch-core_src_stored_dev.cc/1.2/Wed Aug 11 10:24:05 2021//Tpkgsrc-2022Q2
+/patch-systemtests_tests_droplet-s3_testrunner/1.1/Mon Feb  1 09:08:44 2021//Tpkgsrc-2022Q2
+D

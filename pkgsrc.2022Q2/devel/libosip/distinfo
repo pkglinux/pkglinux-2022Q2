@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.21 2022/04/15 12:41:15 schwarz Exp $
+
+BLAKE2s (libosip2-5.3.0.tar.gz) = d02db9b9ed1e1bce05f85a423e1934bbb90705e4f3895ce4fe2e44072021a8a8
+SHA512 (libosip2-5.3.0.tar.gz) = 010830af0aca7cab48f2d28b130bf8a2443a7eb552ccfd3e6100d3262a1e2a4cca4ab457a073cbf6ff032ed7177a781e2ce980a1f095688659cff8c0005fce50
+Size (libosip2-5.3.0.tar.gz) = 722152 bytes

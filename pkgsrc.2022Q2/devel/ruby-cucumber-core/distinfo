@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2022/02/12 12:23:14 taca Exp $
+
+BLAKE2s (cucumber-core-10.1.1.gem) = da33116cd995ef6a5e34a33e98c4f5dab6358206378f302efcf4096c2fd33c7a
+SHA512 (cucumber-core-10.1.1.gem) = ca087eb9955bde1271a3f12ddc4e487870685c954a20b83356afb5e61ccb8470813db33e7335cd78696972065ad3d6e3a3ff79c03076ca6a59bbb20182e57012
+Size (cucumber-core-10.1.1.gem) = 44032 bytes

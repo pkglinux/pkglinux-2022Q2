@@ -1,0 +1,5 @@
+@comment $NetBSD: PLIST,v 1.4 2020/02/26 17:23:42 nia Exp $
+bin/nexpm
+bin/vtwm
+man/man1/vtwm.1
+share/X11/vtwm/system.vtwmrc

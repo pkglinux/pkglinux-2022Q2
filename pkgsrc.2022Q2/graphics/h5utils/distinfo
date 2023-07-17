@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:46:18 nia Exp $
+
+BLAKE2s (h5utils-1.12.1.tar.gz) = a52d00d14353629ec76489c96797b6e1de82568f27ac0b36d5c30af99bde2db7
+SHA512 (h5utils-1.12.1.tar.gz) = b4295ac52ddfe922ed9f0a9079c69d6fdba5a261558d8c820a8feae592db3bd57a3394ab1fc9ceead00038a80bc70f32e0a8aa437cb33182899553bfdbf1f547
+Size (h5utils-1.12.1.tar.gz) = 156785 bytes
+SHA1 (patch-aa) = 2961c8a4ef4319f5e74d6252f82364b94c2d24be
+SHA1 (patch-writepng.c) = cec1487f77f4534aa081e1e209a603876a288145

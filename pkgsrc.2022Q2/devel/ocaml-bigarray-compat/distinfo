@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/02 13:23:44 jaapb Exp $
+
+BLAKE2s (ocaml-bigarray-compat-1.1.0.tar.gz) = dc3cc3d8c330d53a7c55d3a797614320af4ad63836a684c1ed5b2420460a9f7d
+SHA512 (ocaml-bigarray-compat-1.1.0.tar.gz) = bbd9c2b319930db832ae8d41844ef81e74ced9f745f32981f2efcc9777220d55e1e5d6dc2965e9e1a6ed5e0d56ad27c672289f8dc28fbe2658f3230cbda5a800
+Size (ocaml-bigarray-compat-1.1.0.tar.gz) = 2046 bytes

@@ -1,0 +1,19 @@
+/patch-af/1.1.1.1/Sun May 23 08:03:18 2010//Tpkgsrc-2022Q2
+/patch-src_audio__aac.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_audio__ac3.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_audio__amr.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_audio__atrac3.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_audio__g726.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_audio__lpcm.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_audio__mp2.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_audio__mp3.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_audio__wma.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_av__mpeg1.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_av__mpeg2.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_av__mpeg4__part10.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_av__mpeg4__part2.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_av__wmv9.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_image__jpeg.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_image__png.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+/patch-src_profiles.c/1.1/Thu Apr 23 15:24:00 2020//Tpkgsrc-2022Q2
+D

@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.4 2022/04/16 00:38:00 markd Exp $
+man/man1/xelatex-unsafe.1
+man/man1/xelatex.1
+man/man1/xetex-unsafe.1
+man/man1/xetex.1
+share/texmf-dist/doc/xetex/base/NEWS
+share/texmf-dist/doc/xetex/base/README
+share/texmf-dist/doc/xetex/base/XeTeX-notes.pdf
+share/texmf-dist/doc/xetex/base/XeTeX-notes.tex

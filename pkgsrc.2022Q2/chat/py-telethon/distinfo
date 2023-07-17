@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/01/15 20:01:37 js Exp $
+
+BLAKE2s (Telethon-1.24.0.tar.gz) = e53bad6707858692e1e425c1402d9e48195e3933dcf108111909be45a8fd5e12
+SHA512 (Telethon-1.24.0.tar.gz) = f9ce75a069d3e0139cee8543c9aaf854d29eb9ddbe0d7a20013098ebf461e33fc0f799cdec8ba61bc041ebe6549c57e1fde9985406c619214392f2f2272a7271
+Size (Telethon-1.24.0.tar.gz) = 464470 bytes

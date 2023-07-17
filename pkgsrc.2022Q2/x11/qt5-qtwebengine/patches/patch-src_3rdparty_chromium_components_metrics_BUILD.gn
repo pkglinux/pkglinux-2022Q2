@@ -1,0 +1,22 @@
+$NetBSD: patch-src_3rdparty_chromium_components_metrics_BUILD.gn,v 1.2 2022/04/18 11:18:18 adam Exp $
+
+--- src/3rdparty/chromium/components/metrics/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/components/metrics/BUILD.gn
+@@ -418,7 +418,7 @@ static_library("demographics_test_suppor
+   ]
+ }
+ 
+-if (is_linux || is_chromeos) {
++if (is_linux || is_chromeos || is_bsd) {
+   static_library("serialization") {
+     sources = [
+       "serialization/metric_sample.cc",
+@@ -511,7 +511,7 @@ source_set("unit_tests") {
+     sources += [ "machine_id_provider_nonwin_unittest.cc" ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (is_linux || is_chromeos || is_bsd) {
+     sources += [ "serialization/serialization_utils_unittest.cc" ]
+     deps += [ ":serialization" ]
+   }

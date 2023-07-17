@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.26 2021/11/12 02:21:01 wen Exp $
+
+BLAKE2s (MIME-Types-2.22.tar.gz) = 224209f6c3f6c816a9c0317386c78d76dd4cd95de1c356543e12aba2c4441f8a
+SHA512 (MIME-Types-2.22.tar.gz) = 93dd5f54defcb2d9ff0e157b05c0f1e6ffd0d62422ae1b17f7f6deee4886d647cc4abf50dde584a65ee0472859ed224ed7dc491cb27066d15cf937fd7de80da7
+Size (MIME-Types-2.22.tar.gz) = 65002 bytes

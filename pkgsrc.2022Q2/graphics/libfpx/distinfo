@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:46:26 nia Exp $
+
+BLAKE2s (libfpx-1.3.1-10.tar.xz) = 28108f5f84da1047e722f361ed79b26a7223c842d7d4d8a41e621c39ef864daa
+SHA512 (libfpx-1.3.1-10.tar.xz) = b0e7356510fbf436265f6d03236979e68bd1b1483cde006460588387ad3ee97adef4536e827f7ee6ba9d19f3b75cc8b772e025d13cbe69b36ec84c8bd0d470eb
+Size (libfpx-1.3.1-10.tar.xz) = 1907580 bytes
+SHA1 (patch-configure.ac) = 3bbab2e051783ddff951ac2e325e1ea89b77b5db
+SHA1 (patch-fpxlib-config.h.in) = fba6a9b7f136f0acb0510d0ab74dab1696c6ebad
+SHA1 (patch-ole_olecomm.h) = 489b63289c533abd4f192752e0bdab74603d8880

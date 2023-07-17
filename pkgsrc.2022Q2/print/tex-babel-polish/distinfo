@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/15 00:36:54 markd Exp $
+
+BLAKE2s (babel-polish.r62680.tar.xz) = 04b129e647c36a2c4e207cc79c23bc1aca12285dafe49181eeb02e2f89aff54b
+SHA512 (babel-polish.r62680.tar.xz) = 0088388d0dd6459e5ac3062cbd5eeac7ae0d858b93ff278b6bc7a95e8fc4846d8c12530eb41ed972f5009ab745857a5599d9ce25860efa06a3a1dddbf396b4dd
+Size (babel-polish.r62680.tar.xz) = 3904 bytes

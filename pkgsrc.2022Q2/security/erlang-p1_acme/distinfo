@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:17:04 nia Exp $
+
+BLAKE2s (p1_acme-1.0.12.tar.gz) = 809204de621cd9ce42a70e046caa306e0d9af71f53a547dea7e6cb51db67bdba
+SHA512 (p1_acme-1.0.12.tar.gz) = a1a291b5b1f07d6eb3ef67913505f784226208485b11d79d695cc0474fc1660662474f5bc558631e2899a16287caedaf7609fc17ca2d1dee0a700e674d50c764
+Size (p1_acme-1.0.12.tar.gz) = 221422 bytes
+SHA1 (patch-rebar.config) = 1313324d35232b829471233b3e421fda1da6c9cf
+SHA1 (patch-rebar.config.script) = b3923816e84d117e82843b93be9672286b4d9361

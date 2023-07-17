@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:12:47 nia Exp $
+
+BLAKE2s (cases.doc.r54682.tar.xz) = 64ca3b28a08b97ba3973e86a7b8fc182f53476434371fb7d6555c57a47ffbb7f
+SHA512 (cases.doc.r54682.tar.xz) = 89aa9005cbdecc26e0b2489b544cf3f504e952eddd9a28dedd2a2f555d3e0c5f8378ce1ef21dd78fbc5ebac616cdb7559f2147e143f3cef12286a3e33d9b5616
+Size (cases.doc.r54682.tar.xz) = 338912 bytes

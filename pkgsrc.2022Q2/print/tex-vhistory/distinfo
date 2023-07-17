@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/12/29 13:59:03 kleink Exp $
+
+BLAKE2s (vhistory.r60124.tar.xz) = 88b52cb3d1d75e24d108a362b68aab7803fca1fb9856ada964d2dbcd846a816a
+SHA512 (vhistory.r60124.tar.xz) = 8581151902ec4954f09277c8d4485aa9b8e98f8bb34693a1e6e79f769e8a47e8a8a3f797f74e7b236b3c24cc3efcbca85adc538bd5509f17244de46f2d1ae1b1
+Size (vhistory.r60124.tar.xz) = 8400 bytes

@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 11:34:51 nia Exp $
+
+BLAKE2s (xless-1.7.tar.gz) = 9b57747263e9fb683996dbd88062033f8193f05203456d0e47c23afe28f503a6
+SHA512 (xless-1.7.tar.gz) = 34656719bdf4bf5234348384f5e432e3d74011aa0722ef95bffb425eed23a47db082ba2a24ed1a7d25916bc325585fb38f0f85b66246c3152846314278eb939e
+Size (xless-1.7.tar.gz) = 45559 bytes
+SHA1 (patch-aa) = d76edac759341d472a44eae25b08f8f89271fc5d
+SHA1 (patch-regexp_regsub.c) = 16e703426ab179c187ca3bfa4d16d3abee9c827f

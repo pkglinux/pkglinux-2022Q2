@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2022/05/22 21:08:07 markd Exp $
+
+BLAKE2s (doclicense.r63340.tar.xz) = 3fd928e448ebe85e462f6508820d96a83269053adaf07c2f66500567c45690d9
+SHA512 (doclicense.r63340.tar.xz) = c46f4b7368ee52f68eae743fc4184c18a5ce4038976d0e4b810e4395f90c6651283cb345eee59de994973f0fdc93fda983438ff9690058065904cadc58aec8fa
+Size (doclicense.r63340.tar.xz) = 236500 bytes

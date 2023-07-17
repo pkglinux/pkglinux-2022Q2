@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:16:00 nia Exp $
+
+BLAKE2s (Algorithm-Diff-1.1903.tar.gz) = 95b5df0e317110fe1ac21df652c5b17ee26c08f94c992ebe160043be8b52218a
+SHA512 (Algorithm-Diff-1.1903.tar.gz) = 61632be4c19a03ccacaa218ab7cb8bdbc53a4a6030b8173a59c7611056375536788392c1da00ab88f3df9884fc8a67825efc83b70e2e564664d5187021d6b106
+Size (Algorithm-Diff-1.1903.tar.gz) = 34174 bytes

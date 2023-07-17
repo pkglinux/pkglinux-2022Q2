@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.12 2022/03/30 09:12:01 wiz Exp $
+include/pycairo/py3cairo.h
+lib/pkgconfig/py3cairo.pc
+${PYSITELIB}/cairo/__init__.py
+${PYSITELIB}/cairo/__init__.pyi
+${PYSITELIB}/cairo/_cairo.so
+${PYSITELIB}/cairo/include/py3cairo.h
+${PYSITELIB}/cairo/py.typed
+${PYSITELIB}/pycairo-${PKGVERSION}.egg-info

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/08 10:53:26 adam Exp $
+
+BLAKE2s (pyxbe-0.0.3.tar.gz) = 240d353e7d19257fd9dec170588dccc8693752726c40f87ad00bb31540818c67
+SHA512 (pyxbe-0.0.3.tar.gz) = b9d0616554c59e9d8cd1a9933ecac6308c020d5445e21e409da3718ef780ae486163aa726ba8df63ebca100216d5b70c63385c4bb71843ccaba74d48500ee16f
+Size (pyxbe-0.0.3.tar.gz) = 16909 bytes

@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:56:11 nia Exp $
+
+BLAKE2s (vowpal_wabbit-8.2.0.tar.gz) = a96c4dc0d5b459691e80cd6fa1e98e89abfaed04f997aae10ed64d6fbcde6312
+SHA512 (vowpal_wabbit-8.2.0.tar.gz) = 7f352c7d899e1068969ecf10931ce59efaedb5ffb91277958e96b1c705cb9f9da7397dcded42e101ba98412124e2662ca5cf71b368ab7d80ce7afe650cdd59c6
+Size (vowpal_wabbit-8.2.0.tar.gz) = 13391191 bytes
+SHA1 (patch-vowpalwabbit_accumulate.cc) = 605cb7e6d1bf1efe0051c4a35a609b277b4f7f4d
+SHA1 (patch-vowpalwabbit_allreduce__sockets.cc) = d412ecea83a70af56d08752fb5f99675dd6fd0e4
+SHA1 (patch-vowpalwabbit_bfgs.cc) = 4e1532fd3fd7b3ccf37480a2b443309e0c7ff797
+SHA1 (patch-vowpalwabbit_main.cc) = 46bdcaca26ea4635ab0b5c361227fe907e3fbfd9
+SHA1 (patch-vowpalwabbit_parser.cc) = 1ea77e94b53ec7a24b5fabbd9e05cb9b47ac6707
+SHA1 (patch-vowpalwabbit_sender.cc) = 796daf462f50d9d2b7a90d6a032cbf69f7a3a374

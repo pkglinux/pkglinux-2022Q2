@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:15:34 nia Exp $
+
+BLAKE2s (cqueues-20200726.tar.gz) = 596768718ffaae9ad4c561ebfe98610826f1b3a2433c5454d801428f16e05b7e
+SHA512 (cqueues-20200726.tar.gz) = f2198a2a887bca445fe480949e05ecc94c3112827dbd65d2de0258316beee12f6052fa2670560daab708421e669dde0ac581b365af6bb94a3fc6f322c8bc7547
+Size (cqueues-20200726.tar.gz) = 511659 bytes
+SHA1 (patch-config.h.guess) = a4c9de988504c6a03eef7837a7c62bf12fdfaa16
+SHA1 (patch-src_lib_notify.c) = 63dcb558dbd1d53e668ee766b9cd506e36c1efb2

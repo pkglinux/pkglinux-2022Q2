@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/04 16:07:51 jaapb Exp $
+
+BLAKE2s (ppx_let-0.15.0.tar.gz) = b177056d4c1009564f17b28a97ddb255d7360724d93b0a123478209a13b60fc7
+SHA512 (ppx_let-0.15.0.tar.gz) = 5a22117407c93755df5fe55feded9d7061a8bf953aecc83d2e04de648aff973b1c380b44a26fa68888e90e7486b91a1c665c033c01e2af456a7de3b0b63775d3
+Size (ppx_let-0.15.0.tar.gz) = 17400 bytes

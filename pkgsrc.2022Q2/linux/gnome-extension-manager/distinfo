@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (extension-manager-0.3.2.tar.gz) = 3da0250c2175f4c1c70eb1493fd8346f057c390953c7516a5d9fd4b98bde5e1c
+SHA512 (extension-manager-0.3.2.tar.gz) = 84ff2f246d582cdae06a12e5e88309d67ae32502e9885675c08d75dc686fdea28b53bffa37d396ffface8515712f0b990603b5832704ae722342f0ad49748150
+Size (extension-manager-0.3.2.tar.gz) = 1447521 bytes

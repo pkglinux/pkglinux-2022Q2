@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/10 06:21:01 markd Exp $
+
+BLAKE2s (pst-geo.r60387.tar.xz) = cffffe73d2228dd0c3984f8d5941d3da52f43626292fcc87be1f81d36c22ec9e
+SHA512 (pst-geo.r60387.tar.xz) = 4e97b80679129df2cf52a8998e1b131b7ed5ebd21046219843af1ca81272a84c3a8fca72810622a7215385207eb541cd2bfac65b791920da61c233f969423c3b
+Size (pst-geo.r60387.tar.xz) = 24297652 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/04/07 02:52:37 markd Exp $
+
+BLAKE2s (zapfding.r61719.tar.xz) = 701536a0b6919bd50caefb2a08ff5108aa47568db78c755dd237da16ed9ca99f
+SHA512 (zapfding.r61719.tar.xz) = 3e0503c2d4e30c8d727caa1d9438d4c6b12c3a15729eae65d5c4a8dd9ab0d0c8eee2f63138e9d267f4ae98ef7607388888f7acd78e189a5c322bda22827166fe
+Size (zapfding.r61719.tar.xz) = 46944 bytes

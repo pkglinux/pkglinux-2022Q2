@@ -1,0 +1,16 @@
+$NetBSD: distinfo,v 1.14 2021/10/26 11:05:26 nia Exp $
+
+BLAKE2s (cacti-1.2.11.tar.gz) = e116eee221954f1065aee42bf85ec8b1c40e0d89a7760043930f0c8489468807
+SHA512 (cacti-1.2.11.tar.gz) = ab8a856fde55f405314fe0ec1eccccfb78105181fc081dcc04091963b08777550182867b45daea4f630f19dbb538ad7ca5c62f2dac9cd867524dfef113e2a220
+Size (cacti-1.2.11.tar.gz) = 25099698 bytes
+SHA1 (patch-cacti.sql) = 7bdfe92fc5254762ec4f75019ca380754f5867d5
+SHA1 (patch-cli_install__cacti.php) = 76d6fc73607902d1863fdc54c4c98171c2817454
+SHA1 (patch-include_global.php) = c115a912c63617a4821690829b46ba7350e03c6b
+SHA1 (patch-include_global__settings.php) = e65425a6564541aa578366454a6a4cd5f8db3afc
+SHA1 (patch-install_functions.php) = 94847ef9325caeae2d8da6d8ca4af376e0b5c9e7
+SHA1 (patch-lib_clog__webapi.php) = f17084d66ef21c4315547c389da6d94795ceeed8
+SHA1 (patch-lib_functions.php) = c29ce98afd2a865d3f307b25003af10bc9e8b13e
+SHA1 (patch-lib_installer.php) = 8406eb68e394b993246519188ecce9300a173c85
+SHA1 (patch-lib_rrd.php) = 1f97271d4d4832f93b3e312b2d25281d1724aeec
+SHA1 (patch-poller__maintenance.php) = 91ad867cd958835412a652ff50ffb1ad3d1074fa
+SHA1 (patch-utilities.php) = 4a681095225c59f1d9a28408978af7b81a64141a

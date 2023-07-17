@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:13:17 nia Exp $
+
+BLAKE2s (everyshi.r57001.tar.xz) = e74660c297597f03bd8d75a760473360668c0fffa9a8e34dc17d220c2e749b83
+SHA512 (everyshi.r57001.tar.xz) = b6219fdc669847a30ad2359d6b0888eec0980114d5385c018e9ddfd0876dc52390e1e8ffae5d2850cfa140833365c30024456bfacde6615bdbe5101e7059d52f
+Size (everyshi.r57001.tar.xz) = 2000 bytes

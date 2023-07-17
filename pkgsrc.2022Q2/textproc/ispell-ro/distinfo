@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:22:11 nia Exp $
+
+BLAKE2s (ispell-romanian-20031216/rom-spell.tar.gz) = d2ed7ae3b36d582abfbe410356fd25c9999ba21841aaa9caccc32d1b1509e153
+SHA512 (ispell-romanian-20031216/rom-spell.tar.gz) = 727487d8bab46438721de7022d482270ddee0502c9f61b0111730f02c257a25d7328c24f1e307884f95721aaa6ec767058e1fb1d13501dfbef4966eb9c298c53
+Size (ispell-romanian-20031216/rom-spell.tar.gz) = 279888 bytes

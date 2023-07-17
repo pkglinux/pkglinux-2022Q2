@@ -1,0 +1,11 @@
+/patch-CMakeLists.txt/1.1/Sun Aug 11 16:06:25 2013//Tpkgsrc-2022Q2
+/patch-src_contribs-lib_CLucene_analysis_cjk_CJKAnalyzer.cpp/1.1/Sat Apr 30 01:08:20 2022//Tpkgsrc-2022Q2
+/patch-src_contribs-lib_CMakeLists.txt/1.1/Sun Aug 11 16:06:25 2013//Tpkgsrc-2022Q2
+/patch-src_core_CLucene_queryParser_QueryParser.cpp/1.1/Fri Jan 26 15:27:04 2018//Tpkgsrc-2022Q2
+/patch-src_core_CLucene_queryParser_QueryParser.h/1.1/Fri Jan 26 15:27:04 2018//Tpkgsrc-2022Q2
+/patch-src_core_CLucene_queryParser_QueryParserTokenManager.cpp/1.1/Fri Jan 26 15:27:04 2018//Tpkgsrc-2022Q2
+/patch-src_core_CLucene_queryParser_QueryParserTokenManager.h/1.1/Fri Jan 26 15:27:04 2018//Tpkgsrc-2022Q2
+/patch-src_shared_CLucene_LuceneThreads.h/1.1/Tue Apr 15 20:31:11 2014//Tpkgsrc-2022Q2
+/patch-src_shared_CLucene_config_repl__tchar.h/1.1/Tue Aug 13 10:24:22 2013//Tpkgsrc-2022Q2
+/patch-src_shared_cmake_MacroCheckGccVisibility.cmake/1.2/Fri Apr 16 14:55:42 2021//Tpkgsrc-2022Q2
+D

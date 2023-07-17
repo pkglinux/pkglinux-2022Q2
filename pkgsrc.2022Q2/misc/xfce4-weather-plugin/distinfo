@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.21 2021/12/07 01:16:50 gutteridge Exp $
+
+BLAKE2s (xfce4-weather-plugin-0.11.0.tar.bz2) = 546aaf2cdbc81ae493c17161dd89cd7176d6efb2375d0ce849de6fb19168ccbf
+SHA512 (xfce4-weather-plugin-0.11.0.tar.bz2) = f4534d47f825358752ec6252fd0fc49a44ac682e4cdce960d744cd343f5f670473fa4175c59849282352dc75ca9b22b83d7ace68cedfc7dc89bcb21be24ccf86
+Size (xfce4-weather-plugin-0.11.0.tar.bz2) = 3019896 bytes
+SHA1 (patch-panel-plugin_weather-parsers.c) = c07ebf8f35aaf04ce28a5fc6ca507b3b95c07ca1

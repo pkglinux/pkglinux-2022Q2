@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:09:59 nia Exp $
+
+BLAKE2s (dm-is-list-1.2.0.gem) = 3f321d7f417af8392f38c2b68e491859f10914fb8b3a263c5e51da7117489fb7
+SHA512 (dm-is-list-1.2.0.gem) = 8d704446df3411647af0878721108ad7662ba41ecb56f843445c61e0d4a6990f103ceeda5740592b5e16d036aeaf5fe1637dbc6a9ed741d8fa7cde092fb6000b
+Size (dm-is-list-1.2.0.gem) = 18944 bytes

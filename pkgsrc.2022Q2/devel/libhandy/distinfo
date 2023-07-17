@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/03/10 21:20:41 prlw1 Exp $
+
+BLAKE2s (libhandy-1.5.91.tar.xz) = f8186f2cd503ae89a4796f513a4ee6fb67fa73dfaafc77fa1023c0845fa73406
+SHA512 (libhandy-1.5.91.tar.xz) = bdf63c8b5a704e7c117feccb192779c8efe207b9feca28ffd5c844be3d4f394b9e6268b8c1b675c7a13b3213df5b131d48369624b3836deed4f07a7cd4c611f9
+Size (libhandy-1.5.91.tar.xz) = 1781492 bytes

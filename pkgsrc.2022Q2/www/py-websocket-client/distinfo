@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2022/05/11 17:57:24 bouyer Exp $
+
+BLAKE2s (websocket-client-1.3.2.tar.gz) = 9eb5ad6b6481a52e093bf6ccbd2d81ea2af610df977c2c5875420c7ad5bcee41
+SHA512 (websocket-client-1.3.2.tar.gz) = c2a38aa3fff0e7f94433cec1939ce75074d9f89d403c0627f34e3a0486dc35fe00230ba7c05f9172a89d3ee49f0ef53ae367eca864f34ec95932966b31d6c3a8
+Size (websocket-client-1.3.2.tar.gz) = 47821 bytes

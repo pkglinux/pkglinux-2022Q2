@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/01/23 21:50:33 fcambus Exp $
+
+BLAKE2s (lunzip-1.13.tar.gz) = d218a61703b49ef51a3129b699ce8db4976c9d01f7ada9d2d343c8297ca5c0a3
+SHA512 (lunzip-1.13.tar.gz) = 67f950883b7062d37601bc16d7d64c07f6c580afbf3c0f61394dd6fb5d41c27214484b1dea7aabd41db06d18162b95b5734674646c4fcc833268cabe8cba91bb
+Size (lunzip-1.13.tar.gz) = 66541 bytes

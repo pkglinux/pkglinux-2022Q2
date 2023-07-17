@@ -1,0 +1,1 @@
+bin/pytextile @PREFIX@/bin/pytextile-@PYVERSSUFFIX@

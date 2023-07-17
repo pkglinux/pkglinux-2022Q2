@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:46:02 nia Exp $
+
+BLAKE2s (clutter-box2d-0.10.0.tar.gz) = 640de92365d14345b496ebbcc7bfac2e4618784e9fe9eefe036dae030439bb85
+SHA512 (clutter-box2d-0.10.0.tar.gz) = 7dc7ea749d74678b1978d777802f652ae1fb0b637b364eea16a0ed13b3398b7e900a80a5fd451a0494df788e948d3a8275b485dc4ffe87b3f98b0383350f1c47
+Size (clutter-box2d-0.10.0.tar.gz) = 491980 bytes
+SHA1 (patch-aa) = 873b3f2277727ca6f9093b58994d3ef137310718
+SHA1 (patch-ab) = 8a596ad7aac00e68733131be0e907befef64b2ea

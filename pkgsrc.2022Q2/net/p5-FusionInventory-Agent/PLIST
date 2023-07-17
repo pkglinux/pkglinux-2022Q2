@@ -1,0 +1,17 @@
+@comment $NetBSD: PLIST,v 1.5 2021/05/03 17:12:23 bouyer Exp $
+share/examples/fusioninventory/agent.cfg
+share/examples/fusioninventory/inventory-server-plugin.cfg
+share/examples/fusioninventory/proxy-server-plugin.cfg
+share/examples/fusioninventory/proxy2-server-plugin.cfg
+share/examples/fusioninventory/server-test-plugin.cfg
+share/examples/fusioninventory/ssl-server-plugin.cfg
+share/fusioninventory/edid.ids
+share/fusioninventory/html/favicon.ico
+share/fusioninventory/html/index.tpl
+share/fusioninventory/html/inventory.tpl
+share/fusioninventory/html/logo.png
+share/fusioninventory/html/now.tpl
+share/fusioninventory/html/site.css
+share/fusioninventory/pci.ids
+share/fusioninventory/sysobject.ids
+share/fusioninventory/usb.ids

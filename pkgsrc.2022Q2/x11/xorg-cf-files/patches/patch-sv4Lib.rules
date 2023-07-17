@@ -1,0 +1,84 @@
+$NetBSD: patch-sv4Lib.rules,v 1.2 2018/01/25 13:01:23 jperkin Exp $
+
+--- sv4Lib.rules.orig	2015-12-22 01:28:02.000000000 +0000
++++ sv4Lib.rules
+@@ -63,26 +63,50 @@ XCOMM $XFree86: xc/config/cf/sv4Lib.rule
+ /*
+  * InstallSharedLibrary - generate rules to install the shared library.
+  */
++INSTALLMINORREV = true
++
+ #ifndef InstallSharedLibrary
+ #if StripInstalledPrograms
+ # define InstallSharedLibrary(libname,rev,dest)				@@\
+ install:: Concat(lib,libname.so.rev) 					@@\
+ 	MakeDir($(DESTDIR)dest)						@@\
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTLIBFLAGS) Concat(lib,libname.so.rev) $(DESTDIR)dest @@\
++	T=`echo Concat(lib,libname.so.rev) | sed 's/\(lib[^\.]*\.so\.[0-9]*\)\(\.[0-9]*\)\{1,2\}/\1/'`;\	@@\
++	if $(INSTALLMINORREV); then \					@@\
++	  INST=Concat(lib,libname.so.rev); \				@@\
++	  LINK=$$T; \							@@\
++	else \								@@\
++	  INST=$$T; \							@@\
++	fi; \								@@\
++	(set -x; \							@@\
++	$(INSTALL) $(INSTALLFLAGS) $(INSTBINFLAGS) $$INST $(DESTDIR)dest); \ @@\
+ 	mcs -d Concat($(DESTDIR)dest/lib,libname.so.rev)		@@\
+-	@if $(SOSYMLINK); then (set -x; \				@@\
++	if [ X"$$LINK" != X ]; then (set -x; \				@@\
++	  $(RM) $(DESTDIR)dest/$$LINK; \				@@\
++	  $(LN) $$INST $(DESTDIR)dest/$$LINK); \			@@\
++	fi; \								@@\
++	if $(SOSYMLINK); then (set -x; \				@@\
+ 	  $(RM) Concat($(DESTDIR)dest/lib,libname.so); \		@@\
+-	  cd $(DESTDIR)dest; \						@@\
+-	  $(LN) Concat(lib,libname.so.rev) Concat(lib,libname.so)); fi
++	  $(LN) $$T Concat($(DESTDIR)dest/lib,libname.so)); fi
+ #else
+ # define InstallSharedLibrary(libname,rev,dest)				@@\
+ install:: Concat(lib,libname.so.rev) 					@@\
+ 	MakeDir($(DESTDIR)dest)						@@\
+-	$(INSTALL) $(INSTALLFLAGS) $(INSTLIBFLAGS) Concat(lib,libname.so.rev) $(DESTDIR)dest @@\
+-	@if $(SOSYMLINK); then (set -x; \				@@\
++	T=`echo Concat(lib,libname.so.rev) | sed 's/\(lib[^\.]*\.so\.[0-9]*\)\(\.[0-9]*\)\{1,2\}/\1/'`;\	@@\
++	if $(INSTALLMINORREV); then \					@@\
++	  INST=Concat(lib,libname.so.rev); \				@@\
++	  LINK=$$T; \							@@\
++	else \								@@\
++	  INST=$$T; \							@@\
++	fi; \								@@\
++	(set -x; \							@@\
++	$(INSTALL) $(INSTALLFLAGS) $(INSTBINFLAGS) $$INST $(DESTDIR)dest); \ @@\
++	if [ X"$$LINK" != X ]; then (set -x; \				@@\
++	  $(RM) $(DESTDIR)dest/$$LINK; \				@@\
++	  $(LN) $$INST $(DESTDIR)dest/$$LINK); \			@@\
++	fi; \								@@\
++	if $(SOSYMLINK); then (set -x; \				@@\
+ 	  $(RM) Concat($(DESTDIR)dest/lib,libname.so); \		@@\
+-	  cd $(DESTDIR)dest; \						@@\
+-	  $(LN) Concat(lib,libname.so.rev) Concat(lib,libname.so)); fi
++	  $(LN) $$T Concat($(DESTDIR)dest/lib,libname.so)); fi
+ #endif
+ 
+ #endif /* InstallSharedLibrary */
+@@ -97,17 +121,17 @@ install:: Concat(lib,libname.so.rev)
+ #ifndef LinkWithExports
+ # if UseExportLists
+ #  define LinkWithExports(libname,rev,solist,down,up) \
+-	(cd down; $(CCENVSETUP) SharedLibraryLdCmd -o up/$@~ $(SHLIBLDFLAGS) -h $@ solist $(REQUIREDLIBS))	@@\
++	(cd down; $(CCENVSETUP) SharedLibraryLdCmd -o up/$@~ $(SHLIBLDFLAGS) -Wl,-h,$@ solist $(REQUIREDLIBS))	@@\
+ 	if [ -f Concat(lib,libname.elist) ]; then \			@@\
+ 	    $(RM) down/$@.exports $@.list; \				@@\
+ 	    $(CPP) $(ALLINCLUDES) $(EXTRA_DEFINES) $(PROTO_DEFINES) $(THREADS_DEFINES) $(DEFINES) Concat(lib,libname.elist) | CppSedMagic >$@.list; \	@@\
+ 	    $(EXPORTLISTGEN) $@~ $@.list > down/$@.exports; \		@@\
+-	    (cd down; $(CCENVSETUP) SharedLibraryLdCmd -o up/$@~ $(SHLIBLDFLAGS) -h $@ ShlibExportListOpt($@.exports) solist $(REQUIREDLIBS)); \	@@\
++	    (cd down; $(CCENVSETUP) SharedLibraryLdCmd -o up/$@~ $(SHLIBLDFLAGS) -Wl,-h,$@ ShlibExportListOpt($@.exports) solist $(REQUIREDLIBS)); \	@@\
+ 	    $(RM) down/$@.exports $@.list; \				@@\
+ 	fi;
+ # else
+ #  define LinkWithExports(libname,rev,solist,down,up) \
+-	(cd down; $(CCENVSETUP) SharedLibraryLdCmd -o up/$@~ $(SHLIBLDFLAGS) -h $@ solist $(REQUIREDLIBS))
++	(cd down; $(CCENVSETUP) SharedLibraryLdCmd -o up/$@~ $(SHLIBLDFLAGS) -Wl,-h,$@ solist $(REQUIREDLIBS))
+ # endif
+ #endif
+ 

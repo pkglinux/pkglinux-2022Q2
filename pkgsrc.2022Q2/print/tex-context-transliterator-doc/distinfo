@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/09 20:44:14 markd Exp $
+
+BLAKE2s (context-transliterator.doc.r61127.tar.xz) = d0177e3da952e0d8f054ddfb2642b19b1656a98d89992fdb62bf2d7e894906ac
+SHA512 (context-transliterator.doc.r61127.tar.xz) = 8473c1ca7b48009055f5c33031ec60f80d84dc43396789b0c0c7e6d65bcf014a237088dca07211beae4bfb80377f55cf12a9f379995cff50f52143fc4bc81295
+Size (context-transliterator.doc.r61127.tar.xz) = 192808 bytes

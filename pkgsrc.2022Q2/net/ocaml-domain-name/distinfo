@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/11 08:49:56 jaapb Exp $
+
+BLAKE2s (ocaml-domain-name-0.4.0.tar.gz) = ca3958198e31485a24716d534dfc30290e0f2ad13f1d9b349ab711d7498a6177
+SHA512 (ocaml-domain-name-0.4.0.tar.gz) = e15e11c273deee0a5ad4570b970f3fa133cc1deeb4d34270ec2ea63da0b847e467b12bb15651c6a7049715729074f13326ad0ec60b5fe04794c1cb06be6f5796
+Size (ocaml-domain-name-0.4.0.tar.gz) = 9585 bytes

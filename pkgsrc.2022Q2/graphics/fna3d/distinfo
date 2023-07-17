@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.4 2022/05/15 11:50:53 tnn Exp $
+
+BLAKE2s (FNA3D-22.05.tar.gz) = 97e3ee16e30889ff1e7b65214190725ead2cecad7a9951bc04499babbcf33115
+SHA512 (FNA3D-22.05.tar.gz) = 702ffde8ee537fbcef4078e9d59a9aa82a7f67ed65d6b0a9f5e0087d0ef97339030c911c3a018b16cbd3f95413fc37384b44d5a4ecca22d81299e4b80ce5e069
+Size (FNA3D-22.05.tar.gz) = 315171 bytes
+SHA1 (patch-CMakeLists.txt) = 905b792729524ecc51dede035e2d2442cab9d262

@@ -1,0 +1,24 @@
+$NetBSD: patch-build_Makefile.Linux,v 1.3 2019/11/24 20:16:55 spz Exp $
+
+--- build/Makefile.Linux.orig	2019-03-11 23:17:41.000000000 +0000
++++ build/Makefile.Linux
+@@ -5,13 +5,17 @@ OSDEF = -DLINUX
+ # NETLIBS: Use replacement rpc
+ NETLIBS = -ltirpc
+ 
++# pkgsrcification
++PKGDIR ?= /usr/pkg
++PKGDEF = -I${PKGDIR}/include -L${PKGDIR}/lib -Wl,--rpath=${PKGDIR}/lib
++
+ # Compile flags for normal build
+ CC = gcc
+ GCCVER := $(shell test 0`gcc -dumpversion|cut -d. -f1` -ge 4 && echo yes)
+ ifeq ($(GCCVER),yes)
+-   CFLAGS = -g -O2 -Wall -Wno-unused -I/usr/include/tirpc -Wno-pointer-sign -D_REENTRANT $(LFSDEF) $(OSDEF)
++   CFLAGS += -g -O2 -Wall -Wno-unused -I/usr/include/tirpc -Wno-pointer-sign -D_REENTRANT $(LFSDEF) $(OSDEF) $(PKGDEF)
+ else
+-   CFLAGS = -g -O2 -Wall -Wno-unused -I/usr/include/tirpc -D_REENTRANT $(LFSDEF) $(OSDEF)
++   CFLAGS += -g -O2 -Wall -Wno-unused -I/usr/include/tirpc -D_REENTRANT $(LFSDEF) $(OSDEF) $(PKGDEF)
+ endif
+ 
+ ifndef PKGBUILD

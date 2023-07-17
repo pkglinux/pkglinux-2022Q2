@@ -1,0 +1,13 @@
+===========================================================================
+$NetBSD: MESSAGE,v 1.3 2021/02/10 13:00:05 cjep Exp $
+
+To use tripwire to protect your systems, you should first tune the 
+configure in ${PKG_SYSCONFDIR} and then initialise the databases:
+
+	cd ${PKG_SYSCONFDIR} 
+	${PREFIX}/sbin/tripwire -initialize
+
+which creates the database in the ${PKG_SYSCONFDIR}/databases
+directory.
+
+===========================================================================

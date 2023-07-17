@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:15:26 nia Exp $
+
+BLAKE2s (librelp-1.2.16.tar.gz) = a040f79a144d433a5f63accaddf7294f6595d4b4f59ec9618ef35ba45ae4bda2
+SHA512 (librelp-1.2.16.tar.gz) = 54c101281c94046e4f8d6f77e73ab52874408e62c77f3dfa29ec0b294f39c216637674cc0bf1b7e04173557b3f21bfa74b7be1aafa3ff2771acd41d1d067d3a3
+Size (librelp-1.2.16.tar.gz) = 474456 bytes
+SHA1 (patch-configure) = 4c48a61df9445534f341eb3050d9fcbdd01303c2
+SHA1 (patch-src_Makefile.in) = f59ca692ac59af2f96638ac3eb5597610c1e0a97

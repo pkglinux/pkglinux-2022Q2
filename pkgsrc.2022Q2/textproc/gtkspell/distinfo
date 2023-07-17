@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.17 2021/10/26 11:21:56 nia Exp $
+
+BLAKE2s (gtkspell-2.0.16.tar.gz) = 18e8d77c61dbb3d86b65e7ced9f247303dcde9629e32f25eeb5189ff8611a01c
+SHA512 (gtkspell-2.0.16.tar.gz) = 7d3afb327c2e15608194e6ee6110107a0ce082e483788d831d636b2e579472304137373c09a966d8e5c0cd2f830bf2e0ee477c9b5fca7da6ee27fd1498915b9d
+Size (gtkspell-2.0.16.tar.gz) = 351277 bytes
+SHA1 (patch-configure) = f4f0859ad7ecd07f3df39784ea66e1586cf4ad74
+SHA1 (patch-gtkspell_gtkspell.c) = 1a75fa98d6e061dc938c7686a80524150be6df01

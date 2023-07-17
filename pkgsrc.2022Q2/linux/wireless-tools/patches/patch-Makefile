@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- Makefile.orig	2007-09-17 23:56:46.000000000 +0000
++++ Makefile
+@@ -4,6 +4,7 @@
+ 
+ ## Installation directory. By default, go in /usr/local.
+ ## Distributions should probably use /, but they probably know better...
++PREFIX=$(DESTDIR)/2022Q2
+ ifndef PREFIX
+   PREFIX = /usr/local
+ endif

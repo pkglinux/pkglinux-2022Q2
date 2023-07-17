@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:05:58 nia Exp $
+
+BLAKE2s (lopster-1.2.2.tar.gz) = 69d79563b062c1c5b33c7e3387a70acc6335fca22df12135deb1e6f5b3519a53
+SHA512 (lopster-1.2.2.tar.gz) = 5669b804d26fab2609553bdbfa2c7ebbf0380efb3fa93a11b45c1554a74d4d58d55a8a4c22b439ac8c19a07567dab6890b21361514aa8a4a6b13a0f252ff5224
+Size (lopster-1.2.2.tar.gz) = 630325 bytes
+SHA1 (patch-ab) = 8a1c769b579d74f6e54b1d0e8fbe9b38066c0ba8
+SHA1 (patch-ac) = bab2e1cba16d44fa036d099f4c39713592fa1e8b
+SHA1 (patch-ad) = 7129a55bd4fbfb5702586b9fac99028b473a5d6c

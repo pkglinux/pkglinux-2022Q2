@@ -1,0 +1,16 @@
+/DESCR/1.2/Sun Apr  9 06:34:32 2006//Tpkgsrc-2022Q2
+/Makefile/1.275/Fri Apr  1 16:39:12 2022//Tpkgsrc-2022Q2
+/Makefile.common/1.44/Fri Apr  1 16:39:12 2022//Tpkgsrc-2022Q2
+/PLIST/1.6/Fri Nov  2 07:29:30 2012//Tpkgsrc-2022Q2
+/buildlink3.mk/1.70/Mon May 24 17:46:25 2021//Tpkgsrc-2022Q2
+/dirs.mk/1.2/Mon May 16 07:59:04 2011//Tpkgsrc-2022Q2
+/distinfo/1.176/Fri Apr  1 16:39:12 2022//Tpkgsrc-2022Q2
+/hacks.mk/1.26/Mon Aug 31 18:00:37 2020//Tpkgsrc-2022Q2
+/license.mk/1.2/Fri Jul 17 06:44:46 2009//Tpkgsrc-2022Q2
+/module.mk/1.75/Mon Aug 31 18:00:37 2020//Tpkgsrc-2022Q2
+/options.mk/1.17/Mon Nov 29 16:26:36 2021//Tpkgsrc-2022Q2
+/packlist.mk/1.21/Sun Nov  3 19:04:05 2019//Tpkgsrc-2022Q2
+/vars.mk/1.5/Fri Oct 28 07:41:52 2011//Tpkgsrc-2022Q2
+/version.mk/1.5/Tue Apr 23 09:27:46 2019//Tpkgsrc-2022Q2
+D/files////
+D/patches////

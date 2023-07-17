@@ -1,0 +1,14 @@
+/DESCR/1.1.1.1/Mon Jan 26 13:03:38 2004//Tpkgsrc-2022Q2
+/Makefile/1.178/Mon Apr 18 19:11:47 2022//Tpkgsrc-2022Q2
+/Makefile.common/1.92/Sun Apr 10 16:47:32 2022//Tpkgsrc-2022Q2
+/PLIST.Darwin/1.1/Wed Feb 24 16:18:41 2016//Tpkgsrc-2022Q2
+/PLIST.DragonFly/1.5/Thu Apr 24 12:32:22 2008//Tpkgsrc-2022Q2
+/PLIST.FreeBSD/1.8/Thu Apr  2 15:52:46 2020//Tpkgsrc-2022Q2
+/PLIST.Linux/1.22/Fri Dec 18 23:33:06 2020//Tpkgsrc-2022Q2
+/PLIST.NetBSD/1.10/Thu Apr 24 12:32:22 2008//Tpkgsrc-2022Q2
+/PLIST.SunOS/1.9/Thu Dec 20 18:22:05 2012//Tpkgsrc-2022Q2
+/PLIST.common/1.45/Sun Apr 10 16:47:32 2022//Tpkgsrc-2022Q2
+/buildlink3.mk/1.43/Sun Apr 10 16:47:32 2022//Tpkgsrc-2022Q2
+/distinfo/1.119/Sun Apr 10 16:47:32 2022//Tpkgsrc-2022Q2
+/options.mk/1.4/Thu Apr  2 17:46:40 2020//Tpkgsrc-2022Q2
+D/patches////

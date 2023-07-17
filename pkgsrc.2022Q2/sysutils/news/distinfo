@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:19:54 nia Exp $
+
+BLAKE2s (news-0.2.tar.gz) = 06b1de1b7d1b020aea9052b22f297a1b423c7874fd566082d25fac0289119524
+SHA512 (news-0.2.tar.gz) = 8f5078328c5c0d68fc1919bc7fad00a996c711323822dc532c5bf8be6800fb92c24a019212a04745e3cf776984cbe690df69b78f67cb3200e807b17746c264cc
+Size (news-0.2.tar.gz) = 3812 bytes
+SHA1 (patch-Makefile) = 3fedf88945b285b123967fe563cfdf478235f320
+SHA1 (patch-aa) = f6550129bb13741e2eb10dfcdb74067dca020609

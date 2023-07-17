@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:13:41 nia Exp $
+
+BLAKE2s (tex-hyphenat-15878/hyphenat.doc.tar.xz) = f907447fc34446e9a920c54a3abccb1b71b094e3b6586acaa24a1aae42b6f771
+SHA512 (tex-hyphenat-15878/hyphenat.doc.tar.xz) = 8ca7edf5d2747e84e27022f74e5f8b3b8725c315c5bd1dfc37383c13955fd0dbb0fcda20644319d59a58c6ddd022074fff965631493255c6b9af6b675243d708
+Size (tex-hyphenat-15878/hyphenat.doc.tar.xz) = 151800 bytes

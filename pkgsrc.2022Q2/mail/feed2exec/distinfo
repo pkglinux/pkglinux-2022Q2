@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/02/04 00:04:09 wiz Exp $
+
+BLAKE2s (feed2exec-0.18.0/feed2exec-0.18.0.tar.gz) = d5230be55f16fe0f04c98cb4465eb04ace47df125a8c8c9cc3de7ff2effaa806
+SHA512 (feed2exec-0.18.0/feed2exec-0.18.0.tar.gz) = cc3bc9f69c9347478d1aff40abebe500bdcde0b1e15df1dc389d84ff0806611128f99ca1ba40a063861f5fe5047a71455f6d3480c666afd4af042fcc52515793
+Size (feed2exec-0.18.0/feed2exec-0.18.0.tar.gz) = 704031 bytes

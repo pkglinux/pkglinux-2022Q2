@@ -1,0 +1,48 @@
+# $NetBSD: Makefile.common,v 1.6 2022/05/12 14:51:30 kim Exp $
+#
+# used by shells/standalone-tcsh/Makefile
+# used by shells/static-tcsh/Makefile
+# used by shells/tcsh/Makefile
+
+DISTNAME=	tcsh-6.24.01
+CATEGORIES=	shells
+MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
+MASTER_SITES+=	http://ftp.funet.fi/pub/mirrors/ftp.astron.com/pub/tcsh/
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://www.tcsh.org/
+COMMENT=	Extended C-shell with many useful features
+LICENSE=	original-bsd
+
+GNU_CONFIGURE=	yes
+USE_TOOLS+=	autoconf:test perl:test
+
+EGDIR=		share/examples/tcsh
+
+.include "../../mk/bsd.prefs.mk"
+.include "options.mk"
+
+.if ${OPSYS} == "SunOS"
+LOWER_OPSYS_VERSUFFIX=	${OS_VERSION:S/5./2./}
+.endif
+
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+# XXX Should use CONFIGURE_ENV, but the configure script disregards
+# $CC_FOR_GETHOST in the environment and sets it to cc.
+MAKE_FLAGS+=	CC_FOR_GETHOST=${NATIVE_CC:Q}
+.endif
+
+TEST_TARGET=	check
+
+PKG_SHELL=	bin/tcsh
+
+post-install:
+	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX:S/\/$//:Q}/${EGDIR}
+	${INSTALL_DATA} \
+		${WRKSRC}/complete.tcsh \
+		${DESTDIR}${PREFIX:S/\/$//:Q}/${EGDIR}
+	${INSTALL_DATA} \
+		${WRKSRC}/csh-mode.el \
+		${DESTDIR}${PREFIX:S/\/$//:Q}/${EGDIR}
+
+.include "../../mk/termcap.buildlink3.mk"

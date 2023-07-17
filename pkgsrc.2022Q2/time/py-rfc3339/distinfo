@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:24:35 nia Exp $
+
+BLAKE2s (pyRFC3339-1.1.tar.gz) = 00aa70e60f08d420e3bc6509c45bbc0b5c37cd5d46cb21f81e2729cf52bdc83e
+SHA512 (pyRFC3339-1.1.tar.gz) = 958b7761fab590aa42bb57a955c5d834441f717796a452b60df21663099dcf2fc046afe60f8157fd0f1edfd95c5e9c9c5349ab10ca4078d210fc63d848496a2f
+Size (pyRFC3339-1.1.tar.gz) = 5290 bytes

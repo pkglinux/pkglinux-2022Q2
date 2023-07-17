@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:13:25 nia Exp $
+
+BLAKE2s (tex-fundus-calligra-26018/fundus-calligra.tar.xz) = 0559293a5585ece263a467a1eb7c5e0a6db84ca28ffaef2115ea2aeae9c4b0f0
+SHA512 (tex-fundus-calligra-26018/fundus-calligra.tar.xz) = 4e4af075b48df0727dd46b3c7d00f690e2100e3c341437313dd2e5183db2c0173e705a72964bfe0aed2b9ae50e74a1338a7ec3ebb85f07ed2204d93d506b21a5
+Size (tex-fundus-calligra-26018/fundus-calligra.tar.xz) = 1548 bytes

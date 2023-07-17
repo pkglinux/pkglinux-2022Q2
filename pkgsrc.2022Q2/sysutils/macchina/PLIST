@@ -1,0 +1,6 @@
+@comment $NetBSD: PLIST,v 1.6 2021/12/14 22:16:12 pin Exp $
+bin/macchina
+man/man1/macchina.1
+man/man7/macchina.7
+share/examples/macchina/Lithium.toml
+share/examples/macchina/macchina.toml

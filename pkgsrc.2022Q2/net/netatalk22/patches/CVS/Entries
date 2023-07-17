@@ -1,0 +1,19 @@
+/patch-config_Makefile.in/1.2/Fri Apr  2 09:54:26 2021//Tpkgsrc-2022Q2
+/patch-config_afpd.conf.tmpl/1.2/Fri Jan 28 21:18:19 2022//Tpkgsrc-2022Q2
+/patch-configure/1.3/Wed Jul 12 13:56:00 2017//Tpkgsrc-2022Q2
+/patch-distrib_initscripts_Makefile.in/1.2/Wed Jul 12 13:56:00 2017//Tpkgsrc-2022Q2
+/patch-etc_afpd_afp__options.c/1.2/Fri Jan 28 21:18:19 2022//Tpkgsrc-2022Q2
+/patch-etc_atalkd_main.c/1.1/Sun Sep 12 15:52:37 2021//Tpkgsrc-2022Q2
+/patch-etc_cnid_dbd_cmd_dbd_scanvol.c/1.1/Fri Apr  2 09:54:26 2021//Tpkgsrc-2022Q2
+/patch-etc_papd_file.c/1.1/Sun Sep 12 15:52:37 2021//Tpkgsrc-2022Q2
+/patch-etc_papd_file.h/1.1/Sun Sep 12 15:52:37 2021//Tpkgsrc-2022Q2
+/patch-etc_papd_magics.c/1.2/Fri Jan 28 21:18:19 2022//Tpkgsrc-2022Q2
+/patch-etc_papd_print_cups.c/1.3/Sat Nov 23 17:55:02 2019//Tpkgsrc-2022Q2
+/patch-etc_uams_uams__dhx__pam.c/1.2/Fri Apr  2 09:54:26 2021//Tpkgsrc-2022Q2
+/patch-etc_uams_uams__dhx__passwd.c/1.2/Fri Apr  2 09:54:26 2021//Tpkgsrc-2022Q2
+/patch-etc_uams_uams__randnum.c/1.2/Fri Apr  2 09:54:26 2021//Tpkgsrc-2022Q2
+/patch-include_atalk_ldapconfig.h/1.3/Fri Apr  2 09:54:26 2021//Tpkgsrc-2022Q2
+/patch-libatalk_asp_asp__getsess.c/1.2/Fri Jan 28 21:18:19 2022//Tpkgsrc-2022Q2
+/patch-libatalk_bstring_bstrlib.c/1.1/Sat Jul  8 19:38:18 2017//Tpkgsrc-2022Q2
+/patch-man_man5_afpd.conf.5.tmpl/1.2/Fri Jan 28 21:18:19 2022//Tpkgsrc-2022Q2
+D

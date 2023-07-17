@@ -1,0 +1,44 @@
+$NetBSD: patch-aa,v 1.6 2021/11/06 09:49:20 nia Exp $
+
+Honor CC, CFLAGS. Use LDFLAGS when linking.
+
+--- Makefile.orig	2010-08-07 13:06:42.000000000 +0000
++++ Makefile
+@@ -44,14 +44,14 @@ SYSTEM = -DSYSV=1
+ OPT = -O -Wall
+ # For MWC 3.0 on the Atari ST, use:
+ #CFLAGS = -VCOMPAC -VPEEP
+-CFLAGS = $(OPT) $(SYSTEM)
++CFLAGS += ${SYSTEM}
+ 
+ # GNU's gcc is very nice, if you've got it. Otherwise just cc.
+ #CC = cgcc -mshort -mbaserel
+-CC = cc
++#CC = cc
+ 
+ # tmclock is only needed on Unix systems...
+-TMCLOCK = tmclock.o
++#TMCLOCK = tmclock.o
+ 
+ # Integer-only stdio routines for Atari ST.
+ #LIBS=-liio16
+@@ -69,10 +69,10 @@ MOBJ = marc.o arcdata.o arcdos.o arcio.o
+ all:	arc$(PROG) marc$(PROG)
+ 
+ arc$(PROG):	$(OBJS) $(TMCLOCK)
+-	$(CC) $(OPT) -o arc$(PROG) $(OBJS) $(TMCLOCK) $(LIBS)
++	$(CC) $(OPT) $(LDFLAGS) -o arc$(PROG) $(OBJS) $(TMCLOCK) $(LIBS)
+ 
+ marc$(PROG):	$(MOBJ) $(TMCLOCK)
+-	$(CC) $(OPT) -o marc$(PROG) $(MOBJ) $(TMCLOCK) $(LIBS)
++	$(CC) $(OPT) $(LDFLAGS) -o marc$(PROG) $(MOBJ) $(TMCLOCK) $(LIBS)
+ 
+ clean:
+ 	rm -f *.o arc$(PROG) marc$(PROG)
+@@ -137,4 +137,4 @@ install: all
+ 	install -s -m 0755 -D marc $(DESTDIR)$(PREFIX)/bin/marc
+ 	install -m 0644 -D arc.1 $(DESTDIR)$(PREFIX)/share/man/man1/arc.1
+ 	install -m 0644 -D marc.1 $(DESTDIR)$(PREFIX)/share/man/man1/marc.1
+-	 	
+\ No newline at end of file
++	 	

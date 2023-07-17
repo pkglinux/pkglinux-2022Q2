@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/11/14 18:48:50 adam Exp $
+
+BLAKE2s (toolz-0.11.2.tar.gz) = dec8204b33c1ce54aa6e7b517db2a610ab70a74ebbce7abebf95d26250d37089
+SHA512 (toolz-0.11.2.tar.gz) = 67e8aaea3f9fb8811027f19aa9cf56ab980e4f9cea43978ed9515662c78a7bea12314054b2c26da483b055382d4b080125c011fc43bc48b0965a6ff8415f7168
+Size (toolz-0.11.2.tar.gz) = 65928 bytes

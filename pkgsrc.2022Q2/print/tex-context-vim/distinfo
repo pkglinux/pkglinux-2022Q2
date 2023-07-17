@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/04/09 20:50:37 markd Exp $
+
+BLAKE2s (context-vim.r62071.tar.xz) = e9f0288039cb7fa62dc7d0a5898d5da0af8c354de963ab93596baf78d23f81cf
+SHA512 (context-vim.r62071.tar.xz) = 12100c7aa3eb555cf9dbe72454a96e63feda52329a8a192ff86ba30477acab4ebaaf84c15a79f16d4e3f95cef02baf8146e5810b8c9e8e94c25ba1317bf4fc2c
+Size (context-vim.r62071.tar.xz) = 10232 bytes

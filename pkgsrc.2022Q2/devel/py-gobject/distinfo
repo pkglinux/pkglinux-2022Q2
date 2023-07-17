@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.30 2021/10/26 10:18:31 nia Exp $
+
+BLAKE2s (pygobject-2.28.7.tar.xz) = 25fcd43145663a78a3615577d29e85bd3929e561ac70b2744d63c6f6cef19de7
+SHA512 (pygobject-2.28.7.tar.xz) = a5f3ae39f8156bd6234fb6d0ea31eba782fbdd4c292656c31b33e098abe3dcf0774d492cf602a4637cb679af9ecd511b24263349fbfd25708ca70f16cb052dfb
+Size (pygobject-2.28.7.tar.xz) = 744584 bytes
+SHA1 (patch-Makefile.in) = 338e157934b1aee08e87de91e93b220e8cd21ec8
+SHA1 (patch-configure) = bb69993ce23b2782fa3cff69c4b8c64cc6a16b78
+SHA1 (patch-dsextras.py) = 9ebb5b418ef902acea227d6d84691285ce2d1863
+SHA1 (patch-glib_Makefile.in) = 859360e5f5df3095236b002129feb4ad85546373
+SHA1 (patch-gobject_Makefile.in) = fa97ba35a52b890a4e7e0c16fc0cac1b215c91c2
+SHA1 (patch-py-compile) = 01584ae9ff16d3b7e29c35eecb5bce6cbac1abcc
+SHA1 (patch-pygi_info.c) = cd2d0f0b16a84c05b805edec89d4508507811c49

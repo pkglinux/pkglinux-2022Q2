@@ -1,0 +1,17 @@
+Flatpak is a system for building, distributing, and running sandboxed
+desktop applications on Linux.
+
+See https://flatpak.org/ for more information.
+
+Community discussion happens in [#flatpak:matrix.org](https://matrix.to/#/#flatpak:matrix.org), on [the mailing list](https://lists.freedesktop.org/mailman/listinfo/flatpak), and on [the Flathub Discourse](https://discourse.flathub.org/).
+
+Read documentation for Flatpak [here](https://docs.flatpak.org/en/latest/index.html).
+
+# Contributing
+
+Flatpak welcomes contributions from anyone! Here are some ways you can help:
+* Fix [one of the issues](https://github.com/flatpak/flatpak/issues/) and submit a PR
+* Update flatpak's translations and submit a PR
+* Improve flatpak's documentation, hosted at http://docs.flatpak.org and developed over in [flatpak-docs](https://github.com/flatpak/flatpak-docs)
+* Find a bug and [submit a detailed report](https://github.com/flatpak/flatpak/issues/new) including your OS, flatpak version, and the steps to reproduce
+...

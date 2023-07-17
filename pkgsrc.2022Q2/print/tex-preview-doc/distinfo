@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2022/04/14 03:22:39 markd Exp $
+
+BLAKE2s (preview.doc.r62130.tar.xz) = 2b615ed39d5980a3fd8c40b9bdf115cd0a12f746bc8da007bb6edd6c736c290f
+SHA512 (preview.doc.r62130.tar.xz) = a722fda1fbc3c4319edefb65a30ccde72711a65c19e6fbe7300ba2dcb47b72f12aa436c593f1dc97f9fda1a1fd4d359b4d56928877a9cb80b324ff046d0cd9e3
+Size (preview.doc.r62130.tar.xz) = 326124 bytes

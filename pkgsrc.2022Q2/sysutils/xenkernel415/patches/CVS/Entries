@@ -1,0 +1,17 @@
+/patch-Config.mk/1.1/Sun Apr 18 12:31:26 2021//Tpkgsrc-2022Q2
+/patch-XSA397/1.1/Fri Jun 24 13:07:52 2022//Tpkgsrc-2022Q2
+/patch-XSA398/1.1/Fri Jun 24 13:07:52 2022//Tpkgsrc-2022Q2
+/patch-XSA399/1.1/Fri Jun 24 13:07:52 2022//Tpkgsrc-2022Q2
+/patch-XSA400/1.1/Fri Jun 24 13:07:52 2022//Tpkgsrc-2022Q2
+/patch-XSA401/1.1/Fri Jun 24 13:07:52 2022//Tpkgsrc-2022Q2
+/patch-XSA402/1.1/Fri Jun 24 13:07:52 2022//Tpkgsrc-2022Q2
+/patch-XSA404/1.1/Fri Jun 24 13:07:52 2022//Tpkgsrc-2022Q2
+/patch-xen_Makefile/1.1/Sun Apr 18 12:31:26 2021//Tpkgsrc-2022Q2
+/patch-xen_Rules.mk/1.1/Sun Apr 18 12:31:26 2021//Tpkgsrc-2022Q2
+/patch-xen_arch_x86_Kconfig/1.1/Tue Sep 21 12:23:49 2021//Tpkgsrc-2022Q2
+/patch-xen_arch_x86_Rules.mk/1.1/Sun Apr 18 12:31:26 2021//Tpkgsrc-2022Q2
+/patch-xen_arch_x86_boot_build32.mk/1.2/Fri Mar  4 17:54:08 2022//Tpkgsrc-2022Q2
+/patch-xen_arch_x86_extable.c/1.1/Sun Apr 18 12:31:26 2021//Tpkgsrc-2022Q2
+/patch-xen_arch_x86_mm_p2m.c/1.1/Sun Apr 18 12:31:26 2021//Tpkgsrc-2022Q2
+/patch-xen_drivers_passthrough_x86_iommu.c/1.1/Sun Apr 18 12:31:26 2021//Tpkgsrc-2022Q2
+D

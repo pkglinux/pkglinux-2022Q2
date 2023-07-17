@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.16 2022/02/09 11:32:41 fcambus Exp $
+
+BLAKE2s (lzip-1.23.tar.gz) = 70c879563aeba84aab86a5ffc71990f57395675c998ae636e0294ab72bd8cede
+SHA512 (lzip-1.23.tar.gz) = 482804205b6e92fdf9cb17fb9482df7987227c7b1bef9e42d78787acfabe73995f5b1a66f847d2176423f22dce56f1122c5b1c9670f0b778c0bdad2852369c85
+Size (lzip-1.23.tar.gz) = 121817 bytes

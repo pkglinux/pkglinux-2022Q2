@@ -1,0 +1,13 @@
+$NetBSD: distinfo,v 1.12 2021/10/26 10:21:34 nia Exp $
+
+BLAKE2s (ng-1.4.4-replace_bug.patch) = fc5a136a2fa38826d28b28bcf5655dc197eeee962430dbe572710f631152d5b6
+SHA512 (ng-1.4.4-replace_bug.patch) = d621ca846bad0c24a019cb13f75e6746815a845c3c380421a7c08f5b4f2da624b3b9820910bcb253e65eae874e7717171caf165d37f50eefe37a90a2dada246e
+Size (ng-1.4.4-replace_bug.patch) = 3956 bytes
+BLAKE2s (ng-1.4.4.tar.gz) = 2d266dd435136f42cfb08acdf7f9006a3a009f732ccb23b8ada610155a8a9407
+SHA512 (ng-1.4.4.tar.gz) = daa024e2e7c990157f3a5639f4abc7b97c16d7a39a9a5676bfe4cf7cedb75d0d40a4c3fc781f11772259b53c13e5a59c312da5de536fe0dc1d47f55a42ed9b07
+Size (ng-1.4.4.tar.gz) = 587018 bytes
+SHA1 (patch-aa) = c78f7c9d1654262f612c6db25d5def2f8d2bbcfa
+SHA1 (patch-def.h) = dbb9367ac663abe8f980775167f206706ee542aa
+SHA1 (patch-sys_bsd_ttyio.c) = 4398c4518a25e621c80396e4679006b9e90c2028
+SHA1 (patch-sys_default_tty.c) = 6488cc08dcd0b952c6fa37fd713fddc8b532cf65
+SHA1 (patch-sys_sysv_Makefile) = 75abfc306abe358a950a3854c660ee97052e2af4

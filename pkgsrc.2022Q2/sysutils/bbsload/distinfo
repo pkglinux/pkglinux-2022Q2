@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:19:21 nia Exp $
+
+BLAKE2s (bbsload-0.2.6.tar.gz) = a92a574633d443efda03971fea688a7ffdf68378ec8e51b277bf9037d91b193e
+SHA512 (bbsload-0.2.6.tar.gz) = 5cd2b207ca11cca8e5f5134f0713de27ea6c5ad9ab6f9c42de6be0c01369efd833e3cf1565a237c9ec78896c3d5442634f574dd66044e6b57fbfb150183c34a1
+Size (bbsload-0.2.6.tar.gz) = 79258 bytes
+SHA1 (patch-aa) = 861d984683fb248cd233539c8c325d61774c9aee
+SHA1 (patch-ab) = 3a14f1b186939e75a74468f481583d49a2a30b4e
+SHA1 (patch-ac) = 476ca12d419d2057ce256d0dcbcf262883f86bed
+SHA1 (patch-ad) = 509a5fac20d76c84bf506ce457fe69c3ecbf36cb
+SHA1 (patch-ae) = 5a59e5e9f312dfd1fb24177986ae938e3d0dddf8

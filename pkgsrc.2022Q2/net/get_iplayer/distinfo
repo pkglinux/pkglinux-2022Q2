@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.22 2022/04/10 15:16:09 nia Exp $
+
+BLAKE2s (get_iplayer-3.29.tar.gz) = 347679dccfccf1d96e4e72c2716906f137228b70707f507358324e9df51ad514
+SHA512 (get_iplayer-3.29.tar.gz) = fe1620e24f2a8e35349b0631db26e080ee96d1dbca05a58eb472e414916dbc69b94658387f3d3c6febe0a2f891f594192be99d305dcd7341a4e6f5535b7e64e6
+Size (get_iplayer-3.29.tar.gz) = 148404 bytes

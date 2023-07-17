@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:21:48 nia Exp $
+
+BLAKE2s (dadadodo-1.04.tar.gz) = 74f0ad62ea4d98a5320d5b7e9dc63a02eef08e5c891e47dc732d05c35cccc049
+SHA512 (dadadodo-1.04.tar.gz) = 02670437ffc98e5fb2fe5d617fe2b5f94e261fc8c125c74f08ade8fb50a2b39fda40113d9d6c4d2a78f59d3103b06a5e2e56c95b81fb0704a260e9a0b3ce3634
+Size (dadadodo-1.04.tar.gz) = 22791 bytes

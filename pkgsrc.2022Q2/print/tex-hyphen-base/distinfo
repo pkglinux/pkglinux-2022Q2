@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.22 2021/10/26 11:13:34 nia Exp $
+
+BLAKE2s (hyphen-base.r58630.tar.xz) = 9f65b1c8165aee673881dd419d7d1379b2a0c2676da3d4483ea6965cadad40ab
+SHA512 (hyphen-base.r58630.tar.xz) = 15daa4e0004bb55601db85cf796761c1feca5f4668a5894df820a31d107ebefde74fd4d3a997191d9049ecb0fa3f4678a6a0b1fb6506b17bd24546e942d85510
+Size (hyphen-base.r58630.tar.xz) = 22448 bytes
+SHA1 (patch-aa) = c61b754874efbb9a184e72ba194c061e1af4e9b8
+SHA1 (patch-ab) = 3bbb54d73ef1c5f67b03c99479198f467e27d0a8
+SHA1 (patch-ac) = b4476c5de0b008b40fd208ae8c8378cea75ce807

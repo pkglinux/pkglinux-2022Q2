@@ -1,0 +1,22 @@
+
+kmod - Linux kernel module handling
+
+Information
+===========
+
+Mailing list:
+	linux-modules@vger.kernel.org (no subscription needed)
+	https://lore.kernel.org/linux-modules/
+
+Signed packages:
+	http://www.kernel.org/pub/linux/utils/kernel/kmod/
+
+Git:
+	git://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
+	http://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
+	https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git
+
+Gitweb:
+	http://git.kernel.org/?p=utils/kernel/kmod/kmod.git
+	https://github.com/kmod-project/kmod
+...

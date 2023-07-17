@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2022/04/13 00:46:57 khorben Exp $
+
+BLAKE2s (libDesktop-0.4.1.tar.gz) = 95a47d8a7e4cb8f54e361f0d0a65a41d98137c2419d9adeac0342c9f0de47cea
+SHA512 (libDesktop-0.4.1.tar.gz) = 697fbb3ee8635b85adca2b00bd0ca9642d47f65b748396ef20d4be881c7cb4c9a0c07e505dfc226628f06087ed2a87e9ea3d400f19521dd0f5a2288eb0c3b99b
+Size (libDesktop-0.4.1.tar.gz) = 34353 bytes

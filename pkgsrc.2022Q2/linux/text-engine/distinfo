@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (text-engine-0.1.1.tar.gz) = c9677b481e07350e6d0e198456bea325cdd5b6cbb057be4ce57b3dea4cffdfdd
+SHA512 (text-engine-0.1.1.tar.gz) = 8f3d4e7964d7256c1386200aa4338d8d6ff35e4578e50381b1fcbdc1a232f4da28c74bc8bfe66a5507888197cbf430cac03730d8624381bd5a2b023eecc73736
+Size (text-engine-0.1.1.tar.gz) = 16568 bytes

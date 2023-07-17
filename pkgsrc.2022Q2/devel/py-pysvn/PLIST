@@ -1,0 +1,3 @@
+@comment $NetBSD: PLIST,v 1.5 2021/09/30 16:15:10 hauke Exp $
+${PYSITELIB}/pysvn/__init__.py
+${PYSITELIB}/pysvn/_pysvn_${PYLIBVER}.so

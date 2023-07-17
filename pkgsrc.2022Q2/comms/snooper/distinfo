@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.14 2021/10/26 10:06:05 nia Exp $
+
+BLAKE2s (snooper-19991202.tar.gz) = 382141d57a86cc7a65beb65fe233518927e1ab47c79a8c70d7d4df618c35a20b
+SHA512 (snooper-19991202.tar.gz) = 76c836f73328dde5cfb92e6284831722770c161b2c4adda4fac65c597484eeef640f705ff1002797a51ad296bea8d0128f87a1c3dc77e335862ed83ac027f0c4
+Size (snooper-19991202.tar.gz) = 38239 bytes
+SHA1 (patch-aa) = c819aa96cb6c5fde4cb79e73fe6ba5f499de8897
+SHA1 (patch-ab) = 7dd3aeca56ae7ba98a95acb2619ef0d6960a3fed
+SHA1 (patch-ac) = 3e63795a9174fe060270acce9f208107e70e6f25
+SHA1 (patch-build_configure) = 1db69523c847c17bba088b4fafde9639212dba9d
+SHA1 (patch-main_c) = 0c0646839bbc2720ae07a6b1d20d1e737758d762

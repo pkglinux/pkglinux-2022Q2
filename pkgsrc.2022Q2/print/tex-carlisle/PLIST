@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.4 2021/02/13 04:34:24 markd Exp $
+share/texmf-dist/tex/latex/carlisle/dotlessj.sty
+share/texmf-dist/tex/latex/carlisle/ltxtable.sty
+share/texmf-dist/tex/latex/carlisle/plain.sty
+share/texmf-dist/tex/latex/carlisle/remreset.sty
+share/texmf-dist/tex/latex/carlisle/scalefnt.sty
+share/texmf-dist/tex/latex/carlisle/slashed.sty

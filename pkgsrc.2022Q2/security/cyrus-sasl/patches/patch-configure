@@ -1,0 +1,25 @@
+$NetBSD: patch-configure,v 1.2 2018/04/17 01:57:18 christos Exp $
+
+--- configure.orig	2018-01-19 09:14:17.000000000 -0500
++++ configure	2018-04-16 20:43:13.559772861 -0400
+@@ -6219,9 +6219,9 @@
+   $as_echo_n "(cached) " >&6
+ else
+ 
+-    # first, try -R
++    # first, try ${COMPILER_RPATH_FLAG}
+     SAVE_LDFLAGS="${LDFLAGS}"
+-    LDFLAGS="-R /usr/lib"
++    LDFLAGS="${COMPILER_RPATH_FLAG} /usr/lib"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -6234,7 +6234,7 @@
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  andrew_cv_runpath_switch="-R"
++  andrew_cv_runpath_switch="${COMPILER_RPATH_FLAG}"
+ else
+ 
+   	LDFLAGS="-Wl,-rpath,/usr/lib"

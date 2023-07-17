@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:45:58 nia Exp $
+
+BLAKE2s (arc-theme-20170302.tar.gz) = dc0bdd2ead9170c27f6bd9a0be0c53e8d71cd1e07dd3477b52597a12eb8fc68b
+SHA512 (arc-theme-20170302.tar.gz) = 99408a7c4db2bd2d81453e308ae5d9bc9bfda4f11e57191936f985de2937debff76c4d1f37a97ac8f5ad3751401ee8ad02457e4558b9c4aedc2bfeba1736ef03
+Size (arc-theme-20170302.tar.gz) = 1534152 bytes

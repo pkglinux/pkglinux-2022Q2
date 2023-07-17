@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2022/03/11 21:42:14 tnn Exp $
+
+BLAKE2s (kicad-doc-6.0.2.tar.gz) = e114e6bef8c7b7dfc91397621d2d682c18da8efc8080b887f3d1937ce6885102
+SHA512 (kicad-doc-6.0.2.tar.gz) = 4b4bb20edf265b19edaec25d825747c47e7005fcf902a1b0929ce74efa7ed8cb2f5d9287ab10e75336cfe4b7e69ad802aeae7f8605cccedbb6e729770fe7eda8
+Size (kicad-doc-6.0.2.tar.gz) = 258354072 bytes

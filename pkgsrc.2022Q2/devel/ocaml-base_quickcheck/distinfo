@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/04 17:12:41 jaapb Exp $
+
+BLAKE2s (base_quickcheck-0.15.0.tar.gz) = a75b06c87c5b9c31fc96c2e699c58c78e2eaef6a0dcd4ea629e089d010119536
+SHA512 (base_quickcheck-0.15.0.tar.gz) = e5362d70469c085239efaabbca6ca2558cb1609dfd2c3715d5c31047c8ae34b8304b9d28636806305f226929b0f9e3518b409de08f42f389963378f2aee6b351
+Size (base_quickcheck-0.15.0.tar.gz) = 73702 bytes

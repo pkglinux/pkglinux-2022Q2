@@ -1,0 +1,6 @@
+/patch-lib_frr__pthread.c/1.1/Mon May 16 11:54:20 2022//Tpkgsrc-2022Q2
+/patch-pimd_pim__mroute.c/1.1/Mon May 16 11:54:20 2022//Tpkgsrc-2022Q2
+/patch-pimd_pim__sock.c/1.1/Mon May 16 11:54:20 2022//Tpkgsrc-2022Q2
+/patch-pkgsrc_zebra.sh.in/1.1/Thu Dec 10 16:43:24 2020//Tpkgsrc-2022Q2
+/patch-zebra_kernel__socket.c/1.4/Mon May 16 11:54:20 2022//Tpkgsrc-2022Q2
+D

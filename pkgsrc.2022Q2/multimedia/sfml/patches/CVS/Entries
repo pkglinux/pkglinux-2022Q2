@@ -1,0 +1,17 @@
+/patch-CMakeLists.txt/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-cmake_Config.cmake/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-include_SFML_Config.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-include_SFML_OpenGL.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-include_SFML_Window_WindowHandle.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_System_CMakeLists.txt/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_CMakeLists.txt/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_ClipboardImpl.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_CursorImpl.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_FreeBSD_JoystickImpl.cpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_FreeBSD_JoystickImpl.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_GlContext.cpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_InputImpl.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_JoystickImpl.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_SensorImpl.hpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+/patch-src_SFML_Window_WindowImpl.cpp/1.1/Thu May 21 08:42:00 2020//Tpkgsrc-2022Q2
+D

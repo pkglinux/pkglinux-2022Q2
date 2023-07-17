@@ -1,0 +1,13 @@
+@comment $NetBSD$
+bin/checkmodule
+bin/checkpolicy
+man/man8/checkmodule.8
+man/man8/checkpolicy.8
+man/ru/man8/checkmodule.8
+man/ru/man8/checkpolicy.8
+native/usr/bin/checkmodule
+native/usr/bin/checkpolicy
+share/man/man8/checkmodule.8
+share/man/man8/checkpolicy.8
+share/man/ru/man8/checkmodule.8
+share/man/ru/man8/checkpolicy.8

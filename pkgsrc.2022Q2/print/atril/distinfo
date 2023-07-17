@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2021/10/26 11:12:03 nia Exp $
+
+BLAKE2s (atril-1.24.1.tar.xz) = 2951bafce2fc2547bd682e2812f6072d8a62ff277b904aeda456345c9615bf90
+SHA512 (atril-1.24.1.tar.xz) = 94a55e7699bdfc9368e20986664bd411c12f50f466874ebf20210df3de6ddb499866b505e157c56b58a8065aad2c24284b96afa8c547a6cd259eef413096a91a
+Size (atril-1.24.1.tar.xz) = 2043552 bytes

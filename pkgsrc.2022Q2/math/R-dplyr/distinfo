@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/05/22 12:24:04 mef Exp $
+
+BLAKE2s (R/dplyr_1.0.9.tar.gz) = 0118a9b81fd26da904422e07efa017836dcca0b0a4f20fef5269b7df6c9be819
+SHA512 (R/dplyr_1.0.9.tar.gz) = 0044bd937d68df71fff75d78851f15fd041912872ae0cfcc006b22f08f6ed633a978001a421b2a92500ca87c9170bf9cd3f6b081d045da0b41721af71b3911a2
+Size (R/dplyr_1.0.9.tar.gz) = 957637 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:46:36 nia Exp $
+
+BLAKE2s (GDTextUtil-0.86.tar.gz) = 0643f5142487243c23f251413f0468fb2e3c23784477ac9ee9c9218cb28a2e4c
+SHA512 (GDTextUtil-0.86.tar.gz) = 0c503df81249b0b53a8e87d65f684cf7ff01184ef1fc0166d2f295332d4cb553b6b714f42d6915cd0798f899213cd9cffef12bd30f5fcab0abfa4d0be97c8b18
+Size (GDTextUtil-0.86.tar.gz) = 64698 bytes

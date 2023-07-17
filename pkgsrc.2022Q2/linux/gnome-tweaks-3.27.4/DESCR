@@ -1,0 +1,22 @@
+
+GNOME TWEAKS
+================
+
+
+BUILD
+-----
+The only build-time dependency is [meson](http://mesonbuild.com/).
+
+    meson builddir
+    ninja -C builddir
+    ninja -C builddir install
+
+RUNTIME DEPENDENCIES
+--------------------
+* Python3
+* pygobject (>= 3.10)
+* gnome-settings-daemon
+
+* GIR files and libraries from:
+  - GLib
+...

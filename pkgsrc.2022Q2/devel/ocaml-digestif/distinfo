@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/02/14 09:28:53 wiz Exp $
+
+BLAKE2s (digestif-1.1.0.tar.gz) = 73fe66284fa3a83ffee6b6fedceb9501112811a2663a35c48de87184547ba7c6
+SHA512 (digestif-1.1.0.tar.gz) = bdbaad1772b9f6222a7d17b713c472e73f28d1710e32a4062a94857e5ad5e66b5c140b07507e835537f98c916e6ae6b4cc50fb24ae5792da69e980a0026c6bca
+Size (digestif-1.1.0.tar.gz) = 3726359 bytes

@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:20:23 nia Exp $
+
+BLAKE2s (whowatch-1.4.tar.gz) = 80864ecc69a6c241599ad6326ac11986a93fea27e26d5f2f00ba203656e920c6
+SHA512 (whowatch-1.4.tar.gz) = ed4390faabb35bdec1575dad505acbfae741e3618f993386c3c6a9bd67846a4787b82e76d779d1591070d58b616136f2236fcab041655ca282265c54278ff174
+Size (whowatch-1.4.tar.gz) = 43084 bytes
+SHA1 (patch-aa) = a42dbcd3f9a7138a6ec2e52d34e616e7113b87e2
+SHA1 (patch-ab) = f66829eaf7d148df10c2ca064ed81bdedf5c9adc
+SHA1 (patch-ac) = 9482d1b1759858a83b1efeaa5fc9dd9ec49043c7
+SHA1 (patch-ad) = 41a9e710b8bbe427c715da5d82e77bf32a2f7a34
+SHA1 (patch-ae) = ebb4f046df6ce950a320216f2d9f5238340a10b1
+SHA1 (patch-proctree.c) = 9357a2b6e9a67c80f413921491a47b1a82f0e0a7

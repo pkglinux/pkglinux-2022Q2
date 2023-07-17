@@ -1,0 +1,16 @@
+$NetBSD: patch-src_Makevars,v 1.2 2022/04/19 12:46:05 mef Exp $
+
+Add NetBSD for lkvm location
+
+--- src/Makevars.orig	2019-02-11 21:16:12.000000000 +0000
++++ src/Makevars
+@@ -12,6 +12,9 @@ endif
+ ifeq ($(UNAME), FreeBSD)
+ PKG_LIBS += -lkvm
+ endif
++ifeq ($(UNAME), NetBSD)
++PKG_LIBS += -lkvm
++endif
+ ifeq ($(UNAME), OpenBSD)
+ PKG_LIBS += -lkvm
+ endif

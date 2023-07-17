@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/05/02 14:27:07 jaapb Exp $
+
+BLAKE2s (ocaml-compiler-libs-0.12.4.tar.gz) = 41a7716e77ba88b27fa18a6848b6eee71c0e54eaf73cf9b58bf7d8518608e980
+SHA512 (ocaml-compiler-libs-0.12.4.tar.gz) = cf08e8d4bf25fff26a16a05036f08247176f4845d9d9ada85944c3fa89b6df9a5092d7a1025415a3b2ce00dd45b544cc82247648cf3952be2304e5d9ebab121d
+Size (ocaml-compiler-libs-0.12.4.tar.gz) = 5435 bytes

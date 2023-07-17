@@ -1,0 +1,68 @@
+$NetBSD: patch-aa,v 1.7 2021/03/14 08:40:46 wiz Exp $
+
+Fix build.
+
+--- Makefile.orig	2017-06-28 08:07:41.000000000 +0000
++++ Makefile
+@@ -32,7 +32,6 @@
+ # Set this to an ANSI compatible C compiler (preferably gcc)
+ # See also system specific settings below
+ #CC=cc
+-CC=gcc
+ 
+ ############################################################################
+ #
+@@ -48,7 +47,7 @@ CC=gcc
+ #  See glob.c for all possibilities
+ #
+ # PAGESIZE=Letter
+-PAGESIZE=A4
++#PAGESIZE=A4
+ 
+ #
+ # Define your spooler type
+@@ -58,11 +57,11 @@ PAGESIZE=A4
+ SPOOL_TYPE=BSD_SPOOLER
+ 
+ # PREFIX=e:/usr		# OS/2 type
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ #PREFIX=/usr
+ BINDIR=$(PREFIX)/bin
+ LIBDIR=$(PREFIX)/share
+-MANDIR=$(PREFIX)/man/man1
++#MANDIR=$(PREFIX)/man/man1
+ 
+ #
+ # A default encoding is given in encoding.h. Setting ENCODING=1 will
+@@ -114,8 +113,8 @@ O = .o
+ # Choose one of the following CFLAGS/CC definitions:
+ # If you are using gcc, you probably don't need to change anything here.
+ 
+-# Linux:
+-CFLAGS = -O2 -s $(DEFS) -Wall
++# Linux or BSD:
++CFLAGS += -O2 -s $(DEFS) -Wall
+ 
+ # AIX (xlC on aix 4):
+ #CFLAGS = -O2 -s $(DEFS)
+@@ -158,7 +157,7 @@ default:	mpage$(E) msample$(E) mpage.1
+ 	@echo Done!
+ 
+ mpage$(E):	$(MOBJ)
+-	$(CC) $(CFLAGS) -o mpage$(E) $(MOBJ) $(LIBS)
++	$(CC) $(LDFLAGS) $(CFLAGS) -o mpage$(E) $(MOBJ) $(LIBS)
+ 
+ msample$(E):	$(SOBJ)
+ 	$(CC) $(CFLAGS) -o msample$(E) $(SOBJ) $(LIBS)
+@@ -189,7 +188,6 @@ install:
+ 	if [ ! -d $(LIBDIR)/mpage ] ; then mkdir -p $(LIBDIR)/mpage ; fi
+ 	if [ ! -d $(BINDIR) ] ; then mkdir -p $(BINDIR) ; fi
+ 	if [ ! -d $(MANDIR) ] ; then mkdir -p $(MANDIR) ; fi
+-	cp mpage$(E) $(BINDIR)
+-	cp mpage.1 $(MANDIR)
+-	-cp Encodings/* $(LIBDIR)/mpage
+-	-chmod 644 $(LIBDIR)/mpage/*
++	$(BSD_INSTALL_PROGRAM) mpage$(E) $(BINDIR)
++	$(BSD_INSTALL_MAN) mpage.1 $(MANDIR)
++	$(BSD_INSTALL_DATA) Encodings/* $(LIBDIR)/mpage

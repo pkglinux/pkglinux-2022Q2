@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2022/05/04 13:10:14 jaapb Exp $
+
+BLAKE2s (sqlite3-5.1.0.tbz) = ba85de29dc9bb5a1b3564d087fbbd6e2c0a2b750642701665c4a6cedfddab162
+SHA512 (sqlite3-5.1.0.tbz) = a5e3070f95ccfaffd51de7081d55a204a24d3d277a87fab985a0418e5dd1478ed0462ebaa4dbd4a8bbaf75edd1e216300601d033a7cf8ab2a8ed3b88bbcb9e64
+Size (sqlite3-5.1.0.tbz) = 29835 bytes

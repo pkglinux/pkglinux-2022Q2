@@ -1,0 +1,49 @@
+$NetBSD: patch-src_3rdparty_chromium_third__party_openh264_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/third_party/openh264/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/third_party/openh264/BUILD.gn
+@@ -44,7 +44,7 @@ config("config") {
+ 
+ # MSAN builds are flaky with assembler. crbug.com/685168
+ 
+-use_assembler = (is_win || is_mac || is_linux || is_chromeos) &&
++use_assembler = (is_win || is_mac || is_linux || is_chromeos || is_bsd) &&
+                 (current_cpu == "x86" || current_cpu == "x64") && !is_msan
+ 
+ # This IF statement will make the targets visible only on specific builds,
+@@ -54,7 +54,7 @@ if (use_assembler) {
+   if (!is_component_build) {
+     if (is_apple) {
+       asm_defines += [ "WELS_PRIVATE_EXTERN=private_extern" ]
+-    } else if (is_linux || is_chromeos || is_android || is_fuchsia) {
++    } else if (is_linux || is_chromeos || is_android || is_fuchsia || is_bsd) {
+       asm_defines += [ "WELS_PRIVATE_EXTERN=hidden" ]
+     }
+   }
+@@ -73,7 +73,7 @@ if (use_assembler) {
+         ]
+       } else if (is_win) {
+         defines += [ "WIN64" ]
+-      } else if (is_linux || is_chromeos) {
++      } else if (is_linux || is_chromeos || is_bsd) {
+         defines += [ "UNIX64" ]
+       }
+     }
+@@ -94,7 +94,7 @@ if (use_assembler) {
+         ]
+       } else if (is_win) {
+         defines += [ "WIN64" ]
+-      } else if (is_linux || is_chromeos) {
++      } else if (is_linux || is_chromeos || is_bsd) {
+         defines += [ "UNIX64" ]
+       }
+     }
+@@ -115,7 +115,7 @@ if (use_assembler) {
+         ]
+       } else if (is_win) {
+         defines += [ "WIN64" ]
+-      } else if (is_linux || is_chromeos) {
++      } else if (is_linux || is_chromeos || is_bsd) {
+         defines += [ "UNIX64" ]
+       }
+     }

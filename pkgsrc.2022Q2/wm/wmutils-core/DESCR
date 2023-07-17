@@ -1,0 +1,6 @@
+wmutils is a a set of Window Manipulation Utilities.
+Its purpose is to separate all the vital functions
+of a window manager into separate pieces.
+
+Using these tools, you can build your own window manager
+as a shell script. Think of wmutils as coreutils for X11.

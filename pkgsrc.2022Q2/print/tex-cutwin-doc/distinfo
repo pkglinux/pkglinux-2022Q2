@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/08 20:59:11 markd Exp $
+
+BLAKE2s (cutwin.doc.r60901.tar.xz) = 0aaeb6dcf331540cdab81f88667e4d1ce4faef1b74d5648da9d7d2940068d2c1
+SHA512 (cutwin.doc.r60901.tar.xz) = f37bc538e4affa716aa315535fad7fdb2bb0e5188844d028b8bda4935339965e3f375439ab0abc62d63f2f57c3d439a25888f29cdf3be484092a57ff86c86c72
+Size (cutwin.doc.r60901.tar.xz) = 334216 bytes

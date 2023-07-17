@@ -1,0 +1,23 @@
+$NetBSD: patch-aa,v 1.2 2019/12/20 00:03:11 joerg Exp $
+
+--- Makefile.FreeBSD.orig	1999-02-25 11:48:53.000000000 +0000
++++ Makefile.FreeBSD
+@@ -28,8 +28,8 @@ JPEGDIR?= $(LOCALBASE)
+ 
+ CFLAGS+= -I$(X11BASE)/include -I$(MESADIR)/include -I$(JPEGDIR)/include -DSDATADIR=\"${SDATADIR}\"
+ 
+-LDFLAGS= -L$(X11BASE)/lib -L$(MESADIR)/lib -L${JPEGDIR}/lib \
+-	 -ljpeg -lglut -lMesaGLU -lMesaGL -lXext -lXmu -lX11 -lXi -lm
++LDFLAGS= -L$(X11BASE)/lib -Wl,-R$(X11BASE)/lib -L${JPEGDIR}/lib -Wl,-R${JPEGDIR}/lib \
++	 -ljpeg -lglut -lGLU -lGL -lXext -lXmu -lX11 -lXi -lm
+ 
+ # FreeBSD specific
+ .ifdef PORTOBJFORMAT
+@@ -55,6 +55,7 @@ ssystem: $(OBJ)
+ lex.cfg.c: cfglex.l cfgparse.tab.c
+ 	flex -i -Pcfg cfglex.l
+ 
++cfgparse.tab.h: cfgparse.tab.c
+ cfgparse.tab.c: cfgparse.y
+ 	bison -d -v -p cfg cfgparse.y
+ 

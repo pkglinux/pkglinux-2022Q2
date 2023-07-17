@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:59:37 nia Exp $
+
+BLAKE2s (xfce4-time-out-plugin-1.1.2.tar.bz2) = b4c62505088bdae8d7159fef185d4f21aae2727c323603fa882a39a5c3b6590a
+SHA512 (xfce4-time-out-plugin-1.1.2.tar.bz2) = 08e50db9daafd9a2ba60e9d5767cddba83df34d8a261df71b7bb9ae632576f4dfd6252c2a83ec8f9a037284b0adc65751ba36d54ea9d14b85906fdc85d5b86ff
+Size (xfce4-time-out-plugin-1.1.2.tar.bz2) = 409221 bytes

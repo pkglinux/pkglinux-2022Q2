@@ -1,0 +1,46 @@
+$NetBSD: patch-ab,v 1.3 2020/08/08 02:09:01 leot Exp $
+
+Use @PREFIX@ instead of hardcoding /usr.
+
+--- src/params.h.orig	2019-04-12 01:00:35.000000000 +0000
++++ src/params.h
+@@ -75,15 +75,15 @@
+  * notes above.
+  */
+ #ifndef JOHN_SYSTEMWIDE
+-#define JOHN_SYSTEMWIDE			0
++#define JOHN_SYSTEMWIDE			1
+ #endif
+ 
+ #if JOHN_SYSTEMWIDE
+ #ifndef JOHN_SYSTEMWIDE_EXEC /* please refer to the notes above */
+-#define JOHN_SYSTEMWIDE_EXEC		"/usr/libexec/john"
++#define JOHN_SYSTEMWIDE_EXEC		"@PREFIX@/bin"
+ #endif
+ #ifndef JOHN_SYSTEMWIDE_HOME
+-#define JOHN_SYSTEMWIDE_HOME		"/usr/share/john"
++#define JOHN_SYSTEMWIDE_HOME		"@PREFIX@/share/john"
+ #endif
+ #define JOHN_PRIVATE_HOME		"~/.john"
+ #endif
+@@ -136,9 +136,9 @@
+  * File names.
+  */
+ #ifdef __DJGPP__
+-#define CFG_FULL_NAME			"$JOHN/john.ini"
++#define CFG_FULL_NAME			"@PREFIX@/share/john/john.ini"
+ #else
+-#define CFG_FULL_NAME			"$JOHN/john.conf"
++#define CFG_FULL_NAME			"@PREFIX@/share/john/john.ini"
+ #endif
+ #if JOHN_SYSTEMWIDE
+ #ifdef __DJGPP__
+@@ -156,7 +156,7 @@
+ #endif
+ #define LOG_SUFFIX			".log"
+ #define RECOVERY_SUFFIX			".rec"
+-#define WORDLIST_NAME			"$JOHN/password.lst"
++#define WORDLIST_NAME			"@PREFIX@/share/john/password.lst"
+ 
+ /*
+  * Configuration file section names.

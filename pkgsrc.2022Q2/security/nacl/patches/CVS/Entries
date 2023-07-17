@@ -1,0 +1,14 @@
+/patch-cpucycles_do/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-cpucycles_fakenanoseconds.c/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-cpucycles_fakenanoseconds.h/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-cpucycles_mips.c/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-curvecp_curvecpclient.c/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-curvecp_curvecpmessage.c/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-curvecp_curvecpserver.c/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-curvecp_portparse.c/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-curvecp_socket__bind.c/1.1/Wed Jan  5 13:51:19 2022//Tpkgsrc-2022Q2
+/patch-curvecp_socket__udp.c/1.1/Tue Jan  4 20:53:20 2022//Tpkgsrc-2022Q2
+/patch-do/1.1/Sat Jan  5 06:16:14 2019//Tpkgsrc-2022Q2
+/patch-okcompilers_c/1.1/Sat Jan  5 06:16:14 2019//Tpkgsrc-2022Q2
+/patch-okcompilers_cpp/1.1/Sat Jan  5 06:16:14 2019//Tpkgsrc-2022Q2
+D

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/03/01 09:50:00 jaapb Exp $
+
+BLAKE2s (num-1.4.tar.gz) = e7ab3ea2666c00213cb8e327f1ca8526e796e1e0c9cca16601e733747f0e9673
+SHA512 (num-1.4.tar.gz) = 0cc9be8ad95704bb683b4bf6698bada1ee9a40dc05924b72adc7b969685c33eeb68ccf174cc09f6a228c48c18fe94af06f28bebc086a24973a066da620db8e6f
+Size (num-1.4.tar.gz) = 66327 bytes

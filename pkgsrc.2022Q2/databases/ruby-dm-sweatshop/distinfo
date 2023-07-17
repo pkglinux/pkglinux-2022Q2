@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:10:01 nia Exp $
+
+BLAKE2s (dm-sweatshop-1.2.0.gem) = 24a51c8e1ef78f52ddd42212f7191be14942a0b8120051c48410dedf03a388ea
+SHA512 (dm-sweatshop-1.2.0.gem) = 6c7a00bf3d0e2f55316ed1c01b467db2d66ba95d86cc29e974e741ff0d72f7a3748fa95b1efbc72dfc5d916246db85242bf5a37f73b7af2143fa072f6372548d
+Size (dm-sweatshop-1.2.0.gem) = 15360 bytes

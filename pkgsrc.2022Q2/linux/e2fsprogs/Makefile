@@ -1,0 +1,70 @@
+# $NetBSD$
+
+DISTNAME=	e2fsprogs-1.45.5
+CATEGORIES=	linux
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=e2fsprogs/e2fsprogs/v1.45.5/}
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://e2fsprogs.sourceforge.net/
+COMMENT=	the second extended file system management programs
+LICENSE=	gnu-gpl-v2
+
+ONLY_FOR_PLATFORM=	Linux-*-*
+
+#USE_LANGUAGES=		c c++
+
+GNU_CONFIGURE=		yes
+USE_TOOLS+=		pkg-config
+USE_TOOLS+=		gmake makeinfo sed:run tar:build perl
+USE_PKGLOCALEDIR=	yes
+
+PKGCONFIG_OVERRIDE+=	lib/e2p/e2p.pc.in
+PKGCONFIG_OVERRIDE+=	lib/et/com_err.pc.in
+PKGCONFIG_OVERRIDE+=	lib/ext2fs/ext2fs.pc.in
+PKGCONFIG_OVERRIDE+=	lib/ss/ss.pc.in
+#PKGCONFIG_OVERRIDE+=	lib/blkid/blkid.pc.in
+#PKGCONFIG_OVERRIDE+=	lib/uuid/uuid.pc.in
+
+#NO_BUILD=		yes
+#NO_CONFIGURE=		yes
+BLDDIR=			${WRKDIR}/build
+BLDPRE=			${BLDDIR}${PREFIX}
+DSTPRE=			${DESTDIR}${PREFIX}
+
+
+post-extract:
+	${MKDIR} -v ${BLDPRE}
+
+do-configure:
+	cd ${BLDDIR} && ${WRKSRC}/configure	\
+		--prefix=${PREFIX}	\
+		--bindir=${PREFIX}/bin	\
+		--with-root-prefix=""	\
+		--enable-elf-shlibs	\
+		--disable-libblkid	\
+		--disable-libuuid	\
+		--disable-uuidd		\
+		--disable-fsck
+
+
+do-build:
+	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && ${GMAKE} DESTDIR=${BLDDIR} install
+	cd ${BLDDIR} && ${GMAKE} DESTDIR=${BLDDIR} install-libs
+	chmod -v u+w ${BLDPRE}/lib/{libcom_err,libe2p,libext2fs,libss}.a
+	cd ${BLDDIR} && gunzip -v ${BLDPRE}/share/info/libext2fs.info.gz
+	cd ${BLDDIR} && install-info --dir-file=${BLDPRE}/share/info/dir ${BLDPRE}/share/info/libext2fs.info
+	cd ${BLDDIR} && makeinfo -o doc/com_err.info ${WRKSRC}/lib/et/com_err.texinfo
+	cd ${BLDDIR} && install -v -m644 doc/com_err.info ${BLDPRE}/share/info
+	cd ${BLDDIR} && install-info --dir-file=${BLDPRE}/share/info/dir ${BLDPRE}/share/info/com_err.info
+
+
+do-install:
+	${MKDIR} -v ${DSTPRE}
+	${CP} -av ${BLDPRE}/* ${DSTPRE}
+
+.include "../../devel/gettext-lib/buildlink3.mk"
+#.include "../../linux/util-linux/buildlink3.mk"
+.include "../../devel/libblkid/buildlink3.mk"
+.include "../../devel/libuuid/buildlink3.mk"
+.include "../../mk/bsd.pkg.mk"

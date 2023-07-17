@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.13 2021/10/26 11:19:43 nia Exp $
+
+BLAKE2s (ipmitool-1.8.18.tar.gz) = cc57ed59520bd0e40bc6d8225733797864400f12d46d003d8deb3da87682cb9f
+SHA512 (ipmitool-1.8.18.tar.gz) = 274d424fff079f7628c0f9fe06580937cb9717c809a71b2f5ef97266c6b6c89983b662fbb1f090e2f94861f1799677c8fc6536013828a8a5e6cb239af53e45ab
+Size (ipmitool-1.8.18.tar.gz) = 995313 bytes
+SHA1 (patch-ad) = 4af586b36f1744d263c66ed28aa17a9f9840a415
+SHA1 (patch-ae) = 67828b62b46a30b204dd436681c5ecac39bb29b3
+SHA1 (patch-lib_ipmi__cfgp.c) = 3b16d340fce1bdaee66b15430c25f19f4d38ae08
+SHA1 (patch-lib_ipmi__main.c) = 4d90e86dda16ea0b596573d88833e348c11ffb24
+SHA1 (patch-src_plugins_lanplus_lanplus__crypt__impl.c) = 8aaa1c6328bd6c0559ae9863cad671cdd32ab514

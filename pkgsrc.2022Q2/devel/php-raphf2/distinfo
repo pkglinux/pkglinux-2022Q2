@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/12/13 15:07:00 taca Exp $
+
+BLAKE2s (php-raphf/raphf-2.0.1.tgz) = 35bbffc3c37f508303076c297004ff3728ffec8fce67ebba9d1ad371c56937a8
+SHA512 (php-raphf/raphf-2.0.1.tgz) = 0a609fc21a62880963e7afb75297eb75a2598aab2c816cb61e84d665b0453e4952aa9bf25fe2c818cc94492a4b94aed965053c67899fdb984d88661364fffb1e
+Size (php-raphf/raphf-2.0.1.tgz) = 16003 bytes

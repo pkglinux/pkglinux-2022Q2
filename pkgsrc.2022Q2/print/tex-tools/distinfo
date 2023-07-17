@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.18 2022/04/15 04:53:13 markd Exp $
+
+BLAKE2s (tools.r61041.tar.xz) = 23d70f635001861987ba2e8c9ff8b6f829b0a39fd26c8d6f4b0c506bc6366dc5
+SHA512 (tools.r61041.tar.xz) = d17f28fe020b584dd10713ce937720cf849a185fe7ca8b69590f3472d5f01e765d13e6dc6aeb7c02261cbf2ca2cb1e8f6bb9d7a8be5125f2ba68437cad813599
+Size (tools.r61041.tar.xz) = 42824 bytes

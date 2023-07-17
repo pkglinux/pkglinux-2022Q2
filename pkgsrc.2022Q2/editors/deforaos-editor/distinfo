@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:21:26 nia Exp $
+
+BLAKE2s (Editor-0.4.1.tar.gz) = 2b1bf16c0a0f941db991af15c58b70fab2bafe3dafa45b598d1c4af5c234aadd
+SHA512 (Editor-0.4.1.tar.gz) = eef8de5d2c1c0321ee5bf96fbfab035c3143ac5b507035f5d4e14372b139c5c5b83c41a0eb8b4013f616a5bde20c1bf4ed625e8eabde0effdb60aa829a930a42
+Size (Editor-0.4.1.tar.gz) = 27423 bytes

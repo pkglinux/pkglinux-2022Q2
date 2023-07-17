@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:19:31 nia Exp $
+
+BLAKE2s (dosfstools-4.2.tar.gz) = 820877a9a31afca4ff272ec76cd0f51b7a0e7631b3c3559420549310b9baa206
+SHA512 (dosfstools-4.2.tar.gz) = 3cc0808edb4432428df8a67da4bb314fd1f27adc4a05754c1a492091741a7b6875ebd9f6a509cc4c5ad85643fc40395b6e0cadee548b25cc439cc9b725980156
+Size (dosfstools-4.2.tar.gz) = 320917 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:31 nia Exp $
+
+BLAKE2s (tex-aurical-15878/aurical.doc.tar.xz) = ab642bd40928eaa7ed0254d94ce6a45c7666f71c1bc7b2b6d513702576c8f855
+SHA512 (tex-aurical-15878/aurical.doc.tar.xz) = cb1f825c1b5c772bb61c567e574b6980c519e1ee50bb0a5b781179ea8622609d607b02a54714472118af18a6b68358066a85302adb844f9b3c6f881d73460ecb
+Size (tex-aurical-15878/aurical.doc.tar.xz) = 69056 bytes

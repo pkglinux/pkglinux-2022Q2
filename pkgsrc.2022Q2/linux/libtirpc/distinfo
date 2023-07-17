@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (libtirpc-1.2.5.tar.bz2) = 144233c70e89ab6b24ca8b05e4e7a1af78847ed831b69ec95ce924ee0b76d668
+SHA512 (libtirpc-1.2.5.tar.bz2) = d31cd4e22301abe1baddd7e8f45aaaf056a40799e961646691d071084fed50563b5eecdd9b78062fe378be8db7a6d4b87597e21cb81ac925e447148684a2b002
+Size (libtirpc-1.2.5.tar.bz2) = 513146 bytes

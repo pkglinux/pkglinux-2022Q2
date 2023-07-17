@@ -1,0 +1,7 @@
+$NetBSD$
+
+BLAKE2s (selinux-dbus-3.5.tar.gz) = 9bf216c9f88409d4579d256696724227da9ebb1a4e604ed6fb7308193b0091f4
+SHA512 (selinux-dbus-3.5.tar.gz) = bac74bf041ae844e3a1f06147a45732b898a3509c75acb7fe893b093d6f9b616434b34cfbb2db925821168576efedf75b423583a11c2c04ae47f850bd1d196d0
+Size (selinux-dbus-3.5.tar.gz) = 10083 bytes
+SHA1 (patch-Makefile) = 36e645462993e8ce009b7137f4a28efc48bdcbcb
+SHA1 (patch-org.selinux.service) = b5a233bfc00fa6e782cac6cf60ebf3582af72318

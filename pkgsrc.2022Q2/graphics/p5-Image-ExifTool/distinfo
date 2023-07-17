@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.57 2022/04/08 18:02:13 gdt Exp $
+
+BLAKE2s (Image-ExifTool-12.30.tar.gz) = c68cda84c6959d711958b7cd83c6e37e61aa5b1aeaa7f5dd52b09939b418f58a
+SHA512 (Image-ExifTool-12.30.tar.gz) = 2966854d8fd163fd5aaaca5608eeab2a3f0681fe9e22e006840acacd2ff2aaecd6076bcec23989facb7baf64aa96425ad7eeceb4045da44004421b8f10050935
+Size (Image-ExifTool-12.30.tar.gz) = 4948601 bytes

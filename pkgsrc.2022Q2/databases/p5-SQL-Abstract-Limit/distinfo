@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/12/11 03:56:33 wen Exp $
+
+BLAKE2s (SQL-Abstract-Limit-0.143.tar.gz) = c0029021fa60110d697d4ec9755760674e5706ec584af8075efae6c46a6b6335
+SHA512 (SQL-Abstract-Limit-0.143.tar.gz) = 1b91dcffef5c02ee7ce7d2a0124942270104a777c6cf42ed5bd3ed7ee263c680e5a1b93c342921884edca48e7dc5c2c01cacdf20be1988286e6dc50cab11ed0c
+Size (SQL-Abstract-Limit-0.143.tar.gz) = 16971 bytes

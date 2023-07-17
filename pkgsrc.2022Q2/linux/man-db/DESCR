@@ -1,0 +1,22 @@
+
+README for the man-db manual pager suite
+========================================
+
+Please read the man-db manual, included in the manual subdirectory of this
+distribution.  It contains configuration details and other aspects of this
+manual pager suite that are not duplicated or relevant in this README.
+Check manual/README for details of the formatters required.
+
+Read docs/INSTALL.autoconf for generic options to configure.
+Read docs/INSTALL.quick if you know all about man-db.
+Read NEWS for visible changes since the last public release.
+Read ChangeLog for details of recent source code changes.
+Read docs/TODO for future plans.
+
+The C source requires an ANSI C compiler.
+
+
+Copyright and licensing
+=======================
+
+...

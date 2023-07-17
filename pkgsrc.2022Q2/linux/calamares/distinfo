@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (calamares-3.2.61.tar.gz) = 8c2adbecae3a98ca0ad958d8007f243d663e997ffeb9b01989c6c3e0482fa594
+SHA512 (calamares-3.2.61.tar.gz) = 04292f1ef9ee478dfb6cc044471f5fd6ac6e64b40e80b730cb7d38dc7ed56bae4e3a40ea483e9167502896e4ce190cecf7acea98394f1de22139912a84b937ab
+Size (calamares-3.2.61.tar.gz) = 4281646 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:14:02 nia Exp $
+
+BLAKE2s (R/callr_3.7.0.tar.gz) = 116db4557289e05cebe285af68a8851902a20d8074025a9130c5d47c6a518d04
+SHA512 (R/callr_3.7.0.tar.gz) = bca18993e498ceb0bc1acb7978d84fc105831ff0350237d5b039a005e4f87add6bdf501bfa544c4f2f292b10bacfa3a14cc4af64aae518ab31542e92d8620bef
+Size (R/callr_3.7.0.tar.gz) = 74518 bytes

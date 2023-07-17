@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:38 nia Exp $
+
+BLAKE2s (tex-cbfonts-31624/cbfonts.tar.xz) = 1c88343d13a77ce17bdd1909e718eb3f9becbf115e659908f2a60f464c4033cc
+SHA512 (tex-cbfonts-31624/cbfonts.tar.xz) = b40a1e1accc69aa544db25b851995eb19eca7bcc682055935aab55f421cba6fff97336309a967d7b9a3441e77284a4b4a20da703834c386d0e8b4deab30efc37
+Size (tex-cbfonts-31624/cbfonts.tar.xz) = 65988532 bytes

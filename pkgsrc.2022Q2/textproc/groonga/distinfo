@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.47 2022/04/24 17:30:35 tnn Exp $
+
+BLAKE2s (groonga-12.0.2.tar.gz) = de77debba7d66dc3767ad46f41e76e1e68b12f73d0e424e03d120c0f8ec45796
+SHA512 (groonga-12.0.2.tar.gz) = 3c8c57140d318ee2e49dfd04f5714e78495b4147dcbf93fefc2114ef9cfe3bb07c8a30e60500862159601e862d482919029076dde1b082b6a57ee3dd411cb14e
+Size (groonga-12.0.2.tar.gz) = 25111792 bytes

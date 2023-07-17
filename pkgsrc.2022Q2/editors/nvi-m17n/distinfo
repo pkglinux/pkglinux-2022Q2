@@ -1,0 +1,22 @@
+$NetBSD: distinfo,v 1.18 2021/10/26 10:21:35 nia Exp $
+
+BLAKE2s (nvi-1.79.tar.gz) = 9299f7bf439004feff9491149cf0055bfe78b36e7559cacd6f25bc7a42451eda
+SHA512 (nvi-1.79.tar.gz) = d1d8adb2aeeee127f5e6fe5cc8b9e3e26fe22084075d17cceecd9cee7956131becee764d721af69626d60d6d75873d5073dc9817995f0274ed307e044921a1d0
+Size (nvi-1.79.tar.gz) = 1295401 bytes
+BLAKE2s (nvi-m17n-1.79-20040608.diff.gz) = 49fbe2597daa8cc1e88d0d0fbf9c6df4e979a048ff9a02c5633056eafd702cb3
+SHA512 (nvi-m17n-1.79-20040608.diff.gz) = 495ff4ecd698dcdcd9654a50519ed7f4b7bdb4dac01408b33a9deb08d1c0aaae65aaa729db9aa91ace20ec76a57f17941124c7bf2719ce8dc0543fb6d7a7c75c
+Size (nvi-m17n-1.79-20040608.diff.gz) = 159701 bytes
+SHA1 (patch-aa) = f9de0fd75adfd08ec55acd4bcbbce22d292d8535
+SHA1 (patch-ab) = 5cd869aeb27f48b14bf78cec907832c34e7ad24f
+SHA1 (patch-ac) = 617ddb4ba49ce3d556d2148ff4154430ad2868a0
+SHA1 (patch-ad) = eff439277414d1e5318b2bdc54f273da5aabfc20
+SHA1 (patch-ae) = 094bb54c79a587cbbf10756821ac52dcb53f6dc4
+SHA1 (patch-af) = a19450db7df7900fb2b13c93309c002f12c563eb
+SHA1 (patch-ag) = 015f95d6667dc1cbaa85efe9e6cdcf1da4946b31
+SHA1 (patch-ah) = b262dbc7fd380456d0eebc9cc0fac68a9db30969
+SHA1 (patch-ai) = a6da171a13f01615ad4c831aad8c26ea9d2ed315
+SHA1 (patch-aj) = bc8698e2d12a88fe7024d38188723cb058ab240a
+SHA1 (patch-ak) = 2c5069a892a5204fcd3a607e6b383e8a503092f8
+SHA1 (patch-al) = 96a625d1eb906390beca232b129711b869ab3026
+SHA1 (patch-common_multibyte.c) = 111259c43679b474145c71989ac62aebe1b282d2
+SHA1 (patch-regex_regex2.h) = c9f6f28b8b7cc1d4515edcae07ff0b5c011c3a9e

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2022/04/08 06:24:00 wiz Exp $
+
+BLAKE2s (gzip-1.12.tar) = 1edddfdf2946083367ef0295fb2c8d191a6ddc5777f6a2c48629bd25ad8b6033
+SHA512 (gzip-1.12.tar) = 79a54c63c3442061f3e47de7bdd5bfee2d2d40d1f09b8eabbbabe96295f9eb8fc2e0dd580f6bad528fd0e7e336f6e759ddf52863c0f0da733d1a184e57fde90f
+Size (gzip-1.12.tar) = 6041600 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:46:57 nia Exp $
+
+BLAKE2s (tex-blockdraw_mp-15878/blockdraw_mp.tar.xz) = ed9e03dea772507baad75a61a2acf4e1f4be41fc715817afc2b3174e020f7d9d
+SHA512 (tex-blockdraw_mp-15878/blockdraw_mp.tar.xz) = 6ca689d04ed4f36072add3c4314071785f1853c22a228639c4fe9bc9004a4c36e924947ac8624f3469bb1f38738c00ac329eb4a3d4686f1fe4d526c9fdd9d9e7
+Size (tex-blockdraw_mp-15878/blockdraw_mp.tar.xz) = 4844 bytes

@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:22:23 nia Exp $
+
+BLAKE2s (namazu-2.0.21.tar.gz) = 2c9f5abd5d9bb68e609734b9ddd4721edbbaf8c4911400b79d320fbe341598ca
+SHA512 (namazu-2.0.21.tar.gz) = c0ce1b8c8b8ce30ee7d28cfed790a9c8585d1b468eefe2ba4ac70976e09329ae04a3a3bbf0b86b9673cfdf206f2b103896daca2f053062f451884fa659b31ea6
+Size (namazu-2.0.21.tar.gz) = 1394048 bytes
+SHA1 (patch-ab) = 15e8b6b67885fe76932e8b749fa8ab64f6faf1d8
+SHA1 (patch-filter_hnf.pl) = 2f304b13dea37f10bf458142dc62a31f08c239a0
+SHA1 (patch-filter_mp3.pl) = 53d150e0384ee8acdd672e9d644ee1a60153c691

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.24 2022/01/30 20:26:57 nia Exp $
+
+BLAKE2s (pekwm-0.2.1.tar.gz) = 8925676ff88926c5a677d2760ac541be4c8e654448dc7b1f5e9802abed399eb6
+SHA512 (pekwm-0.2.1.tar.gz) = cefb5abb43f88cff874f12586f0f2c0b88d30fd0ce22c6e18731b11055abea389819a08a4e85a9290021ffe30708ea210c66a0f3f8c263717c05abd798fdf297
+Size (pekwm-0.2.1.tar.gz) = 943072 bytes

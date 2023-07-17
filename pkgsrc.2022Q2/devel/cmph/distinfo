@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:14:25 nia Exp $
+
+BLAKE2s (cmph-2.0.tar.gz) = c40671df3c0814b668c46c517def04bd19c059d68f549eea25393a82e351777e
+SHA512 (cmph-2.0.tar.gz) = 7f37a8dcfce047ada9968681e07f66f014f8090aa5ce99358944a60715c7ef2bc62abf4b5c146fe99a0c812f2286ff0c009683b702a4e20c66617d955cf80caa
+Size (cmph-2.0.tar.gz) = 480924 bytes
+SHA1 (patch-src_brz.c) = 56060fd25dcad2844383f310e26f2ae5cd6aaabf
+SHA1 (patch-src_fch__buckets.c) = 847906f8278ea8068a0897259e7a1bdfb6634d9b

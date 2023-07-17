@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/08 05:10:15 markd Exp $
+
+BLAKE2s (cellspace.r61501.tar.xz) = fe829153505a5d278755231b64e0ad4a6719a0149e83be215117b98f99fb24d9
+SHA512 (cellspace.r61501.tar.xz) = 75c32e958beab58086d8ba91da3bf1a4a4b9f3ec306dd5369798298c45cc67ee44c591e616062072ae399aa89c90edabe597665901ec60f46fb9fcd9d4c462d5
+Size (cellspace.r61501.tar.xz) = 2488 bytes

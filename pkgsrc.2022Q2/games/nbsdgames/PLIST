@@ -1,0 +1,22 @@
+@comment $NetBSD: PLIST,v 1.2 2022/03/04 07:12:50 nia Exp $
+bin/battleship
+bin/checkers
+bin/darrt
+bin/fifteen
+bin/fisher
+bin/jewels
+bin/memoblocks
+bin/miketron
+bin/mines
+bin/muncher
+bin/nbsdgames
+bin/pipes
+bin/rabbithole
+bin/redsquare
+bin/reversi
+bin/snakeduel
+bin/sos
+bin/sudoku
+bin/tugow
+share/applications/nbsdgames.desktop
+share/icons/hicolor/scalable/apps/nbsdgames.svg

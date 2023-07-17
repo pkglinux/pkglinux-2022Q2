@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.69 2021/10/26 11:18:04 nia Exp $
+
+BLAKE2s (stunnel-5.60.tar.gz) = 00cefb6123f42bfb83599777d3a33a1f421708ac4b28d99241a0b90fdd0101d9
+SHA512 (stunnel-5.60.tar.gz) = 4ad0423a7e52c0db8746caf4b64ff69abe1f5c880417779d9933597d7ca86f240b64b578dc3e625fba04bbbddad7aa056dd62d2ecdf6d6a842ffa228bace705e
+Size (stunnel-5.60.tar.gz) = 984278 bytes
+SHA1 (patch-aa) = 78720fca64ceefaa76eb50d8eb2f15ffde46a270
+SHA1 (patch-ac) = c2a3548f71dd218ed21925ec4631982751fa9d5a
+SHA1 (patch-configure) = 4e67db7176e2953e054370b35fb9955327329b23
+SHA1 (patch-stunnel.conf-sample.in) = 9edaabd1bc15d3ff8524178f4a6aba4a7963b015

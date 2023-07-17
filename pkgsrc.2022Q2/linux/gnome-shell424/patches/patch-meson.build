@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- meson.build.orig	2022-08-11 15:59:46.350000000 +0000
++++ meson.build
+@@ -53,7 +53,7 @@ sysconfdir = join_paths(prefix, get_opti
+ pkgdatadir = join_paths(datadir, meson.project_name())
+ pkglibdir = join_paths(libdir, meson.project_name())
+ 
+-autostartdir = join_paths(sysconfdir, 'xdg', 'autostart')
++autostartdir = join_paths(datadir, 'examples', 'xdg', 'autostart')
+ desktopdir = join_paths(datadir, 'applications')
+ icondir = join_paths(datadir, 'icons')
+ ifacedir = join_paths(datadir, 'dbus-1', 'interfaces')

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2022/03/11 17:11:19 ryoon Exp $
+
+BLAKE2s (Remmina-v1.4.25.tar.gz) = 80f174461452d01ae2c36fd3c0ac3553a9ed6b2bd8e1a4ecf6390b7c6b19efe4
+SHA512 (Remmina-v1.4.25.tar.gz) = 2409d316894a423de487c264861bda782bac365d13eb77f965863173072da85d228047ca0624bc7664cf6c1a5144598895371a56e37a1cc90df426d19b5719a8
+Size (Remmina-v1.4.25.tar.gz) = 3404247 bytes

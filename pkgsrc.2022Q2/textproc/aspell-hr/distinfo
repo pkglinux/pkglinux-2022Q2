@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:21:38 nia Exp $
+
+BLAKE2s (aspell-hr-0.51-0.tar.bz2) = 1cbd76c8b158d2016ea7046bc7bc88122e13b81291d29bde94cc12dee0bca4f7
+SHA512 (aspell-hr-0.51-0.tar.bz2) = d6d891f3e55252fdbc5e0534c623cc42311c25cd1219351ce8a8160c3c3c49a6f219706e02f2c1c27174ef77c64e17f8cc25844befb17a43802b0a09ab42b1ad
+Size (aspell-hr-0.51-0.tar.bz2) = 208118 bytes

@@ -1,0 +1,13 @@
+$NetBSD: patch-ad,v 1.11 2020/11/26 16:08:13 bsiegert Exp $
+
+--- Makefile.in.orig	2008-06-30 22:04:39.000000000 +0000
++++ Makefile.in
+@@ -102,7 +102,7 @@ install: all
+ 	$(INSTALL_DATA) wcmgr.1 ${DESTDIR}${MANDIR}/wcmgr.1
+ 	rm -f ${DESTDIR}${MANDIR}/webazolver.1
+ 	@LN_S@ webalizer.1 ${DESTDIR}${MANDIR}/webazolver.1
+-	$(INSTALL_DATA) sample.conf ${DESTDIR}${ETCDIR}/webalizer.conf.sample
++	$(INSTALL_DATA) sample.conf ${DESTDIR}${PREFIX}/share/examples/webalizer.conf.sample
+ 
+ uninstall:
+ 	rm -f ${DESTDIR}${BINDIR}/webalizer

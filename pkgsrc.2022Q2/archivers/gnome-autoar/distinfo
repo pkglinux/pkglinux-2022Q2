@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/11/13 09:18:47 cirnatdan Exp $
+
+BLAKE2s (gnome-autoar-0.4.1.tar.xz) = 26d431611bf4698fdefc6755054bf2366f81deef7f2378364f94106adb2479b4
+SHA512 (gnome-autoar-0.4.1.tar.xz) = 5c082c42342256c3af9dfa49435c1ab884c051a9c47a0313a343a747c2f30de2662505f4d77db20dffbdd39a5d0447d2dfb4ccf3da96a198ea987bc5c0c0dddf
+Size (gnome-autoar-0.4.1.tar.xz) = 50152 bytes

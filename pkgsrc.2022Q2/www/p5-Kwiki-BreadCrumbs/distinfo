@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:30:06 nia Exp $
+
+BLAKE2s (Kwiki-BreadCrumbs-0.12.tar.gz) = e8d7f15ab10159aa12996892236798cc82f6fe38a0f06586f3dfa3b5a13c840e
+SHA512 (Kwiki-BreadCrumbs-0.12.tar.gz) = 48f0096a978cb957ee9c3e975359f8469817aae77ff066573b6998a5bb123b64c702f186eb8a3cebfae16bc3856e404ebb15cc0ab9353c2ef703dfd08432a33b
+Size (Kwiki-BreadCrumbs-0.12.tar.gz) = 8168 bytes

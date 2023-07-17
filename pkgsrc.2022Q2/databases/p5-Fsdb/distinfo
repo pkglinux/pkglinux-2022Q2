@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 10:09:37 nia Exp $
+
+BLAKE2s (Fsdb-2.69.tar.gz) = f21a56ae24249bab5600aa3189a973bc6c29bea8b6ff5a43f21e210df5a2d87e
+SHA512 (Fsdb-2.69.tar.gz) = 9898352a1752bffdaf85f4131ffbd182a2884e0f98eec80eaac79a477724095b2d833f57dd447f6de0c8e1bde4fc6c9b89dd0225c4344f40c37f240c3cd9cde1
+Size (Fsdb-2.69.tar.gz) = 495708 bytes

@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:21:43 nia Exp $
+
+BLAKE2s (xcoral-3.2.tar.gz) = 502753022da6874ac05e88720f564ae0002b307a9461ce1b8170a715c79b74f6
+SHA512 (xcoral-3.2.tar.gz) = 597446717b460e1da8f82bb9a284101dc2d344a5a192300ed72311cca70a01156e9edd35a210c5c958cb56d540fc85692bc88fb0da9d71edd06141a415c6c97f
+Size (xcoral-3.2.tar.gz) = 1412437 bytes
+SHA1 (patch-aa) = 5ee143709bb60de8be543fae08f9534894a1aa42
+SHA1 (patch-ab) = cd23f32a4b242e640db44f29c0f5aad7b90080dd
+SHA1 (patch-ac) = e0285e7bedce0d98c0d977a002b0b2ac70a748b5
+SHA1 (patch-ad) = 3dfe4e1c81672cf4c96a16c434aebaeead5777be

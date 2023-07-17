@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/07 05:36:01 markd Exp $
+
+BLAKE2s (bxjaholiday.r60636.tar.xz) = b4f93598af62b8de57b0d51044ff82629255b2de867067f95e9aab97ee63a0c4
+SHA512 (bxjaholiday.r60636.tar.xz) = 4f5dc4081f989b73e5334d62af403922e2918424cff24480644f1e9016e3e20fb044cb22da91a035b198aa92edd0a51e985fe791a4c99ffbde2d339ca46a3918
+Size (bxjaholiday.r60636.tar.xz) = 5600 bytes

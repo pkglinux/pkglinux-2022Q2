@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.5 2022/04/01 11:53:28 nia Exp $
+bin/mumble
+bin/mumble-server
+man/man1/mumble.1
+man/man1/murmur-user-wrapper.1
+man/man1/murmurd.1
+share/applications/org.mumble_voip.mumble.desktop
+share/icons/hicolor/256x256/apps/mumble.png
+share/icons/hicolor/scalable/apps/mumble.svg
+share/metainfo/org.mumble_voip.mumble.appdata.xml

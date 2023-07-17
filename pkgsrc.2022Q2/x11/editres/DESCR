@@ -1,0 +1,5 @@
+Editres is a tool that allows users and application developers to view
+the full widget hierarchy of any Xt Toolkit application that speaks the
+Editres protocol.
+
+This is from the modular X.org X11 project.

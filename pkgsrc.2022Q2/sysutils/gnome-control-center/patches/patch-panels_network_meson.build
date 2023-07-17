@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- panels/network/meson.build.orig	2021-03-20 21:52:23.021848700 +0000
++++ panels/network/meson.build
+@@ -25,7 +25,6 @@ foreach name: panel_names
+   )
+ 
+   i18n.merge_file(
+-    desktop,
+     type: 'desktop',
+     input: desktop_in,
+     output: desktop,

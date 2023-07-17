@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2021/10/26 10:27:26 nia Exp $
+
+BLAKE2s (adobemapping.r51787.tar.xz) = 2f3123a191ea7747b04c9cba24b0aab9e3f7c7d6a33ac12bef33245dafa6a0da
+SHA512 (adobemapping.r51787.tar.xz) = 1dd2c4a813bbcd8063d42c1872fd14427bae2e5ce9698ddb0825770653d17798c037da511d43a0939cea1a607f0a7bb7ce974bff72a2ee88c6f56f941cc7510e
+Size (adobemapping.r51787.tar.xz) = 2169892 bytes

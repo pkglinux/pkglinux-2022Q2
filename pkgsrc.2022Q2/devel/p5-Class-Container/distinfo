@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:16:11 nia Exp $
+
+BLAKE2s (Class-Container-0.13.tar.gz) = 15350525807fdad1a967708437b31f48ad84c521c66d1c916b79a4a020189f68
+SHA512 (Class-Container-0.13.tar.gz) = c51284e377942930384e22ff8d17489fa279eecc87a68acd88bffd8a134d2f2930b40008df98d12bddc46845175d2ce9f630522379692c2f630f2618928c6acd
+Size (Class-Container-0.13.tar.gz) = 25768 bytes

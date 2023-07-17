@@ -1,0 +1,15 @@
+$NetBSD: patch-CMakeLists.txt,v 1.6 2021/11/03 20:52:23 adam Exp $
+
+Make so version match symlink versions.
+
+--- CMakeLists.txt.orig	2021-11-03 17:53:28.000000000 +0000
++++ CMakeLists.txt
+@@ -76,7 +76,7 @@ project(jsoncpp
+         LANGUAGES CXX)
+ 
+ message(STATUS "JsonCpp Version: ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
+-set(PROJECT_SOVERSION 25)
++set(PROJECT_SOVERSION ${PROJECT_VERSION_MAJOR})
+ 
+ include(${CMAKE_CURRENT_SOURCE_DIR}/include/PreventInSourceBuilds.cmake)
+ include(${CMAKE_CURRENT_SOURCE_DIR}/include/PreventInBuildInstalls.cmake)

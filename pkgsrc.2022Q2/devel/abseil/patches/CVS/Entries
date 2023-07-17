@@ -1,0 +1,5 @@
+/patch-absl_base_config.h/1.4/Sun Mar  6 09:34:06 2022//Tpkgsrc-2022Q2
+/patch-absl_debugging_internal_elf__mem__image.cc/1.2/Sun Mar  6 09:34:06 2022//Tpkgsrc-2022Q2
+/patch-absl_debugging_internal_vdso__support.cc/1.3/Sat Mar 26 22:50:18 2022//Tpkgsrc-2022Q2
+/patch-absl_time_internal_cctz_src_time__zone__format.cc/1.1/Sun Mar 15 22:25:56 2020//Tpkgsrc-2022Q2
+D

@@ -1,0 +1,26 @@
+$NetBSD: patch-ak,v 1.6 2018/10/01 10:57:36 jperkin Exp $
+
+rlim_t fixes.
+
+--- src/Log.c++.orig	2003-01-18 14:18:12.000000000 +0000
++++ src/Log.c++
+@@ -28,9 +28,9 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <syslog.h>
++#include <sys/time.h>
+ #include <sys/resource.h>
+ #include <sys/stat.h>
+-#include <sys/time.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+ #ifdef HAVE_AUDIT
+@@ -277,7 +277,7 @@ void __assert(const char *msg, const cha
+ 	Log::perror("mkdir");
+     if (chdir(dirname) < 0)
+ 	Log::perror("chdir");
+-    struct rlimit rl = { RLIM_INFINITY, RLIM_INFINITY };
++    struct rlimit rl = { (rlim_t)RLIM_INFINITY, (rlim_t)RLIM_INFINITY };
+     if (setrlimit(RLIMIT_CORE, &rl) < 0)
+ 	Log::perror("setrlimit(RLIMIT_CORE)");
+     delete[] dirname;

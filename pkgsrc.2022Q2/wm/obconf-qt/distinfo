@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/03/31 16:30:25 gutteridge Exp $
+
+BLAKE2s (obconf-qt-0.16.2.tar.xz) = 6161791eda798976425e65d5e5e923b271618164fcf50edbcba221b9bf86b980
+SHA512 (obconf-qt-0.16.2.tar.xz) = bd91a5669f07471966d296b91d78e2a40e2e3640405de2179513457088eb7d6cb063dbfaff623db6f404985734e986b52c1e3155a050f374b7afa58f7d720c0d
+Size (obconf-qt-0.16.2.tar.xz) = 111080 bytes

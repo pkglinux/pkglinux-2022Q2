@@ -1,0 +1,13 @@
+$NetBSD: patch-ac,v 1.2 2020/04/08 06:14:46 riastradh Exp $
+
+--- html/pcal.html.orig	Thu Feb 10 01:06:23 2000
++++ html/pcal.html	Wed Dec 20 17:38:53 2000
+@@ -21,7 +21,7 @@
+ 
+                        <!-- start of form -->
+ 
+-<FORM ACTION="http://yourpath/cgi-bin/pcal.cgi" METHOD=GET>
++<FORM ACTION="http://@@WWWSERVER@@/cgi-bin/pcal.cgi" METHOD=GET>
+ 
+ <!-- menu for starting month -->
+ 

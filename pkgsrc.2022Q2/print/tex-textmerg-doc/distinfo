@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:14:51 nia Exp $
+
+BLAKE2s (tex-textmerg-20677/textmerg.doc.tar.xz) = 6281c8d522e2fa93fc347b48f18f1dd3fcf71609c2caf5564d4fe290706eb8da
+SHA512 (tex-textmerg-20677/textmerg.doc.tar.xz) = 0a5c113986f5bb00be77e833a5cfc7568df6febe4beaab6c5dafd27618ec201048950e233def7cff3a623592ec098048f13f4d5cc2803e0eb89fa9ecf13a0643
+Size (tex-textmerg-20677/textmerg.doc.tar.xz) = 253648 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:27:14 nia Exp $
+
+BLAKE2s (ja-rampart-ttf-20201216/RampartOne-Regular.ttf) = 247b65c59bee3c5b34ed64959ef1e4c9d5514ce7632723b4989d0923b991bda6
+SHA512 (ja-rampart-ttf-20201216/RampartOne-Regular.ttf) = 4bc9423bd4c3e0bc0050f874da8b1103c85abd467273ca3886289804714136516226bc5284b2098f848a5cadbc1e3adf46c2b4da7fb904dee76e8d351ba86334
+Size (ja-rampart-ttf-20201216/RampartOne-Regular.ttf) = 4718920 bytes

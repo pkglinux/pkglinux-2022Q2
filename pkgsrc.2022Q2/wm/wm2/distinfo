@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.12 2021/10/26 11:25:20 nia Exp $
+
+BLAKE2s (wm2-4.tar.gz) = 6d58f785fcd51839898701374ba8e0d02f471c434fafaf7d9b4bfeec9628e6a9
+SHA512 (wm2-4.tar.gz) = 9151267e5a6bf39587b15dc3e55b4acc05aa1b14a7a9bcb4e1ed25d474af8b0e7699343117f184c745645deb404d6f6e230809b88d9b7bb5c1f67ba0fbde72e9
+Size (wm2-4.tar.gz) = 32807 bytes
+SHA1 (patch-aa) = 3abf330bd012205dbb6eeff06b0be28fe27835d3
+SHA1 (patch-ab) = 047f72483a5f7d250742a5d53aa8a48ca123558e
+SHA1 (patch-ac) = 379dddd87be18a463b5ee901c863163f8f8f8df6
+SHA1 (patch-ad) = aec474d34b545ff62db019832b9309fff57723cd
+SHA1 (patch-ae) = 06f3577338d1712139482c3ce9c62b6349f59a53
+SHA1 (patch-af) = 0e7e967727702572fe695ca302d19b77e5b01c60

@@ -1,0 +1,61 @@
+$NetBSD: patch-ae,v 1.10 2018/11/30 17:30:24 nia Exp $
+
+- Use pseudo-terminal multiplexor on NetBSD.
+- Use ctype.h functions correctly.
+
+--- src/command.c.orig	2006-06-26 18:01:20.000000000 +0000
++++ src/command.c
+@@ -556,7 +556,7 @@ get_pty(void)
+     ptydev = ttydev = _getpty(&fd, O_RDWR | O_NDELAY, 0622, 0);
+     if (ptydev == NULL)
+ 	goto Failed;
+-#elif defined (__svr4__) || defined(__CYGWIN32__) || defined(__lnx21__)
++#elif defined (__svr4__) || defined(__CYGWIN32__) || defined(__lnx21__) || defined(__NetBSD__)
+     {
+ 	extern char    *ptsname();
+ 
+@@ -1251,9 +1251,9 @@ init_command(char *argv[])
+     meta_char = (Options & Opt_meta8 ? 0x80 : 033);
+     if (rs_modifier
+ 	&& strlen(rs_modifier) == 4
+-	&& toupper(*rs_modifier) == 'M'
+-	&& toupper(rs_modifier[1]) == 'O'
+-	&& toupper(rs_modifier[2]) == 'D')
++	&& toupper((unsigned char)*rs_modifier) == 'M'
++	&& toupper((unsigned char)rs_modifier[1]) == 'O'
++	&& toupper((unsigned char)rs_modifier[2]) == 'D')
+ 	switch (rs_modifier[3]) {
+ 	case '2':
+ 	    ModXMask = Mod2Mask;
+@@ -1329,13 +1329,13 @@ init_xlocale(void)
+ 	for (s = tmp; *s; s++) {
+ 	    char           *end, *next_s;
+ 
+-	    for (; *s && isspace(*s); s++)
++	    for (; *s && isspace((unsigned char)*s); s++)
+ 		/* */ ;
+ 	    if (!*s)
+ 		break;
+ 	    for (end = s; (*end && (*end != ',')); end++)
+ 		/* */ ;
+-	    for (next_s = end--; ((end >= s) && isspace(*end)); end--)
++	    for (next_s = end--; ((end >= s) && isspace((unsigned char)*end)); end--)
+ 		/* */ ;
+ 	    *++end = '\0';
+ 	    if (*s) {
+@@ -1367,13 +1367,13 @@ init_xlocale(void)
+ 	unsigned short  i;
+ 	char           *end, *next_s;
+ 
+-	for (; *s && isspace(*s); s++)
++	for (; *s && isspace((unsigned char)*s); s++)
+ 	    /* */ ;
+ 	if (!*s)
+ 	    break;
+ 	for (end = s; (*end && (*end != ',')); end++)
+ 	    /* */ ;
+-	for (next_s = end--; ((end >= s) && isspace(*end));)
++	for (next_s = end--; ((end >= s) && isspace((unsigned char)*end));)
+ 	    *end-- = 0;
+ 
+ 	if (!strcmp(s, "OverTheSpot"))

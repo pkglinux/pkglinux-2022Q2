@@ -1,0 +1,10 @@
+/patch-Makefile/1.1/Tue May 24 09:27:09 2016//Tpkgsrc-2022Q2
+/patch-config.sh/1.1/Tue May 24 09:27:09 2016//Tpkgsrc-2022Q2
+/patch-include_configcontainer.h/1.1/Fri Dec 16 00:00:25 2016//Tpkgsrc-2022Q2
+/patch-src_configcontainer.cpp/1.1/Fri Dec 16 00:00:25 2016//Tpkgsrc-2022Q2
+/patch-src_controller.cpp/1.1/Tue May 24 09:27:09 2016//Tpkgsrc-2022Q2
+/patch-src_feedhq__api.cpp/1.1/Tue Jul  2 07:37:54 2019//Tpkgsrc-2022Q2
+/patch-src_oldreader__api.cpp/1.1/Tue Jul  2 07:37:54 2019//Tpkgsrc-2022Q2
+/patch-src_ttrss__api.cpp/1.1/Tue Jul  2 07:37:54 2019//Tpkgsrc-2022Q2
+/patch-src_utils.cpp/1.2/Fri Mar 25 10:37:30 2022//Tpkgsrc-2022Q2
+D

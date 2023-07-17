@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.17 2021/10/26 11:20:18 nia Exp $
+
+BLAKE2s (top-3.6.1.tar.gz) = bfe7c9d61fd40addb468694a0a334dd2d94ff7d30502d94f0eeddab3a1c83ec3
+SHA512 (top-3.6.1.tar.gz) = f7aa13f12ae2d2b50b6f95d3c6d68398dc1e89844a22f0161c42987ece8370ce1c5177e3a8e000d1c31943bc144c420dd562e273f2306aba4e8aa6691eeebf54
+Size (top-3.6.1.tar.gz) = 228009 bytes
+SHA1 (patch-aa) = 95b546d7cd270d5473a516651aebceb75d8dad9d
+SHA1 (patch-ab) = c9474fb14620202fc641b55189bc11a04e5c8fea
+SHA1 (patch-aj) = 37e32ae734213c72ecd2d1018a0586b6db5ba848
+SHA1 (patch-ak) = dc0c5295df0dd090ffca730d0e58243d0e5c4884
+SHA1 (patch-al) = 97d474be72591c415cf2978422753b5533109c48
+SHA1 (patch-am) = 54cb262e37f0f281aa49bc30f9df92d9577431a1
+SHA1 (patch-an) = 028562347998a4f18237cccc3cc1fe9647848c83

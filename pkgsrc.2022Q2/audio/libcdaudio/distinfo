@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.16 2021/10/26 09:59:04 nia Exp $
+
+BLAKE2s (libcdaudio-0.99.12.tar.gz) = 75e7ecd8beb035a24c3aebe68b73f10971f26c1bee49f8acac1ab2502caf837c
+SHA512 (libcdaudio-0.99.12.tar.gz) = c00fbea7776e847da93bfbf4cbe74ccb3ee826da80e74eef84575fc211729e6a09599f5bfa332c91d678a31f9de5e5b333bdafe51438f266f6dea519652f5247
+Size (libcdaudio-0.99.12.tar.gz) = 357150 bytes
+SHA1 (patch-aa) = f7cf7d430917e6860fb43529cb349d358890f7a4
+SHA1 (patch-ab) = 9df8c234de3cb5a6b262fae093e430e471afa1f0
+SHA1 (patch-ac) = a67d2b7ea503c4d696a05024d46f8a895c47051b

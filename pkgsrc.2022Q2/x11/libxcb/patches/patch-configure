@@ -1,0 +1,15 @@
+$NetBSD: patch-configure,v 1.2 2022/05/04 04:39:09 wiz Exp $
+
+--- configure.orig	2022-05-03 22:15:58.000000000 +0000
++++ configure
+@@ -20661,10 +20661,6 @@ printf "%s\n" "yes" >&6; }
+ 
+ fi
+ NEEDED="xau >= 0.99.2"
+-case $host_os in
+-linux*) ;;
+-     *) NEEDED="$NEEDED pthread-stubs" ;;
+-esac
+ 
+ pkg_failed=no
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for NEEDED" >&5

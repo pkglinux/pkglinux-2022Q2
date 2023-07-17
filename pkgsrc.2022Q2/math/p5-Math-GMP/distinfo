@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2021/10/26 10:55:53 nia Exp $
+
+BLAKE2s (Math-GMP-2.20.tar.gz) = d6dd1421dd546d4ff5ca6d771f78f985957341faa6e9e2e42cc61978a250a833
+SHA512 (Math-GMP-2.20.tar.gz) = e76a4f2ed9f700029a0b075fcdaecf6fb3792ecfef23fb75f014572b6471be9265b80551c741cda9fe3f323a351a23fb9e5edca2e05300b97509b225aa721b04
+Size (Math-GMP-2.20.tar.gz) = 34224 bytes

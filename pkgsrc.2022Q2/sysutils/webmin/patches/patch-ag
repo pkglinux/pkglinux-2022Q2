@@ -1,0 +1,15 @@
+$NetBSD: patch-ag,v 1.6 2020/04/27 15:16:45 mef Exp $
+
+Add dragonfly
+
+--- proc/module.info.orig	2020-01-15 09:06:33.000000000 +0900
++++ proc/module.info	2020-04-26 23:25:26.929124925 +0900
+@@ -2,7 +2,7 @@ version=1.941
+ cpan=1
+ longdesc=List, kill and renice running processes on your system.
+ name=Process Manager
+-os_support=solaris *-linux hpux freebsd osf1 irix unixware openserver macos aix netbsd openbsd windows
++os_support=solaris *-linux hpux freebsd osf1 irix unixware openserver macos aix netbsd openbsd windows dragonfly
+ readonly=1
+ desc=Running Processes
+ syslog=1

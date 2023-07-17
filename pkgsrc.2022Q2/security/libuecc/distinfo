@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:17:17 nia Exp $
+
+BLAKE2s (libuecc-7.tar) = 957063408dd29f71b028e79ad8d71e2aa9b7e6a05dbf6932438acf2bf446947a
+SHA512 (libuecc-7.tar) = 3b9bfc62709bf8242fc4caeeda1c079fe17bb74492eb14527d0a8afbe969a836dd5b62b4408adb3ff80b9f7dcdfdc8f6be9886dc6e4181780b55c71fd6c604d8
+Size (libuecc-7.tar) = 174080 bytes

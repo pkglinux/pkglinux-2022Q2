@@ -1,0 +1,40 @@
+$NetBSD: patch-src_3rdparty_chromium_remoting_host_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/remoting/host/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/remoting/host/BUILD.gn
+@@ -363,7 +363,7 @@ static_library("common") {
+     deps += [ "//components/policy:generated" ]
+   }
+ 
+-  if (is_linux && !is_chromeos) {
++  if ((is_linux || is_bsd) && !is_chromeos) {
+     sources += [ "desktop_resizer_linux.cc" ]
+     public_deps += [ "//remoting/host/linux" ]
+     libs += [ "pam" ]
+@@ -575,7 +575,7 @@ source_set("unit_tests") {
+     "//testing/gtest",
+   ]
+ 
+-  if (is_linux && !is_chromeos) {
++  if ((is_linux || is_bsd) && !is_chromeos) {
+     deps += [ "//remoting/host/linux:unit_tests" ]
+   }
+ 
+@@ -780,7 +780,7 @@ if (enable_me2me_host) {
+     if (use_gtk) {
+       deps += [ "//build/config/linux/gtk" ]
+     }
+-    if ((is_linux && !is_chromeos) || is_mac) {
++    if (((is_linux || is_bsd) && !is_chromeos) || is_mac) {
+       libs = [ "pam" ]
+     }
+ 
+@@ -840,7 +840,7 @@ if (enable_me2me_host) {
+       }
+     }
+   }
+-  if (is_chrome_branded && enable_me2me_host && is_linux && !is_chromeos) {
++  if (is_chrome_branded && enable_me2me_host && (is_linux || is_bsd) && !is_chromeos) {
+     group("remoting_me2me_host_archive") {
+       deps = [ "//remoting/host/installer/linux:remoting_me2me_host_archive" ]
+     }

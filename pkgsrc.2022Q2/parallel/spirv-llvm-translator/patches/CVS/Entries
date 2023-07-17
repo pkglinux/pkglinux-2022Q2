@@ -1,0 +1,19 @@
+/patch-CMakeLists.txt/1.2/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-lib_SPIRV_SPIRVReader.cpp/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-lib_SPIRV_SPIRVWriter.cpp/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-lib_SPIRV_SPIRVWriter.h/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-lib_SPIRV_libSPIRV_SPIRVFunction.h/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-lib_SPIRV_libSPIRV_SPIRVModule.cpp/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-lib_SPIRV_libSPIRV_SPIRVModule.h/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-lib_SPIRV_libSPIRV_SPIRVOpCode.h/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-lib_SPIRV_libSPIRV_SPIRVOpCodeEnum.h/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-spirv-headers-tag.conf/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-test_constexpr__vector.ll/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-test_transcoding_SPV__INTEL__function__pointers_bitcast.ll/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-test_transcoding_SPV__INTEL__function__pointers_const-function-pointer.ll/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-test_transcoding_SPV__INTEL__function__pointers_function-pointer.ll/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-test_transcoding_SPV__INTEL__function__pointers_global__ctor__dtor.ll/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-test_transcoding_SPV__INTEL__function__pointers_non-uniform-function-pointer.ll/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-test_transcoding_SPV__INTEL__function__pointers_select.ll/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+/patch-test_transcoding_SPV__INTEL__function__pointers_vector__elem.ll/1.1/Tue Nov 23 20:55:44 2021//Tpkgsrc-2022Q2
+D

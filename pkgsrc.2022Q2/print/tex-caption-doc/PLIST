@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.5 2022/04/14 06:32:00 markd Exp $
+share/texmf-dist/doc/latex/caption/CHANGELOG
+share/texmf-dist/doc/latex/caption/README
+share/texmf-dist/doc/latex/caption/SUMMARY
+share/texmf-dist/doc/latex/caption/bicaption.pdf
+share/texmf-dist/doc/latex/caption/caption-light.pdf
+share/texmf-dist/doc/latex/caption/caption.pdf
+share/texmf-dist/doc/latex/caption/caption2.pdf
+share/texmf-dist/doc/latex/caption/ltcaption.pdf
+share/texmf-dist/doc/latex/caption/subcaption.pdf

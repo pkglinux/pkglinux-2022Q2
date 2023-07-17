@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:05:21 nia Exp $
+
+BLAKE2s (Net-Goofey-1.5.tar.gz) = 869ba47fe4f2e8e443161e2fb591ae74d87409691cfb5fce5b5950c884f2f360
+SHA512 (Net-Goofey-1.5.tar.gz) = b5248ff20a2423845725aac1e9f9fe50cacaec3d445dcc5f9f7b38edaa13e6f0e8d5a5ff93913441fdd3a06ed1554fb88d942e5b31203d81654a16ecf03c006d
+Size (Net-Goofey-1.5.tar.gz) = 31333 bytes

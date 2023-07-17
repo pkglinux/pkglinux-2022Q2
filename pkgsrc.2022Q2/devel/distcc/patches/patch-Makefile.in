@@ -1,0 +1,34 @@
+$NetBSD: patch-Makefile.in,v 1.2 2022/06/04 18:54:38 adam Exp $
+
+Do not install stuff that requires Python.
+
+--- Makefile.in.orig	2021-05-11 17:29:22.000000000 +0000
++++ Makefile.in
+@@ -421,8 +421,7 @@ bin_PROGRAMS = \
+ 	lsdistcc@EXEEXT@ \
+ 	@GNOME_BIN@ 
+ 
+-sbin_PROGRAMS = \
+-	update-distcc-symlinks
++sbin_PROGRAMS =
+ 
+ check_PROGRAMS = \
+ 	h_argvtostr@EXEEXT@ \
+@@ -466,7 +465,7 @@ check_include_server_PY = \
+ 
+ ## NOTE: "all" must be the first (default) rule, aside from patterns.
+ 
+-all: $(bin_PROGRAMS) $(sbin_PROGRAMS) pump include-server
++all: $(bin_PROGRAMS) $(sbin_PROGRAMS)
+ 
+ #  src/config.h.in is used by config.status
+ Makefile: Makefile.in src/config.h.in config.status
+@@ -1039,7 +1038,7 @@ showpaths:
+ # tricky features so mkinstalldirs and cp will do
+ 
+ install: showpaths install-doc install-man install-programs \
+-	install-include-server install-example @INSTALL_GNOME@ install-conf
++	install-example @INSTALL_GNOME@
+ 
+ install-programs: $(bin_PROGRAMS) $(sbin_PROGRAMS)
+ 	$(mkinstalldirs) "$(DESTDIR)$(bindir)"

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:12:28 nia Exp $
+
+BLAKE2s (atenddvi.doc.r56922.tar.xz) = 51c9df5ab8f389061e91119339d55ccf5952fcf0576b2bc28c531de8d36cfc8f
+SHA512 (atenddvi.doc.r56922.tar.xz) = d60dae681800be4495c2690f78513475d98a4480364306eb26c16c551b0e984f135aefccdcff549e6702b2b62bb185ccbdacd85dd3c12e5b20c128d9397c0e8c
+Size (atenddvi.doc.r56922.tar.xz) = 280328 bytes

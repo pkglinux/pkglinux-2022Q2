@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:09:18 nia Exp $
+
+BLAKE2s (gigabase-3.82.tar.gz) = 8b247bd8eeddc2cd24b99609cff980c4cc0ae0a9af998c7494ef8ba31ce18bec
+SHA512 (gigabase-3.82.tar.gz) = 2f5585e280a6871dc00ebb1f9823c5e1e01ab3d2720fc1ab7b0906731c323e539ee3ccc7ca7086e4c43f02beac9e1d163737b5adec801f31cd804275dda59e06
+Size (gigabase-3.82.tar.gz) = 1746054 bytes
+SHA1 (patch-aa) = b36dceea6f9c69e7b315923bea7e3bbf377607c8
+SHA1 (patch-class.h) = 86f10c351d52b562bf5e311110a1547140e2284d
+SHA1 (patch-query.h) = 44b50ad53c389bf8f6473738b118b3551b057c81
+SHA1 (patch-testddl.cpp) = d42f3bf7b4b120c97500b045a3eea811d5239b3e
+SHA1 (patch-testtimeseries.cpp) = 11f8dc2f31a5b0b71ae76b900f9aeaf3ff63fd90

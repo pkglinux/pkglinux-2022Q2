@@ -1,0 +1,16 @@
+/patch-aa/1.1.1.1/Fri May 31 13:01:01 2002//Tpkgsrc-2022Q2
+/patch-ackstring.h/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-codetoeuc.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-codetojis.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-codetosjis.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-codetozen.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-euctocode.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-fileio.c/1.2/Sun Jul  6 18:50:20 2014//Tpkgsrc-2022Q2
+/patch-kanjicheck.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-kanjicode.h/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-kmain.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-lcode.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-misc.h/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-sjistocode.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+/patch-string.c/1.1/Wed Dec 26 21:21:38 2012//Tpkgsrc-2022Q2
+D

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/02/12 04:41:58 pho Exp $
+
+BLAKE2s (transformers-base-0.4.6.tar.gz) = fbc9c7b4ff0ca233617c04805f33d0d64586b769912cb2bbd84a44b141b450b7
+SHA512 (transformers-base-0.4.6.tar.gz) = b056b01bd5b3d882cf08bc9977c518ed6231d7da529cee61f2f52de886da4b8ee57e4505c767f59205a75be755870254f7351358bfc2142170fb3f31f25d66b5
+Size (transformers-base-0.4.6.tar.gz) = 2902 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/09 03:27:20 markd Exp $
+
+BLAKE2s (svninfo.doc.r62157.tar.xz) = 273a036de3f10d44f941029d5269757338390d21c5d633ad1cadcf3bd905bff5
+SHA512 (svninfo.doc.r62157.tar.xz) = aa4bd06d31bad0a2441623b80f52702d67fdef03912b6f96058f3a89d00f4601cc4bae76a24f49540169ad30883177d038ddc7dedabd8d643b59df5c94be4a65
+Size (svninfo.doc.r62157.tar.xz) = 258436 bytes

@@ -1,0 +1,22 @@
+
+# libimobiledevice
+
+*A library to communicate with services on iOS devices using native protocols.*
+
+## Features
+
+libimobiledevice is a cross-platform software library that talks the protocols
+to interact with iOS devices.
+
+Unlike other projects, it does not depend on using any existing proprietary
+libraries and does not require jailbreaking.
+
+Some key features are:
+
+- **Interface**: Implements many high-level interfaces for device services
+- **Implementation**: Object oriented architecture and service abstraction layer
+- **Cross-Platform:** Tested on Linux, macOS, Windows and Android platforms
+- **Utilities**: Provides various command-line utilities for device services
+- **SSL**: Allows choosing between OpenSSL or GnuTLS to handle SSL communication
+- **Network**: Supports network connections with "WiFi sync" enabled devices
+...

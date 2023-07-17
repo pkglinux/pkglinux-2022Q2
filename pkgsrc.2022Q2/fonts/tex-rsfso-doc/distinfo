@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/09 08:04:27 markd Exp $
+
+BLAKE2s (rsfso.doc.r60849.tar.xz) = 5d40babe40c76bdff5b8e456349d981222fef7e2305003df26659f5eac258a65
+SHA512 (rsfso.doc.r60849.tar.xz) = ccb3ce73add1f2a4f269728b8189569637327d85cd1a4d29a03904872cff10ce3057bd01a9d74a94373c3aaa52afe74a98d07bcad248fd18943efb0bace6db36
+Size (rsfso.doc.r60849.tar.xz) = 149180 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.18 2021/10/26 11:29:52 nia Exp $
+
+BLAKE2s (Catalyst-Plugin-Session-0.41.tar.gz) = 273fbdb8b866696a57165e007afe6b0a3e165c54291e35fb5b5ccbe1cfe8044e
+SHA512 (Catalyst-Plugin-Session-0.41.tar.gz) = 684b3489d7259eb50b626cb29e83dca59abeaea8f7a338f09fe96c01bd927db6949ebb432b200c116a02a8501907f882ca2c163e920827f1fc755800f20187e3
+Size (Catalyst-Plugin-Session-0.41.tar.gz) = 49922 bytes

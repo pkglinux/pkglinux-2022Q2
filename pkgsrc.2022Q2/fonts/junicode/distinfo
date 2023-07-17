@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/11/05 18:56:54 rhialto Exp $
+
+BLAKE2s (junicode-1.003.tar.gz) = 63285e5e8587994bf431f33611e76bc234682b053dfa5eebbbd7cd5d893cdd1d
+SHA512 (junicode-1.003.tar.gz) = e3d4fae2075aaf23df356f749388350a2af6285c4d8e468b07953ee05387bc18ebdd67e82bea69989fd29e5587db5ab815f52bfbcfecb8de55a5f336969f1714
+Size (junicode-1.003.tar.gz) = 3938748 bytes

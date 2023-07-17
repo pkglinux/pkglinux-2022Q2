@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:49:33 nia Exp $
+
+BLAKE2s (ibus-array-0.1.0.tgz) = 4fcec181dcc603986c64393c1166cd9d80732ceec61db1d2feee633e5170d0bd
+SHA512 (ibus-array-0.1.0.tgz) = b10f60c8e8b8c7fe54ef39c32a169be6ee53b69ea008e0526ac359a253129321afa830fb2b857f3d3cd5059abba452598909a0079164a440af1520ff651435fa
+Size (ibus-array-0.1.0.tgz) = 3838716 bytes
+SHA1 (patch-setup_main.py) = 3f6a2dc0e93c86b5e8f1b1cbc7cae77043ad9c1a
+SHA1 (patch-src_engine.c) = aa7978ae11c8e1410980585ff6f7a76200df6f99

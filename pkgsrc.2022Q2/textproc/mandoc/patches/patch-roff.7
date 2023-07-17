@@ -1,0 +1,19 @@
+$NetBSD: patch-roff.7,v 1.4 2021/10/21 07:31:48 wiz Exp $
+
+Install roff with 'mandoc-' prefix to avoid conflict with groff.
+
+--- roff.7.orig	2021-09-23 18:03:23.000000000 +0000
++++ roff.7
+@@ -16,10 +16,10 @@
+ .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ .\"
+ .Dd $Mdocdate: September 18 2021 $
+-.Dt ROFF 7
++.Dt MANDOC-ROFF 7
+ .Os
+ .Sh NAME
+-.Nm roff
++.Nm mandoc-roff
+ .Nd roff language reference for mandoc
+ .Sh DESCRIPTION
+ The

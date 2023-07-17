@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (efibootmgr-17.tar.gz) = 9251d346285f96844049d305d5c021f434f7c6de
+RMD160 (efibootmgr-17.tar.gz) = 1ec263e21b0e78d1e6838947268eac8bb6f360af
+SHA512 (efibootmgr-17.tar.gz) = 10c7ad9a79f23dcd4708dc4f42701196af7aa11f5e9a6468ea51f7013d4caeba6c92527ba1304f6e3b2ef3b51b3b69ea1a30f81bb099a8aea49eeb30eb631e1d
+Size (efibootmgr-17.tar.gz) = 41643 bytes
+SHA1 (patch-src_efibootmgr.c) = de0f4405a09ead92b5b5c0d5700e83f54f697e4a

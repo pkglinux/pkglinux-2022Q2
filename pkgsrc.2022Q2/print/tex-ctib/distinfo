@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:13:03 nia Exp $
+
+BLAKE2s (tex-ctib-15878/ctib.tar.xz) = a62dc4ebecee3229d6a45c13898149273731aabb6a1fbbcfd35dba1284b2705d
+SHA512 (tex-ctib-15878/ctib.tar.xz) = 2b4b2a2bef4fb0bd95cd3ccb089afe0298c7cf25b7586cd8803d70c6b2c41df44214176fdfa5506750f29129743751d386fc657a23d45fd4ac856e26d334ffb1
+Size (tex-ctib-15878/ctib.tar.xz) = 116252 bytes

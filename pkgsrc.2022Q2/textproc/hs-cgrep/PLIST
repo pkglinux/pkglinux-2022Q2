@@ -1,0 +1,3 @@
+@comment $NetBSD: PLIST,v 1.6 2021/04/24 16:48:46 pho Exp $
+bin/cgrep
+share/doc/${HS_PLATFORM}/cgrep-${PKGVERSION}/LICENSE

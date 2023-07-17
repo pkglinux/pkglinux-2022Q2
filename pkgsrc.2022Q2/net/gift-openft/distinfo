@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 11:05:38 nia Exp $
+
+BLAKE2s (gift-openft-0.2.1.6.tar.gz) = 50b66d97ce9fb810d8de9217ead70747f5c7e0c9bb8f86cd51b7a235baed9570
+SHA512 (gift-openft-0.2.1.6.tar.gz) = b6839e727173bd852f42a31530fc84d6b209c2a0bc086285e414e0d690bfe189983de6ae5ae379978a71801cd9c2ac8c32efadd0f62bc4cd4cdf198710396ade
+Size (gift-openft-0.2.1.6.tar.gz) = 469969 bytes
+SHA1 (patch-aa) = dff35a901a7f25d1855a8cf7e3b0f394589d488c
+SHA1 (patch-ab) = 97e559c94f043b4481ed60cb972060a6acb11654
+SHA1 (patch-ac) = 9375a9967a8e93edd98a3a6e7c651c96a2d60b79

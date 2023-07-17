@@ -1,0 +1,2 @@
+This module allows easy access to GnuPG's key management, encryption and
+signature functionality from Python programs.

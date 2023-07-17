@@ -1,0 +1,18 @@
+$NetBSD: patch-bash__completion,v 1.3 2018/10/19 20:28:25 leot Exp $
+
+Added pkgsrc completions
+
+--- bash_completion.orig	2018-03-17 08:32:34.000000000 +0000
++++ bash_completion
+@@ -1402,6 +1402,11 @@ _terms()
+     extract patch configure build install reinstall deinstall clean
+     clean-depends kernel buildworld' make
+ 
++# a little help for NetBSD pkgsrc users
++[[ $OSTYPE = *netbsd* ]] && complete -W 'index search fetch fetch-list
++       extract patch configure build install reinstall
++       deinstall package clean clean-depends' make
++
+ # This function provides simple user@host completion
+ #
+ _user_at_host()

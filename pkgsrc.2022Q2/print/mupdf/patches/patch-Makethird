@@ -1,0 +1,38 @@
+$NetBSD: patch-Makethird,v 1.13 2021/10/23 15:22:07 leot Exp $
+
+- Avoid to need third party lcms2
+- Add mujs building support with libtool
+
+--- Makethird.orig	2021-10-05 10:44:43.000000000 +0000
++++ Makethird
+@@ -120,12 +120,6 @@ endif
+ ifeq ($(USE_SYSTEM_LCMS2),yes)
+   THIRD_CFLAGS += $(SYS_LCMS2_CFLAGS)
+   THIRD_LIBS += $(SYS_LCMS2_LIBS)
+-else
+-  THIRD_CFLAGS += $(LCMS2_CFLAGS)
+-  THIRD_LIBS += $(LCMS2_LIBS)
+-  THIRD_SRC += $(LCMS2_SRC)
+-$(OUT)/thirdparty/lcms2/%.o: thirdparty/lcms2/%.c
+-	$(CC_CMD) $(LIB_CFLAGS) $(LCMS2_CFLAGS) $(LCMS2_BUILD_CFLAGS)
+ endif
+ 
+ # --- MuJS ---
+@@ -137,7 +131,7 @@ else
+   THIRD_CFLAGS += $(MUJS_CFLAGS)
+   THIRD_LIBS += $(MUJS_LIBS)
+   THIRD_SRC += $(MUJS_SRC)
+-$(OUT)/thirdparty/mujs/%.o: thirdparty/mujs/%.c
++$(OUT)/thirdparty/mujs/%.lo: thirdparty/mujs/%.c
+ 	$(CC_CMD) $(LIB_CFLAGS) $(MUJS_CFLAGS) $(MUJS_BUILD_CFLAGS)
+ endif
+ 
+@@ -241,7 +235,7 @@ endif
+ THIRD_CFLAGS += $(EXTRACT_CFLAGS)
+ THIRD_LIBS += $(EXTRACT_LIBS)
+ THIRD_SRC += $(EXTRACT_SRC)
+-$(OUT)/thirdparty/extract/%.o: thirdparty/extract/%.c
++$(OUT)/thirdparty/extract/%.lo: thirdparty/extract/%.c
+ 	$(CC_CMD) $(WARNING_CFLAGS) $(LIB_CFLAGS) $(EXTRACT_CFLAGS) $(ZLIB_CFLAGS) $(EXTRACT_BUILD_CFLAGS)
+ 
+ # The first python3 command in the next two rules returns 0 (success) iff

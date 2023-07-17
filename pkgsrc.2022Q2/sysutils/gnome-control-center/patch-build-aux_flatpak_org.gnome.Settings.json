@@ -1,0 +1,43 @@
+$NetBSD$
+
+--- build-aux/flatpak/org.gnome.Settings.json.orig	2021-03-20 21:52:22.917847200 +0000
++++ build-aux/flatpak/org.gnome.Settings.json
+@@ -131,7 +131,7 @@
+             "name" : "libusb1",
+             "buildsystem" : "autotools",
+             "config-opts" : [
+-                "--disable-udev"
++                "--enable-udev"
+             ],
+             "sources" : [
+                 {
+@@ -158,9 +158,9 @@
+         {
+             "name" : "udev",
+             "config-opts" : [
+-                "--disable-hwdb",
++                "--enable-hwdb",
+                 "--disable-logging",
+-                "--disable-gudev",
++                "--enable-gudev",
+                 "--disable-introspection",
+                 "--disable-keymap",
+                 "--disable-mtd_probe"
+@@ -208,7 +208,7 @@
+                 "-Dargyllcms_sensor=false",
+                 "-Dbash_completion=false",
+                 "-Dman=false",
+-                "-Dudev_rules=false",
++                "-Dudev_rules=true",
+                 "-Dsystemd=false",
+                 "-Dvapi=false",
+                 "-Ddocs=false",
+@@ -430,7 +430,7 @@
+             "config-opts" : [
+                 "--disable-introspection",
+                 "--disable-vala",
+-                "--with-udev-base-dir=/app/lib",
++                "--with-udev-base-dir=/pkg/lib",
+                 "--with-systemdsystemunitdir=/app/lib/systemd/system",
+                 "--without-mbim",
+                 "--without-qmi"

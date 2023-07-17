@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.18 2021/10/26 11:17:10 nia Exp $
+
+BLAKE2s (john-1.9.0.tar.xz) = e14482350513a52b52eeb5c81e845ccc316e5877344e4f081b13586b6aeb2c2b
+SHA512 (john-1.9.0.tar.xz) = 26e9a245e9f050344ae8c3320e1e24dad6bc2b73e99cc041a50c2d124b2c898c93d048727451ab8a2ba1c8aa4d8d462a8c0c9fea7de39f3479a0c170a5e9ad60
+Size (john-1.9.0.tar.xz) = 8944932 bytes
+SHA1 (patch-aa) = 8bc111b75bb848f7373f339c77075886e0c54098
+SHA1 (patch-ab) = 7cce81d7692b556ee35b90912192ae48c5b98cc7
+SHA1 (patch-src_logger.c) = e97548fe857ee58da21cab2d763155360b70a964

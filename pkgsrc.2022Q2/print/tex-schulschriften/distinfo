@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/09 02:56:35 markd Exp $
+
+BLAKE2s (schulschriften.r59388.tar.xz) = f78f76eb1598e31dd03dbcb532faf99c5c47441450e9e1cc4ad340ede252cbe0
+SHA512 (schulschriften.r59388.tar.xz) = d24778c0ae93d06b42bc8d7eb8d84ab6e0f42b33352f2dbd79586a4ed9bb21fe99a61dc0eab375e56a20624fa5ad63ade3446d685dcf063d46c0f60264c431f3
+Size (schulschriften.r59388.tar.xz) = 48836 bytes

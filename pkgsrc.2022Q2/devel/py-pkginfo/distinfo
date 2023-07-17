@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2021/12/02 11:05:26 adam Exp $
+
+BLAKE2s (pkginfo-1.8.2.tar.gz) = 33a661ba3ec22012a6871683824700e62cf1ab6e6d8a9b7febd8861e7d3972ee
+SHA512 (pkginfo-1.8.2.tar.gz) = 06164b6c17000cf25e72d39e4e025a395cdd09afaab6169180cf096bae5a1ff863930d3b368274b6a03458a9ae1c3cb996559c0b042807141435b1868189b5f6
+Size (pkginfo-1.8.2.tar.gz) = 374689 bytes

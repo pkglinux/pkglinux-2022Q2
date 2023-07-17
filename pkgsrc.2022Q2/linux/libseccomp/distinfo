@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (libseccomp-2.5.4.tar.gz) = 9e0a2ad83ccda9bb1dfb3e7b51afcd9b1a7fac0a7b64d4071048b26eda228dd0
+SHA512 (libseccomp-2.5.4.tar.gz) = 92650bd7d1d48b383f402a536b97a017fd0f6ad1234daf4b938d01c92e8d134a01d2f2dd45fd9e2d025d7556bd1386ec360402145a87f20580c85949d62cea0e
+Size (libseccomp-2.5.4.tar.gz) = 637228 bytes

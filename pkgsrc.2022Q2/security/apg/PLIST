@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.3 2018/01/01 22:29:53 rillig Exp $
+bin/apg
+bin/apgbfm
+bin/apgcli
+man/man1/apg.1
+man/man1/apgbfm.1
+man/man8/apgd.8
+sbin/apgd

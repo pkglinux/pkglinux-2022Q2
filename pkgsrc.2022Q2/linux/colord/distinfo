@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:46:03 nia Exp $
+
+BLAKE2s (colord-1.4.6.tar.xz) = 40ffb1eca5970c4c1056cf719150369fa2c0353a37fdfffaf7d40a12a84f11ed
+SHA512 (colord-1.4.6.tar.xz) = d55d3322199d0bfee74eee9e183c9246ec33e755f0144d96087acb3c43ab5a3d872086fcef9f29cdd2295be71daac703cdf90ad10bf183622fdd84347e7af123
+Size (colord-1.4.6.tar.xz) = 1872528 bytes

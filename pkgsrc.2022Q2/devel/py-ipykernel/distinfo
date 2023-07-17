@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.32 2022/06/17 12:22:10 adam Exp $
+
+BLAKE2s (ipykernel-6.15.0.tar.gz) = 35e991bcf77d9072faa67e63182f6d0f27ecc071512c45b527e22edc16e276f9
+SHA512 (ipykernel-6.15.0.tar.gz) = a6533f094d18d32a02e8de5638fdabb9f647edc9a512e609de3bb1d80f5592acef4e930d879bf79bde7a0ca23945d9eb112d841f2305204fac9f4c672b5315ac
+Size (ipykernel-6.15.0.tar.gz) = 134691 bytes

@@ -1,0 +1,20 @@
+
+PowerTOP is a Linux* tool used to diagnose issues with power consumption and
+power management. In addition to being a diagnostic tool, PowerTOP also has an
+interactive mode you can use to experiment with various power management
+settings, for cases where the Linux distribution has not enabled those
+settings.
+
+
+# Build dependencies
+
+PowerTOP is coded in C++. It was written for Linux-based operating systems.
+GNU* libc (`glibc`) and Linux `pthreads` are needed for PowerTOP to function
+properly. The GNU build system (`autoconf`, `automake`, `make`, `libtool`), as
+well as `gettext`, are required to build PowerTOP.
+
+In addition, PowerTOP requires the following:
+
+* kernel version => 2.6.38
+* `ncurses-devel` (required)
+...

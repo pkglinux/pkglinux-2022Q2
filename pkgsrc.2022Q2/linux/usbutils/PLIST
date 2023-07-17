@@ -1,0 +1,8 @@
+@comment $NetBSD$
+bin/lsusb
+bin/lsusb.py
+bin/usb-devices
+bin/usbhid-dump
+share/man/man1/usb-devices.1
+share/man/man8/lsusb.8
+share/man/man8/usbhid-dump.8

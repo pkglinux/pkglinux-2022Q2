@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:43:51 nia Exp $
+
+BLAKE2s (crack-attack-1.1.14.tar.gz) = e74a620afa1a7391981f4d7574e808ebf1e4a37d02f7cc5d4036cef0b915a40b
+SHA512 (crack-attack-1.1.14.tar.gz) = 765ddb2122657b6dab4f3b59a11e7b2a8a52c834f56a22b0a51c57ead75f5739a1199360e9c830ad417cf6df2644499f2fa496dc41c1a0256e704e689be31f65
+Size (crack-attack-1.1.14.tar.gz) = 975066 bytes
+SHA1 (patch-aa) = 8fdb551045cbeb6789f8bb6c6c3f40bab0668500
+SHA1 (patch-ab) = 8d5469d698c4b46fd2aeb285e9c7ec2e7b1c4c6c

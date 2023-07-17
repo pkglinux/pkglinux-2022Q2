@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- subprojects/extensions-tool/src/templates/meson.build.orig	2021-06-10 11:33:01.952921600 +0000
++++ subprojects/extensions-tool/src/templates/meson.build
+@@ -4,7 +4,7 @@ template_metas = [
+ ]
+ template_deps = []
+ foreach template : template_metas
+-  template_deps += i18n.merge_file(template,
++  template_deps += i18n.merge_file(
+     input: template + '.in',
+     output: template,
+     po_dir: po_dir,

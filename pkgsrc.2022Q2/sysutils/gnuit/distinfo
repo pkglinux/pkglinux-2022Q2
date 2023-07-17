@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:19:39 nia Exp $
+
+BLAKE2s (gnuit-4.9.5.tar.gz) = fb5d79d7f5466ac68178ecdb6a5ca791f080ba892f91bae82c47d71cdee03adc
+SHA512 (gnuit-4.9.5.tar.gz) = 91f1a86f45d5a2fab91941587aed3c1e57ae68271584bef38560c9a31fabbdfeba801d87cdf5640ba9f2041e43305e49c64953b8d5370f3f6a463b2fa2a7c5da
+Size (gnuit-4.9.5.tar.gz) = 894362 bytes
+SHA1 (patch-ab) = c100730e50684d62f8d5a56d51713b0ae92db5d3
+SHA1 (patch-ac) = 27d6a846f1f82394a52cfe7a62b3cf9e9c1a871f
+SHA1 (patch-ad) = 46b72534415988da0c9524f09f8cd669e3e1477f

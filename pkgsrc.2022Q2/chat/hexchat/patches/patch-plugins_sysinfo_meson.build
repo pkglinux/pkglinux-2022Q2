@@ -1,0 +1,15 @@
+$NetBSD: patch-plugins_sysinfo_meson.build,v 1.4 2021/12/17 18:47:26 maya Exp $
+
+XXX this is incomplete
+
+--- plugins/sysinfo/meson.build.orig	2021-10-01 20:09:11.468550200 +0000
++++ plugins/sysinfo/meson.build
+@@ -13,7 +13,7 @@ sysinfo_includes = []
+ sysinfo_cargs = []
+ 
+ system = host_machine.system()
+-if system == 'linux' or system == 'gnu' or system.startswith('gnu/') or system == 'darwin' or system == 'freebsd'
++if system == 'linux' or system == 'gnu' or system.startswith('gnu/') or system == 'darwin' or system == 'freebsd' or system == 'netbsd'
+   sysinfo_includes += 'shared'
+   sysinfo_sources += [
+     'shared/df.c'

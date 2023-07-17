@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/08 05:43:28 markd Exp $
+
+BLAKE2s (cmcyr.doc.r60630.tar.xz) = acafcce5615b3d1fdc201aa60ac78a64a70b795d613534e2f564002740f817f6
+SHA512 (cmcyr.doc.r60630.tar.xz) = 8db204fd976f23f99871dde1523ea0d46c2471ffd55f7bc1dd65e6728bd09be609b659f2044e5650d8f4c89c169569b4a4ab5535e975f3bb824a1faddb8a97a4
+Size (cmcyr.doc.r60630.tar.xz) = 5864 bytes

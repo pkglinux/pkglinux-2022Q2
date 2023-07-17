@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/05 08:31:12 jaapb Exp $
+
+BLAKE2s (async_rpc_kernel-0.15.0.tar.gz) = 098a3972364fecf3fa0ab307a33a0d2d72428662f409b78fe3ed782adff260c9
+SHA512 (async_rpc_kernel-0.15.0.tar.gz) = 29ddd5cffd53acd02de1dfac2291d74e69673c6fab6586e8ed2d0edff98b176dbe05b80da0839d394e7601e1a33aec5bafb9678a46665c847878567378e2e648
+Size (async_rpc_kernel-0.15.0.tar.gz) = 65182 bytes

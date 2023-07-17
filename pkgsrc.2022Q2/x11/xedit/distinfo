@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/03 22:16:01 wiz Exp $
+
+BLAKE2s (xedit-1.2.3.tar.xz) = 6ff834af847b144829cf7bc68c2e861b42ba87cc4c1d4b0113836d6121a5d305
+SHA512 (xedit-1.2.3.tar.xz) = 1089c35ef961e53f74cc7d892960e1ee7f0da17529e3173e7f7764b0eb4ee94d1e068cb177d8502ca55c1dd6808962d4b1427e303adc7e6db80be8828557f45a
+Size (xedit-1.2.3.tar.xz) = 480288 bytes

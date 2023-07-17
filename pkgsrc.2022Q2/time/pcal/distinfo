@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:24:31 nia Exp $
+
+BLAKE2s (pcal-4.11.0.tgz) = 0b2dc4b573609630b516b34da3e4574e85a0c96e39e3978f94a324f6e7239a7b
+SHA512 (pcal-4.11.0.tgz) = a04ed4e859c4df32dd9c8b8dd8076f88679cc631aa4acecfb23524c14eef758fa3cac41f52bc88a018544e2df025b5f659d1bcc8c8f6c317ebfdcbe197c066c8
+Size (pcal-4.11.0.tgz) = 324368 bytes
+SHA1 (patch-ab) = aa664915b47cf9119ef7a1e5a3db964dc30c9a72
+SHA1 (patch-ac) = da39b0cb675f2e955f183964c9ece0263364c97e
+SHA1 (patch-ad) = eaacccb3b3830e0d169820271e8f74d5ec2fc514

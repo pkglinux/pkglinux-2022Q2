@@ -1,0 +1,17 @@
+@comment $NetBSD: PLIST,v 1.2 2022/03/14 11:46:28 nikita Exp $
+guile/3.0/lib/guile/3.0/site-ccache/commonmark.go
+guile/3.0/lib/guile/3.0/site-ccache/commonmark/blocks.go
+guile/3.0/lib/guile/3.0/site-ccache/commonmark/common.go
+guile/3.0/lib/guile/3.0/site-ccache/commonmark/entities.go
+guile/3.0/lib/guile/3.0/site-ccache/commonmark/inlines.go
+guile/3.0/lib/guile/3.0/site-ccache/commonmark/node.go
+guile/3.0/lib/guile/3.0/site-ccache/commonmark/sxml.go
+guile/3.0/lib/guile/3.0/site-ccache/commonmark/utils.go
+guile/3.0/share/guile/site/3.0/commonmark.scm
+guile/3.0/share/guile/site/3.0/commonmark/blocks.scm
+guile/3.0/share/guile/site/3.0/commonmark/common.scm
+guile/3.0/share/guile/site/3.0/commonmark/entities.scm
+guile/3.0/share/guile/site/3.0/commonmark/inlines.scm
+guile/3.0/share/guile/site/3.0/commonmark/node.scm
+guile/3.0/share/guile/site/3.0/commonmark/sxml.scm
+guile/3.0/share/guile/site/3.0/commonmark/utils.scm

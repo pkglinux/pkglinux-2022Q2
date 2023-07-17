@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/04 16:50:34 jaapb Exp $
+
+BLAKE2s (time_now-0.15.0.tar.gz) = af961eeb02f1a50a4236450fae81cba9a3b0d54c813882900c9de4c931cb8ee8
+SHA512 (time_now-0.15.0.tar.gz) = b24bf9fda05cc84c568cc8637771e8774661df738719b4ad30f86ae4a9a984e9f1d344dc58ab6014d37275e99e92bf3b2d34a8c4dfc474faf00c6096f679e371
+Size (time_now-0.15.0.tar.gz) = 3697 bytes

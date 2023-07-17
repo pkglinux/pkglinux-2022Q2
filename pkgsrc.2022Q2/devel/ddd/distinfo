@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.23 2021/10/26 10:14:31 nia Exp $
+
+BLAKE2s (ddd-3.3.12.tar.gz) = d91442935958dc7ffc5df59cb83a2c106070c158f4cec12a17bc4ba52d2944be
+SHA512 (ddd-3.3.12.tar.gz) = 1249e4f5f25335f8f2c3616470f7a8f36262c00b8ac12b79f2b2806228de2831ebeb780fe09490e5e8b5b1ca108fe936ae70856f6a6ec02876fc75c7b4a7dbf3
+Size (ddd-3.3.12.tar.gz) = 5687115 bytes
+SHA1 (patch-Makefile.in) = de1fb079a0870c73aac604ab48996f7a4f2c5258
+SHA1 (patch-ai) = 513621cb015cde43736ad9c28e1535358c398992
+SHA1 (patch-ddd_VSLDefList.C) = b68263f97d117646dcd5eb577257e610a4a8cbbd
+SHA1 (patch-ddd_exit.C) = 84b946945aa4fa0ff64fbc59190a877f8926c684
+SHA1 (patch-ddd_strclass.C) = ad2453f8322d70846c9a816f28bef86e9b0410a3
+SHA1 (patch-ddd_strclass.h) = 42941680cf746ce81505293a5d81fa8477d87387

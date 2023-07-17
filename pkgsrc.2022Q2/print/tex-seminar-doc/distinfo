@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/09 02:59:57 markd Exp $
+
+BLAKE2s (seminar.doc.r59801.tar.xz) = 9fdbf499263b32587d7f38ec94ea725e1b54c11d57f6477215c87ee12fd56929
+SHA512 (seminar.doc.r59801.tar.xz) = 8b7364dc568d1fd78cce21ff1846a6369fe3fccf07bf16ece8383c941492404d6fdf3be1607aa2279a10d670803536474d7cc318b9b3dda24142fbcc69fe69e0
+Size (seminar.doc.r59801.tar.xz) = 348624 bytes

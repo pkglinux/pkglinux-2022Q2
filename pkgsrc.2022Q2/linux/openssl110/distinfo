@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.127 2017/01/26 16:31:57 jperkin Exp $
+
+BLAKE2s (openssl-1.1.0h.tar.gz) = 7e4c0b3a0382463e116498a77b684081ac87fd14c9e028db65169e0ef7a6d78a
+SHA512 (openssl-1.1.0h.tar.gz) = fb7750fcd98e6126eb5b92e7ed63d811a5cfa3391d98572003d925f6c7b477690df86a9aa1fa6bf6bf33d02c6c7aee6cff50a38faa8911409f310645898fda39
+Size (openssl-1.1.0h.tar.gz) = 5422717 bytes

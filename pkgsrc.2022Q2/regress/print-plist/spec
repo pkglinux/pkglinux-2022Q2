@@ -1,0 +1,18 @@
+# $NetBSD: spec,v 1.3 2019/07/17 17:56:22 rillig Exp $
+#
+# print-plist regression test
+# spec file
+#
+
+# Targets to invoke for this regression test.
+MAKEARGS_TEST="install print-PLIST"
+
+# Need to remove work directory and installed files.
+MAKEARGS_CLEAN="deinstall clean"
+
+check_result()
+{
+	exit_status 0	# test is passed if the targets return 0
+	output_require "^@comment Matched test file.$"
+	output_require "^print-plist/foo$"
+}

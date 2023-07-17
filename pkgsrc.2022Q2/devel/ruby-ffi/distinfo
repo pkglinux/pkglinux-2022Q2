@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.32 2022/02/12 12:30:40 taca Exp $
+
+BLAKE2s (ffi-1.15.5.gem) = d9dc3990b9d7b586d54f56f4a6c7110c3cda3b03b5d64be8fffbf671f672dad4
+SHA512 (ffi-1.15.5.gem) = 074df34edffc7038ab08199350a97b32280d61ea15dd85d459b008bd3363ec5403b4e533621c8e460e5288f01fec944bff9b149851b819e85bab75ad2362227c
+Size (ffi-1.15.5.gem) = 909824 bytes

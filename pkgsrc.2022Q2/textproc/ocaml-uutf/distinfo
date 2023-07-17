@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/05/02 18:17:18 jaapb Exp $
+
+BLAKE2s (uutf-1.0.3.tbz) = e3a919898b212b34dcf9913be16f4658ef389d5686bf8b6dcc682c39465ff863
+SHA512 (uutf-1.0.3.tbz) = 50cc4486021da46fb08156e9daec0d57b4ca469b07309c508d5a9a41e9dbcf1f32dec2ed7be027326544453dcaf9c2534919395fd826dc7768efc6cc4bfcc9f8
+Size (uutf-1.0.3.tbz) = 23363 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/15 04:59:07 markd Exp $
+
+BLAKE2s (uptex-base.doc.r61795.tar.xz) = 7ddee725a82f3f4bfe08598306e3e65e2abcacfa13ccb54dae31165d07e7d9ca
+SHA512 (uptex-base.doc.r61795.tar.xz) = 783b2e886ffc1609fe885b2592334b517219b6b5263e75f7d440a013a1b59fa489e32de0c17b5ef342a95893199de961bb0b7725323b9cb3eb3a22a1c92f4196
+Size (uptex-base.doc.r61795.tar.xz) = 159756 bytes

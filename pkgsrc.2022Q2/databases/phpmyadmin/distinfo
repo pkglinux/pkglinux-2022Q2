@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.118 2022/04/22 18:06:05 tm Exp $
+
+BLAKE2s (phpMyAdmin-4.9.10-all-languages.tar.xz) = 0eb2179c30d0aa570435f65486fb07f5dc34d5b2bd3b454a31c89c12ce5b38ee
+SHA512 (phpMyAdmin-4.9.10-all-languages.tar.xz) = 9d12a4ffcfd32a6dcf8558103fea4e178f1c7daabb4b0f57a18d0e0608b6e6549eb7b8cff0337275986c41090e8b81aa2d11bd321e5a7bf52d4bf99d35deabde
+Size (phpMyAdmin-4.9.10-all-languages.tar.xz) = 6115796 bytes
+SHA1 (patch-libraries_vendor__config.php) = b758f5550dd7226d88293fa6614b2283cbd8e3ea

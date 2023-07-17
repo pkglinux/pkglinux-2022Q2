@@ -1,0 +1,8 @@
+/patch-MANIFEST/1.1/Mon Sep  9 12:21:44 2019//Tpkgsrc-2022Q2
+/patch-Makefile/1.1/Mon Sep  9 12:21:44 2019//Tpkgsrc-2022Q2
+/patch-Makefile.config/1.1/Mon Sep  9 12:21:44 2019//Tpkgsrc-2022Q2
+/patch-common_Build.PL/1.1/Mon Sep  9 12:21:44 2019//Tpkgsrc-2022Q2
+/patch-common_lib_Munin_Common_Defaults.pm/1.1/Mon Apr  4 11:45:33 2022//Tpkgsrc-2022Q2
+/patch-plugins_node.d.sunos_if__.in/1.1/Mon Apr  4 11:45:33 2022//Tpkgsrc-2022Q2
+/patch-plugins_node.d.sunos_if__err__.in/1.1/Mon Apr  4 11:45:33 2022//Tpkgsrc-2022Q2
+D

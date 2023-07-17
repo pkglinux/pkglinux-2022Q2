@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:21:34 nia Exp $
+
+BLAKE2s (aspell-af-0.50-0.tar.bz2) = 4e6e691077f234e7eece219a484a47512b6646465470444d3909653b2000b979
+SHA512 (aspell-af-0.50-0.tar.bz2) = 8ca7b892745bebe5dfda1319141c5efc53fbad1444066d585cc2d6479c51c85c31307a6977a0647b0c4add4a5b7baa9adb370996e25db4e1c98f1c10991fd649
+Size (aspell-af-0.50-0.tar.bz2) = 256111 bytes

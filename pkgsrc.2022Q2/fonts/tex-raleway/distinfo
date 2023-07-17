@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:28:27 nia Exp $
+
+BLAKE2s (tex-raleway-42629/raleway.tar.xz) = f22101cfd837f7497a4d1f2a4cf2028370d0f0bf32886d320a5781834e60f175
+SHA512 (tex-raleway-42629/raleway.tar.xz) = 4f08e6b9171e62a18121ae9023150d5f53733ff681373f7df92a30a636dad6cc62b7a967f6587fde1af9b1d27608272502e1b400207839bc93f3ea7be709164d
+Size (tex-raleway-42629/raleway.tar.xz) = 2334944 bytes

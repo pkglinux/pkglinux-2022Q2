@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 11:20:11 nia Exp $
+
+BLAKE2s (sarah-0.9.1b.tar.gz) = 6caf25d95b8c53f7a50fe60a80a03a2f881165e2838e72c5c7d1b8b689ff210c
+SHA512 (sarah-0.9.1b.tar.gz) = d67bc1e13daa26222310ab60a08b49b48b4c3bac9081a7fea8534bcb2b9c4a8708dc272e662b715639bf4286b3be102a9b7bf76a5af12f65b9f1bf939c8189b9
+Size (sarah-0.9.1b.tar.gz) = 38031 bytes

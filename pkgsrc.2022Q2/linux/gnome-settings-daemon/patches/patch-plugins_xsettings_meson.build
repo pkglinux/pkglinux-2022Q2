@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- plugins/xsettings/meson.build.orig	2022-06-01 00:28:06.000000000 +0000
++++ plugins/xsettings/meson.build
+@@ -51,7 +51,7 @@ endforeach
+ 
+ install_data(
+   files('00-xrdb'),
+-  install_dir: join_paths(gsd_sysconfdir, 'xdg/Xwayland-session.d')
++  install_dir: join_paths(get_option('datadir'), 'examples/xdg/Xwayland-session.d')
+ )
+ 
+ test_py = find_program('test.py')

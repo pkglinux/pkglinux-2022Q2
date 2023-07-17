@@ -1,0 +1,9 @@
+===========================================================================
+$NetBSD: MESSAGE.NetBSD,v 1.2 2022/03/24 16:08:26 manu Exp $
+
+Please add the following to /Etc/sysctl.conf
+        kern.sbmax=4194304
+        net.inet.tcp.sendbuf_max=1048576
+        net.inet.tcp.recvbuf_max=1048576
+
+===========================================================================

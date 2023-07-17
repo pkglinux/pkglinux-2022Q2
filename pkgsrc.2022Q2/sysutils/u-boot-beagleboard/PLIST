@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2019/05/08 05:14:19 thorpej Exp $
+share/u-boot/beagleboard/MLO
+share/u-boot/beagleboard/installboot.plist
+share/u-boot/beagleboard/u-boot.img

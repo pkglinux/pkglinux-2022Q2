@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.26 2021/10/26 09:57:06 nia Exp $
+
+BLAKE2s (sharutils-4.15.2.tar.xz) = b39d43be2b45a1b3b6a22d5f878a73dcc04154566002ede05694be320e5c5dea
+SHA512 (sharutils-4.15.2.tar.xz) = 80d0b804a0617e11e5c23dc0d59b218bbf93e40aaf5e9a5401a18ef9cb700390aab711e2b2e2f26c8fd5b8ef99a91d3405e01d02cadabcba7639979314e59f8d
+Size (sharutils-4.15.2.tar.xz) = 1122476 bytes
+SHA1 (patch-libopts_libopts.c) = da5b86c5ba4dfdae5108476e46c1ed5e47a4254e
+SHA1 (patch-src_shar-opts.c) = eabc6a22adb102fc88b42c4479ee4030435d07dd
+SHA1 (patch-src_unshar-opts.c) = 7c34db513400d5f818be396a6bdbd2ff8d8bb77b
+SHA1 (patch-src_uudecode-opts.c) = d560a91b977d3c02627be22073b1dc1810a9b3cb
+SHA1 (patch-src_uuencode-opts.c) = 0906d8b3d9ac10d529b2a35aadce1fb09d3c60b7

@@ -1,0 +1,13 @@
+@comment $NetBSD: PLIST,v 1.3 2022/04/24 15:30:43 tnn Exp $
+share/fonts/X11/TTF/SourceSans3-Black.otf
+share/fonts/X11/TTF/SourceSans3-BlackIt.otf
+share/fonts/X11/TTF/SourceSans3-Bold.otf
+share/fonts/X11/TTF/SourceSans3-BoldIt.otf
+share/fonts/X11/TTF/SourceSans3-ExtraLight.otf
+share/fonts/X11/TTF/SourceSans3-ExtraLightIt.otf
+share/fonts/X11/TTF/SourceSans3-It.otf
+share/fonts/X11/TTF/SourceSans3-Light.otf
+share/fonts/X11/TTF/SourceSans3-LightIt.otf
+share/fonts/X11/TTF/SourceSans3-Regular.otf
+share/fonts/X11/TTF/SourceSans3-Semibold.otf
+share/fonts/X11/TTF/SourceSans3-SemiboldIt.otf

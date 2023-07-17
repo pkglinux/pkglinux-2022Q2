@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.27 2021/10/26 10:54:00 nia Exp $
+
+BLAKE2s (ezmlm-idx-7.2.2.tar.gz) = 3e3adcc170b866b7e9d6df724b8ddec6ee193346d009efc7763cfbbf42130f42
+SHA512 (ezmlm-idx-7.2.2.tar.gz) = 4fdd30d6dc254fd0353f34675ea8baa91d95860de1fb23ff5517280c75a8d87405bdd7e180e25eb8f5c0b152a35a11a939f4e7364596e83d81053b1e6019245c
+Size (ezmlm-idx-7.2.2.tar.gz) = 742451 bytes
+SHA1 (patch-BIN) = 7024a403c703f2172882683bad316eaea2956f99
+SHA1 (patch-CGIBIN) = e49ab9c2db9ed8d3e2691414ec433b74a6eaadb9
+SHA1 (patch-ETC) = 1529f149f8e67af611e40187d395a3e1294f51a8
+SHA1 (patch-MAN) = 6a50aedaf61e4d15af74d36088a9963f1563afb2
+SHA1 (patch-Makefile) = 954e09eb022cbd38ba5ceb8c20a2c0519c360a08
+SHA1 (patch-ezmlm-dispatch.c) = 0543922ecef47c0de9f424a23f0bff61809bad1d
+SHA1 (patch-test-getconfopt.c) = 45ae841a73df56ea1bd029041f4ca2e5239bb35d

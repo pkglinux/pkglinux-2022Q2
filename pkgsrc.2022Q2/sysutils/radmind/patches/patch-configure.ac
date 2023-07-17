@@ -1,0 +1,14 @@
+$NetBSD: patch-configure.ac,v 1.2 2018/12/18 14:16:18 hauke Exp $
+
+Fix for Radmind bug #221, accomodating for 64 bit time_t
+
+--- configure.ac.orig	2010-12-13 03:43:38.000000000 +0000
++++ configure.ac
+@@ -44,6 +44,7 @@ AC_SYS_LARGEFILE
+ 
+ # Check sizes
+ AC_CHECK_SIZEOF(off_t)
++AC_CHECK_SIZEOF(time_t)
+ 
+ # Checks for libraries.
+ AC_CHECK_LIB(c, inet_aton, libc_inet_aton=yes) 

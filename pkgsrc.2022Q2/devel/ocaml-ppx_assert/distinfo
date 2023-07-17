@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/04 16:27:10 jaapb Exp $
+
+BLAKE2s (ppx_assert-0.15.0.tar.gz) = dce688119908eec5a5b41ed1643b122ed0a3a114fa79d4829f02273b90df4953
+SHA512 (ppx_assert-0.15.0.tar.gz) = 54d28c8fc9c1ecff9e7b616aa4013d09f6554f6b59b62ef9db0f18fb4a8e0b36f31241f522324140a9f680ad46ac57257a28baca00daa901c264f40d61fd510d
+Size (ppx_assert-0.15.0.tar.gz) = 7387 bytes

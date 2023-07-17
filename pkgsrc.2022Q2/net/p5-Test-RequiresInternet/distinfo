@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:06:27 nia Exp $
+
+BLAKE2s (Test-RequiresInternet-0.05.tar.gz) = dc97f2f50c172d8887620d9dbf2889bce490be68eeadf19197590a3e97ff27c8
+SHA512 (Test-RequiresInternet-0.05.tar.gz) = 572af3e6fdfb90df3a58ba6eaf571717b294a54fff4b3f597fd177f1eb91fb1c929cb808f8d219f692314a944cf41dc1afab41f5a0dd2185054c08fec69e66c3
+Size (Test-RequiresInternet-0.05.tar.gz) = 11029 bytes

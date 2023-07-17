@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.27 2022/01/24 05:46:37 adam Exp $
+
+BLAKE2s (m3u8-1.0.0.tar.gz) = 3953724134fcf2b362716eb371bbad7ab584937286cddd8c9a1ae3ee5aac371a
+SHA512 (m3u8-1.0.0.tar.gz) = 177c7ac288f1b66e1eaee3d5132cb7a4f3ff3907595816956c7b568ff6123ddde9c5ccc002fd92200e5b875a13084dabb05c7b8421a31c38a88f33dca2254a4a
+Size (m3u8-1.0.0.tar.gz) = 26295 bytes

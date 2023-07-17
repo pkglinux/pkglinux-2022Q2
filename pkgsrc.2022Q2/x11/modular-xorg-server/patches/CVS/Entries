@@ -1,0 +1,19 @@
+/patch-configure/1.7/Wed Dec 15 23:35:00 2021//Tpkgsrc-2022Q2
+/patch-hw_kdrive_ephyr_hostx.c/1.3/Thu Jun 24 18:43:08 2021//Tpkgsrc-2022Q2
+/patch-hw_xfree86_common_xf86AutoConfig.c/1.4/Tue Dec 10 17:27:05 2019//Tpkgsrc-2022Q2
+/patch-hw_xfree86_common_xf86sbusBus.h/1.1/Sat Apr 25 11:47:03 2015//Tpkgsrc-2022Q2
+/patch-hw_xfree86_dri2_dri2.c/1.2/Sat Apr 25 11:47:03 2015//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_bsd_alpha__video.c/1.1/Wed Jul 21 21:50:29 2021//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_bsd_arm__video.c/1.1/Tue Feb 23 22:32:45 2016//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_bsd_bsd__VTsw.c/1.1/Sun Oct 11 18:28:53 2015//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_bsd_bsd__init.c/1.1/Fri Oct 26 10:20:12 2018//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_bsd_i386__video.c/1.1/Sat Apr 25 11:47:03 2015//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_bus_Sbus.c/1.4/Sun May 22 21:29:58 2022//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_solaris_solaris-amd64.S/1.1/Thu Jan 25 15:06:10 2018//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_solaris_sun__init.c/1.1/Sun May 22 21:29:58 2022//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os-support_xf86_OSproc.h/1.1/Tue Feb 23 22:32:45 2016//Tpkgsrc-2022Q2
+/patch-hw_xfree86_os_support_bus_xf86Sbus.h/1.1/Sat Apr 25 11:47:03 2015//Tpkgsrc-2022Q2
+/patch-hw_xwayland_xwayland-input.c/1.4/Thu Jun 24 18:43:08 2021//Tpkgsrc-2022Q2
+/patch-os_backtrace.c/1.3/Sun May 22 21:29:58 2022//Tpkgsrc-2022Q2
+/patch-test_xtest.c/1.1/Thu Feb 28 12:32:39 2019//Tpkgsrc-2022Q2
+D

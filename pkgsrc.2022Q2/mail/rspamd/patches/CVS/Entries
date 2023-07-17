@@ -1,0 +1,8 @@
+/patch-CMakeLists.txt/1.7/Tue Dec 21 15:00:41 2021//Tpkgsrc-2022Q2
+/patch-cmake_Toolset.cmake/1.2/Tue Dec 21 15:00:41 2021//Tpkgsrc-2022Q2
+/patch-contrib_doctest_doctest_doctest.h/1.1/Thu Mar  3 16:23:31 2022//Tpkgsrc-2022Q2
+/patch-contrib_fpconv_fpconv.c/1.1/Fri Jun 21 15:02:54 2019//Tpkgsrc-2022Q2
+/patch-src_libcryptobox_CMakeLists.txt/1.1/Sun May 29 19:21:46 2022//Tpkgsrc-2022Q2
+/patch-src_libcryptobox_chacha20_chacha.c/1.1/Sun May 29 19:21:46 2022//Tpkgsrc-2022Q2
+/patch-src_libcryptobox_cryptobox.c/1.3/Sun May 29 19:21:46 2022//Tpkgsrc-2022Q2
+D

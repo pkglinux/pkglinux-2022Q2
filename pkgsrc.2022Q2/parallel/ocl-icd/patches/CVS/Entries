@@ -1,0 +1,19 @@
+/patch-OpenCL.pc.in/1.1/Fri Jul  9 18:30:29 2021//Tpkgsrc-2022Q2
+/patch-icd__generator.rb/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__d3d10.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__d3d11.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__dx9__media__sharing.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__egl.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__ext.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__gl.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__gl__ext.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__icd.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__layer.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__platform.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_cl__va__api__media__sharing__intel.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-khronos-headers_CL_opencl.h/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-ocl-icd.pc.in/1.1/Fri Jul  9 18:30:29 2021//Tpkgsrc-2022Q2
+/patch-ocl__interface.yaml/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+/patch-run__dummy__icd.c/1.1/Thu Jun 10 05:55:42 2021//Tpkgsrc-2022Q2
+D

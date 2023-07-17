@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/11/16 19:45:48 adam Exp $
+
+BLAKE2s (factory_boy-3.2.1.tar.gz) = 0480eaf93dabdd4af2987aa203a814322de50006b77cb7107223d39932d6f507
+SHA512 (factory_boy-3.2.1.tar.gz) = 21ad111c648f3ff444cc2310479464334eb4c5b16ed04a592fb9152397f9bf6c044d235789b901f65ebf49d07a0621834ec280630279be0696ccec15ac9f15df
+Size (factory_boy-3.2.1.tar.gz) = 153483 bytes

@@ -1,0 +1,16 @@
+$NetBSD: patch-ai,v 1.2 2019/09/15 12:51:29 mef Exp $
+
+-*- coding: utf-8 -*-
+Fix path 
+
+--- htmllintl.html.orig	2011-11-28 16:15:44.000000000 +0900
++++ htmllintl.html	2019-09-15 21:09:30.157236024 +0900
+@@ -70,7 +70,7 @@ function ClearButton(name)
+ このページは、基本的な設定だけの軽いゲートウェイです (軽いのはこのHTMLのことで、チェック自体はどれでも同じです)。細かなオプションを指定したいときは、<a href="./htmllint.html">こちらのゲートウェイ</a>を利用してください。
+ </p>
+ 
+-<form action="./htmllint.cgi" method="post" enctype="multipart/form-data">
++<form action="/cgi-bin/htmllint.cgi" method="post" enctype="multipart/form-data">
+ <input type="hidden" name="Stat" value="on">
+ 
+ <hr>

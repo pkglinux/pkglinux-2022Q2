@@ -1,0 +1,9 @@
+/patch-GNUmakefile/1.3/Sun Oct 13 21:48:57 2019//Tpkgsrc-2022Q2
+/patch-common.mk/1.1/Sun Oct 13 21:48:58 2019//Tpkgsrc-2022Q2
+/patch-config.mk.in/1.5/Sun Oct 13 21:48:58 2019//Tpkgsrc-2022Q2
+/patch-src_cpp_server__pstream.cpp/1.1/Sun Oct 13 21:48:58 2019//Tpkgsrc-2022Q2
+/patch-test_cpp_server__abyss.cpp/1.1/Wed Dec 18 12:43:40 2019//Tpkgsrc-2022Q2
+/patch-tools_xml-rpc-api2cpp_Makefile/1.1/Sun Oct 13 21:48:58 2019//Tpkgsrc-2022Q2
+/patch-tools_xmlrpc_Makefile/1.1/Sun Oct 13 21:48:58 2019//Tpkgsrc-2022Q2
+/patch-tools_xmlrpc__transport_Makefile/1.1/Sun Oct 13 21:48:58 2019//Tpkgsrc-2022Q2
+D

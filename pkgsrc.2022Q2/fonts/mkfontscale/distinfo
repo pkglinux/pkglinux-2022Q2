@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.24 2022/04/03 19:36:41 wiz Exp $
+
+BLAKE2s (mkfontscale-1.2.2.tar.xz) = f1bf26a57c806246f2a2c0a4af4b8edd4df5ed718bd636e6e55cabacd72da1e7
+SHA512 (mkfontscale-1.2.2.tar.xz) = 4c846816325347c91008d76b3a5610c1e58a8414fd55117e7ccf51310db4b20b8397ecf6c9177ff77322e27ee088bf034fd175c9210465c50b094bab8dada4b3
+Size (mkfontscale-1.2.2.tar.xz) = 143436 bytes

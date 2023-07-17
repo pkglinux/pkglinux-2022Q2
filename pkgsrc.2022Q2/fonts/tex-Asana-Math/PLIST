@@ -1,0 +1,3 @@
+@comment $NetBSD: PLIST,v 1.3 2022/04/14 04:36:03 markd Exp $
+share/texmf-dist/fonts/opentype/public/asana-math/Asana-Math.otf
+share/texmf-dist/fonts/truetype/public/asana-math/ASANA.TTC

@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.6 2022/01/06 00:09:32 gdt Exp $
+
+BLAKE2s (geoclue-2.5.7.tar.gz) = e15d81e20924561fe932c78656044894747727719af28c091c8ac70d46d772b2
+SHA512 (geoclue-2.5.7.tar.gz) = 06bd9b87f54f7fbc44710d9e8c43dc39002f019c0c84e26a13d099ed70365a95f358bc60fed63a7beb6467339515524e3588e921b2143cf9a8e926b0c54ce89b
+Size (geoclue-2.5.7.tar.gz) = 114889 bytes
+SHA1 (patch-data_meson.build) = c785e3401db9f76808dbb682896352b49aaf9112

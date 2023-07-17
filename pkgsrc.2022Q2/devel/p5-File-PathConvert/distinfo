@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:16:37 nia Exp $
+
+BLAKE2s (File-PathConvert-0.9.tar.gz) = 7301d21131999763ab9dc4f4f888389769f3afcfe920eba9e20a7cb66bcfedca
+SHA512 (File-PathConvert-0.9.tar.gz) = ec67eecddcd023d701d60f6c55cd7b3893a1378373db54b44a097c988458dcab901c4538ac15e66743bb4520e0780cb62d0a7a3ac8f192d011a4e5491df0cee5
+Size (File-PathConvert-0.9.tar.gz) = 23807 bytes

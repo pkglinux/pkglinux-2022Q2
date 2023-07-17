@@ -1,0 +1,4 @@
+PolyglotMan parses formatted man pages and man page source from most flavors
+of UNIX. It converts to HTML, ASCII, TkMan, DocBook, and other formats.
+
+This program was formerly called RosettaMan.

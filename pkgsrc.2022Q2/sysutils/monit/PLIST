@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.7 2019/08/30 14:00:14 nia Exp $
+bin/monit
+man/man1/monit.1
+share/docs/monit/CHANGES
+share/docs/monit/COPYING
+share/docs/monit/README
+share/examples/monit/monitrc.sample

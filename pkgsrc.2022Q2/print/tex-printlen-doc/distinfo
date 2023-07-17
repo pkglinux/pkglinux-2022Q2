@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:14:25 nia Exp $
+
+BLAKE2s (tex-printlen-19847/printlen.doc.tar.xz) = 1b46220c9b48132f514e202be841a1a950e4aacca845e514d1c25187bf4deb95
+SHA512 (tex-printlen-19847/printlen.doc.tar.xz) = 2d5bf9bcd9e6f070eaea755138e7c6c858c4e25805087f5fc6568c2c4bccdce66b25a563dae736732d84b36afa5595c7da9a54dc0bfab5a1fc9d839a1fc1ce6a
+Size (tex-printlen-19847/printlen.doc.tar.xz) = 245528 bytes

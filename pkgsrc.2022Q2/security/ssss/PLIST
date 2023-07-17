@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2018/01/01 22:29:55 rillig Exp $
+bin/ssss-combine
+bin/ssss-split
+man/man1/ssss.1

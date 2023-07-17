@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.55 2022/03/10 17:05:13 nia Exp $
+
+BLAKE2s (gnome-session-42.0.tar.xz) = b1390b41987069ed4dc74972f8bbed1e25bda83e9949adffb8a3d7e0b2e66137
+SHA512 (gnome-session-42.0.tar.xz) = 3d340700958b5800039e3009618709add2cdbaecb58344d9d2f93e4e761a737ef003091c380c68f95386dbb078b3d12f70732f0022611ab4a10e1c1eb988b4fa
+Size (gnome-session-42.0.tar.xz) = 485616 bytes

@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 09:59:30 nia Exp $
+
+BLAKE2s (sphinx3-0.8.tar.gz) = f774ef83204cf95b2b3b88ccb00021825f4387dd0244eb5ee386e6369df3235d
+SHA512 (sphinx3-0.8.tar.gz) = 85b8e574e2f92a758c8c56ef11b873c49ef8a376e964f30a12d75850d4a0db56e3108eaea25fa5587675ef2ffa4531a13f0f182a85cc8e434c6bcee42058e050
+Size (sphinx3-0.8.tar.gz) = 25226326 bytes
+SHA1 (patch-src_libs3decoder_libcfg_s3__cfg__convert.c) = de4a35285d4c8ab40838f71c77a290f47e7635a8
+SHA1 (patch-src_libs3decoder_libsearch_fsg__history.c) = 51afaaff40c2970fc0dc649569baaafde1cc72de
+SHA1 (patch-src_libs3decoder_libsearch_vithist.c) = 6fecd5870464796b8c114eafe4121b15cb9a3c77

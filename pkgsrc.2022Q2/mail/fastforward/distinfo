@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 10:54:00 nia Exp $
+
+BLAKE2s (fastforward-0.51.tar.gz) = 0b18397fa241f2f89cdd618180f8decd4f2a3162405dc88d749a4a365590baa1
+SHA512 (fastforward-0.51.tar.gz) = 7206f72dc7bb42d7e0cc63980eda7bc2b93c7ca6639db810f6d28476ab58d3e4bb6e441f4eef2149c5fe933c2f9effe2f2b3101d02cf9f6e922a678e7466b132
+Size (fastforward-0.51.tar.gz) = 40659 bytes
+SHA1 (patch-Makefile) = 2e7c9f1fac07c3f0acde3ea84d47348ed9a8dd68
+SHA1 (patch-hier.c) = 6747b72b7d651a7130e905f2246deb498599cb1a

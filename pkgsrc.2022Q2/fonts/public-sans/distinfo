@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/05/18 20:34:05 fcambus Exp $
+
+BLAKE2s (public-sans-v2.001.tar.gz) = ddbd081329a1d4a073d926af5b6783b322f1cdcb0406d3e93244671aebf7b672
+SHA512 (public-sans-v2.001.tar.gz) = 531949a4fea913c12e672a3d93cc1b0a140c19adb83c4e84d4d86da7a3f5b16b3a205b8b6a64b30e94f5dc8839b89dc833b3f21e784d5ccc3a0e7f61d0007f8a
+Size (public-sans-v2.001.tar.gz) = 14630772 bytes

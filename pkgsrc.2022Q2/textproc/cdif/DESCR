@@ -1,0 +1,10 @@
+cdif is a post-processor of the Unix diff command. It highlights
+deleted, changed and added words based on word context.
+
+To compare character-by-character rather than word-by-word, use the -B
+option.
+
+If only one file is specified, cdif reads that file (stdin if no file)
+as a output from diff command.
+
+Lines that don't look like diff output are simply ignored and printed.

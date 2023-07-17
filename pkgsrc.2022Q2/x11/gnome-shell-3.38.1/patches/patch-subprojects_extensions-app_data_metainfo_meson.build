@@ -1,0 +1,11 @@
+$NetBSD$
+
+--- subprojects/extensions-app/data/metainfo/meson.build.orig	2020-10-05 18:36:07.985836500 +0000
++++ subprojects/extensions-app/data/metainfo/meson.build
+@@ -1,5 +1,5 @@
+ metainfo = app_id + '.metainfo.xml'
+-i18n.merge_file(metainfo,
++i18n.merge_file(
+   input: metainfo + '.in',
+   output: metainfo,
+   po_dir: po_dir,

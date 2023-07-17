@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:24:44 nia Exp $
+
+BLAKE2s (tty-clock-2.3.tar.gz) = 080255d26f2779fea7c05e19fb602c24eea0b7c5efef7eff07ed8b04a421cacd
+SHA512 (tty-clock-2.3.tar.gz) = ff3cfd5c6312377128b33c7e8c2138627b996d1b17730d8a8fdf55e95f2020e591e69317459aab8383d178f3cb71af046b84eeb81cabfa9b09a27008c5f4b626
+Size (tty-clock-2.3.tar.gz) = 7764 bytes
+SHA1 (patch-Makefile) = ec53085b681e5a07068aa75aaba32689faf26a21

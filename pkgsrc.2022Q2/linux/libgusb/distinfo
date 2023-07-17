@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (libgusb-0.3.10.tar.xz) = a546f18eb02e601ea5b781b049a4ce5c23c7e4fd19fcd6743b93d4ee4dfe9580
+SHA512 (libgusb-0.3.10.tar.xz) = 66bd7c292cb9df2799b02acd48dc4b07794e7339ea1bd6473ea512dfec1b8e7e58abbd40f16a2a4805240cc8df4aec050335edb4f4178ad12ac5275438b8ae59
+Size (libgusb-0.3.10.tar.xz) = 42972 bytes

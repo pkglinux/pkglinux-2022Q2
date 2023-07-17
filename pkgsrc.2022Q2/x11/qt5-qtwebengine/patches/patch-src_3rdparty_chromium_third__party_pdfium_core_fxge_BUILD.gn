@@ -1,0 +1,13 @@
+$NetBSD: patch-src_3rdparty_chromium_third__party_pdfium_core_fxge_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/third_party/pdfium/core/fxge/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/third_party/pdfium/core/fxge/BUILD.gn
+@@ -160,7 +160,7 @@ source_set("fxge") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (is_linux || is_chromeos || is_bsd) {
+     sources += [ "fx_ge_linux.cpp" ]
+   }
+ 

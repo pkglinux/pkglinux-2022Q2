@@ -1,0 +1,20 @@
+@comment $NetBSD$
+etc/rc.d/init.d/mcstrans
+lib/systemd/system/mcstrans.service
+native/etc/rc.d/init.d/mcstrans
+native/usr/lib/systemd/system/mcstrans.service
+native/usr/sbin/mcstransd
+native/usr/share/examples/rc.d/mcstransd
+native/usr/share/man/man5/setrans.conf.5
+native/usr/share/man/man8/mcs.8
+native/usr/share/man/man8/mcstransd.8
+native/usr/share/man/ru/man5/setrans.conf.5
+native/usr/share/man/ru/man8/mcs.8
+native/usr/share/man/ru/man8/mcstransd.8
+sbin/mcstransd
+share/man/man5/setrans.conf.5
+share/man/man8/mcs.8
+share/man/man8/mcstransd.8
+share/man/ru/man5/setrans.conf.5
+share/man/ru/man8/mcs.8
+share/man/ru/man8/mcstransd.8

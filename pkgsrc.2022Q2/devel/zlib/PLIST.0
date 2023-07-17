@@ -1,0 +1,15 @@
+@comment $NetBSD: PLIST,v 1.4 2013/11/30 11:14:10 richard Exp $
+include/zconf.h
+include/zlib.h
+lib/libz.la
+lib/pkgconfig/zlib.pc
+man/man3/zlib.3
+native/lib/libz.a
+native/lib/libz.la
+native/lib/libz.so
+native/lib/libz.so.1
+native/lib/libz.so.1.0.2
+native/usr/include/zconf.h
+native/usr/include/zlib.h
+native/usr/lib/libz.so
+native/usr/lib/pkgconfig/zlib.pc

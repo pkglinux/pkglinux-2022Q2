@@ -1,0 +1,7 @@
+@comment $NetBSD$
+bin/extension-manager
+share/appdata/com.mattjakeman.ExtensionManager.appdata.xml
+share/applications/com.mattjakeman.ExtensionManager.desktop
+share/glib-2.0/schemas/com.mattjakeman.ExtensionManager.gschema.xml
+share/icons/hicolor/scalable/apps/com.mattjakeman.ExtensionManager.svg
+share/icons/hicolor/symbolic/apps/com.mattjakeman.ExtensionManager-symbolic.svg

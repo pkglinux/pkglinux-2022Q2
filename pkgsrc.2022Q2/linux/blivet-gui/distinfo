@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (blivet-gui-2.4.1.tar.gz) = eb4759e46468c805ceabffcf3b27860702ee19442c8c03a67aae7fae82fe8975
+SHA512 (blivet-gui-2.4.1.tar.gz) = d9011283e609654f2dec2a312a7da9a6e6bbee9527a62f0d3c2491f575813104957bba89629be72442cf4737dd83f0e8a3d20f469cabc9a01d3c48c427d8bef2
+Size (blivet-gui-2.4.1.tar.gz) = 1078038 bytes

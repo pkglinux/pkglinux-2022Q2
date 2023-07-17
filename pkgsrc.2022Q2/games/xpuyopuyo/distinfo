@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:44:34 nia Exp $
+
+BLAKE2s (xpuyopuyo-0.9.8.tar.gz) = b158e9da522a7a603bd6e108ca448979b9666961bc64393fdf75ee0e5fa04227
+SHA512 (xpuyopuyo-0.9.8.tar.gz) = 4277e0d05f30446070af38dd3b690efdbc4c45fc255513529bd29af2f9986f2e7d6d12e0e31ecf9a228bf5bd025aedd659953b6d19933ee447a6a9c9216a6a49
+Size (xpuyopuyo-0.9.8.tar.gz) = 1235619 bytes
+SHA1 (patch-Makefile.am) = 0d603f8bb821edd4d4639232488fb6c00154c508
+SHA1 (patch-ab) = bf5c4e87ecc2546dc446f05c523f65a96cbdebba
+SHA1 (patch-ac) = 39fd8d5b08465381f61b46e3241ae873362b5f16
+SHA1 (patch-configure.in) = 4dd4199ccb4404aefc18212a060c07a6e3d08669

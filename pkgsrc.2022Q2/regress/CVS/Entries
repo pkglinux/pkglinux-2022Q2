@@ -1,0 +1,24 @@
+/README/1.1/Sat Jan 11 11:09:35 2020//Tpkgsrc-2022Q2
+D/barrier////
+D/bootstrap-install-sh////
+D/buildlink-libtool////
+D/buildlink-transform////
+D/buildlink-unwrap////
+D/check-perms////
+D/check-portability////
+D/compiler////
+D/conf-files-spaces////
+D/env-vars////
+D/infra-unittests////
+D/make-env-phases////
+D/make-quoting////
+D/make-shell////
+D/path////
+D/pkg-options////
+D/pkgfail////
+D/plus_build_version////
+D/print-plist////
+D/print-plist-python////
+D/replace-interpreter////
+D/tools////
+D/tools-platform////

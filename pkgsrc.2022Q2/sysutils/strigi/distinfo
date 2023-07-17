@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.15 2021/10/26 11:20:14 nia Exp $
+
+BLAKE2s (strigi-0.7.8.tar.bz2) = 749d1731722ad8259eba92204e3f6b3efdc2e96f58ab7fb32c9a5acdf0e5e86c
+SHA512 (strigi-0.7.8.tar.bz2) = 536f5bd5ed13d87d30c2fa31b6dcb2a883df173e5d60deefe0fdeb843f40f29f7edd0041029dc013bb31a205572087ed95ca661bcdf6d989d9806931716b1043
+Size (strigi-0.7.8.tar.bz2) = 810574 bytes
+SHA1 (patch-libstreamanalyzer_cmake_MacroCheckGccVisibility.cmake) = 7d8371711bc9c5465f87b9e7e649b45de3652bb2
+SHA1 (patch-libstreamanalyzer_plugins_indexers_clucenengindexer_cluceneindexreader.cpp) = a5882febfd31a391f4efaa37a8786e1f7ddd0a7a
+SHA1 (patch-libstreams_CMakeLists.txt) = ce25d12f5c20f7f0be659bdccc24e8b4a898274a
+SHA1 (patch-libstreams_cmake_MacroCheckGccVisibility.cmake) = dd7aad3dba7f5139f2b1ed5fa5978f79be7b449f
+SHA1 (patch-strigidaemon_bin_daemon_xesam_xesamsearch.h) = 70d251880f08f279f53a3ed31281452c6d25811d

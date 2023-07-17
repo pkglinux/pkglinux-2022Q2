@@ -1,0 +1,13 @@
+$NetBSD: patch-ab,v 1.7 2018/05/14 10:20:57 maya Exp $
+
+--- rc/Makefile.orig	2010-06-10 07:24:04.000000000 +0000
++++ rc/Makefile
+@@ -2,7 +2,7 @@ ROOT=..
+ include $(ROOT)/mk/hdr.mk
+ include $(ROOT)/mk/wmii.mk
+ 
+-BIN = $(ETC)/wmii$(CONFVERSION)
++BIN = $(PREFIX)/share/examples/wmii$(CONFVERSION)
+ TARG =  wmiirc    \
+ 	welcome
+ 

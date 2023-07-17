@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/29 13:13:51 mef Exp $
+
+BLAKE2s (R/pkgbuild_1.3.1.tar.gz) = 8d7db34b5ff50f77599aa45b1e17f2994028d3eb1a6fadf2e1949f0e67fed4d6
+SHA512 (R/pkgbuild_1.3.1.tar.gz) = 392e1937ee2145e15eef82d5b4900e72e274a70462a911adaf80f7a76e3cdb8533e134c4f15c596b8b8779fd4b9ba3021831e2c89cf5c727c993afd8a18e5ead
+Size (R/pkgbuild_1.3.1.tar.gz) = 31937 bytes

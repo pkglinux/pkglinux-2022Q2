@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/15 00:34:29 markd Exp $
+
+BLAKE2s (babel-latin.r59800.tar.xz) = 4788cab5aab4226a4171112790ddf09737e72358faf2fbeb6c1e87cb82e202d8
+SHA512 (babel-latin.r59800.tar.xz) = 09a08dd3f90f83490867b786870b9591cdb3fc8d83c0e68446e2c97ba665a70f45c8b2553cfd6d965d31e6b2c435876ca569f4c24a8ddad4188ebd8b27b261b9
+Size (babel-latin.r59800.tar.xz) = 7124 bytes

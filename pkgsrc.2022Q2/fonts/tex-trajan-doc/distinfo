@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:28:33 nia Exp $
+
+BLAKE2s (tex-trajan-15878/trajan.doc.tar.xz) = 408a8dbfaca4a5f9ce3e2bbace290090db96fd105a152f020d6b944d99796bc4
+SHA512 (tex-trajan-15878/trajan.doc.tar.xz) = a59e7f52f759422412a479f92c9ba4a0ebde3f1568932a60e814229897158b6b853ca33e49970ee1e6d4987a8fe6bc4898ab2e7b74b3b3fbc6ad634bd2cadb98
+Size (tex-trajan-15878/trajan.doc.tar.xz) = 172196 bytes

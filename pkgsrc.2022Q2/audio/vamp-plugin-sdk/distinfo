@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 09:59:34 nia Exp $
+
+BLAKE2s (vamp-plugin-sdk-2.10.0.tar.gz) = 8158df458ddb71a91ad75f217a5318056daaae44f14d1b684598f64c002f6abf
+SHA512 (vamp-plugin-sdk-2.10.0.tar.gz) = 153b7f2fa01b77c65ad393ca0689742d66421017fd5931d216caa0fcf6909355fff74706fabbc062a3a04588a619c9b515a1dae00f21a57afd97902a355c48ed
+Size (vamp-plugin-sdk-2.10.0.tar.gz) = 313354 bytes

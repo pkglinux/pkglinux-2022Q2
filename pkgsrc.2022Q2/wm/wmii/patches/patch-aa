@@ -1,0 +1,21 @@
+$NetBSD: patch-aa,v 1.12 2018/05/14 10:31:14 maya Exp $
+
+pkgsrc-friendly paths, don't force /usr/local PREFIX.
+
+--- config.mk.orig	2010-06-10 07:24:04.000000000 +0000
++++ config.mk
+@@ -1,11 +1,11 @@
+ # Customize below to fit your system
+ 
+ # Paths
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+   BIN = $(PREFIX)/bin
+-  MAN = $(PREFIX)/share/man
++  MAN = $(PREFIX)/$(PKGMANDIR)
+   DOC = $(PREFIX)/share/doc/wmii
+-  ETC = $(PREFIX)/etc
++  ETC = $(PREFIX)/share/examples
+   LIBDIR = $(PREFIX)/lib
+   INCLUDE = $(PREFIX)/include
+ 

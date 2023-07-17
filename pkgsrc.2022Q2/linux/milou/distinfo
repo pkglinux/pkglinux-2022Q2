@@ -1,0 +1,11 @@
+$NetBSD$
+
+BLAKE2s (milou-5.18.5.tar.xz) = 6ecc851a00a2a8e84d2c758ffa9ae787e6242d25faad9900a5c57adf39a808f1
+SHA512 (milou-5.18.5.tar.xz) = 3c1d0b032e8f26a637aed8067d919d95bcbf033e0b494bc9a2a0295d000773ac3900903dca96eb32d3fc1b831884e3435ab91a26c9cd179548c3b2cd0377577d
+Size (milou-5.18.5.tar.xz) = 64264 bytes
+SHA1 (patch-lib_draghelper.cpp) = 82946d9b3b874868ec1d12df94d54cc13ffc9c88
+SHA1 (patch-lib_preview.cpp) = 4594bad7af9c8584310530aead8bf2156535973a
+SHA1 (patch-lib_previewplugin.cpp) = 3d315631ae5443ad290795158e19164855a01945
+SHA1 (patch-lib_resultsmodel.cpp) = 62f3613f69bd52293ecb4114e51700ec6416e9dc
+SHA1 (patch-lib_runnerresultsmodel.cpp) = 470c60687def3b7e08c6cab0c89682a7f01bc58d
+SHA1 (patch-lib_sourcesmodel.cpp) = 2686202efeead56d6b066e1ade894901823d5f34

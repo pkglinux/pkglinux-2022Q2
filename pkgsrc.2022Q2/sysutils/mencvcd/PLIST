@@ -1,0 +1,2 @@
+@comment $NetBSD: PLIST,v 1.2 2020/03/01 11:50:24 wiz Exp $
+bin/mencvcd.sh

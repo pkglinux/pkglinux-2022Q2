@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.16 2021/10/26 11:25:21 nia Exp $
+
+BLAKE2s (wmx-8.tar.gz) = 5dadb8b04f2327a756247923cb804b05c7267dc8aa27261f457d2da49e3e5b6f
+SHA512 (wmx-8.tar.gz) = 48626c9eead163fea81760d30cfffa67a79a653db236e3238118fee3849de35633efe8eb8aa79c982aaa7c6c59cc517128374d02daccc775434af9e55951f305
+Size (wmx-8.tar.gz) = 140329 bytes
+SHA1 (patch-Border.C) = c89d13ee60cb79332ce8ef993f6ff77322bfdeea
+SHA1 (patch-Client.C) = 81153be1295d8af6145ff4e98d6b12a4cff3821b
+SHA1 (patch-Config.h) = 04520e5826f4ec85b7cf449650b22c91da87351f
+SHA1 (patch-General.h) = 9f8f5ba16b3b3ba18a58a9b99bb53774819a20fb
+SHA1 (patch-Makefile.in) = a6e9aedb0a9ec9edc120e21aa1169637d4b2fbdb
+SHA1 (patch-Manager.C) = 3c081ac6b009b14103b385dd45dc3e6ca5b9fd45
+SHA1 (patch-Rotated.C) = 8fde717080dfcf78bcded94864487f46a43e0058

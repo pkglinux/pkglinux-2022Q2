@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/06/14 13:24:54 gdt Exp $
+
+BLAKE2s (nodemcu-uploader-1.0.0.tar.gz) = 157b1b04a82e01dd501d695bc506a3237b64e9abc4c94f87f188d12fe012cdf9
+SHA512 (nodemcu-uploader-1.0.0.tar.gz) = 830698474a744aa326d6252b7d7c362a67934d560e499c902f6ca0b6ae0a195c5846d276d79e21a2e1fb9c2d81f119a42780ddfac4d4a294b82a6105153374e5
+Size (nodemcu-uploader-1.0.0.tar.gz) = 18050 bytes

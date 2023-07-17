@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.2 2020/05/05 12:01:03 markd Exp $
+share/texmf-dist/doc/support/tex4ebook/README
+share/texmf-dist/doc/support/tex4ebook/changelog.tex
+share/texmf-dist/doc/support/tex4ebook/readme.tex
+share/texmf-dist/doc/support/tex4ebook/tex4ebook-doc.pdf
+share/texmf-dist/doc/support/tex4ebook/tex4ebook-doc.tex
+share/texmf-dist/doc/support/tex4ebook/tex4ebook-tidyconf.conf

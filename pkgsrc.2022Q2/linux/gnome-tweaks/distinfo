@@ -1,0 +1,10 @@
+$NetBSD$
+
+SHA1 (gnome-tweaks-3.34.1.tar.xz) = 96acbdb6b87c246edd2f6685b951546c1e367149
+RMD160 (gnome-tweaks-3.34.1.tar.xz) = 395484b6f5fb87f5d48dfe55188cc171c543b893
+SHA512 (gnome-tweaks-3.34.1.tar.xz) = c922bf696b9ff48c8c39fd4ae06f4b72ea7b18645ad41552b0367859066d7601bc59521643335931e1cce799344a1c1ac9a7c28408de4c19bfa4127594a2ec7d
+Size (gnome-tweaks-3.34.1.tar.xz) = 247980 bytes
+SHA1 (patch-README.md) = 0d6eb1b0d40ec7ba127f862b8fe8fec68fdb2323
+SHA1 (patch-data_meson.build) = 782452a08911f80a38746b1ea713c68582143367
+SHA1 (patch-gnome-tweaks) = ed6a5415188bc43c245b8bff35bbce52a4269de1
+SHA1 (patch-gtweak_tweakview.py) = 5acc1e51d9ec37830b5816d39d53c0291688bf15

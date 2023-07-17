@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2022/04/14 03:33:37 markd Exp $
+
+BLAKE2s (titlesec.doc.r59845.tar.xz) = 33acdb412d089db9bb3d45fdc2dae8d2b6b510e7072a1ed52451f63f38af446f
+SHA512 (titlesec.doc.r59845.tar.xz) = 04ca9fb221b3c0c83ef5c3728b9a40eb46a4899b83837c90017c5436468c02740dfb861abb42e9987dabf63858730f4accbf060c67ee8954ed7481f334443798
+Size (titlesec.doc.r59845.tar.xz) = 658700 bytes

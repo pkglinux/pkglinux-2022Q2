@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:33 nia Exp $
+
+BLAKE2s (tex-bbm-15878/bbm.tar.xz) = 043e6a52ff1289a292d7c8c44afeaadd1d8bfc2626ca140fd1324bd358a5726e
+SHA512 (tex-bbm-15878/bbm.tar.xz) = 73204d2102bb30849a5482810007223c99ebcfc67b6b4cbe635dd4bdc5f29aed987ee58bd0bc9ad9f2130a1b0cdff8c4ae32c3a70aed48853579b0366f54a4d4
+Size (tex-bbm-15878/bbm.tar.xz) = 32572 bytes

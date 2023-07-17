@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2021/12/18 11:17:39 fcambus Exp $
+
+BLAKE2s (CascadiaCode-2111.01.zip) = 8771c26633b45fe4d00eb5a4017d8cd9262399618448eb7d765da4d51f9cc330
+SHA512 (CascadiaCode-2111.01.zip) = 14ab2dea663b4c2d5aa4c4fa1b149a30c85f534db6a3a41716dc005febb4e9753a098fb713dfbb72902e57304434f91c40460b44d453f74d5b8fd06674797ac6
+Size (CascadiaCode-2111.01.zip) = 24899516 bytes

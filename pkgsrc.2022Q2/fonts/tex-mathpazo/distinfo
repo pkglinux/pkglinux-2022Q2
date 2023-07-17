@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:28:14 nia Exp $
+
+BLAKE2s (mathpazo.r52663.tar.xz) = 89cad7556caed317c8f7a43626af794d4c08eda0c7a5ef0953cab6c582d7fdbb
+SHA512 (mathpazo.r52663.tar.xz) = 72bfba52e37abd933cb7b1b19dd813c3c76438591c94f9c407cabb8a44c8c67f78fae04442027287e5bf30b7239c3703ece4271194716882773eeb50d4cb2f47
+Size (mathpazo.r52663.tar.xz) = 63640 bytes

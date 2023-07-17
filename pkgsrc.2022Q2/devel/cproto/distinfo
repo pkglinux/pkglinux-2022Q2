@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:14:27 nia Exp $
+
+BLAKE2s (cproto-4.7o.tgz) = 438821252ce64856f6fa5c08c41520c771e45e29759ef480ffb91b840feccbdf
+SHA512 (cproto-4.7o.tgz) = 9a731be8bfa3f0da9c8a7c04a1c9bcf5ca52897325fa868306c35d818fc54348f83d93e2b2d792a2f682f935fb42d928d2828b1ff7fe3287a1806852e180a9f3
+Size (cproto-4.7o.tgz) = 168915 bytes

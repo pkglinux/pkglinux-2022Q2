@@ -1,0 +1,18 @@
+# $NetBSD: INSTALL,v 1.6 2023/03/28 20:24:02  Exp $
+
+MODPKGDIR="@MODPKGDIR@"
+POLICY_STORE="@POLICY_STORE@"
+#MODPKGDIR=/usr/share/selinux/refpolicy
+#POLICY_STORE=/var/lib/selinux
+
+case "${STAGE}" in
+
+POST-INSTALL)
+	echo Ensure "${POLICY_STORE}" existing as the policy store ...
+	mkdir -pv "${POLICY_STORE}"
+	echo Installing module packages from "${MODPKGDIR}" ...
+	semodule -i "${MODPKGDIR}"/*.pp
+
+	;;
+
+esac

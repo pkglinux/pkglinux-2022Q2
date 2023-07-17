@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.10 2021/11/09 10:12:36 adam Exp $
+
+BLAKE2s (bpython-0.22.1.tar.gz) = 3e628fd1102fc867fd286ebda11bb67483a84217249bfc9445f28bcfb7f41d2c
+SHA512 (bpython-0.22.1.tar.gz) = 6b29235c41b645c3658812b8c80637d1e76029a6386f8628e5c681b2f3fdea653f89a12f4e28f55381464755e04fa7a33f023f096e75d889d5a588222c0d06c3
+Size (bpython-0.22.1.tar.gz) = 217294 bytes
+SHA1 (patch-setup.py) = 9caba0004771928676c7d0d4f7c0594f8ba6934a

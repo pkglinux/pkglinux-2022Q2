@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:14:34 nia Exp $
+
+BLAKE2s (dumpet-2.1.tar.bz2) = 42d7441d8c8a6971e4abdd9a5c7faa1ecf847b8edc84a304269e526513f2e81e
+SHA512 (dumpet-2.1.tar.bz2) = ca12d0852594acabda6a97b91e072872a6d83cd29b9c549a2f03120a8e92b19d1254ac229e27b562c5b0439b92daeec54e95df0282af4cd346e66b876d4a33b3
+Size (dumpet-2.1.tar.bz2) = 14681 bytes
+SHA1 (patch-Makefile) = 23c20aa9c1c9a278344270a8930506387b8de908
+SHA1 (patch-dumpet.c) = c46e6a20888d02f4877f836e155879b0c74b946b
+SHA1 (patch-dumpet.h) = b0fee038370552bbaab8c1c12f2db13ddd57edfd
+SHA1 (patch-endian.h) = a229f3410287fe277fea52baea69e73f5089bbec

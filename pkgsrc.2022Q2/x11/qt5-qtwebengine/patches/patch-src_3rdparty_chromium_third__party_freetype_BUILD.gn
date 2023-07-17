@@ -1,0 +1,20 @@
+$NetBSD: patch-src_3rdparty_chromium_third__party_freetype_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/third_party/freetype/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/third_party/freetype/BUILD.gn
+@@ -155,13 +155,13 @@ source_set("freetype_source") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos || is_chromecast) {
++  if (is_linux || is_chromeos || is_chromecast || is_bsd) {
+     # Needed for content_shell on Linux and Chromecast, since fontconfig
+     # requires FT_Get_BDF_Property.
+     sources += [ "src/src/base/ftbdf.c" ]
+   }
+ 
+-  if (is_linux || is_chromeos || is_chromecast) {
++  if (is_linux || is_chromeos || is_chromecast || is_bsd) {
+     # Needed on Fedora whose libfreetype builds ftsynth.c containing
+     # FT_GlyphSlot_Embolden, which we need to replace in content_shell if
+     # we are linking against our own FreeType.

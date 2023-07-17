@@ -1,0 +1,4 @@
+
+Botan (Japanese for peony flower) is a C++ cryptography library released under the permissive Simplified BSD license.
+
+Botan’s goal is to be the best option for cryptography in C++ by offering the tools necessary to implement a range of practical systems, such as TLS protocol, X.509 certificates, modern AEAD ciphers, PKCS#11 and TPM hardware support, password hashing, and post quantum crypto schemes. A Python binding is included, and several other language bindings are available. It is used in many open source and commercial products. The library is accompanied by a featureful command line interface.

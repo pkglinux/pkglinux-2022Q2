@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:19:29 nia Exp $
+
+BLAKE2s (dd_rhelp-0.0.6.tar.gz) = 7889f25f325f5aa93a5333e633b8411457296a2ee60ec9e4e138fcc8e5c7cc07
+SHA512 (dd_rhelp-0.0.6.tar.gz) = 2fa020ec0a69b2fb9bd1f314bbdd0bbe6ed790d90354adf48c4f50de1492d5fb1ae0910e1690f537cd5e768e9aa21ef1a12c961344f4aaf72b3c2d4fd99771f8
+Size (dd_rhelp-0.0.6.tar.gz) = 67098 bytes

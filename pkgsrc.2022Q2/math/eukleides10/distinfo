@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:55:39 nia Exp $
+
+BLAKE2s (eukleides.1.0.3.tar.gz) = af73adecd250edfdb2e23ccd4933962401a2e1e6e916d905daaca5d7a9c0d216
+SHA512 (eukleides.1.0.3.tar.gz) = 60757c0bc65942986a32722fd0ced777102205411899e4abb7e9c9c7906f752e2ed2b4acbe3313deb5fe897fd27625cac89debc800d36950e452c0af79c40934
+Size (eukleides.1.0.3.tar.gz) = 50923 bytes
+SHA1 (patch-aa) = a41d01866d8dd1d200bedacc82644d6009581227

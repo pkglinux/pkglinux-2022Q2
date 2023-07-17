@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.8 2018/01/01 22:29:50 rillig Exp $
+bin/upclient
+share/doc/upclient/AUTHORS
+share/doc/upclient/COPYING
+share/doc/upclient/FAQ
+share/doc/upclient/HISTORY
+share/doc/upclient/INSTALL
+share/doc/upclient/README
+share/examples/upclient/upclient.conf

@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.29 2021/10/26 10:05:13 nia Exp $
+
+BLAKE2s (ekg-20200501.tar.gz) = 4b7423857c1fed6102e7ed2d8114ecd0707dc28e9811c85b385e7c1e8223ebcc
+SHA512 (ekg-20200501.tar.gz) = 60da85ed2a83e64731f8fa2ece487b869277430f6cfc3d8df537f9a935eb705d9a45e1753301e8af96a0950a0aa78f0e9795069b508ab22ce58b855c886c9fc4
+Size (ekg-20200501.tar.gz) = 4254796 bytes
+SHA1 (patch-Makefile.in) = 7a08b075b62bc72eac773cb86e0826dbe55de908
+SHA1 (patch-src_Makefile.in) = 2012b518cd643275d7a603864f3bc2c336a7bc32
+SHA1 (patch-src_ui-ncurses.c) = f526452651b793d68e69d0aaac72307e0e4033f8
+SHA1 (patch-src_ui-readline.c) = d2ed779b1f3966a9a6381cf241cf8c8d1b960f8b

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:18:16 nia Exp $
+
+BLAKE2s (buildbot-www-2.6.0.tar.gz) = 75b798b79185e1aff64dd97363db53373fab4a10b2d1bcf24949ab9481e7397f
+SHA512 (buildbot-www-2.6.0.tar.gz) = c33b9e7f10cbc680978ee38cca1a6e5c71945b648dd87d123440a538732617a4e7239aa9d512480242036282dece5eba583b050f3c2a9a7bb850aea06e8a8c74
+Size (buildbot-www-2.6.0.tar.gz) = 3178015 bytes

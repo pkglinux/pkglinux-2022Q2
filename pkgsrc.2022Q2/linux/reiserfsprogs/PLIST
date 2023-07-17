@@ -1,0 +1,27 @@
+@comment $NetBSD$
+include/reiserfs/io.h
+include/reiserfs/misc.h
+include/reiserfs/reiserfs_err.h
+include/reiserfs/reiserfs_fs.h
+include/reiserfs/reiserfs_lib.h
+include/reiserfs/swab.h
+lib/libreiserfscore.la
+lib/pkgconfig/reiserfscore.pc
+man/man8/debugfs.reiserfs.8
+man/man8/debugreiserfs.8
+man/man8/fsck.reiserfs.8
+man/man8/mkfs.reiserfs.8
+man/man8/mkreiserfs.8
+man/man8/reiserfsck.8
+man/man8/reiserfstune.8
+man/man8/resize_reiserfs.8
+man/man8/tunefs.reiserfs.8
+sbin/debugfs.reiserfs
+sbin/debugreiserfs
+sbin/fsck.reiserfs
+sbin/mkfs.reiserfs
+sbin/mkreiserfs
+sbin/reiserfsck
+sbin/reiserfstune
+sbin/resize_reiserfs
+sbin/tunefs.reiserfs

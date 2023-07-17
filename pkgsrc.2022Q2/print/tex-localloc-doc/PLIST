@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2021/02/20 10:26:42 markd Exp $
+share/texmf-dist/doc/generic/localloc/localloc.README
+share/texmf-dist/doc/generic/localloc/localloc.pdf
+share/texmf-dist/doc/generic/localloc/localtst.tex

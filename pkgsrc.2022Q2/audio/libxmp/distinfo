@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.13 2021/11/13 10:28:27 nia Exp $
+
+BLAKE2s (libxmp-4.5.0.tar.gz) = 3a1187f8a40581df800b5ed8276a71faeb0b5e038a21fb655237a7a654b933aa
+SHA512 (libxmp-4.5.0.tar.gz) = 71a57c7fcd696267c6e2d3cc12b43fe09adce9ed83f9f130755d3b2c2b984eb52e4ae4fad115ffeb07397c7cc4886fc3c4e01cbb1f047449228f7a557760cb1a
+Size (libxmp-4.5.0.tar.gz) = 652983 bytes
+SHA1 (patch-include_xmp.h) = 4976367981f3706514f54801665cab5b7600bf26
+SHA1 (patch-src_common.h) = 9ae1b83d53968841e2001b45bd2ef83f6efd748c

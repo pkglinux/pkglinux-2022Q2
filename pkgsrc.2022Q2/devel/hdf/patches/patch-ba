@@ -1,0 +1,13 @@
+$NetBSD: patch-ba,v 1.5 2022/04/24 21:50:48 tnn Exp $
+
+--- configure.orig	2020-03-03 17:40:50.000000000 +0000
++++ configure
+@@ -24808,6 +24808,8 @@ done
+ case "$host" in
+   *-linux*)             BAR="linux"       ;;
+   *-freebsd*)           BAR="fbsd"        ;;
++  *-netbsd*)           BAR="fbsd"        ;;
++  *-dragonfly*)           BAR="fbsd"        ;;
+   *-ibm-aix*)           BAR="aix"         ;;
+   sparc64-*-solaris2*)  BAR="solaris64"   ;;
+   *-*-solaris2*)        BAR="solaris"     ;;

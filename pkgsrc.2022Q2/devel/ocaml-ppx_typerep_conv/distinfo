@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/05/04 18:45:39 jaapb Exp $
+
+BLAKE2s (ppx_typerep_conv-0.15.0.tar.gz) = 3241284f18dca54aba20cf5a82cbff6fb86b203529b9ebfce9b7a64c06f8546f
+SHA512 (ppx_typerep_conv-0.15.0.tar.gz) = 3f5bb2c70674e5f6219daa883fe948023a60558c9560c5d8e6b187e0420adf8767ce4f5cca06fe7edccd52e531b2e79d962f7fdc7502cb63280c364627621c73
+Size (ppx_typerep_conv-0.15.0.tar.gz) = 9392 bytes

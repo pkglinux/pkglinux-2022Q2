@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/05/04 14:11:35 jaapb Exp $
+
+BLAKE2s (ppx_enumerate-0.15.0.tar.gz) = b82c0f95c48ab977c62bb77369514aabafd470399ae447ef09ac294049176488
+SHA512 (ppx_enumerate-0.15.0.tar.gz) = 3118942fd77a3b86eeaf79fdb09639d503d4c80c2215cb06b357f53ab631fbc23e05109107863fa785aeecbb62ebc80e95b45f472ee9cf6d3c826b6767a7b8cd
+Size (ppx_enumerate-0.15.0.tar.gz) = 9377 bytes

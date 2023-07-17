@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:15:32 nia Exp $
+
+BLAKE2s (apache-log4cxx-0.10.0.tar.gz) = 59b31244b30d3a29b61d04fd92660986bc5973c795127c1791d7311a5492fb4f
+SHA512 (apache-log4cxx-0.10.0.tar.gz) = 1c34d80983db5648bc4582ddcf6b4fdefdc6594c2769f95235f5441cd6d03cf279cc8f365e9a687085b113f79ebac9d7d33a54b6aa3b3b808c0e1a56a15ffa37
+Size (apache-log4cxx-0.10.0.tar.gz) = 1667425 bytes
+SHA1 (patch-src_examples_cpp_console.cpp) = 203b987f6a324c906c9ca5a19113190bdb3bfb79
+SHA1 (patch-src_main_cpp_inputstreamreader.cpp) = a4540a7154a11d12928829eac76c44fbcabc41bb
+SHA1 (patch-src_main_cpp_socketoutputstream.cpp) = ebfd51ed3cb86f2995571ba70a82fba5c2ddb7ce
+SHA1 (patch-src_main_cpp_stringhelper.cpp) = f108eb6c4998d5df83e5efa706466d14d7d0a534
+SHA1 (patch-src_main_include_log4cxx_helpers_simpledateformat.h) = 7cf95276cfc3b6cb6ad02aad68e9e45d7663a2d5

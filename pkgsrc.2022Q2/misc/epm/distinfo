@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:59:02 nia Exp $
+
+BLAKE2s (epm-4.2-source.tar.bz2) = ad28145e18793eb20d5ad18bf3a9233fbdf93ff4f2bda427c60a08f6cf96b34b
+SHA512 (epm-4.2-source.tar.bz2) = 941a5b65585719f500885b1be93000407bddc4043d4b78e3f2c8b8d9fd265e452311a096bd8d9b1b8cb8845dd4eecabb20db5386f3eedb6675226804d38d5294
+Size (epm-4.2-source.tar.bz2) = 458362 bytes
+SHA1 (patch-aa) = 6aa91315b8d8d632dd9d2013d15693877ae5861e
+SHA1 (patch-ab) = 3ae0ce21cf43e7bf0e28a1cd54ec239aa67d6542

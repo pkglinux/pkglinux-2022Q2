@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/02 13:44:25 jaapb Exp $
+
+BLAKE2s (ocplib-endian-1.2.tar.gz) = c5666df3238f2b4029a66b05e7c54407cf419e1951fdccb341c51ad591454350
+SHA512 (ocplib-endian-1.2.tar.gz) = 2e70be5f3d6e377485c60664a0e235c3b9b24a8d6b6a03895d092c6e40d53810bfe1f292ee69e5181ce6daa8a582bfe3d59f3af889f417134f658812be5b8b85
+Size (ocplib-endian-1.2.tar.gz) = 18061 bytes

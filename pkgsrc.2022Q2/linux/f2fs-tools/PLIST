@@ -1,0 +1,20 @@
+@comment $NetBSD$
+lib/libf2fs.la
+lib/libf2fs_format.la
+man/man8/defrag.f2fs.8
+man/man8/dump.f2fs.8
+man/man8/f2fscrypt.8
+man/man8/fsck.f2fs.8
+man/man8/mkfs.f2fs.8
+man/man8/resize.f2fs.8
+man/man8/sload.f2fs.8
+sbin/defrag.f2fs
+sbin/dump.f2fs
+sbin/f2fscrypt
+sbin/f2fstat
+sbin/fibmap.f2fs
+sbin/fsck.f2fs
+sbin/mkfs.f2fs
+sbin/parse.f2fs
+sbin/resize.f2fs
+sbin/sload.f2fs

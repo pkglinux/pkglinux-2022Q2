@@ -1,0 +1,138 @@
+$NetBSD: patch-unix_Makefile.in,v 1.19 2022/06/23 09:07:01 thor Exp $
+
+Honour LDFLAGS.
+
+--- unix/Makefile.in.orig	2021-10-29 17:08:08.000000000 +0000
++++ unix/Makefile.in
+@@ -8,6 +8,7 @@ VERSION 		= @TCL_VERSION@
+ MAJOR_VERSION		= @TCL_MAJOR_VERSION@
+ MINOR_VERSION		= @TCL_MINOR_VERSION@
+ PATCH_LEVEL		= @TCL_PATCH_LEVEL@
++SHLIB_VERSION		= @SHLIB_VERSION@
+ 
+ #--------------------------------------------------------------------------
+ # Things you can change to personalize the Makefile for your own site (you can
+@@ -58,6 +59,8 @@ MODULE_INSTALL_DIR	= $(SCRIPT_INSTALL_DI
+ 
+ # Directory in which to install the include file tcl.h:
+ INCLUDE_INSTALL_DIR	= $(INSTALL_ROOT)$(includedir)
++UNIX_INCLUDE_INSTALL_DIR    = $(INCLUDE_INSTALL_DIR)/tcl/unix
++GENERIC_INCLUDE_INSTALL_DIR = $(INCLUDE_INSTALL_DIR)/tcl/generic
+ 
+ # Path to the private tcl header dir:
+ PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
+@@ -107,7 +110,7 @@ CFLAGS_OPTIMIZE		= @CFLAGS_OPTIMIZE@
+ #CFLAGS			= $(CFLAGS_DEBUG)
+ #CFLAGS			= $(CFLAGS_OPTIMIZE)
+ #CFLAGS			= $(CFLAGS_DEBUG) $(CFLAGS_OPTIMIZE)
+-CFLAGS			= @CFLAGS_DEFAULT@ @CFLAGS@
++CFLAGS			+= @CFLAGS_DEFAULT@ @CFLAGS@
+ 
+ # Flags to pass to the linker
+ LDFLAGS_DEBUG		= @LDFLAGS_DEBUG@
+@@ -143,7 +146,7 @@ NO_DEPRECATED_FLAGS	=
+ 
+ # Some versions of make, like SGI's, use the following variable to determine
+ # which shell to use for executing commands:
+-SHELL			= @MAKEFILE_SHELL@
++#SHELL			= @MAKEFILE_SHELL@
+ 
+ # Tcl used to let the configure script choose which program to use for
+ # installing, but there are just too many different versions of "install"
+@@ -189,7 +192,7 @@ DLTEST_TARGETS		= dltest.marker
+ # run-time. The first symbol is for use when creating a binary with cc, and
+ # the second is for use when running ld directly.
+ CC_SEARCH_FLAGS	= @CC_SEARCH_FLAGS@
+-LD_SEARCH_FLAGS	= @LD_SEARCH_FLAGS@
++LD_SEARCH_FLAGS	= @LD_SEARCH_FLAGS@ @LDFLAGS@
+ 
+ # The following symbol is defined to "$(DLTEST_TARGETS)" if dynamic loading is
+ # available; this causes everything in the "dltest" subdirectory to be built
+@@ -200,6 +203,7 @@ BUILD_DLTEST		= @BUILD_DLTEST@
+ #BUILD_DLTEST		=
+ 
+ TCL_LIB_FILE		= @TCL_LIB_FILE@
++TCL_LIB_A_FILE		= ${TCL_LIB_FILE:@SHLIB_SUFFIX@=.a}
+ #TCL_LIB_FILE		= libtcl.a
+ 
+ # Generic lib name used in rules that apply to tcl and tk
+@@ -711,7 +715,7 @@ SRCS = $(GENERIC_SRCS) $(TOMMATH_SRCS) $
+ 
+ all: binaries libraries doc packages
+ 
+-binaries: ${LIB_FILE} ${TCL_EXE}
++binaries: ${LIB_FILE} ${TCL_EXE} ${TCL_LIB_A_FILE}
+ 
+ libraries:
+ 
+@@ -730,6 +734,11 @@ ${STUB_LIB_FILE}: ${STUB_LIB_OBJS}
+ 	rm -f $@
+ 	@MAKE_STUB_LIB@
+ 
++${TCL_LIB_A_FILE}: ${OBJS}
++	rm -rf $@
++	ar cr $@ ${OBJS}
++	$(RANLIB) $@
++
+ # Make target which outputs the list of the .o contained in the Tcl lib useful
+ # to build a single big shared library containing Tcl and other extensions.
+ # Used for the Tcl Plugin.  -- dl
+@@ -893,9 +902,16 @@ install-binaries: binaries
+ 	done
+ 	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
+ 	@@INSTALL_LIB@
+-	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
++	@cd "$(DLL_INSTALL_DIR)" && if test "$(SHLIB_SUFFIX)" = ".dylib"; then \
++		ln -sf libtcl$(MAJOR_VERSION)$(MINOR_VERSION)$(SHLIB_VERSION)$(SHLIB_SUFFIX) $(LIB_FILE) ; \
++	else \
++		ln -sf libtcl$(MAJOR_VERSION)$(MINOR_VERSION)$(SHLIB_SUFFIX)$(SHLIB_VERSION) $(LIB_FILE) ; \
++	fi
++	@echo "Installing ${TCL_LIB_A_FILE} to $(DLL_INSTALL_DIR)/"
++	@$(INSTALL_DATA) ${TCL_LIB_A_FILE} $(DLL_INSTALL_DIR)/${TCL_LIB_A_FILE}
+ 	@echo "Installing ${TCL_EXE} as $(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
+ 	@$(INSTALL_PROGRAM) ${TCL_EXE} "$(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
++	@cd "$(BIN_INSTALL_DIR)" && ln -sf tclsh$(VERSION)${EXE_SUFFIX} tclsh
+ 	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
+ 	@$(INSTALL_DATA) tclConfig.sh "$(CONFIG_INSTALL_DIR)/tclConfig.sh"
+ 	@echo "Installing tclooConfig.sh to $(CONFIG_INSTALL_DIR)/"
+@@ -1039,20 +1064,24 @@ install-doc: doc
+ 	done
+ 
+ install-headers:
+-	@for i in "$(INCLUDE_INSTALL_DIR)"; do \
++	@for i in "$(INCLUDE_INSTALL_DIR)" "$(GENERIC_INCLUDE_INSTALL_DIR)" "$(UNIX_INCLUDE_INSTALL_DIR)"; do \
+ 	    if [ ! -d "$$i" ] ; then \
+ 		echo "Making directory $$i"; \
+ 		$(INSTALL_DATA_DIR) "$$i"; \
+ 	    fi; \
+ 	done
+ 	@echo "Installing header files to $(INCLUDE_INSTALL_DIR)/";
+-	@for i in $(GENERIC_DIR)/tcl.h $(GENERIC_DIR)/tclDecls.h \
+-		$(GENERIC_DIR)/tclOO.h $(GENERIC_DIR)/tclOODecls.h \
+-		$(GENERIC_DIR)/tclPlatDecls.h \
+-		$(GENERIC_DIR)/tclTomMath.h \
+-		$(GENERIC_DIR)/tclTomMathDecls.h ; \
++	@for i in $(GENERIC_DIR)/*.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i "$(GENERIC_INCLUDE_INSTALL_DIR)"; \
++	    done;
++	@for i in $(UNIX_DIR)/*.h ; \
++	    do \
++	    $(INSTALL_DATA) $$i "$(UNIX_INCLUDE_INSTALL_DIR)"; \
++	    done;
++	@for i in tcl.h tclDecls.h tclOO.h tclOODecls.h tclPlatDecls.h; \
+ 	    do \
+-	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
++	    cd "$(INCLUDE_INSTALL_DIR)" && ln -sf tcl/generic/$$i $$i; \
+ 	done
+ 
+ # Optional target to install private headers
+@@ -1810,7 +1839,7 @@ configure-packages:
+ 		    mkdir -p $(PKG_DIR)/$$pkg; \
+ 		    if [ ! -f $(PKG_DIR)/$$pkg/Makefile ] ; then \
+ 			( cd $(PKG_DIR)/$$pkg; \
+-			  $$i/configure --with-tcl=../.. \
++			  $(SHELL) $$i/configure --with-tcl=../.. \
+ 			      --with-tclinclude=$(GENERIC_DIR) \
+ 			      $(PKG_CFG_ARGS) --libdir=$(PACKAGE_DIR) \
+ 			      --enable-shared --enable-threads; ) || exit $$?; \

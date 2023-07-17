@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.12 2022/05/04 12:55:21 jaapb Exp $
+
+BLAKE2s (ocaml-mysql-1.2.4.tar.gz) = 0c580f4786637d3c4160487a9c4cdc2f90dea29803310d51fc856d1419f01e3f
+SHA512 (ocaml-mysql-1.2.4.tar.gz) = c864c6e4123a4e2ec439aafe075a2bbb3a0797863a934da35a21b92465619c7e5f58d09525c8d6944a6e6712ed2f57eef94280fbb642c7436b03356dd2f797f3
+Size (ocaml-mysql-1.2.4.tar.gz) = 99473 bytes

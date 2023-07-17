@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.15 2021/10/26 10:59:16 nia Exp $
+
+BLAKE2s (multitail-4.0.6.tgz) = 66d5211d9815291ada7185b72a4930a4bd843cfeee43c932cad958b0b53b296f
+SHA512 (multitail-4.0.6.tgz) = b8ef7dda4e0e76b431c3ea3721284cdf7c45b5a8b93bd0f72ba64304530fe549dfc0416ace4b37070fd6a838b1c6bea44a91e1965bb12c433e1c9de5136e8ce4
+Size (multitail-4.0.6.tgz) = 124429 bytes
+SHA1 (patch-aa) = cbb4882495421e2d6841fe95388bc2df3e7e8972
+SHA1 (patch-ab) = 322dd8a1be8565f4038340986a483bfcc08e88df
+SHA1 (patch-ac) = 67d4dd4c3a726c815c2044fe554262bb7fb094da
+SHA1 (patch-ad) = 408bcae6f646c4dee713f3061f84ee4691daa123
+SHA1 (patch-ae) = b8860c63f2f609e13aa91e388efcd627f8e56fcf
+SHA1 (patch-af) = c5b0529557464d161acc365075f26d95a2f74fda
+SHA1 (patch-ui.c) = 2279026bf89921c46bd54597e006b24b5b2687bb

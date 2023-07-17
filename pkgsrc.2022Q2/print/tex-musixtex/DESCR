@@ -1,0 +1,13 @@
+MusiXTeX provides a set of macros, based on the earlier
+MusicTeX, for typesetting music with TeX. To produce optimal
+spacing, MusiXTeX is a three-pass system: etex, musixflx, and
+etex again. (Musixflx is a lua script that is provided in the
+bundle.) The three-pass process, optionally followed by
+processing for printed output, is automated by the musixtex
+wrapper script. The package uses its own specialised fonts,
+which must be available on the system for musixtex to run. This
+version of MusiXTeX builds upon work by Andreas Egler, whose
+own version is no longer being developed. The MusiXTeX macros
+are universally acknowledged to be challenging to use directly:
+the pmx preprocessor compiles a simpler input language to
+MusiXTeX macros..

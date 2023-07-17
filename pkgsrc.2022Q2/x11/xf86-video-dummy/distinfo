@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:34:41 nia Exp $
+
+BLAKE2s (xf86-video-dummy-0.4.0.tar.xz) = a56783a915d8a2e033777566253e45c6f391c58a66d88ab86b5a4a0b1a851f14
+SHA512 (xf86-video-dummy-0.4.0.tar.xz) = 1150a84c4f17215b9c579d8ce9399d547a01970bf7b5396653f14beb13a62deefe3008bf3ad6a2c5c0f46da4cbc0b840c18a7dff339e3b882d108183fa1d30d9
+Size (xf86-video-dummy-0.4.0.tar.xz) = 258452 bytes

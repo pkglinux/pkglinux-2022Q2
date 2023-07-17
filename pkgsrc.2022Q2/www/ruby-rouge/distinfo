@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.22 2022/02/04 07:56:11 fcambus Exp $
+
+BLAKE2s (rouge-3.28.0.gem) = acca270f85008461aca864d76699ac815924c2d55171db84208f8a4b4c6c607e
+SHA512 (rouge-3.28.0.gem) = 5fdcc018fb8fac79b61c69aa9aa19bd0fc376d5900bea857493c4c09740c3379ed36fb738fb485920387a09b9a72b0bcff8adff428456601b6b0a55796036de0
+Size (rouge-3.28.0.gem) = 507904 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2022/04/25 06:00:59 markd Exp $
+
+BLAKE2s (kplotting-5.93.0.tar.xz) = 586f50db1413965473b047b5b3f0b1c59413aa48a47d91a3d5e3b72a5a321eb4
+SHA512 (kplotting-5.93.0.tar.xz) = 88fc77ceb07ac3ecd925ea439535abfc549cd10756a1726506f4d5e5b128989e4fbfcb255aeed811a1f6d208870dc5c9d5f052edcbd62f96c10a3c2fd8ae1754
+Size (kplotting-5.93.0.tar.xz) = 33684 bytes

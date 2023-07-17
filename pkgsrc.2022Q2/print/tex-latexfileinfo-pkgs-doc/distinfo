@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:13:53 nia Exp $
+
+BLAKE2s (tex-latexfileinfo-pkgs-26760/latexfileinfo-pkgs.doc.tar.xz) = ab4621855bd249d4564c153963586eb1f03ab74f156c6937b2d8d8da20e2a7ff
+SHA512 (tex-latexfileinfo-pkgs-26760/latexfileinfo-pkgs.doc.tar.xz) = d290c144128eb82c9d3970e728db987f1d5174e1ebf6cce30a044c97d12292138f7dc60d67e9e90079fbaf687f16dc9d3c0ea202d2998681ea81dd5d93295175
+Size (tex-latexfileinfo-pkgs-26760/latexfileinfo-pkgs.doc.tar.xz) = 8008 bytes

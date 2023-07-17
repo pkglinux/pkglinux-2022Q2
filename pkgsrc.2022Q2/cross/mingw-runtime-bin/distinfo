@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:07:54 nia Exp $
+
+BLAKE2s (mingw-runtime-3.14.tar.gz) = 9a66f7e1aa6e271298e6ea6f47b46571f58f0765fe263a6071e11f81bdcb0d0f
+SHA512 (mingw-runtime-3.14.tar.gz) = e0f3f57ee08b08dad3b1c9876604908f7d47f90d1184606ecec3635587050d2b4a0684822bdfd1ad02b95ee27b52a14db883703895894b158dc48afe60d3c9e6
+Size (mingw-runtime-3.14.tar.gz) = 506843 bytes

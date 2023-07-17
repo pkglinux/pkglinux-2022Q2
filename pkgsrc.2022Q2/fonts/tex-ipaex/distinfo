@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/08 23:30:06 markd Exp $
+
+BLAKE2s (ipaex.r61719.tar.xz) = 2e03a6804d32f8a9f5adfc1493b0a50086404df2573ddf447da1d27e5ef36f71
+SHA512 (ipaex.r61719.tar.xz) = dec0527223fdb0f897ccf54e96691cd68b933ac61de4c036e21fd35bff93d32766444fe6971492ce64328f92621bd2949ebb669ab33b6b6f4ede88280351292d
+Size (ipaex.r61719.tar.xz) = 15865176 bytes

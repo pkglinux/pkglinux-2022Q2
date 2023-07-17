@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/09 20:47:30 markd Exp $
+
+BLAKE2s (context-typescripts.r60422.tar.xz) = 5b4b95984388251c0391918e43f5b4fb69b7978a33110ce73a54bd472d9a191a
+SHA512 (context-typescripts.r60422.tar.xz) = a13d06b9a792cbd2352016df508a7860e45b541d04cef1c9d9c8b5a6199120a71dfd69f990700c4a76ac31ec11209caef431a190b9045bdc46cc44f88cbef0a3
+Size (context-typescripts.r60422.tar.xz) = 7216 bytes

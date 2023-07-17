@@ -1,0 +1,2 @@
+@comment $NetBSD: PLIST,v 1.5 2021/08/27 07:14:41 nia Exp $
+bin/go-md2man

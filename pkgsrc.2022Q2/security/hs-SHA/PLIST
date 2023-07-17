@@ -1,0 +1,19 @@
+@comment $NetBSD: PLIST,v 1.2 2021/04/24 13:18:32 pho Exp $
+lib/SHA-${PKGVERSION}/${HS_VERSION}/package-description
+lib/SHA-${PKGVERSION}/${HS_VERSION}/package-id
+lib/${HS_PLATFORM}/${HS_PKGID}/Data/Digest/Pure/SHA.dyn_hi
+lib/${HS_PLATFORM}/${HS_PKGID}/Data/Digest/Pure/SHA.hi
+lib/${HS_PLATFORM}/${HS_PKGID}/Data/Digest/Pure/SHA.p_hi
+lib/${HS_PLATFORM}/${HS_PKGID}/libHS${HS_PKGID}.a
+lib/${HS_PLATFORM}/${HS_PKGID}/libHS${HS_PKGID}_p.a
+lib/${HS_PLATFORM}/libHS${HS_PKGID}-${HS_VER}.so
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/LICENSE
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/Data-Digest-Pure-SHA.html
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/SHA.haddock
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/doc-index.html
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/haddock-bundle.min.js
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/index.html
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/linuwial.css
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/meta.json
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/quick-jump.css
+share/doc/${HS_PLATFORM}/SHA-${PKGVERSION}/html/synopsis.png

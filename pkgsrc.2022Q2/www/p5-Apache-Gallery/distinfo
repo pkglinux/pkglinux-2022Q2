@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2021/10/26 11:29:44 nia Exp $
+
+BLAKE2s (Apache-Gallery-1.0.2-withoutworldwriteables.tar.gz) = 4f2f0ddad6340b2c7aed24c6688206e839ba2c23a52b24ba70608b64463ba643
+SHA512 (Apache-Gallery-1.0.2-withoutworldwriteables.tar.gz) = 429e81d9c244ad524dc296a137fc26f2a3689a208332225fa8c3231e17f26d46ba6d3c396bd4038c3e145223367241053106de574eb05c429c43b12c555e3e51
+Size (Apache-Gallery-1.0.2-withoutworldwriteables.tar.gz) = 89317 bytes

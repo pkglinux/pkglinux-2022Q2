@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.39 2021/11/16 16:18:48 adam Exp $
+
+BLAKE2s (libpcap-1.10.1.tar.gz) = c1750d08f9d70f8cce5f696e24b950a588f62520ebfc49b0a4d053dcc2a1f68d
+SHA512 (libpcap-1.10.1.tar.gz) = 56c314f19c2b857742bf8abcb1e78066986aaa95cec339b75a3c8b70a9fa2b5167da98708352f9ec97a1cea2700cfb4e040bda108d58ac46cec9b7deab88d171
+Size (libpcap-1.10.1.tar.gz) = 935221 bytes
+SHA1 (patch-Makefile.in) = 9dcba4ae88185c63543ea5a2be559efb7400c289
+SHA1 (patch-configure) = 51b8a471655e94945f8240285201886b8da324f2
+SHA1 (patch-fad-getad.c) = f7a29d558e1f3c54a143d0977deffb2be3f494ef

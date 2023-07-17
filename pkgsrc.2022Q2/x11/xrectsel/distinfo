@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:34:56 nia Exp $
+
+BLAKE2s (xrectsel-0.3.2.tar.gz) = b7f1805a87ae83574c5bdbe8cd8d0f18f4f5ca6be68a61eda2cf962a4a20c30d
+SHA512 (xrectsel-0.3.2.tar.gz) = 56e87002dba1858c900ceba4d6cf1613fa92a5a8f59fb5c4852e65835bde9478bf92c160ca398cd19e99543ed0ab94ad4ac8ba2d60a7dbaf95bc2826f8953fcc
+Size (xrectsel-0.3.2.tar.gz) = 14834 bytes

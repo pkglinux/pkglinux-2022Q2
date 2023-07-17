@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/15 17:12:25 nia Exp $
+
+BLAKE2s (oshu-2.0.2.tar.gz) = 851bb4af285bdb66d093ac136491c57f1222fe65a128b51a8dcfc18ebbcc61a8
+SHA512 (oshu-2.0.2.tar.gz) = e881e9429cebaf74337e55e7fa5445d992627d7616088f15abfafa2c125e1ff057a5b0f39ee4a1d1728c310728a8590e65286b9a0f81dca1f8963b2943fba596
+Size (oshu-2.0.2.tar.gz) = 146109 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:27:58 nia Exp $
+
+BLAKE2s (tex-fontmfizz-43546/fontmfizz.tar.xz) = cf82dffe87f4f638368aa7a07078887828263d2e9782fd12ce31631212a1a209
+SHA512 (tex-fontmfizz-43546/fontmfizz.tar.xz) = 4a63477035c31d87e3ccece92dfd84b1d0c09052fc2411dd6361d06e59d1d8614c9801bd0218fb0f8b1c36102da15b9a5e8ae0473221ef3d5601d2891b2b0ecc
+Size (tex-fontmfizz-43546/fontmfizz.tar.xz) = 39564 bytes

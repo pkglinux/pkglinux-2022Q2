@@ -1,0 +1,26 @@
+/DESCR/1.1/Tue Oct 15 12:01:22 2019//Tpkgsrc-2022Q2
+/MESSAGE/1.1/Tue Oct 15 12:01:22 2019//Tpkgsrc-2022Q2
+/Makefile/1.6/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.alpha/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.arm/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.armeb/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.armv6hf/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.armv7hf/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.earm/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.earmv7hfeb/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.i386/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.m68k/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.mips64eb/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.mips64el/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.mipseb/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.mipsel/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.powerpc/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.sh3eb/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.sh3el/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.sparc/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.sparc64/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.vax/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/PLIST.x86_64/1.3/Thu Aug 13 17:05:38 2020//Tpkgsrc-2022Q2
+/distinfo/1.6/Mon Nov 15 17:43:56 2021//Tpkgsrc-2022Q2
+/emulator.mk/1.1/Tue Oct 15 12:01:22 2019//Tpkgsrc-2022Q2
+D

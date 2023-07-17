@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/31 08:49:41 schmonz Exp $
+
+BLAKE2s (GraphViz2-2.66.tar.gz) = d804b9ff2cc74b8ebfeaf52b86644c399f49884e9ec47003e931b35f8162a384
+SHA512 (GraphViz2-2.66.tar.gz) = 3b6f5a2ce6a78c0fb8a8ca68dbbce8b2adbf357dd322072fa7759f2a05cf92015dce0c38debc55c4d67fda61a65e4b5d285adc522134de1cbf24db20475fff8c
+Size (GraphViz2-2.66.tar.gz) = 78648 bytes

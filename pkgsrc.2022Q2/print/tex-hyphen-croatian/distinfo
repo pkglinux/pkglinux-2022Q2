@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 11:13:35 nia Exp $
+
+BLAKE2s (hyphen-croatian.r58652.tar.xz) = c5481c1033403d690216388123903f01c3478d32151ddf0131fe577c23d003c9
+SHA512 (hyphen-croatian.r58652.tar.xz) = 8355d0aa95bb2e72bfc45015f9ae9f6a138f94441387a4daadfec5be4060878f6e69d05eab15432d99c256c1a3f68c122d5c915164fe343459d658a4543ddf42
+Size (hyphen-croatian.r58652.tar.xz) = 5580 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/02/11 13:08:44 pho Exp $
+
+BLAKE2s (text-short-0.1.5.tar.gz) = 3e9ade03595f9a425dd70e24e63ed7f7b7dc2ebec4075816519aceb17cfe10aa
+SHA512 (text-short-0.1.5.tar.gz) = 32f09a1abc37ddb3f85921d80629355f68b2e68531f14318907e792a8eeb7d4a258bfcf7d45710dcb67f85fadfbad2bb9ffdac27a912aefc4296dc1818585125
+Size (text-short-0.1.5.tar.gz) = 25113 bytes

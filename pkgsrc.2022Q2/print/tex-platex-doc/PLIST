@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.4 2019/05/12 04:16:32 markd Exp $
+man/man1/platex.1
+share/texmf-dist/doc/platex/base/LICENSE
+share/texmf-dist/doc/platex/base/README.md
+share/texmf-dist/doc/platex/base/exppl2e.pdf
+share/texmf-dist/doc/platex/base/platex-en.pdf
+share/texmf-dist/doc/platex/base/platex.pdf
+share/texmf-dist/doc/platex/base/platexrelease.pdf
+share/texmf-dist/doc/platex/base/pldoc.pdf

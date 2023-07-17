@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:06:19 nia Exp $
+
+BLAKE2s (Net-Google-AuthSub-0.5.tar.gz) = 121ef16cd860b6191b04886af6ae042edb38fb914f0c59ffa33291e48feaba53
+SHA512 (Net-Google-AuthSub-0.5.tar.gz) = 3a9fcae4dd58574dbe14f14704969fbb366c338eae9b5099c9cac7c67be4c054b482c13310e7a9ef0bed5cd52745b2bb0de1985854f61005adfe5c3e7d9e65cf
+Size (Net-Google-AuthSub-0.5.tar.gz) = 5952 bytes

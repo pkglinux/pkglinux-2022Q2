@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:23:55 nia Exp $
+
+BLAKE2s (libretro-np2kai-0.86.18.tar.gz) = 1e348551fff649fe6e037316bf4d3c5b0e3fb2ca60b5b5c091253b712e56f473
+SHA512 (libretro-np2kai-0.86.18.tar.gz) = ac03feea576fd3db1502f7d508a503c600fdeed58aab9ee71c43d2df2748df0a1f8ee9dfe0eaf6d74c2b7b1c581d5ea51c0a614a179cd20f951c38dd678c5043
+Size (libretro-np2kai-0.86.18.tar.gz) = 2540446 bytes
+SHA1 (patch-sdl2_Makefile.libretro) = 7c670340b4e552dc67ba025c85f49105eb4200c9
+SHA1 (patch-sound_mame_driver.h) = 7378846e2c15c445f56fd144077d48a5bd69327c

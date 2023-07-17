@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/03 19:30:18 jaapb Exp $
+
+BLAKE2s (rresult-0.7.0.tbz) = 2bf7729d5f04f708707d0ac9be2b59b9558df893c05639bf34ec7785314f4013
+SHA512 (rresult-0.7.0.tbz) = f1bb631c986996388e9686d49d5ae4d8aaf14034f6865c62a88fb58c48ce19ad2eb785327d69ca27c032f835984e0bd2efd969b415438628a31f3e84ec4551d3
+Size (rresult-0.7.0.tbz) = 8506 bytes

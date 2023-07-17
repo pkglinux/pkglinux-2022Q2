@@ -1,0 +1,10 @@
+/patch-compat_compat.h/1.1/Sat Jan  4 10:57:18 2020//Tpkgsrc-2022Q2
+/patch-configure/1.7/Sun Oct 10 15:55:47 2021//Tpkgsrc-2022Q2
+/patch-errors_Makefile.in/1.1/Sat Jan  4 10:57:18 2020//Tpkgsrc-2022Q2
+/patch-src_Makefile.in/1.1/Sat Jan  4 10:57:18 2020//Tpkgsrc-2022Q2
+/patch-src_acl_external_kerberos__ldap__group_support__resolv.cc/1.1/Sat Jan  4 10:57:18 2020//Tpkgsrc-2022Q2
+/patch-src_comm_ModKqueue.cc/1.2/Fri Jan 10 21:22:22 2020//Tpkgsrc-2022Q2
+/patch-src_esi_VarState.cc/1.1/Thu Jul  9 20:57:11 2020//Tpkgsrc-2022Q2
+/patch-src_fs_ufs_RebuildState.h/1.1/Sat Jan  4 10:57:18 2020//Tpkgsrc-2022Q2
+/patch-tools_Makefile.in/1.1/Sat Jan  4 10:57:18 2020//Tpkgsrc-2022Q2
+D

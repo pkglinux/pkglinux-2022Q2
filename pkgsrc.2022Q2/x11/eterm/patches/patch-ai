@@ -1,0 +1,13 @@
+$NetBSD: patch-ai,v 1.4 2019/09/01 12:08:18 nia Exp $
+
+--- doc/Makefile.in.orig	2011-03-16 06:10:30.000000000 +0000
++++ doc/Makefile.in
+@@ -417,7 +417,7 @@ uninstall-man: uninstall-man1
+ 	uninstall-man uninstall-man1
+ 
+ 
+-all: Makefile Eterm.1.html
++all: Makefile
+ 
+ Eterm.1: $(top_srcdir)/doc/Eterm.1.in
+ 	$(SED) -e 's%@''VERSION''@%$(VERSION)%g' -e 's%@''DATE''@%$(DATE)%g' -e 's%@THEMEDIR@%$(pkgdatadir)/themes%g' $(top_srcdir)/doc/$@.in > $@

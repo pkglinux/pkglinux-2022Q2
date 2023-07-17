@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.70 2021/11/07 12:00:37 wiz Exp $
+
+BLAKE2s (gc-8.2.0.tar.gz) = 387b28001d7356ef92eaa9cf8ff2bd6934a5dd1148919dc3d3af954fce62b67f
+SHA512 (gc-8.2.0.tar.gz) = ff781360bca667f1f95fbfed073e9035f63134cac1bda4f7e4217664a3713c2846f750a3ce92732972c0435c69355b051f6e8eb6f2698b0d48d9107ff960bacf
+Size (gc-8.2.0.tar.gz) = 1183225 bytes

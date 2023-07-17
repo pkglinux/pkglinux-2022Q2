@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:14:37 nia Exp $
+
+BLAKE2s (etrace-2.1.tar.gz) = db0fe987becacf43a8c536b5eb33a2908c7462570fba52d6e6b77d66319e7f31
+SHA512 (etrace-2.1.tar.gz) = d9ac5add61e67fb235790efadf5ef7626df28260ed0efe073d830d3aa0a5c54c6e9b412c2eb23f236fa476efba932f96bd0592dbf5c472d126474db33b7fbce3
+Size (etrace-2.1.tar.gz) = 8255 bytes

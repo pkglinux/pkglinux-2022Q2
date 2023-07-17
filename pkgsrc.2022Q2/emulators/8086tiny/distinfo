@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:23:44 nia Exp $
+
+BLAKE2s (8086tiny_125.tar.bz2) = 5fb1540f7cca75ffe54635c28ac757ab5060ed6514426d333900548703c40313
+SHA512 (8086tiny_125.tar.bz2) = e8407467dc68faab5c2178b6e6e1dbd2c9a93ebd5287fe48cd95b7bb3023dec63a3d468fc6ef6015031c7c5e784d8fa2916faee6318f1bfdbaabe546064eba87
+Size (8086tiny_125.tar.bz2) = 1402403 bytes
+SHA1 (patch-8086tiny.c) = 032e20accb7ad02da8080eb65ee6279a2420b961
+SHA1 (patch-Makefile) = fd6b2bf262419642995934eb15e5fd108a0dca3d

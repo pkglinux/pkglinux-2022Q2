@@ -1,0 +1,144 @@
+$NetBSD: patch-ae,v 1.12 2021/03/18 16:44:02 bouyer Exp $
+
+# Conform to autoconf's standard variable usage, making it easier
+# to install on pkgsrc platforms
+
+# reported upstream as https://bugs.launchpad.net/hplip/+bug/726218
+
+# still needs to handle the buildlink path for libusb-1.0 :(
+# schnoebe -- Fri May 24 14:55:57 CDT 2013
+
+--- Makefile.am.orig	2019-12-10 06:00:36.000000000 +0100
++++ Makefile.am	2021-03-18 15:14:51.942673859 +0100
+@@ -8,7 +8,7 @@
+ CXXFLAGS+= -DCONFDIR=\"$(hplip_confdir)\"
+ 
+ hplipdir = $(datadir)/hplip
+-apparmordir = /etc/apparmor.d
++apparmordir = $(sysconfdir)/apparmor.d
+ docdir = $(hpdocdir)
+ htmldir = $(hphtmldir)
+ doc_DATA = COPYING copyright prnt/hpijs/README_LIBJPG
+@@ -110,6 +110,7 @@
+ else
+ libhpmud_la_SOURCES += io/hpmud/musb.c 
+ libhpmud_la_CFLAGS  += -I/usr/include/libusb-1.0
++libhpmud_la_CFLAGS  += -I$(prefix)/include/libusb-1.0
+ libhpmud_la_LDFLAGS += -lusb-1.0
+ endif
+ 
+@@ -131,12 +132,12 @@
+ 	ip/hpip.h ip/ipdefs.h ip/xform.h ip/xjpg_dct.h ip/xjpg_huf.h ip/xjpg_mrk.h
+ 
+ #hpmud rules data dir
+-rulessystemdir=/usr/lib/systemd/system
++rulessystemdir=$(sysconfdir)/systemd/system
+ dist_rulessystem_DATA =data/rules/hplip-printer@.service
+ 
+ # hpmud.rules
+ if !HPLIP_CLASS_DRIVER
+-rulesdir = /etc/udev/rules.d
++rulesdir = $(sysconfdir)/udev/rules.d
+ if UDEV_SYSFS_RULES
+ dist_rules_DATA = data/rules/56-hpmud_sysfs.rules
+ else
+@@ -144,11 +145,11 @@
+ endif
+ endif #HPLIP_CLASS_DRIVER
+ 
+-halpredir = /usr/share/hal/fdi/preprobe/10osvendor
++halpredir = $(datadir)/hal/fdi/preprobe/10osvendor
+ dist_halpre_DATA = data/rules/20-hplip-devices.fdi
+ 
+ # hplip.conf
+-hplip_confdir = /etc/hp
++hplip_confdir = $(sysconfdir)/hp
+ hplip_conf_DATA = hplip.conf
+ 
+ if !HPLIP_CLASS_DRIVER
+@@ -158,7 +159,7 @@
+ endif #HPLIP_CLASS_DRIVER
+ 
+ # hplip.state
+-hplip_statedir = /var/lib/hp
++hplip_statedir = $(localstatedir)/lib/hp
+ dist_hplip_state_DATA =
+ 
+ if FULL_BUILD
+@@ -233,11 +234,11 @@
+ if !HPLIP_CLASS_DRIVER
+ # AppArmor Changes
+ if APPARMOR_BUILD
+-apparmor_profiledir = /etc/apparmor.d
++apparmor_profiledir = $(sysconfdir)/apparmor.d
+ apparmor_profile_DATA = apparmor/usr.share.hplip
+ dist_apparmor_profile_DATA = apparmor/usr.share.hplip
+ 
+-apparmor_abstractiondir = /etc/apparmor.d/abstractions
++apparmor_abstractiondir = $(sysconfdir)/apparmor.d/abstractions
+ apparmor_abstraction_DATA = apparmor/abstractions/hplip
+ dist_apparmor_abstraction_DATA = apparmor/abstractions/hplip
+ 
+@@ -363,6 +364,7 @@
+ 
+ if !LIBUSB01_BUILD
+ hpmudext_la_CFLAGS +=-I/usr/include/libusb-1.0 
++hpmudext_la_CFLAGS +=-I$(prefix)/include/libusb-1.0 
+ endif
+ endif #!HPLIP_CLASS_DRIVER
+ # ui (qt3)
+@@ -448,9 +450,9 @@
+ endif #HPLIP_CLASS_DRIVER
+ # PolicyKit
+ if POLICYKIT_INSTALL
+-policykit_dbus_etcdir = /etc/dbus-1/system.d
++policykit_dbus_etcdir = $(sysconfdir)/dbus-1/system.d
+ dist_policykit_dbus_etc_DATA = data/policykit/com.hp.hplip.conf
+-policykit_dbus_sharedir = /usr/share/dbus-1/system-services
++policykit_dbus_sharedir = $(datadir)/dbus-1/system-services
+ dist_policykit_dbus_share_DATA = data/policykit/com.hp.hplip.service
+ policykit_policydir = $(policykit_dir)
+ dist_policykit_policy_DATA = data/policykit/com.hp.hplip.policy
+@@ -594,7 +596,7 @@
+ 	prnt/hpcups/ImageProcessor.h
+ 
+ hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
+-hpcups_LDADD = -L./prnt/hpcups/ -ljpeg -ldl -lImageProcessor -lcups -lcupsimage -lz $(DBUS_LIBS)
++hpcups_LDADD = -L./prnt/hpcups/ -ljpeg -ldl -lcups -lcupsimage -lz $(DBUS_LIBS)
+ #else
+ #hpcupsdir = $(cupsfilterdir)
+ #hpcups_PROGRAMS = hpcups
+@@ -683,27 +685,17 @@
+ endif #HPLIP_CLASS_DRIVER
+ 
+ install-data-hook:
+ if HPLIP_BUILD
+-	if [ \( "$(UNAME)" = "x86_64" -a  -d "$(libdir)/" \) ]; then \
+-		cp prnt/hpcups/libImageProcessor-x86_64.so $(libdir)/ ; \
+-		chmod 775 $(libdir)/libImageProcessor-x86_64.so ; \
+-		ln -sf $(libdir)/libImageProcessor-x86_64.so $(libdir)/libImageProcessor.so ; \
+-	fi; \
+-	if [ \( \( "$(UNAME)" = "i686" -o "$(UNAME)" = "i386" \) -a -d "$(libdir)/" \) ]; then \
+-		cp prnt/hpcups/libImageProcessor-x86_32.so $(libdir)/ ; \
+-		chmod 775 $(libdir)/libImageProcessor-x86_32.so ; \
+-		ln -sf $(libdir)/libImageProcessor-x86_32.so $(libdir)/libImageProcessor.so ; \
+-	fi
+ if !HPLIP_CLASS_DRIVER
+ #	   If scanner build, add hpaio entry to sane dll.conf.
+ 	if [ "$(scan_build)" = "yes" ]; then \
+-	   $(mkinstalldirs) $(DESTDIR)/etc/sane.d; \
+-	   if [ ! -f $(DESTDIR)/etc/sane.d/dll.conf ]; then \
+-		  touch $(DESTDIR)/etc/sane.d/dll.conf; \
++	   $(mkinstalldirs) $(DESTDIR)$(sysconfdir)/sane.d; \
++	   if [ ! -f $(DESTDIR)$(sysconfdir)/sane.d/dll.conf ]; then \
++		  touch $(DESTDIR)$(sysconfdir)/sane.d/dll.conf; \
+ 	   fi; \
+-	   if ! grep ^hpaio $(DESTDIR)/etc/sane.d/dll.conf >/dev/null 2>/dev/null ; then \
+-		  echo "Adding hpaio entry to /etc/sane.d/dll.conf." ; \
+-		  echo hpaio >>$(DESTDIR)/etc/sane.d/dll.conf ; \
++	   if ! grep ^hpaio $(DESTDIR)$(sysconfdir)/sane.d/dll.conf >/dev/null 2>/dev/null ; then \
++		  echo "Adding hpaio entry to $(sysconfdir)/sane.d/dll.conf." ; \
++		  echo hpaio >>$(DESTDIR)$(sysconfdir)/sane.d/dll.conf ; \
+ 	   fi; \
+  	   if [ \( "$(UNAME)" = "x86_64" -a  -d "$(libdir)/x86_64-linux-gnu/sane" \) ]; then \
+ 	  	ln -sf $(libdir)/sane/libsane-hpaio.so $(libdir)/x86_64-linux-gnu/sane/ ; \

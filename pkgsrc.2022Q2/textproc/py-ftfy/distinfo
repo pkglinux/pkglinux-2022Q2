@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:23:03 nia Exp $
+
+BLAKE2s (ftfy-4.2.0.tar.gz) = 76a8f713138e6088c5dc8bb56c081b20e9335e295b257593892dbf87f8da10b0
+SHA512 (ftfy-4.2.0.tar.gz) = db46f865ec69ca28d2795b9f1dafc45c8968a4eda8d5aafc468f6fd027f37f81c417494ce289a636b80b9f055a7ea61dbf908c504717a56316bdab7a82b1d8a4
+Size (ftfy-4.2.0.tar.gz) = 35139 bytes

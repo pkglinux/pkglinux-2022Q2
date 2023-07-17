@@ -1,0 +1,17 @@
+# $NetBSD: Makefile.common,v 1.5 2021/08/26 08:24:48 adam Exp $
+# used by net/ndiff/Makefile
+# used by net/nmap/Makefile
+# used by net/zenmap/Makefile
+
+DISTNAME=	nmap-7.92
+CATEGORIES=	net security
+MASTER_SITES=	http://nmap.org/dist/
+EXTRACT_SUFX=	.tar.bz2
+
+MAINTAINER?=	pettai@NetBSD.org
+HOMEPAGE=	https://nmap.org/
+LICENSE=	gnu-gpl-v2
+
+CONFLICTS=	nmap<=7.70
+
+CHECK_PORTABILITY_SKIP+=	libssh2/Makefile.in

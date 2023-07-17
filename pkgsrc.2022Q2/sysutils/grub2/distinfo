@@ -1,0 +1,15 @@
+$NetBSD: distinfo,v 1.12 2021/10/26 11:19:39 nia Exp $
+
+BLAKE2s (grub-2.04.tar.gz) = f419778d32d0a09878747d78113be4b79b47fd40c389eb32e61eeb2f20660a96
+SHA512 (grub-2.04.tar.gz) = 3ba14fe8fdd15322ef89dd2f90e7f4a9e1e9a2ea19b795e0677c1f504b3fb93329109a83ddf5230f7173068e3f043dd5c9a92f6f2bb9257e13e236f62df10453
+Size (grub-2.04.tar.gz) = 11130271 bytes
+BLAKE2s (unifont-5.1.20080820.pcf.gz) = fba529620cea036f864dd2d1fb3667b5e26e9367479effa47a95e4b8e103fb67
+SHA512 (unifont-5.1.20080820.pcf.gz) = 8939e2bc82ca97b60e6678f3ff079a2be7ba9b702f2e8ee289e853af5823695f7baafbf14b674fc5e41071f2a6de4f2dadd56bf8b4653849dd756d59622f1649
+Size (unifont-5.1.20080820.pcf.gz) = 1379965 bytes
+SHA1 (patch-configure) = 9c84557e13f6ce747a5e30e383aa3599a2c607b7
+SHA1 (patch-gentpl.py) = 7ffeb180c7c2b53ea6bbad12d7636d4fe90366b5
+SHA1 (patch-grub-core_Makefile.core.am) = 99337e915492449403b12517062b1ffd1991c87c
+SHA1 (patch-grub-core_Makefile.in) = dc5eb980e30c0ffb4b32feb748d3330febf276cc
+SHA1 (patch-grub-core_osdep_bsd_hostdisk.c) = 2c7251081082d671d21343b5e95300a6779b4b21
+SHA1 (patch-grub-core_osdep_generic_blocklist.c) = e1bf4511edfea1754204ffb5fb2a6a5a777b8b94
+SHA1 (patch-util_getroot.c) = 7c2f148ffa778872de4f59b6fcf365bd1a497acf

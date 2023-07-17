@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:17:02 nia Exp $
+
+BLAKE2s (cracklib-2.9.7.tar.bz2) = 1ebcae43dbf342d7e20eb83c8ac63e5bb1211064d87e999698e64f8e8a3f77ed
+SHA512 (cracklib-2.9.7.tar.bz2) = f6bf65ac092ba46ff78ddbc115692260fb76dc71219cd679d2ea935ebfb9e709fbb30259a7406743ed00dbdc415335b3ac9d9fcba1d204ea36d5eb96bf1333a2
+Size (cracklib-2.9.7.tar.bz2) = 603630 bytes
+SHA1 (patch-lib_fascist.c) = de37fed4f5d3b591dc0c3264f852b85d98488cc9
+SHA1 (patch-lib_rules.c) = c479465e18a4d51d8684324772ec841d6e3378f4
+SHA1 (patch-lib_stringlib.c) = 69b4830328b1e99a6d2ee96cda310d7b954f1a65

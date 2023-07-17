@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 09:57:10 nia Exp $
+
+BLAKE2s (lzmalib-0.0.1.tar.gz) = 6665eb8169b248d2c95c2dd4d145cccdf6a026b0728af30221d58eac6c54a58b
+SHA512 (lzmalib-0.0.1.tar.gz) = 22eaa1ce1f365438f09283a556efffa973d75215fae4056657c843d0008863a38fe2cc5d7ec3be797c731700b20df0c22a8e464256483aee199229c13db736ef
+Size (lzmalib-0.0.1.tar.gz) = 112202 bytes
+SHA1 (patch-aa) = 857039dbf8089c764f4a68838fd1bfdb69242922
+SHA1 (patch-ab) = dd8fcbce7a0a2ace551b8f84ab3b866e11b2742d
+SHA1 (patch-ac) = 46b577410eb57cb0a17961f87006248ec0e08653

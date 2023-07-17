@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.36 2021/10/26 11:06:46 nia Exp $
+
+BLAKE2s (quagga-1.2.4.tar.gz) = 044953e03656c51f236f192444812002126e9edc5d1d8652acebe2bc2113a769
+SHA512 (quagga-1.2.4.tar.gz) = 3e72440bcccfd3c1a449a62b7ff8623441256399a2bee0a39fa0a19694a5a78ac909c5c2128a24735bc034ea8b0811827293b480a2584a3a4c8ae36be9cf1fcd
+Size (quagga-1.2.4.tar.gz) = 2925847 bytes
+SHA1 (patch-configure) = 928aff3c22d9c8d63276d6e787dc503fadcc048a
+SHA1 (patch-lib_thread.c) = 8e3cf21225a1ec5e94ac526b0b5a4e9e66ca4c93
+SHA1 (patch-lib_thread.h) = 1afcc4c4a30dfa2f0e182310568b5e31acec21fb
+SHA1 (patch-solaris_quagga.init.in) = 47569aaffe2713809e21ebbb76164cf50b7f983f
+SHA1 (patch-zebra_ioctl.c) = b7fb1a543f9cce7d798fadb39ef465e8fc6c3eca
+SHA1 (patch-zebra_kernel__socket.c) = 9f0bdc301e030ff9e988e4d20aa1d9e52e1b6ff6

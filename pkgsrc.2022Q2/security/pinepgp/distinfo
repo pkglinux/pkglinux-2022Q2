@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:17:38 nia Exp $
+
+BLAKE2s (pinepgp-0.18.0.tar.gz) = 7c4ef3cf10b9ac7578c5f5152792b572e1b58ffba1516e496917e4cbe6f669c7
+SHA512 (pinepgp-0.18.0.tar.gz) = b28b71d4d5132b451ff4a2a9489f830cedade300d18ad05a0aa443bffa6fe5ece7be4f166e7428fc999b2d1b550cf8dccf7982314868db8597117d0f8d74686e
+Size (pinepgp-0.18.0.tar.gz) = 38103 bytes
+SHA1 (patch-Makefile.in) = f35fa516c93d283a7e5ed1b79546b52c70b59760
+SHA1 (patch-pinegpgp.in) = f55366a4599ae25bea347e61fe81c3fe2c4f1763
+SHA1 (patch-pinepgpgpg-install.in) = 034558e85acb65650188d2d0d9147c9ca4fef3f2

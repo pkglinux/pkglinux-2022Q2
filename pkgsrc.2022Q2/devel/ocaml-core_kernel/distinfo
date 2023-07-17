@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/05/05 08:04:05 jaapb Exp $
+
+BLAKE2s (core_kernel-0.15.0.tar.gz) = 7ad2888d91a73a5ce5e861229f9e8056d6725e613ec19045b7df20aeafb818a2
+SHA512 (core_kernel-0.15.0.tar.gz) = da28f11374fda2e869b5ef3f7131461c6d896b52413654f2aeb7c74bc77ba4a8e2a25830eb3e3ef393e0bbae903db20f54773b356c53cab75c1bba1b9ce265bc
+Size (core_kernel-0.15.0.tar.gz) = 265183 bytes

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (cronie-1.6.1.tar.gz) = bc954cdc39866b136639d6c1c2e2e16d91efa4489cd34b7d9e9b8fbbe679a182
+SHA512 (cronie-1.6.1.tar.gz) = 610fb21077fde08f2cf302e26c9b71aa711b8f4ac1e8a4e9f9f70d616d916965673e836f48b79c4b75de4a93ab893f62887263dce214d6e064fc41fcf0f4093d
+Size (cronie-1.6.1.tar.gz) = 263995 bytes

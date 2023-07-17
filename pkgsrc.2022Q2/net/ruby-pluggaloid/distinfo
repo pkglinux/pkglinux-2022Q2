@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/01/08 15:15:22 tsutsui Exp $
+
+BLAKE2s (pluggaloid-1.7.0.gem) = a115aee851ac74652d6db8c142221b34017c5120977956fb192cc0762581a5cb
+SHA512 (pluggaloid-1.7.0.gem) = f4ebf9fa60bf29366cafeeab09cd1cddd3c46903757f55a6b0a1326499c1b5e917258eb07a7f95934ab2ff32626dfffc2738c847eb6090725f90dce7ac90c550
+Size (pluggaloid-1.7.0.gem) = 20992 bytes

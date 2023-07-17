@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.16 2022/04/20 20:12:32 wiz Exp $
+
+BLAKE2s (libshout-2.4.6.tar.gz) = 692d3b2a76bde9ce15e3c901c002c9be17d1680939d30fb6c884a2b189c294ef
+SHA512 (libshout-2.4.6.tar.gz) = e8478cdbf9a27674c16a7b620d1576f2e31a47262b8e29b314d0f46d4e5be24b9a29790b7b226f48939bc34cacf5734fae0aa5686c7ed5879cdbd827ff8e0339
+Size (libshout-2.4.6.tar.gz) = 571153 bytes

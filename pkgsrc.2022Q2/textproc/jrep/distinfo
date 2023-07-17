@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:22:13 nia Exp $
+
+BLAKE2s (jrep-1.1.0.tar.gz) = e276547241e6003dcee655fc3848f018e6f613dc86cef2643f85219aceaa82ef
+SHA512 (jrep-1.1.0.tar.gz) = c5fb5cf026b51c84c16f395612d599a79d3f3e369bdcdf165c52e8a648680b101e5666c5df9532d004c66ca317050216d9f2c87e18bb85c7afd9d16d562b63cf
+Size (jrep-1.1.0.tar.gz) = 25449 bytes

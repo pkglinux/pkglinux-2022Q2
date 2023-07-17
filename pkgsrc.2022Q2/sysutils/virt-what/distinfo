@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:20:22 nia Exp $
+
+BLAKE2s (virt-what-1.20.tar.gz) = ee46825fd3f22154d136a9dffd9dd100e3eb728e3826a51a5b26c918977585b6
+SHA512 (virt-what-1.20.tar.gz) = edf74903122bfb422c7a5ecba711bb64d6ef668828f208dfc0571ef14f2643456c14bc9a77dfea209df3d93869ac0a2c9fd039779922eddc6ebd9d988585dea4
+Size (virt-what-1.20.tar.gz) = 459243 bytes

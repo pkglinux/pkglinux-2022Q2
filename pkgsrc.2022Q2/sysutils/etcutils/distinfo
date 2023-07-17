@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:19:34 nia Exp $
+
+BLAKE2s (etcutils-0.1.tar.gz) = 969a8e6f05264ec2a3fa4a74c8a1a83102e51b963851b23717ab36a84c95676d
+SHA512 (etcutils-0.1.tar.gz) = 15548385c7b5134f13c4a511f11afccfe0a1dc58501ec9027a0fd3860ede27526c9b9e9715f425b28828521fc77cb5f74a920ab07f13459adec35c99f5b17999
+Size (etcutils-0.1.tar.gz) = 59625 bytes

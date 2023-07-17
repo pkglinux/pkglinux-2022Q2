@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:49:45 nia Exp $
+
+BLAKE2s (tegaki-zinnia-japanese-joyo-0.3.zip) = 5c66674909154c978e8714b05f03c9632cf68e5b2cd38693513f47d6f44ff57e
+SHA512 (tegaki-zinnia-japanese-joyo-0.3.zip) = 8b41ad22db2c62443d8bf6b5fd0dd4d9b62b1cfaa0b9c76b07dc0448edd076722eca389dd203a0aac61fec071d84e45884d40d2052381a8739680d800a4a374b
+Size (tegaki-zinnia-japanese-joyo-0.3.zip) = 4865213 bytes

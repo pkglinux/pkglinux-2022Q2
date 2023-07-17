@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 11:21:45 nia Exp $
+
+BLAKE2s (biblook.tar.gz) = a4c6f63239f56c2c08c12f3868279342298c69cae985f01b7c1b251df587663d
+SHA512 (biblook.tar.gz) = ac5891ada50484b40bddd6cfcfcd737aa22e4a63fa92283eeaa0a76d744edfd1c12385bf994080bd1b159bb45423be3375647d5aa39162975f5ddf157d7c4f97
+Size (biblook.tar.gz) = 44691 bytes
+SHA1 (patch-aa) = d6dd58fbb58c173ca23bb16d1d2418e2d8685c26
+SHA1 (patch-ab) = 7063e2d7b92a45b1f055ca201fe1d6b11bfec7bc
+SHA1 (patch-ac) = 4d6ae0e4301a184b40c777712ee91ea739d7fbfe

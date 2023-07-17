@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2022/03/07 20:03:14 adam Exp $
+
+BLAKE2s (ddt-1.4.4.tar.gz) = 916693768cb2dadcb749b62eb082f1a42dd38fea05a71782aee3d446c7c3c98d
+SHA512 (ddt-1.4.4.tar.gz) = 506f5d9f1c11a57dc1a93a16f026fb0735654400259e297a96b4163348c3ef1ce66b6f82a46effe507cc66e07819415ffee028e3c96baf5fbbd9d26b14b96abc
+Size (ddt-1.4.4.tar.gz) = 12176 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/05/05 12:11:18 jaapb Exp $
+
+BLAKE2s (pgocaml-4.3.0.tar.gz) = 76ce050836e3b33747839cf001ced0f71134eda17c5f0d2f00fe7623b5cf8032
+SHA512 (pgocaml-4.3.0.tar.gz) = 3b82ea8be88b1e9f169d52fd48491d4d756d65e962fd35a4211994e011aa0ec959408bd7092905942f60493859d6f17a89a7fbcd9f88b500b4d3c3da3a51bc4f
+Size (pgocaml-4.3.0.tar.gz) = 53708 bytes

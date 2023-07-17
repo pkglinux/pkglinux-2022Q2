@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.43 2021/11/28 20:08:24 adam Exp $
+
+BLAKE2s (glpk-5.0.tar.gz) = d090b119a54420b9ab28ac998484c678a631d8a4c59ef53dfd15e0fb0965597f
+SHA512 (glpk-5.0.tar.gz) = 4e92195fa058c707146f2690f3a38b46c33add948c852f67659ca005a6aa980bbf97be96528b0f8391690facb880ac2126cd60198c6c175e7f3f06cca7e29f9d
+Size (glpk-5.0.tar.gz) = 4132649 bytes
+SHA1 (patch-src_Makefile.in) = 7af10aca835da7a25da977ae784dfa6037050bb8

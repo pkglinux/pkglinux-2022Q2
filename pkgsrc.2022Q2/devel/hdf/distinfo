@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.17 2022/04/24 21:50:48 tnn Exp $
+
+BLAKE2s (hdf-4.2.15.tar.bz2) = ff1c7833d9b0c21f46e437a3071bf376a3f5783ea2c91e5b8afb96d56360e223
+SHA512 (hdf-4.2.15.tar.bz2) = 7d4037800ef8950ed74f225355ef5458444bed26fc189fbbd2ce7d36009998013ac1f6ba5d4e60834acf8f6f73550357238745acc35e162679919400a48191e9
+Size (hdf-4.2.15.tar.bz2) = 3647900 bytes
+SHA1 (patch-ao) = 1d17fef8c7b10670a1a82fd41aacf5761684a693
+SHA1 (patch-ap) = 6587f64f688d39aac99dad9d445d388f555f8aff
+SHA1 (patch-ba) = e1bc12d455a0b85c93ea8cab9f0b39621b349980
+SHA1 (patch-bin_cmakehdf4) = 13c1f36d72f6fc780c61591ac4623a07421217dc
+SHA1 (patch-hdf_test_tutils.h) = 98d99e153f33cfaa1fc24321c993b734f9dba9ab
+SHA1 (patch-mfhdf_ncgen_ncgen.l) = 721f73cb5b219922fdc096b7f7fe1e9c8db5e9cc

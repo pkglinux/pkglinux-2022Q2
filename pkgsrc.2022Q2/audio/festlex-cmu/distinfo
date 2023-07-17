@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 09:58:54 nia Exp $
+
+BLAKE2s (festlex-cmu-2.5/festlex_CMU.tar.gz) = bef0c1e23054307c19a5fb2f965ac37dd231096716975bda93f2fde8d44f2b00
+SHA512 (festlex-cmu-2.5/festlex_CMU.tar.gz) = c293344020fd3337193303cd5dfb7e2b0a1012770a484d8bccaae921b0c61b75699204bec45fee0db754506d6f1558fd616866cc94e76afcbb85a4dcbcf9542b
+Size (festlex-cmu-2.5/festlex_CMU.tar.gz) = 1925748 bytes

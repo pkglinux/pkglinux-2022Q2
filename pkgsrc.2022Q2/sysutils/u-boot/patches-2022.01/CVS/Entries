@@ -1,0 +1,12 @@
+/patch-arch_arm_lib_interrupts__64.c/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-arch_arm_mach-rockchip_rk3399_rk3399.c/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-board_pine64_pinebook-pro-rk3399_pinebook-pro-rk3399.c/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-configs_pinebook-pro-rk3399_defconfig/1.2/Sat Feb 12 07:44:55 2022//Tpkgsrc-2022Q2
+/patch-configs_rock64-rk3328_defconfig/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-configs_rockpro64-rk3399_defconfig/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-drivers_pci_pcie__rockchip.c/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-drivers_usb_host_usb-uclass.c/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-include_config_distro_bootcmd.h/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-include_configs_rockchip-common.h/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+/patch-include_configs_rockpro64_rk3399.h/1.1/Fri Feb 11 21:46:14 2022//Tpkgsrc-2022Q2
+D

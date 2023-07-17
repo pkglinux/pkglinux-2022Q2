@@ -1,0 +1,17 @@
+/patch-configure/1.3/Sun Apr 11 12:28:37 2021//Tpkgsrc-2022Q2
+/patch-ext_dbm_extconf.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-ext_openssl_ossl__pkey__rsa.c/1.1/Tue Nov  9 12:13:03 2021//Tpkgsrc-2022Q2
+/patch-lib_mkmf.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rdoc_encoding.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rdoc_ri_driver.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rubygems.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rubygems_commands_build__command.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rubygems_commands_setup__command.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rubygems_defaults.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rubygems_dependency__installer.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rubygems_install__update__options.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rubygems_installer.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-lib_rubygems_platform.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-test_rubygems_test__gem.rb/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+/patch-thread__pthread.c/1.1/Sun Feb  3 13:41:33 2019//Tpkgsrc-2022Q2
+D

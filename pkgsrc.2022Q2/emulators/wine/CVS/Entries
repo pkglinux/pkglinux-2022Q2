@@ -1,0 +1,10 @@
+/DESCR/1.6/Fri May 22 20:00:37 2020//Tpkgsrc-2022Q2
+/MESSAGE.NetBSD/1.2/Fri May 22 17:49:26 2020//Tpkgsrc-2022Q2
+/Makefile/1.239/Sat May  7 06:30:40 2022//Tpkgsrc-2022Q2
+/PLIST/1.73/Tue Jun  1 05:05:54 2021//Tpkgsrc-2022Q2
+/PLIST.Darwin/1.4/Sat May 23 21:20:38 2020//Tpkgsrc-2022Q2
+/PLIST.Linux/1.4/Fri Jan 17 09:01:58 2014//Tpkgsrc-2022Q2
+/buildlink3.mk/1.30/Fri May 22 17:44:41 2020//Tpkgsrc-2022Q2
+/distinfo/1.99/Tue Oct 26 10:24:15 2021//Tpkgsrc-2022Q2
+/options.mk/1.21/Tue Jun  1 05:05:54 2021//Tpkgsrc-2022Q2
+D/patches////

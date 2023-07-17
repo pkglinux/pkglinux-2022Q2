@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/11 13:22:37 pho Exp $
+
+BLAKE2s (prettyprinter-ansi-terminal-1.1.3.tar.gz) = 0f775bc79c78c250d69f62435ddb41e30fec3b536c645efcd15fa8fda095fbdc
+SHA512 (prettyprinter-ansi-terminal-1.1.3.tar.gz) = 985e965f78c767234b9f30e9cc1590d037e00d211385ebfa833b96f9b9aa092840e2587236d848c66ff1c58c97748f6ae9bd5cc02ea5175aa66d2654392ea1b6
+Size (prettyprinter-ansi-terminal-1.1.3.tar.gz) = 8879 bytes

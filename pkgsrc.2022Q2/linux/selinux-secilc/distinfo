@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (selinux/secilc-3.5.tar.gz) = 7c38b2f42f437a5b944285c460b9ecf1e739447b7bc98ba67b495fecf71a528e
+SHA512 (selinux/secilc-3.5.tar.gz) = eff37a981072c4b9c7c15bf4709db8797d8af5325883515f5c2fe611136b24419f6d01c797e4f131c9c08e1ba40576fcb2094b1e34325aae8351b6299bdba3dd
+Size (selinux/secilc-3.5.tar.gz) = 180803 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:28:33 nia Exp $
+
+BLAKE2s (txfontsb.r54512.tar.xz) = f8bad7ee4a85326c049fc24e5c3a6b26c2cacc400e9b4e233730dbddab0b337d
+SHA512 (txfontsb.r54512.tar.xz) = 7b73b199b6d1f109b14154ff659089b2f3c36feaad10c26fdca80f5c4ab464f8a52fdd52a6191a89538661a3a9cac8fc45748cddd09b6e32e79f23db9e8586e9
+Size (txfontsb.r54512.tar.xz) = 3476328 bytes

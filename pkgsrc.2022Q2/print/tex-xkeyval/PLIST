@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.5 2021/02/13 11:40:09 markd Exp $
+share/texmf-dist/tex/generic/xkeyval/keyval.tex
+share/texmf-dist/tex/generic/xkeyval/pst-xkey.tex
+share/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+share/texmf-dist/tex/generic/xkeyval/xkvtxhdr.tex
+share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+share/texmf-dist/tex/latex/xkeyval/pst-xkey.sty
+share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+share/texmf-dist/tex/latex/xkeyval/xkvltxp.sty
+share/texmf-dist/tex/latex/xkeyval/xkvview.sty

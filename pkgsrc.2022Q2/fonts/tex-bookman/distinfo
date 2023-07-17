@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/04/07 02:47:51 markd Exp $
+
+BLAKE2s (bookman.r61719.tar.xz) = 44c6df36150656f2557971cf5c00db175bd1957fe7980b3a7e8d8761d3af2228
+SHA512 (bookman.r61719.tar.xz) = 8bef9b6e467384a2b5adc6bd61ed2e410f026f6ee867a5a62239c55391ebd6eb5e521c82f9bd0e4de995591458ec32f98ce821493a85113beaeef6535b938ff4
+Size (bookman.r61719.tar.xz) = 278744 bytes

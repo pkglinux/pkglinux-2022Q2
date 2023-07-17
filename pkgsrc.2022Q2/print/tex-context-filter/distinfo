@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/04/09 20:37:34 markd Exp $
+
+BLAKE2s (context-filter.r62070.tar.xz) = 8dff238e1a5da92c17dee1ad16135d959cad376a561a4ff5070a7978c28ef4f6
+SHA512 (context-filter.r62070.tar.xz) = c2534b543fd5444776a054f43fafa393040af5bcb67f869d61d200a4a1d0355f1d81c64adab683d15a6be806a21dfc9ad661995bbe51da3c0bfb841ade4b077f
+Size (context-filter.r62070.tar.xz) = 6872 bytes

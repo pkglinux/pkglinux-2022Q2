@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/01/29 22:07:27 triaxx Exp $
+
+BLAKE2s (Vulkan-Headers/v1.3.204.tar.gz) = 497d4bf6a8bf97eda7bb016bfa7757405f9bec2b43fe6deb017a07adecc5ff70
+SHA512 (Vulkan-Headers/v1.3.204.tar.gz) = 46572c96baa3c5fddad900af554300ea29bcb3ffd3d789620c413147aead616882947000f52447d399aeaec94846184e00396e58f1b6a952df1cee79575c7476
+Size (Vulkan-Headers/v1.3.204.tar.gz) = 1422859 bytes

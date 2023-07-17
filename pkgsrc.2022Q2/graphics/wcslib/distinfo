@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/02 00:07:44 wen Exp $
+
+BLAKE2s (wcslib-7.11.tar.bz2) = 05a88d84e11411d6bd90f42d1b7fe40a20e9094f09c7441c1122bf636d75f122
+SHA512 (wcslib-7.11.tar.bz2) = 28aa67edad31a8fe27bc8b04e060a17ee75d8fa5e9ec82ccbdb72136558e03d1196151214c9ce4026df88cb807ce2645f5df80bbc479ec91cfa749bf8b9477ec
+Size (wcslib-7.11.tar.bz2) = 2946962 bytes

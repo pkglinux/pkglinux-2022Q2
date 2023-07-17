@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.15 2021/10/26 10:19:59 nia Exp $
+
+BLAKE2s (tavrasm-1.22/tavrasm.tar.gz) = d2031e67e16d5a7384357fa431eac1fcf2a63b4b649e21ed1a5920c6577f8d3b
+SHA512 (tavrasm-1.22/tavrasm.tar.gz) = 0f33607e2ffbe8c56268b15dc62fe6c2b565bf898c68e198846f11fb30da4da3f398d07ef7ac16050dbc92ffcb04612459027a2c27cf48fc7d74392c5f6a38dc
+Size (tavrasm-1.22/tavrasm.tar.gz) = 65685 bytes
+SHA1 (patch-aa) = 088284370f516322227beef2c1142e86923196a9
+SHA1 (patch-ab) = 209bbf9f2ce809d0d7460355258ab5b6d955d9a6

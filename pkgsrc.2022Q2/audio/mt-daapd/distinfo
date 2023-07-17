@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 09:59:17 nia Exp $
+
+BLAKE2s (mt-daapd-0.2.4.2.tar.gz) = d4b756bb6f7dc87ab81a38aee2b23a13b62b05b8cf6d141205350edb0ffddb69
+SHA512 (mt-daapd-0.2.4.2.tar.gz) = 1a944f31cc63355d33c7fd821d4509b8b69805ae29aa23f1307bf7602f6a62beba1f5ab5f4005387177f17c5fdf8db91b338f010b4be4ab0cd783dc72c6df60f
+Size (mt-daapd-0.2.4.2.tar.gz) = 436513 bytes
+SHA1 (patch-aa) = e177bb33c19badb1da8638af61a3c3bfddf2a2ad
+SHA1 (patch-ab) = 33eb0e43fbef31ede52660af24350ca0ac52e434
+SHA1 (patch-ac) = 363a0a2ec43b7fcc8fbff75ce13885cf9969e0a4
+SHA1 (patch-ad) = ec48904eaf6cb77448f04cfe5022411b8bda9ae1

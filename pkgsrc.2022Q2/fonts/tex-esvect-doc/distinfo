@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:54 nia Exp $
+
+BLAKE2s (tex-esvect-32098/esvect.doc.tar.xz) = 61f7b851872722644200739dd8aed990ed1e78747491060478304d49bdd9055f
+SHA512 (tex-esvect-32098/esvect.doc.tar.xz) = a0c81843942d11c55a987785189302cd284ae076edd58dbc32aae19abfd242230f0bf09b0b825f2376f7328113b97ac68f8dc821f8fd3ec380132daeb38beab2
+Size (tex-esvect-32098/esvect.doc.tar.xz) = 44304 bytes

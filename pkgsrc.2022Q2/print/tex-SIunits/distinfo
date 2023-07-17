@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/14 04:39:09 markd Exp $
+
+BLAKE2s (siunits.r59702.tar.xz) = 24f323acb1b13a86e0b1ed004d2b19885fed2a53484e6e37798dfe5ebc430744
+SHA512 (siunits.r59702.tar.xz) = 01b2b83edba4482a6d0434efd4590b3b0fbbb596da6075632a215d60a16cc48d66f0f47d3ca61a0e73290e933952cac15fa2048f6ac12112dc603956f123f5b2
+Size (siunits.r59702.tar.xz) = 6040 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/11 14:16:37 jaapb Exp $
+
+BLAKE2s (ocaml-cohttp-5.0.0.tar.gz) = f501a4a0ddd0185383f7d18d59f465a59e31991b85fd3291fc231f2d062079b1
+SHA512 (ocaml-cohttp-5.0.0.tar.gz) = 32f9c4cd3e3eda65a74ef01cfd1336f6a7fac30d8dde6b97b6452b887002b26ed54cb92e8abefb236486447742857f9eb712388fbd1ffd69d06d0a7698049458
+Size (ocaml-cohttp-5.0.0.tar.gz) = 134016 bytes

@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- meson.build.orig	2022-08-17 09:19:23.000000000 +0000
++++ meson.build
+@@ -19,7 +19,7 @@ endif
+ config_h = configuration_data()
+ config_h.set_quoted('APP_VERSION', meson.project_version())
+ config_h.set_quoted('GETTEXT_PACKAGE', 'extension-manager')
+-config_h.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
++config_h.set_quoted('LOCALEDIR', '/pkg/share/locale')
+ config_h.set_quoted('APP_ID', app_id)
+ config_h.set10('IS_DEVEL', get_option('development'))
+ configure_file(

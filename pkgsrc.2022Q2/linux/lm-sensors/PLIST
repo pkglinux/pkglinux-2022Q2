@@ -1,0 +1,26 @@
+@comment $NetBSD$
+bin/sensors
+bin/sensors-conf-convert
+etc/sensors3.conf
+include/sensors/error.h
+include/sensors/sensors.h
+lib/libsensors.a
+lib/libsensors.so
+lib/libsensors.so.5
+lib/libsensors.so.5.0.0
+man/man1/sensors.1
+man/man3/libsensors.3
+man/man5/sensors.conf.5
+man/man5/sensors3.conf.5
+man/man8/fancontrol.8
+man/man8/isadump.8
+man/man8/isaset.8
+man/man8/pwmconfig.8
+man/man8/sensors-conf-convert.8
+man/man8/sensors-detect.8
+sbin/fancontrol
+sbin/isadump
+sbin/isaset
+sbin/pwmconfig
+sbin/sensors-detect
+@pkgdir etc/sensors.d

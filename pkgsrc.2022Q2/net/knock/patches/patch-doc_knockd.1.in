@@ -1,0 +1,12 @@
+$NetBSD: patch-doc_knockd.1.in,v 1.2 2021/07/17 16:01:34 adam Exp $
+
+Change section to 8.
+
+--- doc/knockd.1.in.orig	2021-07-17 15:57:27.000000000 +0000
++++ doc/knockd.1.in
+@@ -1,4 +1,4 @@
+-.TH knockd 1 "April 22, 2021" "knockd #VERSION#" ""
++.TH knockd 8 "April 22, 2021" "knockd #VERSION#" ""
+ .SH NAME
+ knockd \- port-knock server
+ .SH SYNOPSIS

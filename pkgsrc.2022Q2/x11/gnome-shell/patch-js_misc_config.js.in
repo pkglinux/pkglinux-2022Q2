@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- js/misc/config.js.in.orig	2021-06-10 11:33:01.567930500 +0000
++++ js/misc/config.js.in
+@@ -3,7 +3,7 @@
+ /* The name of this package (not localized) */
+ var PACKAGE_NAME = '@PACKAGE_NAME@';
+ /* The version of this package */
+-var PACKAGE_VERSION = '@PACKAGE_VERSION@';
++var PACKAGE_VERSION = '3.38.1';
+ /* 1 if gnome-bluetooth is available, 0 otherwise */
+ var HAVE_BLUETOOTH = @HAVE_BLUETOOTH@;
+ /* 1 if networkmanager is available, 0 otherwise */

@@ -1,0 +1,15 @@
+@comment $NetBSD$
+bin/libevdev-tweak-device
+bin/mouse-dpi-tool
+bin/touchpad-edge-detector
+include/libevdev-1.0/libevdev/libevdev-uinput.h
+include/libevdev-1.0/libevdev/libevdev.h
+lib/libevdev.la
+lib/pkgconfig/libevdev.pc
+man/man3/libevdev.3
+native/usr/lib/libevdev.a
+native/usr/lib/libevdev.la
+native/usr/lib/libevdev.so
+native/usr/lib/libevdev.so.2
+native/usr/lib/libevdev.so.2.3.0
+native/usr/lib/pkgconfig/libevdev.pc

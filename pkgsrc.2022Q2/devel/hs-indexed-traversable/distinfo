@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/11 09:21:05 pho Exp $
+
+BLAKE2s (indexed-traversable-0.1.2.tar.gz) = 86ac12609d90b43a0ff48f0954925b3ce1c2292cee8858f02e75db8b4f1ee401
+SHA512 (indexed-traversable-0.1.2.tar.gz) = 38d2dfc0e45e3eafa1e8827c7f27a64e296902f0193cb61939af74ad6845be067024ac32278a6b5bca1976a2d3ada5820a7a6879d7bf9000730450714a5df9c4
+Size (indexed-traversable-0.1.2.tar.gz) = 8685 bytes

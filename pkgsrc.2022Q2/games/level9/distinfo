@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 10:44:11 nia Exp $
+
+BLAKE2s (Level9_5.1_Source.zip) = d3a3c8cd85d906ba435db6c524d2a5eb3e6c7e4d13e62dc222f08f58ac4bad77
+SHA512 (Level9_5.1_Source.zip) = acc8bef8f229931e12dc552f8b4f6d8483abd95c3f6275966fb6b8423bfab1cf920edb080b11e0bc9aca7efd383c078281f6c5757d1d0327d6d0fd984f436097
+Size (Level9_5.1_Source.zip) = 323660 bytes
+SHA1 (patch-Makefile) = aaf6966e4b62f92003f8ce2e162d9a6a6bbccab0
+SHA1 (patch-aa) = f34eff28db4b1dbb34b8618799dbe17beaf0fc60

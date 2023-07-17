@@ -1,0 +1,10 @@
+$NetBSD$
+
+SHA1 (chkconfig/1.15.tar.gz) = 9d2ed23f2680764dd16eb0c8cea5929a6728b306
+RMD160 (chkconfig/1.15.tar.gz) = 16907e6b377b7077f256f2254a0a2db00b402fcb
+SHA512 (chkconfig/1.15.tar.gz) = 0514643df29a9356cb962a92cab9c80dd81617e30da72a80b27882c566d911147e60c69014c8f167a937afbb0172cd4f37d0eca3bed21ccedef886866dbc2ecd
+Size (chkconfig/1.15.tar.gz) = 182781 bytes
+SHA1 (patch-Makefile) = 2a8c03b12835ed5a1594c8e06da7c693a72d5218
+SHA1 (patch-alternatives.c) = d91f11e5a770e333e9fd3b9e1691bee89ff8dcfd
+SHA1 (patch-chkconfig.c) = 199093245542ae090ae99bca14b0739b8394a4f3
+SHA1 (patch-leveldb.c) = f39ddaebfbb7ea2ff5b8d5cd85e11747a70c9589

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.16 2022/04/08 23:07:05 markd Exp $
+
+BLAKE2s (glossaries.r60921.tar.xz) = 5e61aae0131c10b33f02b11a0777894e80c6e4c741b357477ddc8bcb7b06a9ad
+SHA512 (glossaries.r60921.tar.xz) = 9e9fd1abd6728f6b42b158542abcd5d35b5205c6452e1900cbc06b664ea2adca2da9dbf375c049227ff955bb7152514b8f358c7a527d5b47edfd80ee1005903a
+Size (glossaries.r60921.tar.xz) = 80756 bytes

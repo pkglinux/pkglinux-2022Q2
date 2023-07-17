@@ -1,0 +1,86 @@
+$NetBSD: patch-ab,v 1.12 2021/03/24 08:38:03 adam Exp $
+
+Do not build universal binaries on Darwin.
+Delete the -Werror flag in order to recognise the type of sa_len:
+
+    In function ‘main’:
+    warning: variable ‘sa_len_ptr’ set but not used [-Wunused-but-set-variable] uint8_t *sa_len_ptr;
+
+Add support for DragonFly BSD
+
+--- configure.orig	2017-02-03 14:17:15.000000000 +0000
++++ configure
+@@ -12439,12 +12439,8 @@ case $host in
+ 	    HW=`uname -m`
+ 	    case $HW in
+ 		ppc*)
+-		    CFLAGS="$CFLAGS${CFLAGS:+ }-arch ppc -arch ppc64"
+-		    LDFLAGS="$LDLAGS${LDLAGS:+ }-arch ppc -arch ppc64"
+ 		    ;;
+ 		*)
+-		    CFLAGS="$CFLAGS${CFLAGS:+ }-arch i386 -arch x86_64"
+-		    LDFLAGS="$LDLAGS${LDLAGS:+ }-arch i386 -arch x86_64"
+ 		    ;;
+ 	    esac
+ 	fi
+@@ -13008,8 +13004,6 @@ if test x"${debug_enabled}" = xt; then
+ else
+     #autoconf_compflags is set to "-g -O2" with GCC
+     #override CFLAGS when running configure to avoid this
+-    CPPFLAGS="$CPPFLAGS${CPPFLAGS:+ }-DDEBUG=0"
+-    CFLAGS="$CFLAGS${CFLAGS:+ }$autoconf_compflags"
+ 
+     case $COMPTYPE in
+ 	gcc)
+@@ -15631,7 +15625,7 @@ if test x"${have_sa_len}" != x; then
+    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for sa_len type" >&5
+ $as_echo_n "checking for sa_len type... " >&6; }
+    oCFLAGS="$CFLAGS"
+-   CFLAGS="$CFLAGS${CFLAGS:+ }$FAILWARN"
++   CFLAGS="$CFLAGS${CFLAGS:+ }"
+    unset sa_len_type_found
+    for type in uint8_t "unsigned char"; do
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -24944,8 +24938,13 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_
+ #include <netdb.h>
+ #include <unistd.h>
+ 
++#if defined(__DragonFly__)
+ struct hostent *
+ gethostbyaddr( const char *, int, int
++#else
++struct hostent *
++gethostbyaddr( const char *, socklen_t, int
++#endif
+ );
+ int
+ main ()
+@@ -24965,9 +24964,18 @@ cat >>confdefs.h <<_ACEOF
+ #define HAVE_PROT_GETHOSTBYADDR_1 const char *
+ _ACEOF
+ 
+-cat >>confdefs.h <<_ACEOF
++case "$host_os" in
++dragonfly*)
++	cat >>confdefs.h <<_ACEOF
+ #define HAVE_PROT_GETHOSTBYADDR_2 int
+ _ACEOF
++;;
++*)
++	cat >>confdefs.h <<_ACEOF
++#define HAVE_PROT_GETHOSTBYADDR_2 socklen_t
++_ACEOF
++;;
++esac
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define HAVE_PROT_GETHOSTBYADDR_3 int
+@@ -67823,7 +67831,7 @@ problems.
+ fi
+ 
+ VINFO=README.latest
+-test -s "$VINFO" && cat "$VINFO"
++test -s "$VINFO" && cat "$VINFO" || true
+ 
+ #XXX depcomp regen hack
+ touch _reconf

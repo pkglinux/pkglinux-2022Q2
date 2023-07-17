@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- messagecomposer/CMakeLists.txt.orig	2015-06-25 17:47:38.000000000 +0000
++++ messagecomposer/CMakeLists.txt
+@@ -122,7 +122,7 @@ kde4_add_kcfg_files(messagecomposer_src
+ )
+ 
+ kde4_add_library( messagecomposer ${LIBRARY_TYPE} ${messagecomposer_src} )
+-target_link_libraries( messagecomposer ${KDE4_KIO_LIBS} ${KDEPIMLIBS_KMIME_LIBS} ${KDEPIMLIBS_AKONADI_KMIME_LIBS} ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_MAILTRANSPORT_LIBS} ${KDEPIMLIBS_KPIMTEXTEDIT_LIBS} ${KDEPIMLIBS_KPIMIDENTITIES_LIBS}
++target_link_libraries( messagecomposer ${GPGMEPP_PTHREAD_LIBRARIES} ${KDE4_KIO_LIBS} ${KDEPIMLIBS_KMIME_LIBS} ${KDEPIMLIBS_AKONADI_KMIME_LIBS} ${KDEPIMLIBS_AKONADI_LIBS} ${KDEPIMLIBS_MAILTRANSPORT_LIBS} ${KDEPIMLIBS_KPIMTEXTEDIT_LIBS} ${KDEPIMLIBS_KPIMIDENTITIES_LIBS}
+  messagecore messageviewer templateparser kleo kdepim ${QGPGME_LIBRARIES} ${Grantlee_GUI_LIBRARIES} sendlater pimcommon)
+ 
+ set_target_properties( messagecomposer PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION} )

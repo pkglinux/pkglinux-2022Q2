@@ -1,0 +1,16 @@
+$NetBSD: patch-configure,v 1.4 2022/04/17 10:47:39 markd Exp $
+
+Check more aggressively for XInput 2.1 to fix native X netbsd-6 build.
+
+--- configure.orig	2022-02-18 23:04:03.000000000 +0000
++++ configure
+@@ -16804,6 +16804,9 @@ LDFLAGS="$X_LIBS $LDFLAGS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <X11/extensions/XInput2.h>
++#ifndef XIScrollClass
++ failhere
++#endif
+ int
+ main (void)
+ {

@@ -1,0 +1,13 @@
+/DESCR/1.1/Sun Feb  8 08:41:25 2015//Tpkgsrc-2022Q2
+/Makefile/1.110/Wed Dec  8 16:05:22 2021//Tpkgsrc-2022Q2
+/PLIST/1.14/Mon Jun 28 15:59:49 2021//Tpkgsrc-2022Q2
+/PLIST.Linux/1.1/Mon Nov 12 10:42:07 2018//Tpkgsrc-2022Q2
+/PLIST.SunOS/1.1/Fri Jul  3 20:40:59 2015//Tpkgsrc-2022Q2
+/PLIST.debug/1.2/Fri Jul  3 20:40:59 2015//Tpkgsrc-2022Q2
+/bootstrap.mk/1.15/Sun Sep 22 15:16:26 2019//Tpkgsrc-2022Q2
+/buildlink3.mk/1.4/Sun Jan  7 13:04:20 2018//Tpkgsrc-2022Q2
+/builtin.mk/1.5/Thu Feb 10 18:55:10 2022//Tpkgsrc-2022Q2
+/distinfo/1.88/Tue May 24 21:32:43 2022//Tpkgsrc-2022Q2
+/hacks.mk/1.10/Sat May  9 19:14:16 2020//Tpkgsrc-2022Q2
+/options.mk/1.7/Thu May 26 22:03:39 2022//Tpkgsrc-2022Q2
+D/patches////

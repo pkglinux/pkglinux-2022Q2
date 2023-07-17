@@ -1,0 +1,5 @@
+@comment $NetBSD: PLIST,v 1.4 2019/08/04 12:08:34 markd Exp $
+share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-cop.tex
+share/texmf-dist/tex/generic/hyph-utf8/patterns/tex-8bit/copthyph.tex
+share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-cop.tex
+share/texmf-dist/tex/generic/hyph-utf8/patterns/txt/hyph-cop.pat.txt

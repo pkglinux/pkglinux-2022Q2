@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:21:32 nia Exp $
+
+BLAKE2s (R/spelling_2.2.tar.gz) = 8844d51c34a59fdd4a4e74d479f7e6225968af6e6648c5074158c51591052f76
+SHA512 (R/spelling_2.2.tar.gz) = 53449c14d0146e9ccaefad518eb4aee7cedc12dc7744b405eb7c1f7b0dca0edcefcdfa7ce240be9a5531e95a24df92c685417f616ccdb30060d11794ca948604
+Size (R/spelling_2.2.tar.gz) = 10764 bytes

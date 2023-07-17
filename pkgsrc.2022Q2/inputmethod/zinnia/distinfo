@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:49:47 nia Exp $
+
+BLAKE2s (zinnia-0.06.tar.gz) = 8b6c7159846ac976a0dbb03d4d790ca79ac62e0450563c6df2ef8487904417b1
+SHA512 (zinnia-0.06.tar.gz) = b9a44dc3664302269c4d8481225964a3188c1921f5af7f136fdccdc452917f6ff934884e266436a0f1e0a32af19d3bea5f5e4416e694a653983039a513277b53
+Size (zinnia-0.06.tar.gz) = 457415 bytes
+SHA1 (patch-aa) = 4a0f3276f05c72e886bdae875bd86ad630b384d1
+SHA1 (patch-trainer.cpp) = d70f4a49d45794d87e4d1d28c99adfd08d0a538e

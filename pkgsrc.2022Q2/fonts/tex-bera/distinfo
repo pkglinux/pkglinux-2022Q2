@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:34 nia Exp $
+
+BLAKE2s (tex-bera-20031/bera.tar.xz) = 6ff41da08545c1b8d5bca6980147a9ed339c512918918f8ee2893f72d25072d6
+SHA512 (tex-bera-20031/bera.tar.xz) = aca0d76dbcdbb1546ddc67badbdca09b15107675e4b3ea9b0b5c5be531f92ad0d67668a5998ea1fc3a810d485487bb782cdbd9d967a2a265d0cd211ea7760b32
+Size (tex-bera-20031/bera.tar.xz) = 312416 bytes

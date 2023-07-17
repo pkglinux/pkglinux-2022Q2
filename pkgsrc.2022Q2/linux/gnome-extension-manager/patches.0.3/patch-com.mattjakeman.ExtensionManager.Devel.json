@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- com.mattjakeman.ExtensionManager.Devel.json.orig	2022-08-17 09:19:23.000000000 +0000
++++ com.mattjakeman.ExtensionManager.Devel.json
+@@ -9,7 +9,7 @@
+         "--share=ipc",
+         "--socket=fallback-x11",
+         "--device=dri",
+-        "--socket=wayland",
++        "--socket=x11",
+         "--talk-name=org.gnome.Shell.Extensions",
+         "--talk-name=org.gnome.SessionManager"
+     ],

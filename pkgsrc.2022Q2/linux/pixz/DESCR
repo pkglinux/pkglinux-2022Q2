@@ -1,0 +1,22 @@
+
+pixz
+====
+
+[![Build Status](https://travis-ci.org/vasi/pixz.svg?branch=master)](https://travis-ci.org/vasi/pixz)
+
+Pixz (pronounced *pixie*) is a parallel, indexing version of `xz`.
+
+Repository: https://github.com/vasi/pixz
+
+Downloads: https://github.com/vasi/pixz/releases
+
+pixz vs xz
+----------
+
+The existing [XZ Utils](http://tukaani.org/xz/) provide great compression in the `.xz` file format,
+but they produce just one big block of compressed data. Pixz instead produces a collection of
+smaller blocks which makes random access to the original data possible. This is especially useful
+for large tarballs.
+
+### Differences to xz
+...

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/05 11:45:46 jaapb Exp $
+
+BLAKE2s (ocaml-hex-1.5.0.tar.gz) = 446f8a124647859534540eb2199b67ac56293aa57fa1e1d6c4a6bc7e879cbffd
+SHA512 (ocaml-hex-1.5.0.tar.gz) = ea0e0e87023de0d53b68fa67d2674cf02d6c8e373188fc8515a579314fc1914ae1fd9c4eeae9ed8e62818385000a97e3951a44234c62fc06bb6fe5f745b8bd1d
+Size (ocaml-hex-1.5.0.tar.gz) = 6913 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/14 04:38:23 markd Exp $
+
+BLAKE2s (sistyle.r59682.tar.xz) = 64195c029e3d5b584dbf35b4835feb9d4515dc7ecfdda3081a80c5dc18c4327d
+SHA512 (sistyle.r59682.tar.xz) = 0423402d3fea5dbbb60abf6c763bd037982479557b84b6ff38f795168234cd3dc6eb0708fb7b5e76abb1f68560a884e7d8b4e3a256d78b23aa81dba9b6e70d4d
+Size (sistyle.r59682.tar.xz) = 3544 bytes

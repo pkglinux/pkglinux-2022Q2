@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:25:16 nia Exp $
+
+BLAKE2s (mutter-42.4.tar.xz) = 44dc7526c61b5fe6d7b082fc97770fcff7a48625a4e2a556b3452c4150bab417
+SHA512 (mutter-42.4.tar.xz) = fad80c2c3e6674c00e35783c69886ed728c732743ec967756329c5fd3dd7c1b5695aa0dca7e5d8a3bcb72d03ec06bbdc45c14cc775d40db2852b2299c8b0df03
+Size (mutter-42.4.tar.xz) = 2747580 bytes

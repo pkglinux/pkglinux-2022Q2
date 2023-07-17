@@ -1,0 +1,27 @@
+$NetBSD: distinfo,v 1.21 2022/01/06 11:53:26 hauke Exp $
+
+BLAKE2s (xymon-4.3.30.tar.gz) = 03a385a0e32188d4ca6fdbaa55bbb92d053ec706ee70ca0bcf483c3f5611a85f
+SHA512 (xymon-4.3.30.tar.gz) = f3f16ff55293d7d76cb0355151a82545a2b1ad708b59c031640c240379807228dca4ffa9c48a4e20ab75e270bda18b7306ea165b65eb18c9c6471b395fda7b62
+Size (xymon-4.3.30.tar.gz) = 3549653 bytes
+SHA1 (patch-aa) = c44f791ef6005c809127175cb563bd8f0ac74642
+SHA1 (patch-ab) = db0c5808cfad75aaf37217509399597191236180
+SHA1 (patch-ac) = d1694c2b67e6f2ae616b2a46de1a01d3199b45f5
+SHA1 (patch-ad) = 7519eaeecab9f5d4b6956e0fd426548ec7990a0b
+SHA1 (patch-ae) = 4b5413ee14d035fb1b588207b86ebaf0ac122951
+SHA1 (patch-af) = 5e71a56cf827f9b30147dd577c295f10c150cd27
+SHA1 (patch-build_Makefile.AIX) = e3a06992b075507a02f77a6b04ee4425cc2f8dd1
+SHA1 (patch-build_Makefile.Darwin) = 3b86292fba80a05c03e8ace424cddfb726a974fc
+SHA1 (patch-build_Makefile.FreeBSD) = 18010c36f754f28d50a921eac59382393f90cf4d
+SHA1 (patch-build_Makefile.HP-UX) = bdd713b83f3670096bb10def6c59036d0a4aa377
+SHA1 (patch-build_Makefile.IRIX) = b0ce34295d199ffd1e9008569667abbe436a2355
+SHA1 (patch-build_Makefile.Linux) = bddfea6c8400fdd7d8a83a6958f1e4139ef988b6
+SHA1 (patch-build_Makefile.OSF1) = 1a7afce4beeef249b2435c2ef14f45b2c2dbf8a2
+SHA1 (patch-build_Makefile.OSX) = a72b748600b043f458452ab37175c38087375559
+SHA1 (patch-build_Makefile.OpenBSD) = cf40c7839ba6290d349328e2e01a20bdaf274fc6
+SHA1 (patch-build_Makefile.SunOS) = 71d134a30825a2d36fbb17731e722c89c79da807
+SHA1 (patch-build_Makefile.generic) = e96d5ee29630c9133caebfa752880be90726607c
+SHA1 (patch-client_logfetch.c) = f99fa015fe597bfb37f1d288c4e5e3b99b65397d
+SHA1 (patch-client_xymonclient-freebsd.sh) = 6993a6251b1d3dec2817f30ce2b05ffd8cc3485b
+SHA1 (patch-client_xymonclient-netbsd.sh) = 739a201806144ef0e34c1f668ad3a4d9e2b9f9fb
+SHA1 (patch-common_Makefile) = 32b7da06cd9d22f98ee0f83bb36ed6441c066707
+SHA1 (patch-configure) = 305a74a2383dcd37ea93456272d4254483023aa5

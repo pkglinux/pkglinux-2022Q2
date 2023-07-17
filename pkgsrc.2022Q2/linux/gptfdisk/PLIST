@@ -1,0 +1,9 @@
+@comment $NetBSD$
+native/sbin/cgdisk
+native/sbin/fixparts
+native/sbin/gdisk
+native/sbin/sgdisk
+sbin/cgdisk
+sbin/fixparts
+sbin/gdisk
+sbin/sgdisk

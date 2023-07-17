@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:44 nia Exp $
+
+BLAKE2s (tex-concmath-fonts-17218/concmath-fonts.tar.xz) = fe5686016fad3e4971d896d0ef182f9d9ba6bfbd10d57001b38a291a1141c002
+SHA512 (tex-concmath-fonts-17218/concmath-fonts.tar.xz) = 494e4ae1cac55a6618b811e420520aad4d7e5e3840e8bd092952bb9b750de9ee5d8917c570b992da989b83b8926b15b835c40b6f10b133d1d0ee38281c08790f
+Size (tex-concmath-fonts-17218/concmath-fonts.tar.xz) = 15160 bytes

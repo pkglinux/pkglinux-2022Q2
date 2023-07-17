@@ -1,0 +1,13 @@
+$NetBSD: patch-aa,v 1.10 2022/02/17 15:42:00 wiz Exp $
+
+--- locate/Makefile.in.orig	2021-01-09 16:35:33.000000000 +0000
++++ locate/Makefile.in
+@@ -2021,7 +2021,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = std-options
+ AM_CFLAGS = $(WARN_CFLAGS)
+-LOCATE_DB = $(localstatedir)/locatedb
++LOCATE_DB = /var/db/locate.database
+ AM_INSTALLCHECK_STD_OPTIONS_EXEMPT = frcode$(EXEEXT)
+ bin_SCRIPTS = updatedb
+ man_MANS = locate.1 updatedb.1 locatedb.5

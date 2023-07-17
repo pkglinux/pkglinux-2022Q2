@@ -1,0 +1,30 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 11:20:28 nia Exp $
+
+BLAKE2s (xfsprogs-2.7.3.src.tar.gz) = 3e4e9d56bce73cf76fb71fbef3b8764f4dfc85bf965edbb4d6c1cc0f90f0688a
+SHA512 (xfsprogs-2.7.3.src.tar.gz) = afbe6e5d68086f0e70c67277ba12b39a3b1358af1f41466fa420637a24d58dfa0ab2be25eabfd1f080b1f66f9f1ce9b84d196f499e9588fd9f6f029ad6ec6462
+Size (xfsprogs-2.7.3.src.tar.gz) = 895400 bytes
+SHA1 (patch-aa) = c2d7667d5f4d7cf027ef0c41b774852cc28638e5
+SHA1 (patch-ab) = d69fdc650846cccad73f1c013d082010e24b98f8
+SHA1 (patch-ac) = 8ea43fb0612f37fde1bcf987fd3862e6fd33ac9c
+SHA1 (patch-ad) = 3ecf2ef5eb280fc36d68ed6b8ed348faae32d9ff
+SHA1 (patch-ae) = 5224f9a7aaa31e25e15ad1706da076fdda21b0c0
+SHA1 (patch-af) = 92acf0b8ffe373570750f7a3dcb86c219a4f880d
+SHA1 (patch-ag) = 01b6470feea8536756ca0f48ccdfc106e6a17402
+SHA1 (patch-ah) = 2a28a644eac5284443fc843485cf3ded08a9ed7b
+SHA1 (patch-ai) = 42e07792f0c4bb816a772c789cbca387cefbb528
+SHA1 (patch-aj) = 2d7e3e05bff6951a22b2df13193db758a509a732
+SHA1 (patch-ak) = d6f9027a339fe3607003b4fe34062936868f47da
+SHA1 (patch-al) = 832d5d90b9314f5aea312908df16ff3c74449d00
+SHA1 (patch-am) = 3d705bee711c5636c9ea73142560d1ff8530a48d
+SHA1 (patch-an) = a4a2b5fcbbcbcc4b49b75d7d3114da8ebd1f0377
+SHA1 (patch-ao) = 89b7c799440ad7c189c4957d5c6179973ca4def8
+SHA1 (patch-libdisk_dm.c) = ec28ca0ec1b9a0e06c5a4cdc16bf1e40644c9823
+SHA1 (patch-libdisk_lvm.c) = 8c3470dd7dd69901840e593cd39b5ded76062f54
+SHA1 (patch-libdisk_md.c) = 1326b9047525f2313cf81691fed75097e18bf1ec
+SHA1 (patch-libdisk_xvm.c) = 8c5c920f79b9221037075b30822938081517e9a1
+SHA1 (patch-libxfs_linux.c) = 9b4f49b93a95fc54aa61f116ed3f0106f2341a28
+SHA1 (patch-libxfs_xfs__bmap__btree.c) = 030a74c9aedc75367a3f6cf243cb5f7ae1c98919
+SHA1 (patch-libxfs_xfs__ialloc.c) = 284a1300936b0068f65e7a2dfc5ab49d251c6ee5
+SHA1 (patch-libxfs_xfs_bmap.c) = 5c45042fad62bc05cb768bd5c9f908ee38f9a6ca
+SHA1 (patch-quota_quot.c) = 7baa2e114afe6a355ccd66bf0f2440040a23b0aa
+SHA1 (patch-rtcp_xfs_rtcp.c) = a793b6a4055c7bbc365d3efd14176f8f36005546

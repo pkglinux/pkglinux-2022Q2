@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/06/03 09:30:01 wiz Exp $
+
+BLAKE2s (duff-0.5.tar.gz) = 793b5ecc6cefac56a20bd04542e20bc4e2f412f592a8738d1d3d1d342c84b00e
+SHA512 (duff-0.5.tar.gz) = f9412603fe6503f79f2336cb27ecc47aaad633ee75a91609a70ffe6f4ef3a542a36453e2293c852a0783f891cb6d07f6a43549a56bdd01b38fb7492b5f646e4f
+Size (duff-0.5.tar.gz) = 12965 bytes

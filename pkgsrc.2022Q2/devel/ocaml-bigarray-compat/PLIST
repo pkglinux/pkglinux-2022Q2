@@ -1,0 +1,15 @@
+@comment $NetBSD: PLIST,v 1.2 2022/05/02 13:23:44 jaapb Exp $
+${OCAML_SITELIB}/bigarray-compat/META
+${PLIST.ocaml-opt}${OCAML_SITELIB}/bigarray-compat/bigarray_compat.a
+${OCAML_SITELIB}/bigarray-compat/bigarray_compat.cma
+${OCAML_SITELIB}/bigarray-compat/bigarray_compat.cmi
+${OCAML_SITELIB}/bigarray-compat/bigarray_compat.cmt
+${PLIST.ocaml-opt}${OCAML_SITELIB}/bigarray-compat/bigarray_compat.cmx
+${PLIST.ocaml-opt}${OCAML_SITELIB}/bigarray-compat/bigarray_compat.cmxa
+${PLIST.ocaml-opt}${OCAML_SITELIB}/bigarray-compat/bigarray_compat.cmxs
+${OCAML_SITELIB}/bigarray-compat/bigarray_compat.ml
+${OCAML_SITELIB}/bigarray-compat/dune-package
+${OCAML_SITELIB}/bigarray-compat/opam
+share/doc/bigarray-compat/CHANGES.md
+share/doc/bigarray-compat/LICENSE.md
+share/doc/bigarray-compat/README.md

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:55:26 nia Exp $
+
+BLAKE2s (R/emdbook_1.3.11.tar.gz) = 9c962877b4854569687248f3337d035d022817e869c88f7328b79fd2b8a9c85c
+SHA512 (R/emdbook_1.3.11.tar.gz) = cc1cec67ead6096d56982ae43eac353792d629e5cf3184477af2ff20195260e38a635db94113db3af293e37ec95a88988bb5b15ef9bfc4cfdd71ce4e441f7c86
+Size (R/emdbook_1.3.11.tar.gz) = 91390 bytes

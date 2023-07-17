@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/15 03:54:51 markd Exp $
+
+BLAKE2s (lualatex-math.r61464.tar.xz) = 9f714b215affabd376320c2bb89e992403c92505217dca812d5488d3091833a5
+SHA512 (lualatex-math.r61464.tar.xz) = 16c945e72165acd9f4bcf20f81e6c5df9ec22f19d45cbb8f076763d2d1a1a2e230938dabbadfcc065e3a060487885ac2edb223aae22d12f6981f5fca5c0f951f
+Size (lualatex-math.r61464.tar.xz) = 3332 bytes

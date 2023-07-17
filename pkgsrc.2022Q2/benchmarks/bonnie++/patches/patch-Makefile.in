@@ -1,0 +1,63 @@
+$NetBSD: patch-Makefile.in,v 1.1 2021/11/20 05:57:29 rin Exp $
+
+- DESTDIR support
+- CFLAGS and LDFLAGS support for large file and relro
+
+--- Makefile.in.orig	2008-12-31 06:04:25.000000000 +0900
++++ Makefile.in	2021-11-17 19:42:27.075733292 +0900
+@@ -9,10 +9,11 @@
+ eprefix=@exec_prefix@
+ #MORE_WARNINGS=-Weffc++
+ WFLAGS=-Wall -W -Wshadow -Wpointer-arith -Wwrite-strings -pedantic -ffor-scope -Wcast-align -Wsign-compare -Wpointer-arith -Wwrite-strings -Wformat-security -Wswitch-enum -Winit-self $(MORE_WARNINGS)
+-CFLAGS=-O2 @debug@ -DNDEBUG $(WFLAGS) $(MORECFLAGS)
+-CXX=@CXX@ $(CFLAGS)
+-LINK=@CXX@
+-THREAD_LFLAGS=@thread_ldflags@
++CFLAGS+=-O2 @debug@ -DNDEBUG $(WFLAGS) $(MORECFLAGS)
++LDFLAGS=@LDFLAGS@
++CXX=@CXX@ $(CFLAGS) $(LDFLAGS)
++LINK=@CXX@ $(LDFLAGS)
++THREAD_LDFLAGS=@thread_ldflags@
+ 
+ INSTALL=@INSTALL@
+ INSTALL_PROGRAM=@INSTALL_PROGRAM@
+@@ -34,13 +35,13 @@
+ GETCHOBJS=$(GETCHSRC:.cpp=.o)
+ 
+ bonnie++: $(BONOBJS)
+-	$(LINK) -o bonnie++ $(BONOBJS) $(THREAD_LFLAGS)
++	$(LINK) -o bonnie++ $(BONOBJS) $(THREAD_LDFLAGS)
+ 
+ zcav: $(ZCAVOBJS)
+-	$(LINK) -o zcav $(ZCAVOBJS) $(THREAD_LFLAGS)
++	$(LINK) -o zcav $(ZCAVOBJS) $(THREAD_LDFLAGS)
+ 
+ getc_putc: $(GETCOBJS) getc_putc_helper
+-	$(LINK) -o getc_putc $(GETCOBJS) $(THREAD_LFLAGS)
++	$(LINK) -o getc_putc $(GETCOBJS) $(THREAD_LDFLAGS)
+ 
+ getc_putc_helper: $(GETCHOBJS)
+ 	$(CXX) -o getc_putc_helper $(GETCHOBJS)
+@@ -52,15 +53,15 @@
+ 	$(LINK) generate_randfile.o -o generate_randfile
+ 
+ install-bin: $(EXE) $(EXES)
+-	mkdir -p $(eprefix)/bin $(eprefix)/sbin
+-	@INSTALL_PROGRAM@ @stripping@ $(EXES) $(eprefix)/sbin
+-	@INSTALL_PROGRAM@ @stripping@ $(EXE) $(eprefix)/bin
+-	@INSTALL_SCRIPT@ $(SCRIPTS) $(eprefix)/bin
++	mkdir -p $(eprefix)/bin ${DESTDIR}$(eprefix)/sbin
++	@INSTALL_PROGRAM@ @stripping@ $(EXES) ${DESTDIR}$(eprefix)/sbin
++	@INSTALL_PROGRAM@ @stripping@ $(EXE) ${DESTDIR}$(eprefix)/bin
++	@INSTALL_SCRIPT@ $(SCRIPTS) ${DESTDIR}$(eprefix)/bin
+ 
+ install: install-bin
+-	mkdir -p @mandir@/man1 @mandir@/man8
+-	@INSTALL_DATA@ $(MAN1) @mandir@/man1
+-	@INSTALL_DATA@ $(MAN8) @mandir@/man8
++	mkdir -p @mandir@/man1 ${DESTDIR}@mandir@/man8
++	@INSTALL_DATA@ $(MAN1) ${DESTDIR}@mandir@/man1
++	@INSTALL_DATA@ $(MAN8) ${DESTDIR}@mandir@/man8
+ 
+ %.o: %.cpp
+ 	$(CXX) -c $<

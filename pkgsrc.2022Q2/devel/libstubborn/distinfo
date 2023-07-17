@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:15:29 nia Exp $
+
+BLAKE2s (libstubborn/0.1.tar.gz) = 499b260fd7a9f1b4f4d1329238a2e911c029e61d558839e3d2f153ef1dfe24b3
+SHA512 (libstubborn/0.1.tar.gz) = 6d69581340bb91bc3906cacc953e74b460ad5e6eabdabe4a8b0b3043d5717c36bb91ad1418f546f3b4e5df97b730a5410ed5d15045c6cfb7daea99f0cc0a4033
+Size (libstubborn/0.1.tar.gz) = 1462 bytes

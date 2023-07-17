@@ -1,0 +1,152 @@
+$NetBSD: patch-src_3rdparty_chromium_base_BUILD.gn,v 1.2 2022/04/18 11:18:18 adam Exp $
+
+--- src/3rdparty/chromium/base/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/base/BUILD.gn
+@@ -54,7 +54,7 @@ declare_args() {
+   # replacement base::Location::Current(). On by default in non-official builds
+   # for testing purposes.
+   # TODO(https://crbug.com/974061): remove this eventually.
+-  from_here_uses_location_builtins = !is_official_build
++  from_here_uses_location_builtins = !is_official_build && !is_bsd
+ 
+   # Unsafe developer build. Has developer-friendly features that may weaken or
+   # disable security measures like sandboxing or ASLR.
+@@ -886,7 +886,7 @@ jumbo_component("base") {
+       "timer/hi_res_timer_manager_posix.cc",
+     ]
+ 
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "cpu_affinity_posix.cc",
+         "cpu_affinity_posix.h",
+@@ -897,6 +897,12 @@ jumbo_component("base") {
+         "profiler/thread_delegate_posix.h",
+       ]
+     }
++
++    if (is_bsd) {
++      sources += [
++        "profiler/stack_sampler_posix.cc",
++      ]
++    }
+   }
+ 
+   jumbo_excluded_sources = [
+@@ -1197,7 +1203,7 @@ jumbo_component("base") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (is_linux || is_chromeos || is_bsd) {
+     sources += [
+       "debug/proc_maps_linux.cc",
+       "debug/proc_maps_linux.h",
+@@ -1249,7 +1255,7 @@ jumbo_component("base") {
+       sources += [ "base_paths_posix.h" ]
+     }
+ 
+-    if (is_linux || is_chromeos) {
++    if (is_linux || is_chromeos || is_bsd) {
+       sources += [
+         "base_paths_posix.cc",
+         "debug/elf_reader.cc",
+@@ -1308,7 +1314,7 @@ jumbo_component("base") {
+   # building inside the cros_sdk environment - use host_toolchain as a
+   # more robust check for this.
+   if (!use_sysroot &&
+-      (is_android || ((is_linux || is_chromeos) && !is_chromecast && !use_qt)) &&
++      (is_android || ((is_linux || is_chromeos || is_bsd) && !is_chromecast && !use_qt)) &&
+       host_toolchain != "//build/toolchain/cros:host") {
+     libs += [ "atomic" ]
+   }
+@@ -1355,7 +1361,7 @@ jumbo_component("base") {
+           "allocator/allocator_shim_default_dispatch_to_mac_zoned_malloc.cc",
+         ]
+       }
+-      if (is_chromeos || is_linux) {
++      if (is_chromeos || is_linux || is_bsd) {
+         sources += [ "allocator/allocator_shim_default_dispatch_to_glibc.cc" ]
+       }
+       if (is_win) {
+@@ -1946,7 +1952,7 @@ jumbo_component("base") {
+   }
+ 
+   # Linux.
+-  if (is_linux || is_chromeos) {
++  if (is_linux || is_chromeos || is_bsd) {
+     # TODO(brettw) this will need to be parameterized at some point.
+     linux_configs = []
+     if (use_glib) {
+@@ -1982,6 +1988,31 @@ jumbo_component("base") {
+     }
+   }
+ 
++  if (is_netbsd) {
++    sources -= [
++      "files/file_path_watcher_linux.cc",
++      "files/file_util_linux.cc",
++      "process/process_handle_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_metrics_linux.cc",
++      "system/sys_info_linux.cc"
++    ]
++    sources += [
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_stub.cc",
++      "process/process_handle_netbsd.cc",
++      "process/process_iterator_netbsd.cc",
++      "process/process_metrics_netbsd.cc",
++      "system/sys_info_netbsd.cc",
++    ]
++    libs += [
++      "execinfo", # logging.cc
++      "kvm",      # process_metrics_freebsd
++      "util"      # process_metrics_freebsd
++    ]
++  }
++
+   # iOS
+   if (is_ios) {
+     sources -= [
+@@ -3095,7 +3126,7 @@ test("base_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (is_linux || is_chromeos || is_bsd) {
+     sources += [ "debug/proc_maps_linux_unittest.cc" ]
+   }
+ 
+@@ -3136,7 +3167,7 @@ test("base_unittests") {
+       "posix/unix_domain_socket_unittest.cc",
+       "task/thread_pool/task_tracker_posix_unittest.cc",
+     ]
+-    if (!is_nacl && !is_apple) {
++    if (!is_nacl && !is_apple && !is_bsd) {
+       sources += [
+         "cpu_affinity_posix_unittest.cc",
+         "profiler/stack_copier_signal_unittest.cc",
+@@ -3295,7 +3326,7 @@ test("base_unittests") {
+     }
+   }
+ 
+-  if (is_fuchsia || is_linux || is_chromeos) {
++  if (is_fuchsia || is_linux || is_chromeos || is_bsd) {
+     sources += [
+       "debug/elf_reader_unittest.cc",
+       "debug/test_elf_image_builder.cc",
+@@ -3367,6 +3398,12 @@ test("base_unittests") {
+     manifest = "fuchsia/base_unittests.cmx"
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "debug/proc_maps_linux_unittest.cc",
++    ]
++  }
++
+   if (!is_fuchsia && !is_ios) {
+     sources += [ "files/file_locking_unittest.cc" ]
+   }

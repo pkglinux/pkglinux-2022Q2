@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 11:31:09 nia Exp $
+
+BLAKE2s (squidclamav-6.16.tar.gz) = 79df145a020cb9fe600a6f614aef9ed57801764974e252f46acede1aef909685
+SHA512 (squidclamav-6.16.tar.gz) = 8beecf1eccbad7b2f7a1a5fa53d9695cd09cd7debbca13318e14e280211c68d341b6b562778d052c1f345ef32f82cd0c37d711ad7834c2fce95e102bc85dab6a
+Size (squidclamav-6.16.tar.gz) = 444046 bytes
+SHA1 (patch-etc_Makefile.in) = f443ab6019bec365a7e9aca53e9ac1a4275b9129
+SHA1 (patch-src_squidclamav.h) = 737d78065fe1d357dd873a5d1b1bd63f3b7724b4

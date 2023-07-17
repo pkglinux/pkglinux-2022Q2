@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.2 2015/01/13 05:20:32 obache Exp $
+
+BLAKE2s (wireless_tools.29.tar.gz) = 596918ed829dd272080afad132328a1c7e2cea54864f067a211f351f00381cb8
+SHA512 (wireless_tools.29.tar.gz) = c169e29d53353e3d65913a5a5ba219752218968b0c036d4bfb25e7f3a9e31fe1e6adfcdbb410116e9c161c99aa3a7314fdc889ba36ba63f002d11ff9dba6974d
+Size (wireless_tools.29.tar.gz) = 294417 bytes
+SHA1 (patch-Makefile) = 046442705d85058b8862fe6962ccd006f17102e8

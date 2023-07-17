@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/03/20 02:36:12 wen Exp $
+
+BLAKE2s (Return-MultiLevel-0.08.tar.gz) = 869ad314fce0cb16471fce1f600275c645a661a61750a84432c5822a48b61a65
+SHA512 (Return-MultiLevel-0.08.tar.gz) = 1ea0da034df794c87b8a2225863194e0ac4c42794bfc59bbbd7e65d755ab2a66d341ea82f99b714220536d980a039b2eab65293180205b4b1ec0f4d56bbfd0d8
+Size (Return-MultiLevel-0.08.tar.gz) = 17375 bytes

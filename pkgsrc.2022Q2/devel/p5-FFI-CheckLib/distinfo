@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2021/11/30 00:45:13 wen Exp $
+
+BLAKE2s (FFI-CheckLib-0.28.tar.gz) = 52fc0faa2845f7c3355599860a550791de488f7f7bffd4078cf3e788cc9b7e5d
+SHA512 (FFI-CheckLib-0.28.tar.gz) = 9ac42e7153902cd178d9ee7d3db7edb96deb30c8b53cdd6c14706cde200598ecd98031c8e17394fcd1fb2c770a0ec776131e2ff93491d6b307a6e595fd788d5a
+Size (FFI-CheckLib-0.28.tar.gz) = 32051 bytes

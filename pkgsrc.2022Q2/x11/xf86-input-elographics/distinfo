@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:34:39 nia Exp $
+
+BLAKE2s (xf86-input-elographics-1.4.2.tar.bz2) = 97ea1cfef8ad9131c79255314890a9a8b56f74f58a5cf7f87a11122df4d743e7
+SHA512 (xf86-input-elographics-1.4.2.tar.bz2) = 90e9eb3441a78288fbfbb2b108f212b8cfa3d5aaf25a0e88a5e40783cd36bc2d60e02ba390a5f0071eaa37f77e61f0d7ce6d9dbde4f6db21a86ca3294decff97
+Size (xf86-input-elographics-1.4.2.tar.bz2) = 306167 bytes

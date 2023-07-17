@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 10:14:24 nia Exp $
+
+BLAKE2s (cgdb-0.7.1.tar.gz) = cd26c0ca049f288a56ae5a7f84843265df2a5c558ef3c7cf5c3360deac2cc044
+SHA512 (cgdb-0.7.1.tar.gz) = 34f1fa53cfc9fbf7a2603db169e8338c0bf32200ed7a63e9944951f446e295e49f4ff3c5d0998a4c70bc872376263e1469d7e518becc13b4959f66495d5b9521
+Size (cgdb-0.7.1.tar.gz) = 731818 bytes
+SHA1 (patch-aa) = a880e12228d102e98d9a50fa493ae922ebce7b67
+SHA1 (patch-lib_util_fork__util.cpp) = 2717251ef4d0b042a1e760d9dcc531095cf726c3

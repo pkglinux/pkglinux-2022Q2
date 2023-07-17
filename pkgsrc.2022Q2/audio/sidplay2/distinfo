@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 09:59:29 nia Exp $
+
+BLAKE2s (sidplay-2.0.9.tar.gz) = 0019d07105b6a23af3a862c160cb6bd65643452cafa8984c672c9a56ca4946a2
+SHA512 (sidplay-2.0.9.tar.gz) = 38d334b7e649d6043b48705edf3c4cd27d01283b95f42d1b46bb7cf266ca0d5f6fac4a7dfd398578a3278d293342e4d4d09cde8d443d60a8d50e4abbe127afe5
+Size (sidplay-2.0.9.tar.gz) = 362140 bytes
+SHA1 (patch-aa) = 12e236e42f2cbf311e5d9ed7b25c262089f57a27
+SHA1 (patch-src_args_cpp) = e80aaff4884c7ce159f15e5fed6a56099d281f2a
+SHA1 (patch-src_audio_wav_WavFile.cpp) = a7ef72b68eb3a86bf01537e9da4fba7d44dd280e

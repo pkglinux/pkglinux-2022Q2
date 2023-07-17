@@ -1,0 +1,49 @@
+$NetBSD: patch-bj,v 1.3 2022/01/07 17:32:12 gutteridge Exp $
+
+Fix builds with the SunPro compiler.
+
+Handle oversized windows: prevent both opposing edges from being offscreen.
+https://github.com/fluxbox/fluxbox/commit/299e098f5f6fc6d33684b3d4e80185c8a7899664
+
+--- src/Window.cc.orig	2015-02-08 10:44:45.373187009 +0000
++++ src/Window.cc
+@@ -166,9 +166,10 @@ void lowerFluxboxWindow(FluxboxWindow &w
+         win.screen().layerManager().lock();
+ 
+     // lower the windows from the top down, so they don't change stacking order
+-    const WinClient::TransientList& transients = win.winClient().transientList();
+-    WinClient::TransientList::const_reverse_iterator it =     transients.rbegin();
+-    WinClient::TransientList::const_reverse_iterator it_end = transients.rend();
++    // XXX: I'd rather use a const_reverse_iterator here, but sunpro has problems with it.
++    WinClient::TransientList& transients = win.winClient().transientList();
++    WinClient::TransientList::reverse_iterator it =     transients.rbegin();
++    WinClient::TransientList::reverse_iterator it_end = transients.rend();
+     for (; it != it_end; ++it) {
+         if ((*it)->fbwindow() && !(*it)->fbwindow()->isIconic())
+             // TODO: should we also check if it is the active client?
+@@ -478,6 +479,25 @@ void FluxboxWindow::init() {
+ 
+     fluxbox.attachSignals(*this);
+ 
++    if (!m_state.fullscreen) {
++        unsigned int new_width = 0, new_height = 0;
++        if (m_client->width() >= screen().width()) {
++            m_state.maximized |= WindowState::MAX_HORZ;
++            new_width = 2 * screen().width() / 3;
++        }
++        if (m_client->height() >= screen().height()) {
++            m_state.maximized |= WindowState::MAX_VERT;
++            new_height = 2 * screen().height() / 3;
++        }
++        if (new_width || new_height) {
++            const int maximized = m_state.maximized;
++            m_state.maximized = WindowState::MAX_NONE;
++            resize(new_width ? new_width : width(), new_height ? new_height : height());
++            m_placed = false;
++            m_state.maximized = maximized;
++        }
++    }
++
+     // this window is managed, we are now allowed to modify actual state
+     m_initialized = true;
+ 

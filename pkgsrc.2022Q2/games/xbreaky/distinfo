@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:44:31 nia Exp $
+
+BLAKE2s (xbreaky-0.0.5.tar.gz) = b09ac5a62cb88c25380f723a6fe1ddd6fe81523c78590c61c0b0b0d850c0689d
+SHA512 (xbreaky-0.0.5.tar.gz) = f9ebc0068b1accaa9f2e637ea070ae89cbc18c78f66f0a48c675fbceffbd178cf2cd6433de8c75717ae6832e8bf39e6317bc6bd2b867519998a96547b542b68b
+Size (xbreaky-0.0.5.tar.gz) = 31136 bytes
+SHA1 (patch-aa) = 04d2de2cb771de30d2b4d4da785e9999ebac4ad6
+SHA1 (patch-ab) = 0ea22ce8cad38cecd615a0f8fe11de948426601c
+SHA1 (patch-ac) = aa31bf411d4e729ceb370aa32f3d422e263af432

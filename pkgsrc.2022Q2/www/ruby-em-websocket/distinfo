@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/12/11 14:49:15 taca Exp $
+
+BLAKE2s (em-websocket-0.5.3.gem) = d3184d6e144423d2157e3c0e37d86d4dc1b3e0b0af687c338e833cd698e23dbe
+SHA512 (em-websocket-0.5.3.gem) = 67eddb71428331a09ead59e3bf4b1e145c660a000de57db67b974e0f2d11315b8a4f173961190db868f94d9fd74ed312f5164abf9d3f4950e4c22a0aa542a064
+Size (em-websocket-0.5.3.gem) = 33280 bytes

@@ -1,0 +1,5 @@
+/patch-configure/1.3/Sat May  9 12:17:52 2020//Tpkgsrc-2022Q2
+/patch-grub-core_osdep_bsd_hostdisk.c/1.2/Sat May  2 16:53:54 2020//Tpkgsrc-2022Q2
+/patch-grub-core_osdep_generic_blocklist.c/1.1/Sat May  2 16:53:54 2020//Tpkgsrc-2022Q2
+/patch-util_getroot.c/1.3/Sun Nov 25 15:51:01 2018//Tpkgsrc-2022Q2
+D

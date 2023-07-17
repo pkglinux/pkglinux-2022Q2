@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2022/01/22 15:05:01 bsiegert Exp $
+
+BLAKE2s (pgFormatter-5.2.tar.gz) = bd398ef653b8f041e8d0f2b372fec944ea03deca0c532e0e6e3e3a80423096ba
+SHA512 (pgFormatter-5.2.tar.gz) = 6244cf41a7a93c2fedf69707e11dccbe72d44965682fb4c469718538c8a22b90192e8de8a123c5f093a40728dd6d8e728c1967953ca70f9dcd6d052d57342666
+Size (pgFormatter-5.2.tar.gz) = 1316900 bytes

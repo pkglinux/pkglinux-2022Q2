@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.17 2022/04/15 03:24:19 markd Exp $
+
+BLAKE2s (csplain.r62771.tar.xz) = 212bcf3584e098825b85f455d389966732730162665ed852a2ac6cd85fbe755f
+SHA512 (csplain.r62771.tar.xz) = c4dbe1721fc2281cba7e426f6c75d35671cfeddf77a947f147a33c651090bc90528583445736bc2933c2d3986424e1b3ac4984e93cfae5f0ad1cfe41902f63cb
+Size (csplain.r62771.tar.xz) = 123204 bytes

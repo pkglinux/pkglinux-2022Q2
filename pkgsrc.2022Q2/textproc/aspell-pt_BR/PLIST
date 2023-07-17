@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.2 2019/10/19 10:58:53 nia Exp $
+lib/aspell/brasileiro.alias
+lib/aspell/brazilian.alias
+lib/aspell/pt_BR.multi
+lib/aspell/pt_BR.rws
+share/aspell/br-abnt2.kbd
+share/aspell/pt_BR.dat
+share/aspell/pt_BR_affix.dat

@@ -1,0 +1,20 @@
+#!/bin/sh -ue
+
+#alias reb='bmake clean;bmake reinstall clean;pkgsum.sh $(readlink /pkg);pkgin up;pkgin ug -y;sync'
+#alias rei='function __myalias() { cd /root/sda3/pkgsrc.$(readlink /pkg)/$1;reb;unset -f __myalias; }; __myalias'
+
+rei native/libtool
+rei devel/libtool
+rei devel/libtool-base
+rei devel/libtool-fortran
+rei devel/libtool-info
+rei devel/binutils
+rei lang/gcc6
+rei native/boot
+rei native/libtool
+rei native/genfstab
+rei native/mkshadow
+rei native/gcc6
+rei native/glibc
+rei native/glibc-m32
+rei native/glibc-x32

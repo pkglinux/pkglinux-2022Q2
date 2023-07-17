@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/09 03:14:52 markd Exp $
+
+BLAKE2s (skak.doc.r61719.tar.xz) = d980d0dbf481f7478ad46e220c222b4657cd0a18af7857460ffd45489d52228f
+SHA512 (skak.doc.r61719.tar.xz) = ffcb56dfae0a0ea91e716b99d1d91d4f20fedab8eb7b637f62630dbc4a8fad0562120cc02a754df475dc16c4b1a09fb2da48b8a9e22112d0c69550016026f76f
+Size (skak.doc.r61719.tar.xz) = 200108 bytes

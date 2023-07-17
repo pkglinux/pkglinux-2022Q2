@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/02/28 13:16:24 jaapb Exp $
+
+BLAKE2s (lablgtk-3.1.2.tar.gz) = 35a51b37a2150003dbd77d256ee5883ff53f480dd720a6bf06e18da978a69daa
+SHA512 (lablgtk-3.1.2.tar.gz) = c63a492160f36685f65cb6bc0e72ff4939005acb2c65c56c0d9ba8f2112a618f24db84765e7b4416e49024048a36895028cfc5ef2c3e298dd4a309e902e34af5
+Size (lablgtk-3.1.2.tar.gz) = 1042626 bytes

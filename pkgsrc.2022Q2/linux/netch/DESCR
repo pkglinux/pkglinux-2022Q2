@@ -1,0 +1,16 @@
+A simple proxy client
+
+[![](https://img.shields.io/badge/telegram-group-green?style=flat-square)](https://t.me/netch_group)
+[![](https://img.shields.io/badge/telegram-channel-blue?style=flat-square)](https://t.me/netch_channel)
+[![](https://img.shields.io/github/downloads/netchx/netch/total.svg?style=flat-square)](https://github.com/netchx/netch/releases)
+[![](https://img.shields.io/github/v/release/netchx/netch?style=flat-square)](https://github.com/netchx/netch/releases)
+</div>
+
+## Features
+Some features may not be implemented in version 1
+
+### Modes
+- `ProcessMode` - Use Netfilter driver to intercept process traffic
+- `ShareMode` - Share your network based on WinPcap / Npcap
+- `TunMode` - Use WinTUN driver to create virtual adapter
+...

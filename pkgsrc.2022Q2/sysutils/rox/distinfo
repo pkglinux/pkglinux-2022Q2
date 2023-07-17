@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.18 2021/10/26 11:20:08 nia Exp $
+
+BLAKE2s (rox/rox-filer-2.11.tar.bz2) = ca1ffb6ca3d2e1e0125ddead5accfa302284888d7ac5150498413bc6f602e38d
+SHA512 (rox/rox-filer-2.11.tar.bz2) = 2ef5e7a5d6f4bbb825d6f01725ad4149b9cabfb6fe82c33631bb145f5a3c84e345c372b7698170c1ef78b30ffbc4665495cc266da4828cc8b4b256b592b2c50b
+Size (rox/rox-filer-2.11.tar.bz2) = 1907026 bytes
+SHA1 (patch-ROX-Filer_src_mount.c) = 19d820cf74d57dbfeb255b21522639ac2fc41574
+SHA1 (patch-aa) = 20cf42090c9cd3149af6e7be59f826624062d759
+SHA1 (patch-ab) = bec4e64a5f54109fab55f89b8da9a55d0465d0ab
+SHA1 (patch-ac) = fc78b2208cb052bedaab4ae3c1e59677bc299f6e
+SHA1 (patch-ad) = e374d0c9d5e102907444e9c504c21ba69469096b

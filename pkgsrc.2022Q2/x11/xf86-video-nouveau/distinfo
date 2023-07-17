@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 11:34:42 nia Exp $
+
+BLAKE2s (xf86-video-nouveau-1.0.17.tar.bz2) = dedbf3eb60aa8fabd5c58204bd67d2449726805bceaff2024f92a9172a889f02
+SHA512 (xf86-video-nouveau-1.0.17.tar.bz2) = adba58ba5298d1a5b3f9f8540f9ef2cb2e10e47bba8e374103ec2e1f92e915f5f4393ed0021168cd649646e12315135a1efcdf77e8fb1648e1295914d87279b2
+Size (xf86-video-nouveau-1.0.17.tar.bz2) = 632535 bytes
+SHA1 (patch-configure) = 21b8b7b8410fced80aef457cec1c1e3b0fed3f57

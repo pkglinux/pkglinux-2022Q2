@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/01/31 12:04:19 wiz Exp $
+
+BLAKE2s (topkg-1.0.5.tbz) = 31f28f27ec74a620c5ca902072c9c9317b9ee9b2d43593b942db9b0b2bd4151f
+SHA512 (topkg-1.0.5.tbz) = 9450e9139209aacd8ddb4ba18e4225770837e526a52a56d94fd5c9c4c9941e83e0e7102e2292b440104f4c338fabab47cdd6bb51d69b41cc92cc7a551e6fefab
+Size (topkg-1.0.5.tbz) = 96315 bytes

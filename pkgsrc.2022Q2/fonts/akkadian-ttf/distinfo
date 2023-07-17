@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:02 nia Exp $
+
+BLAKE2s (akkadian-ttf-7.15/Akkadian.zip) = 898c79868a6ecc5155d53099c2d418ca81f6e4ad52557978134c63be72bc8380
+SHA512 (akkadian-ttf-7.15/Akkadian.zip) = fc45c99071bc23a1e5745074bb45dc1ef5c886cc6477cbc31468a5705c26228d7d2afff6388b1e59817627229dfa690df66f2d40b007daef5c659427c28680c7
+Size (akkadian-ttf-7.15/Akkadian.zip) = 2046114 bytes

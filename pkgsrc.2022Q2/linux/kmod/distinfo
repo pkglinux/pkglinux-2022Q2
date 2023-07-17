@@ -1,0 +1,8 @@
+$NetBSD$
+
+SHA1 (kmod-29.tar.xz) = ecdd344f48daa3bde3b2e6f1471f5c46e1218b25
+RMD160 (kmod-29.tar.xz) = 893122cdef31158c34b16f224e36780b49615b56
+SHA512 (kmod-29.tar.xz) = 557cdcaec75e5a1ceea2d10862c944e9a65ef54f6ee9da6dc98ce4582418fdc9958aab2e14a84807db61daf36ec4fcdc23a36376c39d5dc31d1823ca7cd47998
+Size (kmod-29.tar.xz) = 560160 bytes
+SHA1 (patch-Makefile.am) = baa87e1127f55c3ca21611b8629624754fc56e43
+SHA1 (patch-Makefile.in) = a94c124178e0936b350bfbf9b1c922fb35bb1f50

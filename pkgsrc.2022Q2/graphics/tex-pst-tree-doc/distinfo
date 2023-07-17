@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/10 12:25:59 markd Exp $
+
+BLAKE2s (pst-tree.doc.r60421.tar.xz) = 570eaad73256279a3cc443e525c8b5d53e033dee5fa2d4ed6dc1e687ce3feb8a
+SHA512 (pst-tree.doc.r60421.tar.xz) = 6ac862eff40eaa1a8cacc5c1a1d4886e82dee53046d3fbf631ec23bfb59490fe89bdde5f2767cba35e8d0439fa7b7688669b50ba3ce81698c34bcfc9d010a7e6
+Size (pst-tree.doc.r60421.tar.xz) = 205684 bytes

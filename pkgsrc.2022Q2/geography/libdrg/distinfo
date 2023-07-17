@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:45:10 nia Exp $
+
+BLAKE2s (libdrg-0.0.81.tar.gz) = 211b2715535f7df4687b79fdfd18a673372bcb6a88ce1111946ab4715c771dfe
+SHA512 (libdrg-0.0.81.tar.gz) = c7c8e8f8e901bbc64edc06d7547b4f20342d79f217e187751963e210614758ca872f8e50f2d0cb11da6e4635f47154ec81ce211b53b18ce144471445a819b2cf
+Size (libdrg-0.0.81.tar.gz) = 320228 bytes
+SHA1 (patch-configure) = a6a1841826756c6d6fe2964076216f9e265a5ccc
+SHA1 (patch-drg__tiff.c) = a8ea12efaef2b03c5754752f58c785fb049535b1

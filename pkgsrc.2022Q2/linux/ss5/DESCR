@@ -1,0 +1,9 @@
+
+GSSAPI stands for Generic Security Services Application Programming Interface. The GSSAPI is a generic API for doing client-server authentication. The motivation behind it is that every security system has it's own API, and the effort involved with adding different security systems to applications is extremely difficult with the variance between security APIs.
+
+However, with a common API, application vendors could write to the generic API and it could work with any number of security systems.
+
+When this is enable, SS5 negotiates a security context and send some integrity and confidentiality protected messages between the client and the server.
+
+SS5 has been tested with the following two scenario:
+

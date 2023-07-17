@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/04 16:00:58 jaapb Exp $
+
+BLAKE2s (ppx_here-0.15.0.tar.gz) = 53d9e50aa4901906509afd680f3436e1eea84838ff176cfce9da4c8d7e5223ce
+SHA512 (ppx_here-0.15.0.tar.gz) = 708bd2edf9390f251e1c76e63462692c01372c7d7c7b54e45347e87ee7da999392148b61a187f2106fbc37d626663260d331982a005bd2f98f9bd6bc8f326cf5
+Size (ppx_here-0.15.0.tar.gz) = 5010 bytes

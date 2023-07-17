@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 11:21:44 nia Exp $
+
+BLAKE2s (nroff-clone.shar.Z) = d24b5ccfb4aa3598a1e68c7b132d77736abb7dc0bfe5addaffb0842348793a97
+SHA512 (nroff-clone.shar.Z) = f352563a91bf96509bdd54cfc2b6d32365338ef809e12fb624bae17ff6320feacbf30599eac8befacb96fcb0606b0eca50a4158aa7891243e8b2658297046ae5
+Size (nroff-clone.shar.Z) = 26302 bytes
+SHA1 (patch-aa) = cd02ddd690645543702245860575a7c771583307
+SHA1 (patch-ab) = c2574a55bb9a9ab3b79c3a59d639ef534015a45c

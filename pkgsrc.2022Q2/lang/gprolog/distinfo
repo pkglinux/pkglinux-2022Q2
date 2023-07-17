@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.18 2021/10/26 10:51:37 nia Exp $
+
+BLAKE2s (gprolog-1.4.5.tar.gz) = eb990f54900f9e510b324e762538480b2ba054fb2a7bb59a88710ca756277681
+SHA512 (gprolog-1.4.5.tar.gz) = 425103bc9e5bdbdb4ae331f5be0cf49524fbdb4f5e2809fb973360de9e7ad9935c1b28f3603e0be696a647153d9f0d3dacdc87251098ac99faf7d0b3c652fc60
+Size (gprolog-1.4.5.tar.gz) = 3587361 bytes
+SHA1 (patch-src_EnginePl_dl__malloc.c) = 6146a8af0a6d64eba8446fe21374b2cea7e39420
+SHA1 (patch-src_Ma2Asm_powerpc__any.c) = 4ecc2dbc5944d7caa5b6017dd30c518aa6733d64

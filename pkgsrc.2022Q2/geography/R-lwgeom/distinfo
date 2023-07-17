@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/02 11:57:55 mef Exp $
+
+BLAKE2s (R/lwgeom_0.2-8.tar.gz) = e6b5dae73ae4ab180ed3693251b949b0d969bb4de1ccf541452d99ccf360408c
+SHA512 (R/lwgeom_0.2-8.tar.gz) = 2f8e6f545ba551959806b2e88819b3881b0df1347b311bec8b51039a1a8505543c2580991fed21ccd7238fc06465491299c6e5028d59a8223eec5e9e98aede14
+Size (R/lwgeom_0.2-8.tar.gz) = 473496 bytes

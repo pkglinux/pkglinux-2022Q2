@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:54:22 nia Exp $
+
+BLAKE2s (libpst-0.6.76.tar.gz) = 95c0a2336448029bd44c55a00744f511aba848d0fd24f89321e6de24c7849a71
+SHA512 (libpst-0.6.76.tar.gz) = 43b621ec089ff81714d4bd768178bd56efb15da27c4fe3dc18372337e5898072b17a58feb6b3dd88a805a38c757f6a97e2da89432da101df5345e3d0daf166b4
+Size (libpst-0.6.76.tar.gz) = 12886768 bytes
+SHA1 (patch-configure) = a435fda80198a43a406a1b583c6b4db14cbba1aa
+SHA1 (patch-man_Makefile.in) = 872f9f3d8d0aa262ca9026873a4fa2d44519b694

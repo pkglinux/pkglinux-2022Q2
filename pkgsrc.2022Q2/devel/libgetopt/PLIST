@@ -1,0 +1,9 @@
+@comment $NetBSD$
+include/getopt.h
+lib/libgetopt.la
+man/man3/getopt_long.3
+native/lib/libgetopt.a
+native/lib/libgetopt.la
+native/lib/libgetopt.so
+native/lib/libgetopt.so.1
+native/lib/libgetopt.so.1.4.1

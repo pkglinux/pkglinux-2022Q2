@@ -1,0 +1,8 @@
+@comment $NetBSD$
+include/atasmart.h
+lib/libatasmart.la
+lib/pkgconfig/libatasmart.pc
+sbin/skdump
+sbin/sktest
+share/doc/libatasmart/README
+share/vala/vapi/atasmart.vapi

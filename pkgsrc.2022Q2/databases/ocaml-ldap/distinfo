@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/04 10:06:59 jaapb Exp $
+
+BLAKE2s (ocamldap-2.4.2.tar.gz) = 3d0160193e32c2f14a7ea89ff60773ae828a0ef7f0a9e0e61fd05d352ac1b95f
+SHA512 (ocamldap-2.4.2.tar.gz) = 77618c0347a477b4e3679544b2007cc7979e06a6462065320db0d0019f1b3faa618e2975f2029c05b378329d4f7de24259e513f578773a31ae5581d9bea31e14
+Size (ocamldap-2.4.2.tar.gz) = 82014 bytes

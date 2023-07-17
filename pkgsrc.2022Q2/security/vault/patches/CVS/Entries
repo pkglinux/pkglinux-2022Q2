@@ -1,0 +1,8 @@
+/patch-scripts_gen__openapi.sh/1.1/Wed Oct 23 15:00:05 2019//Tpkgsrc-2022Q2
+/patch-vendor_github.com_docker_docker_client_client__unix.go/1.2/Tue Jan  5 11:02:51 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_docker_docker_pkg_system_stat__netbsd.go/1.1/Thu Sep 10 22:10:59 2020//Tpkgsrc-2022Q2
+/patch-vendor_github.com_ory_dockertest_docker_pkg_system_stat__netbsd.go/1.1/Wed Oct 23 15:00:05 2019//Tpkgsrc-2022Q2
+/patch-vendor_github.com_ory_dockertest_docker_pkg_term_tc.go/1.1/Wed Oct 23 15:00:05 2019//Tpkgsrc-2022Q2
+/patch-vendor_github.com_ory_dockertest_docker_pkg_term_term.go/1.1/Wed Oct 23 15:00:05 2019//Tpkgsrc-2022Q2
+/patch-vendor_github.com_ory_dockertest_docker_pkg_term_termios__bsd.go/1.1/Wed Oct 23 15:00:05 2019//Tpkgsrc-2022Q2
+D

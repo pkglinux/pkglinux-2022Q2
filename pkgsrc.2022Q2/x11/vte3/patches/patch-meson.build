@@ -1,0 +1,44 @@
+$NetBSD: patch-meson.build,v 1.2 2022/04/05 15:51:58 jperkin Exp $
+
+Remove silly asserts that do nothing except break portability.
+NetBSD requires -D_NETBSD_SOURCE for grantpt().
+
+--- meson.build.orig	2022-03-27 17:52:19.000000000 +0000
++++ meson.build
+@@ -230,13 +230,6 @@ endforeach
+ 
+ # Check for symbols
+ 
+-check_symbols_required = [
+-  ['TIOCGWINSZ', 'sys/ioctl.h'],
+-]
+-
+-foreach symbol: check_symbols_required
+-  assert(cxx.has_header_symbol(symbol[1], symbol[0]), symbol[0] + ' not found')
+-endforeach
+ 
+ # Check for functions
+ 
+@@ -388,6 +381,7 @@ foreach func: check_functions
+     args: [
+       '-D_GNU_SOURCE',
+       '-D_XOPEN_SOURCE',
++      '-D_NETBSD_SOURCE',
+     ],
+     dependencies: __deps,
+     name: __name,
+@@ -558,14 +552,10 @@ linker_flags = [
+ foreach flag: linker_flags
+   if cc.has_link_argument(flag[0])
+     add_project_link_arguments(flag[0], language: 'c')
+-  elif flag[1]
+-    assert(false, flag[0] + ' is required but not supported')
+   endif
+ 
+   if cxx.has_link_argument(flag[0])
+     add_project_link_arguments(flag[0], language: 'cpp')
+-  elif flag[1]
+-    assert(false, flag[0] + ' is required but not supported')
+   endif
+ endforeach
+ 

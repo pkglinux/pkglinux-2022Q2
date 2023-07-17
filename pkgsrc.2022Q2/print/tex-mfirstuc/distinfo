@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/14 02:38:44 markd Exp $
+
+BLAKE2s (mfirstuc.r60770.tar.xz) = 5a281900e562c53bc1108dd2488393e1c0d91460987dc010167f44785d274e4e
+SHA512 (mfirstuc.r60770.tar.xz) = 9bf4d7db5094b20b65302face634a10ad2bcaf521e948130f5fda6770e8433074bd8d35b89bf905ad22609340e27e85dba5c50715a776d2c1ac98a5ec3faf5d5
+Size (mfirstuc.r60770.tar.xz) = 4472 bytes

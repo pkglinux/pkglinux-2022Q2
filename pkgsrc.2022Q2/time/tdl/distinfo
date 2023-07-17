@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:24:38 nia Exp $
+
+BLAKE2s (tdl-1.5.2.tar.gz) = 5decdf36c662de1b3a1e80227051361fa33e79f4c37bc17881f38ed0183a925c
+SHA512 (tdl-1.5.2.tar.gz) = 8c07a5b6a5434bb567a2d68b6e0215bbfa7be3f7176ae1042652ac18684289117230af25d8d161fcf1ba27d9b740fd3fcd43c3213467b533de64390686481fe0
+Size (tdl-1.5.2.tar.gz) = 66057 bytes
+SHA1 (patch-aa) = fe952643aba9af71eb4d20730a7261084850c9ee
+SHA1 (patch-inter.c) = fc355f7e6abc85dbe66ffe4058862579158ac4b8
+SHA1 (patch-tdl.h) = 4ac480ce89ae79e4c7fa9fe27e96f709eba3d0c6

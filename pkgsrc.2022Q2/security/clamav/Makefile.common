@@ -1,0 +1,15 @@
+# $NetBSD: Makefile.common,v 1.23 2022/05/05 00:44:07 taca Exp $
+#
+# used by security/clamav/Makefile
+# used by security/clamav-doc/Makefile
+
+DISTNAME=	clamav-0.103.6
+CATEGORIES=	security
+MASTER_SITES=	http://www.clamav.net/downloads/production/
+
+MAINTAINER?=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://www.clamav.net/
+LICENSE=	gnu-gpl-v2
+
+DISTINFO_FILE=	${.CURDIR}/../../security/clamav/distinfo
+PATCHDIR=	${.CURDIR}/../../security/clamav/patches

@@ -1,0 +1,16 @@
+$NetBSD: patch-aj,v 1.2 2019/09/15 12:51:29 mef Exp $
+
+-*- coding: utf-8 -*-
+Fix path
+
+--- use-htmllintcgi.html.orig	2011-11-28 16:15:44.000000000 +0900
++++ use-htmllintcgi.html	2019-09-15 21:10:03.044114993 +0900
+@@ -54,7 +54,7 @@
+ 	&lt;/FORM&gt;
+ </code></blockquote>
+ <p>次のボタンはこのHTMLをチェックします。</p>
+-<form action="./htmllint.cgi">
++<form action="/cgi-bin/tmllint.cgi">
+ <input type="hidden" name="ViewSource" value="on">
+ <input type="submit" value="このHTMLは満点じゃないかも知れません">
+ </form>

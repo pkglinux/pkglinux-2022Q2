@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2018/12/12 12:45:19 pho Exp $
+bin/wmmoonclock
+man/man1/wmMoonClock.1
+share/applications/wmmoonclock.desktop

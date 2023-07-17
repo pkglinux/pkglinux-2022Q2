@@ -1,0 +1,15 @@
+/patch-build_libtool.m4/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-configure/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-disable-filter-url/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-ext_enchant_enchant.c/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-ext_phar_Makefile.frag/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-ext_tidy_config.m4/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-ext_xsl_php__xsl.h/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-main_streams_streams.c/1.1/Sat May 21 16:01:40 2022//Tpkgsrc-2022Q2
+/patch-php.ini-development/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-php.ini-production/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-sapi_cgi_Makefile.frag/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-sapi_cli_Makefile.frag/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-sapi_fpm_fpm_events_port.c/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+/patch-sapi_fpm_php-fpm.conf.in/1.1/Sat Nov 27 07:24:43 2021//Tpkgsrc-2022Q2
+D

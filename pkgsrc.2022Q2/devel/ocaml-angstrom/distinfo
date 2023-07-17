@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/11 10:20:21 jaapb Exp $
+
+BLAKE2s (angstrom-0.15.0.tar.gz) = 6b69bf490011baf69bd9cc80fbe84a2af0e52645159ca56da8fd9d374667fe1d
+SHA512 (angstrom-0.15.0.tar.gz) = 307040a6174f9d3c45a9a3bd3c9d1f4e026aef4a3360bd8d171e2e147306fe0d00ee4cb42019bb2abe8101d25c4a2b5887e466537345eb35246bc34d285ffddf
+Size (angstrom-0.15.0.tar.gz) = 117195 bytes

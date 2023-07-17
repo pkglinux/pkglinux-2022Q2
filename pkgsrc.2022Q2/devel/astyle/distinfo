@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.20 2021/10/26 10:14:17 nia Exp $
+
+BLAKE2s (astyle_3.1_linux.tar.gz) = 5f8039593fcb142767416fb5a13ebcdd82452cf2869afd9b262218f486507d66
+SHA512 (astyle_3.1_linux.tar.gz) = 2e8f13d291abda66bbba30174c364c81a81a490e0a21376f7da7cf471644c22caa37b9eefb100d093bf26d1a8bfa9d2f14b4c2a9b75b3cb84428b4514e277ff2
+Size (astyle_3.1_linux.tar.gz) = 185589 bytes
+SHA1 (patch-build_mac_Makefile) = ac8b4f69ec2b2f2cb3c87db140c2783b24009e2c
+SHA1 (patch-src_astyle__main.cpp) = 443deb0b27e88f0c3002929aa8a6c5ae23c4ad79

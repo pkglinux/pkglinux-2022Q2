@@ -1,0 +1,13 @@
+$NetBSD: patch-src_3rdparty_chromium_chrome_common_extensions_api_api__sources.gni,v 1.2 2022/04/18 11:18:18 adam Exp $
+
+--- src/3rdparty/chromium/chrome/common/extensions/api/api_sources.gni.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/chrome/common/extensions/api/api_sources.gni
+@@ -117,7 +117,7 @@ if (is_chromeos) {
+       "printing_metrics.idl",
+     ]
+   }
+-} else if (is_linux || is_chromeos || is_win) {
++} else if (is_linux || is_chromeos || is_win || is_bsd) {
+   schema_sources_ += [ "input_ime.json" ]
+ }
+ 

@@ -1,0 +1,13 @@
+$NetBSD: patch-src_3rdparty_chromium_ui_views_controls_webview_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/ui/views/controls/webview/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/ui/views/controls/webview/BUILD.gn
+@@ -53,7 +53,7 @@ jumbo_component("webview") {
+     "//ui/views",
+   ]
+ 
+-  if (is_linux || is_chromeos || is_android || is_fuchsia) {
++  if (is_linux || is_chromeos || is_android || is_fuchsia || is_bsd) {
+     sources += [ "unhandled_keyboard_event_handler_default.cc" ]
+   }
+ }

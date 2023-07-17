@@ -1,0 +1,22 @@
+$NetBSD: patch-src_3rdparty_chromium_content_renderer_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/content/renderer/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/content/renderer/BUILD.gn
+@@ -407,7 +407,7 @@ target(link_target_type, "renderer") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if (is_linux || is_chromeos || is_bsd) {
+     deps += [ "//components/services/font/public/cpp" ]
+   }
+ 
+@@ -601,7 +601,7 @@ target(link_target_type, "renderer") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos || is_android) {
++  if (is_linux || is_chromeos || is_android || is_bsd) {
+     deps += [ "//sandbox:sandbox_buildflags" ]
+   }
+ 

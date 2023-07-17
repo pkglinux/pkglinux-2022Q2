@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:09:36 nia Exp $
+
+BLAKE2s (Dancer-Plugin-DBIC-0.2104.tar.gz) = 8d95573acea2a09744f733fbb7614e3fc1d66378a4ae567f63d3275a5f593f5b
+SHA512 (Dancer-Plugin-DBIC-0.2104.tar.gz) = 9a3fea9209aceb018a5d2f804ccfc61b3c073584ea7448a3fe44dba7cdfbbb4136705fc0b27f3db2165357940e92a0fc98c1f959a320fa9fe36326ba70dc1057
+Size (Dancer-Plugin-DBIC-0.2104.tar.gz) = 23625 bytes

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (ntirpc-1.5.2.tar.gz) = 7967946776a1c064da816fab0ca8542ea4494ac21a62bbb300b31a40d0bdf056
+SHA512 (ntirpc-1.5.2.tar.gz) = 5bbc48ab5bf2aba7e4c473a6faf586c1aef27a2009bf92082495456c436c707dfdcfc5e16a56c3e31ba3fb68afc3d2d47e8d27ed03be5c0be44e22e24a0cb68e
+Size (ntirpc-1.5.2.tar.gz) = 433706 bytes

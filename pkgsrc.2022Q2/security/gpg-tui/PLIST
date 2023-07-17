@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2021/09/04 20:42:52 pin Exp $
+bin/gpg-tui
+man/man1/gpg-tui.1
+man/man5/gpg-tui.toml.5

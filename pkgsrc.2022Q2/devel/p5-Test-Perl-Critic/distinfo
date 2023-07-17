@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:17:44 nia Exp $
+
+BLAKE2s (Test-Perl-Critic-1.04.tar.gz) = 002be7699c47ee19cd80c113d9bb8cf795c975ed1d48c304b08e9eef215be277
+SHA512 (Test-Perl-Critic-1.04.tar.gz) = bb4d0c671c927e849b24d97feb4c95bb612f5975af165650065d5fdbe2584a48cd8fc39dd14f8ab1a0e75e7ab067a86504f1b3729cdc43dc87bfb146fe526fbb
+Size (Test-Perl-Critic-1.04.tar.gz) = 22140 bytes

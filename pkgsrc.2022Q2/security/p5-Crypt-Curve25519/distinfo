@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:17:25 nia Exp $
+
+BLAKE2s (Crypt-Curve25519-0.06.tar.gz) = 72d76f21f8d9638976018d1cccc8cca72dff516d5309a7db903bae85cca0fbad
+SHA512 (Crypt-Curve25519-0.06.tar.gz) = e5d351c36c9f60e1b55f45bf9fa871fddf949bd5c0a20b4d065e1eb2d4e24ba43807289591eda854fca28b5909fd6af1b0fc9ede63efbeeaf6e011e7382a4e1d
+Size (Crypt-Curve25519-0.06.tar.gz) = 27835 bytes
+SHA1 (patch-curve25519-donna-c64.c) = bc15215560043b3f88016677c8f5d85b483a0b64
+SHA1 (patch-curve25519-donna.c) = d6a7a9f03ff64f0f9fe0e0d5ee36d4974b1c021c

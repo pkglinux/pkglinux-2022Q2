@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/09 21:14:43 markd Exp $
+
+BLAKE2s (fourier.doc.r61937.tar.xz) = 97823153e820cd5f167ea0f1eb1d7d620baabd2aa24243a2685849339e5807ab
+SHA512 (fourier.doc.r61937.tar.xz) = 7f6ac2665a52e2bf4fd4769629e00ac2192c68628784e3bb9bc5cf4f9f4c99e8e46485344e7a1019182be0af086e2b5b0ed557650b1d02ed8a9f6e2dd075d59e
+Size (fourier.doc.r61937.tar.xz) = 350016 bytes

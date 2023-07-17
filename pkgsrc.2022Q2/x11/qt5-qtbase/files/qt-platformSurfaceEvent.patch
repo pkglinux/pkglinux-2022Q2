@@ -1,0 +1,97 @@
+diff -Nurp qtbase-opensource-src-5.6.0-old/src/gui/kernel/qsurface.cpp qtbase-opensource-src-5.6.0-new/src/gui/kernel/qsurface.cpp
+--- qtbase-opensource-src-5.6.0-old/src/gui/kernel/qsurface.cpp	2016-03-03 14:35:22.000000000 +0300
++++ qtbase-opensource-src-5.6.0-new/src/gui/kernel/qsurface.cpp	2016-04-05 19:41:49.312032557 +0300
+@@ -34,6 +34,8 @@
+ #include "qsurface.h"
+ #include "qopenglcontext.h"
+ 
++#include <QtCore/QEvent>
++
+ QT_BEGIN_NAMESPACE
+ 
+ 
+@@ -113,6 +115,7 @@ bool QSurface::supportsOpenGL() const
+ /*!
+     Creates a surface with the given \a type.
+ */
++
+ QSurface::QSurface(SurfaceClass type)
+     : m_type(type), m_reserved(0)
+ {
+@@ -124,9 +127,7 @@ QSurface::QSurface(SurfaceClass type)
+ QSurface::~QSurface()
+ {
+ #ifndef QT_NO_OPENGL
+-    QOpenGLContext *context = QOpenGLContext::currentContext();
+-    if (context && context->surface() == this)
+-        context->doneCurrent();
++    contextDoneCurrent();
+ #endif
+ }
+ 
+@@ -138,5 +139,24 @@ QSurface::SurfaceClass QSurface::surface
+     return m_type;
+ }
+ 
++void QSurface::platformSurfaceEvent(QPlatformSurfaceEvent *e)
++{
++    if (e->surfaceEventType()==QPlatformSurfaceEvent::SurfaceAboutToBeDestroyed)
++    {
++#ifndef QT_NO_OPENGL
++        contextDoneCurrent();
++#endif
++    }
++}
++
++#ifndef QT_NO_OPENGL
++void QSurface::contextDoneCurrent()
++{
++    QOpenGLContext *context = QOpenGLContext::currentContext();
++    if (context && context->surface() == this)
++        context->doneCurrent();
++}
++#endif
++
+ QT_END_NAMESPACE
+ 
+diff -Nurp qtbase-opensource-src-5.6.0-old/src/gui/kernel/qsurface.h qtbase-opensource-src-5.6.0-new/src/gui/kernel/qsurface.h
+--- qtbase-opensource-src-5.6.0-old/src/gui/kernel/qsurface.h	2016-03-03 14:35:22.000000000 +0300
++++ qtbase-opensource-src-5.6.0-new/src/gui/kernel/qsurface.h	2016-04-04 18:33:25.000000000 +0300
+@@ -46,6 +46,8 @@ class QPlatformSurface;
+ 
+ class QSurfacePrivate;
+ 
++class QPlatformSurfaceEvent;
++
+ class Q_GUI_EXPORT QSurface
+ {
+ public:
+@@ -73,6 +75,14 @@ public:
+     virtual QSize size() const = 0;
+ 
+ protected:
++    virtual void platformSurfaceEvent(QPlatformSurfaceEvent *);
++
++private:
++#ifndef QT_NO_OPENGL
++    void contextDoneCurrent();
++#endif
++
++protected:
+     explicit QSurface(SurfaceClass type);
+ 
+     SurfaceClass m_type;
+diff -Nurp qtbase-opensource-src-5.6.0-old/src/gui/kernel/qwindow.cpp qtbase-opensource-src-5.6.0-new/src/gui/kernel/qwindow.cpp
+--- qtbase-opensource-src-5.6.0-old/src/gui/kernel/qwindow.cpp	2016-03-03 14:35:22.000000000 +0300
++++ qtbase-opensource-src-5.6.0-new/src/gui/kernel/qwindow.cpp	2016-04-05 19:41:31.384032751 +0300
+@@ -2109,6 +2109,10 @@ bool QWindow::event(QEvent *ev)
+         break;
+     }
+ 
++    case QEvent::PlatformSurface:
++        QSurface::platformSurfaceEvent(static_cast<QPlatformSurfaceEvent *>(ev));
++        break;
++
+     default:
+         return QObject::event(ev);
+     }

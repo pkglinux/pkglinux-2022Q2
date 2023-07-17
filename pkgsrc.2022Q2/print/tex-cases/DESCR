@@ -1,0 +1,5 @@
+This package provides a LaTeX environment "numcases" to produce
+multi-case equations with a separate equation number for each
+case. There is also a "subnumcases" environment which numbers
+each case with the overall equation number plus a letter [8a,
+8b, etc.].

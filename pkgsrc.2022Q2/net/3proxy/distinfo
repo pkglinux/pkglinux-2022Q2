@@ -1,0 +1,13 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:05:20 nia Exp $
+
+BLAKE2s (3proxy-0.8.11.tgz) = 21fc38274deb19257b08a6b67bc3d2711567b2d728416c5d6f3ea73009b4e72e
+SHA512 (3proxy-0.8.11.tgz) = 4160684892292a0c4666f8b8f3bdba0c0846842816ef4f6d0ce7286b520a3cda2ceee76580d2e61942afb9404a8ad93aa0260043acd4ffbfc1c38b3e31857c67
+Size (3proxy-0.8.11.tgz) = 511157 bytes
+SHA1 (patch-ab) = 3ad025c8577f1494d6949efcd5bf104672027a0d
+SHA1 (patch-ac) = e4e4a005e815c7cd353103bbcbbfdb849d637517
+SHA1 (patch-ad) = 8081f363dbf0232e5d1db1bc5e09f93ac7cfe95b
+SHA1 (patch-ae) = 467ad84a16ee806da1bbc3d297434bd31a25bb27
+SHA1 (patch-cfg_3proxy.cfg.sample) = 841eb478bd5ca09bd19364d61dcd963b7a15c790
+SHA1 (patch-Makefile.unix) = bcaf278e55d954ecc758a0f01c7e35f8d7a7fca2
+SHA1 (patch-man_3proxy.8) = ea00a3c99c201fc87efb1270bfaab13a4e2f9c75
+SHA1 (patch-man_3proxy.cfg.3) = 52fb754e7241c10612e13bca66127072732b56f1

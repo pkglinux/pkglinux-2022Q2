@@ -1,0 +1,8 @@
+/patch-CMakeLists.txt/1.8/Fri Jan  7 23:02:48 2022//Tpkgsrc-2022Q2
+/patch-src_lib_arch_CMakeLists.txt/1.1/Fri Jan  7 23:02:48 2022//Tpkgsrc-2022Q2
+/patch-src_lib_arch_unix_ArchSystemUnix.cpp/1.2/Fri Mar 11 20:49:13 2022//Tpkgsrc-2022Q2
+/patch-src_lib_platform_CMakeLists.txt/1.1/Fri Jan  7 23:02:48 2022//Tpkgsrc-2022Q2
+/patch-src_lib_platform_XWindowsKeyState.cpp/1.1/Fri Jan  7 23:02:48 2022//Tpkgsrc-2022Q2
+/patch-src_lib_platform_XWindowsPowerManager.cpp/1.1/Fri Jan  7 23:02:48 2022//Tpkgsrc-2022Q2
+/patch-src_lib_server_Config.cpp/1.2/Fri Jun 25 09:49:24 2021//Tpkgsrc-2022Q2
+D

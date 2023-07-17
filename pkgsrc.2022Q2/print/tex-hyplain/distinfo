@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:13:41 nia Exp $
+
+BLAKE2s (tex-hyplain-15878/hyplain.tar.xz) = 56a41627c213c4c0b70f33ac7753bead5d139b5b7eb829262d6f9fe2baa8811a
+SHA512 (tex-hyplain-15878/hyplain.tar.xz) = 80eaf264320586c07452f710dc95d2e295124d2f99605cd8f61d2d1c29f12b264041ff8b41e696b54f329d7dc6fde2b892a5419860efd138f2cb00724d582afc
+Size (tex-hyplain-15878/hyplain.tar.xz) = 3108 bytes

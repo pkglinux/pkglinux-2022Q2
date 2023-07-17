@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (flatpak-1.14.0.tar.xz) = 15befc7b10fe3dcad1e99f26452cf6c6ff65dd7bb59d8ea79f9ec6d0bd37ea40
+SHA512 (flatpak-1.14.0.tar.xz) = 88f011534a8da6c2421d7d24043756bfe6c46957b6d09ba96b269002a5f0d0372b51f4a8643af2020ef4ed8c5b5f102994ddab54a7052cfba15f8e3b160e8a83
+Size (flatpak-1.14.0.tar.xz) = 1636864 bytes

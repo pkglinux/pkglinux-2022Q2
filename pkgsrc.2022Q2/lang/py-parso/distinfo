@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.18 2021/12/01 08:44:23 adam Exp $
+
+BLAKE2s (parso-0.8.3.tar.gz) = e998824f4b3e75df980b99c311f51f9920bcbfa0eeb0b1d26ce99c04e10362e7
+SHA512 (parso-0.8.3.tar.gz) = 6a8626b2aa254e8c3b5afbacd122085d5a69ea04aeb271141f284822e300e8f7f1a53f9dc483a6522fe309cf09f60624972bb666d3a82d06af808c6790f87f1d
+Size (parso-0.8.3.tar.gz) = 400064 bytes

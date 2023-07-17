@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:47:23 nia Exp $
+
+BLAKE2s (wmphoto-0.3a.tar.gz) = b6c5a416808ca66ed6430e5ca58b198479d774ff2354ad6e9f82e368c4b7331b
+SHA512 (wmphoto-0.3a.tar.gz) = 24c474d7981b1bfe88c8442b50e92610e6e99fd46897a9c570df518e6ab5a96e7f6af42a72f8cfa7a1b9ff11d642b36352476768ae8947e5a933e6f02077dc90
+Size (wmphoto-0.3a.tar.gz) = 19320 bytes
+SHA1 (patch-aa) = cbdb2ba3f1d845b8ea4d6a3fb281e2fd8966669e
+SHA1 (patch-wmgeneral_list.h) = fdbaefcdb1e895bf904b383316c8aac3909a9b20

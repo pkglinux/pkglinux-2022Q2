@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.18 2022/04/24 13:49:07 nia Exp $
+
+BLAKE2s (libmpdclient-2.20.tar.xz) = 459f89e26a507aa81ee739aa6a688218e8be1177e7752af8e4d5ca793d9c49c4
+SHA512 (libmpdclient-2.20.tar.xz) = 3271c8eae017402976dbfabc51c7cb8d39912c8a3fd6cd075adc978d490f2eb850d86ccec9f7bccbda48c9d6ca1cda89918ac7c76b21f7f63ca1a276b67e94b6
+Size (libmpdclient-2.20.tar.xz) = 71552 bytes

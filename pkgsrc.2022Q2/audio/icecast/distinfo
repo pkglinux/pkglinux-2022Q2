@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.26 2021/10/26 09:59:02 nia Exp $
+
+BLAKE2s (icecast-2.4.4.tar.gz) = 134bb6f1773ad55bf649e295793672c61e160f56f68f355ba5e4f3f1fb50102f
+SHA512 (icecast-2.4.4.tar.gz) = e9ffb478cac2570891787455591d881a59185e067bb36f51706a7070cd9d82d80425ec8cf151f5ebb17d1b75654449fc760f8b82a1bb05f020b47ec09e46b4d0
+Size (icecast-2.4.4.tar.gz) = 2360592 bytes
+SHA1 (patch-aa) = d3f4891295143adc261b3bf076e924f4540c6030
+SHA1 (patch-ab) = 4abb78f2067369600851abca71bb19049d8a41e8
+SHA1 (patch-ac) = ce0a5474a88e5b768cd1c37ee0c934895a49093a
+SHA1 (patch-src_connection.c) = 8f1421cc84cacabfd94d873f2b6a159337944a79

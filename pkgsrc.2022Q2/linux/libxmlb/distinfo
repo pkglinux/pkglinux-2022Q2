@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (libxmlb-0.3.10.tar.gz) = ec37553fb830956aa351d0500d9afcd38b3ff5228e26ad0f959f48b042d12266
+SHA512 (libxmlb-0.3.10.tar.gz) = 05907c3dd2fa2ab67580e40fb573f27d9d47053fef5e23eb11ed887163ae0194b0f9b590e758fa76501098a5f261a48d9cd94003af828f5a18c61d89a9ec05bb
+Size (libxmlb-0.3.10.tar.gz) = 122004 bytes

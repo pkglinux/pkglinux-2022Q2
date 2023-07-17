@@ -1,0 +1,22 @@
+$NetBSD: patch-src_3rdparty_chromium_services_device_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/services/device/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/services/device/BUILD.gn
+@@ -17,7 +17,7 @@ import("//build/config/deprecated_defaul
+ set_sources_assignment_filter(deprecated_default_sources_assignment_filter)
+ 
+ is_serial_enabled_platform =
+-    is_win || ((is_linux || is_chromeos) && use_udev) || is_mac
++    is_win || ((is_linux || is_chromeos || is_bsd) && use_udev) || is_mac
+ 
+ source_set("lib") {
+   # This should be visible only to embedders of the Device Service, and the
+@@ -109,7 +109,7 @@ component("binder_overrides") {
+   defines = [ "IS_DEVICE_SERVICE_BINDER_OVERRIDES_IMPL" ]
+ }
+ 
+-is_linux_without_udev = (is_linux || is_chromeos) && !use_udev
++is_linux_without_udev = (is_linux || is_chromeos || is_bsd) && !use_udev
+ 
+ source_set("perftests") {
+   testonly = true

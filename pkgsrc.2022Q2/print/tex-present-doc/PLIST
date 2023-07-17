@@ -1,0 +1,13 @@
+@comment $NetBSD: PLIST,v 1.2 2019/05/07 11:26:44 markd Exp $
+share/texmf-dist/doc/plain/present/HowToTalkTeX.lp
+share/texmf-dist/doc/plain/present/HowToTalkTeX.pdf
+share/texmf-dist/doc/plain/present/HowToTalkTeX.tex
+share/texmf-dist/doc/plain/present/Pfeil1.pdf
+share/texmf-dist/doc/plain/present/Pfeil2.pdf
+share/texmf-dist/doc/plain/present/Pfeil3.pdf
+share/texmf-dist/doc/plain/present/Pfeil4.pdf
+share/texmf-dist/doc/plain/present/README
+share/texmf-dist/doc/plain/present/Sagnac.pdf
+share/texmf-dist/doc/plain/present/Stern.png
+share/texmf-dist/doc/plain/present/background.png
+share/texmf-dist/doc/plain/present/present-transitions.tex

@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 11:34:09 nia Exp $
+
+BLAKE2s (libunique-3.0.2.tar.bz2) = 3a666862d44df7c96528f5269f50af19e8fc86df83ff589f54d561b7311581c2
+SHA512 (libunique-3.0.2.tar.bz2) = 08373391c06872794a1be7a7ecf25e4b6d6a80b65246db941badfc8d61d5d1770bdf77887a3474c12a35c135da834fd581d9713e6984def3d02b8409f0773a8d
+Size (libunique-3.0.2.tar.bz2) = 342778 bytes
+SHA1 (patch-unique_Makefile.am) = c69e6de16feeaa06aae597d92a43307f5488fa2d
+SHA1 (patch-unique_Makefile.in) = 6d079ad07957d5fba475fb47239d9c750b786dc5

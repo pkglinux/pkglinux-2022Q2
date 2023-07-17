@@ -1,0 +1,10 @@
+@comment $NetBSD: PLIST,v 1.3 2020/06/17 17:06:55 nia Exp $
+bin/telnet-chatd
+bin/telnet-client
+bin/telnet-proxy
+include/libtelnet.h
+lib/libtelnet.la
+lib/pkgconfig/libtelnet.pc
+man/man1/telnet-chatd.1
+man/man1/telnet-client.1
+man/man1/telnet-proxy.1

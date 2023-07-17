@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/11 09:19:43 pho Exp $
+
+BLAKE2s (prettyprinter-1.7.1.tar.gz) = 40c9c3287e4989940ecb6e409c0ea5dbcb7a7dddc53e0dce22c47cb61b4eb1ab
+SHA512 (prettyprinter-1.7.1.tar.gz) = 26289e579cc1a2826dc11daedbdfd5ce31acf4a2382f827c20194d910f05201e3f332a6544aa0c3f941188d9eaee8d6dee3cf3d319dc3c5a7bfe4f35d77b4dd9
+Size (prettyprinter-1.7.1.tar.gz) = 56907 bytes

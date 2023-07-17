@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.58 2021/11/16 14:32:39 wiz Exp $
+
+BLAKE2s (libtasn1-4.18.0.tar.gz) = 714ef4fb2b22f6cc5d17184d111e5bb5c6e1ac310936114c1443e639e9e7011e
+SHA512 (libtasn1-4.18.0.tar.gz) = 4f2f4afc7561fda7a1f1c6c525c3c3b08228a1a4aa8c3d3d5e02e993d8f83ccee1dd0f1b201cec0fbfc97043d4b1d7a95ffd34d65422a38b85b931ac7a015831
+Size (libtasn1-4.18.0.tar.gz) = 1724441 bytes

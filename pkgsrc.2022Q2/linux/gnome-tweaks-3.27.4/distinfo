@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (gnome-tweaks-3.27.4.tar.bz2) = c5b1af5a68c5fa5ca1cea075e17cecd8882f5a63ecc7a7b9976068016b2d8551
+SHA512 (gnome-tweaks-3.27.4.tar.bz2) = 84372553eea7a8069c38d290f867eb14f2319ec13d245bc3442d4496330b1e51363777ebd05cdc533ce95ef0de256e3c6b404bde13e3f27a218d2f34b918b448
+Size (gnome-tweaks-3.27.4.tar.bz2) = 280215 bytes
+SHA1 (patch-data_meson.build) = c42ecea529ff5c971595a63ab30fa4fc33db80a1

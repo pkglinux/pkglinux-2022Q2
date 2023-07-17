@@ -1,0 +1,20 @@
+$NetBSD: distinfo,v 1.2 2022/04/05 09:24:29 adam Exp $
+
+BLAKE2s (ffmpeg-5.0.1.tar.xz) = 9b694a2c12b1c5216e21c381e1d6389c29bff56ba39d4e6051b28c560e33646f
+SHA512 (ffmpeg-5.0.1.tar.xz) = e5810c7379748a6bbe1a903bf36b4372b67cb3973179727b6af6f0118eef46f4c990155961cc37255e08a5bafdc4b4683503ad410ebb7afe7a35b891c01fa602
+Size (ffmpeg-5.0.1.tar.xz) = 9812524 bytes
+SHA1 (patch-Makefile) = 2d27f218ee49179fdea14bb5c86c506dfb64dbd6
+SHA1 (patch-configure) = b4dea315f65ab019eb78cee7f58d938382024ae0
+SHA1 (patch-doc_Makefile) = d45fc311f47e6cd8a8432659d7bd77e50b858e43
+SHA1 (patch-doc_general__contents.texi) = 13704795d2688dc0377a512dc6e65025ad674724
+SHA1 (patch-doc_indevs.texi) = 8cd421a67f34ebbe6099102bf1de7c6cdb13dcb7
+SHA1 (patch-doc_outdevs.texi) = 0aec04682b516016abe9b81f6efcbbef97b1c3b2
+SHA1 (patch-libavdevice_Makefile) = 526efd20021068245d8904c0d55508a540ae4054
+SHA1 (patch-libavdevice_alldevices.c) = 1d12f5b12d37a73512cd8e0f05272e9a64588e49
+SHA1 (patch-libavdevice_sunau.c) = 44dba866c58d508c0f873ffdd9ad8d25c059cc8a
+SHA1 (patch-libavdevice_sunau.h) = 2678d87f81e7b3faa42b5cc9814e373c4ad812f6
+SHA1 (patch-libavdevice_sunau__dec.c) = d2fc01e941c68ab8b6f5e0b98ee536a32cc56bdc
+SHA1 (patch-libavdevice_sunau__enc.c) = efe765b99ad6379d0237c619ac0dce41306431be
+SHA1 (patch-libavutil_macros.h) = 7d9770f018a2207d2dcb1fe057564e30be51fd42
+SHA1 (patch-libavutil_x86_asm.h) = 8f48f9e8ec08b5176bb40fc0021f3bb913dbef22
+SHA1 (patch-libavutil_x86_cpu.c) = 9c97e68fde0fcb19741e034a803d509040ea4487

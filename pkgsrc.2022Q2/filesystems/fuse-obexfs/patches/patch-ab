@@ -1,0 +1,19 @@
+$NetBSD: patch-ab,v 1.2 2022/01/27 03:58:34 pho Exp $
+
+Do not overwrite CFLAGS
+
+--- configure.in.orig	2006-02-08 21:18:40.000000000 +0000
++++ configure.in
+@@ -7,10 +7,11 @@ AC_PROG_CC
+ AC_PROG_RANLIB
+ AC_PROG_INSTALL
+ 
++AC_CHECK_HEADERS(sys/statvfs.h)
+ PKG_CHECK_MODULES(OPENOBEX,openobex)
+ # PKG_CHECK_MODULES(OBEXFTP,obexftp)
+ 
+-CFLAGS="-Wall -W -Wmissing-declarations -Wmissing-prototypes"
++CFLAGS="$CFLAGS -Wall -W -Wmissing-declarations -Wmissing-prototypes"
+ CFLAGS="$CFLAGS -O2 -D_FILE_OFFSET_BITS=64"
+ 
+ AC_OUTPUT([Makefile fuse/Makefile])

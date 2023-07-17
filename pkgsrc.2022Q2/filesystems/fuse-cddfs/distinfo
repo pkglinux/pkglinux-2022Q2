@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:25:26 nia Exp $
+
+BLAKE2s (cddfs-0.2.tar.gz) = 1f40aaaef10f2ed3772f92bcea0fcc015add9c50673a531e8176965eecf5520a
+SHA512 (cddfs-0.2.tar.gz) = 61a6982cd0682c63e3b473846e4d3eb2e8b28a36ecbc49b021c42917e0d1a27182ad1d2b382d8d4510b3224c6f686206d802b0546c21ad4c73a4810a62e556c0
+Size (cddfs-0.2.tar.gz) = 3811 bytes
+SHA1 (patch-aa) = 21edd386ece5318d63b143f1910abbdbe25f87cb
+SHA1 (patch-ab) = 06324aa5ae58e7ac5529f156c50e2363b06b4ed2

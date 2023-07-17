@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/06 15:23:34 gdt Exp $
+
+BLAKE2s (gramps-5.1.5.tar.gz) = eb126e8f477a3b019e0a062e747c8dd53cd7675f462181fb9d73ebeb8adb0528
+SHA512 (gramps-5.1.5.tar.gz) = 8e36e8da7cfb41cc0c77881993cfc212a15bf9775dad3c8be131889b70360117e023b6837b91dad28fc03198080290a08c8089856c753246ff14c7fc3bca38be
+Size (gramps-5.1.5.tar.gz) = 17425167 bytes

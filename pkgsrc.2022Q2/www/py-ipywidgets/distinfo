@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/07 10:20:48 adam Exp $
+
+BLAKE2s (ipywidgets-7.7.0.tar.gz) = 515ff750d4e3f1eaa0799f2b9b1f972e3f6b102ae17614c3d0abc89428353abf
+SHA512 (ipywidgets-7.7.0.tar.gz) = 038da040912e6701762fb66fb3b6996ce0a59706afb05405b5932c02d34733842b227426f0b29eea115196bab384617425b0553c5db13a9dc832bddef63dfb92
+Size (ipywidgets-7.7.0.tar.gz) = 4074763 bytes

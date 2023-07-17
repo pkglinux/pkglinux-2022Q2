@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/08 22:58:22 markd Exp $
+
+BLAKE2s (garuda-c90.r60832.tar.xz) = 17547ce45a6474fccc720382a60f16bd7d798a8af58e613fc305aa470dc6e1f1
+SHA512 (garuda-c90.r60832.tar.xz) = a806538598cae0365968ab20936631a052dc65f9f6056c39197f7b1c7a5aad717a7a8b72ed2a1af347f8ce91f27d7dcd74b758db8f01fc7810a8d658990bcc28
+Size (garuda-c90.r60832.tar.xz) = 3416 bytes

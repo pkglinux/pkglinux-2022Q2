@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.15 2022/04/15 00:46:49 markd Exp $
+
+BLAKE2s (biblatex.doc.r61868.tar.xz) = b5d1e62064bf98b4a035ac98f5ed5b251313318e4cebc831131ca77250a17644
+SHA512 (biblatex.doc.r61868.tar.xz) = 21b55961ea6c0289a001e85ba87a9582598e01dc5c0942f4fad624b07b0bde020f1267033100057917547aef853c54fca4a62105405c5359cab7f491a025d55a
+Size (biblatex.doc.r61868.tar.xz) = 7298740 bytes

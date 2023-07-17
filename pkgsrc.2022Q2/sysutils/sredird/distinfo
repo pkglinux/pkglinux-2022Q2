@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 11:20:14 nia Exp $
+
+BLAKE2s (sredird-2.0.0.tar.gz) = 79441bcb960e15397cbf40298558682f8bc60e85d671341f604fded7349ea3ee
+SHA512 (sredird-2.0.0.tar.gz) = 5e13490a4adee81ecfd859b83ed88665a045d29fc0d341abe32d3307cab65e23dbb563055b0e0431da99370d8a4720593ef29e06f741528e004cc3c622797944
+Size (sredird-2.0.0.tar.gz) = 24053 bytes
+SHA1 (patch-Makefile) = 8dff7071ec15fb7d58eef51e57938f5a1d51ec2f
+SHA1 (patch-aa) = fcae87128439b1fc6705703d473380df46dbcd7e

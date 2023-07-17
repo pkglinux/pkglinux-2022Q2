@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:34:43 nia Exp $
+
+BLAKE2s (xf86-video-suncg3-1.1.2.tar.bz2) = 9ab7b0c4700ec266118c036c86cc75fce81d9f3e3c47d4ca83c04fccb80c0d8a
+SHA512 (xf86-video-suncg3-1.1.2.tar.bz2) = d4b658700a94716ab2253d672cbb64a13b4dc8571664c77db6770b96419031d73c5927d35692a2903e09fe3fc6802015328c3ec055e40a344be60d601fc03bad
+Size (xf86-video-suncg3-1.1.2.tar.bz2) = 281012 bytes

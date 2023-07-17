@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (breeze-5.18.5.tar.xz) = e3d2682da7260bc651aaef717a91133c9f552c474b6eb19d01a3c225ad790366
+SHA512 (breeze-5.18.5.tar.xz) = d4797d9ecabd1d1bcaa483722c255f1a79aad5d15bca0daee571eced2e5c295e39ed8cd6039fca39d9e1a1456bd823f30fd332b2811a04df2b2e3663a04abff5
+Size (breeze-5.18.5.tar.xz) = 21583276 bytes

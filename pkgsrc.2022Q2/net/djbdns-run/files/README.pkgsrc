@@ -1,0 +1,33 @@
+ Getting started
+ ===============
+
+Assuming NetBSD-style rc(8), to enable a DNS...
+
+Caching resolver for the local machine:
+- Run "echo nameserver 127.0.0.1 > /etc/resolv.conf".
+- Set dnscache=YES in /etc/rc.conf.
+- Run "@RCD_SCRIPTS_DIR@/dnscache start".
+
+Authoritative name server:
+- Set tinydns=YES axfrdns=YES in /etc/rc.conf.
+- Create @PKG_SYSCONFDIR@/tinydns/data with suitable contents.
+- Run "@RCD_SCRIPTS_DIR@/tinydns start"
+  and "@RCD_SCRIPTS_DIR@/axfrdns start".
+
+RBL name server:
+- Set rbldns=YES in /etc/rc.conf (and rbldns_ip to a suitable IP address).
+- Create @PKG_SYSCONFDIR@/rbldns/data with suitable contents.
+- Run "@RCD_SCRIPTS_DIR@/rbldns start".
+
+
+ Getting help
+ ============
+
+You've installed an automated and customized djbdns-run package.
+If you're having trouble getting the djbdns daemons to run, ask
+the package's maintainer:
+
+<URL:mailto:schmonz-pkgsrc-djbdns@schmonz.com>
+
+If you need to ask for help on the dns list, please mention that
+you're using the djbdns-run package from pkgsrc.

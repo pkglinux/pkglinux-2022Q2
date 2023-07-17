@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:18:03 nia Exp $
+
+BLAKE2s (picprg2.3d.tar.gz) = 3f9a3f359ba6a8696519b06c8fdbcad322d79c998c4fd1b3f6a2797b461ce147
+SHA512 (picprg2.3d.tar.gz) = 633dd37ac71a718545a1fc27db03dcae6a4ee98597b8eb5e483b4aa1e00030b9b4de24f29f5969f112ebc9ce9e479a1b60727155d9274100fe54609c6eda836e
+Size (picprg2.3d.tar.gz) = 24549 bytes
+SHA1 (patch-aa) = f424612828ea9176c3504c47b6b2cbe65661003e
+SHA1 (patch-ab) = 470458291bf40ef6d3990245e6e37de6e3b361db
+SHA1 (patch-ac) = c7a9bef6026f8295b9873a0b517d6758827cb806
+SHA1 (patch-ad) = 2be694f0a33efa7ed732aaa75191419d9d2d9250
+SHA1 (patch-ae) = df0bf8d812a3419b252bdb9d291328b11743a017
+SHA1 (patch-af) = aa7ffa416b82e84facffb49126b2f2c328e72905

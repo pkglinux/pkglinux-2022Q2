@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 09:59:06 nia Exp $
+
+BLAKE2s (libmad-0.15.1b.tar.gz) = 739dad037187978b4d80dec1be14583d2cc3f79ac868a39b95273fd30a02cad1
+SHA512 (libmad-0.15.1b.tar.gz) = 2cad30347fb310dc605c46bacd9da117f447a5cabedd8fefdb24ab5de641429e5ec5ce8af7aefa6a75a3f545d3adfa255e3fa0a2d50971f76bc0c4fc0400cc45
+Size (libmad-0.15.1b.tar.gz) = 502379 bytes
+SHA1 (patch-aa) = 82271980d28d151b6b85987e075ad15dace4ed3b
+SHA1 (patch-bit.c) = 2dedd19cd385a0ae578fa3d72399dbb6c9ebf453
+SHA1 (patch-frame.c) = 87c97a6ce7688e7a3a227876f8bcf81e2c8425f8
+SHA1 (patch-layer12.c) = 7fbfd6939715adac7269c6d083ea5f0202abbfba
+SHA1 (patch-layer3.c) = cbf34e24ba21ef7d0f1e469c9569313d6b266658

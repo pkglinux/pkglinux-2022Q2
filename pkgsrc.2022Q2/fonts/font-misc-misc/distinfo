@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:27:10 nia Exp $
+
+BLAKE2s (font-misc-misc-1.1.2.tar.bz2) = 9e2802d59706a6a7c859cfd032e76a92787a119a61a914a4e46508b3f5808f48
+SHA512 (font-misc-misc-1.1.2.tar.bz2) = d0bf74142f9621746846ea7a6fe9ae298a303a09c65e05c7decb4f37b2f513a88d727bf3dc5a3566c30de83b83493f164be0118b41d704464f75700b55018c74
+Size (font-misc-misc-1.1.2.tar.bz2) = 1933789 bytes
+SHA1 (patch-aa) = 9e384cbaa6d9bfaeafce9b06b42093b080cec5fb
+SHA1 (patch-ac) = 6b4fc215a5ac7e8c792f7b0211f1be315a4d9e52

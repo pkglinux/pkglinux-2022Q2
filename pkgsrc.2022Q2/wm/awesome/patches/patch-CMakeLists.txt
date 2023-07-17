@@ -1,0 +1,15 @@
+$NetBSD: patch-CMakeLists.txt,v 1.2 2019/07/17 22:08:58 nia Exp $
+
+Install config file to the examples directory.
+
+--- CMakeLists.txt.orig	2019-01-28 06:53:24.000000000 +0000
++++ CMakeLists.txt
+@@ -371,7 +371,7 @@ install(TARGETS ${PROJECT_AWE_NAME} RUNT
+ install(FILES "utils/awesome-client" DESTINATION bin PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
+ install(DIRECTORY ${BUILD_DIR}/lib DESTINATION ${AWESOME_DATA_PATH}
+     PATTERN "*.in" EXCLUDE)
+-install(FILES ${BUILD_DIR}/awesomerc.lua DESTINATION ${AWESOME_SYSCONFDIR}
++install(FILES ${BUILD_DIR}/awesomerc.lua DESTINATION ${CMAKE_INSTALL_PREFIX}/share/examples/awesome
+         RENAME rc.lua)
+ if(GENERATE_MANPAGES)
+     if(COMPRESS_MANPAGES)

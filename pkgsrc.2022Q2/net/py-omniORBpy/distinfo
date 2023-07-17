@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 11:06:40 nia Exp $
+
+BLAKE2s (omniORBpy-3.5.tar.bz2) = 7ab9000a846458e37aef4c93ca3fccde35d5e7eccc391fdb94da5a379465e369
+SHA512 (omniORBpy-3.5.tar.bz2) = 15eb3cfc460d80cb4686d984be78b1194647e63e6fe5b971615870d5ff2ed7953d14c60c9536eda3d2fb88c22c258e5024158004a002ca6a5e3ebccb63940c13
+Size (omniORBpy-3.5.tar.bz2) = 607213 bytes
+SHA1 (patch-aa) = da768cb94abd970037675535b5350f84480f6ff3
+SHA1 (patch-modules_pyFixed.cc) = 1060c24ea8fbc1ce9514ab709bfc64cea9aa9eea
+SHA1 (patch-omniidl__be_dir.mk) = 66821bd1d261d36815c6f3bd2ac0fe42722617a3

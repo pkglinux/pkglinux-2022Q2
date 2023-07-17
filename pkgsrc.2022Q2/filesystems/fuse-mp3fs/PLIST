@@ -1,0 +1,3 @@
+@comment $NetBSD: PLIST,v 1.4 2021/12/01 14:35:15 pho Exp $
+bin/mp3fs
+man/man1/mp3fs.1

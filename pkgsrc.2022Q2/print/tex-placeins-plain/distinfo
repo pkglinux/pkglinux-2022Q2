@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:14:21 nia Exp $
+
+BLAKE2s (tex-placeins-plain-15878/placeins-plain.tar.xz) = 46f59a1e5f69df9db85451cfc545559e008805185d36740ab7b640328b0ab745
+SHA512 (tex-placeins-plain-15878/placeins-plain.tar.xz) = 5b900af96934eaaa50df3eba17d40953715a4489317832c1ef60cbecd2a00f30b60e7cba16e470777769b125e01cba5980898df4e3993c8200c1c1b010d391b7
+Size (tex-placeins-plain-15878/placeins-plain.tar.xz) = 2624 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/05/04 16:14:30 jaapb Exp $
+
+BLAKE2s (ppx_sexp_message-0.15.0.tar.gz) = 3ec55434bf4ae9add457c1f0467dc6bd80fc6fb2d669fad7aba103b1108018df
+SHA512 (ppx_sexp_message-0.15.0.tar.gz) = 2b671a1fa020c785ffb02b67998653dedcce892ab68fc23665ce8c88534ae9f5e1df2f148e1f9ea965444f4a48d896735e2bdc313db2787101a5aee2e5f9f025
+Size (ppx_sexp_message-0.15.0.tar.gz) = 7772 bytes

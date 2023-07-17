@@ -1,0 +1,29 @@
+$NetBSD: patch-ad,v 1.3 2018/02/19 21:25:46 triaxx Exp $
+
+Calling usleep for 1000000 microseconds or more is not allowed, so add a
+myusleep() wrapper to DTRT.
+
+--- src/common.c.orig	2017-10-19 14:31:30.000000000 +0000
++++ src/common.c
+@@ -881,3 +881,21 @@ unsigned long getip46(int family, unsign
+ 	return 0;
+ #endif
+ }
++
++/*
++ * POSIX says:
++ *     The usleep() function may fail if:
++ *     [EINVAL] The time interval specified one million or more microseconds.
++ *
++ * Other code in 3proxy calls usleep with much larger arguments, but
++ * that gets redirected here via "#define usleep(usecs) myusleep(usecs)"
++ * in proxy.h.  We call sleep() for any whole number of seconds, and
++ * the real usleep() for any left over microseconds.
++ */
++int myusleep(useconds_t useconds)
++{
++	unsigned int secs = useconds / 1000000;
++	useconds = useconds % 1000000;
++	if (secs > 0) sleep(secs);
++	return (usleep)(useconds);
++}

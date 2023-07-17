@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/03/02 21:31:07 nia Exp $
+
+BLAKE2s (stone_soup-0.28.0-nodeps.tar.xz) = e61ae2972502808190cc3f4a97c0283cb161615bb59a55eca39613eeb199de5d
+SHA512 (stone_soup-0.28.0-nodeps.tar.xz) = 84ab9893c87c1af213dfe6fdf0e0d2249b72f7e3deb557cfd80f79f7f77d03ef919d4dfee5a36a159937fc60dcad11d383239e82798017e10e0ff7c3430ad98a
+Size (stone_soup-0.28.0-nodeps.tar.xz) = 13913072 bytes

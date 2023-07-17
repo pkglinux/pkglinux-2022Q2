@@ -1,0 +1,5 @@
+@comment $NetBSD: PLIST,v 1.7 2018/12/18 15:53:46 tnn Exp $
+bin/Xdummy
+bin/x11vnc
+man/man1/x11vnc.1
+share/applications/x11vnc.desktop

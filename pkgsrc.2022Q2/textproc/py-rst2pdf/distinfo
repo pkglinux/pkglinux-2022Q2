@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/05/10 07:21:45 adam Exp $
+
+BLAKE2s (rst2pdf-0.99.tar.gz) = 668c029de23fad6a4c426bb6bdc22834f8145b66a31803cd998fe9e5214aa4fd
+SHA512 (rst2pdf-0.99.tar.gz) = 4532486d5e072ae8b1b5360a2557856014697d67f5d65ab1ea220bb672d8155533e1279e48b0206687a1ded3f90850bcff37d73da68a44071cf232d1e23f7daf
+Size (rst2pdf-0.99.tar.gz) = 12141631 bytes

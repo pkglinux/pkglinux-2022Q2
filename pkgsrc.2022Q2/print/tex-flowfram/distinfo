@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:13:22 nia Exp $
+
+BLAKE2s (tex-flowfram-35291/flowfram.tar.xz) = a48891c35959412b85a78e9f6a9cedf0ff216e9edbe052da95ebeffa3675afa2
+SHA512 (tex-flowfram-35291/flowfram.tar.xz) = a6903621c67d58cba25a137c4214ae94f0e9de9a8d266840da0f92bd224ae7609f1adfeba62ef447679881f1c3a33bcfb4684b85b25e2858167a079641be466d
+Size (tex-flowfram-35291/flowfram.tar.xz) = 24364 bytes

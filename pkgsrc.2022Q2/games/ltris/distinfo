@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.13 2021/10/26 10:44:13 nia Exp $
+
+BLAKE2s (ltris-1.0.20.tar.gz) = eaf2437ceab3db998716471f1255c8b077ff6a7776d7264f5830b135cf6d02e3
+SHA512 (ltris-1.0.20.tar.gz) = 92861bdb4b43750edbdb31c999e106b0f166cae736b598caba3028b26651502f6b4e81d0b7c92df38d96223c899450ddaa445ab186198dfeb21617340eb73d26
+Size (ltris-1.0.20.tar.gz) = 897167 bytes
+SHA1 (patch-aa) = 951a8dba5a263338be2ff46d7faddc8216aa8345
+SHA1 (patch-ab) = 1b06b8a065fa6b4231a3b8d49f6111b37033e5aa

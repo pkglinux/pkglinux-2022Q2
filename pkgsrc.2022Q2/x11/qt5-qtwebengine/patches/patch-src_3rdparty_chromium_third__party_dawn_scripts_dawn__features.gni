@@ -1,0 +1,36 @@
+$NetBSD: patch-src_3rdparty_chromium_third__party_dawn_scripts_dawn__features.gni,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/third_party/dawn/scripts/dawn_features.gni.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/third_party/dawn/scripts/dawn_features.gni
+@@ -49,11 +49,11 @@ declare_args() {
+ 
+   # Enables the compilation of Dawn's OpenGL backend
+   # (best effort, non-conformant)
+-  dawn_enable_opengl = is_linux && !is_chromeos
++  dawn_enable_opengl = (is_linux || is_bsd) && !is_chromeos
+ 
+   # Enables the compilation of Dawn's Vulkan backend
+   dawn_enable_vulkan = is_linux || is_chromeos || is_win || is_fuchsia ||
+-                       is_android || dawn_use_swiftshader
++                       is_android || dawn_use_swiftshader || is_bsd
+ 
+   # Enable use of reflection compiler in spirv-cross. This is needed
+   # if performing reflection on systems that the platform language
+@@ -67,7 +67,7 @@ declare_args() {
+       is_debug || (build_with_chromium && use_fuzzing_engine)
+ 
+   # Whether Dawn should enable X11 support.
+-  dawn_use_x11 = is_linux && !is_chromeos
++  dawn_use_x11 = (is_linux || is_bsd) && !is_chromeos
+ 
+   # Enable support WGSL for shaders.
+   # Turned off for Skia, because Tint is currently not part of its DEPS.
+@@ -80,7 +80,7 @@ declare_args() {
+ declare_args() {
+   # Uses our built version of the Vulkan validation layers
+   dawn_enable_vulkan_validation_layers =
+-      dawn_enable_vulkan && ((is_linux && !is_chromeos) || is_win || is_mac)
++      dawn_enable_vulkan && ((is_linux && !is_chromeos) || is_win || is_bsd)
+ 
+   # Uses our built version of the Vulkan loader on platforms where we can't
+   # assume to have one present at the system level.

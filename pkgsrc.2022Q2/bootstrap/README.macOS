@@ -1,0 +1,42 @@
+$NetBSD: README.macOS,v 1.8 2022/04/09 17:23:12 schmonz Exp $
+
+Please read the general README file as well.
+
+Binary packages are available for macOS arm64 and x86_64, provided by
+Joyent. More info: <http://pkgsrc.joyent.com/install-on-osx/>
+
+If these don't suffice for your needs, you'll want to build your own.
+First, install either the full Xcode environment (if that's something
+you want to have) or else just its Command Line Tools. For the latter:
+
+	$ xcode-select --install
+
+Next, if you haven't already done so, fetch and extract pkgsrc:
+
+	$ curl -O https://cdn.netbsd.org/pub/pkgsrc/current/pkgsrc.tar.gz
+	$ tar -zxf pkgsrc.tar.gz && rm pkgsrc.tar.gz
+
+Now you're ready to bootstrap as described in README.
+
+Once bootstrapped, install `devel/scmcvs` so you can update pkgsrc via
+anonymous CVS. Alternatively, swap out your CVS checkout for a clone
+from this git mirror: <https://github.com/NetBSD/pkgsrc/>
+
+For a local X11 display server, install `x11/modular-xorg-xquartz`.
+
+For any particular package that doesn't build, macOS fixes are often in
+MacPorts or Homebrew waiting to be borrowed.
+
+Patches to support older systems will generally get merged, provided
+they don't break newer systems and aren't too much trouble to maintain.
+Tigerbrew is a good place to look for such fixes.
+
+Occasionally, after updating to a freshly released macOS version, you'll
+see "No suitable Xcode SDK or Command Line Tools installed." This
+usually means a pkgsrc developer needs to add another `OSX_SDK_MAP`
+entry to `mk/platform/Darwin.mk`.
+
+-----
+
+Additional historical details, likely useful with older systems:
+<https://wiki.netbsd.org/pkgsrc/macos_porting_notes/>

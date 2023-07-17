@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/09 21:11:38 markd Exp $
+
+BLAKE2s (footnotehyper.doc.r60374.tar.xz) = eacdf3a4a69d2fcd8303edc6fcf65953f39334f1932f4e92819527a4fb09088d
+SHA512 (footnotehyper.doc.r60374.tar.xz) = 605c22ffce3c413a0f9caa41a3ff7a43022a9c7a26e43fb177c107c2bc156c93a75f392b29d46880793788f9b5f0ac9e87cdb4c5075a247c17abec2e41527ef5
+Size (footnotehyper.doc.r60374.tar.xz) = 83112 bytes

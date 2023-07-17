@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.18 2022/03/20 09:32:03 wen Exp $
+
+BLAKE2s (Net-Amazon-S3-0.99.tar.gz) = a2b5f49ced91bb35cdcca47a13833a734f02f891aa1219eefb89d59490540139
+SHA512 (Net-Amazon-S3-0.99.tar.gz) = d48359730477a1ee08159ba0d16ebb3a3bbc15d891304915cdb479a3f7ff8358cb5240f4d018a515be9c5fd91b46d0a643ed4f305670593f079e5011a1b34e4f
+Size (Net-Amazon-S3-0.99.tar.gz) = 133057 bytes

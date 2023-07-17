@@ -1,0 +1,13 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 11:17:19 nia Exp $
+
+BLAKE2s (mcrypt-2.6.8.tar.gz) = eee046dd23d1295f70519a0acd16e6455f33f1b443c534ac1f6a766e935bef03
+SHA512 (mcrypt-2.6.8.tar.gz) = eae5f831e950df69eb93efc8314100b4b5dc8a535b1d00f500e6b25382efcec321346776a92dadf101b878ef46a47de2e9e81f5ddf5c73563ece4741f169c8d1
+Size (mcrypt-2.6.8.tar.gz) = 471915 bytes
+SHA1 (patch-doc_mcrypt.1) = 93ccc6b07b09535e09d65e2862571b1c592fc141
+SHA1 (patch-src_errors.c) = b8467130c6cc7f3a650d8a737e1b5a75c8db5e9e
+SHA1 (patch-src_extra.c) = f265989f7e8ad7ec6fd8afece3b8a785f49d13ae
+SHA1 (patch-src_gaaout.c) = 73001f8b98dc87354f7550e2080ac7ab3a59ceb6
+SHA1 (patch-src_mcrypt.c) = c1c99aa4dcf5912e43ab831f0ee32611ea029400
+SHA1 (patch-src_mcrypt.gaa) = 1fefccbf336a99bcb83dd05739c53a40b1f0a9ce
+SHA1 (patch-src_mcrypt__int.h) = 94caaff9bb0d48c6c6406e3f8965db82e7f93408
+SHA1 (patch-src_rfc2440.c) = 4c7b885bfa9e451f3082e3338eadcaedbbb9d6cc

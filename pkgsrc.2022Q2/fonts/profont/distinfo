@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:27:22 nia Exp $
+
+BLAKE2s (profontlinux.zip) = a034fcc125db62177c3216acf0a997b3a94a5b5907f1618b6e3f5c4ef0318c45
+SHA512 (profontlinux.zip) = 3689885a16406984cf305db5a93a46c9c768aabdcb6208999501fd3ade8bd91106dd9ff89f41c111aeb0452e3c673a37871b798f26cb524120efb176b909b903
+Size (profontlinux.zip) = 33262 bytes

@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.12 2021/10/26 11:33:51 nia Exp $
+
+BLAKE2s (gtk+extra-2.1.2.tar.gz) = b37554caa3113b0c7d0f740c0c272ea307a464550a8fc655938a900eeecbc4e2
+SHA512 (gtk+extra-2.1.2.tar.gz) = 815c498d05d5c00b318363f3a63797a2318d3f1547cc091391ab12607d7bdad8289fe73210c2c00ea1341272633dfc19e443602fe19be70cefc79ca8a6e70a32
+Size (gtk+extra-2.1.2.tar.gz) = 1274946 bytes
+SHA1 (patch-aa) = d061999e1f2261fa7fe92ef29ecfa889f141e6b0
+SHA1 (patch-ad) = e2c45a044ef08c4e01df8f24ef174dc7d62a95f6
+SHA1 (patch-ae) = a27172a43e2796dff796916773e3f57ed6be30ed
+SHA1 (patch-af) = 4d83e4859aa4377cae55cdccc4b3a2c774d32a9a
+SHA1 (patch-ag) = c4c50b3f73177de6d9f31190f013cd05fed41518
+SHA1 (patch-gtkextra_gtkcharsel_c) = eec527bb8560eb957a80a6425e7f2df7d1f6ea79
+SHA1 (patch-gtkextra_gtkplotsurface.c) = 59eb81742a41f943c14ead8b300a9425344128b8

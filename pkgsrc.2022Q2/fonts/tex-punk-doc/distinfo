@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:28:24 nia Exp $
+
+BLAKE2s (tex-punk-27388/punk.doc.tar.xz) = 3292904cc5ffd90d53f56eb03bf9da794a08b3f1c9d6364bfd932089dc8398b4
+SHA512 (tex-punk-27388/punk.doc.tar.xz) = ba276179f4b6058f8c065de6f3ebf92c401d4e56ef99a68432454698b68470bed42872a45b5a25fb5a06e83375187b12f28a9b2259bac4cb9b726e457d4bfee8
+Size (tex-punk-27388/punk.doc.tar.xz) = 1044 bytes

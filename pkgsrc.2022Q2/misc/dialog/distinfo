@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.60 2022/05/27 10:09:13 fcambus Exp $
+
+BLAKE2s (dialog-1.3-20230209.tgz) = 0309edb277e050badb9eaef2b903749395f018c48d2075ac72d445d33c7f68d2
+SHA512 (dialog-1.3-20230209.tgz) = e34b1de09e3455289ee6278cf2f8bfb6ec9f8f6ed1f61aee10ad0ff5ee499330ec3481afa1dcd999ed7460479607cc443433e09584b8eeab2efdba689b6851cf
+Size (dialog-1.3-20230209.tgz) = 573222 bytes

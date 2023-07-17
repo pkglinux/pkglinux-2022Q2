@@ -1,0 +1,1 @@
+The chkconfig utility is a command-line tool that allows you to specify in which runlevel to start a selected service, as well as to list all available services along with their current setting. Note that with the exception of listing, you must have superuser privileges to use this command.

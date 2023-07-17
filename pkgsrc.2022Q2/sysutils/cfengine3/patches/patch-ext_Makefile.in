@@ -1,0 +1,14 @@
+$NetBSD: patch-ext_Makefile.in,v 1.4 2020/04/25 11:49:52 nia Exp $
+
+No use for rpmvercmp.
+
+--- ext/Makefile.in.orig	2020-03-23 17:11:26.000000000 +0000
++++ ext/Makefile.in
+@@ -89,7 +89,6 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ target_triplet = @target@
+-bin_PROGRAMS = rpmvercmp$(EXEEXT)
+ subdir = ext
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/acinclude.m4 \

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (btrfs-progs-v5.13.1.tar.xz) = 1b829887378bedae978174ec08fd11b78b8009f7e75ece01efa0ef8deeaa80f5
+SHA512 (btrfs-progs-v5.13.1.tar.xz) = 4ef8256da59614d17316db9c19909a2aa4f0557504201e421332c63a4935dbd6578791484b9f3f2dbeaaa28f6f4b4fd59c5a7adf6853fd76546ac213a0f09823
+Size (btrfs-progs-v5.13.1.tar.xz) = 2237108 bytes

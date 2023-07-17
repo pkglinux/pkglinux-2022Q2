@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:46:34 nia Exp $
+
+BLAKE2s (ocrad-0.21.tar.gz) = 8a657264aa9542472f4c281ce8558a9a8d9c10faa3b8bb571849f6b10ff13d64
+SHA512 (ocrad-0.21.tar.gz) = 29b4f99ab0584ef38038658d0988fb57b5c8daba11b96fda4a33768b0cdb8100c74689de8d270792317a9bd8bb062942e77d4ca44048e6943563a2be4f1f4704
+Size (ocrad-0.21.tar.gz) = 103962 bytes
+SHA1 (patch-aa) = 39729c825c1b9591c7dda23597f7d8f900b42b2c
+SHA1 (patch-ab) = 8bbfafd788c4fd377f8f8b51cb297b528b9be65c
+SHA1 (patch-ac) = 952531f89f29a93c20dd4af8050b8e6fa8a5a6a4
+SHA1 (patch-character__r11.cc) = 40503e81f216b278cfc603c795ec9465f51410af
+SHA1 (patch-feats__test0.cc) = 7c09ed58efac3be114947bb317262742f6525545
+SHA1 (patch-profile.cc) = 84ff427fd4294e32c92a5bd31403c9dabbc1d427
+SHA1 (patch-track.cc) = 5c842497fa58510be3f8a2f37bc76de0df8d1cb4

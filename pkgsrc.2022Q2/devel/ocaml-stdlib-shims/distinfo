@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/02 14:54:16 jaapb Exp $
+
+BLAKE2s (stdlib-shims-0.3.0.tar.gz) = 9379d8e79d44ca4a1b5d95f1f5fe9cba859f662975d9b7170feb54a692d00ef3
+SHA512 (stdlib-shims-0.3.0.tar.gz) = c4f2a6dc38171e1d2125cc30e5d63f64f49d8ed011df6588dfa0b51f9dc634f9e8771d6237110c7d1d5e81e161dd5112eaae8df71ee3a7d8a010c2732fcc75ca
+Size (stdlib-shims-0.3.0.tar.gz) = 11557 bytes

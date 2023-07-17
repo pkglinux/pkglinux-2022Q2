@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.29 2022/03/11 11:05:44 micha Exp $
+
+BLAKE2s (woof_9.0.0.tar.gz) = b63d237c2b85397d2c36e14833b8b7a410c244eb92042c0419fa682c48b77823
+SHA512 (woof_9.0.0.tar.gz) = f554a6aa80456bc4b0d5156344beafa7b51f4d796306dafcb22ebd3f46441c1307b595df9f4eba4834bb117841326c2695ac3f132c2c90dc84c3cede8f523d83
+Size (woof_9.0.0.tar.gz) = 7778038 bytes
+SHA1 (patch-Source_d__iwad.c) = a58291e4717699efaefa3e56294666cfc6e65c75

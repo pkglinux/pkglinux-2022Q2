@@ -1,0 +1,5 @@
+@comment $NetBSD$
+bin/tardiff
+bin/tardiffinfo
+bin/tardiffmerge
+bin/tarpatch

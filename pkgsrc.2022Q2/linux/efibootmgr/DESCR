@@ -1,0 +1,22 @@
+
+This is efibootmgr, a Linux user-space application to modify the Intel
+Extensible Firmware Interface (EFI) Boot Manager.  This application
+can create and destroy boot entries, change the boot order, change
+the next running boot option, and more.
+
+Details on the EFI Boot Manager are available from the EFI
+Specification, v1.02 or above, available from: http://www.uefi.org
+
+Note: efibootmgr requires that the kernel module efivars be loaded
+prior to use. Running 'modprobe efivars' should do the trick.
+
+usage: efibootmgr [options]
+        -a | --active          sets bootnum active
+        -A | --inactive        sets bootnum inactive
+        -b | --bootnum XXXX    modify BootXXXX (hex)
+        -B | --delete-bootnum  delete bootnum
+        -c | --create          create new variable bootnum and add to bootorder
+        -d | --disk disk       (defaults to /dev/sda) containing loader
+        -e | --edd [1|3|-1]    force EDD 1.0 or 3.0 creation variables, or guess
+        -E | --device num      EDD 1.0 device number (defaults to 0x80)
+...

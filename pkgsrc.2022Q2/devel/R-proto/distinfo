@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:14:07 nia Exp $
+
+BLAKE2s (R/proto_1.0.0.tar.gz) = 28688370ea02263c8597ceb36e9ad2ab2adb00ba68203bbab31adbf9e0fc37d3
+SHA512 (R/proto_1.0.0.tar.gz) = 18b1d762ec3d7a6ddb26b179b2b3327b1a279bfba4ffd137992fc6fab3bb33a324964eaef5ef0a11436076527f7b7dc64253843d37bbbbd3aaccccdfd3264ae8
+Size (R/proto_1.0.0.tar.gz) = 541398 bytes

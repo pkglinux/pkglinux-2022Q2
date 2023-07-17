@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:13:16 nia Exp $
+
+BLAKE2s (tex-euler-17261/euler.doc.tar.xz) = 76cbdb564adb2e614b5a890d7e4188f90e6a45d7d516a2c8432eecfbd413ab0f
+SHA512 (tex-euler-17261/euler.doc.tar.xz) = 4721e114543775fb9d2516a172b4c56e0b72b6c5ea074ef715a92703a3942d92ca58a241140af1b76d80194de3838f5bd7d0d193fee59fb53eeefff0a781e147
+Size (tex-euler-17261/euler.doc.tar.xz) = 236752 bytes

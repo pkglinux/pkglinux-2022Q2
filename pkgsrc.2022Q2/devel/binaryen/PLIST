@@ -1,0 +1,16 @@
+@comment $NetBSD: PLIST,v 1.5 2022/05/01 19:07:47 fcambus Exp $
+bin/binaryen-unittests
+bin/wasm-as
+bin/wasm-ctor-eval
+bin/wasm-dis
+bin/wasm-emscripten-finalize
+bin/wasm-fuzz-types
+bin/wasm-metadce
+bin/wasm-opt
+bin/wasm-reduce
+bin/wasm-shell
+bin/wasm-split
+bin/wasm2js
+include/binaryen-c.h
+include/wasm-delegations.def
+lib/libbinaryen.so

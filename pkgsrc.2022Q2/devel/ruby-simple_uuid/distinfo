@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:19:48 nia Exp $
+
+BLAKE2s (simple_uuid-0.4.0.gem) = b0747889becc37acb5ceeb2d778d880cc5994fe00fa7face92e082abfaec2764
+SHA512 (simple_uuid-0.4.0.gem) = 1c53f73ddec3764780b0adcc76c0b61842d8cb4326f8172b3e59436b031b2a8073dca8934e7796cca126769be7be310d8bd77e19d3ac1af57edefc7e4b18a52a
+Size (simple_uuid-0.4.0.gem) = 7680 bytes

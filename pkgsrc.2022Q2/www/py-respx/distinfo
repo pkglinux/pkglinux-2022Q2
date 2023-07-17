@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2022/02/06 07:53:10 adam Exp $
+
+BLAKE2s (respx-0.19.2.tar.gz) = d62b36d6d8a7302195da604ed3de8b9cd51015dae7c6037ca7f1d0d42bd6a3bd
+SHA512 (respx-0.19.2.tar.gz) = 82d4c93f7af1d9563e1b313dbe04cb9a83b6882cf28b01bc224176f06b8cc74775f9fd52bcc7ca4db3ee925e71bac9c5b744fde7bbbcce97e8d13d9695ab9e06
+Size (respx-0.19.2.tar.gz) = 24437 bytes

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (NetworkManager-1.32.10.tar.xz) = 496624eb6bc6b52270c36040ede2f46dbf8fdf25a4d5260fc1ad8b9630466ff3
+SHA512 (NetworkManager-1.32.10.tar.xz) = c4eb9114869efba197c3ec1e99d7d5bc54222d9c7118cf699fe61130952a20376a760b86909290d6312a4a23016d51f9ff90ba8eadbbcda84ce811e441293d8d
+Size (NetworkManager-1.32.10.tar.xz) = 5353296 bytes

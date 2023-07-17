@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:30:36 nia Exp $
+
+BLAKE2s (filebrowser_safe-0.5.0.tar.gz) = df2f58b36db9b059f1e6748fb1d2e104c83cee5da7a80418db35af9d74fc9722
+SHA512 (filebrowser_safe-0.5.0.tar.gz) = 53e458b311e758e95b3d7dbe9612e58b3a285a6b3c0fab3d89865a891f78fabddd4d7dca7825c176d150149d05bb8080e4e13d616ad44914b5790f2ea463cb54
+Size (filebrowser_safe-0.5.0.tar.gz) = 76694 bytes

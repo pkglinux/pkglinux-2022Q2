@@ -1,0 +1,17 @@
+$NetBSD: patch-configure.ac,v 1.2 2018/12/18 15:53:46 tnn Exp $
+
+* check openpty(3)
+
+--- configure.ac.orig	2018-02-04 21:43:38.000000000 +0000
++++ configure.ac
+@@ -511,6 +511,10 @@ case `(uname -sr) 2>/dev/null` in
+     ;;
+ esac
+ 
++AC_CHECK_HEADERS([pty.h libutil.h util.h])
++AH_TEMPLATE(HAVE_OPENPTY, [Define to `1' if you have the `openpty' function.])
++AC_SEARCH_LIBS(openpty, util bsd, [AC_DEFINE(HAVE_OPENPTY)])
++
+ # Check for rpm SOURCES path
+ printf "checking for rpm sources path... "
+ RPMSOURCEDIR="NOT-FOUND"

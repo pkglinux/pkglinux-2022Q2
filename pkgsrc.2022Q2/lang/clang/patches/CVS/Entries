@@ -1,0 +1,8 @@
+/patch-lib_Basic_Targets_OSTargets.h/1.4/Sat Oct 19 13:54:29 2019//Tpkgsrc-2022Q2
+/patch-lib_Driver_ToolChain.cpp/1.2/Mon Jul 12 18:42:06 2021//Tpkgsrc-2022Q2
+/patch-lib_Driver_ToolChains_Solaris.cpp/1.8/Tue Nov 23 20:55:43 2021//Tpkgsrc-2022Q2
+/patch-lib_Driver_ToolChains_Solaris.h/1.4/Mon Jul 12 18:42:06 2021//Tpkgsrc-2022Q2
+/patch-lib_Frontend_InitHeaderSearch.cpp/1.2/Sun Dec  9 20:04:38 2018//Tpkgsrc-2022Q2
+/patch-tools_clang-shlib_CMakeLists.txt/1.2/Fri Jan 14 08:58:48 2022//Tpkgsrc-2022Q2
+/patch-tools_libclang_CMakeLists.txt/1.2/Fri Jan 14 08:58:48 2022//Tpkgsrc-2022Q2
+D

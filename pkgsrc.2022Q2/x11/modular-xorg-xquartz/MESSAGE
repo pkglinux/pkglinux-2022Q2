@@ -1,0 +1,10 @@
+===========================================================================
+$NetBSD: MESSAGE,v 1.2 2022/05/12 19:39:00 tnn Exp $
+
+To finish the installation of pkgsrc X11 on your Mac:
+
+$ ln -sf ${PREFIX}/Applications/Utilities/X11.app ~/Applications/X11.app
+
+Then click on ~/Applications/X11 in Finder.
+
+===========================================================================

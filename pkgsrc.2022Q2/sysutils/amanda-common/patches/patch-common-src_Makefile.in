@@ -1,0 +1,13 @@
+$NetBSD: patch-common-src_Makefile.in,v 1.2 2018/11/23 22:33:13 spz Exp $
+
+--- common-src/Makefile.in.orig	2016-02-09 22:53:07.000000000 +0000
++++ common-src/Makefile.in
+@@ -1969,6 +1969,8 @@ genversion_SOURCES = genversion.c svn-in
+ genversion_LDADD = $(libamanda_la_LIBADD)	\
+ 	../gnulib/libgnu.la
+ 
++genversion.la: genversion.h
++
+ etcamandadir = ${CONFIG_DIR}
+ etcamanda_FILE = amanda-security.conf
+ etcamanda_DATA = ${etcamanda_FILE}

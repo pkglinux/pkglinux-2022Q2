@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (grub-2.06.tar.xz) = c9f93f1e195ec7a5a21d36a13b469788c0b29f0f
+RMD160 (grub-2.06.tar.xz) = 8eb66f6b7f8c4ea49bc32842889328719281138d
+SHA512 (grub-2.06.tar.xz) = 4f11c648f3078567e53fc0c74d5026fdc6da4be27d188975e79d9a4df817ade0fe5ad2ddd694238a07edc45adfa02943d83c57767dd51548102b375e529e8efe
+Size (grub-2.06.tar.xz) = 6581924 bytes
+SHA1 (patch-configure) = 737a18ed5e2bc3aff8ad9cda178d8bd8e0247593

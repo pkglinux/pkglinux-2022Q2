@@ -1,0 +1,5 @@
+@comment $NetBSD: PLIST,v 1.4 2018/01/01 22:29:58 rillig Exp $
+libexec/rconfig_probe
+libexec/rconfig_ssh
+man/man8/rconfig.8
+sbin/rconfig

@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.6 2022/03/11 07:37:41 nia Exp $
+
+BLAKE2s (gnome-shell-42.4.tar.xz) = 1f2842f7fabc6b8a58612122ff748c90c1d338446755d5ed17b7464ba512ebe6
+SHA512 (gnome-shell-42.4.tar.xz) = f06f390cdb55b5b5871bbd35dfc3b0057fbc79d4dcb2334b34bfa198ec46a1880de99097e42ed9052b3183266dd017457f6a9a07fc3c517277551295478cb340
+Size (gnome-shell-42.4.tar.xz) = 1928776 bytes
+SHA1 (patch-data_gnome-shell-dbus-interfaces.gresource.xml) = e894ef19a7c09be7ad351e1d30c47ed32fefb23a
+SHA1 (patch-js_misc_loginManager.js) = ef4f3021de67022f85bcda6c92c8e64f35769b9f
+SHA1 (patch-js_ui_endSessionDialog.js) = c408095f208ecc25be9efa45fd344b29806a2827
+SHA1 (patch-js_ui_main.js) = a3e15a0a0cf4a13bf6f378612dcb4e43ada4e55a
+SHA1 (patch-meson.build) = ed915e2be38caa3142358c488134c65654d55db4
+SHA1 (patch-src_main.c) = ac2116285f008fdc275d419f711755b5d0049930

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/11/07 00:59:13 wen Exp $
+
+BLAKE2s (Proc-Background-1.30.tar.gz) = 0f4248ad3230c6cb9d11e6ca670b03b045261f805a041d04496b4e5b1f50eb0a
+SHA512 (Proc-Background-1.30.tar.gz) = 88efaa3a2845b5397fff218011048d8f8fae4546dba850bed048a531787b516272469298d25a23c61b92d36f98655c9b6d867c4c4df38b05d3d845d0868a630b
+Size (Proc-Background-1.30.tar.gz) = 32397 bytes

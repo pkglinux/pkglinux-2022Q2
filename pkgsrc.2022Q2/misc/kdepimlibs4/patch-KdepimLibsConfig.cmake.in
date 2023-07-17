@@ -1,0 +1,11 @@
+$NetBSD$
+
+--- KdepimLibsConfig.cmake.in.orig	2015-06-24 12:43:14.000000000 +0000
++++ KdepimLibsConfig.cmake.in
+@@ -101,5 +101,5 @@ _kdepimlibs_set_lib_vars(KTNEF
+ _kdepimlibs_set_lib_vars(KXMLRPCCLIENT  kxmlrpcclient)
+ _kdepimlibs_set_lib_vars(MAILTRANSPORT  mailtransport)
+ _kdepimlibs_set_lib_vars(MICROBLOG      microblog)
+-_kdepimlibs_set_lib_vars(QGPGME         qgpgme)
++_kdepimlibs_set_lib_vars(QGPGME         qgpgme4)
+ _kdepimlibs_set_lib_vars(SYNDICATION    syndication)

@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:20:22 nia Exp $
+
+BLAKE2s (virtinst-0.600.3.tar.gz) = e10da2ddaaf14c5982f6a74a37f2cbc776809bf77f57e82cd2c20d1094ac17fd
+SHA512 (virtinst-0.600.3.tar.gz) = fdb51919cd24bd83857c6a078bbc2469a184b98966da4afc1e2b4f39d570b570bd2d408c233e7049e8f7d57f137426d361496d349afff9c7dde6833fb5790332
+Size (virtinst-0.600.3.tar.gz) = 8174690 bytes
+SHA1 (patch-setup.py) = dee3d46c73968d2df057808a20f589c236943628

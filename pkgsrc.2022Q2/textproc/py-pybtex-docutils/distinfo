@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/12/06 15:22:57 wiz Exp $
+
+BLAKE2s (pybtex-docutils-1.0.1.tar.gz) = 0fad15f692883a087231490da5c26e0bf6119fa2e0c826635fb409ae88b2e0ff
+SHA512 (pybtex-docutils-1.0.1.tar.gz) = 8f84a822287e78a09b935a0f358b48e8a02be21303907fdce352515a844fe22dadb44646ca1abc44c8a8e7523c4f7074f3673fd6d565b178c862589cf58e9a48
+Size (pybtex-docutils-1.0.1.tar.gz) = 14234 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/02 03:10:26 wen Exp $
+
+BLAKE2s (R/timeSeries_3062.100.tar.gz) = 3cb62d4c63acc1b067f2970c2f9dc4731b4c73b758073216e620b8f2ddc5554f
+SHA512 (R/timeSeries_3062.100.tar.gz) = 9a1976f0355ffa0d16148f25f23e93219d4e8e2e44e87fc3d83999223bcb24e701ac6b8722370c559f8b997de33123b9bb6d1953d8e2acfea7c3242e453be73d
+Size (R/timeSeries_3062.100.tar.gz) = 1281981 bytes

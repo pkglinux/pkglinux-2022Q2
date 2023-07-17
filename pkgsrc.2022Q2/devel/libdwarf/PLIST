@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.3 2022/03/19 08:47:25 wiz Exp $
+bin/dwarfdump
+include/libdwarf-0/dwarf.h
+include/libdwarf-0/libdwarf.h
+lib/libdwarf.la
+lib/pkgconfig/libdwarf.pc
+man/man1/dwarfdump.1
+share/dwarfdump/dwarfdump.conf

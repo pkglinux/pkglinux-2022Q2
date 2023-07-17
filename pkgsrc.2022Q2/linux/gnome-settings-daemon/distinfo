@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.19 2021/11/17 09:43:03 cirnatdan Exp $
+
+BLAKE2s (gnome-settings-daemon-42.2.tar.xz) = f159cc58d6c5ee759260caec0c50898460bcfde552b91650693f207ad5de7c09
+SHA512 (gnome-settings-daemon-42.2.tar.xz) = 66f1e766a7d1c36d4609c9505ba5d99516505ecfc5123483a3cbc6189d21cce23abf26da067bf9c05c3c25bc96d4568a8b07477f0722b0cb9442085f6d886e5c
+Size (gnome-settings-daemon-42.2.tar.xz) = 1483864 bytes
+SHA1 (patch-meson.build) = 0f74b1816677e8fa9da07e07a37e0fb844e5c829
+SHA1 (patch-plugins_xsettings_meson.build) = d9e4dbff479e86375f1386d61b63594e9bd77a84

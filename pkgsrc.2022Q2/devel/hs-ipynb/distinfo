@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/02/12 07:39:06 pho Exp $
+
+BLAKE2s (ipynb-0.2.tar.gz) = 6e067acf263ec603a242626356e0efe47b6e861b9027588b7415154f83ff44e5
+SHA512 (ipynb-0.2.tar.gz) = 885ffa2f2269b2bc6c2381fe7a7c91de93e8539ca3493d5a8207e75e986fc42a4b8ead0b4d05184da5bbb931466431ca1b810f03db8cd2c1624a67e1bbb782ea
+Size (ipynb-0.2.tar.gz) = 632962 bytes

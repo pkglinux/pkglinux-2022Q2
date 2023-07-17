@@ -1,0 +1,17 @@
+@comment $NetBSD$
+bin/text-engine-demo
+include/text-engine/format/import.h
+include/text-engine/layout/layout-box.h
+include/text-engine/layout/layout.h
+include/text-engine/layout/types.h
+include/text-engine/model/block.h
+include/text-engine/model/frame.h
+include/text-engine/model/item.h
+include/text-engine/model/paragraph.h
+include/text-engine/model/run.h
+include/text-engine/text-engine-version.h
+include/text-engine/text-engine.h
+include/text-engine/tree/node.h
+include/text-engine/ui/display.h
+lib/libtext-engine-0.1.so
+lib/pkgconfig/text-engine-0.1.pc

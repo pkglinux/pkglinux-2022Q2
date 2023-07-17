@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 11:14:06 nia Exp $
+
+BLAKE2s (tex-moreverb-22126/moreverb.doc.tar.xz) = 31c78020db185125212a78fb10a6a83c28d60771e9a9442cd38f8d7d3f272b2a
+SHA512 (tex-moreverb-22126/moreverb.doc.tar.xz) = 0508cb243af88ccb8c3108f06e874388acb4f57eac9787a4263da8976eb76af6d8468e95e59028aec6bc3c7cafe0421495c947da3148ccb101f01c36361d900c
+Size (tex-moreverb-22126/moreverb.doc.tar.xz) = 114948 bytes

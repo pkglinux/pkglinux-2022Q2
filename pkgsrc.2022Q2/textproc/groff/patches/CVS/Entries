@@ -1,0 +1,15 @@
+/patch-aa/1.7/Mon Apr  1 16:48:37 2019//Tpkgsrc-2022Q2
+/patch-configure/1.4/Mon Apr  1 16:48:37 2019//Tpkgsrc-2022Q2
+/patch-src_libs_libgroff_assert.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_libs_libgroff_curtime.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_libs_libgroff_device.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_libs_libgroff_error.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_libs_libgroff_fatal.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_libs_libgroff_string.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_libs_libgroff_strsave.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_libs_libgroff_tmpfile.cpp/1.2/Thu Jan  8 09:14:58 2015//Tpkgsrc-2022Q2
+/patch-src_preproc_eqn_eqn.ypp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_preproc_eqn_other.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_preproc_eqn_text.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+/patch-src_preproc_pic_object.cpp/1.1/Mon Mar 30 19:32:24 2020//Tpkgsrc-2022Q2
+D

@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 09:58:49 nia Exp $
+
+BLAKE2s (cddb.bundle-0.2.tar.gz) = 4f85b1eeab4020dcdac672c82090ba3b16fd38b0819d082090ab4fb8715ce85e
+SHA512 (cddb.bundle-0.2.tar.gz) = a3abf5d20f8b802d82aa5bdc879439adc121069cfccd5e9cb8aeed51c2303bce35657c66a7efefd71697ae013173a366058ffde21236d753613805a2372f1975
+Size (cddb.bundle-0.2.tar.gz) = 16936 bytes
+SHA1 (patch-aa) = 10174afe64d9a5211af1947ddf569b9135d7fb24
+SHA1 (patch-ab) = 8f58dd914544650096eb4ed3be45b961c3d39e85

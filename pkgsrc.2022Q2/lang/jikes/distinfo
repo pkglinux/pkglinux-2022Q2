@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.17 2021/10/26 10:51:39 nia Exp $
+
+BLAKE2s (jikes-1.22.tar.bz2) = ffea7581b1571ff48536f774f2aec46b087d79657eb02f62f670a5a2eec534b5
+SHA512 (jikes-1.22.tar.bz2) = 6b318f49f075da0cf0558512748bd77072f5b5b0428160538bcba01201c94719ec0f4b0cd0159ddb04fb3a86c323c8f11f09dc4b31cf880fb94e00c1ee0bbc58
+Size (jikes-1.22.tar.bz2) = 616655 bytes
+SHA1 (patch-aa) = ccbeebce3de33df799eb0eaa6c1b998349a7935f
+SHA1 (patch-ab) = 74f48e87522110ffffe39ee74bd6cee4093f3b8c

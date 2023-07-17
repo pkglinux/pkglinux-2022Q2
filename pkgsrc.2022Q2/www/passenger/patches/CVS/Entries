@@ -1,0 +1,13 @@
+/patch-build_common__library.rb/1.1/Tue Jan 30 12:06:48 2018//Tpkgsrc-2022Q2
+/patch-build_packaging.rb/1.1/Tue Jan 30 12:06:48 2018//Tpkgsrc-2022Q2
+/patch-src_agent_Core_ApplicationPool_Group_ProcessListManagement.cpp/1.1/Fri Mar 27 20:51:23 2020//Tpkgsrc-2022Q2
+/patch-src_agent_Core_ApplicationPool_Pool_GarbageCollection.cpp/1.1/Fri Mar 27 20:51:23 2020//Tpkgsrc-2022Q2
+/patch-src_agent_Core_SpawningKit_Exceptions.h/1.1/Sun Jan  6 09:52:50 2019//Tpkgsrc-2022Q2
+/patch-src_cxx__supportlib_LoggingKit_Context.h/1.2/Wed Apr  4 12:47:44 2018//Tpkgsrc-2022Q2
+/patch-src_cxx__supportlib_SystemTools_ProcessMetricsCollector.h/1.1/Sun Jan  6 09:52:50 2019//Tpkgsrc-2022Q2
+/patch-src_cxx__supportlib_oxt_system__calls.cpp/1.1/Fri Mar 27 20:51:23 2020//Tpkgsrc-2022Q2
+/patch-src_cxx__supportlib_vendor-modified_boost_asio_detail_impl_kqueue__reactor.ipp/1.1/Wed Dec 25 00:15:42 2019//Tpkgsrc-2022Q2
+/patch-src_ruby__supportlib_phusion__passenger.rb/1.1/Tue Jan 30 12:06:48 2018//Tpkgsrc-2022Q2
+/patch-src_ruby__supportlib_phusion__passenger_packaging.rb/1.1/Tue Jan 30 12:06:48 2018//Tpkgsrc-2022Q2
+/patch-src_ruby__supportlib_phusion__passenger_platform__info_cxx__portability.rb/1.1/Tue Jan 30 12:06:48 2018//Tpkgsrc-2022Q2
+D

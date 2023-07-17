@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:16:29 nia Exp $
+
+BLAKE2s (Devel-SmallProf-2.02.tar.gz) = a83fd28d97aa2d09096776b40a26888c28c2d10f380804381b2ad10836b4ad94
+SHA512 (Devel-SmallProf-2.02.tar.gz) = f97ccacf3668feaccb5eda8e451c0c00a434df4051f9f2cb1c2f85cb9285e98c9f1198789467c21cabaddb667ba09b4fb56073075e9307881c7a71a820607743
+Size (Devel-SmallProf-2.02.tar.gz) = 9367 bytes

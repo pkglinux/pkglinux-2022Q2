@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 10:43:47 nia Exp $
+
+BLAKE2s (battalionSource1.4.tar.Z) = de7c009befb6be83b0608a24c59a352f871ae25673faa1b2dca152accf9a3c04
+SHA512 (battalionSource1.4.tar.Z) = 0512e1eaec362bcfa23f52fb902868965db313f6aaf829a6797a284f2129d83f07cab65d38fdad36180e09215f5f79db6534a28d3fd574cc59009fe01c3b6393
+Size (battalionSource1.4.tar.Z) = 186221 bytes
+BLAKE2s (battalionSUN4.tar.gz) = 7f03f002be3a30dd025ac82fe611e94387f4a5630947255b0573793d37a143ed
+SHA512 (battalionSUN4.tar.gz) = 1e1ea7c7232b99b01a85fdf0660877944d64172b751df1dcd63a6cbeb4179078e80879aca77d84bb37b68fcf082680243987d5b65c77e5ea48e8f5645f9b2ef0
+Size (battalionSUN4.tar.gz) = 1593265 bytes
+SHA1 (patch-aa) = 1f32510f308e8c081d9a23f7213c564035e0c823
+SHA1 (patch-ab) = a47c5be93d82555b4fed23f5d5e71169859ebb49
+SHA1 (patch-ac) = a2b15a1bbff53cd6804b063dc776c34fcf55ecba
+SHA1 (patch-ad) = 97b000c9173b2d40d26889ae1dda36167d57ae77

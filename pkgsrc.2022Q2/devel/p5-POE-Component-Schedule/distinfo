@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:17:12 nia Exp $
+
+BLAKE2s (POE-Component-Schedule-0.95.tar.gz) = 20c28dd79ebb3ec189d28e45736c36d00ff097a7e5da5082f37b7831a5d7eac8
+SHA512 (POE-Component-Schedule-0.95.tar.gz) = ac26fe6c234d838938e77b772df49deb8952f6e0f608528f3bf7f0a4ef8a778a983948175b8cb5c2276f82e1fd769b6845baeac8f518a82bee0d4954052c8bf3
+Size (POE-Component-Schedule-0.95.tar.gz) = 18894 bytes

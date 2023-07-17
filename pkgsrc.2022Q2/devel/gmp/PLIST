@@ -1,0 +1,22 @@
+@comment $NetBSD: PLIST,v 1.14 2020/01/20 21:25:24 adam Exp $
+include/gmp.h
+${PLIST.cxx}include/gmpxx.h
+info/gmp.info
+lib/libgmp.la
+${PLIST.cxx}lib/libgmpxx.la
+lib/pkgconfig/gmp.pc
+lib/pkgconfig/gmpxx.pc
+native/lib/libgmp.a
+native/lib/libgmp.la
+native/lib/libgmp.so
+native/lib/libgmp.so.10
+native/lib/libgmp.so.10.4.1
+native/lib/libgmpxx.a
+native/lib/libgmpxx.la
+native/lib/libgmpxx.so
+native/lib/libgmpxx.so.4
+native/lib/libgmpxx.so.4.6.1
+native/usr/include/gmp.h
+native/usr/include/gmpxx.h
+native/usr/lib/pkgconfig/gmp.pc
+native/usr/lib/pkgconfig/gmpxx.pc

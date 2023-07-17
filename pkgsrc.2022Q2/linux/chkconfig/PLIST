@@ -1,0 +1,5 @@
+@comment $NetBSD$
+man/man8/chkconfig.8
+native/sbin/chkconfig
+sbin/chkconfig
+@pkgdir bin

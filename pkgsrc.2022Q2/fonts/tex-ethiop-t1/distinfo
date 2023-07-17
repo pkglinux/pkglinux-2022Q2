@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:27:54 nia Exp $
+
+BLAKE2s (tex-ethiop-t1-15878/ethiop-t1.tar.xz) = 21627524b8f183467e32b0dcc179d17bdeb718078435bd3bcd08948a65b3fd84
+SHA512 (tex-ethiop-t1-15878/ethiop-t1.tar.xz) = 1f7272e453e8ab0d2a40bcc6f047c240c6368528b4ddc2571144379a0f83e33ba25e6a65366681e7c1a0cf432076caf359f9cca7055fd3a5db4c115593a7f170
+Size (tex-ethiop-t1-15878/ethiop-t1.tar.xz) = 5184384 bytes

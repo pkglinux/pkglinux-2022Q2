@@ -1,0 +1,23 @@
+/bug1.mk/1.4/Sun Apr 26 13:11:17 2020//Tpkgsrc-2022Q2
+/bug1.out/1.2/Sun May 15 23:37:13 2005//Tpkgsrc-2022Q2
+/bug2.mk/1.2/Mon Aug  1 01:02:05 2005//Tpkgsrc-2022Q2
+/bug2.out/1.2/Mon Aug  1 01:02:05 2005//Tpkgsrc-2022Q2
+/continue.mk/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/continue.out/1.2/Sun Apr 26 13:11:17 2020//Tpkgsrc-2022Q2
+/dblquote.mk/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/dblquote.out/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/for.mk/1.2/Fri Nov 30 19:06:33 2018//Tpkgsrc-2022Q2
+/for.out/1.2/Fri Nov 30 19:06:33 2018//Tpkgsrc-2022Q2
+/ltarget.mk/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/ltarget.out/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/nestfor.mk/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/nestfor.out/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/newline.mk/1.2/Sun Apr 26 13:11:17 2020//Tpkgsrc-2022Q2
+/newline.out/1.2/Sun Apr 26 13:11:17 2020//Tpkgsrc-2022Q2
+/quoting.mk/1.2/Thu Jun 29 13:35:18 2006//Tpkgsrc-2022Q2
+/quoting.out/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/sglquote.mk/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/sglquote.out/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/vtarget.mk/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+/vtarget.out/1.1.1.1/Sun May 15 21:10:16 2005//Tpkgsrc-2022Q2
+D

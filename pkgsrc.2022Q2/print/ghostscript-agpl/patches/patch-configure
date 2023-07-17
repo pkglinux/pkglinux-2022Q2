@@ -1,0 +1,73 @@
+$NetBSD: patch-configure,v 1.9 2022/05/27 08:26:52 adam Exp $
+
+Use system zlib for linking.
+Add rpath.
+Get all LDFLAGS for FreeType2.
+Use correct install_name with path on Darwin.
+
+--- configure.orig	2022-04-04 13:48:49.000000000 +0000
++++ configure
+@@ -4036,7 +4036,7 @@ CFLAGSAUX_STANDARDTMP="\$(CFLAGS_STANDAR
+ CFLAGSAUX_DEBUGTMP="\$(CFLAGS_DEBUG)"
+ CFLAGSAUX_PROFILETMP="\$(CFLAGS_PROFILE)"
+ LDFLAGSAUXTMP="\$(LDFLAGS)"
+-AUXEXTRALIBSTMP="\$(EXTRALIBS)"
++AUXEXTRALIBSTMP="\$(EXTRALIBS) -lz"
+ 
+ # purposefully do not include "help" output for this
+ # Check whether --enable-save_confaux was given.
+@@ -4667,10 +4667,7 @@ case $host in
+         *-sun*|*-solaris*)
+         CC_OPT_FLAGS_TO_TRY="-O2 -DNDEBUG"
+         CFLAGS_LARGEFILE="-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64"
+-        # the trailing space is required!
+-        if test $GCC = no; then
+-            SET_DT_SONAME="-h "
+-        fi
++        SET_DT_SONAME="-h,"
+         if test x"$GCC" = x"yes"; then
+             CC_OPT_FLAGS_TO_TRY="-O2 -DNDEBUG"
+             CC_DBG_FLAGS_TO_TRY="-gdwarf-2 -g3 -O0"
+@@ -7605,7 +7602,7 @@ fi
+ fi
+ 
+ if test x$with_libpaper != xno; then
+-    LIBS="$LIBS -lpaper"
++    LIBS="$LIBS -L${LPLIBDIR} -Wl,-R${LPLIBDIR} -lpaper"
+ 
+ $as_echo "#define USE_LIBPAPER 1" >>confdefs.h
+ 
+@@ -11530,11 +11527,11 @@ case $host in
+     ;;
+     *-darwin*)
+       DYNAMIC_CFLAGS="-fPIC $DYNAMIC_CFLAGS"
+-      GS_DYNAMIC_LDFLAGS="-dynamiclib -install_name $DARWIN_LDFLAGS_SO_PREFIX\$(GS_SONAME_MAJOR_MINOR)"
+-      PCL_DYNAMIC_LDFLAGS="-dynamiclib -install_name $DARWIN_LDFLAGS_SO_PREFIX\$(PCL_SONAME_MAJOR_MINOR)"
+-      XPS_DYNAMIC_LDFLAGS="-dynamiclib -install_name $DARWIN_LDFLAGS_SO_PREFIX\$(XPS_SONAME_MAJOR_MINOR)"
+-      PDL_DYNAMIC_LDFLAGS="-dynamiclib -install_name $DARWIN_LDFLAGS_SO_PREFIX\$(GPDL_SONAME_MAJOR_MINOR)"
+-      PDF_DYNAMIC_LDFLAGS="-dynamiclib -install_name $DARWIN_LDFLAGS_SO_PREFIX\$(PDF_SONAME_MAJOR_MINOR)"
++      GS_DYNAMIC_LDFLAGS="-dynamiclib -install_name \$(DESTDIR)\$(libdir)/\$(GS_SONAME_MAJOR_MINOR)"
++      PCL_DYNAMIC_LDFLAGS="-dynamiclib -install_name \$(DESTDIR)\$(libdir)/\$(PCL_SONAME_MAJOR_MINOR)"
++      XPS_DYNAMIC_LDFLAGS="-dynamiclib -install_name \$(DESTDIR)\$(libdir)/\$(XPS_SONAME_MAJOR_MINOR)"
++      PDL_DYNAMIC_LDFLAGS="-dynamiclib -install_name \$(DESTDIR)\$(libdir)/\$(GPDL_SONAME_MAJOR_MINOR)"
++      PDF_DYNAMIC_LDFLAGS="-dynamiclib -install_name \$(DESTDIR)\$(libdir)/\$(PDF_SONAME_MAJOR_MINOR)"
+       DYNAMIC_LIBS=""
+       SO_LIB_EXT=".dylib"
+     ;;
+@@ -11550,11 +11547,11 @@ case $host in
+         #fi
+         # ^^^ untested
+       fi
+-      GS_DYNAMIC_LDFLAGS="-G -shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(GS_SONAME_MAJOR) $_ldflags"
+-      PCL_DYNAMIC_LDFLAGS="-G -shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(PCL_SONAME_MAJOR) $_ldflags"
+-      XPS_DYNAMIC_LDFLAGS="-G -shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(XPS_SONAME_MAJOR) $_ldflags"
+-      PDL_DYNAMIC_LDFLAGS="-G -shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(GPDL_SONAME_MAJOR) $_ldflags"
+-      PDF_DYNAMIC_LDFLAGS="-G -shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(PDF_SONAME_MAJOR)"
++      GS_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(GS_SONAME_MAJOR) $_ldflags"
++      PCL_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(PCL_SONAME_MAJOR) $_ldflags"
++      XPS_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(XPS_SONAME_MAJOR) $_ldflags"
++      PDL_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(GPDL_SONAME_MAJOR) $_ldflags"
++      PDF_DYNAMIC_LDFLAGS="-shared -Wl,\$(LD_SET_DT_SONAME)\$(LDFLAGS_SO_PREFIX)\$(PDF_SONAME_MAJOR)"
+       DYNAMIC_LIBS=""
+       SO_LIB_EXT=".so"
+     ;;

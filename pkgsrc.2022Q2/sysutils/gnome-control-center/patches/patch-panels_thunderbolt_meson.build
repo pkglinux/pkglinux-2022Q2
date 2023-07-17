@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- panels/thunderbolt/meson.build.orig	2021-03-20 21:52:23.065849300 +0000
++++ panels/thunderbolt/meson.build
+@@ -8,7 +8,6 @@ desktop_in = configure_file(
+ )
+ 
+ i18n.merge_file(
+-  desktop,
+   type: 'desktop',
+   input: desktop_in,
+   output: desktop,

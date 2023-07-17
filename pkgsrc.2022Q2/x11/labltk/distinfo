@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.7 2022/06/03 08:51:22 wiz Exp $
+
+BLAKE2s (labltk-8.06.12.tar.gz) = 01a9ba1e0cfa2c442fd9547bf0347c08b4a5aa5de82713a68d2a3c6867039d6e
+SHA512 (labltk-8.06.12.tar.gz) = e1564ab2d8922276bd8ad586b37308d60ca2dd563bac3cdd992d8a6ba4de26e5499350a62a1d4cb2bbb9a5b7aff609b5187aad5fba118eb55d1b4c8355d2979a
+Size (labltk-8.06.12.tar.gz) = 372215 bytes
+SHA1 (patch-browser-Makefile.shared) = 93d9e762ffb9067315f16f3dffea738903b8178a
+SHA1 (patch-compiler-Makefile) = 779820cb01ff728c27ce7a803d5631d2686f8568
+SHA1 (patch-lib-Makefile) = cdf2bb0b9a27041e259ec57376577278f468f622
+SHA1 (patch-support-Makefile) = 6c25604244b588157712423e86e1b486ae555a90

@@ -1,0 +1,33 @@
+$NetBSD: patch-configure,v 1.4 2018/09/20 13:30:11 fhajny Exp $
+
+Portability.
+
+--- configure.orig	2018-09-17 11:27:47.000000000 +0000
++++ configure
+@@ -15579,7 +15579,7 @@ $as_echo "#define OS_AIX 1" >>confdefs.h
+ 
+   ;;
+ esac
+- if test x$os_type == xapple; then
++ if test x$os_type = xapple; then
+   OS_APPLE_TRUE=
+   OS_APPLE_FALSE='#'
+ else
+@@ -15587,7 +15587,7 @@ else
+   OS_APPLE_FALSE=
+ fi
+ 
+- if test x$os_type == xlinux; then
++ if test x$os_type = xlinux; then
+   OS_LINUX_TRUE=
+   OS_LINUX_FALSE='#'
+ else
+@@ -15595,7 +15595,7 @@ else
+   OS_LINUX_FALSE=
+ fi
+ 
+- if test x$os_type == xaix; then
++ if test x$os_type = xaix; then
+   OS_AIX_TRUE=
+   OS_AIX_FALSE='#'
+ else

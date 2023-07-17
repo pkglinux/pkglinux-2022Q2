@@ -1,0 +1,13 @@
+@comment $NetBSD: PLIST,v 1.2 2022/01/10 18:39:00 wiz Exp $
+${PYSITELIB}/${EGG_INFODIR}/PKG-INFO
+${PYSITELIB}/${EGG_INFODIR}/SOURCES.txt
+${PYSITELIB}/${EGG_INFODIR}/dependency_links.txt
+${PYSITELIB}/${EGG_INFODIR}/not-zip-safe
+${PYSITELIB}/${EGG_INFODIR}/top_level.txt
+${PYSITELIB}/lupa/__init__.py
+${PYSITELIB}/lupa/__init__.pyc
+${PYSITELIB}/lupa/__init__.pyo
+${PYSITELIB}/lupa/_lupa.so
+${PYSITELIB}/lupa/version.py
+${PYSITELIB}/lupa/version.pyc
+${PYSITELIB}/lupa/version.pyo

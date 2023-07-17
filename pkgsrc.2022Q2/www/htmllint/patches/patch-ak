@@ -1,0 +1,18 @@
+$NetBSD: patch-ak,v 1.2 2019/09/15 12:51:29 mef Exp $
+
+Convert lib location
+
+--- htmllint.orig	2002-10-29 19:26:26.000000000 +0900
++++ htmllint	2019-09-15 21:06:16.921954329 +0900
+@@ -2,8 +2,9 @@
+ 
+ # Another HTML-lint ###########################################
+ 
+-use File::Basename;
+-push @INC => [&fileparse($0)]->[1];
++#use File::Basename;
++#push @INC => [&fileparse($0)]->[1];
++use lib ('@PREFIX@/share/httpd/htdocs/htmllint');
+ 
+ my $add_options; # = '-noscore -pedantic etc...';
+ 

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:28:32 nia Exp $
+
+BLAKE2s (tex-tex-gyre-math-41264/tex-gyre-math.tar.xz) = d9cf56a0bddf4d65bd44affba579232fb905e2b2f99affe8a3612eac8fb8785f
+SHA512 (tex-tex-gyre-math-41264/tex-gyre-math.tar.xz) = d3d902ab4d8fa99eec7e6d81dae9862ce657125db61105b33b071303f8f930176f709034df9e154dd5f209017173cde5b5ef23043589373204d85a6bb9709b11
+Size (tex-tex-gyre-math-41264/tex-gyre-math.tar.xz) = 1182716 bytes

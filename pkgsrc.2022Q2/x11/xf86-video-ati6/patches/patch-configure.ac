@@ -1,0 +1,48 @@
+$NetBSD: patch-configure.ac,v 1.2 2019/01/27 11:54:57 tnn Exp $
+
+Remove duplicate bswap definitions, like x11/xf86-video-ati
+
+--- configure.ac.orig	2012-06-29 13:46:11.000000000 +0000
++++ configure.ac
+@@ -163,7 +163,27 @@ fi
+ AM_CONDITIONAL(DRM_MODE, test x$DRM_MODE = xyes)
+ AM_CONDITIONAL(LIBUDEV, test x$LIBUDEV = xyes)
+ 
+-AC_DEFINE(USE_XAA, 1, [Build support for XAA])
++AC_ARG_ENABLE(xaa,
++ AS_HELP_STRING([--enable-xaa],
++ [Enable legacy X Acceleration Architecture (XAA) [default=auto]]),
++ [XAA="$enableval"],
++ [XAA=auto])
++if test "x$XAA" != xno; then
++ save_CFLAGS=$CFLAGS
++ save_CPPFLAGS=$CPPFLAGS
++ CFLAGS=$XORG_CFLAGS
++ CPPFLAGS="$XORG_CFLAGS"
++ AC_CHECK_HEADERS([xaa.h], XAA=yes, XAA=no)
++ CFLAGS=$save_CFLAGS
++ CPPFLAGS=$save_CPPFLAGS
++fi
++AC_MSG_CHECKING([whether to include XAA support])
++AM_CONDITIONAL(XAA, test "x$XAA" = xyes)
++AC_MSG_RESULT([$XAA])
++if test "x$XAA" = xyes; then
++ AC_DEFINE(USE_XAA, 1, [Build support for XAA])
++ AC_DEFINE(PKGSRC_LEGACY_XORG_SERVER, 1, [Legacy support for TV tuner])
++fi
+ 
+ # Properly handle EXA.
+ AC_MSG_CHECKING([whether to enable EXA support])
+@@ -309,12 +329,6 @@ b = bswap16(a);
+ 	if test "$USE_SYS_ENDIAN_H" = "yes" ; then
+ 	    AC_DEFINE([USE_SYS_ENDIAN_H], 1, 
+ 		[Define to use byteswap macros from <sys/endian.h>])
+-	    AC_DEFINE_UNQUOTED([bswap_16], ${BSWAP}16, 
+-			[Define to 16-bit byteswap macro])
+-	    AC_DEFINE_UNQUOTED([bswap_32], ${BSWAP}32, 
+-			[Define to 32-bit byteswap macro])
+-	    AC_DEFINE_UNQUOTED([bswap_64], ${BSWAP}64, 
+-			[Define to 64-bit byteswap macro])
+ 	fi
+ fi
+ 

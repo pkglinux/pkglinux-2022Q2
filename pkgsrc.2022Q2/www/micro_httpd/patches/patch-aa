@@ -1,0 +1,27 @@
+$NetBSD: patch-aa,v 1.3 2019/07/08 21:20:28 schwarz Exp $
+
+--- Makefile.orig	2019-07-08 23:08:41.000000000 +0200
++++ Makefile	2019-07-08 23:11:35.000000000 +0200
+@@ -1,17 +1,17 @@
+ BINDIR =	/usr/local/sbin
+ MANDIR =	/usr/local/man/man8
+-CC =		cc
+-CFLAGS =	-O -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
++#CC =		cc
++#CFLAGS =	-O -ansi -pedantic -U__STRICT_ANSI__ -Wall -Wpointer-arith -Wshadow -Wcast-qual -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls -Wno-long-long
+ #SYSVLIBS =	-lnsl -lsocket
+-LDFLAGS =	-s $(SYSVLIBS)
++#LDFLAGS =	-s $(SYSVLIBS)
+ 
+ all:		micro_httpd
+ 
+ micro_httpd:	micro_httpd.o
+-	$(CC) micro_httpd.o $(LDFLAGS) -o micro_httpd
++	$(CC) micro_httpd.o $(LDFLAGS) $(LIBS) -o micro_httpd
+ 
+ micro_httpd.o:	micro_httpd.c
+-	$(CC) $(CFLAGS) -c micro_httpd.c
++	$(CC) $(CPPFLAGS) $(CFLAGS) -c micro_httpd.c
+ 
+ install:	all
+ 	rm -f $(BINDIR)/micro_httpd

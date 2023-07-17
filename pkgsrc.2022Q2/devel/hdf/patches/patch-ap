@@ -1,0 +1,13 @@
+$NetBSD: patch-ap,v 1.4 2022/04/24 21:50:48 tnn Exp $
+
+--- hdf/src/hconv.h.orig	2020-03-03 17:40:50.000000000 +0000
++++ hdf/src/hconv.h
+@@ -59,7 +59,7 @@
+ /* CONSTANT DEFINITIONS                                                      */
+ /*****************************************************************************/
+ /* Generally Big-Endian machines */
+-#if !defined(INTEL86) && !defined(MIPSEL) && !defined(DEC_ALPHA) && !defined(I860) && !defined(SUN386) && !(defined(__ia64) && !(defined(hpux) || defined(__hpux))) && !defined(__x86_64__)
++#if BYTE_ORDER == BIG_ENDIAN
+ #       define UI8_IN     DFKnb1b   /* Unsigned Integer, 8 bits */
+ #       define UI8_OUT    DFKnb1b
+ #       define SI16_IN    DFKnb2b   /* S = Signed */

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/14 03:42:24 markd Exp $
+
+BLAKE2s (translator.doc.r59412.tar.xz) = 3583cf4c3d1cbd533482670e4676fc05e08fc6133f083e4e6cedb452904df2f1
+SHA512 (translator.doc.r59412.tar.xz) = abbe08cb16a39395b53d01f85172a11e339cd18f2c7f9dde8ab1d0cf353649c181f442fcb94c9add913b2b807ae9f6ba1ac54e9a6fed147cba1af335b6b73d8d
+Size (translator.doc.r59412.tar.xz) = 216032 bytes

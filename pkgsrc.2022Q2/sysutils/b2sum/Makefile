@@ -1,0 +1,21 @@
+# $NetBSD: Makefile,v 1.3 2020/08/29 09:32:35 nia Exp $
+
+DISTNAME=	b2sum-20160619
+PKGREVISION=	1
+CATEGORIES=	sysutils
+MASTER_SITES=	${MASTER_SITE_GITHUB:=BLAKE2/}
+GITHUB_PROJECT=	BLAKE2
+GITHUB_TAG=	${PKGVERSION_NOREV}
+
+MAINTAINER=	wiedi@frubar.net
+HOMEPAGE=	https://blake2.net/
+COMMENT=	BLAKE2 b2sum utility
+LICENSE=	cc0-1.0-universal
+
+MAKE_FILE=	makefile
+MAKE_ENV+=	MANDIR=${PREFIX}/${PKGMANDIR}
+MAKE_ENV+=	NO_OPENMP=1
+
+WRKSRC=		${WRKDIR}/BLAKE2-${PKGVERSION_NOREV}/b2sum
+
+.include "../../mk/bsd.pkg.mk"

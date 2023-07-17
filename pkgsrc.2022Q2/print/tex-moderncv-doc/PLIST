@@ -1,0 +1,11 @@
+@comment $NetBSD: PLIST,v 1.2 2021/02/20 10:30:42 markd Exp $
+share/texmf-dist/doc/latex/moderncv/CHANGELOG
+share/texmf-dist/doc/latex/moderncv/KNOWN_BUGS
+share/texmf-dist/doc/latex/moderncv/LICENSE.txt
+share/texmf-dist/doc/latex/moderncv/README.md
+share/texmf-dist/doc/latex/moderncv/manual/moderncv_userguide.pdf
+share/texmf-dist/doc/latex/moderncv/manual/moderncv_userguide.tex
+share/texmf-dist/doc/latex/moderncv/picture.eps
+share/texmf-dist/doc/latex/moderncv/picture.jpg
+share/texmf-dist/doc/latex/moderncv/publications.bib
+share/texmf-dist/doc/latex/moderncv/template.tex

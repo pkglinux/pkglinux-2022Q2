@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 10:21:25 nia Exp $
+
+BLAKE2s (bvi-1.4.1.src.tar.gz) = 0a20a381b9e7f505a13883bd5a9e87a049d4aa3ba5c1ce37f597acec2bd7cfeb
+SHA512 (bvi-1.4.1.src.tar.gz) = f7a3f07e6bcefe566a101c4db85192f0d2e3580be0ab10bc297e6c0192e79d29061a7c9f1a57cf5a628f03962deb8c2ed52e33effc1d5198d458627d70d882e6
+Size (bvi-1.4.1.src.tar.gz) = 143181 bytes
+SHA1 (patch-bm__unix.c) = 87720c17e7369f123c86c840f8111b7d9ba5ed73
+SHA1 (patch-comm.c) = d86849d41e2387514ea0c222b06400ed14a4ca36

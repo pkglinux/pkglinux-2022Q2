@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/23 23:27:55 tnn Exp $
+
+BLAKE2s (owl-v0.2.tar.bz2) = 9937bab87842a3704b2375a52183e261a2a5db3b2dfbc7a827d74ca9dfa8670e
+SHA512 (owl-v0.2.tar.bz2) = 48ea746d9d855662ee8800571989fafd784ec15a27fd28053bccab435198a1bd7fb95f9e614d88e2e265df0c1876295397f526b15d10e915243291d99a3ae9d2
+Size (owl-v0.2.tar.bz2) = 452190 bytes

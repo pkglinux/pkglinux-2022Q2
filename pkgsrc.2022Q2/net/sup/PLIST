@@ -1,0 +1,6 @@
+@comment $NetBSD: PLIST,v 1.2 2018/01/01 22:29:50 rillig Exp $
+man/man1/sup.1
+man/man8/supservers.8
+sbin/sup
+sbin/supfilesrv
+sbin/supscan

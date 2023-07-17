@@ -1,0 +1,5 @@
+Eggdrop is the oldest Internet Relay Chat (IRC) bot still in active development.
+
+It is a feature rich program designed to be easily used and expanded upon
+(using Tcl scripting) by both novice and advanced IRC users on a variety of
+hardware and software platforms.

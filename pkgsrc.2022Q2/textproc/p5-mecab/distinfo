@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:22:56 nia Exp $
+
+BLAKE2s (mecab-perl-0.996.tar.gz) = 6a7d8981403671e19c8db238f9cfb57edeb732b8400d3e62a901884fcebce99d
+SHA512 (mecab-perl-0.996.tar.gz) = 83bda501556643b5fa246dd57447b431ea6879d674919234f8513cce0ef77d494dc96ee36fe0fbed36ca04a2056e41bc8cb652fffac3c7031a6ec61aaa6f2701
+Size (mecab-perl-0.996.tar.gz) = 49888 bytes

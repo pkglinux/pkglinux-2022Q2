@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/06/11 12:13:46 nia Exp $
+
+BLAKE2s (suil-0.10.12.tar.bz2) = f74a89b0b6e7011a781748ca2817b4c4f0b774c32f18adb53fa857252be0ee16
+SHA512 (suil-0.10.12.tar.bz2) = f2b9ca36cc35d6b51c6e4ae144d61b1ba5e3b51113cca48d0535f6346ff918bdc7e299f0036ea1431c0ef59b1a02f1f4086a95db552d0a06bffb54567ab4a278
+Size (suil-0.10.12.tar.bz2) = 339666 bytes

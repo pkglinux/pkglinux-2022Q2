@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 11:05:23 nia Exp $
+
+BLAKE2s (arpd.tar.gz) = 2e3d85c4c4eb7e5d74698db29a9d6bf95ca7e395341571cf55a19e0edf8147ae
+SHA512 (arpd.tar.gz) = 94f8bfbe7cdb34ecd6fded0bde658b8bcbf2bb3131234a67640e09c360aa39fa5f477cff89c08853c6569bec8c6a0f325458098b49e88ce1a1516ab6213171e5
+Size (arpd.tar.gz) = 23400 bytes
+SHA1 (patch-aa) = 2db74da5bfc680b37ff086a9d615083bbfd8a0d4
+SHA1 (patch-ab) = 5e0c468cd51bdd388fadf4fd9c6e7e92a0475456
+SHA1 (patch-ac) = 565f484cc246984aeeb6f414882aa2ccc6e33872
+SHA1 (patch-ad) = f28a6c62965fa7a8bd610e962773c019c8340211
+SHA1 (patch-ae) = d4457cefe4bd96d422e9abbd8e8ac5b741de2a31
+SHA1 (patch-readconfig.c) = 9413ec3ed7d138b0a4c1d9838f535e9593719202

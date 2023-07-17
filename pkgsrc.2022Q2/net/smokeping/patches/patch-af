@@ -1,0 +1,13 @@
+$NetBSD: patch-af,v 1.2 2020/04/27 18:05:18 bouyer Exp $
+
+--- lib/Makefile.in.orig	2018-12-20 11:22:43.000000000 +0100
++++ lib/Makefile.in	2020-04-23 10:16:51.668142346 +0200
+@@ -268,7 +268,7 @@
+ PROBE := $(wildcard Smokeping/probes/*.pm)
+ MATCH := $(wildcard Smokeping/matchers/*.pm)
+ EXTRA_DIST = $(PM) $(SP) $(SORT) $(PROBE) $(MATCH)
+-perllibdir = $(prefix)/lib
++perllibdir = $(prefix)/lib/smokeping
+ nobase_perllib_DATA = $(EXTRA_DIST)
+ all: all-am
+ 

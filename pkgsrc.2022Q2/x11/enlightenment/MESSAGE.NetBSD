@@ -1,0 +1,7 @@
+===========================================================================
+$NetBSD: MESSAGE.NetBSD,v 1.2 2019/11/20 22:19:06 gutteridge Exp $
+
+Please copy the enlightenment file to your /etc/pam.d
+in order to make user authentication work in e17.
+
+===========================================================================

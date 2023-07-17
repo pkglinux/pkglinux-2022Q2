@@ -1,0 +1,13 @@
+$NetBSD: patch-src_3rdparty_chromium_third__party_breakpad_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/third_party/breakpad/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/third_party/breakpad/BUILD.gn
+@@ -478,7 +478,7 @@ if (is_mac) {
+   }
+ }
+ 
+-if (is_linux || is_chromeos || is_android) {
++if (is_linux || is_chromeos || is_android || is_bsd) {
+   if (current_toolchain == host_toolchain) {
+     executable("symupload") {
+       sources = [

@@ -1,0 +1,23 @@
+# $NetBSD$
+
+DISTNAME=	gnome-shell-extensions-3.38.1
+CATEGORIES=	linux
+MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gnome-shell-extensions/3.38/}
+EXTRACT_SUFX=	.tar.xz
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://download.gnome.org/sources/gnome-shell-extensions/3.38/ # TODO: check
+COMMENT=	additional and optional functionality to GNOME Shell
+LICENSE=	gnu-gpl-v2
+
+USE_PKGLOCALEDIR=	yes
+USE_LANGUAGES=		# none
+
+#post-install:
+#	${CP} -av ${FILESDIR}/extensions/* ${DESTDIR}${PREFIX}/share/gnome-shell/extensions/
+
+
+.include "../../devel/meson/build.mk"
+.include "../../sysutils/libgtop/buildlink3.mk"
+.include "../../www/sassc/buildlink3.mk"
+.include "../../mk/bsd.pkg.mk"

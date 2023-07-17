@@ -1,0 +1,4 @@
+The package was a predecessor of longtable; the newer package
+(designed on quite different principles) is easier to use and
+more flexible, in many cases, but supertabular retains its
+usefulness in a few situations where longtable has problems.

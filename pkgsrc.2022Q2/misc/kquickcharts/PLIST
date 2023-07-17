@@ -1,0 +1,15 @@
+@comment $NetBSD: PLIST,v 1.2 2022/04/25 09:52:44 markd Exp $
+lib/cmake/KF5QuickCharts/KF5QuickChartsConfig.cmake
+lib/cmake/KF5QuickCharts/KF5QuickChartsConfigVersion.cmake
+qt5/qml/org/kde/quickcharts/controls/Legend.qml
+qt5/qml/org/kde/quickcharts/controls/LegendDelegate.qml
+qt5/qml/org/kde/quickcharts/controls/LineChartControl.qml
+qt5/qml/org/kde/quickcharts/controls/Logging.qml
+qt5/qml/org/kde/quickcharts/controls/PieChartControl.qml
+qt5/qml/org/kde/quickcharts/controls/Theme.qml
+qt5/qml/org/kde/quickcharts/controls/libQuickChartsControls.so
+qt5/qml/org/kde/quickcharts/controls/qmldir
+qt5/qml/org/kde/quickcharts/controls/styles/org.kde.desktop/Theme.qml
+qt5/qml/org/kde/quickcharts/libQuickCharts.so
+qt5/qml/org/kde/quickcharts/qmldir
+share/qlogging-categories5/kquickcharts.categories

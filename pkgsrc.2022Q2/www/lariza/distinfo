@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.5 2021/12/19 18:33:46 pin Exp $
+
+BLAKE2s (lariza-v21.12.tar.gz) = d8447898eea4025e8cffc8f180a33e8694f6fd9e41e6667a2674dbed4be4085e
+SHA512 (lariza-v21.12.tar.gz) = e093d4579bb2024c69df0b7730fffeb0d142ee85b0ccddfcf10d3ae0cb751439090fd611c189343ac4fead0bea6191ca10bbf5e65540b44ac26c2b55dcb9b6f3
+Size (lariza-v21.12.tar.gz) = 23576 bytes
+SHA1 (patch-Makefile) = 4dafac78dc9087cfe5136b46f07f37c890ed809f

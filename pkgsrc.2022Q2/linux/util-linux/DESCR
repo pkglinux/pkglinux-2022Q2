@@ -1,0 +1,20 @@
+				  util-linux
+
+		util-linux is a random collection of Linux utilities
+
+     Note: for the years 2006-2010 this project was named "util-linux-ng".
+
+COMPILE & INSTALL:
+
+      See Documentation/howto-compilation.txt.
+
+MAILING LIST:
+
+      E-MAIL:  util-linux@vger.kernel.org
+      URL:     http://vger.kernel.org/vger-lists.html#util-linux
+      ARCHIVE: https://lore.kernel.org/util-linux/
+
+      The mailing list will reject email messages that contain:
+       - more than 100K characters
+       - html
+...

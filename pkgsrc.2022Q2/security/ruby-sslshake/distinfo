@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:17:59 nia Exp $
+
+BLAKE2s (sslshake-1.3.1.gem) = c8fea6f10a1508e3940c8eabf5e1544621b3028f3991954619cbc81aaa9113e6
+SHA512 (sslshake-1.3.1.gem) = 58fc7eaa5fa92c3ca427b8f510608c8bdae87e1468a5067c647a34086509a824ca70fd402ce68db64fd3e35f44307c2cc8894a208477e22ebbbc8f5f41d6dd28
+Size (sslshake-1.3.1.gem) = 13312 bytes

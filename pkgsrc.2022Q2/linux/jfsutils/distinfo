@@ -1,0 +1,7 @@
+$NetBSD$
+
+BLAKE2s (jfsutils-1.1.15.tar.gz) = b6478742a1e1955ada421035a3369e39a54bab024072781bb07f949b354eeab6
+SHA512 (jfsutils-1.1.15.tar.gz) = fa8ba7f4997471da3e6ea7239564f3395046222cfbb2b10e37b24ad0bd107b7eadbb51ce328d89d193034360b4035ca5e0e5b0b416a74483d7a2c0a2b9c65858
+Size (jfsutils-1.1.15.tar.gz) = 539148 bytes
+SHA1 (patch-libfs_devices.c) = 07600dda6c279953e9ed9224f30087b1058e4e41
+SHA1 (patch-libfs_devices.h) = c986aa41719afcfd8f134cea768e7922dc53e0f6

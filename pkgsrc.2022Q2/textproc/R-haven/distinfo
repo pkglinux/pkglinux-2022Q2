@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:21:30 nia Exp $
+
+BLAKE2s (R/haven_2.4.3.tar.gz) = f26f447d379ff051409a3e18d9abef771db0aa1242e9ad591c741393f493da5a
+SHA512 (R/haven_2.4.3.tar.gz) = f78358fb7e7b2042deff95409cba8928ac98b90ae5be27cf4731d34bf9b067228753ac9d9a661f393ae0307b5a7de1bb4f329d4118982f65481ae51139d8bd52
+Size (R/haven_2.4.3.tar.gz) = 296805 bytes

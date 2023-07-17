@@ -1,0 +1,33 @@
+$NetBSD: patch-configure,v 1.3 2022/05/01 06:51:24 tron Exp $
+
+- Allow build as an unpriviliged user
+- Fix Kerberos related build failure under Solaris
+
+--- configure.orig	2022-04-30 20:42:13.000000000 +0100
++++ configure	2022-05-01 07:47:26.388433920 +0100
+@@ -10512,7 +10512,7 @@
+ 
+ if test x$mutt_cv_setgid = xyes; then
+         DOTLOCK_GROUP='mail'
+-        DOTLOCK_PERMISSION=2755
++        DOTLOCK_PERMISSION=2555
+ else
+         DOTLOCK_GROUP=''
+         DOTLOCK_PERMISSION=755
+@@ -10821,6 +10821,7 @@
+     case "`$KRB5CFGPATH --version`" in
+       "Kerberos 5 "*)	GSSAPI_IMPL="MIT";;
+       ?eimdal*)		GSSAPI_IMPL="Heimdal";;
++      Solaris*)		GSSAPI_IMPL="Solaris";;
+       *)		GSSAPI_IMPL="Unknown";;
+     esac
+         LIBS="$saved_LIBS $GSSAPI_LIBS"
+@@ -11103,7 +11104,7 @@
+ rm -f confcache
+       as_fn_error $? "GSSAPI libraries not found" "$LINENO" 5
+     fi
+-    if test "$GSSAPI_IMPL" = "Heimdal"
++    if test "$GSSAPI_IMPL" = "Heimdal" || test "$GSSAPI_IMPL" = "Solaris"
+     then
+ 
+ printf "%s\n" "#define HAVE_HEIMDAL 1" >>confdefs.h

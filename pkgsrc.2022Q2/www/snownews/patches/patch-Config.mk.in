@@ -1,0 +1,21 @@
+$NetBSD: patch-Config.mk.in,v 1.3 2021/10/18 11:24:51 nia Exp $
+
+Do not override CFLAGS.
+
+--- Config.mk.in.orig	2021-10-02 22:29:09.000000000 +0000
++++ Config.mk.in
+@@ -26,13 +26,6 @@ O		:= .o/
+ 
+ #debug		:= 1
+ libs		:= @pkg_libs@
+-ifdef debug
+-    cflags	:= -O0 -ggdb3
+-    ldflags	:= -g -rdynamic
+-else
+-    cflags	:= -Os -g0 -DNDEBUG=1
+-    ldflags	:= -s
+-endif
+-CFLAGS		:= -Wall -Wextra -Wredundant-decls -Wshadow
++CFLAGS		+= -Wall -Wextra -Wredundant-decls -Wshadow
+ cflags		+= -std=c11 @pkg_cflags@ ${CFLAGS}
+ ldflags		+= @pkg_ldflags@ ${LDFLAGS}

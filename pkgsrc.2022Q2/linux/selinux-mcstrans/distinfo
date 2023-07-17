@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (selinux/mcstrans-3.5.tar.gz) = 8cd760f1b90520545ccff40e44eb7e81625fd1314380d6a5728a20634ec0446d
+SHA512 (selinux/mcstrans-3.5.tar.gz) = f4d3b04750e197c6abd31f1642af4b53a4fe0e968952a7ade992909f903d7486c1e72733963453563fcbc9745273c8238f169f520550df1470e7f6e4d6e56665
+Size (selinux/mcstrans-3.5.tar.gz) = 45091 bytes
+SHA1 (patch-Makefile) = 4f8546def26ae8fb49fe269f7b5eb3d349521202

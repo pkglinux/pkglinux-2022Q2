@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.18 2022/04/19 12:14:10 adam Exp $
+
+BLAKE2s (notebook-6.4.11.tar.gz) = db40001bb031743ad2b43945975c4a285d07efbde8de104bf79c6ab5a14eb746
+SHA512 (notebook-6.4.11.tar.gz) = beabc84e3d528b0786363c705062717378e73aa824ffe6ce8706f6ed765744f40f651bd4e0910d6a0302990f9efcabea1af51c6894106c49869761bcf217084a
+Size (notebook-6.4.11.tar.gz) = 14373938 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 10:16:47 nia Exp $
+
+BLAKE2s (IO-TieCombine-1.005.tar.gz) = ea09f465feb6ece46b0aafbe15ae6f386f2a6373b290853e8edbc9c3f8977acf
+SHA512 (IO-TieCombine-1.005.tar.gz) = d0de091279d13e0421e5e0c901a994760cc2f427a1a05305d947f94feb2c040728bcd738965eb583b2c57481fdc474a5516660457069b19f30695962f56cfecf
+Size (IO-TieCombine-1.005.tar.gz) = 16863 bytes

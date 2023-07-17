@@ -1,0 +1,13 @@
+$NetBSD: patch-src_3rdparty_chromium_components_safe__browsing_core_resources_BUILD.gn,v 1.2 2022/04/18 11:18:18 adam Exp $
+
+--- src/3rdparty/chromium/components/safe_browsing/core/resources/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/components/safe_browsing/core/resources/BUILD.gn
+@@ -30,6 +30,8 @@ action("make_file_types_protobuf") {
+     target_arch = "mac"
+   } else if (is_linux || is_chromeos) {
+     target_arch = "linux"
++  } else if (is_netbsd) {
++    target_arch = "netbsd"
+   } else {
+     # This will cause the script to fail.
+     target_arch = "unknown_target_arch"

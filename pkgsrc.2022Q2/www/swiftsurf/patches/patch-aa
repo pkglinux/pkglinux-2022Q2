@@ -1,0 +1,17 @@
+$NetBSD: patch-aa,v 1.2 2018/03/14 08:59:59 dholland Exp $
+
+Honor PKG_SYSCONFIGDIR.
+
+--- src/conf.ml.orig
++++ src/conf.ml
+@@ -39,8 +39,8 @@
+       (let home_file = Filename.concat (Sys.getenv "HOME") ".swiftsurf" in
+       if Sys.file_exists home_file
+       then home_file
+-      else if Sys.file_exists "/etc/swiftsurf.conf"
+-      then "/etc/swiftsurf.conf"
++      else if Sys.file_exists "@PKG_SYSCONFDIR@/swiftsurf.conf"
++      then "@PKG_SYSCONFDIR@/swiftsurf.conf"
+       else if Sys.file_exists "swiftsurf.conf"
+       then "swiftsurf.conf"
+       else "/dev/null") in

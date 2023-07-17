@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.16 2021/10/26 10:05:13 nia Exp $
+
+BLAKE2s (epic4-2.10.2.tar.bz2) = 3fb046d0b71fea31cd0a27ad8449f7a9673e3feb3174584e79cf619cab62c85d
+SHA512 (epic4-2.10.2.tar.bz2) = 648bcdca52d376705d4459853a316e1027e7c9c00cb0a8b56ad45c13e4019fb790bd10c6686103064994133ddc26f280925b24cdc4932bd986b127b7033a558c
+Size (epic4-2.10.2.tar.bz2) = 633946 bytes
+SHA1 (patch-configure) = d75eba5b1e6c223f8f166f3e9dedc7f2925b6393
+SHA1 (patch-source_Makefile.in) = ea4b6520c228b22b43dc391725f3a0d616aeb729

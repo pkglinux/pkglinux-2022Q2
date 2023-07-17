@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.49 2022/05/28 14:12:16 wen Exp $
+
+BLAKE2s (owncloud-10.9.1.tar.bz2) = 007c6eba458dfec79b475fab4ae85b3edf73b59bcf6e5b1ab0edc2bf47fe55d2
+SHA512 (owncloud-10.9.1.tar.bz2) = b1fad9ace968d7c47699777baba284b98b98ad404e5211370031656d2e02aac9c4c9a771950c4e7a62484501da3e0d45ca279326a0b69c8eaa711a530df3816f
+Size (owncloud-10.9.1.tar.bz2) = 64725210 bytes

@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- messagecomposer/tests/CMakeLists.txt.orig	2015-06-25 17:47:38.000000000 +0000
++++ messagecomposer/tests/CMakeLists.txt
+@@ -41,7 +41,7 @@ macro( add_messagecomposer_cryptotest _s
+       ${QT_QTGUI_LIBRARY}
+       ${QT_QTCORE_LIBRARY}
+       ${KDE4_KDEUI_LIBS}
+-      ${QGPGME_LIBRARIES}
++      ${GPGMEPP_PTHREAD_LIBRARIES}
+       )
+ endmacro()
+ 

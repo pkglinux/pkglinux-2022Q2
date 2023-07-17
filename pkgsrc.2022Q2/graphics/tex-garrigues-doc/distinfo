@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:47:02 nia Exp $
+
+BLAKE2s (tex-garrigues-15878/garrigues.doc.tar.xz) = 575abb3c7e8e98ccbf93ad09305b849e0c26fc28fbf2e431790eb376fb45e033
+SHA512 (tex-garrigues-15878/garrigues.doc.tar.xz) = dbd0c38181443106a94e814d1acc41a1e16911a91602f0ff22b27e111ab98392eb1a1c6c2d5b1f3c1adeff6d19268542ed993541391d9b2cdd55a77bf6cb1975
+Size (tex-garrigues-15878/garrigues.doc.tar.xz) = 536 bytes

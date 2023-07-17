@@ -1,0 +1,17 @@
+$NetBSD: patch-configure,v 1.4 2020/03/30 23:20:21 gutteridge Exp $
+
+Fix compiler flag settings.
+
+--- configure.orig	2018-07-27 17:32:48.000000000 +0000
++++ configure
+@@ -17808,8 +17808,8 @@ then
+ 	# But not the NetBSD sh, so use sed instead.
+ 	# CFLAGS="${CFLAGS//-O[[2-9]]} -g"
+ 	# CXXFLAGS="${CXXFLAGS//-O[[2-9]]} -g"
+-	CFLAGS=`echo -g ${CFLAGS} |sed "s/-O[2-9]//g"`
+-	CXXFLAGS=`echo -g ${CXXFLAGS} |sed "s/-O[2-9]//g"`
++	CFLAGS="${CFLAGS} -g"
++	CXXFLAGS="${CXXFLAGS} -g"
+ 	LDFLAGS="-g ${LDFLAGS}"
+ 	$as_echo "#define DEBUG 1" >>confdefs.h
+ 

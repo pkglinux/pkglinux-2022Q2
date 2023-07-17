@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:12:09 nia Exp $
+
+BLAKE2s (libgxps-0.2.2.tar.xz) = 01144dda3d8a91faf7cada556c336cbcf685bcdd92a9ff14c21fd763c8c25b96
+SHA512 (libgxps-0.2.2.tar.xz) = 96fa462cb4bba9cdba3d8cfe416199f8d956d17397e3514aa6168c7acc865a30e9347d8f9850f16a8c2a0a83dc83f7d7d2bd1806e27a2af0914ce53fed2b4467
+Size (libgxps-0.2.2.tar.xz) = 302844 bytes
+SHA1 (patch-aa) = 5756ca52be824adc388982353dc9530520cdc927

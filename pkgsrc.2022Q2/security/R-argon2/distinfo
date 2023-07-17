@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/11 13:35:27 mef Exp $
+
+BLAKE2s (R/argon2_0.4-0.tar.gz) = e998b3e724b46a7af6298f473fbda70b8a4c190815771eae023217948e1bb011
+SHA512 (R/argon2_0.4-0.tar.gz) = de0af94e3b49d13897bb91b07df6da95c3ad5a436b84e8a1b745f8cdea0dd42df2ac79f6bc7742d20bc0d962a5bbb6af2c1ec5cac00b0dcfe7081658f6f2cea0
+Size (R/argon2_0.4-0.tar.gz) = 95520 bytes

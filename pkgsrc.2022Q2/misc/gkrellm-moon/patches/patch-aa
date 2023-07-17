@@ -1,0 +1,39 @@
+$NetBSD: patch-aa,v 1.4 2021/11/27 05:51:04 pho Exp $
+
+* Change the hard-coded installation path.
+* Change the hard-coded C compiler.
+* Honor LDFLAGS so that flags like -Wl,-zrelro can be used.
+* Use BSD_INSTALL_LIB to install the plugin .so file.
+
+--- Makefile.orig	2002-12-11 03:36:06.000000000 +0000
++++ Makefile
+@@ -1,19 +1,19 @@
+ GTK_INCLUDE = `pkg-config gtk+-2.0 --cflags`
+ GTK_LIB = `pkg-config gtk+-2.0 --libs`
+ 
+-INSTALLDIR = ${DESTDIR}/usr/lib/gkrellm2/plugins
++INSTALLDIR = ${PREFIX}/lib/gkrellm2/plugins
+ 
+ 
+ FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE)
+ LIBS = $(GTK_LIB)
+ LFLAGS = -shared
+ 
+-CC = gcc $(CFLAGS) $(FLAGS)
++CC += $(CFLAGS) $(FLAGS)
+ 
+ OBJS = gkrellmoon.o MoonRise.o CalcEphem.o Moon.o
+ 
+ gkrellmoon.so: $(OBJS)
+-	$(CC) $(OBJS) -o gkrellmoon.so $(LFLAGS) $(LIBS)
++	$(CC) $(OBJS) -o gkrellmoon.so $(LDFLAGS) $(LFLAGS) $(LIBS)
+ 
+ clean:
+ 	rm -f *.o core *.so* *.bak *~
+@@ -23,4 +23,5 @@ gkrellmoon.o: gkrellmoon.c moon_60.xpm
+ # %.o: %.c
+ 
+ install: gkrellmoon.so
+-	install -c -s -m 644 gkrellmoon.so $(INSTALLDIR)
++	$(BSD_INSTALL_DATA_DIR) ${DESTDIR}$(INSTALLDIR)
++	$(BSD_INSTALL_LIB) gkrellmoon.so ${DESTDIR}$(INSTALLDIR)

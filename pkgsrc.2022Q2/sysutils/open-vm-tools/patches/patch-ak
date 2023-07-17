@@ -1,0 +1,76 @@
+$NetBSD: patch-ak,v 1.4 2018/09/20 21:41:16 ryoon Exp $
+
+--- lib/file/filePosix.c.orig	2018-06-23 10:04:02.000000000 +0000
++++ lib/file/filePosix.c
+@@ -24,7 +24,7 @@
+ 
+ #include <sys/types.h> /* Needed before sys/vfs.h with glibc 2.0 --hpreg */
+ 
+-#if defined(__FreeBSD__)
++#if defined(__FreeBSD__) || defined(__NetBSD__)
+ # include <sys/param.h>
+ # include <sys/mount.h>
+ #else
+@@ -77,7 +77,7 @@
+ 
+ #include "unicodeOperations.h"
+ 
+-#if !defined(__FreeBSD__) && !defined(sun)
++#if !defined(__FreeBSD__) && !defined(sun) && !defined(__NetBSD__)
+ #if !defined(__APPLE__)
+ static char *FilePosixLookupMountPoint(char const *canPath, Bool *bind);
+ #endif
+@@ -364,7 +364,7 @@ FileAttributes(const char *pathName,  //
+  *----------------------------------------------------------------------
+  */
+ 
+-#if !defined(__FreeBSD__) && !defined(sun)
++#if !defined(__FreeBSD__) && !defined(sun) && !defined(__NetBSD__)
+ Bool
+ File_IsRemote(const char *pathName)  // IN: Path name
+ {
+@@ -620,7 +620,7 @@ File_FullPath(const char *pathName)  // 
+       if (ret == NULL) {
+          char *dir;
+          char *file;
+-#if defined(__FreeBSD__) || defined(sun)
++#if defined(__FreeBSD__) || defined(sun) || defined(__NetBSD__)
+          char *realDir;
+ #else
+          char *ancestorPath;
+@@ -628,7 +628,7 @@ File_FullPath(const char *pathName)  // 
+ #endif
+ 
+          File_GetPathName(path, &dir, &file);
+-#if defined(__FreeBSD__) || defined(sun)
++#if defined(__FreeBSD__) || defined(sun) || defined(__NetBSD__)
+          realDir = Posix_RealPath(dir);
+          if (realDir == NULL) {
+             realDir = File_StripFwdSlashes(dir);
+@@ -961,7 +961,7 @@ File_SetFilePermissions(const char *path
+ }
+ 
+ 
+-#if !defined(__FreeBSD__) && !defined(sun)
++#if !defined(__FreeBSD__) && !defined(sun) && !defined(__NetBSD__)
+ /*
+  *-----------------------------------------------------------------------------
+  *
+@@ -2108,7 +2108,7 @@ File_IsSameFile(const char *path1,  // I
+ {
+    struct stat st1;
+    struct stat st2;
+-#if !defined(sun)  // Solaris does not have statfs
++#if !defined(sun) && !defined(__NetBSD__) // Solaris does not have statfs
+    struct statfs stfs1;
+    struct statfs stfs2;
+ #endif
+@@ -2151,7 +2151,7 @@ File_IsSameFile(const char *path1,  // I
+       return TRUE;
+    }
+ 
+-#if !defined(sun)  // Solaris does not have statfs
++#if !defined(sun) && !defined(__NetBSD__) // Solaris does not have statfs
+    if (Posix_Statfs(path1, &stfs1) != 0) {
+       return FALSE;
+    }

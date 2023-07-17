@@ -1,0 +1,103 @@
+#!/usr/pkg/bin/perl
+# $NetBSD: texlive.pkg,v 1.10 2022/04/17 11:13:07 markd Exp $
+
+$version = "2022";
+$pkgname = $shortdesc = $revision = $license = $longdesc = $depend = $homepage = "";
+$plist = $other = $maps = "";
+
+while (<>) {
+      $pkgname = $1,next if (/^name (\S+)/);
+      $shortdesc = $1,next if (/^shortdesc +(.+)/);
+      $revision = $1,next if (/^revision (\S+)/);
+      $license = " $1 ",next if (/^catalogue-license +(.+)/);
+      $version = $1,next if (/^catalogue-version +(.+)/);
+      $homepage = $1,next if (/^catalogue +(.+)/);
+      next if (/^category /);
+      next if (/^catalogue-also /);
+      next if (/^catalogue-ctan /);
+      next if (/^catalogue-date /);
+      next if (/^catalogue-topics /);
+      next if (/^relocated /);
+      next if (/^runfiles /);
+      $longdesc .= "$1\n",next if (/^longdesc (.+)/);
+      $depend .= "DEPENDS+=\ttex-$1-[0-9]*:../../print/tex-$1\n",next if (/^depend (.+)/);
+      $maps .= "TEX_MAP_FILES+=\t$1\n",next if (/^execute addMap (.+)/);
+      $maps .= "TEX_MIXEDMAP_FILES+=\t$1\n",next if (/^execute addMixedMap (.+)/);
+      
+      $plist .= "share/texmf-dist$1\n", next if (/^ RELOC(.+)/);
+      $plist .= "share/$1\n",next if (/^ (.+)/);
+
+      $other .= "# " . $_;
+}
+
+$shortdesc =~ s/\.$//;
+$version =~ s:/::g;
+$version =~ s: :_:g; # 5th edition
+$version =~ s:-::g;  # 2013-05-12
+$license =~ s: apache2 : apache-2.0 :;
+$license =~ s: cc0 : cc0-1.0-universal :;
+$license =~ s: cc-by-4 : cc-by-v4.0 :;
+$license =~ s: cc-by-sa-4 : cc-by-sa-v4.0 :;
+$license =~ s: fdl : gnu-fdl-v1.3 :;
+$license =~ s: lgpl : gnu-lgpl-v2 :;
+$license =~ s: lgpl2.1 : gnu-lgpl-v2.1 :;
+$license =~ s: gpl : gnu-gpl-v2 :;
+$license =~ s: gpl2 : gnu-gpl-v2 :;
+$license =~ s: gpl2\+ : gnu-gpl-v2 :;
+$license =~ s: gpl3 : gnu-gpl-v3 :;
+$license =~ s: gpl3\+ : gnu-gpl-v3 :;
+$license =~ s: lppl1 : lppl-1.0 :;
+$license =~ s: lppl1.2 : lppl-1.2 :;
+$license =~ s: lppl : lppl-1.3c :;
+$license =~ s: lppl1.3 : lppl-1.3c :;
+$license =~ s: lppl1.3c : lppl-1.3c :;
+$license =~ s: bsd : modified-bsd :;
+$license =~ s: bsd3 : modified-bsd :;
+$license =~ s: bsd2 : 2-clause-bsd :;
+$license =~ s: ofl : ofl-v1.1 :;
+$license =~ s: gfl : gfsl :;
+$license =~ s: pd : public-domain :;
+
+$license =~ s: (.*) :$1:;
+$license =~ s: +: AND :g;
+
+$extras = "";
+$extras .= "\n$depend" if ($depend);
+$extras .= "\n$maps" if ($maps);
+$extras .= "\n$other" if ($other);
+
+$homepage = $pkgname if ($homepage eq "");
+
+mkdir "tex-$pkgname";
+
+open(DESCR, ">tex-$pkgname/DESCR");
+print DESCR "$longdesc";
+close(DESCR);
+
+open(PLIST, ">tex-$pkgname/PLIST");
+print PLIST "\@comment \$NetBSD\$\n";
+print PLIST "$plist";
+close(PLIST);
+
+open(MAKE, ">tex-$pkgname/Makefile");
+
+print MAKE <<OUT;
+# \$NetBSD\$
+
+DISTNAME=	$pkgname
+PKGNAME=	tex-\${DISTNAME}-$version
+TEXLIVE_REV=	$revision
+
+MAINTAINER=	pkgsrc-users\@NetBSD.org
+HOMEPAGE=	https://ctan.org/pkg/$homepage
+COMMENT=	$shortdesc
+LICENSE=	$license
+$extras
+.include "../../print/texlive/package.mk"
+.include "../../mk/bsd.pkg.mk"
+OUT
+
+close(MAKE);
+
+print STDERR "$pkgname $version rev $revision ($license) $shortdesc $homepage \n\n";
+print "PKG=$pkgname VERSION=$version REV=$revision LICENSE=\"$license\" HOMEPAGE=$homepage\n";

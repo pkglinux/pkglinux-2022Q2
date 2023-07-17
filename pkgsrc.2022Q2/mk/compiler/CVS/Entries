@@ -1,0 +1,17 @@
+/ccache.mk/1.39/Mon Sep  2 02:23:02 2019//Tpkgsrc-2022Q2
+/ccc.mk/1.20/Sat Apr 20 16:32:42 2019//Tpkgsrc-2022Q2
+/clang.mk/1.35/Sun Mar 13 06:26:57 2022//Tpkgsrc-2022Q2
+/distcc.mk/1.33/Wed Aug 22 20:48:37 2018//Tpkgsrc-2022Q2
+/f2c.mk/1.19/Wed Aug 22 20:48:37 2018//Tpkgsrc-2022Q2
+/g95.mk/1.7/Wed Aug 22 20:48:37 2018//Tpkgsrc-2022Q2
+/gcc.mk/1.243/Thu Jun 16 15:46:22 2022//Tpkgsrc-2022Q2
+/gfortran.mk/1.20/Mon Apr  4 15:38:47 2022//Tpkgsrc-2022Q2
+/hp.mk/1.7/Tue Jun  2 22:32:49 2009//Tpkgsrc-2022Q2
+/icc.mk/1.8/Thu May 19 22:37:55 2011//Tpkgsrc-2022Q2
+/ido.mk/1.8/Tue Jun  2 22:32:49 2009//Tpkgsrc-2022Q2
+/mipspro-ucode.mk/1.6/Wed Aug 22 20:48:37 2018//Tpkgsrc-2022Q2
+/mipspro.mk/1.42/Mon Aug 22 09:18:29 2011//Tpkgsrc-2022Q2
+/pcc.mk/1.8/Fri Oct  9 17:27:09 2015//Tpkgsrc-2022Q2
+/sunpro.mk/1.50/Mon Nov 29 16:14:23 2021//Tpkgsrc-2022Q2
+/xlc.mk/1.27/Wed Aug 22 20:48:37 2018//Tpkgsrc-2022Q2
+D

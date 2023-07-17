@@ -1,0 +1,13 @@
+$NetBSD: patch-src_3rdparty_chromium_third__party_openscreen_src_platform_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/third_party/openscreen/src/platform/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/third_party/openscreen/src/platform/BUILD.gn
+@@ -84,7 +84,7 @@ if (!build_with_chromium) {
+ 
+     public_configs = [ "//util:trace_logging_config" ]
+ 
+-    if (is_linux) {
++    if (is_linux || is_bsd) {
+       sources += [
+         "impl/network_interface_linux.cc",
+         "impl/scoped_wake_lock_linux.cc",

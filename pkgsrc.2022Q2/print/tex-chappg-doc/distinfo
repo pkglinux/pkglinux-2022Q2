@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:12:49 nia Exp $
+
+BLAKE2s (tex-chappg-15878/chappg.doc.tar.xz) = 5c2f60cabb1fc2ecd01eed977b01e373dba3215eedd683440d0382f337c270d1
+SHA512 (tex-chappg-15878/chappg.doc.tar.xz) = 724e1cd28e7bced9b68a497a80e63ec709c3c8cdf80faff2e768ed3479f866824c4f8c307cae9cc4bb75a188424ffa21e54b913032e863d50db85e1c6d6f63b7
+Size (tex-chappg-15878/chappg.doc.tar.xz) = 189408 bytes

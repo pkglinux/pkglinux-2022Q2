@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/12/19 15:43:07 taca Exp $
+
+BLAKE2s (ruby-redmine-gitmike-theme/v1.2.1.tar.gz) = ffbbf8981c4fb6690f1da4608c1ca3099515c348e52f65df503f89cc37043038
+SHA512 (ruby-redmine-gitmike-theme/v1.2.1.tar.gz) = 77033a1756151dad3239caa6730d203a0ae9743ac55864357ed5a626c1e73e29da13bf45fb63156fa6b37ca83a79d95608077370f9fba5c6d8eb1c49af508ae1
+Size (ruby-redmine-gitmike-theme/v1.2.1.tar.gz) = 170563 bytes

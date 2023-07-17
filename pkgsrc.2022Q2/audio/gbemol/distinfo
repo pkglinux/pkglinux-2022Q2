@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 09:58:58 nia Exp $
+
+BLAKE2s (gbemol-0.3.2.tar.gz) = 5d184e9a4782ace585b0736aecd5f0952135424ef4c6a287862a284081c857e1
+SHA512 (gbemol-0.3.2.tar.gz) = 43ac1ecc78bef23b5593c8f039c2f3cc7c91fcdfbba6ce10472be88ff4bcbfc3793609b1280febf2d6b7a0dffc025707b3ed724446ee1eea52ff6d334974da2c
+Size (gbemol-0.3.2.tar.gz) = 401865 bytes
+SHA1 (patch-aa) = c324caa5b8ff127033b5134265b2c4f24fe20981
+SHA1 (patch-ab) = 77f31e6f1e9d919690e4ae1ccdf09afeeac761c7
+SHA1 (patch-ac) = 8181d9d09000df44801a2ee33a9e3ea5059abafb
+SHA1 (patch-ad) = ccbb00334138b915d91c6a1278548a259069ead3
+SHA1 (patch-ae) = 6ee82e980a92c51e6389ce84fbffef3ebdf50f3a
+SHA1 (patch-af) = 0b8f60bc1b27b2291dc3c119e9a5cfdbbb390178
+SHA1 (patch-ag) = bed815b9797922b32a0ba499005444edfae2898f

@@ -1,0 +1,22 @@
+$NetBSD: distinfo,v 1.32 2021/10/26 11:19:25 nia Exp $
+
+BLAKE2s (cdrdao-1.2.4.tar.bz2) = 87655678ca093915dde5554761f24673ccd17991df0ee2b3d96235957a0c92fc
+SHA512 (cdrdao-1.2.4.tar.bz2) = 41f20275ca44ec9003d0e3ed280cc98012353005cda6f544ebfa44f3f79f991845c0ef17af74db9456f1bacc342a7fd48c9e942d757927a4a9ff91808f7bbb09
+Size (cdrdao-1.2.4.tar.bz2) = 1442181 bytes
+SHA1 (patch-aa) = 9606723ae593981c6b98083990c2b17c1ace5dc2
+SHA1 (patch-ac) = 4608827f9202ef5aed35ddda426dc7a9574bc18f
+SHA1 (patch-ad) = b2baa69007fce6637049b9cf6fd0b95ef94560e3
+SHA1 (patch-ae) = 39bb65ebce0ab53675a34963f718d74083412cff
+SHA1 (patch-af) = 6db55b356b6f78f26472f710ecef2f98ce0051ca
+SHA1 (patch-ag) = e5466c41d1f6e492a57588ccbc2cdfe5696b0a8a
+SHA1 (patch-ah) = 7a7ff3361678b44f3def0e49afb2140cbac2b990
+SHA1 (patch-ai) = f2c4ad390b207a10f2a04193ff7a0c7ebef083c6
+SHA1 (patch-aj) = 6b39277142d561c54b01fa2c60b99244a71b4d0b
+SHA1 (patch-al) = eba32acd367714c668feb2662a486476577d0643
+SHA1 (patch-am) = 2b0f687b8ed233580c3ef497ad50ed01ca8a69dc
+SHA1 (patch-ao) = fbc7694628c2dc0f6f631d5f6d6c66801fff1d17
+SHA1 (patch-at) = c6379b51f2f81c73a0976d35c62555860b20168d
+SHA1 (patch-au) = dd8d9d6b73ea662ef3e936580082f9b733c6596c
+SHA1 (patch-av) = 1053b438744ce9e64e0ab093679ed71fbce9a533
+SHA1 (patch-ba) = b6b7ccae9edf1e816aac76a7d94b7bf67fc1671a
+SHA1 (patch-xdao_SampleDisplay.cc) = 6cb37169dea21a75e53b44e09e31f71cc1eb0fa8

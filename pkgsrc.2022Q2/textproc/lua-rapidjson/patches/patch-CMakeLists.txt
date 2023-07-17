@@ -1,0 +1,20 @@
+$NetBSD: patch-CMakeLists.txt,v 1.2 2021/06/07 11:53:31 nia Exp $
+
+-march=native is a terrible idea if we want binary packages to work.
+
+--- CMakeLists.txt.orig	2021-04-09 11:59:20.000000000 +0000
++++ CMakeLists.txt
+@@ -31,12 +31,8 @@ if(UNIX)
+         set(PLAT "linux")
+         set(LINK_FLAGS "-shared")
+     endif(APPLE)
+-    add_compile_options(-g -Wall -fPIC)
++    add_compile_options(-Wall -fPIC)
+     include(CheckCXXCompilerFlag)
+-    CHECK_CXX_COMPILER_FLAG("-march=native" COMPILER_SUPPORTS_ARCH_NATIVE)
+-    if (COMPILER_SUPPORTS_ARCH_NATIVE)
+-        add_compile_options(-march=native)
+-    endif()
+ else(UNIX)
+     if(WIN32)
+         set(PLAT "win32")

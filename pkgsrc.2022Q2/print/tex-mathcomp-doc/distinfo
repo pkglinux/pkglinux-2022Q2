@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:14:01 nia Exp $
+
+BLAKE2s (tex-mathcomp-15878/mathcomp.doc.tar.xz) = 28edb253e044984f8af377246570089c303d990f617fd7f077c78e69bbb2a860
+SHA512 (tex-mathcomp-15878/mathcomp.doc.tar.xz) = 102e0a910f3e8ea1de128dd8972e3df87eae05ab315b7219f67b78e1a79a6b5384057a94faf2d6e7fa3b3d3c94827cdad442b92b30661ed511b15f15b1835474
+Size (tex-mathcomp-15878/mathcomp.doc.tar.xz) = 166132 bytes

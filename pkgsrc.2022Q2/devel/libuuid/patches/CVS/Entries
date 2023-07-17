@@ -1,0 +1,24 @@
+/patch-Makefile.am/1.1/Thu Mar 12 10:11:34 2020//Tpkgsrc-2022Q2
+/patch-Makefile.in/1.4/Thu Mar 12 10:11:34 2020//Tpkgsrc-2022Q2
+/patch-configure/1.8/Wed Aug 29 12:25:52 2018//Tpkgsrc-2022Q2
+/patch-include_c.h/1.1/Tue Jan  2 10:24:06 2018//Tpkgsrc-2022Q2
+/patch-include_randutils.h/1.1/Sun Jul 25 04:00:34 2021//Tpkgsrc-2022Q2
+/patch-include_strutils.h/1.3/Sat Apr  2 21:00:54 2022//Tpkgsrc-2022Q2
+/patch-include_ttyutils.h/1.1/Fri Dec  8 08:03:35 2017//Tpkgsrc-2022Q2
+/patch-lib_canonicalize.c/1.1/Sat Apr  2 21:00:54 2022//Tpkgsrc-2022Q2
+/patch-lib_colors.c/1.1/Sat Apr  2 21:00:54 2022//Tpkgsrc-2022Q2
+/patch-lib_ismounted.c/1.1/Fri Dec  8 08:03:35 2017//Tpkgsrc-2022Q2
+/patch-lib_mangle.c/1.1/Sat Apr  2 21:00:54 2022//Tpkgsrc-2022Q2
+/patch-lib_pager.c/1.1/Sat Jul 10 23:11:22 2021//Tpkgsrc-2022Q2
+/patch-lib_randutils.c/1.6/Sun Jul 25 04:00:34 2021//Tpkgsrc-2022Q2
+/patch-lib_signames.c/1.1/Sat Apr  2 21:00:54 2022//Tpkgsrc-2022Q2
+/patch-lib_sysfs.c/1.1/Sat Apr  2 21:00:54 2022//Tpkgsrc-2022Q2
+/patch-lib_ttyutils.c/1.1/Sat Apr  2 21:00:54 2022//Tpkgsrc-2022Q2
+/patch-libblkid_docs_Makefile.in/1.1/Thu Mar 12 10:11:34 2020//Tpkgsrc-2022Q2
+/patch-libfdisk_docs_Makefile.in/1.1/Thu Mar 12 10:11:34 2020//Tpkgsrc-2022Q2
+/patch-libmount_docs_Makefile.in/1.1/Thu Mar 12 10:11:34 2020//Tpkgsrc-2022Q2
+/patch-libsmartcols_docs_Makefile.in/1.1/Thu Mar 12 10:11:34 2020//Tpkgsrc-2022Q2
+/patch-libuuid_src_gen__uuid.c/1.2/Sun Jul 25 04:00:34 2021//Tpkgsrc-2022Q2
+/patch-libuuid_src_parse.c/1.1/Sat Apr  2 21:00:54 2022//Tpkgsrc-2022Q2
+/patch-misc-utils_mcookie.c/1.1/Sun Jul 25 04:00:34 2021//Tpkgsrc-2022Q2
+D

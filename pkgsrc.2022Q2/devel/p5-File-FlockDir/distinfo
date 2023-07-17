@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:16:36 nia Exp $
+
+BLAKE2s (File-FlockDir-1.02.tar.gz) = d1f403ad43f540e931f23fcb9a68abae748a20277ee4fe8ece7d441a8cb27192
+SHA512 (File-FlockDir-1.02.tar.gz) = efb351a5a2b8b7795f414c4fdb9c4ceb8ee2d6ac6245869fb6333d5ac43662b039617635357f3fe5c7eec939770166bb419bb3504619e0f3da5fd938c11e63c7
+Size (File-FlockDir-1.02.tar.gz) = 6060 bytes

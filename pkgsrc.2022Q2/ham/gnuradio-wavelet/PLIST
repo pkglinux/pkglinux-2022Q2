@@ -1,0 +1,16 @@
+@comment $NetBSD: PLIST,v 1.10 2022/05/26 15:20:10 mef Exp $
+include/gnuradio/wavelet/api.h
+include/gnuradio/wavelet/squash_ff.h
+include/gnuradio/wavelet/wavelet_ff.h
+include/gnuradio/wavelet/wvps_ff.h
+lib/cmake/gnuradio/gnuradio-waveletConfig.cmake
+lib/cmake/gnuradio/gnuradio-waveletTargets-release.cmake
+lib/cmake/gnuradio/gnuradio-waveletTargets.cmake
+lib/libgnuradio-wavelet.so
+lib/libgnuradio-wavelet.so.${PKGVER_MICRO}
+lib/libgnuradio-wavelet.so.${PKGVERSION}
+lib/pkgconfig/gnuradio-wavelet.pc
+${PYSITELIB}/gnuradio/wavelet/__init__.py
+${PYSITELIB}/gnuradio/wavelet/__init__.pyc
+${PYSITELIB}/gnuradio/wavelet/__init__.pyo
+${PYSITELIB}/gnuradio/wavelet/wavelet_python.so

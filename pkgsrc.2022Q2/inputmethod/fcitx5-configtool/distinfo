@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:49:31 nia Exp $
+
+BLAKE2s (fcitx5-configtool-5.0.3.tar.xz) = 208a5a80ba6c353daa401645c7f4fcbfe23ba74b7c13e982197697a0e8fafa68
+SHA512 (fcitx5-configtool-5.0.3.tar.xz) = 3194bf810d7392792a115c5d3abcb7eb9d3f7c351abd675df123b5fbefa97fa3bb10b26e604d0116235a4e62a6a497e5c5d190e1a4cf789dd27985fbb28978ff
+Size (fcitx5-configtool-5.0.3.tar.xz) = 99532 bytes
+SHA1 (patch-CMakeLists.txt) = be7a6c5b6d68097723260a583e16fb12e7626e67

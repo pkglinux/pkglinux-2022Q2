@@ -1,0 +1,17 @@
+# $NetBSD: Makefile.common,v 1.5 2021/12/12 13:55:13 taca Exp $
+# used by textproc/p5-marisa/Makefile
+# used by textproc/py-marisa/Makefile
+# used by textproc/ruby-marisa/Makefile
+
+DISTNAME=	marisa-0.2.6
+CATEGORIES=	textproc
+MASTER_SITES=	${MASTER_SITE_GITHUB:=s-yata/}
+GITHUB_PROJECT=	marisa-trie
+GITHUB_TAG=	v${PKGVERSION_NOREV}
+
+DISTINFO_FILE=	${.CURDIR}/../../textproc/marisa/distinfo
+PATCHDIR=	${.CURDIR}/../../textproc/marisa/patches
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://github.com/s-yata/marisa-trie
+LICENSE=	2-clause-bsd OR gnu-lgpl-v2.1

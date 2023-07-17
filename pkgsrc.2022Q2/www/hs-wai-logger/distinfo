@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/12 07:11:03 pho Exp $
+
+BLAKE2s (wai-logger-2.4.0.tar.gz) = 8cd120643f1de7f0f0d8e60c0b5be8355fcbd504a983aeac670a47e3789d8b7d
+SHA512 (wai-logger-2.4.0.tar.gz) = 8d09b7fa7688601396f994513772884ac7f73a0b934f73420e3d200ae4e906450bbef14746d43dc484ce8d9181f8171dfb8d3496d17c0d81ba7c27eee39a90d4
+Size (wai-logger-2.4.0.tar.gz) = 5925 bytes

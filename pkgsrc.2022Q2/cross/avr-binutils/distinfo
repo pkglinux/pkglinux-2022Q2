@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.17 2022/05/23 11:56:34 micha Exp $
+
+BLAKE2s (binutils-2.38.tar.bz2) = 80609a31f2040a8418a2004cb9de8b3d409e954c7c1d17afef8e9237227d00ee
+SHA512 (binutils-2.38.tar.bz2) = 7690b4158bd6587a85c6b98903980b9ac6f16b47f7fd1e60986b0a70388bedcfdc05d75597aa49c81fec1609ce24bed6c26583f76fd2471a9d63394fd9798afc
+Size (binutils-2.38.tar.bz2) = 34866647 bytes
+SHA1 (patch-bfd_Makefile.in) = f8855061f6ee3b365b9482bd55412d551e4e1206
+SHA1 (patch-binutils_Makefile.in) = e264bf986cd75f2c45e07ee3bd40a81c13760e7b
+SHA1 (patch-gas_Makefile.in) = c11e7ae5913f62bb0aa50b728dbae88172f154c3
+SHA1 (patch-gprof_Makefile.in) = d0fa34064b1fdde3bacff1d223e7490d4747a0b9
+SHA1 (patch-ld_Makefile.in) = 609f81b79b9d0de857d32c1e17eaccf6073aba3f
+SHA1 (patch-libctf_Makefile.in) = 8858241ac2db31b74883b2490212b72ac1420a99

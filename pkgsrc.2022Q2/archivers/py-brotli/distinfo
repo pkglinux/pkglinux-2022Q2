@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/11/19 09:49:42 adam Exp $
+
+BLAKE2s (Brotli-1.0.9.zip) = 0c2a8965cf4682b69d769d34125dcf0f1bbba0acb243fad793f54e1016545348
+SHA512 (Brotli-1.0.9.zip) = f5faf1ef0b80a2c34ca036e1536ecba8e16ed23c27bebf434e981fbed48e704179aa1be6eae3a82c5958c6d239b0ecf8a7b05dbc8e2e3233d0fc791f32c590d3
+Size (Brotli-1.0.9.zip) = 510202 bytes

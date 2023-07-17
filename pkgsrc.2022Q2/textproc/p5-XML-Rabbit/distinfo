@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:22:52 nia Exp $
+
+BLAKE2s (XML-Rabbit-0.4.1.tar.gz) = 67be55be4e107780340203db2f8796313eefbcc35724d0316c30f2ad3a4ca8df
+SHA512 (XML-Rabbit-0.4.1.tar.gz) = 9530d4c5e2a79666353d0a50f742dc85e1b4a5f14584acb65df46dbe146ce6b96cebaf7babef0969db30fb9cc48bedc3a8f689f4154e450f8cd6576e37ea4795
+Size (XML-Rabbit-0.4.1.tar.gz) = 56134 bytes

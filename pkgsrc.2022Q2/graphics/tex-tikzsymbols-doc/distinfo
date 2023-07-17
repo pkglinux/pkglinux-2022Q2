@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/04/14 03:31:41 markd Exp $
+
+BLAKE2s (tikzsymbols.doc.r61300.tar.xz) = 72ed4f01536137c1d6918fcc6f7e9b525f72bd89f154b678d299868844e08d89
+SHA512 (tikzsymbols.doc.r61300.tar.xz) = 7219e48fc2407bd44992378b24c5a1fd0b9c1a9a9c408de2734966657f83735b8cda336d207e9d1593afe0fc58aff7d83213a9ca4be61201df98757e2e4ade75
+Size (tikzsymbols.doc.r61300.tar.xz) = 588256 bytes

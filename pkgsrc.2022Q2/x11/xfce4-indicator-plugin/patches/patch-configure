@@ -1,0 +1,15 @@
+$NetBSD: patch-configure,v 1.2 2022/01/20 01:25:04 gutteridge Exp $
+
+Portability fix.
+
+--- configure.orig	2022-01-08 13:57:52.000000000 +0000
++++ configure
+@@ -17263,7 +17263,7 @@ else $as_nop
+   enable_application=yes
+ fi
+ 
+-if test x"$enable_application" == x"no"; then
++if test x"$enable_application" = x"no"; then
+ 
+ printf "%s\n" "#define DISABLE_APPLICATION /**/" >>confdefs.h
+ 

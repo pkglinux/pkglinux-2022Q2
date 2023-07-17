@@ -1,0 +1,24 @@
+$NetBSD: patch-GNUmakefile,v 1.3 2019/10/13 21:48:57 he Exp $
+
+Make this build with symlinked pkgsrc directory.
+Don't build examples: they are not installed, and give error with libc++.
+
+--- GNUmakefile.orig	2019-03-29 03:33:33.000000000 +0000
++++ GNUmakefile
+@@ -1,6 +1,6 @@
+ include srcdir.mk
+ 
+-BLDDIR = $(CURDIR)
++BLDDIR = $(shell pwd)
+ SUBDIR =
+ 
+ export SRCDIR
+@@ -8,7 +8,7 @@ export BLDDIR
+ 
+ include $(BLDDIR)/config.mk
+ 
+-SUBDIRS = include lib src test examples
++SUBDIRS = include lib src test
+ 
+ ifeq ($(BUILD_TOOLS),yes)
+   SUBDIRS += tools

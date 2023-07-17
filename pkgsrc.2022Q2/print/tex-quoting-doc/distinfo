@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 11:14:29 nia Exp $
+
+BLAKE2s (quoting.doc.r32818.tar.xz) = 3faf9b6f448f3d69c5ec3219498a113a588dbda1d3cd070897a0951ffc3c6230
+SHA512 (quoting.doc.r32818.tar.xz) = b3990965effff7529a7c18cdd3a08af337be3766ffe535feaf54db504a47b0f054af41511a635c3e70c34d3025df419af702d319240ee673f7462d2cf4ccbbc2
+Size (quoting.doc.r32818.tar.xz) = 307136 bytes

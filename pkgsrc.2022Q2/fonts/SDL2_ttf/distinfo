@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/01/16 22:45:24 wiz Exp $
+
+BLAKE2s (SDL2_ttf-2.0.18.tar.gz) = 32d7d8e3eda19dd213959dd5af2ddbbbfb5640a88e2a8351d55c2c4465839e56
+SHA512 (SDL2_ttf-2.0.18.tar.gz) = 9a211c07d4180fe3fb2f7614e907d1002ddf3bb77b57f62116f22dc29a6043f091deb6a8113656d26a44d2f06b9abcc372aa3e0761500fcf47b455406973a1c7
+Size (SDL2_ttf-2.0.18.tar.gz) = 14896353 bytes

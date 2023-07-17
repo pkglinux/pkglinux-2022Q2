@@ -1,0 +1,11 @@
+@comment $NetBSD: PLIST,v 1.4 2021/07/17 16:01:34 adam Exp $
+bin/knock
+man/man1/knock.1
+man/man8/knockd.8
+sbin/knock_helper_ipt.sh
+sbin/knockd
+share/doc/knock/COPYING
+share/doc/knock/ChangeLog
+share/doc/knock/README.md
+share/doc/knock/TODO
+share/examples/knock/knockd.conf

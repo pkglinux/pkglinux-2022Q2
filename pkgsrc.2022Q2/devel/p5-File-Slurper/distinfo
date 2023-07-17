@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/04/02 02:20:07 wen Exp $
+
+BLAKE2s (File-Slurper-0.013.tar.gz) = 60b93124e20ea08b68d5924f20cda4c915015ded68017e4573bdcb6330647380
+SHA512 (File-Slurper-0.013.tar.gz) = c804372b5828eaec777083fddef06d805efadfdfb5fd99aa6be68f914e70d9d812bb08fe6e1c661fcbbb0deec1460cd6813c3bf3c0a91c047636eb2bec594ccb
+Size (File-Slurper-0.013.tar.gz) = 16095 bytes

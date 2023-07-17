@@ -1,0 +1,16 @@
+
+### Introduction
+
+The goal of this project is to provide a tiny library that would facilitate the
+common operations with sizes in bytes. Many projects need to work with sizes in
+bytes (be it sizes of storage space, memory,...) and all of them need to deal
+with the same issues like:
+
+* How to get a human-readable string for the given size?
+* How to store the given size so that no significant information is lost?
+* If we store the size in bytes, what if the given size gets over the ``MAXUINT64``
+  value?
+* How to interpret sizes entered by users according to their locale and typing
+  conventions?
+* How to deal with the decimal/binary units (*MB* vs. *MiB*) ambiguity?
+...

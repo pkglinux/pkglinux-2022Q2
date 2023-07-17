@@ -1,0 +1,22 @@
+@comment $NetBSD$
+etc/alsa/conf.d/10-speexrate.conf
+etc/alsa/conf.d/50-arcam-av-ctl.conf
+etc/alsa/conf.d/50-oss.conf
+etc/alsa/conf.d/60-upmix.conf
+etc/alsa/conf.d/60-vdownmix.conf
+etc/alsa/conf.d/98-usb-stream.conf
+lib/alsa-lib/libasound_module_ctl_arcam_av.la
+lib/alsa-lib/libasound_module_ctl_oss.la
+lib/alsa-lib/libasound_module_pcm_oss.la
+lib/alsa-lib/libasound_module_pcm_upmix.la
+lib/alsa-lib/libasound_module_pcm_usb_stream.la
+lib/alsa-lib/libasound_module_pcm_vdownmix.la
+lib/alsa-lib/libasound_module_rate_speexrate.la
+lib/alsa-lib/libasound_module_rate_speexrate_best.so
+lib/alsa-lib/libasound_module_rate_speexrate_medium.so
+share/alsa/alsa.conf.d/10-speexrate.conf
+share/alsa/alsa.conf.d/50-arcam-av-ctl.conf
+share/alsa/alsa.conf.d/50-oss.conf
+share/alsa/alsa.conf.d/60-upmix.conf
+share/alsa/alsa.conf.d/60-vdownmix.conf
+share/alsa/alsa.conf.d/98-usb-stream.conf

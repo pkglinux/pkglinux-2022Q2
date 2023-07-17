@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2022/01/23 19:13:16 adam Exp $
+
+BLAKE2s (simpleeval-0.9.12.tar.gz) = f9f2630cfdd6b79767fb2c81547a69112b1278c7b0d33f5093aa5ff6aaf93802
+SHA512 (simpleeval-0.9.12.tar.gz) = 9b00bfd13a7c7bd05c1c68c43dcd2b52abe0ea648d640780a05499c95ff96bb4366add1d92086ec7e840075fcbff692e133ddbf4c2b8497dd80e115c24367641
+Size (simpleeval-0.9.12.tar.gz) = 22693 bytes

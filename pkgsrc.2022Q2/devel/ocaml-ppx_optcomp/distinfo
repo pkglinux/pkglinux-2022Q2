@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2022/05/04 16:43:36 jaapb Exp $
+
+BLAKE2s (ppx_optcomp-0.15.0.tar.gz) = 077cb267d6ab578d32d51db6f126eaa9837dff4d2d5aa4bb4b132c96f8f09657
+SHA512 (ppx_optcomp-0.15.0.tar.gz) = 302c2ab79c46a16b8a256167958ad9a87b34a2e7ddc70c7a5476cfb0feffc7de7bebc79c272526698e87804859555176facfb04bc72f3b4373c1cb138b1264c7
+Size (ppx_optcomp-0.15.0.tar.gz) = 16699 bytes

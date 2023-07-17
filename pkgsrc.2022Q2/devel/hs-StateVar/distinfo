@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/02/11 09:37:45 pho Exp $
+
+BLAKE2s (StateVar-1.2.2.tar.gz) = 95041d58115ef85a87ef8f47364be997c2aca1cf9e5315635a0b0cdd0d811d24
+SHA512 (StateVar-1.2.2.tar.gz) = d4330b43471ed73e2c70e0686575f7987f617ae1c03d9d5b0ea89d5ec55be2470b6d917e4ecc6d52c4d46fc8afbeea16194667815ce0bbecb1f637d7277f86e6
+Size (StateVar-1.2.2.tar.gz) = 5048 bytes

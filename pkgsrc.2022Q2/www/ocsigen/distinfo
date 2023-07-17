@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.19 2022/05/20 07:04:06 jaapb Exp $
+
+BLAKE2s (ocsigenserver-5.0.1.tar.gz) = 4e9099cc070449ec80a80a395a18a3405e693cea17a36f16b43cde22d0dac84e
+SHA512 (ocsigenserver-5.0.1.tar.gz) = 1b8653487722ad26c0c0bfcf820402a783018039ce8b7c749ffb57bc80eeb1234464950ee639cb951c5b3dde1b4e85a992dfbbc782d55e7c2a356ff2f28a3917
+Size (ocsigenserver-5.0.1.tar.gz) = 1164098 bytes
+SHA1 (patch-Makefile) = b5c387136f7c0e89e7afd7166fd96b54b332a18b
+SHA1 (patch-src_baselib_dynlink__wrapper.nonatdynlink.ml) = 78d373be4873cf1a632adcb5af30e14891adaf1f
+SHA1 (patch-src_server_dune) = 6b683b96bf629d9a44eeddbe57313d0b6ad27b98
+SHA1 (patch-src_server_ocsigen__cohttp.ml) = 3fe88c9aebd1e22e9e9271ed381b4107e9b0d12d

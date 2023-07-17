@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:14:28 nia Exp $
+
+BLAKE2s (CUnit-2.1-0-src.tar.gz) = b4248bb0c04edb2de053a05d3a610719d5c9f86f8b211a65f927421786f75483
+SHA512 (CUnit-2.1-0-src.tar.gz) = 564c297293e3578384c11daef70bc45619188ff823107a2bbb6e56cfa702941b1c316cd9a4cb1116ecc5aefababd153febc39907296392b59e669d3251f85fbf
+Size (CUnit-2.1-0-src.tar.gz) = 628767 bytes
+SHA1 (patch-aa) = bf27a2c600a217e4d53fc59b2765f1b87f168100
+SHA1 (patch-ab) = cc16d516fde43a5a4de62fce1a061dd6bd6366f7
+SHA1 (patch-ac) = 6f385dabae5dd46862dcaff157782dc5ec08d63a

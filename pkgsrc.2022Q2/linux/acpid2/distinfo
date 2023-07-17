@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (acpid-2.0.34.tar.xz) = 126b3d750a45792243d5161d28534dc1abd579be39ad209c3b8ecbeabcd9369e
+SHA512 (acpid-2.0.34.tar.xz) = 2bf92295b55bb44fe83074b3e0c1ae639f63edaeea84b2184ae95b38852be40f380d5413110b8c0fcb2efc2ec01bf4764e1dcb97022fc724bebbfc35c0b63c81
+Size (acpid-2.0.34.tar.xz) = 159924 bytes

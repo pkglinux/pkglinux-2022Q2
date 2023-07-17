@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:16:16 nia Exp $
+
+BLAKE2s (Config-Any-Merge-0.08.tar.gz) = 0b216ce52480d559543a55b3239d0d7a86deae9ad0b7ccb1ccad1c86e82871b6
+SHA512 (Config-Any-Merge-0.08.tar.gz) = 0e7c3bac79b3e1b927d655a0ff34f5b010cfe3464b9788c6311abaacbc73b3a96af108c57660e67ef93847eb5d9d139f0fab917ded57e46c351fddd209c3d1ce
+Size (Config-Any-Merge-0.08.tar.gz) = 4357 bytes

@@ -1,0 +1,22 @@
+$NetBSD: patch-ah,v 1.4 2018/01/01 06:56:01 ryoon Exp $
+
+--- lib/file/fileIO.c.orig	2017-12-15 19:09:51.000000000 +0000
++++ lib/file/fileIO.c
+@@ -325,7 +325,7 @@ FileIO_Lock(FileIODescriptor *file,  // 
+    FileIOResolveLockBits(&access);
+    ASSERT((access & FILEIO_OPEN_LOCKED) == 0);
+ 
+-#if !defined(__FreeBSD__) && !defined(sun)
++#if !defined(__FreeBSD__) && !defined(sun) && !defined(__NetBSD__)
+    if ((access & FILEIO_OPEN_LOCK_MANDATORY) != 0) {
+       /* Mandatory file locks are available only when opening a file */
+       ret = FILEIO_LOCK_FAILED;
+@@ -394,7 +394,7 @@ FileIO_Unlock(FileIODescriptor *file)  /
+ 
+    ASSERT(file != NULL);
+ 
+-#if !defined(__FreeBSD__) && !defined(sun)
++#if !defined(__FreeBSD__) && !defined(sun) && !defined(__NetBSD__)
+    if (file->lockToken != NULL) {
+       int err = 0;
+ 

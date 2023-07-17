@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.15 2021/11/24 12:05:18 wiz Exp $
+
+BLAKE2s (ucon64-2.2.2-src.tar.gz) = aecd9fab19cf65c2f057e926dcf8fb20406da3d4539a73eed4eb74669c081080
+SHA512 (ucon64-2.2.2-src.tar.gz) = 21e403e6de64c0a76de32032fbafea75f53a96b88b343220cdc8d62ef3bdec252764cacb9bbf98a910477ba451bc05aee8c9f91024b9e5d3149f7ead20d426b5
+Size (ucon64-2.2.2-src.tar.gz) = 1481087 bytes

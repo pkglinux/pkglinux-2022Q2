@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:15:36 nia Exp $
+
+BLAKE2s (rings-1.3.0.tar.gz) = c612b5a28b526b3a0c9c2047c8a4874375d653407208fed5da939804bebb5146
+SHA512 (rings-1.3.0.tar.gz) = 04542ae08a3ad70120473ae383301100ded75f39aa1147cd2c99b2a5d82c90cae452d90333a9788e725a2b7a11018320cf39611620175cd9706b922ff4ad6dc1
+Size (rings-1.3.0.tar.gz) = 23322 bytes
+SHA1 (patch-Makefile) = caa2d2fadf9ca61a70ac691b68669d48850e08d1
+SHA1 (patch-config) = 7cb2b87773c72de2a566c8d34ff52ac75e89d93a

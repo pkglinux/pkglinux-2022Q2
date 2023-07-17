@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2022/05/02 14:42:48 mef Exp $
+
+BLAKE2s (R/testthat_3.1.4.tar.gz) = ff09d43afa065e19aca824b2b31d191404effac08c5031f7d891782a6173c374
+SHA512 (R/testthat_3.1.4.tar.gz) = ae0f0007c085fe951e04b9682a6758d811f3d240249302d440f58ea7b3f7271d692f26df247d7edc50a2150293026003b299f5e36ba2044930c2d60940221730
+Size (R/testthat_3.1.4.tar.gz) = 700919 bytes

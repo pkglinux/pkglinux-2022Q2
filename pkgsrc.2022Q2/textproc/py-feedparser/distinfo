@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.25 2022/05/22 17:32:07 schmonz Exp $
+
+BLAKE2s (feedparser-6.0.10.tar.gz) = 32ec289337f3c8a9fd5b6cfbb7c6c1ef5428a79de921f8ea50efc07be6b5cbab
+SHA512 (feedparser-6.0.10.tar.gz) = f71c0f37a11e601610b72480dffca56ea54f1d3802d4afa522b361bac05c62322650c33f9a143288e77f1275c52cbfc46c200a3eea7368029cab0f41073dfdab
+Size (feedparser-6.0.10.tar.gz) = 286395 bytes

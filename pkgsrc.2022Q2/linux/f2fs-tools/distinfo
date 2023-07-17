@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (f2fs-tools-1.9.0.tar.gz) = dac2660fb82104d274eef46fcc4401bd67140d326a7f2a8d31741940507f60b0
+SHA512 (f2fs-tools-1.9.0.tar.gz) = 75844035087eb6fc22adb5a2de1e4b63a2b30601ce213ebfa0a26acb21cc81b37bf9d3effb50f8114eaea7169cf9d09b31b01f3382cbed6a09a97690f3ded293
+Size (f2fs-tools-1.9.0.tar.gz) = 116798 bytes
+SHA1 (patch-lib_libf2fs.c) = 16ac6c5e5d26beabb80c0a6d6e4cc66fa5daec00

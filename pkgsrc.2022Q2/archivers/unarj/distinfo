@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 09:57:18 nia Exp $
+
+BLAKE2s (unarj-2.65.tar.gz) = 1b7551a7da5e865f466e6f006278db1eee3a03b025dacd5bd2afa897cdb2a92f
+SHA512 (unarj-2.65.tar.gz) = 3b71e1c336e5c4aa6be6c896735087273abe60b7b99f74a3fe66fd6b45690b0686e3d18a9e4536a7cb584a60e086a464a16befa3a2ded14330754a78747feb9e
+Size (unarj-2.65.tar.gz) = 74911 bytes
+SHA1 (patch-aa) = e64a69fc4f91ba69fc642e6d742a0cc36cfddbb0
+SHA1 (patch-ab) = 15216bc07298ce0956bfbadfaae763622ee88a0c
+SHA1 (patch-ac) = d3fb016de598f21aefb795259f2a65a9bc65811c
+SHA1 (patch-ad) = 46c469ade1a20da7e3ac633652e4ec926ba2b08f

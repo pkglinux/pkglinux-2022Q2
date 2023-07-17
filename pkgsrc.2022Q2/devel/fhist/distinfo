@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:14:38 nia Exp $
+
+BLAKE2s (fhist-1.16.tar.gz) = b4b4aaf3f8a8f85d64156b49ac186209bf1da3c9f833cc0283d75e0e48e79e02
+SHA512 (fhist-1.16.tar.gz) = 919fc4d424e1f878404ec2d305dbcd66a4697c88c38af54033bdb178704cf08997c816d75db93ddbfc5248f29b997c4b8aaa3fd98ee790c32582124fc332bc1d
+Size (fhist-1.16.tar.gz) = 383180 bytes
+SHA1 (patch-common_input.h) = c72555eaf8dad73406531b2933314c22c67784b2
+SHA1 (patch-common_output.h) = ea2b35c288892e6a509318501bc2b537b3837ee9

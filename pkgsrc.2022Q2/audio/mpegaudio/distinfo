@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 09:59:16 nia Exp $
+
+BLAKE2s (mpegaudio.tar.Z) = 9927f7f4fc2bd6e75aeb4e2137579fb1286f3847a1bfc9a4e09c7eba5f8cc209
+SHA512 (mpegaudio.tar.Z) = 99845355a395ca817cc235b9028669f2260b58e8fb02e6c0bae458a9ef0ac27b4897927bf6c1a2d3405da1152b10e21e04b1a31c2f91db94787720fd525e8e7b
+Size (mpegaudio.tar.Z) = 144707 bytes
+SHA1 (patch-aa) = ce73eab14c962f143997b73e19a00e3d3e585ec7
+SHA1 (patch-ab) = c901c8b0b0af5232ed4759970b320988bcfe1266
+SHA1 (patch-ac) = 389d7973e317362d5927be96ab3222f011410b40
+SHA1 (patch-ad) = f81fb4c7557d9fe96d9164c0df4367389df6b2e4
+SHA1 (patch-ae) = 65bc956b1cc3a97ca3569c3943760d41b63f10e8
+SHA1 (patch-af) = f9dda45daeb250734178fc8c4626c0112d5fefbd

@@ -1,0 +1,13 @@
+$NetBSD: patch-src_3rdparty_chromium_services_device_geolocation_BUILD.gn,v 1.2 2022/04/18 11:18:19 adam Exp $
+
+--- src/3rdparty/chromium/services/device/geolocation/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/services/device/geolocation/BUILD.gn
+@@ -106,7 +106,7 @@ source_set("geolocation") {
+   if (is_chromeos || (is_linux && !use_dbus)) {
+     sources -= [ "wifi_data_provider_linux.cc" ]
+   }
+-  if ((is_linux || is_chromeos) && use_dbus) {
++  if ((is_linux || is_chromeos || is_bsd) && use_dbus) {
+     sources -= [ "empty_wifi_data_provider.cc" ]
+     deps += [ "//dbus" ]
+   }

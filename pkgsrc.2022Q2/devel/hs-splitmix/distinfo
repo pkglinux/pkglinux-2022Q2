@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/02/11 09:40:59 pho Exp $
+
+BLAKE2s (splitmix-0.1.0.4.tar.gz) = aee98da9731aeb3ad0959a299dfbdc540d749b64febf90855e20f710d41a6fbd
+SHA512 (splitmix-0.1.0.4.tar.gz) = 9a5cbe8100d44fadeb8bf009b03b1770d6b86ef0f71d625e3fb909881d599f4122833647c13a78152369e2744327d5c3f8b552fdc6a47d2705891ca6331c268e
+Size (splitmix-0.1.0.4.tar.gz) = 22382 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/14 03:16:48 markd Exp $
+
+BLAKE2s (plautopatch.r61240.tar.xz) = db06f72d081ad170927eb859486e054d1326819e103a32a8c292ef5e9e7f2017
+SHA512 (plautopatch.r61240.tar.xz) = 7a617df2c19ca483818ad3bfa8421a070d8e9a3a3fbcf91cb686b928194f5adf586d468ec5329e28bd2cdf48947c899f52afbb6f85a552781b80cc6d64b27a05
+Size (plautopatch.r61240.tar.xz) = 7072 bytes

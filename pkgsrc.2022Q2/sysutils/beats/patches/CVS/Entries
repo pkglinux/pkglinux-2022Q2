@@ -1,0 +1,6 @@
+/patch-libbeat_common_file_stderr__other.go/1.1/Wed Apr 15 13:00:55 2020//Tpkgsrc-2022Q2
+/patch-vendor_github.com_insomniacslk_dhcp_dhcpv4_client.go/1.1/Fri Mar 15 15:03:02 2019//Tpkgsrc-2022Q2
+/patch-vendor_github.com_tsg_gopacket_pcap_pcap.go/1.2/Wed Apr 15 13:00:55 2020//Tpkgsrc-2022Q2
+/patch-vendor_golang.org_x_crypto_blake2b_blake2bAVX2__amd64.go/1.2/Sat Sep  4 14:10:33 2021//Tpkgsrc-2022Q2
+/patch-vendor_golang.org_x_crypto_blake2b_blake2bAVX2__amd64.s/1.1/Fri Mar 15 15:03:03 2019//Tpkgsrc-2022Q2
+D

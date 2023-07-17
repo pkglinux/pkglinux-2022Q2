@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/14 03:39:52 markd Exp $
+
+BLAKE2s (translations.doc.r61896.tar.xz) = bb55aeaad906c0b75e65cc31803863c272b8491870e62c1b5a33e9aeb3301cf5
+SHA512 (translations.doc.r61896.tar.xz) = ab72edcca1d3407eaef679acd3f3d2a49f559e5ca6d9d1ad7221dd76152560be307722155cd4da54215e3b7f561f39e08ae737c70ff2e7fea1ddce2561b506fb
+Size (translations.doc.r61896.tar.xz) = 518100 bytes

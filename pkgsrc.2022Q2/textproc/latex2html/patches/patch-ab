@@ -1,0 +1,66 @@
+$NetBSD: patch-ab,v 1.5 2018/08/19 18:03:30 dholland Exp $
+
+(the last bit)
+date: 2006-04-07 11:23:19 +0900;  author: minskim;  state: Exp;
+Use tex infrastructure to run mktexlsr for texmf-local only.
+
+(the rest)
+Add user-destdir support.
+
+--- config/install.pl.orig	2016-04-19 16:52:35.000000000 +0000
++++ config/install.pl
+@@ -294,15 +294,15 @@ my @icon_types = $cfg{'IMAGE_TYPES'} ? 
+ my $iconrx = join('|', @icon_types);
+ 
+ my $dest1 = "$cfg{'SHLIBDIR'}${dd}icons";
+-if((-d $dest1 && !-w _) || (-d $cfg{'SHLIBDIR'} && !-w _)) {
+-  print STDERR "Error: Cannot install icons in '$dest1': No write permission.\n";
+-  $dest1 = '';
+-}
++#if((-d $dest1 && !-w _) || (-d $cfg{'SHLIBDIR'} && !-w _)) {
++#  print STDERR "Error: Cannot install icons in '$dest1': No write permission.\n";
++#  $dest1 = '';
++#}
+ my $dest2 = $cfg{'ICONSTORAGE'} || '';
+-if(-d $dest2 && !-w $dest2) {
+-  print STDERR "Error: Cannot install icons in '$dest2': No write permission.\n";
+-  $dest2 = '';
+-}
++#if(-d $dest2 && !-w $dest2) {
++#  print STDERR "Error: Cannot install icons in '$dest2': No write permission.\n";
++#  $dest2 = '';
++#}
+ my $dir = "icons";
+ unless(opendir(DIR,$dir)) {
+   print STDERR qq{Error: Could not read directory "$dir": $!\n};
+@@ -372,12 +372,6 @@ foreach $item (sort keys %Install_items)
+ 
+ if($cfg{TEXPATH}) {
+   print "\nNote: trying to install LaTeX2HTML style files in TeX directory tree\n     ($cfg{TEXPATH})\n";
+-  unless(mkpath($cfg{TEXPATH})) {
+-  #my $testpath = $cfg{TEXPATH}; # to strip (latex2)html
+-  #$testpath =~ s/[$dd$dd][^$dd$dd]*$//;
+-  #if((-d $cfg{TEXPATH} && !-w _) || (-d $testpath && !-w _)) {
+-    print STDERR "\nError: Cannot install LaTeX2HTML style files in $cfg{TEXPATH}\n";
+-  } else {
+     my $dir = 'texinputs';
+     my $dest = $cfg{TEXPATH};
+     unless(opendir(DIR,$dir)) {
+@@ -394,12 +388,12 @@ if($cfg{TEXPATH}) {
+         }
+       }
+       closedir(DIR);
+-      if($ok && $cfg{MKTEXLSR}) {
+-        print "Info: Running $cfg{MKTEXLSR} to rebuild ls-R database...\n";
+-        system($cfg{MKTEXLSR});
+-      }
++# print/teTeX/module.mk will run mktexlsr automatically.
++#      if($ok && $cfg{MKTEXLSR}) {
++#        print "Info: Running $cfg{MKTEXLSR} to rebuild ls-R database...\n";
++#        system($cfg{MKTEXLSR});
++#      }
+     }
+-  }
+ }
+ print "Done. Have a lot of fun with LaTeX2HTML!\n";
+ exit 0;

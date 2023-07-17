@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 11:23:36 nia Exp $
+
+BLAKE2s (tinyxml_2_6_2.zip) = 44f330ab6b23a6aa462024532c73a84ac45114de3aca29a4763b2cd8e22a62a6
+SHA512 (tinyxml_2_6_2.zip) = eb9aead0b500e36f65cae234732854567ebad450d312d95a0998e0f68cbdd661dc5abd17aaed4af810c72bd491a30316298653095616f52ab5a656863c9ecb9b
+Size (tinyxml_2_6_2.zip) = 290881 bytes
+SHA1 (patch-tinyxml.cpp) = 2f5c988d9acbf269e3d6b86eb02ee236a3cf074c
+SHA1 (patch-tinyxml.h) = aa78b0b8764e460cdab43530ad951ccbe24feef9
+SHA1 (patch-xmltest.cpp) = 3c8674e24bc9d8b3156943e2d3ebe504a63b7a8f

@@ -1,0 +1,24 @@
+@comment $NetBSD$
+bin/shadowsocks-libqss
+include/QtShadowsocks/QtShadowsocks
+include/QtShadowsocks/crypto/chacha.h
+include/QtShadowsocks/crypto/cipher.h
+include/QtShadowsocks/crypto/encryptor.h
+include/QtShadowsocks/crypto/rc4.h
+include/QtShadowsocks/network/httpproxy.h
+include/QtShadowsocks/network/socketstream.h
+include/QtShadowsocks/network/tcprelay.h
+include/QtShadowsocks/network/tcprelayclient.h
+include/QtShadowsocks/network/tcprelayserver.h
+include/QtShadowsocks/network/tcpserver.h
+include/QtShadowsocks/network/udprelay.h
+include/QtShadowsocks/types/address.h
+include/QtShadowsocks/types/profile.h
+include/QtShadowsocks/util/addresstester.h
+include/QtShadowsocks/util/common.h
+include/QtShadowsocks/util/controller.h
+include/QtShadowsocks/util/export.h
+lib/libQtShadowsocks.so
+lib/libQtShadowsocks.so.2
+lib/libQtShadowsocks.so.${PKGVERSION}
+lib/pkgconfig/QtShadowsocks.pc

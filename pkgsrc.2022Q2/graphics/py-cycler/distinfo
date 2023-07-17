@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/29 08:37:03 adam Exp $
+
+BLAKE2s (cycler-0.11.0.tar.gz) = 298930ce810113bcd9efbb4923ea3dd477db7f79cc6061cdb7f0bec09ba18286
+SHA512 (cycler-0.11.0.tar.gz) = ceb7e27f2a5c7984645709824a308714c4a08ba3c7540e4fcda10cffbdfb23d0c1adda8a5216c285b8fcc3491712239254d06713af91145244cb5fa78248cf89
+Size (cycler-0.11.0.tar.gz) = 18784 bytes

@@ -1,0 +1,16 @@
+$NetBSD: patch-Makefile.in,v 1.4 2018/11/04 11:49:40 bsiegert Exp $
+
+Do not create libopa symlink; it conflicts with parallel/openpa/PLIST.
+
+--- Makefile.in.orig	2015-11-12 04:08:10.000000000 +0000
++++ Makefile.in
+@@ -39783,9 +39784,6 @@ install-exec-hook:
+ 		if test "@MPILIBNAME@" != "mpl" ; then \
+ 			cd ${DESTDIR}${libdir} && ln -f -s lib@MPILIBNAME@@SHLIB_EXT@ libmpl@SHLIB_EXT@ ; \
+ 		fi ; \
+-		if test "@MPILIBNAME@" != "opa" ; then \
+-			cd ${DESTDIR}${libdir} && ln -f -s lib@MPILIBNAME@@SHLIB_EXT@ libopa@SHLIB_EXT@ ; \
+-		fi ; \
+ 		if test "@MPILIBNAME@" != "mpich" ; then \
+ 			cd ${DESTDIR}${libdir} && ln -f -s lib@MPILIBNAME@@SHLIB_EXT@ libmpich@SHLIB_EXT@ ; \
+ 		fi ; \

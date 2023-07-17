@@ -1,0 +1,21 @@
+$NetBSD: patch-aa,v 1.5 2018/05/07 11:26:31 wiz Exp $
+
+--- Makefile.in.orig	2018-05-04 16:15:54.000000000 +0000
++++ Makefile.in
+@@ -2149,14 +2149,8 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-data-local install-dbusincludeHEADERS \
+-	install-installed_test_metaDATA \
+-	install-installed_test_testDATA \
+-	install-nobase_dist_installed_testPYTHON \
+-	install-nobase_dist_installed_testSCRIPTS \
+-	install-nobase_installed_testLTLIBRARIES \
+-	install-nobase_installed_testPROGRAMS \
+-	install-nobase_pythonPYTHON install-pkgconfigDATA
++install-data-am: \
++	install-nobase_pythonPYTHON
+ 
+ install-dvi: install-dvi-recursive
+ 

@@ -1,0 +1,12 @@
+@comment $NetBSD: PLIST,v 1.5 2020/09/14 15:33:11 taca Exp $
+${GEM_HOME}/cache/${GEM_NAME}.gem
+${GEM_LIBDIR}/History.markdown
+${GEM_LIBDIR}/LICENSE.txt
+${GEM_LIBDIR}/README.md
+${GEM_LIBDIR}/lib/jekyll-feed.rb
+${GEM_LIBDIR}/lib/jekyll-feed/feed.xml
+${GEM_LIBDIR}/lib/jekyll-feed/generator.rb
+${GEM_LIBDIR}/lib/jekyll-feed/meta-tag.rb
+${GEM_LIBDIR}/lib/jekyll-feed/page-without-a-file.rb
+${GEM_LIBDIR}/lib/jekyll-feed/version.rb
+${GEM_HOME}/specifications/${GEM_NAME}.gemspec

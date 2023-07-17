@@ -1,0 +1,22 @@
+
+gnome-menus
+===========
+
+gnome-menus contains the libgnome-menu library, the layout configuration
+files for the GNOME menu, as well as a simple menu editor. The layout
+files control the menu layout for the GNOME Classic desktop. They are
+unused in normal GNOME sessions and have no effect outside GNOME Classic.
+
+The libgnome-menu library implements the "Desktop Menu Specification"
+from freedesktop.org:
+
+  https://freedesktop.org/wiki/Specifications/menu-spec
+  https://specifications.freedesktop.org/menu-spec/menu-spec-latest.html
+
+You may download updates to the package from:
+
+   https://download.gnome.org/sources/gnome-menus/
+
+To discuss gnome-menus, you may use the desktop-devel-list mailing list:
+
+...

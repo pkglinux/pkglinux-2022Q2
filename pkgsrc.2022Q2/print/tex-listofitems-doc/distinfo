@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:13:56 nia Exp $
+
+BLAKE2s (listofitems.doc.r51923.tar.xz) = 9db0de94c25df8b2bb9890178153eb2526039c0de979d4fd1219eb56debca2ad
+SHA512 (listofitems.doc.r51923.tar.xz) = e7c3df40b9657dab386eaf54f08018e3d390a1de96a47c5c4f63759c11aa38b243301287940131297ad107e4a63fddad5bd9ca5982b211febda7bf5a6a8d40de
+Size (listofitems.doc.r51923.tar.xz) = 802140 bytes

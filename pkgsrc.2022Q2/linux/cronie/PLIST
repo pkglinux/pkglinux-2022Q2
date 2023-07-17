@@ -1,0 +1,12 @@
+@comment $NetBSD$
+bin/cronnext
+bin/crontab
+man/man1/cronnext.1
+man/man1/crontab.1
+man/man5/anacrontab.5
+man/man5/crontab.5
+man/man8/anacron.8
+man/man8/cron.8
+man/man8/crond.8
+sbin/anacron
+sbin/crond

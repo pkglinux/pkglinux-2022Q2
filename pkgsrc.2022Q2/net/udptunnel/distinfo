@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 11:07:06 nia Exp $
+
+BLAKE2s (udptunnel-1.1.tar.gz) = 15c11018909fe8fc9c1a2472d949fc07cd77742056164b37efb06f2ae59265f9
+SHA512 (udptunnel-1.1.tar.gz) = 9f9f978caede9085723c6222443b020b44d688e9364ffd57455cdfe0686d6f492e758c2ac502602cf4809ab28c3d47525e74feb00caa2b692358a272976eaa52
+Size (udptunnel-1.1.tar.gz) = 30910 bytes
+SHA1 (patch-aa) = cf6fe0651c6d1437ec81fbbcb8fbbbf6b05ebc41
+SHA1 (patch-ab) = 5888e42ede82e3e12c31c8ed2a38a3796dc08baa
+SHA1 (patch-ac) = a587390b4c88e5828c0e41d3a0594842407321c3

@@ -1,0 +1,7 @@
+The bundle provides three packages: The mhchem package provides
+commands for typesetting chemical molecular formulae and
+equations. The hpstatement package provides commands for the
+official hazard statements and precautionary statements (H and
+P statements) that are used to label chemicals. The rsphrase
+package provides commands for the official Risk and Safety (R
+and S) Phrases that are used to label chemicals.

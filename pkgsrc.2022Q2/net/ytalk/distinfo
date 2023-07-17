@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 11:07:14 nia Exp $
+
+BLAKE2s (ytalk-3.3.0.tar.gz) = d6feac702db6dd332117380808f6de3bebd994ffdc00b97aebed3aba1d55f87c
+SHA512 (ytalk-3.3.0.tar.gz) = ee4c5b13b70c832899c9f62e1eb71e736b74812e6e47d56a9aad34fc5f8cd344d91c0ee9eb652eb11d9aa9578f51bd87213bc7181dfad9933e0fd73af363b8ef
+Size (ytalk-3.3.0.tar.gz) = 137989 bytes
+SHA1 (patch-aa) = 8e82bc438aacb5e2f612ab7596097aadb696fac2
+SHA1 (patch-ab) = 46d4cfcd480a11070a5b5bd2a51f6938ea517627
+SHA1 (patch-ac) = ff42a7f98f39daf17b336c9d16e9091c19410d02
+SHA1 (patch-ad) = 55b130c2e070d93fad2cd050952fa3602cd32d2d

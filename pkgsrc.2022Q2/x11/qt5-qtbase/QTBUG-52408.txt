@@ -1,0 +1,40 @@
+
+https://bugreports.qt.io/browse/QTBUG-52408
+https://codereview.qt-project.org/c/qt/qtbase/+/154756
+
+xcb: remove multi-connection code path
+
+This code was introduced in 2011 as an experimental feature
+and have been untested/unmaintained ever since. It's time to
+remove it for the following reasons:
+
+- It has never been documented in QGuiApplication under
+  "Supported Command Line Options". The intended command
+  line was: ./app -platform xcb:address:display
+
+- I am not aware of other toolkits that would provide this
+  functionality - connecting to several X displays simultaneously.
+
+- XCB plugin respects the "-display" command line and DISPLAY
+  envvar which should be sufficient. So the "workaround" to get
+  your window on 2 X displays is:
+
+    ./app -display :0
+    ./app -display :1
+
+- There are no JIRA bugs where users would complain that this
+  feature does not work. AFAICT it has not worked for years.
+  Almost all functions care only about the "default" connection,
+  and don't attempt to support multi-connection.
+
+- This will stop confusing people who want to contribute to
+  the XCB plugin.
+
+[ChangeLog][Platform Specific Changes][X11] Connecting to multiple
+X servers simultaneously within the same application is no longer
+supported.
+
+Task-number: QTBUG-52408
+Change-Id: I61ce23480702bb89b02c6028fa0986fe63481978
+Reviewed-by: Volker Hilsheimer <volker.hilsheimer@qt.io>
+

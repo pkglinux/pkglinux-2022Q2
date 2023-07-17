@@ -1,0 +1,37 @@
+$NetBSD$
+
+--- Makefile.in.orig	2021-11-13 19:11:00.441017875 +0000
++++ Makefile.in
+@@ -987,19 +987,19 @@ AM_CFLAGS = $(OUR_CFLAGS)
+ AM_LDFLAGS = $(OUR_LDFLAGS)
+ SED_PROCESS = \
+ 	$(AM_V_GEN)$(MKDIR_P) $(dir $@) && $(SED) \
+-	-e 's,@VERSION\@,$(VERSION),g' \
+-	-e 's,@prefix\@,$(prefix),g' \
+-	-e 's,@exec_prefix\@,$(exec_prefix),g' \
+-	-e 's,@libdir\@,$(libdir),g' \
+-	-e 's,@includedir\@,$(includedir),g' \
+-	-e 's,@libzstd_CFLAGS\@,${libzstd_CFLAGS},g' \
+-	-e 's,@libzstd_LIBS\@,${libzstd_LIBS},g' \
+-	-e 's,@liblzma_CFLAGS\@,${liblzma_CFLAGS},g' \
+-	-e 's,@liblzma_LIBS\@,${liblzma_LIBS},g' \
+-	-e 's,@zlib_CFLAGS\@,${zlib_CFLAGS},g' \
+-	-e 's,@zlib_LIBS\@,${zlib_LIBS},g' \
+-	-e 's,@libcrypto_CFLAGS\@,${libcrypto_CFLAGS},g' \
+-	-e 's,@libcrypto_LIBS\@,${libcrypto_LIBS},g' \
++	-e 's|@VERSION\@|$(VERSION)|g' \
++	-e 's|@prefix\@|$(prefix)|g' \
++	-e 's|@exec_prefix\@|$(exec_prefix)|g' \
++	-e 's|@libdir\@|$(libdir)|g' \
++	-e 's|@includedir\@|$(includedir)|g' \
++	-e 's|@libzstd_CFLAGS\@|${libzstd_CFLAGS}|g' \
++	-e 's|@libzstd_LIBS\@|${libzstd_LIBS}|g' \
++	-e 's|@liblzma_CFLAGS\@|${liblzma_CFLAGS}|g' \
++	-e 's|@liblzma_LIBS\@|${liblzma_LIBS}|g' \
++	-e 's|@zlib_CFLAGS\@|${zlib_CFLAGS}|g' \
++	-e 's|@zlib_LIBS\@|${zlib_LIBS}|g' \
++	-e 's|@libcrypto_CFLAGS\@|${libcrypto_CFLAGS}|g' \
++	-e 's|@libcrypto_LIBS\@|${libcrypto_LIBS}|g' \
+ 	< $< > $@ || rm $@
+ 
+ 

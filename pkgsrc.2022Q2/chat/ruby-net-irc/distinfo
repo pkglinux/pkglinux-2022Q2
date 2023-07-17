@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:05:24 nia Exp $
+
+BLAKE2s (net-irc-0.0.9.gem) = 6de8d6ca01b5c28a40cb624d036b5b435ce9219bbb9226c7c3d70b50e8e3e908
+SHA512 (net-irc-0.0.9.gem) = 169e0b4c855516faccbc2cab1f3ae4d955a998a34dc3ad1efbbf890c617188c684e47e39652c9ddf0dbbbb70b2682f71df0487b8a94ace8fe43703c0772b4d7d
+Size (net-irc-0.0.9.gem) = 67072 bytes

@@ -1,0 +1,16 @@
+/patch-Makefile/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-configure/1.2/Tue Apr  5 09:24:29 2022//Tpkgsrc-2022Q2
+/patch-doc_Makefile/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-doc_general__contents.texi/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-doc_indevs.texi/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-doc_outdevs.texi/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavdevice_Makefile/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavdevice_alldevices.c/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavdevice_sunau.c/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavdevice_sunau.h/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavdevice_sunau__dec.c/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavdevice_sunau__enc.c/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavutil_macros.h/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavutil_x86_asm.h/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+/patch-libavutil_x86_cpu.c/1.1/Mon Jan 31 23:16:41 2022//Tpkgsrc-2022Q2
+D

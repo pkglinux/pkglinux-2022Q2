@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.13 2021/10/26 11:06:22 nia Exp $
+
+BLAKE2s (Net-Pcap-0.18.tar.gz) = 38a9ba8cda7a0dc65b07a52cbfe6dfc3d099c32b073cd2a9768aad580f76a764
+SHA512 (Net-Pcap-0.18.tar.gz) = 63cc216345eb65b1e76efa657623c9d444d20f4b54ab0c75e787483baaa4f1de7e3a9294967aa7eccbdca04c60b089194dd7e0d19838f899b332c5881a8c7f6d
+Size (Net-Pcap-0.18.tar.gz) = 94207 bytes
+SHA1 (patch-Makefile.PL) = e8944761324b1a86323b96906953175f751bacac
+SHA1 (patch-stubs.inc) = 24cc81ee1a4d66d35349a85b01e181cfb1f478d0

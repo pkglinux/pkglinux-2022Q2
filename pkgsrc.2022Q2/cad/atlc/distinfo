@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:04:09 nia Exp $
+
+BLAKE2s (atlc-4.6.0.tar.gz) = 778428fadd2abd36589e257d0d1ca8ad6af0186c5273cd8cc94172152d75ddd4
+SHA512 (atlc-4.6.0.tar.gz) = 270c13473a8e9613a12bb743396f732a37c8adc77a3c3ff7055e884aea3a42824482035ea432e627c435dda9332dd2b9cf1e77736f2fe8225a238e11a3e69f81
+Size (atlc-4.6.0.tar.gz) = 2445849 bytes
+SHA1 (patch-aa) = 73158578f1f7ef6f1466a2c875fad1f08bf609fc
+SHA1 (patch-ab) = 42f9a5198c27f6fb8dcda46c47cf93561857683c
+SHA1 (patch-ac) = 84c06f17df86502c8c37714915e6959da2b8d2c3

@@ -1,0 +1,35 @@
+$NetBSD: patch-Makefile,v 1.2 2021/12/02 12:02:05 pho Exp $
+
+Honor LDFLAGS to support RELRO.
+
+--- Makefile.orig	2016-09-27 21:50:42.000000000 +0000
++++ Makefile
+@@ -3,14 +3,14 @@ TARGET = sparsebundlefs
+ PKG_CONFIG = pkg-config
+ override CFLAGS += -Wall -O2 -g
+ 
+-GCC_4_2_OR_HIGHER := $(shell expr `$(CXX) -dumpversion | sed 's/\.//g'` \>= 420)
+-ifeq "$(GCC_4_2_OR_HIGHER)" "1"
+-    CFLAGS += -march=native
+-endif
+-
+ DEFINES = -DFUSE_USE_VERSION=26
+ 
+ ifeq ($(shell uname), Darwin)
++	GCC_4_2_OR_HIGHER := $(shell expr `$(CXX) -dumpversion | sed 's/\.//g'` \>= 420)
++	ifeq "$(GCC_4_2_OR_HIGHER)" "1"
++	    CFLAGS += -march=native
++	endif
++
+ 	# Pick up OSXFUSE, even with pkg-config from MacPorts
+ 	PKG_CONFIG := PKG_CONFIG_PATH=/usr/local/lib/pkgconfig $(PKG_CONFIG)
+ else ifeq ($(shell uname), Linux)
+@@ -20,7 +20,7 @@ endif
+ FUSE_FLAGS := $(shell $(PKG_CONFIG) fuse --cflags --libs)
+ 
+ $(TARGET): sparsebundlefs.cpp
+-	$(CXX) $< -o $@ $(CFLAGS) $(FUSE_FLAGS) $(LFLAGS) $(DEFINES)
++	$(CXX) $< -o $@ $(CFLAGS) $(FUSE_FLAGS) $(LFLAGS) $(LDFLAGS) $(DEFINES)
+ 
+ all: $(TARGET)
+ 

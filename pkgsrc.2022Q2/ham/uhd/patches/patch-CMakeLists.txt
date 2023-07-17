@@ -1,0 +1,32 @@
+$NetBSD: patch-CMakeLists.txt,v 1.4 2021/12/11 17:39:56 tnn Exp $
+
+Allow overrides on PKG_MAN_DIR.
+https://github.com/EttusResearch/uhd/issues/301
+
+Do not use Numpy.
+
+--- CMakeLists.txt.orig	2021-09-29 14:25:58.000000000 +0000
++++ CMakeLists.txt
+@@ -124,8 +124,9 @@ endif()
+ if(NOT DEFINED PKG_DOC_DIR)
+     set(PKG_DOC_DIR share/doc/uhd)
+ endif()
++if(NOT DEFINED PKG_MAN_DIR)
+ set(PKG_MAN_DIR share/man/man1)
+-
++endif()
+ ########################################################################
+ # UHD config files
+ ########################################################################
+@@ -327,11 +328,6 @@ PYTHON_CHECK_MODULE(
+     HAVE_PYTHON_MODULE_REQUESTS
+ )
+ 
+-PYTHON_CHECK_MODULE(
+-    "numpy ${NUMPY_MIN_VERSION} or greater"
+-    "numpy" "LooseVersion(numpy.__version__) >= LooseVersion('${NUMPY_MIN_VERSION}')"
+-    HAVE_PYTHON_MODULE_NUMPY
+-)
+ 
+ PYTHON_CHECK_MODULE(
+     "ruamel.yaml ${RUAMEL.YAML_MIN_VERSION} or greater"

@@ -1,0 +1,5 @@
+@comment $NetBSD$
+sbin/efibootdump
+sbin/efibootmgr
+share/man/man8/efibootdump.8
+share/man/man8/efibootmgr.8

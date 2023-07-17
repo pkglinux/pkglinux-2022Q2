@@ -1,0 +1,22 @@
+@comment $NetBSD$
+bin/bscalc
+include/bytesize/bs_size.h
+lib/libbytesize.la
+lib/pkgconfig/bytesize.pc
+man/man1/bscalc.1
+share/gtk-doc/html/libbytesize/annotation-glossary.html
+share/gtk-doc/html/libbytesize/api-index-full.html
+share/gtk-doc/html/libbytesize/ch01.html
+share/gtk-doc/html/libbytesize/ch02.html
+share/gtk-doc/html/libbytesize/deprecated-api-index.html
+share/gtk-doc/html/libbytesize/home.png
+share/gtk-doc/html/libbytesize/index.html
+share/gtk-doc/html/libbytesize/left-insensitive.png
+share/gtk-doc/html/libbytesize/left.png
+share/gtk-doc/html/libbytesize/libbytesize-BSSize.html
+share/gtk-doc/html/libbytesize/libbytesize.devhelp2
+share/gtk-doc/html/libbytesize/right-insensitive.png
+share/gtk-doc/html/libbytesize/right.png
+share/gtk-doc/html/libbytesize/style.css
+share/gtk-doc/html/libbytesize/up-insensitive.png
+share/gtk-doc/html/libbytesize/up.png

@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 09:58:53 nia Exp $
+
+BLAKE2s (emixer-0.05.5.tar.gz) = 5ec3681a7df8c66e632b117e4e85d7b57fe0f6f1b26d7075f2a9a11ce5fe5bcc
+SHA512 (emixer-0.05.5.tar.gz) = 3fa1720e3baf9854e15674f7796269bb675d3626b0a3013298c27ca6dc84020b87118a4530665a64be17e7e1ea64b724a3f841ecbc93ba6c6c2c308a0fd46082
+Size (emixer-0.05.5.tar.gz) = 19609 bytes
+SHA1 (patch-main.c) = c9afac560ffe1c91d558fcdf4e198dc1d260dc58
+SHA1 (patch-mixer.c) = 188b13e5b7210d875f3faa230ff1e1731146c8d9
+SHA1 (patch-mixer.h) = 765a989d6c036f68496e49345e258657caef48af
+SHA1 (patch-nctgui.c) = 60d82c1b8a84e930068c8486a09edd36fbde2394
+SHA1 (patch-nctgui.h) = 4a87c54612a7c718617ceb85a31b4f61aee67338

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/03/11 07:10:40 gson Exp $
+
+BLAKE2s (egypt-1.11.tar.gz) = f4b5ff0c437268eff24a5eeedf8f0b1c3ea1edfbd07a23800cd22cd42aac4e13
+SHA512 (egypt-1.11.tar.gz) = 6817ba991c3908f601977499481a1b28a6ab8ce9961749b7c6ef516cc2cd7daf355fc0fd5a4a4577c5d2201fe8e74cda498a6e2083f21f0113f7e7ce69b834e6
+Size (egypt-1.11.tar.gz) = 8808 bytes

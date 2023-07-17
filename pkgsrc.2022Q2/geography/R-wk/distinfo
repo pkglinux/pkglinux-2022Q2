@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/01 23:31:07 mef Exp $
+
+BLAKE2s (R/wk_0.6.0.tar.gz) = e13c09cebd469e15316eae9f02714c6e28fab7f8d237a2783ca7ee1413b8f41e
+SHA512 (R/wk_0.6.0.tar.gz) = b4b3bdc6b69272fd36cb07e6d3810da179e78209f296dbbd97a6dec3372bb2de36514db2dd13c46af1e6ff54e8be4a1318e14cedb68482c249e466f0f7214f3b
+Size (R/wk_0.6.0.tar.gz) = 193841 bytes

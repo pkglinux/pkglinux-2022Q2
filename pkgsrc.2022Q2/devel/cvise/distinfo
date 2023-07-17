@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/11/20 19:58:21 wiz Exp $
+
+BLAKE2s (cvise-2.4.0.tar.gz) = 268affa2b7907020ef484635295d5b01e22eca5a068ef92dbff7fc76d7a2fc3c
+SHA512 (cvise-2.4.0.tar.gz) = 073e53039d2b077fed43b948e0c01dc662ef4f75b92d7f49d1786a35c36412fed02e1931c6a39ce902452056fe5c7d70daa35a9cae18b44009778837261cae19
+Size (cvise-2.4.0.tar.gz) = 252810 bytes

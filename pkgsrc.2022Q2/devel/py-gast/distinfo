@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/11/14 08:36:45 adam Exp $
+
+BLAKE2s (gast-0.5.3.tar.gz) = 94b4f44dd3b376154fe04980a78979348b9eed0366ed3b967bb5c44f81429bb8
+SHA512 (gast-0.5.3.tar.gz) = a836be76303591ca7c40596d98a29dbd53f281e277c8c23e3821b2003d4e8aaf4d806e7f532f27c0eadd4bdca5a28dc0a3902245505ab97497b9afbfee0c2e52
+Size (gast-0.5.3.tar.gz) = 23455 bytes

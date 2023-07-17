@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (QTNetworkManager-0.9.8.4.tar.gz) = 60ce6b949cb825c98b5057d7337e0b1dbcb2586eb856091d13c5f9fc55b2868e
+SHA512 (QTNetworkManager-0.9.8.4.tar.gz) = e395a503ce5ffa57d13c910f3ead35c81c3c43b87acb3109d343f9d079d152423eeb9b5c24f41fff2e98ac25876eadef5d137696d325f01bbc65eb3979f42d36
+Size (QTNetworkManager-0.9.8.4.tar.gz) = 176719 bytes

@@ -1,0 +1,45 @@
+diff -rupN procps-ng-3.3.15/slabtop.c procps-ng-3.3.15.new/slabtop.c
+--- procps-ng-3.3.15/slabtop.c	2018-05-19 05:32:21.438989225 +0800
++++ procps-ng-3.3.15.new/slabtop.c	2021-10-13 22:22:04.306738999 +0800
+@@ -28,7 +28,7 @@
+ #include <string.h>
+ #include <errno.h>
+ #include <signal.h>
+-#include <ncurses.h>
++#include <ncurses/ncurses.h>
+ #include <termios.h>
+ #include <getopt.h>
+ #include <ctype.h>
+diff -rupN procps-ng-3.3.15/top/top.c procps-ng-3.3.15.new/top/top.c
+--- procps-ng-3.3.15/top/top.c	2018-05-19 19:48:13.784997373 +0800
++++ procps-ng-3.3.15.new/top/top.c	2021-10-13 22:22:33.190072577 +0800
+@@ -17,7 +17,7 @@
+  */
+ 
+ #include <ctype.h>
+-#include <curses.h>
++#include <ncurses/curses.h>
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <float.h>
+@@ -28,7 +28,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <term.h>            // foul sob, defines all sorts of stuff...
++#include <ncurses/term.h>            // foul sob, defines all sorts of stuff...
+ #undef    raw
+ #undef    tab
+ #undef    TTY
+diff -rupN procps-ng-3.3.15/watch.c procps-ng-3.3.15.new/watch.c
+--- procps-ng-3.3.15/watch.c	2018-05-17 19:23:41.674211668 +0800
++++ procps-ng-3.3.15.new/watch.c	2021-10-13 22:22:04.310072332 +0800
+@@ -53,7 +53,7 @@
+ # include <wchar.h>
+ # include <wctype.h>
+ #endif	/* WITH_WATCH8BIT */
+-#include <ncurses.h>
++#include <ncurses/ncurses.h>
+ 
+ #ifdef FORCE_8BIT
+ # undef isprint

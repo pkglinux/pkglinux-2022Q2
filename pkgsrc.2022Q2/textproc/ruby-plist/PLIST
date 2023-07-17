@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.5 2020/03/24 16:58:52 taca Exp $
+${GEM_HOME}/cache/${GEM_NAME}.gem
+${GEM_LIBDIR}/LICENSE.txt
+${GEM_LIBDIR}/lib/plist.rb
+${GEM_LIBDIR}/lib/plist/generator.rb
+${GEM_LIBDIR}/lib/plist/parser.rb
+${GEM_LIBDIR}/lib/plist/version.rb
+${GEM_HOME}/specifications/${GEM_NAME}.gemspec

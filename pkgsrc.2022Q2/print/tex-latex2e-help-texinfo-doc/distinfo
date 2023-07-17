@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:13:52 nia Exp $
+
+BLAKE2s (tex-latex2e-help-texinfo-34128/latex2e-help-texinfo.doc.tar.xz) = adcaf500a906b95328f1c91d9bab234959a07f6e828a8758bbea5017b2c7c8b4
+SHA512 (tex-latex2e-help-texinfo-34128/latex2e-help-texinfo.doc.tar.xz) = fd1cf3d480278571cf454e18904d3b4e33a615f128fe86ba55d067b428dec3f39640e14293f5034d393e6b8987ed498ca1bc4b4b9ac91c07168c6ade8f84a2bc
+Size (tex-latex2e-help-texinfo-34128/latex2e-help-texinfo.doc.tar.xz) = 876448 bytes

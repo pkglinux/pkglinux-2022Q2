@@ -1,0 +1,12 @@
+$NetBSD: patch-ap,v 1.5 2022/01/24 22:22:11 buhrow Exp $
+
+--- src/osdep/unix/unix.c.orig	2011-07-22 17:20:10.000000000 -0700
++++ src/osdep/unix/unix.c	2022-01-18 22:13:13.433534293 -0800
+@@ -40,7 +40,6 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <errno.h>
+-extern int errno;		/* just in case */
+ #include <signal.h>
+ #include "mail.h"
+ #include "osdep.h"

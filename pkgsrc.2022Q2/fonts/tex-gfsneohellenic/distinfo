@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:28:02 nia Exp $
+
+BLAKE2s (tex-gfsneohellenic-31979/gfsneohellenic.tar.xz) = 8dbdc91a6f884fd08c2d6c41581bb670a5320dea2b9fa14749b9cc53e7415737
+SHA512 (tex-gfsneohellenic-31979/gfsneohellenic.tar.xz) = affab83e851d4a0a101bee2640af548f110bc231843c9bd38f27fe38cb7f0071465f1937e17bdddb653a8fbf09283dadc0d49eca6f1c435f576a5704c1955291
+Size (tex-gfsneohellenic-31979/gfsneohellenic.tar.xz) = 977616 bytes

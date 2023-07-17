@@ -1,0 +1,22 @@
+
+Synaptics touchpad driver for X.Org
+-----------------------------------
+
+FAQ
+---
+
+* Is this free software?
+
+    Yes, the source code is released under the MIT license.
+
+* When will the driver be included in the XOrg distribution?
+
+    It is already.
+
+* How do I use this driver with Linux kernel 2.6.x?
+
+    You need to have the "evdev" driver loaded or compiled into the
+    kernel (CONFIG_INPUT_EVDEV). Set the "Protocol" parameter in the X
+    configuration file to "auto-dev". Also, if you set the "Device"
+    parameter to "/dev/psaux", the same X configuration file should
+...

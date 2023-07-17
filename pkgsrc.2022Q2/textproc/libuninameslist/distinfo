@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/01/23 22:39:24 fcambus Exp $
+
+BLAKE2s (libuninameslist-dist-20211114.tar.gz) = 4d74f0fa8fdf94a0bd51dbe48b07cb2c354d3d4eb4053824e92557f0aec2c37a
+SHA512 (libuninameslist-dist-20211114.tar.gz) = febd0fafe836a85148aa7ceb87888a5882e7c27968c20595026cd947e9e6c1d0246d6e585510377f0e561d36a194d129df302143c67f59dd3b82aa3d30190acb
+Size (libuninameslist-dist-20211114.tar.gz) = 1247578 bytes

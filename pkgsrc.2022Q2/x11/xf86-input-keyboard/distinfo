@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.18 2021/10/26 11:34:39 nia Exp $
+
+BLAKE2s (xf86-input-keyboard-1.9.0.tar.bz2) = 112a7aa63b0f967407e5135f57155bce7723069dbcc6661b5a5e6ca9555d74e0
+SHA512 (xf86-input-keyboard-1.9.0.tar.bz2) = d1a52d10039096d0d5e09750b6a8c2388345748331615af93e5be499646c3bc5fbbfc897fcebdeada5efaafff94f26a2ab84d6e35f01a875b8b9956a42015df9
+Size (xf86-input-keyboard-1.9.0.tar.bz2) = 341693 bytes
+SHA1 (patch-src_bsd__KbdMap.c) = b1e9d22a086332ded43e0448307c45d36ce9c159
+SHA1 (patch-src_sun__kbd.c) = 21da7cb7110ae8b08f9245de1d1678965ba7a0c8

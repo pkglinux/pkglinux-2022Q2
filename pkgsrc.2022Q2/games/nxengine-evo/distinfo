@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.4 2022/01/11 11:46:41 nia Exp $
+
+BLAKE2s (nxengine-evo-2.6.5.1/cavestoryen.zip) = 4610352140a3ed558596d27f9670a0225541d8e404a67b91050d242b6b50e50b
+SHA512 (nxengine-evo-2.6.5.1/cavestoryen.zip) = 9c7c2c6c8114974df14b1dce379b86da48caf299716e1de3d743e47c3ac6a8c13c4a0ada85778e69f11c2428f991dcbfcb0020212279f9c1787260102988cbc3
+Size (nxengine-evo-2.6.5.1/cavestoryen.zip) = 1136575 bytes
+BLAKE2s (nxengine-evo-2.6.5.1/nxengine-evo.tar.gz) = eb6bcded9ef6ec9a0b613e1e0c49124cfc17094be5f221bc0eca7baf3d9b6e49
+SHA512 (nxengine-evo-2.6.5.1/nxengine-evo.tar.gz) = a2ff5995b114301f5576e44a3d70f614967aceaa5a50de668313899bbf23458bdb9039fd0f63fbe0446edd94edc0b7a990394ed94557d253b5c8fb0e1104e4b2
+Size (nxengine-evo-2.6.5.1/nxengine-evo.tar.gz) = 3891070 bytes

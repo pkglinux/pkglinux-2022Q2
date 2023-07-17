@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 11:23:03 nia Exp $
+
+BLAKE2s (pyenchant-2.0.0.tar.gz) = c4b1b83232fa27ffb9c6bb8334e565a2184eac8b9222f6c8d5190c7970a7eaf6
+SHA512 (pyenchant-2.0.0.tar.gz) = c985714bc8ad69b6580fa1dd546243da5f3f92e8681d846ed265b086c486ae7ed33754fba303b450be4c0cb20e975a9a10efbeb700ea5213a11ed00612a93af0
+Size (pyenchant-2.0.0.tar.gz) = 64022 bytes
+SHA1 (patch-ab) = d01891618ef6fb9e7bafa43db1d2e7f46034c5c0

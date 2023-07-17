@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:30:09 nia Exp $
+
+BLAKE2s (Kwiki-Wikiwyg-0.13.tar.gz) = 645a0f95b95d398147ca25b4c1423961d063b9262d9a8bca0b90168a3396af23
+SHA512 (Kwiki-Wikiwyg-0.13.tar.gz) = df4d6fabc0213f39b2ecd8e734ea9c952bab9b7b7b9af3aaa192e2e474de9e7a9f03a5744e58103c2538dd3934aafc0c0bbfcfd653d3b0f55dfa2573e561481f
+Size (Kwiki-Wikiwyg-0.13.tar.gz) = 33602 bytes

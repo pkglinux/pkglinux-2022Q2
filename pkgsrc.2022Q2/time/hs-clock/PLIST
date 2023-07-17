@@ -1,0 +1,19 @@
+@comment $NetBSD: PLIST,v 1.2 2021/04/24 05:17:54 pho Exp $
+lib/clock-${PKGVERSION}/${HS_VERSION}/package-description
+lib/clock-${PKGVERSION}/${HS_VERSION}/package-id
+lib/${HS_PLATFORM}/${HS_PKGID}/System/Clock.dyn_hi
+lib/${HS_PLATFORM}/${HS_PKGID}/System/Clock.hi
+lib/${HS_PLATFORM}/${HS_PKGID}/System/Clock.p_hi
+lib/${HS_PLATFORM}/${HS_PKGID}/libHS${HS_PKGID}.a
+lib/${HS_PLATFORM}/${HS_PKGID}/libHS${HS_PKGID}_p.a
+lib/${HS_PLATFORM}/libHS${HS_PKGID}-${HS_VER}.so
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/LICENSE
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/System-Clock.html
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/clock.haddock
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/doc-index.html
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/haddock-bundle.min.js
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/index.html
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/linuwial.css
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/meta.json
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/quick-jump.css
+share/doc/${HS_PLATFORM}/clock-${PKGVERSION}/html/synopsis.png

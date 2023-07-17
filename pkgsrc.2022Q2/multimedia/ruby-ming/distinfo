@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.14 2021/10/26 11:01:17 nia Exp $
+
+BLAKE2s (ming-ruby-0.2.1.tar.gz) = 98ceb314fd05d2339ce7ab9751eda6b421641b325d740bbf5dbff9b857ff3c0d
+SHA512 (ming-ruby-0.2.1.tar.gz) = bb73347697f41c7add9abc193670cdc2b5a4e77e9a318289a63ef884046d56b6e278b2ec12a49e2208943d39c385e69d00fc2044eae11847169bdad307525262
+Size (ming-ruby-0.2.1.tar.gz) = 1818561 bytes
+SHA1 (patch-aa) = 360988809e736eebe3f01f20c027783dcf64c507
+SHA1 (patch-ab) = aacbeafe64930e88f4d49e08734312e46116aec0
+SHA1 (patch-ac) = c6604cb8856ea42d1083894eae9f60c997bfa27a
+SHA1 (patch-ad) = 6a62e023b934f528f9247bae24c28829f35d1c25
+SHA1 (patch-ext_ming_mingc_swfcxform.c) = fae47d061d2088c27c056b66cec3ea45fc8bfe4b
+SHA1 (patch-ext_ming_mingc_swfdisplayitem.c) = 134f713c96454b9dec4851ccdcd2310ef24cc540
+SHA1 (patch-setup.rb) = 7afde44f83425905ecdcef273bf0948d9f62d468

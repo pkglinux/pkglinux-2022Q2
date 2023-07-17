@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.9 2021/10/26 10:46:18 nia Exp $
+
+BLAKE2s (gtksee-0.5.6.tar.gz) = b9f0ce2ebf56c42ebb7e5d8c0e79769d5b21987d00a088b518ffe8bf53ac942c
+SHA512 (gtksee-0.5.6.tar.gz) = 68a83341a7103260af516ddc159396ecef9dd745021531adf0b32efa5f287b3a0baa9976f0ef49b5e45eca529b057e58a992698e3b2341006d80648cc5fa48fd
+Size (gtksee-0.5.6.tar.gz) = 322313 bytes
+SHA1 (patch-aa) = 0fd5b2367f5ee00d2a8a6b3d9c02725e5761f564
+SHA1 (patch-src_detect.c) = 0850e6f5ac15a697aa9e584331d94411626b1e62
+SHA1 (patch-src_im__png.c) = 9cae1ec6915332ef5cd4d8f64357099121717322
+SHA1 (patch-src_im__png.h) = 0618416592f01e28a91597b02597ebf610868b20

@@ -1,0 +1,6 @@
+@comment $NetBSD: PLIST,v 1.6 2020/05/01 04:51:44 markd Exp $
+share/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-grc.tex
+share/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-grc.tex
+share/texmf-dist/tex/generic/hyph-utf8/patterns/txt/hyph-grc.pat.txt
+share/texmf-dist/tex/generic/hyphen/grahyph5.tex
+share/texmf-dist/tex/generic/hyphen/ibyhyph.tex

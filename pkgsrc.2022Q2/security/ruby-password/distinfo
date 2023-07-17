@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:17:56 nia Exp $
+
+BLAKE2s (ruby-password-0.5.3.tar.gz) = 5013423bfd27a87cb81eada85ea7d1a2dcc59b35acecfdbf03838f64a786f9ba
+SHA512 (ruby-password-0.5.3.tar.gz) = f8b181ef8b0737068195e682ec5d338cd38ff4e20588993317a50a47be324e387d11b3cd4c0b6b25d2d394a0d278bf51a0662099e78ae5191825f3eba5f87e4d
+Size (ruby-password-0.5.3.tar.gz) = 23088 bytes
+SHA1 (patch-aa) = 05c6e46a99771bf1c42db529b1e8daf4dc7d4f97
+SHA1 (patch-ab) = 8e01e8e2950b941d75fa2b3621aec3fc115d143c

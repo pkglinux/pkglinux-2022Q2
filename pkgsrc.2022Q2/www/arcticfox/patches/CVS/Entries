@@ -1,0 +1,17 @@
+/patch-configure.in/1.2/Thu May  5 14:07:38 2022//Tpkgsrc-2022Q2
+/patch-ipc_chromium_src_base_message__pump__libevent.cc/1.1/Sat Feb  5 20:51:07 2022//Tpkgsrc-2022Q2
+/patch-media_libcubeb_src_cubeb.c/1.1/Sat Feb  5 20:51:07 2022//Tpkgsrc-2022Q2
+/patch-media_libcubeb_src_moz.build/1.1/Sat Feb  5 20:51:07 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_genstubs.pl/1.2/Thu May  5 14:07:38 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_moz.build/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_xptcinvoke_arm_netbsd.cpp/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_xptcinvoke_ppc_netbsd.cpp/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_xptcstubs_arm_netbsd.cpp/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_xptcstubs_netbsd_m68k.cpp/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_xptcstubs_ppc_linux.cpp/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_xptcstubs_ppc_netbsd.cpp/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_xptcstubs_sparc_netbsd.cpp/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_md_unix_xptcstubs_sparc_openbsd.cpp/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_xptcprivate.h/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+/patch-xpcom_reflect_xptcall_xptcstubsdecl.inc/1.2/Thu May  5 14:07:39 2022//Tpkgsrc-2022Q2
+D

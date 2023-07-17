@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.20 2021/10/26 10:55:58 nia Exp $
+
+BLAKE2s (pspp-0.6.2.tar.gz) = dc9d3ad5ae2e698bc4014be3ff07a228222518ed8e00cc77dcf2b9a66446180b
+SHA512 (pspp-0.6.2.tar.gz) = 0dfadb1fc5087ac0b076559902c08870ce1ad0111fdba23231c71954a675c6ba14b26e631b44cc9097a8c54c8530dba45d88165c6b428b47f1a636303989e84a
+Size (pspp-0.6.2.tar.gz) = 3375748 bytes
+SHA1 (patch-aa) = c7024562eee77aa558931cab387d250e046f11e4
+SHA1 (patch-ad) = cd06383be08b753423ea10f52098135002671385
+SHA1 (patch-lib_gtksheet_gtkitementry.c) = 22242a3b1b68f77abf98f3d919f955e8537ac0f9

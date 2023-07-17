@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/10/26 10:16:01 nia Exp $
+
+BLAKE2s (AnyEvent-RabbitMQ-1.22.tar.gz) = 7f94b6e1e3d0b0eaa83f6d355feb808c60a1b148c3f27a02e4bee03c73a94560
+SHA512 (AnyEvent-RabbitMQ-1.22.tar.gz) = fa6da53a906fd0a47b372b1ab3996e5727591b7e5b1a3df00aef923e2a11e84b4b079ebc855f1f1c88fd827cc58c286603e3e6f9f18c53a737c58ee7160845f0
+Size (AnyEvent-RabbitMQ-1.22.tar.gz) = 79993 bytes

@@ -1,0 +1,13 @@
+@comment $NetBSD: PLIST,v 1.4 2022/04/15 12:43:32 schwarz Exp $
+bin/sip_monitor
+bin/sip_reg
+bin/sip_storm
+include/eXosip2/eX_call.h
+include/eXosip2/eX_message.h
+include/eXosip2/eX_options.h
+include/eXosip2/eX_publish.h
+include/eXosip2/eX_register.h
+include/eXosip2/eX_setup.h
+include/eXosip2/eX_subscribe.h
+include/eXosip2/eXosip.h
+lib/libeXosip2.la

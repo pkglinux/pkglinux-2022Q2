@@ -1,0 +1,16 @@
+$NetBSD: patch-Makefile,v 1.2 2022/04/06 19:53:52 gdt Exp $
+
+Needs -lpurple.
+
+--- Makefile.orig	2021-04-03 20:46:46.000000000 +0000
++++ Makefile
+@@ -23,7 +23,8 @@ GLIB_LDFLAGS ?= $(shell $(PKG_CONFIG) --
+ 
+ LIBPURPLE_CFLAGS=$(shell $(PKG_CONFIG) --cflags purple)
+ PURPLE_DIR=$(shell $(PKG_CONFIG) --variable=plugindir purple)
+-LIBPURPLE_LDFLAGS=$(shell $(PKG_CONFIG) --cflags purple) \
++LIBPURPLE_LDFLAGS=$(shell $(PKG_CONFIG) --libs purple) \
++		    -Wl,-R$(shell $(PKG_CONFIG) --variable=plugindir purple) \
+ 		    -L$(PURPLE_DIR)
+ 
+ LIBOMEMO_CFLAGS = $(shell $(PKG_CONFIG) --cflags libomemo)

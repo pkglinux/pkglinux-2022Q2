@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:46:26 nia Exp $
+
+BLAKE2s (libggiwmh-0.3.2.src.tar.bz2) = 2968fbc8227bb96099a59a611b5821793fe4fddd319064646cad7dfc74bf3fd1
+SHA512 (libggiwmh-0.3.2.src.tar.bz2) = d12a9f158ba76ca8077568cd48f26f0fd8ab561b68cc33e74a8898f7fd594b417cd514806f827a63a4315c546bb35f5b71a5f54f5a2b54562f276e37146224b8
+Size (libggiwmh-0.3.2.src.tar.bz2) = 316669 bytes
+SHA1 (patch-aa) = 2d94dca32b26b55042a12abb2a0d47da1a88908c
+SHA1 (patch-configure) = 2fe7d25d50ca0300bbdb1aeeed5fb0f68eb9a814

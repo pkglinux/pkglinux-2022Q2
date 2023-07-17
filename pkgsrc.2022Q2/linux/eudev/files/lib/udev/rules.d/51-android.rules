@@ -1,0 +1,15 @@
+#lsusb
+#groupadd uucp
+#gpasswd -a alex uucp
+#mtp-detect
+#cp -v /root/51-android.rules /etc/udev/rules.d/51-android.rules
+#udevadm control --reload
+
+#for players
+#SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0666", OWNER="[username]"
+
+#for gvfs
+#Redmi 4 on HP
+SUBSYSTEM=="usb", ATTR{idVendor}=="2717", ATTR{idProduct}=="ff40", MODE="0660", GROUP="uucp", ENV{ID_MTP_DEVICE}="1", SYMLINK+="libmtp"
+#Oppo on HP
+SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", ATTR{idProduct}=="2764", MODE="0660", GROUP="uucp", ENV{ID_MTP_DEVICE}="1", SYMLINK+="libmtp"

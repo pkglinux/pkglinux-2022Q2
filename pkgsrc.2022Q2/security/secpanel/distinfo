@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/24 13:13:43 tnn Exp $
+
+BLAKE2s (secpanel-0.6.1.tgz) = a823295ee92aa4eb2484acba6256d0a5f7936e28396d084c5cca737afa330f5a
+SHA512 (secpanel-0.6.1.tgz) = 9cb654c1aa1fbb81c948b95194bc6198df0e3411e39bef09156d516c5ed2980ea364dc2f60e1549e6224e738a6bdeee26fa8e091aa3ba2d8e1f1fd2cc59c4ce1
+Size (secpanel-0.6.1.tgz) = 51417 bytes

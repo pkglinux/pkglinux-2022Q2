@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2021/10/26 11:30:10 nia Exp $
+
+BLAKE2s (Net-FastCGI-0.14.tar.gz) = c0afa61709dfebd1127371ffa034db7ee66222aaee05849db94ce2bc3adadc7e
+SHA512 (Net-FastCGI-0.14.tar.gz) = af0d23dea7cef8c6e485376bed798d06d4ac0e7ef7c1144644111fffd2909af2a00a6b2f6df1f402205b8988e10df4a5912defc64ff037e7781995c1370addae
+Size (Net-FastCGI-0.14.tar.gz) = 43651 bytes

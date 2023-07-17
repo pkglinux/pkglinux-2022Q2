@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.15 2022/05/18 12:06:27 pin Exp $
+
+BLAKE2s (Kvantum-1.0.2.tar.gz) = 796d2632a4823534af470226ee03549d3dbbfe1c2aabc1144fd0f1b58b7b8701
+SHA512 (Kvantum-1.0.2.tar.gz) = da9a1d4f9cd3d961598deb599c5f7a2906be88ace4ed27c5f7bfa2462467c90b8a9458c3bb8595591129db01f248ceb4f7abc5f4057df650741f1345f741ce22
+Size (Kvantum-1.0.2.tar.gz) = 2977439 bytes

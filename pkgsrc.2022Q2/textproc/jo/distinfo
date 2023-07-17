@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2022/01/07 21:29:43 fcambus Exp $
+
+BLAKE2s (jo-1.6.tar.gz) = e7f62734b64a0c5e4fe744f04fd5d0b8f7a2672b68e71c52012735e9968dac16
+SHA512 (jo-1.6.tar.gz) = a2cb1327c8255e0f8d1b6e6056bbce081d7703192bdb974e908549b863d7db645531dbeff87629a6ed53626295ab7ca8a72816d104f9188846ef175c8a9acb07
+Size (jo-1.6.tar.gz) = 151941 bytes

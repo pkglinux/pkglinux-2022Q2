@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:55:31 nia Exp $
+
+BLAKE2s (R/quadprog_1.5-7.tar.gz) = 5f60d1ae6aee1ad9f900b42d9ef521e6f1144c37aac981a1f9947a7698f58be7
+SHA512 (R/quadprog_1.5-7.tar.gz) = 88bb6004321638ee696ccb42535f2e14d94b2bdeeb537272f2ea47de3cefa210410b3e64e268e4754590ac16eee9c297960acdb4da27f46a80da59378aaf0f2c
+Size (R/quadprog_1.5-7.tar.gz) = 35925 bytes

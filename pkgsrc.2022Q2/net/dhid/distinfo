@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:05:31 nia Exp $
+
+BLAKE2s (dhid-5.5.tar.gz) = ce6d9dfd54672b92e208311cd2a202822efac18d868b13e52794fccde2e1e275
+SHA512 (dhid-5.5.tar.gz) = 315732a58a9e8871e62107f95765cda0c51b166128ef05952df4a0fce4029b18ec050618b66e139a724885bf9ac14ea62522e1ff49bbe54bef366fd7dabcc228
+Size (dhid-5.5.tar.gz) = 17314 bytes
+SHA1 (patch-aa) = 4f339b0701e8c6d8dfbd7284e794c10271f0fdd1
+SHA1 (patch-ab) = 695ea02904c2df2dd0bbd364d7c9e0d7b5529d87

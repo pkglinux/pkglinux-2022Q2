@@ -1,0 +1,31 @@
+$NetBSD: patch-src_3rdparty_chromium_base_third__party_libevent_BUILD.gn,v 1.2 2022/04/18 11:18:18 adam Exp $
+
+--- src/3rdparty/chromium/base/third_party/libevent/BUILD.gn.orig	2021-02-19 16:41:59.000000000 +0000
++++ src/3rdparty/chromium/base/third_party/libevent/BUILD.gn
+@@ -50,11 +50,25 @@ static_library("bundled_libevent") {
+     include_dirs = [ "mac" ]
+   } else if (is_linux || is_chromeos) {
+     sources += [
+-      "epoll.c",
++      "kqueue.c",
+       "linux/config.h",
+       "linux/event-config.h",
+     ]
+     include_dirs = [ "linux" ]
++  } else if (is_freebsd) {
++    sources += [
++      "kqueue.c",
++      "freebsd/config.h",
++      "freebsd/event-config.h",
++    ]
++    include_dirs = [ "freebsd" ]
++  } else if (is_netbsd) {
++    sources += [
++      "kqueue.c",
++      "netbsd/config.h",
++      "netbsd/event-config.h",
++    ]
++    include_dirs = [ "netbsd" ]
+   } else if (is_android) {
+     sources += [
+       "android/config.h",

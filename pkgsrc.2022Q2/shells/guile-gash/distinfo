@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.5 2022/03/19 09:39:10 nikita Exp $
+
+BLAKE2s (gash-0.3.0.tar.gz) = 6f3481d8011718d4e74bbd3b3c0897ee24df5b73f71191aa63fcc2a76c0415b3
+SHA512 (gash-0.3.0.tar.gz) = 14e4d6a4eababe07a59f694baad3942122d3df3109478bc52c352431b0e0c13f7246ba722276d314f04a15cec78159cbbb390ce6df4d2eacecc2eaaf6987af59
+Size (gash-0.3.0.tar.gz) = 334781 bytes
+SHA1 (patch-Makefile.am) = 1e555c43f2f7476bcf6ce75baca227856ef0d5db

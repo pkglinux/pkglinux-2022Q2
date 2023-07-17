@@ -1,0 +1,13 @@
+$NetBSD: patch-ab,v 1.12 2020/04/27 18:05:18 bouyer Exp $
+
+--- bin/smokeping_cgi.orig	2020-04-26 12:26:58.308638086 +0200
++++ bin/smokeping_cgi	2020-04-26 12:27:17.592838363 +0200
+@@ -17,7 +17,7 @@
+ 
+ use CGI::Fast;
+ 
+-my $cfg = (shift @ARGV) || "$FindBin::Bin/../etc/config";
++my $cfg = (shift @ARGV) || "@PKG_SYSCONFDIR@/config";
+ 
+ 
+ while (my $q = new CGI::Fast) {

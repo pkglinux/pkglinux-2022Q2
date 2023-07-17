@@ -1,0 +1,14 @@
+$NetBSD: distinfo,v 1.13 2021/10/26 11:19:39 nia Exp $
+
+BLAKE2s (gpart-0.1h.tar.gz) = 7de43874cd34e4b6fdf17d3ca6321a9ede26cf54f96ce82699d4a297531c18ee
+SHA512 (gpart-0.1h.tar.gz) = 673cc99ccc2342c18be3f6395bf7258ab1d8e2ffeac6fd68a4bd75c89825031cb9d7ae628c51bad4da47a8d0625f1608cf4c78345aae5205fd98a9a908a3d45c
+Size (gpart-0.1h.tar.gz) = 52352 bytes
+SHA1 (patch-aa) = f971cc7ae0efbacd64e8f5e6bf9c2496f75320a3
+SHA1 (patch-ab) = e3c22ee015e6fc419af37a8ff2daac38b058edf9
+SHA1 (patch-ac) = 15a57dd0e9b57c7a64869b43df37a5b2493e77d2
+SHA1 (patch-ad) = e53ca24886c072d514802e7dca7a79da2e1916d0
+SHA1 (patch-ae) = d02258c0a702156a6be9370f4b60c59a1109afeb
+SHA1 (patch-af) = a201375f69b1581259a2bc287d7ce5ab7c7dafe4
+SHA1 (patch-make.defs) = a5bea1d59e7061c01c311212461e0a690d08d796
+SHA1 (patch-src_Makefile) = bc4a1f4ce91b4bb02dbd53414adb38b14f8deb8a
+SHA1 (patch-src_disku.c) = 1c41f775b26e1c66e23544724c8b1ffc7a13aea5

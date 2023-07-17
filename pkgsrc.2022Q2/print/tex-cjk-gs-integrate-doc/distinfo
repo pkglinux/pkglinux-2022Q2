@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.12 2022/04/08 05:28:02 markd Exp $
+
+BLAKE2s (cjk-gs-integrate.doc.r59705.tar.xz) = 20bae1a763071d69760d8d654ae4bfe50fba09c3cc5f608310343283a27a2187
+SHA512 (cjk-gs-integrate.doc.r59705.tar.xz) = c1165f2ecd08b279cd0d0b028682eecbb3953659426a1885bbe5aab9838a90107c576a3b9bf80b0d54dbe3fc438c8af8a8c82f5faf79052c37d2c5e85ea9ae42
+Size (cjk-gs-integrate.doc.r59705.tar.xz) = 13400 bytes

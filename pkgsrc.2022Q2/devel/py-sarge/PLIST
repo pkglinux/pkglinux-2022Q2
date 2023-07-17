@@ -1,0 +1,15 @@
+@comment $NetBSD: PLIST,v 1.4 2022/01/19 17:50:46 wiz Exp $
+${PLIST.py2x}${PYSITELIB}/${EGG_INFODIR}
+${PLIST.py3x}${PYSITELIB}/${EGG_INFODIR}/PKG-INFO
+${PLIST.py3x}${PYSITELIB}/${EGG_INFODIR}/SOURCES.txt
+${PLIST.py3x}${PYSITELIB}/${EGG_INFODIR}/dependency_links.txt
+${PLIST.py3x}${PYSITELIB}/${EGG_INFODIR}/top_level.txt
+${PYSITELIB}/sarge/__init__.py
+${PYSITELIB}/sarge/__init__.pyc
+${PYSITELIB}/sarge/__init__.pyo
+${PYSITELIB}/sarge/shlext.py
+${PYSITELIB}/sarge/shlext.pyc
+${PYSITELIB}/sarge/shlext.pyo
+${PYSITELIB}/sarge/utils.py
+${PYSITELIB}/sarge/utils.pyc
+${PYSITELIB}/sarge/utils.pyo

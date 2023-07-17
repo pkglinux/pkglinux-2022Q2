@@ -1,0 +1,18 @@
+/patch-Makefile/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-cmd_podman_registry_config.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-pkg_machine_qemu_options__netbsd.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-pkg_machine_qemu_options__netbsd__amd64.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-pkg_util_utils__netbsd.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-utils_utils__supported.go/1.1/Sat Dec 18 18:11:48 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_buildah_util_util__uint64.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_buildah_util_util__unix.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_common_pkg_config_config__netbsd.go/1.2/Sat Dec 18 18:11:48 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_common_pkg_config_util__supported.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_storage_drivers_chroot__unix.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_storage_pkg_directory_directory__unix.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_storage_pkg_homedir_homedir__others.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_storage_pkg_lockfile_lockfile__unix.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_storage_pkg_system_stat__netbsd.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_containers_storage_pkg_system_syscall__unix.go/1.1/Sat Dec 18 18:11:48 2021//Tpkgsrc-2022Q2
+/patch-vendor_github.com_moby_sys_mount_flags__bsd.go/1.1/Sat Sep  4 20:28:42 2021//Tpkgsrc-2022Q2
+D

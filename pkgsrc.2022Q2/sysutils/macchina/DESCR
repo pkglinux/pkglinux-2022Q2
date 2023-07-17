@@ -1,0 +1,7 @@
+macchina lets you view system information, like your kernel version, uptime,
+memory usage, processor load and much more. macchina is basic by default and
+extensible by design.
+
+If you're interested in the library macchina uses to fetch system information,
+have a look at libmacchina; fetching-related issues should be filed on that
+repository.

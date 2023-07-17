@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/07 02:52:11 markd Exp $
+
+BLAKE2s (zapfchan.r61719.tar.xz) = 46ca87f4d1b8e53e625fbd281f0e8553d927e517f27d42f3c791c56248db8649
+SHA512 (zapfchan.r61719.tar.xz) = a5a8a672e1753cd39b44dfb43b9b83673f7bd20dfb4e4640630ba0908c228dd75dda7933432d6d6f7e2c4920d554aa8cd41a523ebe665832edbc4aa7b8034332
+Size (zapfchan.r61719.tar.xz) = 79904 bytes

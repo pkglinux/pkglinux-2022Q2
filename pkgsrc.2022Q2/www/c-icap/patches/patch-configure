@@ -1,0 +1,37 @@
+$NetBSD: patch-configure,v 1.11 2019/10/14 11:00:56 sborrill Exp $
+
+Link against librt on NetBSD, too.
+Link-test for shm_* functions.
+
+--- configure.orig	2018-09-19 13:43:03.000000000 +0100
++++ configure	2019-10-14 11:48:42.000000000 +0100
+@@ -16264,6 +16264,11 @@
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking if posix shared mem works" >&5
+ $as_echo_n "checking if posix shared mem works... " >&6; }
++case "$target_os" in
++linux*|netbsd*)
++	LIBS="-lrt  $LIBS"
++	;;
++esac
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -16284,7 +16289,7 @@
+   return 0;
+ }
+ _ACEOF
+-if ac_fn_c_try_compile "$LINENO"; then :
++if ac_fn_c_try_link "$LINENO"; then :
+ 
+ $as_echo "#define HAVE_POSIX_SHARED_MEM 1" >>confdefs.h
+ 
+@@ -16303,7 +16308,7 @@
+ # Linux and solaris define the shm_open in -rt library.
+ # This library already included in LIBS for solaris
+ case "$host_os" in
+-     linux*)
++     linux*|netbsd*)
+         EXTRALIBS="$EXTRALIBS -lrt"
+      ;;
+      *)

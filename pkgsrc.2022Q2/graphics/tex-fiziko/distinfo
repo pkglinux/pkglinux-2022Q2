@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/09 20:54:36 markd Exp $
+
+BLAKE2s (fiziko.r61944.tar.xz) = 559faebf864ed65e4069e99d0346f92541e96931036a663976a45ad39a67f799
+SHA512 (fiziko.r61944.tar.xz) = 4ad67bab5850464deee4a3a29fd7c02d011eca50dbba03dafc5059ee54aa434bfae5c173e6022fef4cb761f2c760b6dd5aff403b33b7ddc8e632961ce4f8dccf
+Size (fiziko.r61944.tar.xz) = 22700 bytes

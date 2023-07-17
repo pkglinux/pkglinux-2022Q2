@@ -1,0 +1,22 @@
+
+GNU Parted
+----------
+
+GNU Parted is a program for manipulating partition tables.
+
+WARNING: USING PARTED TO PERFORM FILE SYSTEM OPERATIONS IS NO LONGER SUPPORTED
+------------------------------------------------------------------------------
+
+Parted (post-2.4) no longer has the ability to create and modify file systems.
+Use file-system-specific tools to create and operate on file systems.
+For example, use the e2fsprogs programs to operate on ext2, ext3 and ext4
+file systems.  Use programs from the reiserfsprogs package if you want to
+manipulate reiserfs file systems.  Although Parted lets you do some of the
+same things, the file-system-related code in parted is not as robust as the
+code in more specialized, FS-specific packages.
+
+Most FS-related functionality was removed after Parted 2.4.
+Thus, the following commands are no longer supported:
+mkpartfs, mkfs, cp, move, check, resize.
+
+...

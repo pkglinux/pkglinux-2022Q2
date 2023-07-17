@@ -1,0 +1,14 @@
+$NetBSD: patch-ag,v 1.30 2018/11/13 11:10:41 markd Exp $
+
+--- configure.ac.orig	2018-01-11 12:49:46.000000000 +0000
++++ configure.ac
+@@ -468,7 +468,8 @@ AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[]],
+ CC_ATTRIBUTE_ALIGNED
+ 
+ CC_ATTRIBUTE_VISIBILITY([protected],
+-                        [visibility_export="protected"],
++                        [visibility_export="protected"
++                         CC_ATTRIBUTE_VISIBILITY([default])],
+                         [CC_ATTRIBUTE_VISIBILITY([default], [visibility_export="default"])])
+ CC_ATTRIBUTE_VISIBILITY([internal])
+ 

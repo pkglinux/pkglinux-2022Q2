@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/02/15 15:32:09 wiz Exp $
+
+BLAKE2s (moto-3.0.3.tar.gz) = d24c0ebc18e361e62928fa9b518113c717bd417fb987e38803ef28e84f3bccb8
+SHA512 (moto-3.0.3.tar.gz) = 1b14d8a5101103d31136fddfb12c4d6251aa75487347b049ea96baae662528f2f557fe31a9af1cce544fa97d02710ab66f5ee517540bcf137965bd2fe3ec24fa
+Size (moto-3.0.3.tar.gz) = 2071948 bytes

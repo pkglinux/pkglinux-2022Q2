@@ -1,0 +1,20 @@
+$NetBSD$
+
+--- meson.build.orig	2020-03-07 15:56:17.000000000 +0000
++++ meson.build
+@@ -253,7 +253,6 @@ desktop_file_validate = find_program('de
+ 
+ foreach desktop: desktop_files
+   i18n.merge_file(
+-    desktop + '-desktop',
+     input: desktop + '.desktop.in',
+     output: desktop + '.desktop',
+     install: true,
+@@ -274,7 +273,6 @@ endforeach
+ appdata = 'nm-connection-editor.appdata.xml'
+ 
+ i18n.merge_file(
+-  'desktop',
+   input: appdata + '.in',
+   output: appdata,
+   install: true,

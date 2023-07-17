@@ -1,0 +1,6 @@
+@comment $NetBSD: PLIST,v 1.5 2022/01/14 17:52:05 wiz Exp $
+${PYSITELIB}/MeCab.py
+${PYSITELIB}/MeCab.pyc
+${PYSITELIB}/MeCab.pyo
+${PYSITELIB}/_MeCab.so
+${PYSITELIB}/${EGG_INFODIR}

@@ -1,0 +1,32 @@
+# $NetBSD: Makefile.common,v 1.15 2021/04/21 08:50:07 wiz Exp $
+#
+# used by net/wistumbler2-gtk/Makefile
+
+DISTNAME=	wistumbler2-2.0pre10
+CATEGORIES=	net
+MASTER_SITES=	# ftp://ftp.nopcode.org/prj/wistumbler2/
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	http://www.nopcode.org/?t=wistumbler2
+COMMENT=	Fork of original WaveLAN/IEEE network stumbler
+
+DISTINFO_FILE=		${.CURDIR}/../../net/wistumbler2/distinfo
+PATCHDIR=		${.CURDIR}/../../net/wistumbler2/patches
+PLIST_SRC=		${.CURDIR}/../../net/wistumbler2/PLIST
+
+NOT_FOR_PLATFORM=	NetBSD-[01].[012345]*-*
+ONLY_FOR_PLATFORM=	NetBSD-*-* FreeBSD-*-* OpenBSD-*-* DragonFly-*-* \
+			MirBSD-*-* Bitrig-*-*
+CONFLICTS+=		wistumbler-[0-9]*
+
+HAS_CONFIGURE=		YES
+MAKE_JOBS_SAFE=		no
+
+CONFIGURE_ENV+=		PREFIX=${PREFIX} PKGMANDIR=${PKGMANDIR}
+MAKE_FLAGS=		PREFIX=${DESTDIR}${PREFIX}
+
+CONF_FILES=		${PREFIX}/share/examples/wistumbler2/wistumbler2.conf \
+			${PKG_SYSCONFDIR}/wistumbler2.conf
+
+.include "../../net/libpcap/buildlink3.mk"
+.include "../../mk/pthread.buildlink3.mk"

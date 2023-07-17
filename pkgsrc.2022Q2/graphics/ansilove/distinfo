@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.19 2022/02/10 20:37:37 fcambus Exp $
+
+BLAKE2s (ansilove-4.1.6.tar.gz) = 87c4f112c2c25495ac4db913aa6c10c282a906809891686081c9acb838df1f20
+SHA512 (ansilove-4.1.6.tar.gz) = 9cacfcccd2a857841e82cede64efe84413d3467849c49b9f38eea8d2be5447bdf5a9f8432d96bfbe9e5ced1eda3cf1e3a5a7375c0d32f52b6b4e44c7002c20ba
+Size (ansilove-4.1.6.tar.gz) = 40842 bytes

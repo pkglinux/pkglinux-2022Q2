@@ -1,0 +1,4 @@
+xdm is the classic X11 Display Manager, using the Athena Widgets
+toolkit.  While it lacks in support for accessibility,
+internationalization, or other modern features, it is still used
+in some sites for historical reasons.

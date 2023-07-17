@@ -1,0 +1,7 @@
+@comment $NetBSD$
+bin/aft-mtp-cli
+bin/android-file-transfer
+lib/libmtp-ng-static.a
+share/applications/android-file-transfer.desktop
+share/icons/hicolor/512x512/apps/android-file-transfer.png
+share/metainfo/android-file-transfer.appdata.xml

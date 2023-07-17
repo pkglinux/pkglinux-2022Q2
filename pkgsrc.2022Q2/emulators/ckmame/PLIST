@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.7 2022/05/31 11:51:31 wiz Exp $
+bin/ckmame
+bin/dumpgame
+bin/mkmamedb
+man/man1/ckmame.1
+man/man1/dumpgame.1
+man/man1/mkmamedb.1
+man/man5/ckmamerc.5

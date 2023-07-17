@@ -1,0 +1,12 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 11:25:11 nia Exp $
+
+BLAKE2s (blackbox-0.65.0.tar.gz) = c36fdf8f81a82ff8d476f257448c00eb6f430d205d157f28f9e87c91edd001c8
+SHA512 (blackbox-0.65.0.tar.gz) = 337f6155674403869c527a70f3a399dfef8291533ec96a02424ecd9d1c43dd004651997f83b6916d273815f25b2434dd3ec181d440988c7932f139b14c9040c9
+Size (blackbox-0.65.0.tar.gz) = 292950 bytes
+SHA1 (patch-aa) = 134f628eef5cec1e9d7ce4b95a57c7e35a2307d9
+SHA1 (patch-ab) = 0654be7d1465d0adc331714377f17e6e6bd459da
+SHA1 (patch-ac) = 5f249a2e6d75e5d88605d6d8a1675d003b1cb52f
+SHA1 (patch-ad) = a39dee423ea041f8c72c0c9144ffda06c20242eb
+SHA1 (patch-src_GCCache.cc) = 22ac3c1a0870d72f6e94f77f8a4f18900ff09d7c
+SHA1 (patch-src_Image.cc) = 5da031ec0ed1ddd45369698eb36e4bb0c0cfe06c
+SHA1 (patch-src_ImageControl.cc) = 5af35715f1da30a1b073a10798a8103823617a4a

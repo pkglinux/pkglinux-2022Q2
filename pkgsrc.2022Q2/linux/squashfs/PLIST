@@ -1,0 +1,13 @@
+@comment $NetBSD$
+bin/mksquashfs
+bin/sqfscat
+bin/sqfstar
+bin/unsquashfs
+man/man1/mksquashfs.1
+man/man1/sqfscat.1
+man/man1/sqfstar.1
+man/man1/unsquashfs.1
+native/usr/bin/mksquashfs
+native/usr/bin/sqfscat
+native/usr/bin/sqfstar
+native/usr/bin/unsquashfs

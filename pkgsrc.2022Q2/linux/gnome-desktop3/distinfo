@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.23 2021/11/11 09:29:59 prlw1 Exp $
+
+BLAKE2s (gnome-desktop-42.4.tar.xz) = 4598b7270c85bbd794fb383064dec4c38ddde11dbfdf79bf646a12fbfd1e2152
+SHA512 (gnome-desktop-42.4.tar.xz) = 6e2648aee7e7b7800276ba1f6b32a0918f6dfbd35a60a5fd22239efe75b3bd4cbed14458ab2d1b0ad0ad295428feae5342a64f2cf83505196eccb17720a26756
+Size (gnome-desktop-42.4.tar.xz) = 743212 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:44:14 nia Exp $
+
+BLAKE2s (MarathonEvil.zip) = 5fbebed532d5246767e91e6a9cfca655ced58f8c2967fc2929e398e2c36e660a
+SHA512 (MarathonEvil.zip) = f61e780ebcb41294c19ff80ea3434dbd4cbd83d2e2466d38accd4bfa041e0b133d28b1bce9e2c036d985bf7c977122f6466f0bafe7dc29fed59d036d32a78301
+Size (MarathonEvil.zip) = 32032327 bytes

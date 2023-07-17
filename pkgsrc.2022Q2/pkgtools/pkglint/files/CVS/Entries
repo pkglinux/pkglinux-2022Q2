@@ -1,0 +1,115 @@
+/alternatives.go/1.21/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/alternatives_test.go/1.20/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/autofix.go/1.42/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/autofix_test.go/1.43/Sat Jan  1 12:44:24 2022//Tpkgsrc-2022Q2
+/buildlink3.go/1.40/Tue May 25 21:48:46 2021//Tpkgsrc-2022Q2
+/buildlink3_test.go/1.48/Tue May 25 21:48:46 2021//Tpkgsrc-2022Q2
+/category.go/1.37/Sun Jan 16 19:14:52 2022//Tpkgsrc-2022Q2
+/category_test.go/1.36/Sun Jan 16 19:14:52 2022//Tpkgsrc-2022Q2
+/check_test.go/1.80/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/distinfo.go/1.49/Sat Nov 20 18:06:13 2021//Tpkgsrc-2022Q2
+/distinfo_test.go/1.46/Thu Oct 28 20:15:25 2021//Tpkgsrc-2022Q2
+/files.go/1.32/Sat Feb 15 13:48:40 2020//Tpkgsrc-2022Q2
+/files_test.go/1.34/Sat Jan  1 12:44:24 2022//Tpkgsrc-2022Q2
+/fuzzer_test.go/1.5/Sat Nov 23 23:35:56 2019//Tpkgsrc-2022Q2
+/homepage.go/1.6/Thu Oct 28 20:15:25 2021//Tpkgsrc-2022Q2
+/homepage_test.go/1.7/Tue Oct  6 18:40:50 2020//Tpkgsrc-2022Q2
+/licenses.go/1.34/Fri Jun 25 14:15:01 2021//Tpkgsrc-2022Q2
+/licenses_test.go/1.29/Fri Jun 25 14:15:01 2021//Tpkgsrc-2022Q2
+/line.go/1.50/Sat Nov 13 21:20:59 2021//Tpkgsrc-2022Q2
+/line_test.go/1.22/Fri Jun 25 14:15:01 2021//Tpkgsrc-2022Q2
+/linechecker.go/1.18/Sat Feb 15 13:48:40 2020//Tpkgsrc-2022Q2
+/linechecker_test.go/1.16/Fri Jun 25 14:15:01 2021//Tpkgsrc-2022Q2
+/lines.go/1.14/Mon Jun  1 20:49:54 2020//Tpkgsrc-2022Q2
+/lines_test.go/1.13/Fri Jun 25 14:15:01 2021//Tpkgsrc-2022Q2
+/lineslexer.go/1.4/Sun Jun  7 15:49:23 2020//Tpkgsrc-2022Q2
+/lineslexer_test.go/1.4/Sat Jan  1 12:44:24 2022//Tpkgsrc-2022Q2
+/logging.go/1.43/Mon Mar 22 23:26:30 2021//Tpkgsrc-2022Q2
+/logging_test.go/1.28/Fri Jun 25 14:15:01 2021//Tpkgsrc-2022Q2
+/mkassignchecker.go/1.13/Mon Mar 21 22:30:06 2022//Tpkgsrc-2022Q2
+/mkassignchecker_test.go/1.11/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/mkcondchecker.go/1.11/Sun Jun  6 11:46:43 2021//Tpkgsrc-2022Q2
+/mkcondchecker_test.go/1.10/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/mklexer.go/1.10/Sun Aug  2 13:27:17 2020//Tpkgsrc-2022Q2
+/mklexer_test.go/1.7/Sun Aug  2 13:27:17 2020//Tpkgsrc-2022Q2
+/mkline.go/1.85/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/mkline_test.go/1.84/Sat Jan  1 12:44:24 2022//Tpkgsrc-2022Q2
+/mklinechecker.go/1.70/Fri Jun 25 14:15:01 2021//Tpkgsrc-2022Q2
+/mklinechecker_test.go/1.66/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/mklineparser.go/1.14/Sat Jun  6 20:42:56 2020//Tpkgsrc-2022Q2
+/mklineparser_test.go/1.14/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/mklines.go/1.74/Sat Aug 14 08:19:49 2021//Tpkgsrc-2022Q2
+/mklines_test.go/1.67/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/mkparser.go/1.43/Sun Jun 14 11:35:54 2020//Tpkgsrc-2022Q2
+/mkparser_test.go/1.42/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/mkshparser.go/1.21/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/mkshparser_test.go/1.25/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/mkshtypes.go/1.13/Fri Aug  2 18:55:07 2019//Tpkgsrc-2022Q2
+/mkshtypes_test.go/1.3/Wed Nov 27 22:10:07 2019//Tpkgsrc-2022Q2
+/mkshwalker.go/1.12/Sat Jan  4 19:53:14 2020//Tpkgsrc-2022Q2
+/mkshwalker_test.go/1.13/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/mktokenslexer.go/1.5/Wed Jul  1 13:17:41 2020//Tpkgsrc-2022Q2
+/mktokenslexer_test.go/1.7/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/mktypes.go/1.26/Wed Jul  1 13:17:41 2020//Tpkgsrc-2022Q2
+/mktypes_test.go/1.24/Wed Jul  1 13:17:41 2020//Tpkgsrc-2022Q2
+/mkvarusechecker.go/1.14/Sun Jun  6 07:41:34 2021//Tpkgsrc-2022Q2
+/mkvarusechecker_test.go/1.16/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+/options.go/1.23/Wed Mar 18 08:24:49 2020//Tpkgsrc-2022Q2
+/options_test.go/1.25/Fri Jul 31 22:39:36 2020//Tpkgsrc-2022Q2
+/package.go/1.105/Fri Mar 11 00:33:12 2022//Tpkgsrc-2022Q2
+/package_test.go/1.90/Fri Mar 11 00:33:12 2022//Tpkgsrc-2022Q2
+/paragraph.go/1.4/Mon Dec 30 16:27:13 2019//Tpkgsrc-2022Q2
+/paragraph_test.go/1.2/Sun Jun 30 20:56:19 2019//Tpkgsrc-2022Q2
+/patches.go/1.46/Sat Apr 17 18:10:14 2021//Tpkgsrc-2022Q2
+/patches_test.go/1.43/Sun Aug  2 13:27:17 2020//Tpkgsrc-2022Q2
+/path.go/1.12/Sat Apr 17 18:10:14 2021//Tpkgsrc-2022Q2
+/path_test.go/1.13/Mon Jun  1 20:49:54 2020//Tpkgsrc-2022Q2
+/pkglint.0/1.45/Sun Jan 26 20:16:29 2020//Tpkgsrc-2022Q2
+/pkglint.1/1.65/Sun Jan 26 19:35:22 2020//Tpkgsrc-2022Q2
+/pkglint.go/1.85/Sun Jan 16 19:14:52 2022//Tpkgsrc-2022Q2
+/pkglint_test.go/1.72/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/pkgsrc.go/1.66/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/pkgsrc_test.go/1.55/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/plist.go/1.62/Sat Aug 14 09:46:11 2021//Tpkgsrc-2022Q2
+/plist_test.go/1.54/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/redundantscope.go/1.14/Wed Jul 22 19:26:30 2020//Tpkgsrc-2022Q2
+/redundantscope_test.go/1.20/Sun Jan 16 19:14:52 2022//Tpkgsrc-2022Q2
+/scope.go/1.2/Sat Jun 20 07:00:44 2020//Tpkgsrc-2022Q2
+/scope_test.go/1.3/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/shell.go/1.65/Sat Aug 14 09:46:11 2021//Tpkgsrc-2022Q2
+/shell.y/1.7/Wed Jul  1 13:17:41 2020//Tpkgsrc-2022Q2
+/shell_test.go/1.73/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/shtokenizer.go/1.25/Sat Jan  4 19:53:14 2020//Tpkgsrc-2022Q2
+/shtokenizer_test.go/1.27/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/shtypes.go/1.17/Sun Jun 30 20:56:19 2019//Tpkgsrc-2022Q2
+/shtypes_test.go/1.11/Fri Dec 13 01:39:23 2019//Tpkgsrc-2022Q2
+/substcontext.go/1.39/Sat Jun 20 07:00:44 2020//Tpkgsrc-2022Q2
+/substcontext_test.go/1.37/Sat Jun 20 07:00:44 2020//Tpkgsrc-2022Q2
+/tools.go/1.25/Sat Aug 14 08:19:49 2021//Tpkgsrc-2022Q2
+/tools_test.go/1.27/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/toplevel.go/1.29/Sat Feb 15 13:48:40 2020//Tpkgsrc-2022Q2
+/toplevel_test.go/1.23/Sat Feb 15 13:48:40 2020//Tpkgsrc-2022Q2
+/util.go/1.83/Sun Jan 16 19:14:52 2022//Tpkgsrc-2022Q2
+/util_test.go/1.57/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/var.go/1.9/Fri Jun 12 19:14:45 2020//Tpkgsrc-2022Q2
+/var_test.go/1.9/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/varalignblock.go/1.19/Sun Mar 15 11:31:24 2020//Tpkgsrc-2022Q2
+/varalignblock_test.go/1.18/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/vardefs.go/1.104/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/vardefs_test.go/1.29/Sun Jun  7 15:49:23 2020//Tpkgsrc-2022Q2
+/vargroups.go/1.7/Sat Jan  4 19:53:14 2020//Tpkgsrc-2022Q2
+/vargroups_test.go/1.6/Fri Dec 13 01:39:23 2019//Tpkgsrc-2022Q2
+/vartype.go/1.54/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/vartype_test.go/1.28/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/vartypecheck.go/1.100/Sat Jan  1 12:44:25 2022//Tpkgsrc-2022Q2
+/vartypecheck_test.go/1.92/Fri Jun 24 07:16:23 2022//Tpkgsrc-2022Q2
+D/cmd////
+D/getopt////
+D/histogram////
+D/intqa////
+D/licenses////
+D/makepat////
+D/pkgver////
+D/regex////
+D/textproc////
+D/trace////

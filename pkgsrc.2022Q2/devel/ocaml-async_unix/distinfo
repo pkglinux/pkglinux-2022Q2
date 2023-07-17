@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/05/05 09:35:33 jaapb Exp $
+
+BLAKE2s (async_unix-0.15.0.tar.gz) = 2f0457a6058413ba87d0ff0a57210a77acfe5dc133b2e34afb222c5e11d5ab15
+SHA512 (async_unix-0.15.0.tar.gz) = d6bb561ca06b3232c11c10bfe9dbd689020d52dc90f13f01751abf31f968649c7c8664f5f58de95c89f012de00c789efa9c0ca230ba32b9105c609d1afca2a51
+Size (async_unix-0.15.0.tar.gz) = 178320 bytes

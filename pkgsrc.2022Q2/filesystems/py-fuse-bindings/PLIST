@@ -1,0 +1,20 @@
+@comment $NetBSD: PLIST,v 1.9 2021/12/01 16:37:37 pho Exp $
+${PYSITELIB}/fuse.py
+${PYSITELIB}/fuse.pyc
+${PYSITELIB}/fuse.pyo
+${PYSITELIB}/${EGG_INFODIR}/PKG-INFO
+${PYSITELIB}/${EGG_INFODIR}/SOURCES.txt
+${PYSITELIB}/${EGG_INFODIR}/dependency_links.txt
+${PYSITELIB}/${EGG_INFODIR}/top_level.txt
+${PYSITELIB}/fuseparts/__init__.py
+${PYSITELIB}/fuseparts/__init__.pyc
+${PYSITELIB}/fuseparts/__init__.pyo
+${PYSITELIB}/fuseparts/_fuse.so
+${PYSITELIB}/fuseparts/setcompatwrap.py
+${PYSITELIB}/fuseparts/setcompatwrap.pyc
+${PYSITELIB}/fuseparts/setcompatwrap.pyo
+${PYSITELIB}/fuseparts/subbedopts.py
+${PYSITELIB}/fuseparts/subbedopts.pyc
+${PYSITELIB}/fuseparts/subbedopts.pyo
+share/examples/${PYPKGPREFIX}-fuse-bindings/hello.py
+share/examples/${PYPKGPREFIX}-fuse-bindings/xmp.py

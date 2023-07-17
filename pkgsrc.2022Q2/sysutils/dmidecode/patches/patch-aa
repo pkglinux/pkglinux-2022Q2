@@ -1,0 +1,26 @@
+$NetBSD: patch-aa,v 1.7 2020/11/24 05:31:51 msaitoh Exp $
+
+* Adapt the Makefile to make it compliant with pkgsrc.
+
+--- Makefile.orig	2020-10-14 21:51:11.000000000 +0900
++++ Makefile	2020-11-24 14:26:37.724121726 +0900
+@@ -31,9 +31,9 @@
+ LDFLAGS ?=
+ 
+ DESTDIR =
+-prefix  = /usr/local
++prefix  = ${PREFIX}
+ sbindir = $(prefix)/sbin
+-mandir  = $(prefix)/share/man
++mandir  = $(prefix)/${PKGMANDIR}
+ man8dir = $(mandir)/man8
+ docdir  = $(prefix)/share/doc/dmidecode
+ 
+@@ -53,6 +53,7 @@
+ PROGRAMS-i686 := $(PROGRAMS-i386)
+ PROGRAMS-x86_64 := biosdecode ownership vpddecode
+ PROGRAMS-amd64 := $(PROGRAMS-x86_64)
++PROGRAMS-i86pc := $(PROGRAMS-x86_64)
+ 
+ PROGRAMS := dmidecode $(PROGRAMS-$(MACHINE))
+ 

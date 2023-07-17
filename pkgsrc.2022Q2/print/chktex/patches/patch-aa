@@ -1,0 +1,29 @@
+$NetBSD: patch-aa,v 1.4 2021/02/23 06:34:44 markd Exp $
+
+Use proper installation tools.
+Don't build ChkTeX.dvi as we don't do anything with it.
+
+--- Makefile.in.orig	2016-09-10 04:14:58.000000000 +0000
++++ Makefile.in
+@@ -159,16 +159,16 @@ check: chktex $(srcdir)/$(TestOutFile)
+ chktex: $(OBJS)
+ 	$(CC) $(LDFLAGS) -o chktex $(OBJS) $(LIBS)
+ 
+-install: chktex ChkTeX.dvi
++install: chktex
+ 	$(MKDIR_P) $(DESTDIR)$(bindir)
+ 	for program in chktex $(BUILT_SCRIPTS); do \
+-		$(INSTALL_PROGRAM) $$program $(DESTDIR)$(bindir); \
++		$(INSTALL_SCRIPT) $$program $(DESTDIR)$(bindir); \
+ 	done
+ 	for program in $(SCRIPTS); do \
+-		$(INSTALL_PROGRAM) $(srcdir)/$$program $(DESTDIR)$(bindir); \
++		$(INSTALL_SCRIPT) $(srcdir)/$$program $(DESTDIR)$(bindir); \
+ 	done
+-	$(MKDIR_P) $(DESTDIR)$(sysconfdir)
+-	$(INSTALL_DATA) $(srcdir)/chktexrc $(DESTDIR)$(sysconfdir)
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(EGDIR)
++	$(INSTALL_DATA) $(srcdir)/chktexrc $(DESTDIR)$(EGDIR)
+ 	if (eval echo "$(BUILT_SCRIPTS)") | egrep deweb >/dev/null 2>&1; then \
+ 		$(MKDIR_P) $(DESTDIR)$(mandir)/man1; \
+                 cp $(srcdir)/deweb.1 $(DESTDIR)$(mandir)/man1; \

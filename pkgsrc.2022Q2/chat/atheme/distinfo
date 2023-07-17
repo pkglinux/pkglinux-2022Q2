@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/03/04 07:59:38 nia Exp $
+
+BLAKE2s (atheme-services-v7.2.12.tar.xz) = e6947905035dbd4e5f50d62b103f788c0fae07e64c19ac64a1ddaa9f057669c1
+SHA512 (atheme-services-v7.2.12.tar.xz) = 0d276b9a0c96f72a739090c5b2c732ab6c000f801cbb86347b5670def56f36fb82d70fb4cb68a1d942b9765c054bc136a6b0cecc0573cf8f59076f8b91fc6bf6
+Size (atheme-services-v7.2.12.tar.xz) = 1072992 bytes

@@ -1,0 +1,10 @@
+$NetBSD: distinfo,v 1.83 2021/10/26 11:06:08 nia Exp $
+
+BLAKE2s (nmap-7.92.tar.bz2) = 0bf7a3882fbb25dd0a19807cbbd4e14c4d9f92c0198ec3444a821a61868e5435
+SHA512 (nmap-7.92.tar.bz2) = 7828367f9dc76ff4d1e8c821260e565fb0c3cb6aba0473d24759133a3006cdf2cb087574f0dd7d2ba47a63754ba4f72e0b78cdae1333a58f05c41d428b56ad59
+Size (nmap-7.92.tar.bz2) = 10498200 bytes
+SHA1 (patch-configure) = 5fc39f084eadd6ea0560cd8e6f52074113566600
+SHA1 (patch-libdnet-stripped_src_arp-bsd.c) = c56c4e70eca2fa04dd8aab38ed2c3f4cac83f5e3
+SHA1 (patch-libnetutil_netutil.cc) = 7bd1059d6cbcf4f6d129730d6c6f6bc3ab54c0a0
+SHA1 (patch-nping_EchoServer.cc) = e5b0213e3cfff8a32b5ae291c1921a86b9b17dd3
+SHA1 (patch-nsock_tests_run__tests.sh) = 88a7447f93dd3377e7e24e317c55528a73a17401

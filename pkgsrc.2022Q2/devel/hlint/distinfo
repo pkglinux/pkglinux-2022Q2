@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/12 07:21:15 pho Exp $
+
+BLAKE2s (hlint-3.3.6.tar.gz) = fa0ae08b47e2e3fd6b5751040da4157136d88700541269326eec12da1011ecf0
+SHA512 (hlint-3.3.6.tar.gz) = efc42480ca1382741f65b8f1d84b5c7fe1bd0d94e39163c0e7488862300d19f45d4e55fb501b94a45b089508f44bf196beb3437ae9eee8fc765c588c8eff7916
+Size (hlint-3.3.6.tar.gz) = 164317 bytes

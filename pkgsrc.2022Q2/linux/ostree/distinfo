@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (libostree-2022.5.tar.xz) = 6a5f78cdf298e8c94289036e7f8de1ac20f4d6870900ba9a7e28033b1ace6586
+SHA512 (libostree-2022.5.tar.xz) = 39abd076491ebab5cd6e23bff6ce0a346fe8d1e6a372abb42626ef5a8643411070b272637513b37393dc37af9b8eaaa42c19e2f1c16b98d441358c2046653654
+Size (libostree-2022.5.tar.xz) = 2072208 bytes

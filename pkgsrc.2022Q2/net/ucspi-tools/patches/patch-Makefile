@@ -1,0 +1,15 @@
+$NetBSD: patch-Makefile,v 1.5 2021/07/12 21:32:49 schmonz Exp $
+
+Make sure openssl headers get found.
+
+--- Makefile.orig	2021-07-03 15:04:54.000000000 +0000
++++ Makefile
+@@ -3,7 +3,7 @@ include config.mk
+ DISTNAME := ucspi-tools-${VERSION}
+ TARBALL := ${DISTNAME}.tar.gz
+ 
+-LIBS_TLS ?= -ltls `pkg-config --libs libssl`
++LIBS_TLS ?= -ltls `pkg-config --libs libssl openssl`
+ 
+ .PHONY: all test clean install
+ .SUFFIXES: .c .o

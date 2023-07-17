@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/14 03:20:20 markd Exp $
+
+BLAKE2s (polski.r60322.tar.xz) = cbfef3008952b0aa90c2790dbaa543e08cb6cad0c632aec4d023f474601aa43a
+SHA512 (polski.r60322.tar.xz) = 24bdb98990f66e89085056e6ad3e0930dd16d0f4bbd07a2c9a49931796e143505276d2025fee21b2b52d927c3b2992d31f4edae4668cdb549f6f00ef43dc1c69
+Size (polski.r60322.tar.xz) = 9296 bytes

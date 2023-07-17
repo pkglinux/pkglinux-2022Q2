@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (bashtop/v0.9.25.tar.gz) = 7398a6cc9323b863f60afe40723055921c4480cf8964aba5012a4d53e26cc07c
+SHA512 (bashtop/v0.9.25.tar.gz) = bd70c1e5b8876be38afe5987e60af0d59496532e6f0a87d2b3cd62c2a251fe627d0fac77e757f01979a6d20b43948860f0bcba4d8a1c54f8ef52d02ad4547a7f
+Size (bashtop/v0.9.25.tar.gz) = 443776 bytes

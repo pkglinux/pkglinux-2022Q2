@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- Makefile.orig	2018-10-16 08:15:48.000000000 +0000
++++ Makefile
+@@ -2,7 +2,7 @@ VERSION = 1.1.7
+ TOP = .
+ SUBDIRS = as10k1 envy24control hdsploader hdspconf hdspmixer \
+ 	  mixartloader pcxhrloader rmedigicontrol sb16_csp seq sscape_ctl \
+-	  us428control usx2yloader vxloader echomixer ld10k1 qlo10k1 \
++	  us428control usx2yloader vxloader echomixer \
+ 	  hwmixvolume hdajackretask hda-verb hdajacksensetest
+ 
+ all:

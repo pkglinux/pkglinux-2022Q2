@@ -1,0 +1,15 @@
+$NetBSD: patch-configure.ac,v 1.9 2022/05/16 14:58:30 ryoon Exp $
+
+Fix SunOS flags.
+
+--- configure.ac.orig	2020-02-27 02:06:19.620472371 +0000
++++ configure.ac
+@@ -2857,7 +2789,7 @@ char *argv[];
+     sunos*)       DLLDFLAGS="${DLLDFLAGS=-assert nodefinitions}" ;;
+     sysv4*|esix*) DLLDFLAGS="${DLLDFLAGS=-G $ldflags}" ;;
+     aix*)         DLLDFLAGS="${DLLDFLAGS=-G -bexpall -lc}" ;;
+-    solaris*|sysv4*|esix*) DLLDFLAGS="${DLLDFLAGS=-G}" ;;
++    solaris*|sysv4*|esix*) DLLDFLAGS="${DLLDFLAGS=-shared}" ;;
+     darwin*)      DLLDFLAGS="${DLLDFLAGS=-bundle -flat_namespace -undefined suppress}" ;;
+     beos*|haiku*) DLLDFLAGS="${DLLDFLAGS=-nostart}" ;;
+     openbsd*)

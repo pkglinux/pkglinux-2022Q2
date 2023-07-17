@@ -1,0 +1,28 @@
+
+NAND flash memory-based storage devices, such as SSD, eMMC, and SD cards, have been equipped on a variety systems ranging from mobile to server systems. Since they are known to have different characteristics from the conventional rotating disks, a file system, an upper layer to the storage device, should adapt to the changes from the sketch in the design level.
+
+F2FS is a file system exploiting NAND flash memory-based storage devices, which is based on Log-structured File System (LFS). The design has been focused on addressing the fundamental issues in LFS, which are snowball effect of wandering tree and high cleaning overhead.
+
+Since a NAND flash memory-based storage device shows different characteristic according to its internal geometry or flash memory management scheme, namely FTL, F2FS and its tools support various parameters not only for configuring on-disk layout, but also for selecting allocation and cleaning algorithms.
+
+F2FS format utilility
+---------------------
+
+To use f2fs filesystem, you should format the storage partition
+with this utilility. Otherwise, you cannot mount f2fs.
+
+Before compilation
+------------------
+
+You should install the following packages.
+ - libuuid-devel or uuid-dev
+ - pkg-config
+ - autoconf
+ - libtool
+ - libselinux1-dev
+
+Initial compilation
+-------------------
+
+Before compilation initially, autoconf/automake tools should be run.
+...

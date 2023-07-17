@@ -1,0 +1,4 @@
+@comment $NetBSD$
+bin/sshfs
+sbin/mount.fuse.sshfs
+sbin/mount.sshfs

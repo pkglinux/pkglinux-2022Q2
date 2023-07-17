@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.22 2022/04/09 21:09:00 markd Exp $
+
+BLAKE2s (fontspec.doc.r61617.tar.xz) = aa288fda2aaaacb53cc5271d12ca618102f7771ce3c861bc15a6f80df721d7e4
+SHA512 (fontspec.doc.r61617.tar.xz) = 03f1d92fab61b594d51e0befff26b95d39fb08eb3a250649b042fd02493f07b402fa71c2a3aab9fa3da48730be060c46ee77a41026f513c5a61894d8cec192f4
+Size (fontspec.doc.r61617.tar.xz) = 1221668 bytes

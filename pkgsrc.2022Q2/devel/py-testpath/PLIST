@@ -1,0 +1,21 @@
+@comment $NetBSD: PLIST,v 1.5 2022/01/22 15:22:41 wiz Exp $
+${PLIST.py2x}${PYSITELIB}/${EGG_INFODIR}
+${PLIST.py3x}${PYSITELIB}/${EGG_INFODIR}/PKG-INFO
+${PLIST.py3x}${PYSITELIB}/${EGG_INFODIR}/SOURCES.txt
+${PLIST.py3x}${PYSITELIB}/${EGG_INFODIR}/dependency_links.txt
+${PLIST.py3x}${PYSITELIB}/${EGG_INFODIR}/top_level.txt
+${PYSITELIB}/testpath/__init__.py
+${PYSITELIB}/testpath/__init__.pyc
+${PYSITELIB}/testpath/__init__.pyo
+${PYSITELIB}/testpath/asserts.py
+${PYSITELIB}/testpath/asserts.pyc
+${PYSITELIB}/testpath/asserts.pyo
+${PYSITELIB}/testpath/commands.py
+${PYSITELIB}/testpath/commands.pyc
+${PYSITELIB}/testpath/commands.pyo
+${PYSITELIB}/testpath/env.py
+${PYSITELIB}/testpath/env.pyc
+${PYSITELIB}/testpath/env.pyo
+${PYSITELIB}/testpath/tempdir.py
+${PYSITELIB}/testpath/tempdir.pyc
+${PYSITELIB}/testpath/tempdir.pyo

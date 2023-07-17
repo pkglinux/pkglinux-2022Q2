@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.16 2021/10/26 10:07:51 nia Exp $
+
+BLAKE2s (gdb-7.12.1.tar.gz) = 3702a3286f0124c2c7ac43bb688e377b769f003066fb2efa3fdd29c1f8186b90
+SHA512 (gdb-7.12.1.tar.gz) = 84e7350bc5131a37ce593b9b7ad65160f0ccad172067592dad005c1a64da87b8dcf9471e4e5d882cb36c4c7a1ab5ecb6ef3b8549d8187dec0bf2852af435fc38
+Size (gdb-7.12.1.tar.gz) = 35788041 bytes
+SHA1 (patch-ac) = 2975101bbbd4a2e19fb9364b494a18e3940d9bac
+SHA1 (patch-gdb_testsuite_Makefile.in) = 33612cb12aa6c6621fb74e000cf3522c57169b8b

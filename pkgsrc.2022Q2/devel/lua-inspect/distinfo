@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/12/10 13:11:40 nia Exp $
+
+BLAKE2s (lua-inspect-3.1.2.tar.gz) = f33ce0e665654d62d81a791ed632c431a4751caf008ff9c4c80bdcc4724152a8
+SHA512 (lua-inspect-3.1.2.tar.gz) = 6c090906392614d20d5199150849234c5bd44e3e235461582ebceb9101b17721afd8f1796b17bd18aa18bf04b346f229d1d8d869f7f07835be944290e9c15327
+Size (lua-inspect-3.1.2.tar.gz) = 11462 bytes

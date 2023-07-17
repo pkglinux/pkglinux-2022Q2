@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:55:54 nia Exp $
+
+BLAKE2s (Math-Random-ISAAC-1.004.tar.gz) = fb5cf0c58a4d81f40bc2b5f46e724b86f9862baa815943c46629f24cb574e839
+SHA512 (Math-Random-ISAAC-1.004.tar.gz) = 98fdfb28b207b4afe72ab82a2b564b06c5daaac15cdab2ce2ef698b16c0dcf5b23ac28fbebe170d2c6c7239fe6c97f634e5c03a8f2bd0aeb8369d0008b9ae0a2
+Size (Math-Random-ISAAC-1.004.tar.gz) = 34445 bytes

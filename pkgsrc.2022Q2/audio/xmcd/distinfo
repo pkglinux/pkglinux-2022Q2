@@ -1,0 +1,18 @@
+$NetBSD: distinfo,v 1.20 2021/10/26 09:59:36 nia Exp $
+
+BLAKE2s (xmcd-3.0.2-proxyauth-patch) = 1bd07e68996386dab847075342f88cc153caf21393b877d8ca3a5b3b432790e2
+SHA512 (xmcd-3.0.2-proxyauth-patch) = eb6a80c3cced3f026ca333d8dc47f75eb094712df78434bfd8619a8b785201b52d2308c340d732400e7efbd63198795ce005cd48be854f9280bbbebaeacd2ccc
+Size (xmcd-3.0.2-proxyauth-patch) = 2922 bytes
+BLAKE2s (xmcd-3.0.2.tar.gz) = 4a650cd9e301357bae58457d32512fe9dcba9bd6802a84ef5fae2e59d048709b
+SHA512 (xmcd-3.0.2.tar.gz) = d2e08858ed93b3241a4b1d6cddfff5a52ce100f4a4bd09de1232d20f103a2799c512c8827e020c170982e94d4b4cbc46c2505a86af367885f573752f8c26c73a
+Size (xmcd-3.0.2.tar.gz) = 690285 bytes
+SHA1 (patch-aa) = 0a446d2943dd9ac9d66938674daa16d1d629e470
+SHA1 (patch-ab) = 35c9d7cfecbd276a034598375c033c0dd510acdf
+SHA1 (patch-ac) = 19440a72fda657bf73811c20aabab5c955369516
+SHA1 (patch-ad) = afddba8e5a6070a54131ce2530479d4add9e19a4
+SHA1 (patch-ae) = 3de0e9fd004fcb6012f033739ff1b66bd059d655
+SHA1 (patch-af) = e8bc1a3b791f6df15f12f074712a55423fa3fadf
+SHA1 (patch-ag) = cdca79fa131a6b2e74c7cea377167f8d0290c162
+SHA1 (patch-ah) = bae28364d50709529cad5ce5ebf3362dd14cf99b
+SHA1 (patch-ai) = 630d725a223728c75531765dd8f5e1be2f3adc32
+SHA1 (patch-aj) = 60e8b099b12cdd5bad6068d0e4e7896f7f63980f

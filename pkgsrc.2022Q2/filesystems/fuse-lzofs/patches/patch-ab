@@ -1,0 +1,126 @@
+$NetBSD: patch-ab,v 1.6 2022/01/09 17:30:30 pho Exp $
+
+* Use the correct API version. fuse_operations::readdir() was
+  introduced in FUSE 2.3, not 2.2.
+
+* O_LARGEFILE is a Linux-only thing. Don't use it unconditionally.
+
+* Respect the original file attributes in readdir.
+
+* Never cast a pointer to int. That only works on 32-bits platforms
+  and crashes on others.
+
+* Respect the mode_t in mknod.
+
+* Fix an upstream bug: truncate() writes a wrong file size in the
+  header.
+
+--- LZOlayer_fs.c.orig	2006-05-18 19:23:35.000000000 +0000
++++ LZOlayer_fs.c
+@@ -7,9 +7,10 @@
+     Use it at your OWN RISK
+     Absolutely NO WARANTY
+ */
+-#define FUSE_USE_VERSION 22
++#define FUSE_USE_VERSION 23
+ #include <fuse.h>
+ #include <stdio.h>
++#include <stdint.h>
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
+@@ -21,6 +22,9 @@
+ #define __USE_UNIX98
+ #include <unistd.h>
+ #include <zlib.h>
++#if !defined(O_LARGEFILE)
++#  define O_LARGEFILE 0
++#endif
+ 
+ #include "minilzo.h"
+ #define HEAP_ALLOC(var, size) \
+@@ -143,15 +147,26 @@ static int LZOlayer_getattr(const char *
+ 
+ static int LZOlayer_readdir(const char *path, void *buf, fuse_fill_dir_t filler, off_t offset, struct fuse_file_info *fi)
+ {
++  char     dpath[MAXPATHLEN+1];
+   char     *xPath = LZOlayer_makePath(path);
++  char     *p;
+ 
+   DIR *dp = opendir(xPath);
+   struct dirent *dirp;
++  struct stat sb;
++
++  strcpy(dpath, path);
++  p = dpath + strlen(path);
+   
+   while(dp)
+   {
+-    if ((dirp = readdir(dp)) != NULL)
+-      filler(buf, dirp->d_name, NULL, 0);
++    if ((dirp = readdir(dp)) != NULL) {
++      strcpy(p, dirp->d_name);
++      if (LZOlayer_getattr(dpath, &sb))
++        filler(buf, dirp->d_name, NULL, 0);
++      else
++        filler(buf, dirp->d_name, &sb, 0);
++    }
+     else break;
+   }
+   
+@@ -181,7 +196,7 @@ static int LZOlayer_open(const char *pat
+   filePtr->cache.size    = 0;
+   filePtr->cache.offset  = 0;
+   
+-  fi->fh = (int)filePtr;
++  fi->fh = (uintptr_t)filePtr;
+   
+   return 0;
+ }
+@@ -357,8 +372,18 @@ static int LZOlayer_write(const char *pa
+ static int LZOlayer_mknod(const char *path, mode_t mode, dev_t rdev)
+ {
+   char *xPath = LZOlayer_makePath(path);
+-  int   res   = mknod(xPath, mode, rdev);
+-  
++  int   res;
++
++  if (S_ISREG(mode)) {
++    res = open(xPath, O_WRONLY | O_LARGEFILE | O_CREAT | O_TRUNC, 0700);
++    if (res != -1) {
++      close(res);
++      res = 0;
++    }
++  } else {
++    res = mknod(xPath, mode, rdev);
++  }
++
+   if (res == -1)
+   {
+     res = -errno;
+@@ -373,6 +398,7 @@ static int LZOlayer_mknod(const char *pa
+     close(fd);
+ 	 
+     chown(xPath, fuse_get_context()->uid, fuse_get_context()->gid);
++    chmod(xPath, mode);
+   }
+   free(xPath);
+   
+@@ -425,7 +451,7 @@ static int LZOlayer_truncate(const char 
+     ftruncate(fd, curr_pos);
+     
+     lseek(fd, 0, SEEK_SET);
+-    write(fd, &curr_pos, sizeof(off_t));
++    write(fd, &size, sizeof(off_t));
+     
+     close(fd);
+     free(mem);
+@@ -469,7 +495,7 @@ static int LZOlayer_truncate(const char 
+     ftruncate(fd, curr_pos);
+     
+     lseek(fd, 0, SEEK_SET);
+-    write(fd, &curr_pos, sizeof(off_t));
++    write(fd, &size, sizeof(off_t));
+     
+     close(fd);
+     free(mem);

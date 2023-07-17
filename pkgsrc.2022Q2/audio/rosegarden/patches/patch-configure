@@ -1,0 +1,15 @@
+$NetBSD: patch-configure,v 1.2 2022/01/01 09:20:41 dholland Exp $
+
+Don't use -lmalloc.
+
+--- configure.orig	2014-06-26 17:34:11.000000000 +0000
++++ configure
+@@ -2677,7 +2677,7 @@ else
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-	extra_libs="-lmalloc"
++#	extra_libs="-lmalloc"
+ 	# LDFLAGS="-L/usr/lib -L/usr/X11R6/lib"
+ 
+ 	PETAL_LD=ld

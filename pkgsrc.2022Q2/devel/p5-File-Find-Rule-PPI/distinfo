@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:16:35 nia Exp $
+
+BLAKE2s (File-Find-Rule-PPI-1.06.tar.gz) = 9bcb30226b373b49a3b1f462d321c97e94c1a7b4104c3f11491ecd43eb2a3e9e
+SHA512 (File-Find-Rule-PPI-1.06.tar.gz) = 23fce4b5163b1a78b61e68df64f7367d38d1274237ef5611d7f396f9339621ccf432ddcc5b740850df62583438b8f41eba8f349f7fe151d389f0b9748466a26a
+Size (File-Find-Rule-PPI-1.06.tar.gz) = 28871 bytes

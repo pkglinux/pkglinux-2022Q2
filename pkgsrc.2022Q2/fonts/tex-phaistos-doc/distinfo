@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:28:22 nia Exp $
+
+BLAKE2s (tex-phaistos-18651/phaistos.doc.tar.xz) = c24a60ec0dfef1ddfc6b135c343fca7d567aee01651b93fd0a041ad439fd1242
+SHA512 (tex-phaistos-18651/phaistos.doc.tar.xz) = 92a1330ea13dea2878801e3ea501df8875ba8577d73260fae29ff52cfff5d18a69a4fddb728822bb3e45bf575969ea3fa732c42697d1c36fb8c4d41aec83d82e
+Size (tex-phaistos-18651/phaistos.doc.tar.xz) = 174584 bytes

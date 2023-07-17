@@ -1,0 +1,5 @@
+/patch-configure/1.1/Mon Nov 15 13:20:04 2021//Tpkgsrc-2022Q2
+/patch-lib_sigsegv.c/1.1/Tue May 24 14:43:03 2022//Tpkgsrc-2022Q2
+/patch-lib_strerror_override.c/1.2/Mon Jun 28 18:30:57 2021//Tpkgsrc-2022Q2
+/patch-m4_sparcv8+.m4/1.1/Mon Nov 15 13:20:04 2021//Tpkgsrc-2022Q2
+D

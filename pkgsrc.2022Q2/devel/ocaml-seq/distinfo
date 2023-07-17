@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/05/02 13:53:44 jaapb Exp $
+
+BLAKE2s (seq-0.2.2.tar.gz) = 0c8f8460681b10da4999d01b40001b53df34535e8ebf4186aa65b2ac137478bb
+SHA512 (seq-0.2.2.tar.gz) = cab0eb4cb6d9788b7cbd7acbefefc15689d706c97ff7f75dd97faf3c21e466af4d0ff110541a24729db587e7172b1a30a3c2967e17ec2e49cbd923360052c07c
+Size (seq-0.2.2.tar.gz) = 12240 bytes

@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:15:14 nia Exp $
+
+BLAKE2s (libarena-20080221.tgz) = ee588a0563811513169237ae887b1145a042379504dee830e98abadff7341161
+SHA512 (libarena-20080221.tgz) = 3f6e9cc065c65fb7daacac21618c801840fa1570d72bd3e5ca46c79298c0f051669bcb6bccfb58a2f3fc7549abeccc5b724ec0db4f7fd0111612f1207c5460ed
+Size (libarena-20080221.tgz) = 22865 bytes
+SHA1 (patch-aa) = 7bfca72eedc7a3bd7b36acb718e57d5347762aa8
+SHA1 (patch-ab) = 56be16d641097e1ae6149e10aefb22837639dff3

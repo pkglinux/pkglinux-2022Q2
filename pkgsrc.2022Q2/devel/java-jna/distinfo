@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.3 2021/10/26 10:15:06 nia Exp $
+
+BLAKE2s (jna-5.2.0.tar.gz) = d15cdc2294a6097be7f5f73ec34e4695c9bb87e9ca023de993dbf982dddadd4f
+SHA512 (jna-5.2.0.tar.gz) = ea96228730c2285fca8552ca7269fa91519da9b058f19ea2277061728d126afc218770f38d41d4536af7e801165754d4a5be42d11d40a02895bac49192efed56
+Size (jna-5.2.0.tar.gz) = 77133648 bytes
+SHA1 (patch-build.xml) = db93a853ac053e679bd6a4f16e960a820995c9b2
+SHA1 (patch-native-libffi-configure.ac) = c4dc6f120758d1a79a9019dea8ab5ea5ecc20528

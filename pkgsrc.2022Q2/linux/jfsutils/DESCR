@@ -1,0 +1,26 @@
+
+The journaled file system (JFS) and the enhanced journaled file system (JFS2) are built into the base operating system. Both file system types link their file and directory data to the structure used by the AIX® Logical Volume Manager for storage and retrieval.
+
+A difference is that JFS2 is designed to accommodate a 64-bit kernel and larger files.
+
+IBM's Journaled File System (JFS) for Linux
+JFS Utilities
+Version 1.1.15, March 4, 2011
+
+The NEWS file contains a brief overview of user-visible changes to the
+utilities.
+
+The ChangeLog file contains a list of specific changes to the JFS utilities.
+
+INSTALLATION
+------------
+There are 3 methods to install the JFS utilities:
+
+Note: The utilities require the uuid.h file. Most Linux Distributions
+ship this file in the e2fsprogs-devel package, please install the
+e2fsprogs-devel package before you build the utilities.
+
+A. Installation - RPM
+---------------------
+1)  You can use the RPM distribution to build the JFS utilities:
+...

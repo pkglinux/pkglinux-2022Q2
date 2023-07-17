@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/04/24 15:30:43 tnn Exp $
+
+BLAKE2s (OTF-source-sans-3.046R.zip) = 8ecf80bed2c05d93f8cc20abb025728b3e1ec5f5d2de1c3491c4259fb80386f3
+SHA512 (OTF-source-sans-3.046R.zip) = 13f369ab4ca1491a48d206f534f34ee6a42e62ee82caedd70bff7da35ebd7a9a5382a1fb73910363aa9fc4faa7d0becec717f7b94c4d1fffb67a3f6266330f8c
+Size (OTF-source-sans-3.046R.zip) = 2066530 bytes

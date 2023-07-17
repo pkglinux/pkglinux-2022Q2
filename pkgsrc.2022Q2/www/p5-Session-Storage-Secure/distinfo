@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/03/11 12:36:08 wen Exp $
+
+BLAKE2s (Session-Storage-Secure-1.000.tar.gz) = ad56e6f9e561fc258f5737d034785963b03587cef9c383070a9255b5d565d5cb
+SHA512 (Session-Storage-Secure-1.000.tar.gz) = ea9cbb985f16968bb195769c9eb238a45840b32c6419e41715edae5a826b94827686d20e6525807fecd43388778f46dc7d660bd64207ed1e4f552d09514cd800
+Size (Session-Storage-Secure-1.000.tar.gz) = 26371 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:45:17 nia Exp $
+
+BLAKE2s (hymns-1.2.tar.bz2) = 69560c3fb873e2982819bedd99a462d994397fabde549cb74dcc14c03cb8641e
+SHA512 (hymns-1.2.tar.bz2) = c66416d894d84a6dd16e39e282e5afcc11f6dccdaa832989db9253276d6e1d69b28942729cb1ac574f6289d1e1d41434525ad59f0b5f7bbe94e1750f551f78a3
+Size (hymns-1.2.tar.bz2) = 612060 bytes

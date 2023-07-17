@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:59:02 nia Exp $
+
+BLAKE2s (easymenu-0.7.2.tar.gz) = cab84668a9e1eed725fddaf84115981284c0e4194a095b1b61aba983f669e219
+SHA512 (easymenu-0.7.2.tar.gz) = 55e3521b665f548e619189626c9e949bb672cb13d45a9b0fb83a865efc1c17fbf1892fdc40a7a30de183464079f7b85048e29f1124be2b332ac1ba5e2f27e211
+Size (easymenu-0.7.2.tar.gz) = 23505 bytes
+SHA1 (patch-aa) = 5cb1b7d264766f6c89451170f357cddb1b8cbcf9
+SHA1 (patch-ab) = 8bac81e6138eefbe093027abb6dfbd2255ff03d9
+SHA1 (patch-ac) = cc883f310d513ed94903c6cc36a2cc90d019a350

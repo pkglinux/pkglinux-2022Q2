@@ -1,0 +1,22 @@
+
+DESCRIPTION
+
+tardiff and tarpatch are tools to compute the differences between binary files,
+and to reconstruct files from a base file and a list of differences. They work
+with a block size of 512 bytes, which makes them suitable for computing
+differences of tar files, which is also their intended use.
+
+
+DEPENDENCIES
+
+  - zlib 1.2.3 (or compatible)
+  - OpenSSL 0.9.8 (or compatible)
+
+
+EXAMPLE
+
+Suppose I back-up my files in a tar archive every week. After three weeks, I
+have three files:
+
+    files-1.tar
+...

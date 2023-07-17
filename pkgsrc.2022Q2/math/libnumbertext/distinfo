@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2022/04/20 20:11:35 wiz Exp $
+
+BLAKE2s (libnumbertext-1.0.10.tar.xz) = fca3c2280f5a3de11a642715a3b91a1b93bdd0f75a49e87f0b2a839ec3b0dd04
+SHA512 (libnumbertext-1.0.10.tar.xz) = 6cb1b09b43c77f9fe1928d72deabdd06cbb3f7185823fcf045855b26ea6e0e017b2eba9dcd4725161012ed6d37a416c98b838145aa418bd0bd79ce52bf456417
+Size (libnumbertext-1.0.10.tar.xz) = 292852 bytes

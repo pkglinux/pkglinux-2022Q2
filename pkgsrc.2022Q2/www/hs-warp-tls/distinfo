@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/12 07:42:52 pho Exp $
+
+BLAKE2s (warp-tls-3.3.2.tar.gz) = c01335b04de4960c4253791435769c5509180ec2647273a6eebefbf70245e1c3
+SHA512 (warp-tls-3.3.2.tar.gz) = 4ac7c2c4161502c4167ee5c941c6147146f453467c77fb84da8bdd2810719b099b908b67c4bcce248d6bc0d26657f91f1cc6812cedd0497516a7594b243fb783
+Size (warp-tls-3.3.2.tar.gz) = 8888 bytes

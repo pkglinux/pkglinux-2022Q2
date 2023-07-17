@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.8 2021/11/30 10:34:58 pho Exp $
+
+BLAKE2s (mpdas-0.4.5.tar.gz) = 97c909ed6d2d2d855d6c5b1fbdeb2c115e6d671dc77c94e4db7ad6bed3a3f365
+SHA512 (mpdas-0.4.5.tar.gz) = 18737f20b408a38424c46a611a1184e8e9ab78d1c3bddddc37423c8437007b87c343dfe03fd989c9c54dcc532ed1f567ba854d2ba8e12f344399267dc83daaab
+Size (mpdas-0.4.5.tar.gz) = 19108 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.27 2021/10/31 08:44:00 adam Exp $
+
+BLAKE2s (uncompyle6-3.8.0.tar.gz) = 245e12f4d79bd087e1e1829d2a753fa66466809bf19b8fcc4b26407d7140892e
+SHA512 (uncompyle6-3.8.0.tar.gz) = 346794ef94988e4a109e35a0b767ccfe65d67df9c284903203d2b3aa70b0c8377ce59b12ff9f0ba2188c76597f6045e46e966e74239c1bbbf49b92287d128045
+Size (uncompyle6-3.8.0.tar.gz) = 2453838 bytes

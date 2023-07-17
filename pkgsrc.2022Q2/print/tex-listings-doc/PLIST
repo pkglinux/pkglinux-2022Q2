@@ -1,0 +1,5 @@
+@comment $NetBSD: PLIST,v 1.4 2019/05/11 22:10:51 markd Exp $
+share/texmf-dist/doc/latex/listings/README
+share/texmf-dist/doc/latex/listings/listings-devel.pdf
+share/texmf-dist/doc/latex/listings/listings.pdf
+share/texmf-dist/doc/latex/listings/lstdrvrs.pdf

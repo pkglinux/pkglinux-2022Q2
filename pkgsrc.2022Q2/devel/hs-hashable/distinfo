@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2022/02/11 13:00:37 pho Exp $
+
+BLAKE2s (hashable-1.4.0.2.tar.gz) = fdebfb9fb7af543a961c0ae986f581b5f03f2958eb7d3fdb31415a5d716add5b
+SHA512 (hashable-1.4.0.2.tar.gz) = a8cc2b7cafa8f18d9a74490d2dff7edf12901b7c40ca0c1881af579695135c1ca7629347d34d0c7dc662078d7669d5d6234bd889c1f77f344297942243fe7dda
+Size (hashable-1.4.0.2.tar.gz) = 25528 bytes

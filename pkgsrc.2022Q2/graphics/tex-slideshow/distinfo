@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:47:16 nia Exp $
+
+BLAKE2s (tex-slideshow-15878/slideshow.tar.xz) = d12d1a924a6ca296bed4c9b58d318a62ae93e39958b656bc2f5509cde2877d7b
+SHA512 (tex-slideshow-15878/slideshow.tar.xz) = fd5deb23220d332f9687bfcc80277014817920172cf66c3b20f5d8ee6a96ea7bb25d6298105b9161fdae5028ada79140e93af1fed78d224e05239509684d06a9
+Size (tex-slideshow-15878/slideshow.tar.xz) = 8544 bytes

@@ -1,0 +1,22 @@
+@comment $NetBSD: PLIST,v 1.4 2019/01/13 18:22:10 adam Exp $
+include/ccrtp/CryptoContext.h
+include/ccrtp/CryptoContextCtrl.h
+include/ccrtp/base.h
+include/ccrtp/channel.h
+include/ccrtp/cqueue.h
+include/ccrtp/ext.h
+include/ccrtp/formats.h
+include/ccrtp/ioqueue.h
+include/ccrtp/iqueue.h
+include/ccrtp/oqueue.h
+include/ccrtp/pool.h
+include/ccrtp/queuebase.h
+include/ccrtp/rtcppkt.h
+include/ccrtp/rtp.h
+include/ccrtp/rtppkt.h
+include/ccrtp/sources.h
+info/ccrtp.info
+lib/libccrtp.so
+lib/libccrtp.so.${PKGVERSION}
+lib/libccrtp.so.2
+lib/pkgconfig/libccrtp.pc

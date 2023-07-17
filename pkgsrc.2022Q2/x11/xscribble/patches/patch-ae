@@ -1,0 +1,31 @@
+$NetBSD: patch-ae,v 1.3 2020/05/04 14:09:23 nia Exp $
+
+- Use standard headers.
+- Don't declare own malloc or strcpy.
+
+--- lirec/util.c.orig	2000-06-12 22:20:14.000000000 +0000
++++ lirec/util.c
+@@ -22,6 +22,7 @@ the full agreement.
+ #include <setjmp.h>
+ /* ari -- for strlen */
+ #include <string.h>
++#include <stdlib.h>
+ 
+ extern char* li_err_msg;
+ static char err_msg[BUFSIZ];
+@@ -34,7 +35,6 @@ char *
+ myalloc(nitems, itemsize, typename)
+ char *typename;
+ {
+-	char	*malloc();
+ 	register unsigned int bytes = nitems * itemsize;
+ 	register char *p = malloc(bytes);
+ 	if(p == NULL)
+@@ -52,7 +52,6 @@ scopy(s)
+ char *s;
+ {
+ 	register char *p = allocate(strlen(s) + 1, char);
+-	char *strcpy();
+ 	(void) strcpy(p, s);
+ 	return p;
+ }

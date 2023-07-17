@@ -1,0 +1,22 @@
+
+The cpufrequtils package (homepage: 
+http://www.kernel.org/pub/linux/utils/kernel/cpufreq/cpufrequtils.html ) 
+consists of the following elements:
+
+
+libcpufreq
+----------
+
+"libcpufreq" is a library which offers a unified access method for userspace
+tools and programs to the cpufreq core and drivers in the Linux kernel. This
+allows for code reduction in userspace tools, a clean implementation of
+the interaction to the cpufreq core, and support for both the sysfs and proc
+interfaces [depending on configuration, see below].
+
+
+utils
+-----
+
+"cpufreq-info" determines current cpufreq settings, and provides useful
+debug information to users and bug-hunters.
+...

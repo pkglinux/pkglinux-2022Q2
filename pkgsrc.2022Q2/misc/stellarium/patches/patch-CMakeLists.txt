@@ -1,0 +1,58 @@
+$NetBSD: patch-CMakeLists.txt,v 1.5 2022/03/28 20:10:38 adam Exp $
+
+Do not use ccache.
+Do not use application bundle on Darwin.
+
+--- CMakeLists.txt.orig	2022-03-27 08:42:59.000000000 +0000
++++ CMakeLists.txt
+@@ -159,14 +159,6 @@ IF(OPENGL_DEBUG_LOGGING)
+      ADD_DEFINITIONS(-DQ_ENABLE_OPENGL_FUNCTIONS_DEBUG)
+ ENDIF()
+ 
+-# Use ccache if possible
+-IF(NOT WIN32)
+-     FIND_PROGRAM(CCACHE_PROGRAM ccache)
+-     IF(CCACHE_PROGRAM)
+-          MESSAGE(STATUS "Found ccache ${CCACHE_PROGRAM}")
+-          SET_PROPERTY(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
+-     ENDIF()
+-ENDIF()
+ 
+ # Add gprof build options if necessary.  Note gmon.out will be created in working directory when Stellarium is executed
+ IF(${CMAKE_BUILD_TYPE} MATCHES "GProf")
+@@ -195,7 +187,7 @@ IF(${CMAKE_BUILD_TYPE} MATCHES "UBSan")
+      SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=undefined -g")
+ ENDIF()
+ 
+-IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++IF(FALSE)
+      SET(APPLE 1)
+      SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+      # share data location:
+@@ -297,7 +289,7 @@ IF("${CMAKE_CXX_COMPILER_ID}" MATCHES "C
+      IF(${CMAKE_CXX_COMPILER_VERSION} VERSION_GREATER 3.3)
+           SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-const-variable -Wno-unused-result")
+      ENDIF()
+-     IF(APPLE)
++     IF(FALSE)
+           SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-common -Wall -Wextra -Wno-unused-parameter")
+           SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-common -Wall -Wextra -Wno-unknown-warning-option")
+           # macOS architectures: x86_64 or arm64 (default: x86_64)
+@@ -644,7 +636,7 @@ ENDIF()
+ 
+ ########### Set some global variables ###########
+ IF(UNIX AND NOT WIN32)
+-     IF(APPLE)
++     IF(FALSE)
+           SET(CMAKE_INSTALL_PREFIX "${PROJECT_BINARY_DIR}/Stellarium.app/Contents")
+      ELSE()
+           ADD_DEFINITIONS(-DINSTALL_DATADIR="${CMAKE_INSTALL_PREFIX}/${SDATALOC}")          
+@@ -783,7 +775,7 @@ IF(GENERATE_PACKAGE_TARGET)
+ ENDIF()
+ 
+ ########### OS X Bundling ###############
+-IF(APPLE)
++IF(FALSE)
+      GET_FILENAME_COMPONENT(_qt_bin_dir "${QMAKE_LOCATION}" DIRECTORY)
+      FIND_PROGRAM(MACDEPLOYQT_COMMAND macdeployqt HINTS "${_qt_bin_dir}")
+ 

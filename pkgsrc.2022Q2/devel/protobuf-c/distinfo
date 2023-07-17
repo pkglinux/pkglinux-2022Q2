@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.11 2022/04/13 10:48:15 wiz Exp $
+
+BLAKE2s (protobuf-c-1.4.0.tar.gz) = 222be8d71985935b153903164849c755b2063755dfab8ac8f4f99224a8e26ded
+SHA512 (protobuf-c-1.4.0.tar.gz) = 6a2e5031b85b5986e863661437dea002eba217257a50a27db88d29fa1a3db1014ed6ec7c21d89df700d181b18e169d1037146cb6475c10cd5a068a91e522e3c3
+Size (protobuf-c-1.4.0.tar.gz) = 505251 bytes

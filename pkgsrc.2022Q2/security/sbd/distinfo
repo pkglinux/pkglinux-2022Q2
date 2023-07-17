@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:18:00 nia Exp $
+
+BLAKE2s (sbd-0.5.tar.gz) = 6a0b43de84758ffa65a27bdc79815e1ca54e99ff07f8c741b4251898b65d611b
+SHA512 (sbd-0.5.tar.gz) = dc87216f968bf0f449c34dc84ad9ab77c2cdbf76467973ba8446323f018d09f011cc0c168b58ff91f557a538bc5b60c215190be1adcec8d1a0c8deb55be570f3
+Size (sbd-0.5.tar.gz) = 25750 bytes
+SHA1 (patch-aa) = e516c2a43d33e3e4a0c808f38a128bce8b96fedf
+SHA1 (patch-ab) = afa9111e000d25dd05189554c2d97991d799ed5c

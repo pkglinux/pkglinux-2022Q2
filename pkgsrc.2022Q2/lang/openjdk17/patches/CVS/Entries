@@ -1,0 +1,22 @@
+/patch-make_autoconf_buildjdk-spec.gmk.in/1.1/Wed May 25 06:05:34 2022//Tpkgsrc-2022Q2
+/patch-make_autoconf_flags-cflags.m4/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-make_autoconf_hotspot.m4/1.1/Wed May 25 06:05:34 2022//Tpkgsrc-2022Q2
+/patch-make_autoconf_lib-alsa.m4/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-make_autoconf_lib-bundled.m4/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-make_autoconf_lib-freetype.m4/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-make_autoconf_lib-x11.m4/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-make_common_NativeCompilation.gmk/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-make_data_fontconfig_bsd.fontconfig.properties/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-make_lib_Awt2dLibraries.gmk/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-src_hotspot_os__cpu_bsd__aarch64_bytes__bsd__aarch64.hpp/1.1/Sat May 14 15:23:02 2022//Tpkgsrc-2022Q2
+/patch-src_hotspot_os__cpu_bsd__aarch64_os__bsd__aarch64.cpp/1.1/Sat May 14 15:23:02 2022//Tpkgsrc-2022Q2
+/patch-src_hotspot_os_bsd_os__bsd.cpp/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-src_hotspot_os_bsd_os__perf__bsd.cpp/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-src_hotspot_os_posix_os__posix.cpp/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-src_hotspot_os_posix_signals__posix.cpp/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-src_java.base_unix_native_libnio_ch_Net.c/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-src_java.desktop_unix_native_common_awt_fontpath.c/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-src_jdk.jdwp.agent_share_native_libdt__socket_socketTransport.c/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-src_jdk.management_bsd_native_libmanagement__ext_UnixOperatingSystem.c/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+/patch-test_micro_org_openjdk_bench_java_nio_genBuffers.sh/1.1/Fri May 13 14:24:19 2022//Tpkgsrc-2022Q2
+D

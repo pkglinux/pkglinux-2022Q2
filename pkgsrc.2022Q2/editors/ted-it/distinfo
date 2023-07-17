@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2022/05/19 13:32:49 nia Exp $
+
+BLAKE2s (ted_it_IT-2.23-1.noarch.rpm) = da41f8170e6dbb03446b06e58e18f43ea76c5f22709bc29b7555f0720b613ee0
+SHA512 (ted_it_IT-2.23-1.noarch.rpm) = d1feec5d06b0ce4a28a5b2d7e2a726b0e7d4b0d3b4dc664bbb321ffaa9f1c6a4b3e56db9ee5b281f8609cd636defbaa2ef61d560902dcb34617c3d43e22fed62
+Size (ted_it_IT-2.23-1.noarch.rpm) = 583806 bytes

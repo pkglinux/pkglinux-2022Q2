@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/04/02 10:42:39 wen Exp $
+
+BLAKE2s (Locale-Maketext-Gettext-1.32.tar.gz) = 37f93bd8fc04742a34c1b1813ef8f0577704e2454f811efe6d29fdefa3516bbe
+SHA512 (Locale-Maketext-Gettext-1.32.tar.gz) = a366b7e11a6f5fc219f7fec66d020b1948cd318668c0be4e26fe0058fea66447bd9e8c078ba245109f7fe0fe5bfb682fcd1be979366dd6123e7216e41bb09833
+Size (Locale-Maketext-Gettext-1.32.tar.gz) = 55139 bytes

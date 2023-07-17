@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:55:58 nia Exp $
+
+BLAKE2s (pear/Numbers_Words-0.18.2.tgz) = 1cb0bc809f00870365d803c962e091d4ddab5c1502d2d402818a39956ef0b2ea
+SHA512 (pear/Numbers_Words-0.18.2.tgz) = cc719ea47e7da365959a02106d80aabe2ed079064128af1a61c0c53ed44726e7169de5c9d8dd28cbf917e025841e9aa07b4b8c9313a788b0a92eab32a4edb37c
+Size (pear/Numbers_Words-0.18.2.tgz) = 73113 bytes

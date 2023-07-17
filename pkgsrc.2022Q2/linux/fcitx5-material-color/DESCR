@@ -1,0 +1,22 @@
+
+# Material-Color
+
+一款使用 Material Design 配色的 fcitx5 皮肤，旨在模仿 Windows 10 自带输入法的 UI。
+
+# 使用方式
+
+## 安装
+
+### 发行版包管理器
+
++ **Arch Linux**: `pacman -S fcitx5-material-color`
++ **[Debian](https://tracker.debian.org/pkg/fcitx5-material-color)**: `apt install fcitx5-material-color`
+
+然后修改配置文件 `~/.config/fcitx5/conf/classicui.conf`：
+
+```
+# 垂直候选列表
+Vertical Candidate List=False
+
+# 按屏幕 DPI 使用
+...

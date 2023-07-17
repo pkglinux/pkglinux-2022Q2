@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.20 2021/10/26 11:01:00 nia Exp $
+
+BLAKE2s (DVDStyler-3.1.tar.bz2) = 6ef3a1b2aeeb43f77c81ac32f8db84c2caf01b7b32005fbcfbef806720b0f9e5
+SHA512 (DVDStyler-3.1.tar.bz2) = 3cae65480eba490bc945d9862f1c86f32fb01e14c6e773b0c707ad3257f84eb56d155bcde84c84729c6cd038e02355b679d7a4fd9db448ccb02e6a96fb6e123c
+Size (DVDStyler-3.1.tar.bz2) = 8990074 bytes
+SHA1 (patch-aa) = 2629351931c11d2a3bf910fc7a3eed34486528a4
+SHA1 (patch-locale_Makefile.in) = 5d5a4c6cd0baa197cabf3c630497fc8396a009ef

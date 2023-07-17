@@ -1,0 +1,22 @@
+@comment $NetBSD: PLIST,v 1.5 2022/05/24 17:55:23 jaapb Exp $
+${OCAML_SITELIB}/zarith/META
+${OCAML_SITELIB}/zarith/big_int_Z.cmi
+${OCAML_SITELIB}/zarith/big_int_Z.cmti
+${PLIST.ocaml-opt}${OCAML_SITELIB}/zarith/big_int_Z.cmx
+${OCAML_SITELIB}/zarith/big_int_Z.mli
+${OCAML_SITELIB}/zarith/dllzarith.so
+${OCAML_SITELIB}/zarith/libzarith.a
+${OCAML_SITELIB}/zarith/q.cmi
+${OCAML_SITELIB}/zarith/q.cmti
+${PLIST.ocaml-opt}${OCAML_SITELIB}/zarith/q.cmx
+${OCAML_SITELIB}/zarith/q.mli
+${OCAML_SITELIB}/zarith/z.cmi
+${OCAML_SITELIB}/zarith/z.cmti
+${PLIST.ocaml-opt}${OCAML_SITELIB}/zarith/z.cmx
+${OCAML_SITELIB}/zarith/z.mli
+${PLIST.ocaml-opt}${OCAML_SITELIB}/zarith/zarith.a
+${OCAML_SITELIB}/zarith/zarith.cma
+${PLIST.ocaml-opt}${OCAML_SITELIB}/zarith/zarith.cmxa
+${PLIST.ocaml-opt}${OCAML_SITELIB}/zarith/zarith.cmxs
+${OCAML_SITELIB}/zarith/zarith.h
+${OCAML_SITELIB}/zarith/zarith_top.cma

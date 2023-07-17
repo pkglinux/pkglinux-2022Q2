@@ -1,0 +1,12 @@
+$NetBSD: patch-aa,v 1.5 2018/03/17 09:09:12 tnn Exp $
+
+--- src/gettext.h.orig	2017-04-15 09:30:57.000000000 +0000
++++ src/gettext.h
+@@ -23,6 +23,7 @@
+ 
+ /* Get declarations of GNU message catalog functions.  */
+ # include <libintl.h>
++# include <locale.h>
+ 
+ /* You can set the DEFAULT_TEXT_DOMAIN macro to specify the domain used by
+    the gettext() and ngettext() macros.  This is an alternative to calling

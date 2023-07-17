@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.14 2022/04/25 03:31:20 markd Exp $
+
+BLAKE2s (kbookmarks-5.93.0.tar.xz) = 4d8b802a737059a7ce28f80d1228d90c3787ea47d00a6893c912cbf49a15f394
+SHA512 (kbookmarks-5.93.0.tar.xz) = e2c925a0ebceeb719974e45701cbfdfbb5767efff5bd9816e75dee8d60db39fca6e3a2e5140620910dfcfb3d09180c149e440cfab499f449b55f8a53abeed871
+Size (kbookmarks-5.93.0.tar.xz) = 130152 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/06/13 09:10:05 jaapb Exp $
+
+BLAKE2s (psq-0.2.0.tar.gz) = bcea5c19acb6bf72d1c895afd9fb224e9f9b9c3050c2947cc9cbd6a1aec98063
+SHA512 (psq-0.2.0.tar.gz) = 634aa56821fc5af7da86542c1914bd5e7ee2c09d523dd332304752202f87fe2fe869a03f4e858e0c1aa7fe69262fa940ddb90a63dfc495991319fe344c2fa4d3
+Size (psq-0.2.0.tar.gz) = 11555 bytes

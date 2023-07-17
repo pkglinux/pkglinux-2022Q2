@@ -1,0 +1,10 @@
+$NetBSD: patch-ab,v 1.5 2019/09/15 12:51:29 mef Exp $
+
+fix pathb
+
+--- htmllint.caller.orig	2019-09-15 21:06:16.844952961 +0900
++++ htmllint.caller	2019-09-15 21:06:16.845003269 +0900
+@@ -0,0 +1,3 @@
++#!/bin/sh
++
++@PREFIX@/share/httpd/htdocs/htmllint/htmllint $*

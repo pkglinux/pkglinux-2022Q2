@@ -1,0 +1,15 @@
+@comment $NetBSD: PLIST,v 1.3 2020/10/31 19:38:21 wiz Exp $
+bin/bd_info
+bin/bd_list_titles
+bin/bd_splice
+include/libbluray/bluray-version.h
+include/libbluray/bluray.h
+include/libbluray/clpi_data.h
+include/libbluray/filesystem.h
+include/libbluray/keys.h
+include/libbluray/log_control.h
+include/libbluray/meta_data.h
+include/libbluray/overlay.h
+include/libbluray/player_settings.h
+lib/libbluray.la
+lib/pkgconfig/libbluray.pc

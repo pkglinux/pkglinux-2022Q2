@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2022/04/08 21:13:55 markd Exp $
+
+BLAKE2s (enotez.r61490.tar.xz) = 35e4d76aa4306ac07722f632d32b531bd865425698a8a7b41610d95ffe0db176
+SHA512 (enotez.r61490.tar.xz) = 0f292fbfa3ad395857bf04c50817376152765c1511bc1b922fb6612033a0924a416b83b38e15a36ee792ec5ba351614e93cf6b70c6b2eb8cf78ca74cce6438ec
+Size (enotez.r61490.tar.xz) = 7368 bytes

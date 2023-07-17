@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/11 13:11:33 pho Exp $
+
+BLAKE2s (iproute-1.7.12.tar.gz) = b554aa3db5c15ff80fc272118393e9ac2782ef853643725ae6f5059535bb1bf4
+SHA512 (iproute-1.7.12.tar.gz) = 45d60e98e0a18929472d3de8850a257e21a638b3052fc31afc960c0ea755092bf44e44a1b0fae175582c1bcbda6029af028e84ba1498fe6491d925173cf310b7
+Size (iproute-1.7.12.tar.gz) = 17864 bytes

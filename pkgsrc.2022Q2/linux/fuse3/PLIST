@@ -1,0 +1,18 @@
+@comment $NetBSD$
+bin/fusermount3
+etc/fuse.conf
+include/fuse3/cuse_lowlevel.h
+include/fuse3/fuse.h
+include/fuse3/fuse_common.h
+include/fuse3/fuse_log.h
+include/fuse3/fuse_lowlevel.h
+include/fuse3/fuse_opt.h
+lib/libfuse3.so
+lib/libfuse3.so.3
+lib/libfuse3.so.${PKGVERSION}
+lib/pkgconfig/fuse.pc
+lib/pkgconfig/fuse3.pc
+lib/udev/rules.d/99-fuse3.rules
+man/man1/fusermount3.1
+man/man8/mount.fuse3.8
+sbin/mount.fuse3

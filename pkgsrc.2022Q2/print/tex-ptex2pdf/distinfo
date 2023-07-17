@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:14:28 nia Exp $
+
+BLAKE2s (ptex2pdf.r58632.tar.xz) = 1468c21be71270963c62105d8d41a2b1a3570502199df90ef3d49c691fca8f49
+SHA512 (ptex2pdf.r58632.tar.xz) = fce87deb2ee9477d81d9e7b69c2f934f9918c8a299d3e58ae8e9ba95121eaefedb935c1674ecb8bf1a081f6a21f7359e8cd158b0cfbc7faf234bd33925669939
+Size (ptex2pdf.r58632.tar.xz) = 7844 bytes

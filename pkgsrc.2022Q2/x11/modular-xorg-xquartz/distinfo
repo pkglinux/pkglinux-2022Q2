@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.6 2022/05/12 19:39:00 tnn Exp $
+
+BLAKE2s (modular-xorg-xquartz-1.20.99.1.20210408-199f278a1b7570b1cb6e24b8bedb4d721b3c9938.tar.gz) = bbc49d4841aadc00b5a286ae861e2624e55a123094c32d21af2bc2cd196ce566
+SHA512 (modular-xorg-xquartz-1.20.99.1.20210408-199f278a1b7570b1cb6e24b8bedb4d721b3c9938.tar.gz) = 2c543487de54ef94d528efca3263d0a3fd2fc95e20a2d8ae4c7eb4f8adc52f16b072d56024a8ad072bf703c9939bb08e45368c5c7fdc7d27662ba95b4eb9ecb2
+Size (modular-xorg-xquartz-1.20.99.1.20210408-199f278a1b7570b1cb6e24b8bedb4d721b3c9938.tar.gz) = 5849819 bytes

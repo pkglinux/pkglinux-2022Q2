@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/14 01:45:49 markd Exp $
+
+BLAKE2s (jfmutil.r60987.tar.xz) = 20f00d07e55d35093d769c881321a7c544807eb9f17ed98cb7d158ddb1c788e0
+SHA512 (jfmutil.r60987.tar.xz) = 11f0ee88997b197ccb4cf249a92f90ecd08227b0086861b59752c2e17fafb1e1fec7a1cfc701d5df91497d4cb9e61d13f892d776ded07c34d7dab09a2a65eed4
+Size (jfmutil.r60987.tar.xz) = 25788 bytes

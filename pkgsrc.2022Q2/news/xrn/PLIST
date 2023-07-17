@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.5 2018/11/10 20:03:40 wiz Exp $
+bin/xrn
+lib/X11/app-defaults/XRn
+man/man1/xrn.1
+share/doc/xrn/COMMON-PROBLMS
+share/doc/xrn/COPYRIGHT
+share/doc/xrn/CREDITS

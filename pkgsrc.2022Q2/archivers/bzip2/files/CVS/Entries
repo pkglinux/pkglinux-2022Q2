@@ -1,0 +1,23 @@
+/CHANGES/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/LICENSE/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/Makefile/1.4/Fri Sep 20 04:05:13 2013//Tpkgsrc-2022Q2
+/README/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/blocksort.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzdiff/1.2/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzdiff.1/1.1.1.1/Wed Sep 22 14:32:17 2010//Tpkgsrc-2022Q2
+/bzgrep/1.2/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzgrep.1/1.1.1.1/Wed Sep 22 14:32:17 2010//Tpkgsrc-2022Q2
+/bzip2.1/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzip2.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzip2recover.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzlib.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzlib.h/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzlib_private.h/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/bzmore/1.1.1.1/Thu Aug  2 13:01:34 2007//Tpkgsrc-2022Q2
+/bzmore.1/1.1.1.1/Thu Aug  2 13:01:34 2007//Tpkgsrc-2022Q2
+/compress.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/crctable.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/decompress.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/huffman.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+/randtable.c/1.4/Sun Jul 21 11:51:24 2019//Tpkgsrc-2022Q2
+D

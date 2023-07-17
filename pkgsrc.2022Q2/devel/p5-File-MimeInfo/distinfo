@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.16 2022/04/02 02:23:42 wen Exp $
+
+BLAKE2s (File-MimeInfo-0.32.tar.gz) = 79dda7ad4d425dba5efee0dddf5feafab7ede17f86701b3ef441e7213d232eb1
+SHA512 (File-MimeInfo-0.32.tar.gz) = c8cdad74d732321471188c96a5d03725bc51c10655fee7c0e400da6a7215fee8925be95cb9114e748747fb03c3dd33f5b4d1ca0641bdf050339537a222ea6009
+Size (File-MimeInfo-0.32.tar.gz) = 37576 bytes

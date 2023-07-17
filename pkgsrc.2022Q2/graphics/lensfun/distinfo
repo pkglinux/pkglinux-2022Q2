@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.19 2022/05/30 16:00:14 adam Exp $
+
+BLAKE2s (lensfun-0.3.3.tar.gz) = 7509b00ef9682f062c40419988b0f6647bbfeeaa8fbb30a893b53c1b497b0829
+SHA512 (lensfun-0.3.3.tar.gz) = 2d913e3d121ac069f4cb7acb3f09c9cf11c5d0069e743500631bd4b6007a1b19ebccf871a4ac8cfc2797a03066f8a678ea9d70feba0f7d6a05c28cef61f7d9cf
+Size (lensfun-0.3.3.tar.gz) = 992432 bytes
+SHA1 (patch-apps_CMakeLists.txt) = fddae733ee78ed07b1151bd36bf4c2011e503c0a

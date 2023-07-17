@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.15 2022/05/15 04:40:03 markd Exp $
+
+BLAKE2s (siunitx.r63218.tar.xz) = 98ba75ca963739105bb455188545953126b800e20354d18b0acbd287c413388b
+SHA512 (siunitx.r63218.tar.xz) = d4e0d64a3342da458e18d61b686f54b314080f7ad050ef12221757fbd7ec81f92dc8df7ef7e91c81a790e7d4cd9efc1480bf05a72c7966eb294f85b4d00ab6b6
+Size (siunitx.r63218.tar.xz) = 65468 bytes

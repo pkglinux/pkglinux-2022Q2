@@ -1,0 +1,50 @@
+$NetBSD: patch-ag,v 1.7 2022/05/05 13:37:07 nia Exp $
+
+--- etc/Makefile.in.orig	2018-09-18 18:51:17.000000000 +0000
++++ etc/Makefile.in
+@@ -70,9 +70,9 @@ xferfaxlog:
+ config.fax:
+ 	${ECHO} on >config.fax
+ lockname: ${SRCDIR}/lockname.c
+-	${CCF} -o $@ ${SRCDIR}/lockname.c
++	${CCF} -o $@ ${SRCDIR}/lockname.c ${LDFLAGS}
+ ondelay: ${SRCDIR}/ondelay.c
+-	${CCF} -o $@ ${SRCDIR}/ondelay.c
++	${CCF} -o $@ ${SRCDIR}/ondelay.c ${LDFLAGS}
+ 
+ PUTSERVER	= ${INSTALL} -idb ${PRODUCT}.sw.server
+ PUTSAMPLE	= ${PUTSERVER} -u ${FAXUSER} -g ${FAXGROUP} \
+@@ -86,25 +86,25 @@ install: default
+ 		-src ${SRCDIR}/faxsetup.$$i -O faxsetup.$$i; \
+ 	done
+ 	${PUTSERVER} -F ${SBIN} -m 755 -src probemodem.sh -O probemodem
+-	${PUTSAMPLE} -F ${SPOOL}/etc -m 644 -o xferfaxlog
+-	${PUTSAMPLE} -F ${SPOOL}/etc -m 600 -o hosts.hfaxd
++	${PUTSAMPLE} -F ${PREFIX}/share/examples/hylafax -m 644 -o xferfaxlog
++	${PUTSAMPLE} -F ${PREFIX}/share/examples/hylafax -m 600 -o hosts.hfaxd
+ 	for i in ${DIALRULES}; do \
+-	    ${PUTSERVER} -F ${SPOOL}/etc -m 444 -src ${SRCDIR}/$$i \
++	    ${PUTSERVER} -F ${PREFIX}/share/examples/hylafax -m 444 -src ${SRCDIR}/$$i \
+ 		-idb "config(update)" -O $$i; \
+ 	done
+ 	${PUTSERVER} -F ${LIBEXEC} -m 755 -O lockname ondelay
+-	${PUTSAMPLE} -F ${SPOOL}/etc -m 644 -idb nostrip \
++	${PUTSAMPLE} -F ${PREFIX}/share/examples/hylafax -m 644 -idb nostrip \
+ 	    -src ${SRCDIR}/lutRS18.pcf -O lutRS18.pcf
+ 	${INSTALL} -u ${FAXUSER} -g ${FAXGROUP} -m ${DIRMODE} \
+-	    -idb hylafax.sw.server -dir -F ${SPOOL}/etc templates
+-	${PUTSAMPLE} -F ${SPOOL}/etc/templates -m 644 \
++	    -idb hylafax.sw.server -dir -F ${PREFIX}/share/examples/hylafax templates
++	${PUTSAMPLE} -F ${PREFIX}/share/examples/hylafax/templates -m 644 \
+ 	    -src ${SRCDIR}/templates/README -O README
+ 	@for d in ${TEMPLATES}; do \
+ 		${ECHO} "Installing templates/$$d"; \
+ 		${INSTALL} -u ${FAXUSER} -g ${FAXGROUP} -m ${DIRMODE} \
+-		    -idb hylafax.sw.server -dir -F ${SPOOL}/etc/templates $$d; \
++		    -idb hylafax.sw.server -dir -F ${PREFIX}/share/examples/hylafax/templates $$d; \
+ 		for f in ${SRCDIR}/templates/$$d/*; do \
+-			${PUTSAMPLE} -F ${SPOOL}/etc/templates/$$d -m 644 -src $$f `basename $$f`; \
++			${PUTSAMPLE} -F ${PREFIX}/share/examples/hylafax/templates/$$d -m 644 -src $$f `basename $$f`; \
+ 		done; \
+ 	done;
+ 	

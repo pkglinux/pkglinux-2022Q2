@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:17:05 nia Exp $
+
+BLAKE2s (MooseX-Emulate-Class-Accessor-Fast-0.009032.tar.gz) = a81bbde6acc50e8a2bcf77671905211efe1b804b21706d1895c5e38711d17e6b
+SHA512 (MooseX-Emulate-Class-Accessor-Fast-0.009032.tar.gz) = 3e883364033bc6a453ecc52a47c84b66169a4edc302b9cf9ffff2cb6a4bb3954a075d19bd3dc94415b59205a0e91e6172a8678ea64a851c731c21ddcc6485d08
+Size (MooseX-Emulate-Class-Accessor-Fast-0.009032.tar.gz) = 16724 bytes

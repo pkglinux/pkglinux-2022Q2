@@ -1,0 +1,13 @@
+@comment $NetBSD: PLIST,v 1.2 2020/07/07 10:31:31 schmonz Exp $
+bin/grabconsole
+bin/multitee
+bin/pipecycle
+bin/recvfd
+bin/seek0
+bin/sendfd
+bin/setblock
+bin/setstate
+bin/statfile
+bin/vc-get
+bin/vc-lock
+bin/vc-switch

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 10:46:06 nia Exp $
+
+BLAKE2s (ewipe-1.2.0.tar.gz) = 47b056dc1d44fb399e6c1950b67e5b1d8766a4c15ef5eb870904cefe631c7c47
+SHA512 (ewipe-1.2.0.tar.gz) = 24a033299c4c0e99279d5f61922af52d5572ebccfc42af02b4637a1416d30a4174038fca0768ddea4852ccc35fbef8d698c457cab6ffa63d39d69bbecd2285a6
+Size (ewipe-1.2.0.tar.gz) = 124145 bytes

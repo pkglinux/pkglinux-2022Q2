@@ -1,0 +1,14 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 10:19:56 nia Exp $
+
+BLAKE2s (snappy-java/snappy-1.0.5.tar.gz) = 956b30e6d0dd96ce2002ac4aa112a813e184969cebcfbf532802d0ed2d3bab36
+SHA512 (snappy-java/snappy-1.0.5.tar.gz) = 4f772673dd1bf482f13db0f09299b46d0ee47b7052c43e69c2c5361d352031152f3132c25faf86ffcf1bfbe0e68625d7eef8fa669be873b568adfc160a82f25b
+Size (snappy-java/snappy-1.0.5.tar.gz) = 1731382 bytes
+BLAKE2s (snappy-java/snappy-java-1.0.5.4.tar.gz) = 529aff555db6e098ec59b6357b253d122094e580f1275ee6ae5f714486a51a47
+SHA512 (snappy-java/snappy-java-1.0.5.4.tar.gz) = 4fce5c0c0ce294ba789fd33dd8aeed92b6c58e004ac8e569ee1840fe4fbeb47b1f3edff75619aee0ebbda65476ec56b15a4aeead360d98dbc3d45d295ab028bd
+Size (snappy-java/snappy-java-1.0.5.4.tar.gz) = 6041905 bytes
+BLAKE2s (snappy-java/snappy-java-deps-1.0.5.4.tar.gz) = 55033982e98bbb5087c8929e518f2b843b14dfd457b10a4fa101ad471b2ab0ac
+SHA512 (snappy-java/snappy-java-deps-1.0.5.4.tar.gz) = f5148b0ded3b6beeb688b1b57dbc7fe64d40cd927140e9c4c35baf5f2fba25fb533dc38736736f153fd2e2cf76f0d0092cc676d9446f3baba102f2af64c56258
+Size (snappy-java/snappy-java-deps-1.0.5.4.tar.gz) = 13148358 bytes
+SHA1 (patch-Makefile) = cb15c6016dab4670fce0ace6f1dd21e7c7bb1097
+SHA1 (patch-Makefile.common) = 83eeaf91c7dbd6ac3c4b3405d53acec9caa260aa
+SHA1 (patch-pom.xml) = 833e19ef0b58d539b2ca2d6cd89361e9845b17cf

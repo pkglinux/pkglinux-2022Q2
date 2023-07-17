@@ -1,0 +1,8 @@
+===========================================================================
+$NetBSD: MESSAGE,v 1.2 2021/08/11 10:09:54 kardel Exp $
+
+IMPORTANT:
+To complete the installation you need to add
+the user "${FRR_USER}" to the (secondary) group "${FRR_VTY_GROUP}".
+
+===========================================================================

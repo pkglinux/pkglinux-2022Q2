@@ -1,0 +1,12 @@
+$NetBSD: patch-aa,v 1.4 2020/03/24 17:54:27 nia Exp $
+
+--- Imakefile.orig	2016-02-12 17:45:44.000000000 +0000
++++ Imakefile
+@@ -24,6 +24,6 @@ HEADERS = lwm.h ewmh.h
+ SRCS = lwm.c manage.c mouse.c client.c cursor.c error.c disp.c shape.c resource.c session.c ewmh.c
+ OBJS = ${SRCS:.c=.o}
+ 
+-ComplexProgramTarget(lwm)
++ComplexProgramTargetNoMan(lwm)
+ 
+ ${OBJS}: ${HEADERS}

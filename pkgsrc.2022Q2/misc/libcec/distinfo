@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:59:12 nia Exp $
+
+BLAKE2s (libcec-4.0.4.tar.gz) = 1e914f03fe55f0fe3982b827e597c9d167847678340b33983f80a734b9139ce0
+SHA512 (libcec-4.0.4.tar.gz) = 8991ba96fe9a87e5e1f63ff87f77fc0fc3b735c537e2ee6cb004fdc264d75cecd043e39b49cf9e64aeadd24bb1fb57911d9c4bd6c494d9ba4035d7320c268116
+Size (libcec-4.0.4.tar.gz) = 344976 bytes
+SHA1 (patch-src_libcec_cmake_SetBuildInfo.cmake) = 04d1fb4c2017bd5050b29cd8686ea4e51a1a8e96
+SHA1 (patch-src_libcec_platform_posix_serialport.cpp) = 7256a4f79df6a6f0c60ed3206a50e1c57c51a90e

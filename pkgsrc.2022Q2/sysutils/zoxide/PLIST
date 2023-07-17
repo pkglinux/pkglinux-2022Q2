@@ -1,0 +1,8 @@
+@comment $NetBSD: PLIST,v 1.2 2021/05/02 10:05:32 pin Exp $
+bin/zoxide
+man/man1/zoxide-add.1
+man/man1/zoxide-import.1
+man/man1/zoxide-init.1
+man/man1/zoxide-query.1
+man/man1/zoxide-remove.1
+man/man1/zoxide.1

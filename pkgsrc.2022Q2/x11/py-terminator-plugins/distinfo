@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:34:20 nia Exp $
+
+BLAKE2s (terminator-plugins-1.0.tar.gz) = 6cc7fac0beb5f5e2a4b579f064bed7e18ebfc4ac5b6bcb047e70625038fa793b
+SHA512 (terminator-plugins-1.0.tar.gz) = 3c8793893b566f99f4ac96254b33959445262d2b7aadd5adaf5b549b53e043a4b2c1467479e41b77377d5232f9df2d58442df59d92616ec3265f87cb429ddea5
+Size (terminator-plugins-1.0.tar.gz) = 10211 bytes

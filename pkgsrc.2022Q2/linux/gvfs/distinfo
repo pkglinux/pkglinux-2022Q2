@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (gvfs-1.48.1.tar.xz) = d49f1e5247ad09d07e9a9ec0a936959e9fbdb7f1
+RMD160 (gvfs-1.48.1.tar.xz) = 8450156a6d7226af458038bd8f8a57d40eb5975d
+SHA512 (gvfs-1.48.1.tar.xz) = 19a642bcfce37eaa0d2d9f509fed6c67abfea0f79f5be9a17074d20e9ba71252a13583a2e08de88718cb141c5e79e34c84c765c87160351fe21291a8f88abe8c
+Size (gvfs-1.48.1.tar.xz) = 1225916 bytes
+SHA1 (patch-daemon_meson.build) = 5dc3581e5116d71c65c459e210b988afe06c3e5b

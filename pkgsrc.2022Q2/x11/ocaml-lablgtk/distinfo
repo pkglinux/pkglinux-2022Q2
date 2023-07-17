@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.17 2022/02/27 14:44:31 gdt Exp $
+
+BLAKE2s (lablgtk-2.18.12.tar.gz) = 5511adfcb70b67ebb67507a6f5e46f7db5cd4a82497c88cf51e4df3118a9de2e
+SHA512 (lablgtk-2.18.12.tar.gz) = 284a1234ae817c4df49809d28c103ca5e64046da5ec9ff28c6edc0ce999e9d3e6e180dd053f8b1663d4fb3b7ba19570d53b9441c8fa622add924e8d85e41b813
+Size (lablgtk-2.18.12.tar.gz) = 1066997 bytes
+SHA1 (patch-configure) = ddf2a69ae3379ae656f905f573f748b3f6d66195
+SHA1 (patch-src_Makefile) = 43fc5f0cf747e588da8c39a0a55dfd09f710913a

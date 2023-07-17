@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 11:29:22 nia Exp $
+
+BLAKE2s (c_icap_modules-0.5.3.tar.gz) = 3d8ec65003310af697a591dc2faaf144336b6d8c41340848ecf24481fa1a1d0c
+SHA512 (c_icap_modules-0.5.3.tar.gz) = 5f3bf494b3a1a0e108b6502252eba39d804bc66fae4be23dc8b19680c0a0b21e6b5f805501f6c26237ff3c81aafbd7a409bf72196813ee5c51cd27994e8b564e
+Size (c_icap_modules-0.5.3.tar.gz) = 452505 bytes
+SHA1 (patch-services_content__filtering_Makefile.in) = cf07c131df55622100106964ae06f4bd946044dc
+SHA1 (patch-services_url_check_Makefile.in) = 159f8ec62edc350086ba803cf9c51e9a8c063318
+SHA1 (patch-services_virus__scan_clamav__mod.c) = 2b54ed2972850545ffe258a3d17a87a459494a2d
+SHA1 (patch-services_virus_scan_Makefile.in) = 2bd465cfddd34e04ea8c47fc247ff5a0066f01c6

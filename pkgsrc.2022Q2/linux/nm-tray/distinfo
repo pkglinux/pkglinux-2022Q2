@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (nm-tray/0.5.0.tar.gz) = c7c65799601abff453945cee662c904c484dcea8c65e209258aa8c72cf8905eb
+SHA512 (nm-tray/0.5.0.tar.gz) = ba118f7fd07a60af5ed6b7b53cf771f339c89f9bef02aeb2f59bfbddd3e896bdc31aa506437e33cb8fe2ef921c595b76527d61cefd202e9e1f5197762b69ab51
+Size (nm-tray/0.5.0.tar.gz) = 53854 bytes

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/02/12 04:56:10 pho Exp $
+
+BLAKE2s (ListLike-4.7.6.tar.gz) = ae30f6c735dda081796668c56c7d76232a12e14f450bfd357f1b88d7e2fd0af8
+SHA512 (ListLike-4.7.6.tar.gz) = 40f3c9628c6ca2a1b3b158adb5a30b368d806890229fcd1e42a9162dba5fec50483a4bc82eca942aeaf07bb6054d8f0355f2af0c5aadf8eabc1a327c918369f8
+Size (ListLike-4.7.6.tar.gz) = 32509 bytes

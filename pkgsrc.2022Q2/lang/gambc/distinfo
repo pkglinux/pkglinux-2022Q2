@@ -1,0 +1,11 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 10:51:35 nia Exp $
+
+BLAKE2s (gambc-v4_6_5.tgz) = 534f801444d30780767ae5c7b77bf3117befe6bda18f99d3c420f6eb2492e76b
+SHA512 (gambc-v4_6_5.tgz) = c665eb90065f5effed88426fb280d2adcf249eeea5a89ffcd49941f0daf9db74d0ebd36206151b1d43cc161ae93b7b4da04ccc036de86c3eac7a91505e8b263e
+Size (gambc-v4_6_5.tgz) = 10699787 bytes
+SHA1 (patch-aa) = c7a5033115590fc6aa9906ff70419641fc1a80e1
+SHA1 (patch-ab) = 8a7a5fe2b51688ea7c5088bcf53a53631f80bfa9
+SHA1 (patch-examples_iOS_build-gambit-iOS) = 47e60052caf49458f78328ecc1ea90e27f52ad4f
+SHA1 (patch-examples_iOS_make-keys) = bb30f96ba117e8cb00921b24309f0927e4b3dd12
+SHA1 (patch-gsc_makefile.in) = 60419432e32f0fa7e4bc33965dc159e4969eabe1
+SHA1 (patch-lib_makefile.in) = 87a9ff2a0d5ce5b4f5929d228de07d6afaa69979

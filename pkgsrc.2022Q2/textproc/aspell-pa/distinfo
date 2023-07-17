@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:21:41 nia Exp $
+
+BLAKE2s (aspell6-pa-0.01-1.tar.bz2) = 70ef27580417d38582ff83b4657df9b113cd35f6d3a1ccb0001f0d8aad58b6da
+SHA512 (aspell6-pa-0.01-1.tar.bz2) = 6a0d2d7f1b1a935b6ac4b373963e525083d16c26953cce5d7a29d391aaed36f5430d27ea69efe59f081230822830dc4d4143bc155049bb5384580ffd66b5ee61
+Size (aspell6-pa-0.01-1.tar.bz2) = 22143 bytes

@@ -1,0 +1,22 @@
+
+    Copyright (C) 1989-2018 Free Software Foundation, Inc.
+
+    Copying and distribution of this file, with or without
+    modification, are permitted in any medium without royalty provided
+    the copyright notice and this notice are preserved.
+
+This is the GNU `groff' document formatting system.  The version
+number is given in the file VERSION.
+
+Included in this release are implementations of `troff', `pic', `eqn',
+`tbl', `grn', `refer', `-man', `-mdoc', `-mom', and `-ms' macros, and
+drivers for `PostScript', `PDF', `TeX DVI' format, `HP LaserJet 4'
+printers, `Canon CAPSL' printers, `HTML' and `XHTML' formats (beta
+status), and typewriter-like devices.  Also included is a modified
+version of the Berkeley `-me' macros, the enhanced version `gxditview'
+of the X11 `xditview' previewer, and an implementation of the `-mm'
+macros contributed by Joergen Haegg.
+
+See the file `INSTALL' for instructions on how to install from a
+release.  You will require a C++ compiler.
+...

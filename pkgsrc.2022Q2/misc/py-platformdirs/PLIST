@@ -1,0 +1,26 @@
+@comment $NetBSD: PLIST,v 1.2 2022/06/13 19:29:44 adam Exp $
+${PYSITELIB}/${WHEEL_INFODIR}/INSTALLER
+${PYSITELIB}/${WHEEL_INFODIR}/METADATA
+${PYSITELIB}/${WHEEL_INFODIR}/RECORD
+${PYSITELIB}/${WHEEL_INFODIR}/REQUESTED
+${PYSITELIB}/${WHEEL_INFODIR}/WHEEL
+${PYSITELIB}/${WHEEL_INFODIR}/direct_url.json
+${PYSITELIB}/${WHEEL_INFODIR}/entry_points.txt
+${PYSITELIB}/${WHEEL_INFODIR}/license_files/LICENSE.txt
+${PYSITELIB}/platformdirs/__init__.py
+${PYSITELIB}/platformdirs/__init__.pyc
+${PYSITELIB}/platformdirs/__main__.py
+${PYSITELIB}/platformdirs/__main__.pyc
+${PYSITELIB}/platformdirs/android.py
+${PYSITELIB}/platformdirs/android.pyc
+${PYSITELIB}/platformdirs/api.py
+${PYSITELIB}/platformdirs/api.pyc
+${PYSITELIB}/platformdirs/macos.py
+${PYSITELIB}/platformdirs/macos.pyc
+${PYSITELIB}/platformdirs/py.typed
+${PYSITELIB}/platformdirs/unix.py
+${PYSITELIB}/platformdirs/unix.pyc
+${PYSITELIB}/platformdirs/version.py
+${PYSITELIB}/platformdirs/version.pyc
+${PYSITELIB}/platformdirs/windows.py
+${PYSITELIB}/platformdirs/windows.pyc

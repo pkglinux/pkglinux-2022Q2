@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.13 2022/04/20 20:45:39 wiz Exp $
+
+BLAKE2s (libXfixes-6.0.0.tar.bz2) = 7b69b5a63e50de87878be352c7b735b5edc082e7564070d99db126efe287396d
+SHA512 (libXfixes-6.0.0.tar.bz2) = 1985ef156f382e9a7e1cc7e044e0f626de1e4c82557a511cbcf6431994c0ac25b1f8b3a0293bd3089331593db8ce01d3a71ddec68f19b5fe6029d5082fb6885d
+Size (libXfixes-6.0.0.tar.bz2) = 297270 bytes

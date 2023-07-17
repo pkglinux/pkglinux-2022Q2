@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2021/10/26 11:20:24 nia Exp $
+
+BLAKE2s (dvb-fe-xc5000-1.6.114.fw) = 5a988fec14b4fecee89ab6ae1922244ead937a8dde8f1d3b042f76d3beafefe5
+SHA512 (dvb-fe-xc5000-1.6.114.fw) = 1adeb5106e17ce0492f2750733e6f94dced39e06e151c4c4b28a9b53f12ccadfa17898a7e1fa38b2313b9ee415554a0e13ca3e257d9d3ae0012114834c9b3cc8
+Size (dvb-fe-xc5000-1.6.114.fw) = 12401 bytes

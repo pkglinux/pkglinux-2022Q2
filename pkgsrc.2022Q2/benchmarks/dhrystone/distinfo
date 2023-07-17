@@ -1,0 +1,9 @@
+$NetBSD: distinfo,v 1.10 2021/10/26 10:02:51 nia Exp $
+
+BLAKE2s (dhry2.1.tar.Z) = 91fc50ef3cfe1427c5f2d64d92999696e44ea883b34ad4327be775b3be9b10ee
+SHA512 (dhry2.1.tar.Z) = 38840d331e833587c17f0b5ad1afccec49d1bff026a2005d70b00691c8403a6316830bcad8ed5beb6934b04070909079310d1e76e6910e0e894dc94fa22ae231
+Size (dhry2.1.tar.Z) = 32681 bytes
+SHA1 (patch-aa) = f43b8165845ff6670160d8458cc2c6a2b779f628
+SHA1 (patch-dhry.h) = 3ff36dc2b07641cb6e2413deb215de8dd276ffc4
+SHA1 (patch-dhry__1_c) = 604950d273d74a1a9c6c98e269815a01becde3aa
+SHA1 (patch-dhry__2_c) = 3e6caecd550c4e0f188fb7eeb6c9eda60a468a17

@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.5 2021/05/30 23:46:26 khorben Exp $
+${SYSCONFBASE}/rc.conf.example
+${SYSCONFBASE}/rc.subr
+2022Q2/native/etc/rc.subr
+${RCD_SCRIPTS_DIR}/DAEMON
+${RCD_SCRIPTS_DIR}/LOGIN
+${RCD_SCRIPTS_DIR}/NETWORKING
+${RCD_SCRIPTS_DIR}/SERVERS
+@unexec ${RMDIR} %D/${RCD_SCRIPTS_DIR} 2> /dev/null || ${TRUE}

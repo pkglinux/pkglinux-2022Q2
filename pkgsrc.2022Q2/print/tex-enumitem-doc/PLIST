@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2019/01/30 08:32:29 markd Exp $
+share/texmf-dist/doc/latex/enumitem/README.md
+share/texmf-dist/doc/latex/enumitem/enumitem.pdf
+share/texmf-dist/doc/latex/enumitem/enumitem.tex

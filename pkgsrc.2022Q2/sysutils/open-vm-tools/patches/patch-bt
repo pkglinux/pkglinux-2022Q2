@@ -1,0 +1,13 @@
+$NetBSD: patch-bt,v 1.3 2018/09/20 21:41:16 ryoon Exp $
+
+--- vmware-user-suid-wrapper/main.c.orig	2018-06-23 10:03:28.000000000 +0000
++++ vmware-user-suid-wrapper/main.c
+@@ -30,7 +30,7 @@
+  *        vmware-user.
+  */
+ 
+-#if !defined(sun) && !defined(__FreeBSD__) && !defined(__linux__)
++#if !defined(sun) && !defined(__FreeBSD__) && !defined(__linux__) && !defined(__NetBSD__)
+ # error This program is not supported on your platform.
+ #endif
+ 

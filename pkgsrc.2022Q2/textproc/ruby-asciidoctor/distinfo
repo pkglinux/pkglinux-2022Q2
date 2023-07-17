@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.9 2022/04/03 16:01:34 rhialto Exp $
+
+BLAKE2s (asciidoctor-2.0.17.gem) = d1e842e3ab621461e6d198ec1d14b7b967be946fabe13bb35787634af17d2f29
+SHA512 (asciidoctor-2.0.17.gem) = 41ebc833c7b8bded5704034c7fcf7d2f26643a24de24eda57db1a0ac94976e775bf0f093f46faaa99c5007c61af325aa5b02e5321159a88daac3397800adbd03
+Size (asciidoctor-2.0.17.gem) = 279040 bytes

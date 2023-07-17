@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- src/calendar-server/meson.build.orig	2020-10-05 18:36:07.966837000 +0000
++++ src/calendar-server/meson.build
+@@ -27,7 +27,7 @@ configure_file(
+   install_dir: servicedir
+ )
+ 
+-i18n.merge_file('evolution-calendar.desktop',
++i18n.merge_file(
+   input: 'evolution-calendar.desktop.in',
+   output: 'evolution-calendar.desktop',
+   po_dir: po_dir,

@@ -1,0 +1,14 @@
+$NetBSD: distinfo,v 1.31 2021/10/26 18:42:55 tm Exp $
+
+BLAKE2s (mailman-2.1.35.tgz) = a6a80c5ad82c38e6801fadd2995c140562baa9b716aab78ffd99671ff627023f
+SHA512 (mailman-2.1.35.tgz) = 2411a1a8196ec9c298231bfb649c2575b899ce167730b0069c76712a95c488520ca55b56a383b18a3e245774ad76ca1df7dbf3a937c2e2837021128709746ae4
+Size (mailman-2.1.35.tgz) = 9508348 bytes
+SHA1 (patch-aa) = 9684b1caeb52f31ee6967eae3f9a464de214879e
+SHA1 (patch-ab) = 39f6294e53110bd1fd09b1e90ab46820f4d48e3f
+SHA1 (patch-ad) = 665884b9dd1789e4abd430c762bdbfd707d48d30
+SHA1 (patch-ae) = 6c17de398014217be8f1c7a3b3a6f8d379fc0fb2
+SHA1 (patch-af) = 985a619a055151d998cefd0c1b7280a0d55f889e
+SHA1 (patch-ag) = fac40640db483c2e9db3a79ec0696dc60596e453
+SHA1 (patch-ah) = c7cde35f787c003ace550a98d8d5e166ba2d48dc
+SHA1 (patch-ai) = f3afeba664b0cca27f160fde3b94c7b7f8498e57
+SHA1 (patch-configure) = 0c4f29b7f5e5cb6c1c0f42f12022fcf6e0fa1309

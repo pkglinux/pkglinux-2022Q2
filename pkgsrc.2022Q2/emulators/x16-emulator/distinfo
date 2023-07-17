@@ -1,0 +1,8 @@
+$NetBSD: distinfo,v 1.5 2021/10/26 10:24:15 nia Exp $
+
+BLAKE2s (x16-emulator-35.tar.gz) = ce9acf3b456fa9761db64da16ac0575a19d9edd2dfc9545f479971c01e524614
+SHA512 (x16-emulator-35.tar.gz) = ec014b6ad13a7631d533b665c7544689629167261ffe0f0941c9381ea8cc6b3803a27deac0d76de7aa2fdae3dc438d8f0abbabe9f55ed0221e7fa0f0d39fbf3c
+Size (x16-emulator-35.tar.gz) = 123338 bytes
+SHA1 (patch-Makefile) = 22c6d74e46c085e361900af3f8931ebd842f87c9
+SHA1 (patch-main.c) = db0721d145546dd60ed40b8e9151cd26493e07ad
+SHA1 (patch-rendertext.c) = 81a7e50e7598827addf9aca1f05a22869f2ddeeb

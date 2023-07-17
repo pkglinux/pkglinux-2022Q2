@@ -1,0 +1,6 @@
+$NetBSD: distinfo,v 1.16 2021/10/26 10:51:43 nia Exp $
+
+BLAKE2s (mozjs91_91.13.0.orig.tar.xz) = 69c06c7aeb8ff09fe96cce115547fb88d3e08589c9216d4e9200b7db369d5d87
+SHA512 (mozjs91_91.13.0.orig.tar.xz) = 43885558930f032ba8471da8507bfbc8528211886dd594d7dc6f90a4a7b585793124f333a15caf28713f163cb37af9eed23e3d310d47091d9970c8cd488b8f9c
+Size (mozjs91_91.13.0.orig.tar.xz) = 74128516 bytes
+SHA1 (patch-js_moz.configure) = 0b7a3f468b9fab75666f2c9da2bcb9de929c0135

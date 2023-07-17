@@ -1,0 +1,36 @@
+$NetBSD: patch-aa,v 1.5 2021/05/14 11:43:47 nia Exp $
+
+--- Makefile.in.orig	2002-01-27 20:56:56.000000000 +0000
++++ Makefile.in
+@@ -51,7 +51,8 @@ RELEASE_PATH=${HOME}/release
+ 
+ CC=@CC@
+ CXX=@CXX@
+-CFLAGS=@CFLAGS@ @DEFS@
++CFLAGS+=@CPPFLAGS@ @CFLAGS@ @DEFS@
++CFLAGS_I=$(CFLAGS)
+ #CFLAGS_O=-O2
+ #CFLAGS_O=-O2 -fomit-frame-pointer
+ #CFLAGS_P=$(CFLAGS) -pg
+@@ -158,11 +159,7 @@ make_o:
+ 	 then echo === Creating \'$O\' output directory ; mkdir $O ; fi
+ 
+ $O$(TARGET): $(OBJ)
+-	$(CXX) -o $@ $(addprefix $O,$(OBJ)) $(LFLAGS) 
+-	cp $@ $@-unstripped
+-	strip $@
+-# This is here in case we find a way to prevent linkage against libstdc++
+-#	$(CC) -o $@ $(addprefix $O,$(OBJ)) $(LFLAGS) 
++	$(CXX) $(LDFLAGS) -o $@ $(addprefix $O,$(OBJ))
+ 
+ $(TARGET): $O$(TARGET)
+ 	@echo -- Linking $(TARGET) to $O$(TARGET)
+@@ -196,7 +193,7 @@ debclean: distclean
+ 		.version_patch`  > .version
+ 
+ _version.h: .version
+-	@/bin/echo -e \#define SZ_VERSION \"`cat .version`\"  > _version.h
++	@/bin/echo '#define SZ_VERSION '\"`cat .version`\"  > _version.h
+ 
+ .PHONY: transmit
+ transmit: # distribution-archive

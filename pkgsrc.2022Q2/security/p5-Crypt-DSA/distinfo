@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.11 2021/10/26 11:17:26 nia Exp $
+
+BLAKE2s (Crypt-DSA-1.17.tar.gz) = a98986bc090f107704ca6a29649d3a428c2832a158edc2e0049402383d9ce39d
+SHA512 (Crypt-DSA-1.17.tar.gz) = 2eac27cb08439a6d5cfdf1ee5f38412bc1dddb53c1865e5adc4f8c758ba1d221e5d30608bd12178beb15aed28940fa5db547520d57d8714919e20f0588fb1bfc
+Size (Crypt-DSA-1.17.tar.gz) = 42930 bytes
+SHA1 (patch-Makefile.PL) = e810464221aa81c79ef46985ff4361be556cacc7
+SHA1 (patch-lib_Crypt_DSA_Util.pm) = e3f3c20ada928c9e9e26829a171da0427ea7da14

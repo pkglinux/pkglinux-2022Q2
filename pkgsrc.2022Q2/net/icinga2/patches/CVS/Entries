@@ -1,0 +1,14 @@
+/patch-CMakeLists.txt/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-RELEASE.md/1.1/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-doc_21-development.md/1.1/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_base_string.cpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_base_string.hpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_base_utility.cpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_perfdata_elasticsearchwriter.cpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_perfdata_influxdbwriter.cpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_remote_configfileshandler.cpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_remote_httpserverconnection.cpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_remote_httputility.cpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-lib_remote_infohandler.cpp/1.2/Sun Jan 17 13:22:26 2021//Tpkgsrc-2022Q2
+/patch-third-party_cmake_FindMySQL.cmake/1.1/Fri Jan 15 00:37:17 2021//Tpkgsrc-2022Q2
+D

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (ss5-3.8.9-8.tar.gz) = 2f259f2dc59d23bfd25b275bd5e88e240c347d9e2ec071ad312297d27043616a
+SHA512 (ss5-3.8.9-8.tar.gz) = dfa23087282f46909bc58daf9d7f6efd459bbf09be3415a6b828e8e9c0ffcac340418118ad6dc25eaedc8ca68d2d14f077c3797a6c3d2078434c4c9dfbed3127
+Size (ss5-3.8.9-8.tar.gz) = 387680 bytes

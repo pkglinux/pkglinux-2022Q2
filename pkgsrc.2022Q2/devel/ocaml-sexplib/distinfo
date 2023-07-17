@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.12 2022/05/04 13:32:12 jaapb Exp $
+
+BLAKE2s (sexplib-0.15.0.tar.gz) = 67f5a0b26aae778e286a13e9368e83037a8d7d8443f3221103ed085b73bdd3ab
+SHA512 (sexplib-0.15.0.tar.gz) = c31fed5e5bf48381a9b6a48085e7d8909471e38a8cc7586e3c520fe60c6df7a1eebcca1a0ca93cd4d1cc61c1c3c36211db05572273550f7218eb69dd97d27333
+Size (sexplib-0.15.0.tar.gz) = 55020 bytes

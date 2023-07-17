@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.22 2022/04/19 04:31:53 markd Exp $
+
+BLAKE2s (tex4ht.doc.r63055.tar.xz) = bb30788d6e89edfc57fad34cdb3faddd2a4be4301a544f141cf915ef1225122e
+SHA512 (tex4ht.doc.r63055.tar.xz) = 64b0b51c251ad982438be360047ba046976368fd95c8bfa81bf4d047a4b5f6476da81535c275efb0348135fd9e2d7c68e02f4035d2c95e870d865b51c24722ba
+Size (tex4ht.doc.r63055.tar.xz) = 136384 bytes

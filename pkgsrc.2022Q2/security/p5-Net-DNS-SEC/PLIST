@@ -1,0 +1,5 @@
+@comment $NetBSD: PLIST,v 1.4 2018/09/02 07:36:05 wiz Exp $
+share/doc/${PKGBASE}/README
+share/examples/${PKGBASE}/getkeyset
+share/examples/${PKGBASE}/key2ds
+share/examples/${PKGBASE}/make-signed-keyset

@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.7 2022/04/09 21:04:06 markd Exp $
+
+BLAKE2s (fonts-tlwg.doc.r60817.tar.xz) = e891d6ce9832dfa758dc27fff76cf7d1fee56971eba25f57d3ad3af8a2385f24
+SHA512 (fonts-tlwg.doc.r60817.tar.xz) = 93de1f1c668d460644f8246ac25c47f10d99e91c878c50c3096e2df373e521e54412c239d89f5372c767cd768f7973b06f97f25705e865dd5c36cc3674496c0e
+Size (fonts-tlwg.doc.r60817.tar.xz) = 11168 bytes

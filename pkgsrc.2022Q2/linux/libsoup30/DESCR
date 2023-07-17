@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README
+
+libsoup is an HTTP client/server library for GNOME. It uses GObjects
+and the glib main loop, to integrate well with GNOME applications.
+
+Features:
+  * Both asynchronous (GMainLoop and callback-based) and synchronous APIs
+  * Automatically caches connections
+  * SSL support
+  * Proxy support, including authentication and SSL tunneling
+  * Client support for Digest, NTLM, and Basic authentication
+  * Server support for Digest and Basic authentication
+
+See the documentation in docs/reference/ and the test programs in
+tests/ for simple examples of how to use the code. The
+evolution-data-server and evolution-exchange modules in GNOME git have
+some more complicated examples.
+
+There is a mailing list for libsoup-related questions/discussions at
+gnome.org. Visit http://mail.gnome.org/mailman/listinfo/libsoup-list
+to subscribe or read the archives.
+
+...

@@ -1,0 +1,22 @@
+# $NetBSD: Makefile.common,v 1.13 2022/02/15 09:26:46 wiz Exp $
+#
+# used by databases/gdbm/Makefile
+# used by databases/gdbm_compat/Makefile
+
+DISTNAME=	gdbm-1.23
+CATEGORIES=	databases
+MASTER_SITES=	${MASTER_SITE_GNU:=gdbm/}
+
+MAINTAINER?=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://www.gnu.org/software/gdbm/gdbm.html
+COMMENT=	The GNU database manager
+LICENSE=	gnu-gpl-v3
+
+DISTINFO_FILE=	${.CURDIR}/../../databases/gdbm/distinfo
+PATCHDIR=	${.CURDIR}/../../databases/gdbm/patches
+
+USE_LIBTOOL=		yes
+USE_TOOLS+=		gmake
+GNU_CONFIGURE=		yes
+
+TEST_TARGET=		check

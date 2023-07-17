@@ -1,0 +1,23 @@
+$NetBSD$
+
+BLAKE2s (networkmanager-qt-0.9.8.4.tar.gz) = 872fd6d309f2170b912b0f7e9ccbf80f6ddcb58f7185f775fe18268219bf5f09
+SHA512 (networkmanager-qt-0.9.8.4.tar.gz) = ff185778760ebda17532f4493e794fcba118537be0a780b767959ce9c472c88d8b484519d6923688cd26b76559c3a6082fc278ab1172a2d9a103f44e6d13473a
+Size (networkmanager-qt-0.9.8.4.tar.gz) = 176704 bytes
+SHA1 (patch-CMakeLists.txt) = 71066d5a2b5b15e928c6edd8042f14d55c3c919c
+SHA1 (patch-FindNetworkManager.cmake) = 6923055021644fd7228c1096ed0e49e5198b83e6
+SHA1 (patch-accesspoint.cpp) = 42d97cc8339b2d44968574ad8c2eddc314be073f
+SHA1 (patch-settings_bondsetting.cpp) = 3cc36efd28146324eb2c5ec8467eab2c554edfb0
+SHA1 (patch-settings_bridgesetting.cpp) = 86a6f8c7f3dc008afbd032930332f7caf23ad7b4
+SHA1 (patch-settings_gsmsetting.cpp) = 90c4b5429786448b8a7f92372c75ede8612c6b5e
+SHA1 (patch-settings_ipv4setting.cpp) = 85f101c7fcb9cf78e2e7745ec7d60778973692c9
+SHA1 (patch-settings_ipv6setting.cpp) = d8bbabbceca97994cd2a076d3afb53855f523ad8
+SHA1 (patch-settings_vlansetting.cpp) = 910280f796ef83a55ce5430a20e86c8af4a052d0
+SHA1 (patch-settings_wirelesssetting.cpp) = 9d85b71a5b36643c5218624c0929484429d48ad5
+SHA1 (patch-tests_bondsetting.cpp) = c21df0fe07ec7b29d92f9d027e9d5aafbefb43d7
+SHA1 (patch-tests_bridgesetting.cpp) = fc7f1d328af5abe7e535be05ee856e7e42b7c904
+SHA1 (patch-tests_gsmsetting.cpp) = ee00e1269bf93af13856de22e00186fb92fae3a9
+SHA1 (patch-tests_ipv4setting.cpp) = 229a24472d150e4cf350464a68aad2688c536e8b
+SHA1 (patch-tests_ipv6setting.cpp) = 3b6f05a93d4954c10bd10c92528444e648a8fbaa
+SHA1 (patch-tests_vlansetting.cpp) = 2aadb7bfa8fdc12d5c1b0431b86ac702c17dc957
+SHA1 (patch-tests_wirelesssetting.cpp) = 76e0f5b1f4f2e80b6a30db1c66f690bbcd5971f6
+SHA1 (patch-wirelessdevice.cpp) = 60b2042507a3301cf53166688ed1096ba98bcd25

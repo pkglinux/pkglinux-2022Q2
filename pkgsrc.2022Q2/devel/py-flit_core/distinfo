@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.2 2022/04/07 12:28:15 adam Exp $
+
+BLAKE2s (flit_core-3.7.1.tar.gz) = 3a1a14c0525759d7a6c88e243fec45d96ce3517476628592c57b08678c775513
+SHA512 (flit_core-3.7.1.tar.gz) = 8c477bcd2924a93b51e6f3d8bbc3599929663c8d5addf16062e8e1b6c5acd740a4e4905b144092efb6e38e9700479525013831a53e055438f94c1e53ff5c6f8d
+Size (flit_core-3.7.1.tar.gz) = 40330 bytes

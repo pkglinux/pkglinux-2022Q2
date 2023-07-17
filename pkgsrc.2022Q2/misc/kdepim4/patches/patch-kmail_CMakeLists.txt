@@ -1,0 +1,22 @@
+$NetBSD$
+
+--- kmail/CMakeLists.txt.orig	2015-06-25 17:47:38.000000000 +0000
++++ kmail/CMakeLists.txt
+@@ -39,7 +39,7 @@ include_directories(
+   ${CMAKE_BINARY_DIR}/pimcommon
+   ${CMAKE_SOURCE_DIR}/pimcommon/util/
+   ${CMAKE_SOURCE_DIR}/messagecomposer/utils/
+-  ${GPGME_INCLUDES}
++  ${GPGMEPP_INCLUDES}
+   ${Boost_INCLUDE_DIR}
+   ${AKONADI_INCLUDE_DIR}
+  )
+@@ -315,7 +315,7 @@ if (KDEPIM_BUILD_DESKTOP)
+     ${KDEPIMLIBS_KRESOURCES_LIBS}
+     ${KDE4_KCMUTILS_LIBS}
+     kleo
+-    ${QGPGME_LIBRARIES}
++    ${GPGMEPP_PTHREAD_LIBRARIES}
+     ksieve
+     ksieveui
+     kpgp

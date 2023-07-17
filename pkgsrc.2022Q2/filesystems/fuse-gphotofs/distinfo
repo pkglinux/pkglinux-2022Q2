@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.6 2021/10/26 10:25:27 nia Exp $
+
+BLAKE2s (gphotofs-0.5.tar.bz2) = e9f3515bfa25151a98381ba98b90891f7b9068317d925d037e5870657fbbd2ce
+SHA512 (gphotofs-0.5.tar.bz2) = 6f5bcaf8ca820c0590ec95af55ec9438c864a298660ad15c6d6e8f59201a7f873d29f16cf77d13538111f6cec3f958ea0ac88c6c51836ab2d8c9d6cca156ed3a
+Size (gphotofs-0.5.tar.bz2) = 261357 bytes
+SHA1 (patch-aa) = ab598c3c3dd5d1ca568d3a7a433ac8f508c8a25f
+SHA1 (patch-ab) = 9e36861c26ddbac5bc69a2559a20758408f5d0d7

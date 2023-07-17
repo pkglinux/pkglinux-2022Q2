@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.4 2022/04/08 21:04:07 markd Exp $
+
+BLAKE2s (datenumber.doc.r61761.tar.xz) = 082aba6a745efa43c11abe876b521f3616ba31fe7ad9d6250b22f8aee0786898
+SHA512 (datenumber.doc.r61761.tar.xz) = 18f2573f8c02685d20085c31384b75dd1ab5a47a5bb2b9dcda036a7cd1ecec80db175a674c1f148cd51a078721ed88a3c9b7a0915acd7c023c02ea9a16e2a1f2
+Size (datenumber.doc.r61761.tar.xz) = 307264 bytes
