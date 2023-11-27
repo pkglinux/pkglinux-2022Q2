@@ -1,0 +1,5 @@
+$NetBSD: distinfo,v 1.5 2004/06/12 22:44:24 jeremy-c-reed Exp $
+
+BLAKE2s (linux-6.1.15.tar.xz) = 4363d1970230c0d4bb220293570535c92e4d73fd765b511a890841e3d8bd983d
+SHA512 (linux-6.1.15.tar.xz) = 0f98aee21ba902254881317148a78dcc3bc2dc3b6a8651bc0c35e8d63850ed1a9ac4271d5f74ed0ec110c219c80674d26abf9ffdd2631278cf1c7c85d6cc209e
+Size (linux-6.1.15.tar.xz) = 134854068 bytes

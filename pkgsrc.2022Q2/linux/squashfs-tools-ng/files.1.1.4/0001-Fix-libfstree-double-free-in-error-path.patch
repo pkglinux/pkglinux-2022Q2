@@ -1,0 +1,50 @@
+From b5477cf2abdd76e22d227bd3959c7150251fafc0 Mon Sep 17 00:00:00 2001
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Date: Fri, 19 Aug 2022 18:54:24 +0200
+Subject: [PATCH] Fix: libfstree: double free in error path
+
+If fstree_mknode fails, because the parent link count would overflow,
+the function fails and cleans up behind it. The problem arises because
+the function does this check *after* inserting the node in the parent
+node, so it is later free'd again, when destroying the rest of the
+tree.
+
+This patch moves the insertion after the check to mitigate the problem.
+
+Reported-by: Marvin Renich <mrvn@renich.org>
+Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+---
+ lib/fstree/mknode.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+
+diff --git a/lib/fstree/mknode.c b/lib/fstree/mknode.c
+index e0ab5b8..5a46a05 100644
+--- a/lib/fstree/mknode.c
++++ b/lib/fstree/mknode.c
+@@ -33,12 +33,6 @@ tree_node_t *fstree_mknode(tree_node_t *parent, const char *name,
+ 	if (n == NULL)
+ 		return NULL;
+ 
+-	if (parent != NULL) {
+-		n->next = parent->data.dir.children;
+-		parent->data.dir.children = n;
+-		n->parent = parent;
+-	}
+-
+ 	n->xattr_idx = 0xFFFFFFFF;
+ 	n->uid = sb->st_uid;
+ 	n->gid = sb->st_gid;
+@@ -81,6 +75,10 @@ tree_node_t *fstree_mknode(tree_node_t *parent, const char *name,
+ 			return NULL;
+ 		}
+ 
++		n->next = parent->data.dir.children;
++		parent->data.dir.children = n;
++		n->parent = parent;
++
+ 		parent->link_count++;
+ 	}
+ 
+-- 
+2.37.1
+

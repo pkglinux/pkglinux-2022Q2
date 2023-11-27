@@ -1,0 +1,11 @@
+diff -rupN syslinux-6.04-pre1/extlinux/main.c syslinux-6.04-pre1.new/extlinux/main.c
+--- syslinux-6.04-pre1/extlinux/main.c	2016-03-02 13:06:02.000000000 +0800
++++ syslinux-6.04-pre1.new/extlinux/main.c	2020-03-09 11:19:24.893329127 +0800
+@@ -38,6 +38,7 @@
+ #include <sysexits.h>
+ #include <sys/ioctl.h>
+ #include <sys/stat.h>
++#include <sys/sysmacros.h>
+ #include <sys/types.h>
+ #include <sys/mount.h>
+ #include <sys/vfs.h>

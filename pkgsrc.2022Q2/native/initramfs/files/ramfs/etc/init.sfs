@@ -1,0 +1,104 @@
+#!/bin/sh
+
+SFSID=$2
+
+# Create the new mountpoint in RAM.
+mkdir -p /.root
+mount -t tmpfs none /.root
+
+lwr="/.tmp/lower"
+upp="/.tmp/upper"
+wrk="/.tmp/work"
+
+echo "Searching available devices for overlay content."
+for DEV in $1 /dev/* ; do
+	D=$(echo "${DEV##*/}")
+	case $D in
+		*loop*) continue ;;
+	esac
+
+	if [ ! -d "/sys/class/block/$D" ] ; then
+		continue
+	fi
+
+	DEV_MNT=/.tmp/dev_mnt
+	mkdir -p $DEV_MNT
+
+	LWR=""
+	UPP=""
+	WRK=""
+	FST=$(blkid -o value -s TYPE $DEV)
+	echo "Trying to mount device $DEV with file system type: $FST"
+	if ! mount -t $FST $DEV $DEV_MNT 2>/dev/null; then
+		echo "Failed in mounting device $DEV with file system type: $FST"
+		rm -rf $DEV_MNT 2>/dev/null
+		continue
+	fi
+	if [ -d $DEV_MNT/$SFSID -a -f $DEV_MNT/$SFSID/pkglinux.sfs ] ; then
+		echo -e "  Found \\e[94m/$SFSID/pkglinux.sfs\\e[0m image on device \\e[31m$DEV\\e[0m."
+		LWR=/.tmp/sfs
+		mkdir -p $LWR
+		mount -t squashfs $DEV_MNT/$SFSID/pkglinux.sfs $LWR
+		touch $DEV_MNT/$SFSID/pkglinux.touch 2>/dev/null
+		if [ -f $DEV_MNT/$SFSID/pkglinux.touch ] ; then
+			# read/write mode
+			echo -e "  Image \\e[94m$DEV/$SFSID/pkglinux.sfs\\e[0m is mounted in read/write mode."
+			UPP=$DEV_MNT/$SFSID/upper
+			WRK=$DEV_MNT/$SFSID/work
+			mkdir -p $UPP $WRK
+			rm -f $DEV_MNT/$SFSID/pkglinux.touch
+		else
+			# read only mode
+			echo -e "  Image \\e[94m$DEV/$SFSID/pkglinux.sfs\\e[0m is mounted in read only mode."
+			UPP=$upp
+			WRK=$wrk
+			mkdir -p $UPP $WRK
+		fi
+	fi
+	if [ "$LWR" != "" -a "$UPP" != "" -a "$WRK" != "" ] ; then
+		mkdir -p $LWR $UPP $WRK
+		mount -t overlay -o lowerdir=$LWR,upperdir=$UPP,workdir=$WRK overlay /.root 2>/dev/null
+		OUT=$?
+		if [ ! "$OUT" = "0" ] ; then
+			echo -e "  \\e[31mMount failed (probably on vfat).\\e[0m"
+			rmdir $lwr 2>/dev/null
+			rmdir $upp 2>/dev/null
+			rmdir $wrk 2>/dev/null
+		else
+			# All done, time to go.
+			echo -e "/$SFSID/pkglinux.sfs from device \\e[31m$DEV\\e[0m has been merged."
+			mkdir -v -p /.root/sfs.root
+			mount -v --bind $DEV_MNT /.root/sfs.root 2>/dev/null
+			break
+		fi
+	else
+		echo -e "  Device \\e[31m$DEV\\e[0m has no /$SFSID/pkglinux.sfs."
+	fi
+
+	umount $DEV_MNT 2>/dev/null
+	rm -rf $DEV_MNT 2>/dev/null
+done
+
+# Move critical file systems to the new mountpoint.
+echo "Moving to the new root ..."
+mount --move /dev  /.root/dev
+mount --move /sys  /.root/sys
+mount --move /proc /.root/proc
+mount --move /run  /.root/run
+mount --move /tmp  /.root/tmp
+
+echo -e "Mount locations \\e[94m/dev\\e[0m, \\e[94m/sys\\e[0m, \\e[94m/tmp\\e[0m and \\e[94m/proc\\e[0m have been moved to \\e[94m/.root\\e[0m."
+
+# The new mountpoint becomes file system root. All original root folders are
+# deleted automatically as part of the command execution. The '/sbin/init'
+# process is invoked and it becomes the new PID 1 parent process.
+echo "Switching from initramfs root area to overlayfs root area."
+
+killall -w udevd
+#udevadm control --exit
+exec switch_root /.root /sbin/init
+
+echo "/etc/sfs.init has a serious bug."
+
+# Wait until any key has been pressed.
+read -n1 -s

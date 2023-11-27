@@ -1,0 +1,58 @@
+$NetBSD$
+
+--- lfs/init.d/mountfs.orig	2019-10-05 00:34:50.000000000 +0000
++++ lfs/init.d/mountfs
+@@ -34,6 +34,23 @@ case "${1}" in
+    start)
+       log_info_msg "Remounting root file system in read-write mode..."
+       mount --options remount,rw / >/dev/null
++      if mountpoint -q /bin; then
++      mount --options remount,rw /bin >/dev/null
++      fi; if mountpoint -q /etc; then
++      mount --options remount,rw /etc >/dev/null
++      fi; if mountpoint -q /lib; then
++      mount --options remount,rw /lib >/dev/null
++      fi; if mountpoint -q /lib32; then
++      mount --options remount,rw /lib32 >/dev/null
++      fi; if mountpoint -q /libx32; then
++      mount --options remount,rw /libx32 >/dev/null
++      fi; if mountpoint -q /lib64; then
++      mount --options remount,rw /lib64 >/dev/null
++      fi; if mountpoint -q /sbin; then
++      mount --options remount,rw /sbin >/dev/null
++      fi; if mountpoint -q /usr; then
++      mount --options remount,rw /usr >/dev/null
++      fi
+       evaluate_retval
+ 
+       # Remove fsck-related file system watermarks.
+@@ -57,11 +74,28 @@ case "${1}" in
+       # Ensure any loop devies are removed
+       losetup -D
+       umount --all --detach-loop --read-only \
+-             --types notmpfs,nosysfs,nodevtmpfs,noproc,nodevpts >/dev/null
++             --types notmpfs,nosysfs,nodevtmpfs,noproc,nodevpts,noext4,nobtrfs >/dev/null
+       evaluate_retval
+ 
+       # Make sure / is mounted read only (umount bug)
+       mount --options remount,ro /
++      if mountpoint -q /bin; then
++      mount --options remount,ro /bin
++      fi; if mountpoint -q /etc; then
++      mount --options remount,ro /etc
++      fi; if mountpoint -q /lib; then
++      mount --options remount,ro /lib
++      fi; if mountpoint -q /lib32; then
++      mount --options remount,ro /lib32
++      fi; if mountpoint -q /libx32; then
++      mount --options remount,ro /libx32
++      fi; if mountpoint -q /lib64; then
++      mount --options remount,ro /lib64
++      fi; if mountpoint -q /sbin; then
++      mount --options remount,ro /sbin
++      fi; if mountpoint -q /usr; then
++      mount --options remount,ro /usr
++      fi
+ 
+       # Make all LVM volume groups unavailable, if appropriate
+       # This fails if swap or / are on an LVM partition

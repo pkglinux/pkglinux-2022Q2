@@ -1,0 +1,7 @@
+$NetBSD: distinfo,v 1.2 2005/09/28 06:41:18 rillig Exp $
+
+BLAKE2s (glibc-2.31.tar.xz) = f33f4ea030d6e7626beba23650e653e3fd43b674ab1dfbcb8ebdddac504bb277
+SHA512 (glibc-2.31.tar.xz) = 735e4c0ef10418b6ea945ad3906585e5bbd8b282d76f2131309dce4cec6b15066a5e4a3731773ce428a819b542579c9957867bb0abf05ed2030983fca4412306
+Size (glibc-2.31.tar.xz) = 16676764 bytes
+SHA1 (patch-elf_dl-load.c) = 2604d0ad684abac16a6769fb5f6e65b7358dbda2
+SHA1 (patch-locale_freelocale.c) = 5506aaa0f0c612dabe9cad2a8c16b66db5e1e5df

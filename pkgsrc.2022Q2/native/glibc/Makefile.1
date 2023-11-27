@@ -1,0 +1,144 @@
+# $NetBSD$
+
+#DISTNAME=	glibc-2.34
+DISTNAME=	glibc-2.31
+CATEGORIES=	linux
+MASTER_SITES=	http://ftp.gnu.org/gnu/glibc/
+EXTRACT_SUFX=	.tar.xz
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	http://ftp.gnu.org/gnu/glibc/
+COMMENT=	GNU C library
+LICENSE=	gnu-gpl-v2 AND gnu-lgpl-v2.1
+
+ONLY_FOR_PLATFORM=	Linux-*-*
+
+#PREFER_NATIVE=		yes
+#PREFER_PKGSRC=		no
+
+#USE_CWRAPPERS=		no
+USE_LANGUAGES=		c c++
+#USE_NATIVE_GCC=		yes
+USE_NATIVE_GCC=		no
+USE_PKGSRC_GCC=		yes
+GCC_REQD+=		6
+
+MKPIE_SUPPORTED=	no
+PKGSRC_MKPIE=		no
+PKGSRC_USE_SSP=		no
+PKGSRC_USE_FORTIFY=	no
+#SSP_SUPPORTED=		yes
+
+#STACK_CHECK_SUPPORTED=	no
+#PKGSRC_USE_STACK_CHECKD=	no
+
+USE_TOOLS+=		gmake makeinfo sed:run tar:build perl openssl
+TOOLS_PLATFORM.openssl=
+
+USE_BUILTIN.openssl=		yes
+
+#.include "../../lang/python/tool.mk"
+#PYTHON_FOR_BUILD_ONLY=	tool
+
+#USE_LIBTOOL=		yes
+
+#PREDIR=			${PREFIX}/native
+PREDIR=			${PREFIX}
+BLDDIR=			${WRKSRC}/build
+BLDPRE=			${BLDDIR}${PREDIR}
+DSTPRE=			${DESTDIR}${PREDIR}
+ZONEINFO=		${BLDPRE}/share/zoneinfo
+ZIC=			zic
+#ZIC=			/usr/sbin/zic
+#ZIC=			${PREDIR}/sbin/zic
+#ZIC=			${BLDPRE}/sbin/zic
+
+#HAS_CONFIGURE=		no
+#NO_BUILD=		yes
+#NO_CONFIGURE=		yes
+#GNU_CONFIGURE=		no
+#GNU_CONFIGURE_PREFIX=	${PREFIX}/native
+GNU_CONFIGURE=		yes
+CONFIGURE_DIRS=		build
+CONFIGURE_ENV+=		CC="/usr/pkg/gcc6/bin/gcc -fno-pie -fno-PIE -isystem /usr/pkg/lib/gcc/x86_64-unknown-linux/6.5.0/include -isystem /usr/include"
+CONFIGURE_SCRIPT=	../configure
+
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
+#CONFIGURE_ARGS+=	--host=xf86_64-unknown-linux
+#CONFIGURE_ARGS+=	--build=$(../scripts/config.guess)
+CONFIGURE_ARGS+=	--disable-werror
+CONFIGURE_ARGS+=	--enable-kernel=3.2
+CONFIGURE_ARGS+=	--disable-static-pie
+CONFIGURE_ARGS+=	--enable-stack-protector=strong
+#CONFIGURE_ARGS+=	--with-headers=${PREFIX}/include
+#CONFIGURE_ARGS+=	--with-headers=/usr/include
+CONFIGURE_ARGS+=	libc_cv_slibdir=${PREDIR}/lib
+#CONFIGURE_ARGS+=	--with-ssl=${BUILDLINK_PREFIX.openssl}
+
+# fix a security problem identified upstream for glibc-2.34
+#	sed -e '/NOTIFY_REMOVED)/s/)/ \&\& data.attr != NULL)/' \
+#	    -i ${WRKSRC}/sysdeps/unix/sysv/linux/mq_notify.c
+
+#	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/elf_get_dynamic_info.patch
+
+post-extract:
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/perlnever.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/glibc-2.31-fhs-1.patch
+	${MKDIR} -v ${BLDPRE}
+
+#	cd ${BLDDIR} && CC="/usr/pkg/gcc6/bin/gcc -fno-pie -fno-PIE -isystem /usr/pkg/lib/gcc/x86_64-unknown-linux/6.5.0/include -isystem /usr/pkg/include" \
+#	cd ${BLDDIR} && CFLAGS="" LDFLAGS="" CC="/usr/bin/gcc -isystem /usr/lib/gcc/x86_64-unknown-linux/6.5.0/include -isystem /usr/include -isystem /usr/pkg/include -L/usr/lib/gcc/x86_64-unknown-linux/6.5.0" \
+#	cd ${BLDDIR} && CC="/usr/bin/gcc -isystem /usr/lib/gcc/x86_64-unknown-linux/6.5.0/include -isystem /usr/include" \
+
+#		--with-bintuils=/usr/bin		\
+#		libc_cv_ctors_header=yes		\
+#		--with-headers=/usr/include		\
+#	${MV} -v ${PREDIR}/include/limits.h ${PREDIR}/include/limits.h.bak
+#	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
+#	${MV} -v ${PREDIR}/include/limits.h.bak ${PREDIR}/include/limits.h
+
+post-configure:
+	sed '/test-installation/s@$(PERL)@echo not running@' -i ${WRKSRC}/Makefile
+	cd ${BLDDIR} && echo "#undef HAVE_INLINED_SYSCALLS">>config.h
+
+do-build:
+	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
+	${MKDIR} -v ${BLDPRE}/etc/
+	touch ${BLDPRE}/etc/ld.so.conf
+	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDDIR} install-strip || ${GMAKE} DESTDIR=${BLDDIR} install)
+	${CP} -v ${WRKSRC}/nscd/nscd.conf ${BLDPRE}/etc/nscd.conf
+	${MKDIR} -v ${BLDPRE}/var/cache/nscd/
+	install -v -Dm644 ${WRKSRC}/nscd/nscd.tmpfiles ${BLDPRE}/lib/tmpfiles.d/nscd.conf
+	install -v -Dm644 ${WRKSRC}/nscd/nscd.service ${BLDPRE}/lib/systemd/system/nscd.service
+	${MKDIR} -v ${BLDPRE}/lib64/
+	${LN} -sfv ../lib/ld-linux-x86-64.so.2 ${BLDPRE}/lib64
+	${LN} -sfv ../lib/ld-linux-x86-64.so.2 ${BLDPRE}/lib64/ld-lsb-x86-64.so.3
+	${MKDIR} -v ${BLDPRE}/lib/locale
+	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS} DESTDIR=${DESTDIR} localedata/install-locales
+	${CP} -v ${FILESDIR}/nsswitch.conf ${BLDPRE}/etc/
+	cd ${BLDDIR} && ${TAR} xf ${FILESDIR}/tzdata2021a.tar.gz
+	${MKDIR} -v ${ZONEINFO}/{posix,right}
+.	for _tz in etcetera southamerica northamerica europe africa antarctica  \
+		asia australasia backward pacificnew systemv
+		if [ -f ${BLDDIR}/${_tz} ]; then \
+			cd ${BLDDIR} && \
+			${ZIC} -L /dev/null   -d ${ZONEINFO}       ${_tz} && \
+			${ZIC} -L /dev/null   -d ${ZONEINFO}/posix ${_tz} && \
+			${ZIC} -L leapseconds -d ${ZONEINFO}/right ${_tz}; \
+		fi
+.	endfor
+	cd ${BLDDIR} && ${CP} -v zone.tab zone1970.tab iso3166.tab ${ZONEINFO}
+	cd ${BLDDIR} && ${ZIC} -d ${ZONEINFO} -p America/New_York
+	${CP} -v ${FILESDIR}/ld.so.conf ${BLDPRE}/etc/
+
+do-install:
+	${MKDIR} -v ${DSTPRE}
+	${CP} -av ${BLDPRE}/* ${DSTPRE}
+
+#.include "../../devel/zlib/buildlink3.mk"
+#.include "../../archivers/bzip2/buildlink3.mk"
+.include "../../security/openssl/buildlink3.mk"
+#.include "../../devel/gettext-lib/buildlink3.mk"
+#.include "../../linux/kernel-headers/buildlink3.mk"
+#.include "../../mk/dlopen.builtin.mk"
+.include "../../mk/bsd.pkg.mk"

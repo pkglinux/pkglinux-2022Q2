@@ -1,0 +1,11 @@
+$NetBSD$
+
+SHA1 (linux-live-2.6.tar.gz) = 06b680be0ef78a9fe919e6ca62120418f40fac9b
+RMD160 (linux-live-2.6.tar.gz) = d99f86aacf62c31757fcf9645f9483e73345277d
+SHA512 (linux-live-2.6.tar.gz) = ed4c12c7e33c82fcb15f6e11963b69663f1e130192628fa2484ce00162351a1047ecac98cfcb00bf32575c5f5c7c2c4150a174fd80d1033976694c618c2c49af
+Size (linux-live-2.6.tar.gz) = 4638167 bytes
+SHA1 (patch-bootfiles_syslinux.cfg) = 417d6780f51384811c64d4b9c1feb30e5a78adcf
+SHA1 (patch-build) = c6583658cbec6f9bf559c30ff39e4086cfcdc756
+SHA1 (patch-config) = f6bb4a1dfa5f7f7fbf54b705e20c403a7d4ad95f
+SHA1 (patch-initramfs_initramfs_create) = 6b7962b848a6805a333ef8ae4826217c9b099543
+SHA1 (patch-livekitlib) = 55814f6c5218dc02a8e745aed24a50099edd9cb0

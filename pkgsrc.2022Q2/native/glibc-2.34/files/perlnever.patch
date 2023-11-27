@@ -1,0 +1,18 @@
+diff -rupN glibc-2.31/manual/Makefile glibc-2.31.new/manual/Makefile
+--- glibc-2.31/manual/Makefile	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/manual/Makefile	2021-11-21 04:06:05.906850265 +0800
+@@ -172,6 +172,7 @@ include ../Rules
+ install-data subdir_install: install
+ # Generated files requiring python: libm-err.texi
+ # Generated files requiring perl: summary.texi
++ifeq ($(PERL),never)
+ ifneq ($(PERL),no)
+ ifneq ($(strip $(MAKEINFO)),:)
+ install: $(inst_infodir)/libc.info
+@@ -181,6 +182,7 @@ install: $(inst_infodir)/libc.info
+ 	else : ; fi
+ endif
+ endif
++endif
+ # Catchall implicit rule for other installation targets from the parent.
+ install-%: ;

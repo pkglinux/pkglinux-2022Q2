@@ -1,0 +1,7 @@
+
+genfstab
+
+Genfstab (generate fstab) is a script that automatically compile the /etc/fstab file, without the need to know which values are exactly required. This fork provide it for our Gentoo OS.
+/etc/fstab
+
+fstab is one of the most important file on linux: it said to kernel and init program how to handle and mount partitions (for eg: it said if there is/are /boot and /boot/efi) and if / is a btrfs/ext4/f2fs/xfs/etc partition (for btrfs also says if there are subvolumes like @home/@var/etc). Having fstab already compiled and good to go is a really useful thing, more importantly if you don't know how to compile it correctly (a wrong fstab file could prevent OS from booting).

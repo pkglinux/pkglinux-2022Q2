@@ -1,0 +1,9 @@
+# cp -v /root/watch.desktop ~/.config/autostart/watch.desktop
+[Desktop Entry]
+Name=Watch
+GenericName=Change brightness
+Comment=script to set brightness on my GNOME desktop
+Exec=/root/watch.sh
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true

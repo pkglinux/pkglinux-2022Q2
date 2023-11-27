@@ -1,0 +1,24 @@
+
+Scripts to start/stop the LFS system at bootup/shutdown
+
+Network Configuration:
+   Script Files:
+      /etc/rc.d/init.d/*
+      /sbin/ifup
+      /sbin/ifdown
+      /lib/lsb/*
+
+   Configuration Files:
+      /etc/sysconfig/ifconfig.*
+      Note: ifconfig.* files will be processed
+            in alphanumerical order on boot, and reversed on shutdown.
+      - IFACE  : The interface that is being configured (e.g. eth0)
+      - SERVICE: Which script to run in services directory.
+      - ONBOOT : If set to yes, this interface will be started on bootup
+
+      /etc/sysconfig/network
+      - HOSTNAME: Value of the system's hostname  (From LFS Book)
+                  This value may also be set in /etc/sysconfig/rc.site
+
+   Additional Configuration:
+...

@@ -1,0 +1,23 @@
+# Begin /etc/fstab
+
+# file system  mount-point  type     options             dump  fsck
+#                                                              order
+
+#/dev/sda3      /            ext4     defaults            1     1
+#/dev/sda1      /boot        ext2     defaults            1     1
+#/dev/sda2      swap         swap     pri=1               0     0
+
+#/dev/nvme0n1p3: UUID="fba6969d-ee24-4740-badf-01977f2a1db0"
+UUID="fba6969d-ee24-4740-badf-01977f2a1db0"	/		ext4	defaults	1     1
+UUID="cf3a6719-79b6-46fd-969e-552dfca1d390"	/root/sda3	ext4	defaults	1     1
+#/dev/nvme0n1p1: UUID="FCE6-DE8E"
+UUID="FCE6-DE8E"				/boot/efi	vfat	defaults	1     1
+#/dev/nvme0n1p2: UUID="f7ec9d5a-4acf-460a-867b-750d2c3e7859"
+UUID="f7ec9d5a-4acf-460a-867b-750d2c3e7859"	swap		swap	pri=1		0     0
+proc           /proc        proc     nosuid,noexec,nodev 0     0
+sysfs          /sys         sysfs    nosuid,noexec,nodev 0     0
+devpts         /dev/pts     devpts   gid=5,mode=620      0     0
+tmpfs          /run         tmpfs    defaults            0     0
+devtmpfs       /dev         devtmpfs mode=0755,nosuid    0     0
+
+# End /etc/fstab

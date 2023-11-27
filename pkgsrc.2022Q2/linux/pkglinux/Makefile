@@ -102,10 +102,22 @@ DEPENDS+=	openssh-[0-9]*:../../security/openssh
 DEPENDS+=	ntfs-3g-[0-9]*:../../linux/ntfs-3g
 DEPENDS+=	dosfstools-[0-9]*:../../sysutils/dosfstools
 DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
+DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
+DEPENDS+=	pigz-[0-9]*:../../linux/pigz
 DEPENDS+=	screen-[0-9]*:../../misc/screen
 DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
 DEPENDS+=	rc.d-boot-[0-9]*:../../pkgtools/rc.d-boot
 DEPENDS+=	genfstab-[0-9]*:../../native/genfstab
+DEPENDS+=	mtools-[0-9]*:../../sysutils/mtools
+DEPENDS+=	libisoburn-[0-9]*:../../sysutils/libisoburn
+DEPENDS+=	cdrtools-[0-9]*:../../sysutils/cdrtools
+DEPENDS+=	squashfs-tools-ng-[0-9]*:../../linux/squashfs-tools-ng
+DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
+DEPENDS+=	syslinux-[0-9]*:../../native/syslinux
+DEPENDS+=	rsync-[0-9]*:../../net/rsync
+DEPENDS+=	zsync-[0-9]*:../../net/zsync
+#DEPENDS+=	busybox-[0-9]*:../../native/busybox
+#DEPENDS+=	profile-data-[0-9]*:../../native/profile-data
 
 .include "../../mk/bsd.pkg.mk"

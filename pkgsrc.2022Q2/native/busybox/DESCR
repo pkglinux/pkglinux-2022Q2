@@ -1,0 +1,22 @@
+
+Please see the LICENSE file for details on copying and usage.
+Please refer to the INSTALL file for instructions on how to build.
+
+What is busybox:
+
+  BusyBox combines tiny versions of many common UNIX utilities into a single
+  small executable.  It provides minimalist replacements for most of the
+  utilities you usually find in bzip2, coreutils, dhcp, diffutils, e2fsprogs,
+  file, findutils, gawk, grep, inetutils, less, modutils, net-tools, procps,
+  sed, shadow, sysklogd, sysvinit, tar, util-linux, and vim.  The utilities
+  in BusyBox often have fewer options than their full-featured cousins;
+  however, the options that are included provide the expected functionality
+  and behave very much like their larger counterparts.
+
+  BusyBox has been written with size-optimization and limited resources in
+  mind, both to produce small binaries and to reduce run-time memory usage.
+  Busybox is also extremely modular so you can easily include or exclude
+  commands (or features) at compile time.  This makes it easy to customize
+  embedded systems; to create a working system, just add /dev, /etc, and a
+  Linux kernel.  Busybox (usually together with uClibc) has also been used as
+...

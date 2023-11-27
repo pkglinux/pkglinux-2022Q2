@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (linux-6.1.19.tar.xz) = dad0fc9ee0a49d5721f001634bf389fb09cf5ffecb37ad441e0b7048b8a029d5
+SHA512 (linux-6.1.19.tar.xz) = 06e714a70b6014a4f56b551952db899a526b9b3f7fdb11ca0f354d99e65fff1be9a3bc9522af98a93753568266233eff2f5e6f032921293ca2802587ff866ffd
+Size (linux-6.1.19.tar.xz) = 134856432 bytes

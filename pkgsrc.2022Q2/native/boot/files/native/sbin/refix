@@ -1,0 +1,21 @@
+#!/bin/bash -ue
+
+[ -z ${1+x} ] &&  { echo "Usage: refix /mnt/PREFIX or refix /PREFIX"; exit 0; }
+[[ -d $1 ]] ||  { echo "$1 is not a directory.";exit 0; }
+
+PREFIX=$1
+MNT=$(realpath $PREFIX/..)
+[ $MNT!="/" ] || MNT=""
+PRE=$(basename $PREFIX)
+
+#( cd $MNT && mkshadow -x "lib/modules|lib/firmware|boot" $PRE/native/ . )
+#lndir -silent $PREFIX/native $MNT
+lndir.sh -f 'grep -v "/lib/modules/\|/lib/firmware/\|/boot\/"' $PREFIX/native $MNT
+
+( cd $MNT/lib/ && ln -sf ../$PRE/native/lib/modules . && ln -sf ../$PRE/native/lib/firmware . )
+
+cp -a $MNT/$PRE/gnu/bin/* $MNT/usr/bin/
+cp -a $MNT/$PRE/gnu/bin/* $MNT/bin/
+
+ln -svf ../../run $MNT/$PRE/var/run
+ln -svf ../$PRE/var/db/dbus/machine-id $MNT/etc/

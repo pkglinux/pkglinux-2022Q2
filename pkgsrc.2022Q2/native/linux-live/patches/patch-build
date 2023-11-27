@@ -1,0 +1,27 @@
+$NetBSD$
+
+--- build.orig	2022-03-27 14:01:59.000000000 +0000
++++ build
+@@ -1,7 +1,7 @@
+ #!/bin/bash
+ # Linux Live Kit version 7
+ 
+-export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
++export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/pkg/sbin:/pkg/bin:/
+ 
+ CHANGEDIR=$(dirname $(readlink -f $0))
+ echo "Changing current directory to $CHANGEDIR"
+@@ -61,6 +61,13 @@ cp bootfiles/EFI/Boot/syslinux.efi $BOOT
+ cp bootfiles/EFI/Boot/{ldlinux.e64,menu.c32,libutil.c32,vesamenu.c32,libcom32.c32} $BOOT/EFI/Boot
+ cat $BOOT/syslinux.cfg | sed -r "s:/$LIVEKITNAME/boot/vesamenu:vesamenu:" > $BOOT/EFI/Boot/syslinux.cfg
+ 
++mkdir -p $LIVEKITDATA/boot/grub $BOOT/grub
++cat ./grub.cfg | sed -r "s:/linux/boot/:/$LIVEKITNAME/boot/:" > $BOOT/grub/grub.cfg
++cat ./grub.cfg | sed -r "s:/linux/boot/:/$LIVEKITNAME/boot/:" > $LIVEKITDATA/boot/grub/grub.cfg
++cp -r $BOOT/* $LIVEKITDATA/
++echo "LIVEKITDATA=$LIVEKITDATA" >> data
++echo "LIVEKITNAME=$LIVEKITNAME" >> data
++
+ # create compressed 01-core.sb
+ COREFS=""
+ for i in $MKMOD; do

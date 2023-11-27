@@ -1,0 +1,42 @@
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+#exit 0
+
+#modprobe wl
+
+#for M in lib80211 cfg80211 wl; do   
+#  modprobe $M &>/dev/null  
+#done
+
+#cat /sys/class/backlight/dell_backlight/brightness
+#echo 6 > /sys/class/backlight/dell_backlight/brightness
+
+#cat /sys/module/kvm_intel/parameters/nested
+#rmmod kvm_intel
+#modprobe kvm_intel nested=1
+#cat /sys/module/kvm_intel/parameters/nested
+
+#cpufreq-set -c 0 -g powersave
+#cpufreq-set -c 1 -g powersave
+#cpufreq-set -c 2 -g powersave
+#cpufreq-set -c 3 -g powersave
+#cpufreq-info
+
+cpufreq-set -c 0 -g conservative
+cpufreq-set -c 1 -g conservative
+cpufreq-set -c 2 -g conservative
+cpufreq-set -c 3 -g conservative
+cpufreq-info
+
+#/usr/local/sbin/lighttpd -f /root/lighttpd.conf

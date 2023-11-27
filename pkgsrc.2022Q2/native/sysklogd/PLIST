@@ -1,0 +1,10 @@
+@comment $NetBSD$
+native/etc/syslog.conf
+native/sbin/klogd
+native/sbin/syslogd
+native/usr/share/man/man5/syslog.conf.5
+native/usr/share/man/man8/klogd.8
+native/usr/share/man/man8/sysklogd.8
+native/usr/share/man/man8/syslogd.8
+@pkgdir native/usr/sbin
+@pkgdir native/usr/bin

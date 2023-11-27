@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- Makefile.orig	2021-12-30 19:43:35.000000000 +0000
++++ Makefile
+@@ -127,7 +127,6 @@ ifeq (, $(findstring -DNO_LIBUDEV,  $(CX
+ endif
+ 
+ INSTALL = /usr/bin/install
+-DESTDIR =
+ BINDIR  = /sbin
+ MANDIR  = /usr/share/man
+ MAN4DIR = $(MANDIR)/man4

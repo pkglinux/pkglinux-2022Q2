@@ -1,0 +1,37 @@
+From 531d77736ece1398be75cf9b191a06b2e51f6304 Mon Sep 17 00:00:00 2001
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Date: Fri, 9 Jul 2021 18:06:53 +0200
+Subject: [PATCH 1/2] Fix printf format specifiers used for generating tarballs
+
+When processing files > 4G, using "%o" truncates the result and the
+tarball is not readable. This should have been discovered when
+auto-patching the printf format specifiers, but a cast was added
+instead and the issue was overlooked.
+
+This commit replaces the down-cast and printf format specifiers.
+
+Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+---
+ lib/tar/write_header.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lib/tar/write_header.c b/lib/tar/write_header.c
+index 3caa1b3..a337b74 100644
+--- a/lib/tar/write_header.c
++++ b/lib/tar/write_header.c
+@@ -31,10 +31,10 @@ static void write_number(char *dst, sqfs_u64 value, int digits)
+ 		mask = (mask << 3) | 7;
+ 
+ 	if (value <= mask) {
+-		sprintf(buffer, "%0*o ", digits - 1, (unsigned int)value);
++		sprintf(buffer, "%0*lo ", digits - 1, (unsigned long)value);
+ 		memcpy(dst, buffer, digits);
+ 	} else if (value <= ((mask << 3) | 7)) {
+-		sprintf(buffer, "%0*o", digits, (unsigned int)value);
++		sprintf(buffer, "%0*lo", digits, (unsigned long)value);
+ 		memcpy(dst, buffer, digits);
+ 	} else {
+ 		write_binary(dst, value, digits);
+-- 
+2.31.1
+

@@ -1,0 +1,28 @@
+@comment $NetBSD$
+native/sbin/bootlogd
+native/sbin/fstab-decode
+native/sbin/halt
+native/sbin/init
+native/sbin/killall5
+native/sbin/poweroff
+native/sbin/reboot
+native/sbin/runlevel
+native/sbin/shutdown
+native/sbin/telinit
+native/usr/include/initreq.h
+native/usr/share/man/man5/initctl.5
+native/usr/share/man/man5/initscript.5
+native/usr/share/man/man5/inittab.5
+native/usr/share/man/man8/bootlogd.8
+native/usr/share/man/man8/fstab-decode.8
+native/usr/share/man/man8/halt.8
+native/usr/share/man/man8/init.8
+native/usr/share/man/man8/killall5.8
+native/usr/share/man/man8/poweroff.8
+native/usr/share/man/man8/reboot.8
+native/usr/share/man/man8/runlevel.8
+native/usr/share/man/man8/shutdown.8
+native/usr/share/man/man8/telinit.8
+@pkgdir native/usr/share/man/man1
+@pkgdir native/usr/bin
+@pkgdir native/bin

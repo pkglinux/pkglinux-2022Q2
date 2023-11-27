@@ -26,6 +26,7 @@ BROKEN_EXCEPT_ON_PLATFORM+=	FreeBSD-*-x86_64
 BROKEN_EXCEPT_ON_PLATFORM+=	NetBSD-*-aarch64
 BROKEN_EXCEPT_ON_PLATFORM+=	NetBSD-*-x86_64
 BROKEN_EXCEPT_ON_PLATFORM+=	SunOS-*-x86_64
+BROKEN_EXCEPT_ON_PLATFORM+=	Linux-*-x86_64
 
 # We are going to do a PIE build on our responsibility. Do not put -pie in
 # wrappers, as that would prevent us from building stage-1 compiler.

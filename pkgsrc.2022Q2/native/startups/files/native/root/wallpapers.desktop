@@ -1,0 +1,9 @@
+# cp -v /root/wallpapers.desktop ~/.config/autostart/wallpapers.desktop
+[Desktop Entry]
+Name=ChangeWallpapers
+GenericName=Change wallpapers
+Comment=script to set random background wallpapers on my GNOME desktop
+Exec=/root/.wallpapers
+Terminal=false
+Type=Application
+X-GNOME-Autostart-enabled=true

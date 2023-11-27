@@ -1,0 +1,40 @@
+
+#exec openbox
+#xinput list
+#xinput list-props 13
+#xinput set-prop 4 "Device Enabled" 0
+#xinput set-prop 13 "Device Enabled" 1
+xinput set-prop 14 "Device Enabled" 0
+#xinput --set-button-map 6 3 2 1
+#xinput --set-prop 6 253 .5
+xrandr --output LVDS --brightness 1.2
+
+set GDK_BACKEND=x11
+
+# uncomment the following line, and replace ${PREFIX} in case mutter crashes due to XCURSOR_PATH
+# export XCURSOR_PATH=${PREFIX}/share/icons
+export XCURSOR_PATH=/pkg/share/icons
+#exec gnome-session
+#ck-launch-session gnome-session
+# Ok now were getting further. :) Are you using x11/gdm to log into GNOME or starting your Xsession from the command line using startx(1)? It looks like sysutils/consolekit isn't being started which is required for x11/gnome-shell to function I think. It should be started automatically if your using gdm. If your using startx(1), you'll need to add the following to your ~/.xinitrc file:
+#xdpyinfo -ext all
+export XDG_SESSION_TYPE=x11
+#export LIBGL_ALWAYS_SOFTWARE=1
+#export LIBGL_ALWAYS_SOFTWARE=0
+#export LIBGL_ALWAYS_INDIRECT=1
+#exec ck-launch-session dbus-run-session gnome-session
+#exec /2021Q3/bin/strace -o gnome3.strace ck-launch-session dbus-launch --exit-with-session gnome-session
+#ck-launch-session dbus-launch fcitx5 -d &
+#start-pulseaudio-x11 &
+#ck-launch-session dbus-launch devilspie &
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session openbox-session
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session gnome-session --debug
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session gnome-session --disable-acceleration-check
+ck-launch-session dbus-launch xscreensaver -nosplash -no-splash &
+ck-launch-session dbus-launch devilspie &
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session startkde
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session gnome-session
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session gnome-session --disable-acceleration-check
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session startxfce4
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session startlxqt
+#exec ck-launch-session dbus-launch --sh-syntax --exit-with-session startlxde

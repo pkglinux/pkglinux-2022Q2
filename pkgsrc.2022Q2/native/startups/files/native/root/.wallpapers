@@ -1,0 +1,54 @@
+#!/bin/bash
+# cp -v /root/.wallpapers  ~/.config/autostart/.wallpapers
+# script to set random background wallpapers on my GNOME desktop
+# set base path
+export wallpaper_path=~/wallpapers
+shopt -s nullglob
+# store all the image file names in wallpapers array
+wallpapers=(
+    $wallpaper_path/*.jpg
+    $wallpaper_path/*.jpeg
+    $wallpaper_path/*.png
+    $wallpaper_path/*.bmp
+    $wallpaper_path/*.svg
+    $wallpaper_path/*.tif
+)
+# get array size
+wallpapers_size=${#wallpapers[*]}
+
+# set wallpapers in incremental order
+function Sequential() {
+    index=0
+    while [ $index -lt $wallpapers_size ]
+    do
+        gsettings set org.gnome.desktop.background picture-uri ${wallpapers[$index]}
+        # index is maxing out, so reset it
+        if [ $(($index+1)) -eq $wallpapers_size ]
+        then
+            index=0
+        else
+            index=$(($index + 1))
+        fi
+        # keep the wallpaper for the specified time
+        #sleep 15m
+        sleep 12s
+    done
+}
+
+# set random wallpapers
+function Random() {
+    # loop infinitely
+    while true
+    do
+        # generate random index
+        random_index=$(($RANDOM % $wallpapers_size))
+        # then set a random wallpaper
+        gsettings set org.gnome.desktop.background picture-uri ${wallpapers[$random_index]}
+        # keep the wallpaper for the specified time
+        #sleep 15m
+        sleep 12s
+    done
+}
+
+#Sequential
+Random

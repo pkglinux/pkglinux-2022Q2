@@ -1,0 +1,59 @@
+.TH PKG-CHROOT "1" "November 2023" "pkg-chroot version 1.0" "Maintainance Script"
+.SH NAME
+pkg-chroot \- wrapper of the chroot command and its important functionality
+.SH SYNOPSIS
+.B pkg-chroot
+[\fB\-h\fR]
+[\fB\-\-help\fR]
+[\fB\-v\fR]
+[\fB\-\-verbose\fR]
+[\fB\-V\fR]
+[\fB\-\-version\fR]
+[\fB\-l\fR \fILOGIN-COMMAND\fR]
+[\fB\-\-login\fR \fILOGIN-COMMAND\fR]
+[\fB\-d\fR \fIDESTDIR\fR]
+[\fB\-\-destdir\fR \fIDESTDIR\fR]
+.IR [COMMAND]
+.SH DESCRIPTION
+.B pkg-chroot
+a bash script to wrapper the chroot command and its important functionality.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Print usage of this script and exit..
+.TP
+.BR \-v ", " \-\-verbose
+Verbose mode. While running, print as much messages as possible.
+.TP
+.BR \-V ", " \-\-version
+Print the version number of this script and exit.
+.TP
+.BR \-l ", " \-\-login " " \fILOGIN-COMMAND\fR
+Set \fILOGIN-COMMAND\fR as default command other than just login.
+.TP
+.BR \-d ", " \-\-destdir " " \fIDESTDIR\fR
+Set \fIDESTDIR\fR as the destination root.
+.SH AUTHOR
+Written by Jianjun Liu <jianjunliu@126.com> for https://www.pkglinux.top
+.SH COPYRIGHT
+Copyright \(co 2023 Jianjun Liu <jianjunliu@126.com>
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+.PP
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+.SH "SEE ALSO"
+pkglinux-install(1), pkglinux-makeiso(1), pkglinux-makeall(1), pkglinux-upgrade(1), pkglinux-makeusb(1), pkg-strap(1)

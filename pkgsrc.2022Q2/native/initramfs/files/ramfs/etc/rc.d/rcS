@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo -e "Welcome to \\e[1mpkgLinux \\e[32iinitRamFS \\e[31mBASH\\e[0m (/sbin/init)"
+
+# Autorun functionality
+if [ -d /etc/autorun ] ; then
+for a in /etc/autorun/*
+  do
+    if [ -f "$a" ] && [ -x "$a" ]; then
+      echo -e "Executing \\e[32m$a\\e[0m in the shell."
+      $a
+    fi
+  done
+fi
+

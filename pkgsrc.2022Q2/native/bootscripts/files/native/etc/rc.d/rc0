@@ -1,0 +1,79 @@
+#!/bin/sh
+
+echo "Stopping all rc.d-boot services ..."
+if [ -x /pkg/sbin/rc.d-boot ]; then
+  /pkg/sbin/rc.d-boot stop
+fi
+
+echo "Saving random seed ..."
+/bin/dd if=/dev/urandom of=/var/tmp/random-seed count=1 &>/dev/null
+
+echo "Sending all processes the TERM signal ..."
+/sbin/killall5 -15
+sleep 0.5
+
+echo "Sending all processes the KILL signal ..."
+/sbin/killall5 -9
+sleep 0.5
+
+echo "Deactivating swap partitions ..."
+/sbin/swapoff -a
+
+# Disable this to improve shutdown/reboot speed
+#echo "Saving the system time to hardware clock ..."
+#/sbin/hwclock --systohc
+
+echo "Logging reboot/halt event ..."
+case "$0" in
+  *6)
+    /sbin/reboot -w
+    ;;
+  *0)
+    /sbin/halt -w
+    ;;
+esac
+
+echo "Unmounting all other currently mounted file systems ..."
+umount -a -d -r -t notmpfs,nosysfs,nodevtmpfs,noproc,nodevpts,noext4,nobtrfs
+
+echo "Remounting root filesystems read-only ..."
+/bin/mount -n -o remount,ro /
+if mountpoint -q /bin; then
+    echo "Found mountpoint /bin"
+    /bin/mount -n -o remount,ro /bin
+fi; if mountpoint -q /etc; then
+    echo "Found mountpoint /etc"
+    /bin/mount -n -o remount,ro /etc
+fi; if mountpoint -q /lib; then
+    echo "Found mountpoint /lib"
+    /bin/mount -n -o remount,ro /lib
+fi; if mountpoint -q /lib32; then
+    echo "Found mountpoint /lib32"
+    /bin/mount -n -o remount,ro /lib32
+fi; if mountpoint -q /libx32; then
+    echo "Found mountpoint /libx32"
+    /bin/mount -n -o remount,ro /libx32
+fi; if mountpoint -q /lib64; then
+    echo "Found mountpoint /lib64"
+    /bin/mount -n -o remount,ro /lib64
+fi; if mountpoint -q /sbin; then
+    echo "Found mountpoint /sbin"
+    /bin/mount -n -o remount,ro /sbin
+fi; if mountpoint -q /usr; then
+    echo "Found mountpoint /usr"
+    /bin/mount -n -o remount,ro /usr
+fi
+
+echo "Flushing filesystem buffers ..."
+/bin/sync
+
+case "$0" in
+  *6)
+    echo "Please stand by while rebooting ..."
+    /sbin/reboot -d -f -i
+    ;;
+  *0)
+    echo "Power off ..."
+    /sbin/halt -d -f -i -p
+    ;;
+esac

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (pigz-2.8.tar.gz) = 2829946447a5779c09b0a0b3cbea6ace01f15b5d687d21f080f5ffac760216fe
+SHA512 (pigz-2.8.tar.gz) = ae3d9d593e1645d65f9ab77aa828600c9af4bb30d0a073da7ae3dd805e65b87efaf6a0efb980f2d0168e475ae506eba194547d6479956dabb9d88293a9078a7f
+Size (pigz-2.8.tar.gz) = 121304 bytes

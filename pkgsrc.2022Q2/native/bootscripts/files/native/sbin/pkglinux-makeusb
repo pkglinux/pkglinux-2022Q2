@@ -1,0 +1,294 @@
+#!/bin/bash -ue
+
+<< MIT-LICENSE
+Copyright (c) 2023 Jianjun Liu<jianjunliu@126.com> https://www.pkglinux.top
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+MIT-LICENSE
+
+PKGLINUX_MAKEUSB_VERBOSE=""
+PKGLINUX_MAKEUSB_TAG="min"
+PKGLINUX_MAKEUSB_PREFIX="$(readlink /pkg)"
+PKGLINUX_MAKEUSB_KVER="$(uname -r)"
+PKGLINUX_MAKEUSB_BLANK="0"
+PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf")
+PKGLINUX_MAKEUSB_WAIT="2"
+PKGLINUX_MAKEUSB_FORCE=false
+
+
+pkglinux-makeusb-usage()
+{
+	# Display Help
+	echo "Create pkglinux disk image for usb or write it to block device."
+	echo
+	echo "Syntax: $0 [ -h|v|V|p|t|w|b|f ] [ --help|verbose|version|prefix|tag|wait|rootwait|rootdelay|blank|force ] [ blockdev ]"
+	echo "options:"
+	echo "h     Print this help."
+	echo "v     Verbose mode."
+	echo "V     Print software version and exit."
+	echo "p     Set new prefix."
+	echo "t     Sub tag."
+	echo "w     Seconds of rootdelay/rootwait."
+	echo "b     Expected extra MiB for the image file."
+	echo "f     Confirm to zap target file or device."
+	echo
+}
+
+echo Starting $0 $@
+
+for arg in "$@"; do
+	shift
+	case "$arg" in
+		"--help")	set -- "$@" "-h" ;;
+		"--verbose")	set -- "$@" "-v" ;;
+		"--version")	set -- "$@" "-V" ;;
+		"--prefix")	set -- "$@" "-p" ;;
+		"--tag")	set -- "$@" "-t" ;;
+		"--wait")	set -- "$@" "-w" ;;
+		"--rootwait")	set -- "$@" "-w" ;;
+		"--rootdelay")	set -- "$@" "-w" ;;
+		"--blank")	set -- "$@" "-b" ;;
+		"--force")	set -- "$@" "-f" ;;
+		*)		set -- "$@" "$arg"
+	esac
+done
+
+while getopts ':hvVp:t:w:b:f' OPTION; do
+	case "$OPTION" in
+		h)	# display usage
+			pkglinux-makeusb-usage
+			exit;;
+		v)	# verbose mode
+			PKGLINUX_MAKEUSB_VERBOSE="-v"
+			;;
+		V)	# display version
+			echo "1.0"	
+			exit;;
+		p)	# set new prefix
+			PKGLINUX_MAKEUSB_PREFIX="$OPTARG" ;;
+		t)	# subtag different from "min", like "gnome","kde", or "gnome+kde"
+			PKGLINUX_MAKEUSB_TAG="$OPTARG" ;;
+		w)	# seconds of rootdelay/rootwait
+			PKGLINUX_MAKEUSB_WAIT="$OPTARG" ;;
+		b)	# extra MiB space needed for the image file.
+			PKGLINUX_MAKEUSB_BLANK="$OPTARG" ;;
+		f)	# force mode.
+			PKGLINUX_MAKEUSB_FORCE=true ;;
+		\?)	# Invalid option
+	                echo "Error: Invalid option"
+			exit;;
+	esac
+done
+
+shift "$(($OPTIND -1))"
+
+[ "$#" -gt 1 ] && pkglinux-makeusb-usage && exit 1;
+
+[ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
+
+PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf")
+PKGLINUX_MAKEUSB_REPO_ROOT=$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))
+PKGLINUX_MAKEUSB_IMG="pkglinux-$PKGLINUX_MAKEUSB_PREFIX-$PKGLINUX_MAKEUSB_TAG.usb"
+
+if [ "$#" -gt 0 ]; then
+  [[ "$1" == "/dev/"* ]] || { echo "$1 is not a device."; exit 1; }
+  [ "$(lsblk -ndo tran $1)" = "usb" ] || [ "$(lsblk -ndo tran $1)" = "sata" ] || { echo "$1 is not a block device."; exit 1; }
+  $PKGLINUX_MAKEUSB_FORCE || { echo "Confirm to zap all data on $1 please use -f or --force."; exit 1; }
+
+  if [ -f ${PKGLINUX_MAKEUSB_IMG} ]; then
+    echo "Writting $PKGLINUX_MAKEUSB_IMG the block device $1 ..."
+    cat "${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
+  else
+    echo "Writting $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG to the block device $1 ..."
+    curl "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
+  fi
+  echo "Syncing disks ..."
+  sync
+  echo "Trying to enlarge the last partition of $1 ..."
+  echo "- +" | sfdisk --force --no-reread --no-tell-kernel -N 3 $1
+  echo "Trying to resize the file system of the last partition of $1 ..."
+  resize2fs "$1""3"
+  sync
+  exit 0
+fi
+
+$PKGLINUX_MAKEUSB_FORCE && rm $PKGLINUX_MAKEUSB_VERBOSE -f $PKGLINUX_MAKEUSB_IMG
+[ -e ${PKGLINUX_MAKEUSB_IMG} ] && { echo "$PKGLINUX_MAKEUSB_IMG exists." && exit 1; }
+
+[[ $PKGLINUX_MAKEUSB_BLANK =~ ^[0-9]+$ ]] || { echo "$PKGLINUX_MAKEUSB_BLANK is not a number." && exit 1; }
+
+find /dev -type b -name "loop?p?" | xargs -I D umount $PKGLINUX_MAKEUSB_VERBOSE -f D
+losetup $PKGLINUX_MAKEUSB_VERBOSE -D
+
+PKGLINUX_MAKEUSB_SFSFILE="pkglinux-$PKGLINUX_MAKEUSB_PREFIX-$PKGLINUX_MAKEUSB_TAG.sfs"
+if [ -f ${PKGLINUX_MAKEUSB_SFSFILE} ]; then
+  PKGLINUX_MAKEUSB_SIZE=$(($(stat -c%s "$PKGLINUX_MAKEUSB_SFSFILE")/1024/1024))
+else
+  PKGLINUX_MAKEUSB_SIZE=$(($(curl -sLI $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_SFSFILE | grep -i content-length | cut -d' ' -f 2 | sed 's/[^0-9]*//g')/1024/1024))
+fi
+[ $PKGLINUX_MAKEUSB_BLANK -ne 0 ] || PKGLINUX_MAKEUSB_BLANK=$(($PKGLINUX_MAKEUSB_SIZE/10+200));
+PKGLINUX_MAKEUSB_SIZE=$(($PKGLINUX_MAKEUSB_SIZE+$PKGLINUX_MAKEUSB_BLANK))
+
+rm $PKGLINUX_MAKEUSB_VERBOSE -f $PKGLINUX_MAKEUSB_IMG
+truncate -s "$PKGLINUX_MAKEUSB_SIZE""M" $PKGLINUX_MAKEUSB_IMG
+sfdisk --force --no-reread --no-tell-kernel $PKGLINUX_MAKEUSB_IMG << EOF
+,+100M,ef
+,+100M,,*
+;
+EOF
+sync
+PKGLINUX_MAKEUSB_LOOP0="$(losetup $PKGLINUX_MAKEUSB_VERBOSE --show -f -P "$PKGLINUX_MAKEUSB_IMG")"
+PKGLINUX_MAKEUSB_LOOP0P1="${PKGLINUX_MAKEUSB_LOOP0}p1"
+PKGLINUX_MAKEUSB_LOOP0P2="${PKGLINUX_MAKEUSB_LOOP0}p2"
+PKGLINUX_MAKEUSB_LOOP0P3="${PKGLINUX_MAKEUSB_LOOP0}p3"
+
+mkfs.fat -F 32 $PKGLINUX_MAKEUSB_LOOP0P1
+mkfs.ext4 -F $PKGLINUX_MAKEUSB_LOOP0P2
+mkfs.ext4 -F $PKGLINUX_MAKEUSB_LOOP0P3
+
+PKGLINUX_MAKEUSB_SFSID="$(tr -dc 'A-F0-9' < /dev/urandom | head -c32)"
+PKGLINUX_MAKEUSB_LABEL="$PKGLINUX_MAKEUSB_PREFIX"-"$(cat /dev/urandom | base64 | head -c7)"
+e2label $PKGLINUX_MAKEUSB_LOOP0P2 ""
+e2label $PKGLINUX_MAKEUSB_LOOP0P3 "$PKGLINUX_MAKEUSB_LABEL"
+PKGLINUX_MAKEUSB_UUID=$(blkid.static -sUUID "$PKGLINUX_MAKEUSB_LOOP0P3" | cut -d'"' -f2)
+PKGLINUX_MAKEUSB_TMPDIR1="/root/pkg-usb.tmp.1.d"
+PKGLINUX_MAKEUSB_TMPDIR2="/root/pkg-usb.tmp.2.d"
+PKGLINUX_MAKEUSB_TMPDIR3="/root/pkg-usb.tmp.3.d"
+rm $PKGLINUX_MAKEUSB_VERBOSE -rf $PKGLINUX_MAKEUSB_TMPDIR1 $PKGLINUX_MAKEUSB_TMPDIR2 $PKGLINUX_MAKEUSB_TMPDIR3
+mkdir $PKGLINUX_MAKEUSB_VERBOSE -p $PKGLINUX_MAKEUSB_TMPDIR1 $PKGLINUX_MAKEUSB_TMPDIR2 $PKGLINUX_MAKEUSB_TMPDIR3
+mount $PKGLINUX_MAKEUSB_VERBOSE $PKGLINUX_MAKEUSB_LOOP0P1 $PKGLINUX_MAKEUSB_TMPDIR1
+mount $PKGLINUX_MAKEUSB_VERBOSE $PKGLINUX_MAKEUSB_LOOP0P2 $PKGLINUX_MAKEUSB_TMPDIR2
+mount $PKGLINUX_MAKEUSB_VERBOSE $PKGLINUX_MAKEUSB_LOOP0P3 $PKGLINUX_MAKEUSB_TMPDIR3
+rm $PKGLINUX_MAKEUSB_VERBOSE -rf $PKGLINUX_MAKEUSB_TMPDIR1/* $PKGLINUX_MAKEUSB_TMPDIR2/* $PKGLINUX_MAKEUSB_TMPDIR3/*
+
+mkdir $PKGLINUX_MAKEUSB_VERBOSE -p $PKGLINUX_MAKEUSB_TMPDIR1/boot/grub/
+cat > $PKGLINUX_MAKEUSB_TMPDIR1/boot/grub/device.map <<EOF
+  (hd0) $PKGLINUX_MAKEUSB_LOOP0
+EOF
+mkdir -pv $PKGLINUX_MAKEUSB_TMPDIR2/boot/grub/
+cat > $PKGLINUX_MAKEUSB_TMPDIR2/boot/grub/device.map <<EOF
+  (hd0) $PKGLINUX_MAKEUSB_LOOP0
+EOF
+set +e
+grub-install-efi $PKGLINUX_MAKEUSB_VERBOSE --force --boot-directory=$PKGLINUX_MAKEUSB_TMPDIR1/boot --efi-directory=$PKGLINUX_MAKEUSB_TMPDIR1 --target=x86_64-efi $PKGLINUX_MAKEUSB_LOOP0
+set -e
+mkdir $PKGLINUX_MAKEUSB_VERBOSE -p $PKGLINUX_MAKEUSB_TMPDIR1/EFI/BOOT
+cp $PKGLINUX_MAKEUSB_VERBOSE $PKGLINUX_MAKEUSB_TMPDIR1/EFI/grub/grubx64.efi $PKGLINUX_MAKEUSB_TMPDIR1/EFI/BOOT/BOOTx64.EFI
+grub-install $PKGLINUX_MAKEUSB_VERBOSE --force --boot-directory=$PKGLINUX_MAKEUSB_TMPDIR2/boot --target=i386-pc  $PKGLINUX_MAKEUSB_LOOP0
+
+mkdir $PKGLINUX_MAKEUSB_VERBOSE -p $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID
+
+if [ -f ${PKGLINUX_MAKEUSB_SFSFILE} ]; then
+#  cat "${PKGLINUX_MAKEUSB_ISO}" | bsdtar -Oxf - */pkglinux.sfs > $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
+  cp $PKGLINUX_MAKEUSB_VERBOSE $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
+else
+#  curl "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_ISO}" | bsdtar -Oxf - */pkglinux.sfs > $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
+  curl "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_SFSFILE}" > $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
+fi
+
+PKGLINUX_MAKEUSB_SFSFILE="$PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs"
+[ -f ${PKGLINUX_MAKEUSB_SFSFILE} ] || { echo "Missing ${PKGLINUX_MAKEUSB_SFSFILE}." && exit 1; }
+
+PKGLINUX_MAKEUSB_VMLINUZ=$(unsquashfs -l $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_PREFIX/native/boot/vmlinuz-* | grep vmlinuz | cut -c 15-)
+PKGLINUX_MAKEUSB_KDIR=$(dirname $PKGLINUX_MAKEUSB_VMLINUZ)
+PKGLINUX_MAKEUSB_KVER=$(basename $PKGLINUX_MAKEUSB_VMLINUZ | cut -d'-' -f 2)
+unsquashfs -cat $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_VMLINUZ > $PKGLINUX_MAKEUSB_TMPDIR1/boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER
+unsquashfs -cat $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_VMLINUZ > $PKGLINUX_MAKEUSB_TMPDIR2/boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER
+unsquashfs -cat $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_KDIR/initramfs-$PKGLINUX_MAKEUSB_KVER > $PKGLINUX_MAKEUSB_TMPDIR1/boot/initramfs-$PKGLINUX_MAKEUSB_KVER
+unsquashfs -cat $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_KDIR/initramfs-$PKGLINUX_MAKEUSB_KVER > $PKGLINUX_MAKEUSB_TMPDIR2/boot/initramfs-$PKGLINUX_MAKEUSB_KVER
+unsquashfs -cat $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_KDIR/native-linux-kernel-$PKGLINUX_MAKEUSB_KVER.config > $PKGLINUX_MAKEUSB_TMPDIR1/boot/native-linux-kernel-$PKGLINUX_MAKEUSB_KVER.config
+unsquashfs -cat $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_KDIR/native-linux-kernel-$PKGLINUX_MAKEUSB_KVER.config > $PKGLINUX_MAKEUSB_TMPDIR2/boot/native-linux-kernel-$PKGLINUX_MAKEUSB_KVER.config
+
+mkdir $PKGLINUX_MAKEUSB_VERBOSE -p "$PKGLINUX_MAKEUSB_TMPDIR2/boot/grub"
+cat << EOF > "$PKGLINUX_MAKEUSB_TMPDIR2/boot/grub/grub.cfg"
+# Begin /boot/grub/grub.cfg
+set default=0
+set timeout=5
+
+#insmod ext2
+#insmod ext4
+#set root=(hd0,1)
+
+insmod part_msdos
+insmod fat
+insmod iso9660
+insmod search
+insmod probe
+insmod ext2
+insmod ext4
+
+#search --no-floppy --set=__USBROOT_ --file '/boot/$PKGLINUX_MAKEUSB_LABEL'
+#probe --set __USB_UUID --fs-uuid "\${__USBROOT}"
+
+menuentry "pkgLinux / KERNEL $PKGLINUX_MAKEUSB_KVER" {
+#	linux   /boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER sfs=$PKGLINUX_MAKEUSB_SFSID root=LABEL=$PKGLINUX_MAKEUSB_LABEL rootdelay=$PKGLINUX_MAKEUSB_WAIT
+	linux   /boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER sfs=$PKGLINUX_MAKEUSB_SFSID root=UUID=$PKGLINUX_MAKEUSB_UUID rootdelay=$PKGLINUX_MAKEUSB_WAIT
+	initrd  /boot/initramfs-$PKGLINUX_MAKEUSB_KVER
+}
+menuentry "pkgLinux / KERNEL $PKGLINUX_MAKEUSB_KVER (minimal busybox for rescue)" {
+#	linux   /boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER single root=LABEL=$PKGLINUX_MAKEUSB_LABEL rootdelay=$PKGLINUX_MAKEUSB_WAIT
+	linux   /boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER single root=UUID=$PKGLINUX_MAKEUSB_UUID rootdelay=$PKGLINUX_MAKEUSB_WAIT
+	initrd  /boot/initramfs-$PKGLINUX_MAKEUSB_KVER
+}
+EOF
+
+mkdir $PKGLINUX_MAKEUSB_VERBOSE -p "$PKGLINUX_MAKEUSB_TMPDIR1/boot/grub"
+cat << EOF > "$PKGLINUX_MAKEUSB_TMPDIR1/boot/grub/grub.cfg"
+set default=0
+set timeout=5
+
+#loadfont "unicode"
+#set gfxmode=auto
+#set gfxpayload=keep
+#insmod all_video
+#insmod gfxterm
+#terminal_output gfxterm
+#GRUB_TERMINAL=console
+
+#no suitable video mode found
+#Booting in blind mode
+
+insmod all_video
+set gfxmode=0
+
+#search --no-floppy --set=__USBROOT_ --file '/boot/$PKGLINUX_MAKEUSB_LABEL'
+#probe --set __USB_UUID --fs-uuid "\${__USBROOT}"
+
+menuentry "pkgLinux / KERNEL $PKGLINUX_MAKEUSB_KVER" {
+#	linux   /boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER sfs=$PKGLINUX_MAKEUSB_SFSID root=LABEL=$PKGLINUX_MAKEUSB_LABEL rootdelay=$PKGLINUX_MAKEUSB_WAIT
+	linux   /boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER sfs=$PKGLINUX_MAKEUSB_SFSID root=UUID=$PKGLINUX_MAKEUSB_UUID rootdelay=$PKGLINUX_MAKEUSB_WAIT
+	initrd  /boot/initramfs-$PKGLINUX_MAKEUSB_KVER
+}
+menuentry "pkgLinux / KERNEL $PKGLINUX_MAKEUSB_KVER (minimal busybox for rescue)" {
+#	linux   /boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER single root=LABEL=$PKGLINUX_MAKEUSB_LABEL rootdelay=$PKGLINUX_MAKEUSB_WAIT
+	linux   /boot/vmlinuz-$PKGLINUX_MAKEUSB_KVER single root=UUID=$PKGLINUX_MAKEUSB_UUID rootdelay=$PKGLINUX_MAKEUSB_WAIT
+	initrd  /boot/initramfs-$PKGLINUX_MAKEUSB_KVER
+}
+EOF
+
+umount $PKGLINUX_MAKEUSB_VERBOSE -f $PKGLINUX_MAKEUSB_LOOP0P1
+umount $PKGLINUX_MAKEUSB_VERBOSE -f $PKGLINUX_MAKEUSB_LOOP0P2
+umount $PKGLINUX_MAKEUSB_VERBOSE -f $PKGLINUX_MAKEUSB_LOOP0P3
+echo "Sync disks ..."
+sync
+losetup $PKGLINUX_MAKEUSB_VERBOSE -d $PKGLINUX_MAKEUSB_LOOP0
+rm $PKGLINUX_MAKEUSB_VERBOSE -rf $PKGLINUX_MAKEUSB_TMPDIR1 $PKGLINUX_MAKEUSB_TMPDIR2 $PKGLINUX_MAKEUSB_TMPDIR3
+md5sum $PKGLINUX_MAKEUSB_IMG > $PKGLINUX_MAKEUSB_IMG.md5
+$PKGLINUX_MAKEUSB_FORCE && rm $PKGLINUX_MAKEUSB_VERBOSE -f "$PKGLINUX_MAKEUSB_IMG".zsync
+zsyncmake -u $PKGLINUX_MAKEUSB_IMG $PKGLINUX_MAKEUSB_IMG

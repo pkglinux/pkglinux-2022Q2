@@ -1,0 +1,124 @@
+#!/bin/bash
+
+<< MIT-LICENSE
+Copyright (c) 2023 Jianjun Liu<jianjunliu@126.com> https://www.pkglinux.top
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+MIT-LICENSE
+
+PKG_CHROOT_COMMAND="/bin/bash --login"
+PKG_CHROOT_DESTDIR="/mnt"
+PKG_CHROOT_VERBOSE=""
+
+pkg-chroot-usage()
+{
+	# Display Help
+	echo "Wrapper of the chroot command and its important functionality."
+	echo
+	echo "Syntax: $0 [ -h|v|V|l|d ] [ --help|verbose|version|login|destdir ] [ command ]"
+	echo "options:"
+	echo "h     Print this help."
+	echo "v     Verbose mode."
+	echo "V     Print software version and exit."
+	echo "l     Set default command other than just login."
+	echo "d     Set directory path for destined root."
+	echo
+}
+
+echo Starting $0 $@
+
+for arg in "$@"; do
+	shift
+	case "$arg" in
+		"--help")	set -- "$@" "-h" ;;
+		"--verbose")	set -- "$@" "-v" ;;
+		"--version")	set -- "$@" "-V" ;;
+		"--login")	set -- "$@" "-l" ;;
+		"--destdir")	set -- "$@" "-d" ;;
+		*)		set -- "$@" "$arg"
+	esac
+done
+
+while getopts ":hvVl:d:" option; do
+	case $option in
+		h)	# display usage
+			pkg-chroot-usage
+			exit;;
+		v)	# verbose option
+			PKG_CHROOT_VERBOSE="-v"
+			;;
+		V)	# version
+			echo "1.0"	
+			exit;;
+		l)	# replace default command
+			PKG_CHROOT_COMMAND="$OPTARG";;
+		d)	# set destdir
+			PKG_CHROOT_DESTDIR="$OPTARG";;
+		\?)	# Invalid option
+	                echo "Error: Invalid option"
+			exit;;
+	esac
+done
+
+shift "$(($OPTIND -1))"
+
+[ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
+
+[ "$#" -gt 0 ] && PKG_CHROOT_COMMAND="$@"
+
+
+pkg-chroot-clean()
+{
+  if (( ${#PKG_CHROOT_MOUNTS[@]} )); then
+    umount $PKG_CHROOT_VERBOSE "${PKG_CHROOT_MOUNTS[@]}"
+  fi
+  unset PKG_CHROOT_MOUNTS
+}
+
+pkg-chroot-mount()
+{
+  mount "$@" && PKG_CHROOT_MOUNTS=("${@: -1}" "${PKG_CHROOT_MOUNTS[@]}")
+}
+
+pkg-chroot-prepare()
+{
+	[[ $(trap -p EXIT) ]] && echo 'Attempting to overwrite existing EXIT trap' && exit 1;
+	trap 'pkg-chroot-clean' EXIT
+
+	pkg-chroot-mount $PKG_CHROOT_VERBOSE --bind /dev "$PKG_CHROOT_DESTDIR"/dev &&
+	pkg-chroot-mount $PKG_CHROOT_VERBOSE -t devpts devpts -o gid=5,mode=620 "$PKG_CHROOT_DESTDIR"/dev/pts &&
+	pkg-chroot-mount $PKG_CHROOT_VERBOSE -t proc proc "$PKG_CHROOT_DESTDIR"/proc &&
+	pkg-chroot-mount $PKG_CHROOT_VERBOSE -t sysfs sysfs "$PKG_CHROOT_DESTDIR"/sys &&
+	pkg-chroot-mount $PKG_CHROOT_VERBOSE -t tmpfs tmpfs "$PKG_CHROOT_DESTDIR"/run
+
+}
+
+pkg-chroot()
+{
+	pkg-chroot-prepare
+
+	chroot "$PKG_CHROOT_DESTDIR" /usr/bin/env -i \
+		HOME=/root TERM="$TERM" PS1='\u:\w\$ ' \
+		PATH=/pkg/bin:/pkg/sbin:/bin:/usr/bin:/sbin:/usr/sbin \
+		$PKG_CHROOT_COMMAND
+
+	pkg-chroot-clean
+}
+
+pkg-chroot

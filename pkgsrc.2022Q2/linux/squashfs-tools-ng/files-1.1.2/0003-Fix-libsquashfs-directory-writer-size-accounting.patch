@@ -1,0 +1,139 @@
+From 248494992442fbde7eb6ca3979a778d82fa86016 Mon Sep 17 00:00:00 2001
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Date: Wed, 21 Jul 2021 09:41:47 +0200
+Subject: [PATCH] Fix libsquashfs directory writer size accounting
+
+The squashfs readdir() implementation in the Linux kernel returns
+non-existing "." and ".." entries for offsets 0 and 1, and after
+that reads from disk. For convenience, it was decided to store an
+off-by-3 value on disk instead of doing complex primary school math
+to adjust for this. This didn't show up until now, because the kernel
+implementation trusts the value from the directory header more than
+the actual size in the inode and happily reads 3 more than the inode
+would allow it to. This only showed up with 7-zip which subtracts 3
+from the size and expects the result to be exact and bails if the
+directory headers suggest otherwise.
+
+And yes, I did consider making a "Holy Hand Granade of Antioch"
+reference, but consciously decided not to.
+
+Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+---
+ doc/format.txt            |  9 +++++++--
+ include/sqfs/dir_writer.h |  7 +++++++
+ include/sqfs/inode.h      | 11 ++++++++++-
+ lib/sqfs/dir_writer.c     |  6 +++---
+ 4 files changed, 27 insertions(+), 6 deletions(-)
+
+diff --git a/doc/format.txt b/doc/format.txt
+index 41cba78..85a66dc 100644
+--- a/doc/format.txt
++++ b/doc/format.txt
+@@ -664,6 +664,11 @@
+  +------+--------------+------------------------------------------------------+
+  | u16  | file size    | Total (uncompressed) size in bytes of the entry      |
+  |      |              | listing in the directory table, including headers.   |
++ |      |              |                                                      |
++ |      |              | This value is 3 bytes larger than the real listing.  |
++ |      |              | The Linux kernel creates "." and ".." entries for    |
++ |      |              | offsets 0 and 1, and only after 3 looks into the     |
++ |      |              | listing, subtracting 3 from the size.                |
+  +------+--------------+------------------------------------------------------+
+  | u16  | block offset | The (uncompressed) offset within the metadata block  |
+  |      |              | in the directory table where the directory listing   |
+@@ -679,8 +684,8 @@
+  directory. I.e. a directory with N entries has at least N + 2 link count.
+ 
+ 
+- If the "file size" is set to 0, the directory is empty and there is no
+- corresponding listing in the directory table.
++ If the "file size" is set to a value < 4, the directory is empty and there is
++ no corresponding listing in the directory table.
+ 
+ 
+  An extended directory can have a listing that is at most 4GiB in size, may
+diff --git a/include/sqfs/dir_writer.h b/include/sqfs/dir_writer.h
+index 9615a41..7b35fe0 100644
+--- a/include/sqfs/dir_writer.h
++++ b/include/sqfs/dir_writer.h
+@@ -161,6 +161,11 @@ SQFS_API int sqfs_dir_writer_end(sqfs_dir_writer_t *writer);
+  * size of the directory listing that is required for the directory inodes.
+  * And also to determine which kind of directory inode to create.
+  *
++ * Note that this size is only what was written to disk. SquashFS directory
++ * inodes need you to add 3 to this value, to account for "." and ".." entries
++ * which are not actually stored on disk. The @ref sqfs_dir_writer_create_inode
++ * function takes this into account and adds the 3 internally.
++ *
+  * @param writer A pointer to a directory writer object.
+  *
+  * @return The size of the entire, uncompressed listing in bytes.
+@@ -226,6 +231,8 @@ SQFS_API size_t sqfs_dir_writer_get_index_size(const sqfs_dir_writer_t *writer);
+  * convenience function called @ref sqfs_dir_writer_write_index to write the
+  * index meta data after writing the inode itself.
+  *
++ * @note The size is already adjusted for the required off-by-3 value.
++ *
+  * @param writer A pointer to a directory writer object.
+  * @param hlinks The number of hard links pointing to the directory.
+  * @param xattr If set to something other than 0xFFFFFFFF, an extended
+diff --git a/include/sqfs/inode.h b/include/sqfs/inode.h
+index 0bc33db..8df7158 100644
+--- a/include/sqfs/inode.h
++++ b/include/sqfs/inode.h
+@@ -400,6 +400,15 @@ struct sqfs_inode_dir_t {
+ 
+ 	/**
+ 	 * @brief Combined size of all directory entries and headers in bytes.
++	 *
++	 * The value stored here is off by 3 bytes, i.e. 3 bytes larger than
++	 * the actual listing on disk. The Linux implementation of SquashFS
++	 * uses readdir() offsets 0 and 1 to synthesize "." and ".." entries,
++	 * and after that looks into the actual directory.
++	 *
++	 * Why store an off-by-3 value on disk instead of faking it in the
++	 * kernel and have something consistent here? Beats me, but that's
++	 * how it is implemented.
+ 	 */
+ 	sqfs_u16 size;
+ 
+@@ -428,7 +437,7 @@ struct sqfs_inode_dir_ext_t {
+ 	sqfs_u32 nlink;
+ 
+ 	/**
+-	 * @brief Combined size of all directory entries and headers in bytes.
++	 * @brief Size of all directory entries and headers in bytes plus 3.
+ 	 */
+ 	sqfs_u32 size;
+ 
+diff --git a/lib/sqfs/dir_writer.c b/lib/sqfs/dir_writer.c
+index 908bb01..ad44458 100644
+--- a/lib/sqfs/dir_writer.c
++++ b/lib/sqfs/dir_writer.c
+@@ -379,7 +379,7 @@ sqfs_inode_generic_t
+ 	block_offset = writer->dir_ref & 0xFFFF;
+ 
+ 	if (xattr != 0xFFFFFFFF || start_block > 0xFFFFFFFFUL ||
+-	    writer->dir_size > 0xFFFF) {
++	    writer->dir_size > (0xFFFF - 3)) {
+ 		inode->base.type = SQFS_INODE_EXT_DIR;
+ 	} else {
+ 		inode->base.type = SQFS_INODE_DIR;
+@@ -388,12 +388,12 @@ sqfs_inode_generic_t
+ 	if (inode->base.type == SQFS_INODE_DIR) {
+ 		inode->data.dir.start_block = start_block;
+ 		inode->data.dir.nlink = writer->ent_count + hlinks + 2;
+-		inode->data.dir.size = writer->dir_size;
++		inode->data.dir.size = writer->dir_size + 3;
+ 		inode->data.dir.offset = block_offset;
+ 		inode->data.dir.parent_inode = parent_ino;
+ 	} else {
+ 		inode->data.dir_ext.nlink = writer->ent_count + hlinks + 2;
+-		inode->data.dir_ext.size = writer->dir_size;
++		inode->data.dir_ext.size = writer->dir_size + 3;
+ 		inode->data.dir_ext.start_block = start_block;
+ 		inode->data.dir_ext.parent_inode = parent_ino;
+ 		inode->data.dir_ext.offset = block_offset;
+-- 
+2.31.1
+

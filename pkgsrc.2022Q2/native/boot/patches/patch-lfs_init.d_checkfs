@@ -1,0 +1,28 @@
+$NetBSD$
+
+--- lfs/init.d/checkfs.orig	2019-11-01 16:55:58.000000000 +0000
++++ lfs/init.d/checkfs
+@@ -51,6 +51,23 @@ case "${1}" in
+ 
+       log_info_msg "Mounting root file system in read-only mode... "
+       mount -n -o remount,ro / >/dev/null
++      if mountpoint -q /bin; then
++      mount -n -o remount,ro /bin >/dev/null
++      fi; if mountpoint -q /etc; then
++      mount -n -o remount,ro /etc >/dev/null
++      fi; if mountpoint -q /lib; then
++      mount -n -o remount,ro /lib >/dev/null
++      fi; if mountpoint -q /lib32; then
++      mount -n -o remount,ro /lib32 >/dev/null
++      fi; if mountpoint -q /libx32; then
++      mount -n -o remount,ro /libx32 >/dev/null
++      fi; if mountpoint -q /lib64; then
++      mount -n -o remount,ro /lib64 >/dev/null
++      fi; if mountpoint -q /sbin; then
++      mount -n -o remount,ro /sbin >/dev/null
++      fi; if mountpoint -q /usr; then
++      mount -n -o remount,ro /usr >/dev/null
++      fi
+ 
+       if [ ${?} != 0 ]; then
+          log_failure_msg2

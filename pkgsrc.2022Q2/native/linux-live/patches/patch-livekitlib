@@ -1,0 +1,76 @@
+$NetBSD$
+
+--- livekitlib.orig	2022-03-27 14:01:59.000000000 +0000
++++ livekitlib
+@@ -166,7 +166,7 @@ modprobe_everything()
+    echo_green_star >&2
+    echo "Probing for hardware" >&2
+ 
+-   find /lib/modules/ | fgrep .ko | egrep $1 $2 | sed -r "s:^.*/|[.]ko\$::g" | xargs -n 1 modprobe 2>/dev/null
++   find /lib/modules/ | fgrep .ko | egrep $1 $2 | sed -r "s:^.*/|[.]ko[.]xz\$::g" | xargs -n 1 modprobe 2>/dev/null
+    refresh_devs
+ }
+ 
+@@ -529,6 +529,46 @@ download_data_pxe()
+ # $1 = data directory target (mount here)
+ # $2 = data directory which contains compressed bundles
+ #
++find_data_by_label_id()
++{
++   debug_log "find_data_try" "$*"
++
++   local DEVICE FS FROM OPTIONS MOUNT
++
++   DEVICE="$(busybox findfs LABEL=$(cat /etc/id_label))"
++#   DEVICE="$(busybox findfs LABEL=1B0FC09B9286B6B0372FD1097A6EEE0C)"
++   mkdir -p "$1"
++   FROM="$2"
++   FS="$(device_bestfs "$DEVICE")"
++   OPTIONS="$(fs_options $FS)"
++   MOUNT="$(mount_command $FS)"
++
++   $MOUNT "$DEVICE" "$1" $OPTIONS 2>/dev/null
++
++   # if the FROM parameter is actual file, mount it again as loop (eg. iso)
++   if [ -f "$1/$FROM" ]; then
++      mkdir -p "$1/../iso"
++      mount -o loop,ro "$1/$FROM" "$1/../iso" 2>/dev/null
++      FROM="../iso/$LIVEKITNAME"
++   fi
++
++   # search for bundles in the mounted directory
++   if [ "$(find "$1/$FROM" -maxdepth 1 -name "*.$BEXT" 2>/dev/null)" != "" ]; then
++      # we found at least one bundle/module here
++      echo "$1/$FROM" | tr -s "/" | sed -r "s:/[^/]+/[.][.]/:/:g"
++      return
++   fi
++
++   # unmount twice, since there could be mounted ISO as loop too. If not, it doesn't hurt
++   umount "$1" 2>/dev/null
++   umount "$1" 2>/dev/null
++}
++
++# Find LIVEKIT data by mounting all devices
++# If found, keep mounted, else unmount
++# $1 = data directory target (mount here)
++# $2 = data directory which contains compressed bundles
++#
+ find_data_try()
+ {
+    debug_log "find_data_try" "$*"
+@@ -562,6 +602,7 @@ find_data_try()
+       umount "$1" 2>/dev/null
+       umount "$1" 2>/dev/null
+    done
++#   find_data_by_label_id "$1" "$2"
+ }
+ 
+ 
+@@ -902,6 +943,7 @@ change_root()
+    if [ -x sbin/init -o -L sbin/init  ]; then INIT=sbin/init; fi
+    if [ "$INIT" = "" ]; then fatal "Can't find executable init command"; fi
+ 
++   mount -n -t devtmpfs dev dev
+    mkdir -p run
+    mount -t tmpfs tmpfs run
+    mkdir -p run/initramfs

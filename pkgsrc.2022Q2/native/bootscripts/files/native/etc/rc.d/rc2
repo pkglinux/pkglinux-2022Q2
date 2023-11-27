@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Run a rc.local script for runlevel 2
+if [ -x /etc/rc.d/rc.local ]; then
+  /etc/rc.d/rc.local
+fi

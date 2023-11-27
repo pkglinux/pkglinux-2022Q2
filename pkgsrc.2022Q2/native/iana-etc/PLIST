@@ -1,0 +1,3 @@
+@comment $NetBSD$
+native/etc/protocols
+native/etc/services

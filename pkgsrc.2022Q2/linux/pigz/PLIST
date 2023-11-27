@@ -1,0 +1,5 @@
+@comment $NetBSD$
+bin/pigz
+bin/unpigz
+man/man1/pigz.1
+share/doc/pigz/README

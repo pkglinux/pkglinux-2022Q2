@@ -1,0 +1,4 @@
+@comment $NetBSD$
+native/usr/bin/genfstab
+native/usr/share/bash-completion/completions/genfstab
+native/usr/share/man/man8/genfstab.8

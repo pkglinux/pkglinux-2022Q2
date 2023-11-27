@@ -1,0 +1,64 @@
+From c570e5497bac873cfb74595a64432afc085fd4cd Mon Sep 17 00:00:00 2001
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Date: Fri, 8 Jul 2022 17:08:34 +0200
+Subject: [PATCH 2/2] Fix: libfstree: actually use a full 32 bit hard link
+ counter
+
+The squashfs on-disk format uses 32 bit link counters, but the fstree
+used 16 bit ones. Because the link count also includes child nodes,
+this artificially limited the number of entries in a directory to ~64k
+files.
+
+This patch removes the limit by switching libfstree to 32 bit counters.
+
+Reported-by: Marvin Renich <mrvn@renich.org>
+Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+---
+ include/fstree.h      | 2 +-
+ lib/fstree/hardlink.c | 2 +-
+ lib/fstree/mknode.c   | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/include/fstree.h b/include/fstree.h
+index 5bdfc7a..b3ecddb 100644
+--- a/include/fstree.h
++++ b/include/fstree.h
+@@ -89,8 +89,8 @@ struct tree_node_t {
+ 	sqfs_u32 gid;
+ 	sqfs_u32 inode_num;
+ 	sqfs_u32 mod_time;
++	sqfs_u32 link_count;
+ 	sqfs_u16 mode;
+-	sqfs_u16 link_count;
+ 
+ 	/* SquashFS inode refernce number. 32 bit offset of the meta data
+ 	   block start (relative to inode table start), shifted left by 16
+diff --git a/lib/fstree/hardlink.c b/lib/fstree/hardlink.c
+index 11ab566..f45acf7 100644
+--- a/lib/fstree/hardlink.c
++++ b/lib/fstree/hardlink.c
+@@ -62,7 +62,7 @@ int fstree_resolve_hard_link(fstree_t *fs, tree_node_t *node)
+ 		return -1;
+ 	}
+ 
+-	if (node->link_count == 0x0FFFF) {
++	if (node->link_count == 0xFFFFFFFF) {
+ 		errno = EMLINK;
+ 		return -1;
+ 	}
+diff --git a/lib/fstree/mknode.c b/lib/fstree/mknode.c
+index 64c9d8a..dd6d742 100644
+--- a/lib/fstree/mknode.c
++++ b/lib/fstree/mknode.c
+@@ -75,7 +75,7 @@ tree_node_t *fstree_mknode(tree_node_t *parent, const char *name,
+ 	}
+ 
+ 	if (parent != NULL) {
+-		if (parent->link_count == 0x0FFFF) {
++		if (parent->link_count == 0xFFFFFFFF) {
+ 			free(n);
+ 			errno = EMLINK;
+ 			return NULL;
+-- 
+2.37.1
+

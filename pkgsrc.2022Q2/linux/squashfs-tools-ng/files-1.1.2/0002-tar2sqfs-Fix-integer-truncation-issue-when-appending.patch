@@ -1,0 +1,33 @@
+From 729850cf514be9052c804874ed09ac75d3c45eea Mon Sep 17 00:00:00 2001
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Date: Fri, 9 Jul 2021 19:39:49 +0200
+Subject: [PATCH 2/2] tar2sqfs: Fix integer truncation issue when appending
+ data to a tarball
+
+The data is processed 2G at a time to avoid this exact issue, but the
+check was skipped on 64 bit systems, since the function *used to* use
+size_t instead of sqfs_u32.
+
+This commit removes the second check.
+
+Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+---
+ bin/tar2sqfs/process_tarball.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/bin/tar2sqfs/process_tarball.c b/bin/tar2sqfs/process_tarball.c
+index 1118822..8465760 100644
+--- a/bin/tar2sqfs/process_tarball.c
++++ b/bin/tar2sqfs/process_tarball.c
+@@ -48,7 +48,7 @@ static int write_file(istream_t *input_file, sqfs_writer_t *sqfs,
+ 			diff = filesize - offset;
+ 		}
+ 
+-		if (sizeof(diff) > sizeof(size_t) && diff > 0x7FFFFFFFUL)
++		if (diff > 0x7FFFFFFFUL)
+ 			diff = 0x7FFFFFFFUL;
+ 
+ 		if (sparse_region) {
+-- 
+2.31.1
+

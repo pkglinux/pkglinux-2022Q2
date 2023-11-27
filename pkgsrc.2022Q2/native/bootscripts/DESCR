@@ -1,0 +1,17 @@
+
+BSD style boot scripts for Linux systems.
+A fast, robust and simple way to boot.
+
+Less modular and simpler setup than sysv init
+
+Failed boot processes are visible on the console from the error message instead of a fail state on the boot step.
+
+A lot simpler compared to systemd
+
+Systemd offers lots of features besides a boot manager,
+for example it has a service manager and logging capabilities built.
+
+The traditional Unix way of partitioning functionality into small semi-independent parts each doing a single job.
+leaving the other tasks to the better suited programs which are especially build for this like the syslog daemon to log kernel messages or acpid to handle hibernate.
+
+Also avoids function creep and dependency on tools like D-Bus, PAM or PolicyKit.

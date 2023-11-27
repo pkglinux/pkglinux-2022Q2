@@ -1,0 +1,197 @@
+diff -rupN glibc-2.31/elf/dl-conflict.c glibc-2.31.new/elf/dl-conflict.c
+--- glibc-2.31/elf/dl-conflict.c	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/elf/dl-conflict.c	2021-11-21 05:18:57.439989887 +0800
+@@ -17,6 +17,7 @@
+    License along with the GNU C Library; see the file COPYING.LIB.  If
+    not, see <https://www.gnu.org/licenses/>.  */
+ 
++#include <assert.h>
+ #include <errno.h>
+ #include <libintl.h>
+ #include <stdlib.h>
+diff -rupN glibc-2.31/elf/dl-load.c glibc-2.31.new/elf/dl-load.c
+--- glibc-2.31/elf/dl-load.c	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/elf/dl-load.c	2021-11-21 05:18:57.439989887 +0800
+@@ -57,6 +57,7 @@ struct filebuf
+ };
+ 
+ #include "dynamic-link.h"
++#include "get-dynamic-info.h"
+ #include <abi-tag.h>
+ #include <stackinfo.h>
+ #include <sysdep.h>
+@@ -1200,7 +1201,7 @@ _dl_map_object_from_fd (const char *name
+   else
+     l->l_ld = (ElfW(Dyn) *) ((ElfW(Addr)) l->l_ld + l->l_addr);
+ 
+-  elf_get_dynamic_info (l, NULL);
++  elf_get_dynamic_info (l, NULL, false);
+ 
+   /* Make sure we are not dlopen'ing an object that has the
+      DF_1_NOOPEN flag set, or a PIE object.  */
+diff -rupN glibc-2.31/elf/dl-reloc-static-pie.c glibc-2.31.new/elf/dl-reloc-static-pie.c
+--- glibc-2.31/elf/dl-reloc-static-pie.c	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/elf/dl-reloc-static-pie.c	2021-11-21 05:18:57.439989887 +0800
+@@ -20,6 +20,7 @@
+ #include <unistd.h>
+ #include <ldsodefs.h>
+ #include "dynamic-link.h"
++#include "get-dynamic-info.h"
+ 
+ /* Relocate static executable with PIE.  */
+ 
+@@ -38,7 +39,7 @@ _dl_relocate_static_pie (void)
+ 
+   /* Read our own dynamic section and fill in the info array.  */
+   main_map->l_ld = ((void *) main_map->l_addr + elf_machine_dynamic ());
+-  elf_get_dynamic_info (main_map, NULL);
++  elf_get_dynamic_info (main_map, NULL, false);
+ 
+ # ifdef ELF_MACHINE_BEFORE_RTLD_RELOC
+   ELF_MACHINE_BEFORE_RTLD_RELOC (main_map->l_info);
+diff -rupN glibc-2.31/elf/dl-runtime.c glibc-2.31.new/elf/dl-runtime.c
+--- glibc-2.31/elf/dl-runtime.c	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/elf/dl-runtime.c	2021-11-21 05:18:57.439989887 +0800
+@@ -19,6 +19,7 @@
+ #define IN_DL_RUNTIME 1		/* This can be tested in dl-machine.h.  */
+ 
+ #include <alloca.h>
++#include <assert.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <sys/param.h>
+diff -rupN glibc-2.31/elf/dynamic-link.h glibc-2.31.new/elf/dynamic-link.h
+--- glibc-2.31/elf/dynamic-link.h	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/elf/dynamic-link.h	2021-11-21 05:18:57.439989887 +0800
+@@ -90,7 +90,6 @@ elf_machine_lazy_rel (struct link_map *m
+ 
+ #include <dl-machine.h>
+ 
+-#include "get-dynamic-info.h"
+ 
+ #ifdef RESOLVE_MAP
+ 
+diff -rupN glibc-2.31/elf/get-dynamic-info.h glibc-2.31.new/elf/get-dynamic-info.h
+--- glibc-2.31/elf/get-dynamic-info.h	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/elf/get-dynamic-info.h	2021-11-21 05:18:57.439989887 +0800
+@@ -28,7 +28,7 @@ static
+ auto
+ #endif
+ inline void __attribute__ ((unused, always_inline))
+-elf_get_dynamic_info (struct link_map *l, ElfW(Dyn) *temp)
++elf_get_dynamic_info (struct link_map *l, ElfW(Dyn) *temp, bool check)
+ {
+   ElfW(Dyn) *dyn = l->l_ld;
+   ElfW(Dyn) **info;
+@@ -135,16 +135,19 @@ elf_get_dynamic_info (struct link_map *l
+     assert (info[DT_RELENT]->d_un.d_val == sizeof (ElfW(Rel)));
+ #endif
+ #ifdef RTLD_BOOTSTRAP
+-  /* Only the bind now flags are allowed.  */
+-  assert (info[VERSYMIDX (DT_FLAGS_1)] == NULL
+-	  || (info[VERSYMIDX (DT_FLAGS_1)]->d_un.d_val & ~DF_1_NOW) == 0);
+-  /* Flags must not be set for ld.so.  */
+-  assert (info[DT_FLAGS] == NULL
+-	  || (info[DT_FLAGS]->d_un.d_val & ~DF_BIND_NOW) == 0);
+-#endif
+-#if defined RTLD_BOOTSTRAP || defined STATIC_PIE_BOOTSTRAP
+-  assert (info[DT_RUNPATH] == NULL);
+-  assert (info[DT_RPATH] == NULL);
++  if (check)
++    {
++      /* Only the bind now flags are allowed.  */
++      assert (info[VERSYMIDX (DT_FLAGS_1)] == NULL
++	      || (info[VERSYMIDX (DT_FLAGS_1)]->d_un.d_val & ~DF_1_NOW) == 0);
++      /* Flags must not be set for ld.so.  */
++      assert (info[DT_FLAGS] == NULL
++	      || (info[DT_FLAGS]->d_un.d_val & ~DF_BIND_NOW) == 0);
++# ifdef STATIC_PIE_BOOTSTRAP
++      assert (info[DT_RUNPATH] == NULL);
++      assert (info[DT_RPATH] == NULL);
++# endif
++    }
+ #else
+   if (info[DT_FLAGS] != NULL)
+     {
+diff -rupN glibc-2.31/elf/rtld.c glibc-2.31.new/elf/rtld.c
+--- glibc-2.31/elf/rtld.c	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/elf/rtld.c	2021-11-21 05:20:07.423320123 +0800
+@@ -475,6 +475,7 @@ _dl_start (void *arg)
+ #define RTLD_BOOTSTRAP
+ #define BOOTSTRAP_MAP (&bootstrap_map)
+ #define RESOLVE_MAP(sym, version, flags) BOOTSTRAP_MAP
++#include "get-dynamic-info.h"
+ #include "dynamic-link.h"
+ 
+ #ifdef DONT_USE_BOOTSTRAP_MAP
+@@ -505,7 +506,7 @@ _dl_start (void *arg)
+ 
+   /* Read our own dynamic section and fill in the info array.  */
+   bootstrap_map.l_ld = (void *) bootstrap_map.l_addr + elf_machine_dynamic ();
+-  elf_get_dynamic_info (&bootstrap_map, NULL);
++  elf_get_dynamic_info (&bootstrap_map, NULL, true);
+ 
+ #if NO_TLS_OFFSET != 0
+   bootstrap_map.l_tls_offset = NO_TLS_OFFSET;
+@@ -835,6 +836,7 @@ security_init (void)
+   _dl_random = NULL;
+ }
+ 
++#include "get-dynamic-info.h"
+ #include <setup-vdso.h>
+ 
+ /* The library search path.  */
+@@ -1514,7 +1516,7 @@ ERROR: '%s': cannot process note segment
+   if (! rtld_is_main)
+     {
+       /* Extract the contents of the dynamic section for easy access.  */
+-      elf_get_dynamic_info (main_map, NULL);
++      elf_get_dynamic_info (main_map, NULL, false);
+       /* Set up our cache of pointers into the hash table.  */
+       _dl_setup_hash (main_map);
+     }
+diff -rupN glibc-2.31/elf/setup-vdso.h glibc-2.31.new/elf/setup-vdso.h
+--- glibc-2.31/elf/setup-vdso.h	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/elf/setup-vdso.h	2021-11-21 05:18:57.443323221 +0800
+@@ -65,7 +65,7 @@ setup_vdso (struct link_map *main_map __
+       l->l_map_end += l->l_addr;
+       l->l_text_end += l->l_addr;
+       l->l_ld = (void *) ((ElfW(Addr)) l->l_ld + l->l_addr);
+-      elf_get_dynamic_info (l, dyn_temp);
++      elf_get_dynamic_info (l, dyn_temp, false);
+       _dl_setup_hash (l);
+       l->l_relocated = 1;
+ 
+diff -rupN glibc-2.31/sysdeps/arm/dl-machine.h glibc-2.31.new/sysdeps/arm/dl-machine.h
+--- glibc-2.31/sysdeps/arm/dl-machine.h	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/sysdeps/arm/dl-machine.h	2021-11-21 05:18:57.443323221 +0800
+@@ -21,6 +21,7 @@
+ 
+ #define ELF_MACHINE_NAME "ARM"
+ 
++#include <assert.h>
+ #include <sys/param.h>
+ #include <tls.h>
+ #include <dl-tlsdesc.h>
+diff -rupN glibc-2.31/sysdeps/i386/dl-machine.h glibc-2.31.new/sysdeps/i386/dl-machine.h
+--- glibc-2.31/sysdeps/i386/dl-machine.h	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/sysdeps/i386/dl-machine.h	2021-11-21 05:18:57.443323221 +0800
+@@ -21,6 +21,7 @@
+ 
+ #define ELF_MACHINE_NAME "i386"
+ 
++#include <assert.h>
+ #include <sys/param.h>
+ #include <sysdep.h>
+ #include <tls.h>
+diff -rupN glibc-2.31/sysdeps/x86_64/dl-machine.h glibc-2.31.new/sysdeps/x86_64/dl-machine.h
+--- glibc-2.31/sysdeps/x86_64/dl-machine.h	2020-02-01 19:52:50.000000000 +0800
++++ glibc-2.31.new/sysdeps/x86_64/dl-machine.h	2021-11-21 05:18:57.443323221 +0800
+@@ -22,6 +22,7 @@
+ 
+ #define ELF_MACHINE_NAME "x86_64"
+ 
++#include <assert.h>
+ #include <sys/param.h>
+ #include <sysdep.h>
+ #include <tls.h>

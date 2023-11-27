@@ -50,7 +50,7 @@ DEPENDS+=		pkg_install>=20200701:../../pkgtools/pkg_install
 
 .include "options.mk"
 
-PKGIN_REPOSITORY_URL=http://repos.pkglinux.top/repos/packages.2022Q2/All
+#PKGIN_REPOSITORY_URL=http://repos.pkglinux.top/packages.2022Q2/All
 # those have official repositories
 .if !empty(PKGIN_REPOSITORY_URL)
 pre-install:

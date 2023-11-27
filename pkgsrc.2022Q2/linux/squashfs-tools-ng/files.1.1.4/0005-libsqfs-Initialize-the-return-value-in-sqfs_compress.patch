@@ -1,0 +1,31 @@
+From 35170bc6adf5d140210bc26e8511cf1e1cdeb5db Mon Sep 17 00:00:00 2001
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Date: Fri, 18 Nov 2022 15:35:04 +0100
+Subject: [PATCH] libsqfs: Initialize the return value in
+ sqfs_compressor_create
+
+Initialize the output compressor pointer to NULL, so if the function
+fails, the value is propperly initialized to a NULL pointer instead
+of relying on the function user to initialize it.
+
+Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+---
+ lib/sqfs/comp/compressor.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/lib/sqfs/comp/compressor.c b/lib/sqfs/comp/compressor.c
+index f079651..4c4d73c 100644
+--- a/lib/sqfs/comp/compressor.c
++++ b/lib/sqfs/comp/compressor.c
+@@ -92,6 +92,8 @@ int sqfs_compressor_create(const sqfs_compressor_config_t *cfg,
+ 	sqfs_u8 padd0[sizeof(cfg->opt)];
+ 	int ret;
+ 
++	*out = NULL;
++
+ 	/* check compressor ID */
+ 	if (cfg == NULL)
+ 		return SQFS_ERROR_ARG_INVALID;
+-- 
+2.38.1
+

@@ -1,0 +1,8 @@
+$NetBSD$
+
+SHA1 (lfs-bootscripts-20191031.tar.xz) = deda6b3126db8cad496470f6f99f17e6a9fdfe90
+RMD160 (lfs-bootscripts-20191031.tar.xz) = 7736c44172f4901656d8da2486be5b660c9922c6
+SHA512 (lfs-bootscripts-20191031.tar.xz) = b49cf39262723e2470d9a16fee058333b2df807eaabb3fea4a1eeb2e770df2341101ead43f3e9f05bae4ebe25e5352adc5ddd40e14304979d3beb31136af0df3
+Size (lfs-bootscripts-20191031.tar.xz) = 32616 bytes
+SHA1 (patch-lfs_init.d_checkfs) = 926909c6f7cf6af8c2d2a09b4560b645966425a8
+SHA1 (patch-lfs_init.d_mountfs) = 450b883d2dcf90472a77d02935fb1db0b65d6ae6

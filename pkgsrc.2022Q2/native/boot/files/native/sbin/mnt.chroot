@@ -1,0 +1,19 @@
+#!/bin/bash
+
+mount -v --bind /dev /mnt/dev
+
+mount -vt devpts devpts /mnt/dev/pts -o gid=5,mode=620
+mount -vt proc proc /mnt/proc
+mount -vt sysfs sysfs /mnt/sys
+mount -vt tmpfs tmpfs /mnt/run
+
+chroot "/mnt" /usr/bin/env -i              \
+    HOME=/root TERM="$TERM" PS1='\u:\w\$ ' \
+    PATH=/bin:/usr/bin:/sbin:/usr/sbin     \
+    /bin/bash --login
+
+umount -v /mnt/dev/pts
+umount -v /mnt/dev
+umount -v /mnt/run
+umount -v /mnt/proc
+umount -v /mnt/sys

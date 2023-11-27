@@ -41,7 +41,7 @@ do-install:
 	cd ${DESTDIR}${PREFIX}/bin/ && gstrip mksquashfs
 	cd ${DESTDIR}${PREFIX}/bin/ && gstrip unsquashfs
 	cd ${DESTDIR}${PREFIX}/bin/ && ln -sf unsquashfs sqfscat
-	cd ${DESTDIR}${PREFIX}/bin/ && ln -sf unsquashfs sqfstar
+	cd ${DESTDIR}${PREFIX}/bin/ && ln -sf mksquashfs sqfstar
 	${INSTALL_MAN} ${SQUASH_DIR}/manpages/mksquashfs.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1/
 	${INSTALL_MAN} ${SQUASH_DIR}/manpages/sqfscat.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1/
 	${INSTALL_MAN} ${SQUASH_DIR}/manpages/sqfstar.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1/

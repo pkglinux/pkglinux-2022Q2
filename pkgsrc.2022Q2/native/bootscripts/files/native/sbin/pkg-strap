@@ -1,0 +1,132 @@
+#!/bin/bash
+
+<< MIT-LICENSE
+Copyright (c) 2023 Jianjun Liu<jianjunliu@126.com> https://www.pkglinux.top
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+MIT-LICENSE
+
+PKG_STRAP_VERBOSE=""
+PKG_STRAP_DESTDIR="/mnt"
+PKG_STRAP_PREFIX="$(readlink /pkg)"
+PKG_STRAP_PKGIN_REPO_CONF_FILE="etc/pkgin/repositories.conf"
+PKG_STRAP_REPO=$(grep -v -e "^#" -e "^$" /pkg/$PKG_STRAP_PKGIN_REPO_CONF_FILE)
+
+pkg-strap-usage()
+{
+	# Display Help
+	echo "Create a new PKGLinux system installation from scratch."
+	echo
+	echo "Syntax: $0 [ -h|v|V|p|d ] [ --help|verbose|version|prefix|destdir ] [ repourl ]"
+	echo "options:"
+	echo "h     Print this help."
+	echo "v     Verbose mode."
+	echo "V     Print software version and exit."
+	echo "p     Set new prefix."
+	echo "d     Set new destination directory other than $PKG_STRAP_DESTDIR."
+	echo
+}
+
+echo Starting $0 $@
+
+for arg in "$@"; do
+	shift
+	case "$arg" in
+		"--help")	set -- "$@" "-h" ;;
+		"--verbose")	set -- "$@" "-v" ;;
+		"--version")	set -- "$@" "-V" ;;
+		"--prefix")	set -- "$@" "-p" ;;
+		"--destdir")	set -- "$@" "-d" ;;
+		*)		set -- "$@" "$arg"
+	esac
+done
+
+while getopts ':hvVp:d:' OPTION; do
+	case "$OPTION" in
+		h)	# display usage
+			pkg-strap-usage
+			exit;;
+		v)	# verbose mode
+			PKG_STRAP_VERBOSE="-v"
+			;;
+		V)	# display version
+			echo "1.0"	
+			exit;;
+		p)	# set new prefix
+			PKG_STRAP_PREFIX="$OPTARG" ;;
+		d)	# default destdir
+			PKG_STRAP_DESTDIR="$OPTARG";;
+		\?)	# Invalid option
+	                echo "Error: Invalid option"
+			exit;;
+	esac
+done
+
+shift "$(($OPTIND -1))"
+
+[[ "$#" -gt 1 ]] && pkg-strap-usage
+
+[ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
+
+pkg-strap-try-url () {
+#	if [[ $(curl -s --head "$1" | head -n 1 | grep "HTTP/[1-3].[0-9] [23]..") ]]; then
+#	if curl --head --silent --fail "$1" &> /dev/null; then
+	if curl --head --silent --fail "$1" 2>&1> /dev/null; then
+		echo "$1 is available."
+	else
+		echo "$1 is not available."
+		exit 1
+	fi
+}
+
+[[ "$#" -gt 0 ]] && { PKG_STRAP_REPO=$1; }
+pkg-strap-try-url $PKG_STRAP_REPO
+
+pkg_add $PKG_STRAP_VERBOSE -K /$PKG_STRAP_PREFIX/pkgdb $PKG_STRAP_REPO/pkg_install
+
+/$PKG_STRAP_PREFIX/sbin/pkg_add $PKG_STRAP_VERBOSE -P $PKG_STRAP_DESTDIR $PKG_STRAP_REPO/pkgstrap
+
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/$PKG_STRAP_PREFIX/var/db/pkgin/
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/$PKG_STRAP_PREFIX/etc/pkgin/
+( cd $PKG_STRAP_DESTDIR/$PKG_STRAP_PREFIX/; cp -a $PKG_STRAP_VERBOSE share/examples/pkgin etc/ )
+( cd $PKG_STRAP_DESTDIR/$PKG_STRAP_PREFIX/etc/pkgin/; cp -a $PKG_STRAP_VERBOSE repositories.conf.example repositories.conf )
+echo $PKG_STRAP_REPO >> $PKG_STRAP_DESTDIR/$PKG_STRAP_PREFIX/$PKG_STRAP_PKGIN_REPO_CONF_FILE
+
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/{dev,proc,sys,run}	
+mknod -m 600 $PKG_STRAP_DESTDIR/dev/console c 5 1
+mknod -m 666 $PKG_STRAP_DESTDIR/dev/null c 1 3
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/dev/pts
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/run/nscd
+install -d $PKG_STRAP_VERBOSE -m 1777 $PKG_STRAP_DESTDIR/tmp $PKG_STRAP_DESTDIR/var/tmp
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/{home,mnt,opt}
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/{media/{floppy,cdrom},srv}
+
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/var/{log,mail,spool}
+ln $PKG_STRAP_VERBOSE -sf ../run $PKG_STRAP_DESTDIR/var/
+ln $PKG_STRAP_VERBOSE -sf ../run/lock $PKG_STRAP_DESTDIR/var/lock
+mkdir -p $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/var/{opt,cache,lib/{avahi,color,colord,misc,polkit,locate},local}
+
+ln $PKG_STRAP_VERBOSE -sf $PKG_STRAP_PREFIX $PKG_STRAP_DESTDIR/pkg
+ln $PKG_STRAP_VERBOSE -sf pkg/native/{bin,etc,lib,lib32,lib64,libx32,root,sbin,usr} $PKG_STRAP_DESTDIR
+ln $PKG_STRAP_VERBOSE -sf ../../run $PKG_STRAP_DESTDIR/pkg/var/
+
+cp -a $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/pkg/gnu/bin/* $PKG_STRAP_DESTDIR/usr/bin/
+cp -a $PKG_STRAP_VERBOSE $PKG_STRAP_DESTDIR/pkg/gnu/bin/* $PKG_STRAP_DESTDIR/bin/
+
+ln $PKG_STRAP_VERBOSE -sf ../pkg/var/db/dbus/machine-id $PKG_STRAP_DESTDIR/etc/

@@ -1,0 +1,18 @@
+::sysinit:/etc/rc.d/rcS
+::restart:/sbin/init
+::shutdown:echo -e "\nSyncing ..."
+::shutdown:sync
+::shutdown:echo "Unmounting ..."
+::shutdown:umount -a -r
+::shutdown:echo -e "\n  \\e[1mBye! :)\\e[0m\n"
+::shutdown:sleep 1
+::ctrlaltdel:/sbin/reboot
+::once:cat /etc/hello
+::respawn:/bin/cttyhack /bin/sh
+tty2::once:cat /etc/hello
+tty2::respawn:/bin/sh
+tty3::once:cat /etc/hello
+tty3::respawn:/bin/sh
+tty4::once:cat /etc/hello
+tty4::respawn:/bin/sh
+

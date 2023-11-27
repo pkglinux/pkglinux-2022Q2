@@ -1,0 +1,22 @@
+
+See the files in the doc directory for documentation about SYSLINUX:
+
+	syslinux.txt	    - Usage instructions; manual.
+	distrib.txt	    - For creators of Linux distributions.
+	pxelinux.txt	    - Documentation specific to PXELINUX.
+	isolinux.txt	    - Documentation specific to ISOLINUX.
+	extlinux.txt	    - Documentation specific to EXTLINUX.
+	menu.txt	    - About the menu systems.
+	usbkey.txt	    - About using SYSLINUX on USB keys.
+	memdisk.txt         - Documentation about MEMDISK.
+
+Also see the files:
+
+	NEWS		    - List of changes from previous releases.
+	TODO		    - About features planned for future releases.
+	COPYING		    - For the license terms of this software.
+
+SYSLINUX now builds in a Linux environment, using nasm.  You need nasm
+version 2.03 or later (2.07 or later recommended) to build SYSLINUX
+from source.  See http://www.nasm.us/ for information about nasm.
+...

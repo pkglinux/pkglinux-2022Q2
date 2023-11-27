@@ -1,0 +1,72 @@
+# $NetBSD$
+
+DISTNAME=	glibc-2.31
+CATEGORIES=	linux
+PKGNAME=	glibc-m32-2.31
+MASTER_SITES=	http://ftp.gnu.org/gnu/glibc/
+EXTRACT_SUFX=	.tar.xz
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	http://ftp.gnu.org/gnu/glibc/
+COMMENT=	GNU C library
+LICENSE=	gnu-gpl-v2 AND gnu-lgpl-v2.1
+
+ONLY_FOR_PLATFORM=	Linux-*-*
+
+USE_LANGUAGES=		c c++
+#GCC_REQD+=		6	
+
+USE_LIBTOOL=		yes
+USE_TOOLS+=		grep gmake makeinfo sed:run tar:build m4 autoconf automake
+USE_TOOLS+=		pkg-config intltools msgfmt xgettext perl
+TOOLS_PLATFORM.msgfmt=
+.include "../../lang/python/tool.mk"
+
+PYTHON_FOR_BUILD_ONLY=	tool
+
+GNU_CONFIGURE=		yes
+CONFIGURE_DIRS=		build
+CONFIGURE_ENV+=		CC="gcc -m32"
+CONFIGURE_ENV+=		CXX="g++ -m32"
+CONFIGURE_SCRIPT=	../configure
+#COMPILER_ABI_SWITCH=	-m32
+
+.include "../../mk/bsd.prefs.mk"
+
+#ABI=			32
+#CFLAGS+=		-m32
+#LDFLAGS+=		-m32
+
+post-extract:
+	sed -e '/NOTIFY_REMOVED)/s/)/ \&\& data.attr != NULL)/' \
+	    -i ${WRKSRC}/sysdeps/unix/sysv/linux/mq_notify.c
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/glibc-2.31-fhs-1.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/perlnever.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/elf_get_dynamic_info.patch
+
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
+#CONFIGURE_ARGS+=	--host=i686-pc-linux-gnu
+CONFIGURE_ARGS+=	--host=i686-unknown-linux
+CONFIGURE_ARGS+=	--build=$(../scripts/config.guess)
+CONFIGURE_ARGS+=	--enable-kernel=3.2
+CONFIGURE_ARGS+=	--with-headers=${PREFIX}/include
+CONFIGURE_ARGS+=	--enable-multi-arch
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib32
+CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/lib32
+CONFIGURE_ARGS+=	libc_cv_slibdir=${PREFIX}/lib32
+
+pre-configure:
+	${MKDIR} -v ${WRKSRC}/build
+
+post-install:
+	${MKDIR} -v ${DESTDIR}${PREFIX}/lib/
+	${LN} -sfv ../lib32/ld-linux.so.2 ${DESTDIR}${PREFIX}/lib/ld-linux.so.2
+	${MKDIR} -v ${DESTDIR}${PREFIX}/etc/ld.so.conf.d/
+	${CP} -v ${FILESDIR}/lib32.conf ${DESTDIR}${PREFIX}/etc/ld.so.conf.d/
+
+.include "../../devel/gettext-lib/buildlink3.mk"
+.include "../../mk/pthread.buildlink3.mk"
+.include "../../devel/libelf/buildlink3.mk"
+.include "../../linux/kmod/buildlink3.mk"
+.include "../../linux/kernel-headers/buildlink3.mk"
+.include "../../mk/bsd.pkg.mk"

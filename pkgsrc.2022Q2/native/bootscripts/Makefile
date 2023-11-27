@@ -1,0 +1,24 @@
+# $NetBSD$
+
+PKGNAME=	bootscripts-1.0
+CATEGORIES=	native
+MAINTAINER=	pkgsrc-users@NetBSD.org
+COMMENT=	sysv init scripts
+LICENSE=	mit
+
+ONLY_FOR_PLATFORM=	Linux-*-*
+
+USE_LANGUAGES=	# none
+NO_CHECKSUM=		yes
+HAS_CONFIGURE=		no
+NO_BUILD=		yes
+NO_CONFIGURE=		yes
+GNU_CONFIGURE=		no
+
+RCD_SCRIPTS=		nscd
+
+do-install:
+	${CP} -av ${FILESDIR}/native ${DESTDIR}${PREFIX}/
+	${CP} -av ${FILESDIR}/lndir ${DESTDIR}${PREFIX}/native/sbin/
+
+.include "../../mk/bsd.pkg.mk"

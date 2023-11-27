@@ -1,0 +1,2 @@
+; generated_rule Transparent Windows
+(if (matches (window_name) "^.+") (begin (opacity 80)(println "match")))

@@ -1,0 +1,77 @@
+.TH PKGLINUX-MAKEISO "1" "November 2023" "pkglinux-upgrade version 1.0" "Maintainance Script"
+.SH NAME
+pkglinux-makeiso \- create ISO-9660 file or write it to usb device
+.SH SYNOPSIS
+.B pkglinux-makeiso
+[\fB\-h\fR]
+[\fB\-\-help\fR]
+[\fB\-v\fR]
+[\fB\-\-verbose\fR]
+[\fB\-V\fR]
+[\fB\-\-version\fR]
+[\fB\-p\fR \fIPREFIX\fR]
+[\fB\-\-prefix\fR \fIFREFIX\fR]
+[\fB\-t\fR \fITAG\fR]
+[\fB\-\-tag\fR \fITAG\fR]
+[\fB\-w\fR \fISECONDS\fR]
+[\fB\-\-wait\fR \fISECONDS\fR]
+[\fB\-\-rootwait\fR \fISECONDS\fR]
+[\fB\-\-rootdelay\fR \fISECONDS\fR]
+[\fB\-l\fR \fIISO_LEVEL\fR]
+[\fB\-\-level\fR \fIISO_LEVE\fR]
+[\fB\-f\fR]
+[\fB\-\-force\fR]
+[\fB\-\-full\fR]
+.IR [USB-DEVICE]
+.SH DESCRIPTION
+.B pkglinux-makeiso
+a bash script to create ISO-9660 file or write it to usb device.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Print usage of this script and exit..
+.TP
+.BR \-v ", " \-\-verbose
+Verbose mode. While running, print as much messages as possible.
+.TP
+.BR \-V ", " \-\-version
+Print the version number of this script and exit.
+.TP
+.BR \-p ", " \-\-prefix " " \fIPREFIX\fR
+Use \fIPREFIX\fR as the new prefix.
+.TP
+.BR \-t ", " \-\-tag " " \fITAG\fR
+Use \fITAG\fR in the target files names.
+.TP
+.BR \-w ", " \-\-wait ", " \-\-rootwait ", " \-\-rootdelay " " \fISECONDS\fR
+Set rootdelay/rootwait to  \fISECONDS\fR as in linux kernel parameters.
+.TP
+.BR \-l ", " \-\-level " " \fIISO-LEVEL\fR
+Use \fIISO-LEVEL\fR as iso-level (default 1) when make the target iso file with mkisofs or xorris.
+.TP
+.BR \-f ", " \-\-force
+Ok to remove target files before creating new ones, or zap contents in usb device before writting to it.
+.SH AUTHOR
+Written by Jianjun Liu <jianjunliu@126.com> for https://www.pkglinux.top
+.SH COPYRIGHT
+Copyright \(co 2023 Jianjun Liu <jianjunliu@126.com>
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+.PP
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+.SH "SEE ALSO"
+pkglinux-install(1), pkglinux-makeusb(1), pkglinux-makeall(1), pkglinux-upgrade(1), pkg-chroot(1), pkg-strap(1)

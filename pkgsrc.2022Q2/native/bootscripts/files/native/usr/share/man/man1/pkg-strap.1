@@ -1,0 +1,59 @@
+.TH PKG-STRAP "1" "November 2023" "pkg-chroot version 1.0" "Maintainance Script"
+.SH NAME
+pkg-strap \- create a new pkglinux system installation from scratch
+.SH SYNOPSIS
+.B pkg-chroot
+[\fB\-h\fR]
+[\fB\-\-help\fR]
+[\fB\-v\fR]
+[\fB\-\-verbose\fR]
+[\fB\-V\fR]
+[\fB\-\-version\fR]
+[\fB\-p\fR \fIPREFIX\fR]
+[\fB\-\-prefix\fR \fIPREFIX\fR]
+[\fB\-d\fR \fIDESTDIR\fR]
+[\fB\-\-destdir\fR \fIDESTDIR\fR]
+.IR [REPO-URL]
+.SH DESCRIPTION
+.B pkg-strap
+a bash script to create a new pkglinux system installation from scratch, with a different prefix.
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Print usage of this script and exit..
+.TP
+.BR \-v ", " \-\-verbose
+Verbose mode. While running, print as much messages as possible.
+.TP
+.BR \-V ", " \-\-version
+Print the version number of this script and exit.
+.TP
+.BR \-p ", " \-\-prefix " " \fIPREFIX\fR
+Set \fIPREFIX\fR as the new prefix instead of getting the current one from the installing system.
+.TP
+.BR \-d ", " \-\-destdir " " \fIDESTDIR\fR
+Set \fIDESTDIR\fR as the new destination directory other than /mnt.
+.SH AUTHOR
+Written by Jianjun Liu <jianjunliu@126.com> for https://www.pkglinux.top
+.SH COPYRIGHT
+Copyright \(co 2023 Jianjun Liu <jianjunliu@126.com>
+.PP
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+.PP
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+.PP
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+.SH "SEE ALSO"
+pkglinux-install(1), pkglinux-makeiso(1), pkglinux-makeall(1), pkglinux-upgrade(1), pkglinux-makeusb(1), pkg-chroot(1)

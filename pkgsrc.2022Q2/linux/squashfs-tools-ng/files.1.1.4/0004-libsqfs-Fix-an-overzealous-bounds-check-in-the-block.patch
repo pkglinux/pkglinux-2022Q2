@@ -1,0 +1,32 @@
+From 9ae118f7c68785e3854cf68baf3177a94b70e0d6 Mon Sep 17 00:00:00 2001
+From: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+Date: Fri, 18 Nov 2022 16:17:29 +0100
+Subject: [PATCH] libsqfs: Fix an overzealous bounds check in the block
+ processor
+
+When (during fragment deduplication) a fragment block is read back
+from disk and unpacked, it can happen that it is _exactly_ the
+given block size. The bounds check did '>=' instead of '>' and
+failed in that case with a "data corruption" error.
+
+Signed-off-by: David Oberhollenzer <david.oberhollenzer@sigma-star.at>
+---
+ lib/sqfs/block_processor/block_processor.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/lib/sqfs/block_processor/block_processor.c b/lib/sqfs/block_processor/block_processor.c
+index de177cd..97b8958 100644
+--- a/lib/sqfs/block_processor/block_processor.c
++++ b/lib/sqfs/block_processor/block_processor.c
+@@ -68,7 +68,7 @@ static int load_frag_block(sqfs_block_processor_t *proc, sqfs_u32 index)
+ 		return ret;
+ 
+ 	size = SQFS_ON_DISK_BLOCK_SIZE(info.size);
+-	if (size >= proc->max_block_size)
++	if (size > proc->max_block_size)
+ 		return SQFS_ERROR_CORRUPTED;
+ 
+ 	if (SQFS_IS_BLOCK_COMPRESSED(info.size)) {
+-- 
+2.38.1
+

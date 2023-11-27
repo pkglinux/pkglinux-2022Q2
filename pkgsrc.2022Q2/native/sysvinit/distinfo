@@ -1,0 +1,7 @@
+$NetBSD$
+
+SHA1 (sysvinit-2.96.tar.xz) = 3f826119b988dfd149f63bab987d735eb5d32eaa
+RMD160 (sysvinit-2.96.tar.xz) = b36db1266c51a22b493c8284250b7e3d7e9cda1d
+SHA512 (sysvinit-2.96.tar.xz) = 1388398568ebfe53460796f8ab75a3ead6111612888ea36e8f1c0db4d41ef6f45fc217abb7804519ff1143a78d97c95b24e42c8c22c95a47b9436484bfb6f45d
+Size (sysvinit-2.96.tar.xz) = 122164 bytes
+SHA1 (patch-src_Makefile) = 10074426cc71ecf282b203e93ee1894c1e919ccf

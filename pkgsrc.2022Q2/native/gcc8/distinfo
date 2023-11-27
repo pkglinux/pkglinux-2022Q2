@@ -1,0 +1,10 @@
+$NetBSD$
+
+SHA1 (gcc-8.4.0.tar.xz) = 00ddb177b04caffd40f7af0175d5b3c8e5442545
+RMD160 (gcc-8.4.0.tar.xz) = 4b3890e8865fae1d2b91166fb98e1097f5401d4a
+SHA512 (gcc-8.4.0.tar.xz) = 6de904f552a02de33b11ef52312bb664396efd7e1ce3bbe37bfad5ef617f133095b3767b4804bc7fe78df335cb53bc83f1ac055baed40979ce4c2c3e46b70280
+Size (gcc-8.4.0.tar.xz) = 63713440 bytes
+SHA1 (patch-gcc_ggc-common.c) = a5d2dba635859f5d680c3f80d7c30b42461c752b
+SHA1 (patch-gcc_gimplify.c) = 6f4fc96f0de1e0e96bc2e020aa352260d4270ba7
+SHA1 (patch-gcc_targhooks.c) = b28d8a9696d07bbfb00b7d8c55193ba99447ff1d
+SHA1 (patch-libffi_testsuite_libffi.call_float2.c) = 27b84a11378fb648dfaad0c70abedd77a0a1c1a8

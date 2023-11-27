@@ -1,0 +1,48 @@
+.\" generated with Ronn-NG/v0.9.1
+.\" http://github.com/apjanke/ronn-ng/tree/0.9.1
+.TH "DWARFSCK" "1" "June 2022" ""
+.SH "NAME"
+\fBdwarfsck\fR \- check DwarFS image
+.SH "SYNOPSIS"
+\fBdwarfsck\fR [\fB\-i\fR] \fIimage\fR [\fIoptions\fR\|\.\|\.\|\.]
+.SH "DESCRIPTION"
+\fBdwarfsck\fR will perform a check of a DwarFS filesystem image\.
+.P
+If successful, it will show details about the filesystem depending on the detail level specified\. If an error is found, it will exit with a non\-zero exit code\.
+.SH "OPTIONS"
+.TP
+\fB\-i\fR, \fB\-\-input=\fR\fIfile\fR
+Path to the filesystem image\.
+.TP
+\fB\-d\fR, \fB\-\-detail=\fR\fIvalue\fR
+Level of filesystem information detail\. The default is 2\. Higher values mean more output\. Values larger than 6 will currently not provide any further detail\.
+.TP
+\fB\-O\fR, \fB\-\-image\-offset=\fR\fIvalue\fR|\fBauto\fR
+Specify the byte offset at which the filesystem is located in the image\. Use \fBauto\fR to detect the offset automatically\. This is also the default\. This is only useful for images that have some header located before the actual filesystem data\.
+.TP
+\fB\-H\fR, \fB\-\-print\-header\fR
+Print the header located before the filesystem image to stdout\. If no header is present, the program will exit with a non\-zero exit code\.
+.TP
+\fB\-n\fR, \fB\-\-num\-workers=\fR\fIvalue\fR
+Number of worker threads used for integrity checking\.
+.TP
+\fB\-\-check\-integrity\fR
+In addition to performing a fast checksum check, also perform a (much slower) verification of the embedded SHA\-512/256 hashes\.
+.TP
+\fB\-\-json\fR
+Print a simple JSON representation of the filesystem metadata\. Please note that the format is \fInot\fR stable\.
+.TP
+\fB\-\-export\-metadata=\fR\fIfile\fR
+Export all filesystem meteadata in JSON format\.
+.TP
+\fB\-\-log\-level=\fR\fIname\fR
+Specifiy a logging level\.
+.TP
+\fB\-\-help\fR
+Show program help, including option defaults\.
+.SH "AUTHOR"
+Written by Marcus Holland\-Moritz\.
+.SH "COPYRIGHT"
+Copyright (C) Marcus Holland\-Moritz\.
+.SH "SEE ALSO"
+mkdwarfs(1), dwarfs(1), dwarfsextract(1), dwarfs\-format(5)

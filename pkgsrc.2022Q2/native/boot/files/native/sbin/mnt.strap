@@ -1,0 +1,67 @@
+#!/bin/bash
+
+function validate_url () {
+	if [[ `curl -s --head "$1" | head -n 1 | grep "HTTP/[1-3].[0-9] [23].."` ]]; then return 1; fi; return 0
+}
+
+for arg in "$@"; do
+	shift
+	case "$arg" in
+		"--prefix")	set -- "$@" "-p" ;;
+		*)		set -- "$@" "$arg"
+	esac
+done
+
+PREFIX="$(readlink /pkg)"
+
+while getopts 'p:' OPTION; do
+	case "$OPTION" in
+		p)
+			PREFIX="$OPTARG" ;;
+		*)
+			echo "Usage: $0 [ -p prefix ] [repo]" >&2
+			exit 1 ;;
+	esac
+done
+
+shift "$(($OPTIND -1))"
+
+[[ "$#" -gt 1 ]] && { echo "Usage: $0 [ -p prefix ] [repo]" >&2; exit 1; }
+#REPO=http://localhost/sda3/packages.$PREFIX/All
+REPO=http://192.168.31.137/sda3/packages.$PREFIX/All
+[[ "$#" -lt 0 ]] && { REPO=$1; }
+validate_url $REPO ||  { echo "$REPO is not available.";exit 1; }
+
+pkg_add -K /$PREFIX/pkgdb $REPO/pkg_install
+
+/$PREFIX/sbin/pkg_add -P /mnt $REPO/pkgstrap
+
+mkdir -pv /mnt/$PREFIX/var/db/pkgin/
+mkdir -pv /mnt/$PREFIX/etc/pkgin/
+( cd /mnt/$PREFIX/; cp -av share/examples/pkgin etc/ )
+( cd /mnt/$PREFIX/etc/pkgin/; cp -av repositories.conf.example repositories.conf )
+echo $REPO >> /mnt/$PREFIX/etc/pkgin/repositories.conf
+
+mkdir -pv /mnt/{dev,proc,sys,run}	
+mknod -m 600 /mnt/dev/console c 5 1
+mknod -m 666 /mnt/dev/null c 1 3
+mkdir -pv /mnt/run/nscd
+install -dv -m 1777 /mnt/tmp /mnt/var/tmp
+mkdir -pv /mnt/{home,mnt,opt}
+mkdir -pv /mnt/{media/{floppy,cdrom},srv}
+
+mkdir -pv /mnt/var/{log,mail,spool}
+ln -sv ../run /mnt/var/
+ln -sv ../run/lock /mnt/var/lock
+mkdir -pv /mnt/var/{opt,cache,lib/{color,misc,locate},local}
+
+
+ln -svf $PREFIX /mnt/pkg
+ln -svf pkg/native/{bin,etc,lib,lib32,lib64,libx32,root,sbin,usr} /mnt
+
+cp -a /mnt/pkg/gnu/bin/* /mnt/usr/bin/
+cp -a /mnt/pkg/gnu/bin/* /mnt/bin/
+
+ln -svf ../pkg/var/db/dbus/machine-id /mnt/etc/
+
+#rm -rf /$PREFIX /mnt/*
