@@ -1,0 +1,7 @@
+@comment $NetBSD$
+native/root/aero.txz
+native/root/alex.config.txz
+native/root/alex.fonts.txz
+native/root/alex.kde.txz
+native/root/alex.local.txz
+native/root/alex.themes.txz
