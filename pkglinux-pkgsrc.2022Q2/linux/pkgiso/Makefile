@@ -86,6 +86,7 @@ DEPENDS+=	dosfstools-[0-9]*:../../sysutils/dosfstools
 DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
 DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
 DEPENDS+=	pigz-[0-9]*:../../linux/pigz
+DEPENDS+=	pixz-[0-9]*:../../linux/pixz
 DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
 DEPENDS+=	rc.d-boot-[0-9]*:../../pkgtools/rc.d-boot

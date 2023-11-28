@@ -1,6 +1,6 @@
 # $NetBSD$
 
-PKGNAME=	pkglinux-pkgsrc-2022Q2
+PKGNAME=	pkglinux-pkgsrc-${PREFIX:S/\///}
 CATEGORIES=	native
 MAINTAINER=	pkgsrc-users@NetBSD.org
 COMMENT=	pkgsrc-2022Q2 modified for pkglinux
@@ -17,6 +17,6 @@ GNU_CONFIGURE=		no
 
 do-install:
 	${MKDIR} -pv ${DESTDIR}${PREFIX}/native/
-	cd ${DESTDIR}${PREFIX}/native/ && gtar -xJvf /root/repos/pkglinux-pkgsrc/pkglinux-pkgsrc.2022Q2.txz
+	cd ${DESTDIR}${PREFIX}/native/ && gtar -xJvf /root/repos/pkglinux-pkgsrc/pkglinux-pkgsrc.${PREFIX:S/\///}.txz
 
 .include "../../mk/bsd.pkg.mk"
