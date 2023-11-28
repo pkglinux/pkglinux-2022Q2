@@ -17,6 +17,8 @@ GNU_CONFIGURE=		no
 
 do-install:
 	${MKDIR} -pv ${DESTDIR}${PREFIX}/native/lib/
-	cd ${DESTDIR}${PREFIX}/native/lib/ && gtar -xf ${FILESDIR}/firmware.tar
+	cd ${DESTDIR}${PREFIX}/native/lib/ && cp -av ${FILESDIR}/firmware .
+
+#	cd ${DESTDIR}${PREFIX}/native/lib/ && gtar -xf ${FILESDIR}/firmware.tar
 
 .include "../../mk/bsd.pkg.mk"

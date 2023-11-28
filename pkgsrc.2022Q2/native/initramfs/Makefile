@@ -67,6 +67,8 @@ do-build:
 	cd ${BLDDIR} && ${RM} -v _install/linuxrc # Used when booting in 'RAM dist' mode
 	cd ${BLDDIR}/_install && gstrip -g bin/busybox
 	cd ${BLDDIR}/_install && ${CP} -av ${FILESDIR}/ramfs/* .
+	cd ${BLDDIR}/_install && mknod -m 600 dev/console c 5 1
+	cd ${BLDDIR}/_install && mknod -m 666 dev/null c 1 3
 	${MKDIR} -pv ${BLDDIR}/_install/${PREFIX}/native/
 	cd ${BLDDIR}/_install/${PREFIX}/native/ && ${LN} -sfv ../../etc .
 	cd ${BLDDIR}/_install/${PREFIX}/native/ && ${LN} -sfv ../../lib .
