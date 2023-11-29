@@ -103,7 +103,7 @@ shift "$(($OPTIND -1))"
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
 
 PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf")
-PKGLINUX_MAKEUSB_REPO_ROOT=$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))
+PKGLINUX_MAKEUSB_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))/iso"
 PKGLINUX_MAKEUSB_IMG="pkglinux-$PKGLINUX_MAKEUSB_PREFIX-$PKGLINUX_MAKEUSB_TAG.usb"
 
 if [ "$#" -gt 0 ]; then
@@ -115,7 +115,7 @@ if [ "$#" -gt 0 ]; then
     echo "Writting $PKGLINUX_MAKEUSB_IMG the block device $1 ..."
     cat "${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
   else
-    echo "Writting $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG to the block device $1 ..."
+    echo "Copying $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG to the block device $1 ..."
     curl "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
   fi
   echo "Syncing disks ..."

@@ -116,7 +116,7 @@ fi
 $PKGLINUX_UPGRADE_FORCE || exit 0
 
 PKGLINUX_UPGRADE_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_UPGRADE_REPO/etc/pkgin/repositories.conf")
-PKGLINUX_UPGRADE_REPO_ROOT=$(dirname $(dirname $PKGLINUX_UPGRADE_REPO))
+PKGLINUX_UPGRADE_REPO_ROOT="$(dirname $(dirname $PKGLINUX_UPGRADE_REPO))/iso"
 PKGLINUX_UPGRADE_REPO_SFSF="$PKGLINUX_UPGRADE_REPO_ROOT/pkglinux-$PKGLINUX_UPGRADE_PREFIX-$PKGLINUX_UPGRADE_TAG.sfs"
 if [ ! -d /sfs.root/ ]; then
 	if [ -f /pkglinux.sfs ]; then

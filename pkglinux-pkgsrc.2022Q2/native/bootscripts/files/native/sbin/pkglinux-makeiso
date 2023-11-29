@@ -105,7 +105,7 @@ shift "$(($OPTIND -1))"
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
 
 PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf")
-PKGLINUX_MAKEISO_REPO_ROOT=$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))
+PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
 PKGLINUX_MAKEISO_FILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_TAG.iso"
 
 if [ "$#" -gt 0 ]; then
@@ -116,7 +116,7 @@ if [ "$#" -gt 0 ]; then
     echo "Writting $PKGLINUX_MAKEISO_FILE the USB device $1 ..."
     cat "${PKGLINUX_MAKEISO_FILE}" | dd bs=1M of=$1
   else
-    echo "Downloading $PKGLINUX_MAKEISO_FILE from $PKGLINUX_MAKEISO_REPO_ROOT and writing to the USB device $1 ..."
+    echo "Copying $PKGLINUX_MAKEISO_REPO_ROOT/$PKGLINUX_MAKEISO_FILE to the USB device $1 ..."
     curl "${PKGLINUX_MAKEISO_REPO_ROOT}/${PKGLINUX_MAKEISO_FILE}" | dd bs=1M of=$1
   fi
   echo "Syncing disks ..."
