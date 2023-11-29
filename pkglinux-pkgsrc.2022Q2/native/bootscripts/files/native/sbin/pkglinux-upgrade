@@ -104,6 +104,7 @@ shift "$(($OPTIND -1))"
 pkgin up
 pkgin ug -y
 sync
+
 if $PKGLINUX_UPGRADE_REFIX; then
 	(cd / && ln $PKGLINUX_UPGRADE_VERBOSE -snf $PKGLINUX_UPGRADE_PREFIX pkg) 
 fi
@@ -113,11 +114,28 @@ if $PKGLINUX_UPGRADE_KERNL; then
 	rsync -av /pkg/native/boot/initramfs-$PKGLINUX_UPGRADE_KVER /boot/initramfs-$PKGLINUX_UPGRADE_KVER
 fi
 
+sync
+
 $PKGLINUX_UPGRADE_FORCE || exit 0
 
 PKGLINUX_UPGRADE_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_UPGRADE_REPO/etc/pkgin/repositories.conf")
 PKGLINUX_UPGRADE_REPO_ROOT="$(dirname $(dirname $PKGLINUX_UPGRADE_REPO))/iso"
-PKGLINUX_UPGRADE_REPO_SFSF="$PKGLINUX_UPGRADE_REPO_ROOT/pkglinux-$PKGLINUX_UPGRADE_PREFIX-$PKGLINUX_UPGRADE_TAG.sfs"
+PKGLINUX_UPGRADE_SFSF="pkglinux-$PKGLINUX_UPGRADE_PREFIX-$PKGLINUX_UPGRADE_TAG.sfs"
+PKGLINUX_UPGRADE_REPO_SFSF="$PKGLINUX_UPGRADE_REPO_ROOT/$PKGLINUX_UPGRADE_SFSF"
+PKGLINUX_UPGRADE_REPO_HOST=$(echo "$PKGLINUX_UPGRADE_REPO" | sed -e 's|^[^/]*//||' -e 's|/.*$||' -e 's|:.*$||')
+
+extract-domain() {
+	local url="$1"
+	local protocol_removed="${url#*://}"
+	local path_removed="${protocol_removed%%/*}"
+	local port_removed="${path_removed%%:*}"
+	echo "$port_removed"
+}
+
+ip() {
+	/sbin/ip route get 1.1.1.1 | head -1 | cut -d ' ' -f 7
+}
+
 if [ ! -d /sfs.root/ ]; then
 	if [ -f /pkglinux.sfs ]; then
 		PKGLINUX_UPGRADE_SFILE="$(realpath /pkglinux.sfs)"
@@ -125,9 +143,32 @@ if [ ! -d /sfs.root/ ]; then
 		PKGLINUX_UPGRADE_SFILE="$(cat /proc/cmdline| tr ' ' '\n' | grep sfs= | cut -d'=' -f2)/pkglinux.sfs"
 	fi
 	if [ -n "$PKGLINUX_UPGRADE_SFILE" ]; then
-#		curl $PKGLINUX_UPGRADE_REPO_SFSF > $PKGLINUX_UPGRADE_SFILE
-		echo zsync "$PKGLINUX_UPGRADE_REPO_SFSF".zsync -o $PKGLINUX_UPGRADE_SFILE
-		zsync "$PKGLINUX_UPGRADE_REPO_SFSF".zsync -o $PKGLINUX_UPGRADE_SFILE
+		if curl --head --silent --fail "$PKGLINUX_UPGRADE_REPO_SFSF" 2>&1> /dev/null; then
+			echo "$PKGLINUX_UPGRADE_REPO_SFSF is available."
+			if type -P rsync >/dev/null; then
+				if [[ "$PKGLINUX_UPGRADE_REPO_HOST" == *"pkglinux.top" ]]; then
+					rsync -ave 'ssh -p 1080' \
+						repos@$PKGLINUX_UPGRADE_REPO_HOST:~/iso/$PKGLINUX_UPGRADE_SFSF \
+						$PKGLINUX_UPGRADE_SFILE
+				else
+					rsync -ave \
+						repos@$PKGLINUX_UPGRADE_REPO_HOST:~/iso/$PKGLINUX_UPGRADE_SFSF \
+						$PKGLINUX_UPGRADE_SFILE
+				fi
+			elif curl --head --silent --fail "$PKGLINUX_UPGRADE_REPO_SFSF.zsync" 2>&1> /dev/null; then
+				if command -v zsync >/dev/null; then
+					echo zsync "$PKGLINUX_UPGRADE_REPO_SFSF".zsync -o $PKGLINUX_UPGRADE_SFILE
+					zsync "$PKGLINUX_UPGRADE_REPO_SFSF".zsync -o $PKGLINUX_UPGRADE_SFILE
+				else	
+					curl $PKGLINUX_UPGRADE_REPO_SFSF > $PKGLINUX_UPGRADE_SFILE
+				fi
+			else	
+				curl $PKGLINUX_UPGRADE_REPO_SFSF > $PKGLINUX_UPGRADE_SFILE
+			fi
+		else
+			echo "$PKGLINUX_UPGRADE_REPO_SFSF is not available."
+			exit 1
+		fi
 	fi
 fi
 sync
