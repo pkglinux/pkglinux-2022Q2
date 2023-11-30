@@ -89,6 +89,7 @@ DEPENDS+=	man-db-[0-9]*:../../linux/man-db
 DEPENDS+=	gtar-[0-9]*:../../archivers/gtar
 DEPENDS+=	gtexinfo-[0-9]*:../../devel/gtexinfo
 DEPENDS+=	vim-[0-9]*:../../editors/vim
+DEPENDS+=	nano-[0-9]*:../../editors/nano
 DEPENDS+=	procps-ng-[0-9]*:../../linux/procps-ng
 DEPENDS+=	util-linux-[0-9]*:../../native/util-linux
 DEPENDS+=	e2fsprogs-[0-9]*:../../native/e2fsprogs
@@ -119,6 +120,9 @@ DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
 DEPENDS+=	syslinux-[0-9]*:../../native/syslinux
 DEPENDS+=	rsync-[0-9]*:../../net/rsync
 DEPENDS+=	zsync-[0-9]*:../../net/zsync
+DEPENDS+=	NetworkManager-[0-9]*:../../linux/NetworkManager
+DEPENDS+=	iw-[0-9]*:../../linux/iw
+DEPENDS+=	wireless-tools-[0-9]*:../../linux/wireless-tools
 #DEPENDS+=	busybox-[0-9]*:../../native/busybox
 #DEPENDS+=	profile-data-[0-9]*:../../native/profile-data
 

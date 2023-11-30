@@ -49,7 +49,6 @@ pkglinux-install-dir()
       pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in gnome -y
       pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in lm-sensors -y
     fi
-#    pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in samba -y
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in xscreensaver -y
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in devilspie -y
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in sudo -y
@@ -68,7 +67,6 @@ pkglinux-install-dir()
       pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in alsa-plugins -y
       pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in gcc7-libs -y
       (cd $1/pkg/share/kde4/services/kded/; mv -v powerdevil.desktop powerdevil.desktop.sav)
-      #pkg-chroot $v -d $1 /pkg/bin/pkgin in strace -y
     fi
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /root/update.sh
   fi
@@ -76,8 +74,6 @@ pkglinux-install-dir()
   
   if $PKGLINUX_INSTALL_GNOME || $PKGLINUX_INSTALL_KDE; then
     (mkdir $PKGLINUX_INSTALL_VERBOSE -p $1/home/alex)
-    #pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 useradd -m alex
-    #pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 echo "alex:zzu7xn2" | chpasswd
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 usermod -a -G adm,root,lp,wheel,floppy,dialout,audio,video,cdrom,plugdev,power,pulse,netdev,scanner,uucp alex
     (mkdir $PKGLINUX_INSTALL_VERBOSE -p $1/pkg/etc/sudoers.d/)
     (cd $1/pkg/etc/sudoers.d/; echo "alex ALL=(ALL:ALL) NOPASSWD: ALL" >> alex)
@@ -94,16 +90,12 @@ pkglinux-install-dir()
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/dbus .)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/sshd .)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/nscd .)
-#    (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/nmbd .)
-#    (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/smbd .)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/openntpd .)
     (cd $1/pkg/etc; echo "#dhcpcd=YES" >> rc.conf)
     (cd $1/pkg/etc; echo sshd=YES >> rc.conf)
     (cd $1/pkg/etc; echo dbus=YES >> rc.conf)
     (cd $1/pkg/etc; echo NetworkManager=YES >> rc.conf)
     (cd $1/pkg/etc; echo nscd=YES >> rc.conf)
-#    (cd $1/pkg/etc; echo smbd=YES >> rc.conf)
-#    (cd $1/pkg/etc; echo nmbd=YES >> rc.conf)
     (cd $1/pkg/etc; echo openntpd=YES >> rc.conf)
     (cd $1/pkg/etc/pkgin/; sed -i -e 's#[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}:[0-9]\+.\+/dist#repos.pkglinux.top/dist#g' repositories.conf)
     (cd $1/pkg/etc/pkgin/; sed -i -e 's#localhost:[0-9]\+.\+/dist#repos.pkglinux.top/dist#g' repositories.conf)
@@ -156,7 +148,6 @@ pkglinux-install-dir()
 
 PKGLINUX_INSTALL_VERBOSE=""
 PKGLINUX_INSTALL_PREFIX="$(readlink /pkg)"
-PKGLINUX_INSTALL_STD=true
 PKGLINUX_INSTALL_MIN=false
 PKGLINUX_INSTALL_GNOME=false
 PKGLINUX_INSTALL_KDE=false
@@ -172,20 +163,20 @@ pkglinux-install-usage()
 	# Display Help
 	echo "Install pkglinux into squashfs file, directory, or disk."
 	echo
-	echo "Syntax: $0 [ -h|v|V|r|p|m|g|k|q|s|n|w|f ] [ --help|verbose|version|repo|prefix|minimal|min|gnome|kde|quick|sfs|none|wait|rootwait|rootdelay|force ] [ dir | blockdev ]"
+	echo "Syntax: $0 [ -h|v|V|r|p|m|g|k|q|s|n|w|f ] [ --help|verbose|version|repo|prefix|minimal|min|gnome|kde|quick|qck|sfs|squashfs|none|wait|rootwait|rootdelay|force ] [ dir | blockdev ]"
 	echo "options:"
 	echo "h     Print this help."
 	echo "v     Verbose mode."
 	echo "V     Print software version and exit."
-	echo "r     Set new repos url."
-	echo "p     Set new prefix."
-	echo "m     Minimal only."
-	echo "g     With gnome."
-	echo "k     With kde."
+	echo "r     Set new repository url."
+	echo "p     Set new pkglinux prefix."
+	echo "m     Install minimal console pkglinux."
+	echo "g     Install standard console pkglinux with gnome desktop."
+	echo "k     Install standard console pkglinux with kde desktop."
 	echo "q     Extract /pkglinux.sfs instead of download packages."
-	echo "s     With /pkglinux.sfs."
-	echo "n     Without tranditional root file system."
-	echo "w     Seconds of rootdelay/rootwait."
+	echo "s     Install /pkglinux.sfs boot option."
+	echo "n     Don't install tranditional root file system at all."
+	echo "w     Set seconds of rootdelay/rootwait (default 2)."
 	echo "f     Confirm to zap target file or device."
 	echo
 }
@@ -235,7 +226,9 @@ for arg in "$@"; do
 		"--gnome")	set -- "$@" "-g" ;;
 		"--kde")	set -- "$@" "-k" ;;
 		"--quick")	set -- "$@" "-q" ;;
+		"--qck")	set -- "$@" "-q" ;;
 		"--sfs")	set -- "$@" "-s" ;;
+		"--suashfs")	set -- "$@" "-s" ;;
 		"--none")	set -- "$@" "-n" ;;
 		"--wait")	set -- "$@" "-w" ;;
 		"--rootwait")	set -- "$@" "-w" ;;
@@ -291,7 +284,7 @@ shift "$(($OPTIND -1))"
 
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1
 
-$PKGLINUX_INSTALL_MIN && PKGLINUX_INSTALL_STD=false && PKGLINUX_INSTALL_GNOME=false && PKGLINUX_INSTALL_KDE=false
+$PKGLINUX_INSTALL_MIN && PKGLINUX_INSTALL_GNOME=false && PKGLINUX_INSTALL_KDE=false
 
 PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf")
 PKGLINUX_INSTALL_TAG="std"

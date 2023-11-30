@@ -13,14 +13,19 @@ pkglinux-install \- install pkglinux into squashfs file, directory, or disk
 [\fB\-\-repo\fR \fIREPOS-URL\fR]
 [\fB\-p\fR \fIPREFIX\fR]
 [\fB\-\-prefix\fR \fIFREFIX\fR]
+[\fB\-m\fR]
+[\fB\-\-minimal\fR]
+[\fB\-\-min\fR]
 [\fB\-g\fR]
 [\fB\-\-gnome\fR]
 [\fB\-k\fR]
 [\fB\-\-kde\fR]
 [\fB\-q\fR]
 [\fB\-\-quick\fR]
+[\fB\-\-qck\fR]
 [\fB\-s\fR]
 [\fB\-\-sfs\fR]
+[\fB\-\-squashfs\fR]
 [\fB\-n\fR]
 [\fB\-\-none\fR]
 [\fB\-w\fR \fISECONDS\fR]
@@ -50,26 +55,31 @@ Use \fIREPOS-URL\fR as the new repository url.
 .BR \-p ", " \-\-prefix " " \fIPREFIX\fR
 Use \fIPREFIX\fR as the new prefix.
 .TP
+.BR \-m ", " \-\-minimal ", " \-\-min
+Install minimal console pkglinux without GNOME or KDE desktop.
+.TP
 .BR \-g ", " \-\-gnome
-Install pkglinux with GNOME desktop.
+Install standard console pkglinux with GNOME desktop.
 .TP
 .BR \-k ", " \-\-kde
-Install pkglinux with KDE desktop.
+Install standard console pkglinux with KDE desktop.
 .TP
-.BR \-s ", " \-\-sfs
+.BR \-s ", " \-\-sfs ", " \-\-squashfs
 Install /pkglinux.sfs (together with traditional rootfs if -n|--none not specified).
 .TP
-.BR \-q ", " \-\-quick
+.BR \-q ", " \-\-quick ", " \-\-qck
 Try extracting rootfs from /pkglinux.sfs instead of download packages while installing.
 .TP
 .BR \-n ", " \-\-none
 Install pkglinux like popular usb-linux as pkglinux-makeusb does, without traditional root file system hierarchy.
+If  \fIBLOCK-DEVICE\fR provided but without -s|--sfs, this flag means to only partition and format the device.
 .TP
 .BR \-w ", " \-\-wait ", " \-\-rootwait ", " \-\-rootdelay " " \fISECONDS\fR
 Set rootdelay/rootwait to  \fISECONDS\fR as in linux kernel parameters.
 .TP
 .BR \-f ", " \-\-force
-Ok to remove target files before creating new ones, or zap contents in block device before writting to it.
+Confirm to remove target files before creating new ones, or zap contents in block device before writting to it.
+This script will stop and remind if this flag is not specified as needed.
 .SH AUTHOR
 Written by Jianjun Liu <jianjunliu@126.com> for https://www.pkglinux.top
 .SH COPYRIGHT
