@@ -87,9 +87,12 @@ shift "$(($OPTIND -1))"
 PKGLINUX_MAKEALL_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEALL_PREFIX/etc/pkgin/repositories.conf")
 $PKGLINUX_MAKEALL_FORCE && _f="-f" || _f=""
 
-pkglinux-install $_f -p $PKGLINUX_MAKEALL_PREFIX
+pkglinux-install $_f -p $PKGLINUX_MAKEALL_PREFIX -m
 pkglinux-makeiso $_f -p $PKGLINUX_MAKEALL_PREFIX -t min
 pkglinux-makeusb $_f -p $PKGLINUX_MAKEALL_PREFIX -t min
+pkglinux-install $_f -p $PKGLINUX_MAKEALL_PREFIX
+pkglinux-makeiso $_f -p $PKGLINUX_MAKEALL_PREFIX -t std
+pkglinux-makeusb $_f -p $PKGLINUX_MAKEALL_PREFIX -t std
 pkglinux-install $_f -p $PKGLINUX_MAKEALL_PREFIX -g
 pkglinux-makeiso $_f -p $PKGLINUX_MAKEALL_PREFIX -t gnome
 pkglinux-makeusb $_f -p $PKGLINUX_MAKEALL_PREFIX -t gnome

@@ -15,7 +15,7 @@ DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
 DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
-DEPENDS+=	linux-firmware-[0-9]*:../../native/linux-firmware
+DEPENDS+=	firmware-[0-9]*:../../native/firmware
 DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
 
 DEPENDS+=	nawk-[0-9]*:../../lang/nawk
@@ -87,6 +87,7 @@ DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
 DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
 DEPENDS+=	pigz-[0-9]*:../../linux/pigz
 DEPENDS+=	pixz-[0-9]*:../../linux/pixz
+DEPENDS+=	bind-[0-9]*:../../net/bind916
 DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
 DEPENDS+=	rc.d-boot-[0-9]*:../../pkgtools/rc.d-boot

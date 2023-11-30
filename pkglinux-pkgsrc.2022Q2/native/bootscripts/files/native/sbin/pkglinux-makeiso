@@ -23,7 +23,7 @@ SOFTWARE.
 MIT-LICENSE
 
 PKGLINUX_MAKEISO_VERBOSE=""
-PKGLINUX_MAKEISO_TAG="min"
+PKGLINUX_MAKEISO_TAG="std"
 PKGLINUX_MAKEISO_PREFIX="$(readlink /pkg)"
 PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf")
 PKGLINUX_MAKEISO_KVER="$(uname -r)"
@@ -42,7 +42,7 @@ pkglinux-makeiso-usage()
 	echo "v     Verbose mode."
 	echo "V     Print software version and exit."
 	echo "p     Set new prefix."
-	echo "t     Sub tag for target iso file."
+	echo "t     Sub tag name for target iso file."
 	echo "w     Seconds of rootdelay/rootwait."
 	echo "l     iso-level (default 1)."
 	echo "f     Confirm to zap target file or device"

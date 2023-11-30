@@ -106,6 +106,7 @@ DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
 DEPENDS+=	pigz-[0-9]*:../../linux/pigz
 DEPENDS+=	pixz-[0-9]*:../../linux/pixz
 DEPENDS+=	screen-[0-9]*:../../misc/screen
+DEPENDS+=	bind-[0-9]*:../../net/bind916
 DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
 DEPENDS+=	rc.d-boot-[0-9]*:../../pkgtools/rc.d-boot

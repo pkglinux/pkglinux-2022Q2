@@ -23,7 +23,7 @@ SOFTWARE.
 MIT-LICENSE
 
 PKGLINUX_MAKEUSB_VERBOSE=""
-PKGLINUX_MAKEUSB_TAG="min"
+PKGLINUX_MAKEUSB_TAG="std"
 PKGLINUX_MAKEUSB_PREFIX="$(readlink /pkg)"
 PKGLINUX_MAKEUSB_KVER="$(uname -r)"
 PKGLINUX_MAKEUSB_BLANK="0"
@@ -43,7 +43,7 @@ pkglinux-makeusb-usage()
 	echo "v     Verbose mode."
 	echo "V     Print software version and exit."
 	echo "p     Set new prefix."
-	echo "t     Sub tag."
+	echo "t     Sub tag name for target image file."
 	echo "w     Seconds of rootdelay/rootwait."
 	echo "b     Expected extra MiB for the image file."
 	echo "f     Confirm to zap target file or device."

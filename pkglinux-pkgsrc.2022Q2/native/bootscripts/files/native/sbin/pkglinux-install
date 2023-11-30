@@ -33,10 +33,10 @@ pkglinux-install-dir()
   pkg-strap $PKGLINUX_INSTALL_VERBOSE -p $PKGLINUX_INSTALL_PREFIX -d $1 $PKGLINUX_INSTALL_REPO
   
   pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin up
-  if $PKGLINUX_INSTALL_GNOME || $PKGLINUX_INSTALL_KDE; then
-    pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in pkglinux -y
-  else
+  if $PKGLINUX_INSTALL_MIN; then
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in pkgiso -y
+  else
+    pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in pkglinux -y
   fi
   pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 depmod -a
   pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 passwd -d root
@@ -110,7 +110,7 @@ pkglinux-install-dir()
     (cd $1/root; cp $PKGLINUX_INSTALL_VERBOSE alex.bashrc .bashrc)
     (cd $1/home/alex; cp $PKGLINUX_INSTALL_VERBOSE $1/root/.bashrc .)
     (cd $1/home/alex; cp $PKGLINUX_INSTALL_VERBOSE $1/root/.bash_profile .)
-    (cd $1/home/alex; sed -i 's:echo startx:startx #echo startx:g' .bash_profile)
+    (cd $1/home/alex; sed -i 's:echo startx:sudo udevadm control --reload; startx #echo startx:g' .bash_profile)
     (cd $1/home/alex; cp $PKGLINUX_INSTALL_VERBOSE -r $1/root/.devilspie .)
     (cd $1/home/alex; cp $PKGLINUX_INSTALL_VERBOSE $1/root/dircolors.ansi-universal .)
     if $PKGLINUX_INSTALL_GNOME; then
@@ -146,14 +146,18 @@ pkglinux-install-dir()
     (cd $1/pkg/etc; echo NetworkManager=YES >> rc.conf)
     (cd $1/pkg/etc/pkgin/; sed -i -e 's#[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}:[0-9]\+.\+/dist#repos.pkglinux.top/dist#g' repositories.conf)
     (cd $1/pkg/etc/pkgin/; sed -i -e 's#localhost:[0-9]\+.\+/dist#repos.pkglinux.top/dist#g' repositories.conf)
-    (cd $1; rm -f $PKGLINUX_INSTALL_VERBOSE lib/*.a usr/lib/*.a pkg/lib/*.a)
-    (cd $1; rm -rf $PKGLINUX_INSTALL_VERBOSE lib/pkgconfig usr/lib/pkgconfig pkg/lib/pkgconfig)
-    (cd $1; rm -rf $PKGLINUX_INSTALL_VERBOSE pkg/include usr/include)
+    if $PKGLINUX_INSTALL_MIN; then
+      (cd $1; rm -f $PKGLINUX_INSTALL_VERBOSE lib/*.a usr/lib/*.a pkg/lib/*.a)
+      (cd $1; rm -rf $PKGLINUX_INSTALL_VERBOSE lib/pkgconfig usr/lib/pkgconfig pkg/lib/pkgconfig)
+      (cd $1; rm -rf $PKGLINUX_INSTALL_VERBOSE pkg/include usr/include)
+    fi
   fi
 }
 
 PKGLINUX_INSTALL_VERBOSE=""
 PKGLINUX_INSTALL_PREFIX="$(readlink /pkg)"
+PKGLINUX_INSTALL_STD=true
+PKGLINUX_INSTALL_MIN=false
 PKGLINUX_INSTALL_GNOME=false
 PKGLINUX_INSTALL_KDE=false
 PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf")
@@ -168,13 +172,14 @@ pkglinux-install-usage()
 	# Display Help
 	echo "Install pkglinux into squashfs file, directory, or disk."
 	echo
-	echo "Syntax: $0 [ -h|v|V|r|p|g|k|q|s|n|w|f ] [ --help|verbose|version|repo|prefix|gnome|kde|quick|sfs|none|wait|rootwait|rootdelay|force ] [ dir | blockdev ]"
+	echo "Syntax: $0 [ -h|v|V|r|p|m|g|k|q|s|n|w|f ] [ --help|verbose|version|repo|prefix|minimal|min|gnome|kde|quick|sfs|none|wait|rootwait|rootdelay|force ] [ dir | blockdev ]"
 	echo "options:"
 	echo "h     Print this help."
 	echo "v     Verbose mode."
 	echo "V     Print software version and exit."
 	echo "r     Set new repos url."
 	echo "p     Set new prefix."
+	echo "m     Minimal only."
 	echo "g     With gnome."
 	echo "k     With kde."
 	echo "q     Extract /pkglinux.sfs instead of download packages."
@@ -225,6 +230,8 @@ for arg in "$@"; do
 		"--version")	set -- "$@" "-V" ;;
 		"--repo")	set -- "$@" "-r" ;;
 		"--prefix")	set -- "$@" "-p" ;;
+		"--minimal")	set -- "$@" "-m" ;;
+		"--min")	set -- "$@" "-m" ;;
 		"--gnome")	set -- "$@" "-g" ;;
 		"--kde")	set -- "$@" "-k" ;;
 		"--quick")	set -- "$@" "-q" ;;
@@ -238,7 +245,7 @@ for arg in "$@"; do
 	esac
 done
 
-while getopts ':hvVr:p:gkqsnw:f' OPTION; do
+while getopts ':hvVr:p:mgkqsnw:f' OPTION; do
 	case "$OPTION" in
 		h)	# display usage
 			pkglinux-install-usage
@@ -253,6 +260,8 @@ while getopts ':hvVr:p:gkqsnw:f' OPTION; do
 			PKGLINUX_INSTALL_REPO="$OPTARG" ;;
 		p)	# set new prefix
 			PKGLINUX_INSTALL_PREFIX="$OPTARG" ;;
+		m)	# Minimal only?
+			PKGLINUX_INSTALL_MIN=true ;;
 		g)	# with gnome?
 			PKGLINUX_INSTALL_GNOME=true ;;
 		k)	# with kde?
@@ -282,8 +291,11 @@ shift "$(($OPTIND -1))"
 
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1
 
+$PKGLINUX_INSTALL_MIN && PKGLINUX_INSTALL_STD=false && PKGLINUX_INSTALL_GNOME=false && PKGLINUX_INSTALL_KDE=false
+
 PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf")
-PKGLINUX_INSTALL_TAG="min"
+PKGLINUX_INSTALL_TAG="std"
+$PKGLINUX_INSTALL_MIN && PKGLINUX_INSTALL_TAG="min"
 $PKGLINUX_INSTALL_GNOME && PKGLINUX_INSTALL_TAG="gnome"
 $PKGLINUX_INSTALL_KDE && PKGLINUX_INSTALL_TAG="kde"
 $PKGLINUX_INSTALL_KDE && $PKGLINUX_INSTALL_GNOME && PKGLINUX_INSTALL_TAG="kde+gnome"
