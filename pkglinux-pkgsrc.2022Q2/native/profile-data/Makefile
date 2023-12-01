@@ -22,6 +22,7 @@ do-install:
 		alex.fonts.txz \
 		alex.kde.txz \
 		alex.local.txz \
+		alex.Desktop.txz \
 		alex.themes.txz
 		${CP} -av /root/profile-data/${_txz} ${DESTDIR}${PREFIX}/native/root/
 .	endfor

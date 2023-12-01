@@ -115,6 +115,7 @@ pkglinux-install-dir()
     fi
     (cd $1/home/alex; tar $PKGLINUX_INSTALL_VERBOSE -xJf $1/root/alex.config.txz)
     (cd $1/home/alex; tar $PKGLINUX_INSTALL_VERBOSE -xJf $1/root/alex.local.txz)
+    (cd $1/home/alex; tar $PKGLINUX_INSTALL_VERBOSE -xJf $1/root/alex.Desktop.txz)
     (cd $1/home/alex; tar $PKGLINUX_INSTALL_VERBOSE -xzf $1/root/alex.themes.txz)
     (cd $1/home/alex; tar $PKGLINUX_INSTALL_VERBOSE -xJf $1/root/alex.fonts.txz)
     if $PKGLINUX_INSTALL_KDE; then
