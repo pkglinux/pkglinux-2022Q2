@@ -49,6 +49,7 @@ pkglinux-makeiso-usage()
 	echo
 }
 
+PKGLINUX_MAKEISO_ARGS="$@"
 echo Starting $0 $@
 
 for arg in "$@"; do
@@ -111,7 +112,12 @@ PKGLINUX_MAKEISO_FILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_TAG.i
 if [ "$#" -gt 0 ]; then
   [[ "$1" == "/dev/"* ]] || { echo "$1 is not a device."; exit 1; }
   [ "$(lsblk -ndo tran $1)" = "usb" ] || { echo "$1 is not a usb device."; exit 1; }
-  $PKGLINUX_MAKEISO_FORCE || { echo "Confirm to zap all data on $1 please use -f or --force."; exit 1; }
+  $PKGLINUX_MAKEISO_FORCE || {
+    echo "Confirm to zap all data on $1 please use --force or -f. Please retype the command:"
+    echo "$0 --force $PKGLINUX_MAKEISO_ARGS"
+    echo "$0 -f $PKGLINUX_MAKEISO_ARGS"
+    exit 1
+  }
   if [ -f ${PKGLINUX_MAKEISO_FILE} ]; then
     echo "Writting $PKGLINUX_MAKEISO_FILE the USB device $1 ..."
     cat "${PKGLINUX_MAKEISO_FILE}" | dd bs=1M of=$1

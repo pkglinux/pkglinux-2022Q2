@@ -212,6 +212,7 @@ while [ "$#" -gt 0 ]; do
 	esac
 done
 '
+PKGLINUX_INSTALL_ARGS="$@"
 echo Starting $0 $@
 
 for arg in "$@"; do
@@ -331,7 +332,12 @@ fi
 	echo "$1 is not a block device."; exit 1;
 }
 
-$PKGLINUX_INSTALL_FORCE || { echo "Confirm to zap all data on $1 please use -f or --force."; exit 1; }
+$PKGLINUX_INSTALL_FORCE || {
+	echo "Confirm to zap all data on $1 please use --force or -f. Please retype the command:"
+	echo "$0 --force $PKGLINUX_INSTALL_ARGS"
+	echo "$0 -f $PKGLINUX_INSTALL_ARGS"
+	exit 1
+}
 
 PKGLINUX_INSTALL_PART1="$1""1"
 PKGLINUX_INSTALL_PART2="$1""2"

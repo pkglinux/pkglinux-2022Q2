@@ -50,6 +50,7 @@ pkglinux-makeusb-usage()
 	echo
 }
 
+PKGLINUX_MAKEUSB_ARGS="$@"
 echo Starting $0 $@
 
 for arg in "$@"; do
@@ -109,7 +110,13 @@ PKGLINUX_MAKEUSB_IMG="pkglinux-$PKGLINUX_MAKEUSB_PREFIX-$PKGLINUX_MAKEUSB_TAG.us
 if [ "$#" -gt 0 ]; then
   [[ "$1" == "/dev/"* ]] || { echo "$1 is not a device."; exit 1; }
   [ "$(lsblk -ndo tran $1)" = "usb" ] || [ "$(lsblk -ndo tran $1)" = "sata" ] || { echo "$1 is not a block device."; exit 1; }
-  $PKGLINUX_MAKEUSB_FORCE || { echo "Confirm to zap all data on $1 please use -f or --force."; exit 1; }
+  $PKGLINUX_MAKEUSB_FORCE || {
+      echo "Confirm to zap all data on $1 please use --force or -f. Please retype the command:"
+      echo "$0 --force $PKGLINUX_MAKEUSB_ARGS"
+      echo "$0 -f $PKGLINUX_MAKEUSB_ARGS"
+      exit 1
+  }
+
 
   if [ -f ${PKGLINUX_MAKEUSB_IMG} ]; then
     echo "Writting $PKGLINUX_MAKEUSB_IMG the block device $1 ..."
