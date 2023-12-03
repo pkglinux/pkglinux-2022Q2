@@ -11,14 +11,14 @@ Source code for **pkgLinux** (see [https://www.pkglinux.top](https://www.pkglinu
 - Use ConsoleKit2 instead of Systemd
 - With pure X11 and without supporting wayland/xwayland
 - With **[Gnome](https://www.gnome.org)**3 desktop built up and heavily tested
-- With **[KDE]](https//kde.org)**4 desktop built up and tested
+- With **[KDE](https//kde.org)**4 desktop built up and tested
 - Over 20,000 source packages from pkgsrc ready for compiling on request
 - Limited built binary packages in the repository currently
 - Bootable iso file ready for creating pkglinux cdrom or usb
 - Bootable iso file ready for creating pkglinux cdrom or usb with a **[Gnome](https://www.gnome.org)**3 desktop
-- Bootable iso file ready for creating pkglinux cdrom or usb with a **[KDE]](https//kde.org)**4 desktop
-- Bootable iso file ready for creating pkglinux cdrom or usb with **[KDE]](https//kde.org)**4+**[Gnome](https://www.gnome.org)**3 desktops
+- Bootable iso file ready for creating pkglinux cdrom or usb with a **[KDE](https//kde.org)**4 desktop
+- Bootable iso file ready for creating pkglinux cdrom or usb with **[KDE](https//kde.org)**4+**[Gnome](https://www.gnome.org)**3 desktops
 - Bootable disk image file ready for quickly installing minimal pkglinux on disk or usb
 - Bootable disk image file ready for quickly installing pkglinux with a **[Gnome](https://www.gnome.org)**3 desktop on disk or usb
-- Bootable disk image file ready for quickly installing pkglinux with a **[KDE]](https//kde.org)**4 desktop on disk or usb
-- Bootable disk image file ready for quickly installing pkglinux with **[KDE]](https//kde.org)**4+**[Gnome](https://www.gnome.org)**3 desktops on disk or usb
+- Bootable disk image file ready for quickly installing pkglinux with a **[KDE](https//kde.org)**4 desktop on disk or usb
+- Bootable disk image file ready for quickly installing pkglinux with **[KDE](https//kde.org)**4+**[Gnome](https://www.gnome.org)**3 desktops on disk or usb
