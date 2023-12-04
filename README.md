@@ -1,5 +1,5 @@
 
-# pkglinux-pkgsrc
+# What is pkglinux
 
 Source code for [**pkgLinux**](https://www.pkglinux.top/) (see [**https://www.pkglinux.top**](https://www.pkglinux.top/)) is modified from [**pkgsrc-20??Q?**](http://cdn.netbsd.org/pub/)
 
@@ -24,22 +24,22 @@ Source code for [**pkgLinux**](https://www.pkglinux.top/) (see [**https://www.pk
 - Bootable disk image file ready for quickly installing pkglinux with a [**KDE**](https//kde.org)4 desktop on disk or usb
 - Bootable disk image file ready for quickly installing pkglinux with [**KDE**](https//kde.org)4+[**Gnome**](https://www.gnome.org)3 desktops on disk or usb
 
-## Screen shots
+# Screen shots
 
-<p><a href="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot1.png" target="_blank">
+<p><a href="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot1.png">
 <img src="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot1-150x150.png"
 alt="pkglinux-gnome-screenshot1">
 </a>
-<a href="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot2.png" target="_blank">
+<a href="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot2.png">
 <img src="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot2-150x150.png"
 alt="pkglinux-gnome-screenshot2">
 </a>
 <p>
-<a href="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot1.png" target="_blank">
+<a href="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot1.png">
 <img src="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot1-150x150.png"
 alt="pkglinux-kde-screenshot1">
 </a>
-<a href="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot2.png" target="_blank">
+<a href="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot2.png">
 <img src="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot2-150x150.png"
 alt="pkglinux-kde-screenshot2">
 </a>
