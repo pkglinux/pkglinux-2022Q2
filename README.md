@@ -1,5 +1,5 @@
 
-# What is pkglinux
+# What is pkgLinux
 
 Source code for [**pkgLinux**](https://www.pkglinux.top/) (see [**https://www.pkglinux.top**](https://www.pkglinux.top/)) is modified from [**pkgsrc-20??Q?**](http://cdn.netbsd.org/pub/)
 
