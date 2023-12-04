@@ -1,7 +1,7 @@
 
 # pkglinux-pkgsrc
 
-Source code for **pkgLinux** (see [**https://www.pkglinux.top**](https://www.pkglinux.top/)) is modified from **pkgsrc-20??Q?**
+Source code for [**pkgLinux**](https://www.pkglinux.top/) (see [**https://www.pkglinux.top**](https://www.pkglinux.top/)) is modified from [**pkgsrc-20??Q?**](http://cdn.netbsd.org/pub/)
 
 [**pkgLinux**](https://www.pkglinux.top/) is just another different linux distro inspired by the famous [**pkgsrc**](http://www.pkgsrc.org) with the features:
 
