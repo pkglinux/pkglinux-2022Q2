@@ -1,7 +1,7 @@
 
 # pkglinux-pkgsrc
 
-Source code for **pkgLinux** (see [**https://www.pkglinux.top**](https://www.pkglinux.top/)) is modified from [**pkgsrc-20??Q?**](http://cdn.netbsd.org/pub/pkgsrc/)
+Source code for **pkgLinux** (see [**https://www.pkglinux.top**](https://www.pkglinux.top/)) is modified from **pkgsrc-20??Q?**
 
 [**pkgLinux**](https://www.pkglinux.top/) is just another different linux distro inspired by the famous [**pkgsrc**](http://www.pkgsrc.org) with the features:
 
@@ -26,20 +26,20 @@ Source code for **pkgLinux** (see [**https://www.pkglinux.top**](https://www.pkg
 
 ## Screen shots
 
-<p><a href="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot1.png" target="_blank" rel="noopener">
+<p><a href="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot1.png" target="_blank">
 <img src="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot1-150x150.png"
 alt="pkglinux-gnome-screenshot1">
 </a>
-<a href="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot2.png" target="_blank" rel="noopener">
+<a href="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot2.png" target="_blank">
 <img src="https://isos.pkglinux.top/screenshots/pkglinux-gnome-screenshot2-150x150.png"
 alt="pkglinux-gnome-screenshot2">
 </a>
 <p>
-<a href="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot1.png" target="_blank" rel="noopener">
+<a href="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot1.png" target="_blank">
 <img src="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot1-150x150.png"
 alt="pkglinux-kde-screenshot1">
 </a>
-<a href="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot2.png" target="_blank" rel="noopener">
+<a href="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot2.png" target="_blank">
 <img src="https://isos.pkglinux.top/screenshots/pkglinux-kde-screenshot2-150x150.png"
 alt="pkglinux-kde-screenshot2">
 </a>
