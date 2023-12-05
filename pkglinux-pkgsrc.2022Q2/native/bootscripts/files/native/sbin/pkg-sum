@@ -32,7 +32,7 @@ for arg in "$@"; do
 	esac
 done
 
-_basedir="/root/repos"
+_basedir="/root/current"
 
 while getopts 'b:' OPTION; do
 	case "$OPTION" in

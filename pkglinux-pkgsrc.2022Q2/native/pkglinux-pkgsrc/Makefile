@@ -19,6 +19,6 @@ PKG_PRESERVE=		yes
 
 do-install:
 	${MKDIR} -pv ${DESTDIR}${PREFIX}/native/
-	cd ${DESTDIR}${PREFIX}/native/ && gtar -xJvf /root/repos/pkglinux-pkgsrc/pkglinux-pkgsrc.${PREFIX:S/\///}.txz
+	cd ${DESTDIR}${PREFIX}/native/ && gtar -xJvf /root/dist/pkglinux-pkgsrc.${PREFIX:S/\///}.txz
 
 .include "../../mk/bsd.pkg.mk"
