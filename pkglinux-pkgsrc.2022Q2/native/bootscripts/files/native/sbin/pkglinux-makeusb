@@ -103,28 +103,104 @@ shift "$(($OPTIND -1))"
 
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
 
-PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf")
+PKGLINUX_MAKEUSB_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))/iso"
+
+if [ "$PKGLINUX_MAKEUSB_PREFIX" = "LATEST" ]; then
+  if [ "$#" -lt 1 ]; then
+    echo "LATEST is only allowed when downloading for convenience sake."
+    exit 1
+  fi
+elif [[ "$PKGLINUX_MAKEUSB_PREFIX" =~ 20[2-9][0-9]Q[1-4] ]]; then
+  if curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" 2>&1> /dev/null; then
+    if [ -n "$(curl -s "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" | \
+	    grep -v "^#" | cut -f1 | grep $PKGLINUX_MAKEUSB_PREFIX)" ]; then
+      echo "$PKGLINUX_MAKEUSB_PREFIX is in $PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt"
+    else
+      echo "$PKGLINUX_MAKEUSB_PREFIX is invalid as it's not in $PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt"
+      exit 1
+    fi
+  fi
+else
+	echo "$PKGLINUX_MAKEUSB_PREFIX is not a valid prefix."
+	exit 1
+fi
+
+case "$PKGLINUX_MAKEUSB_TAG" in
+	min)		;;
+	std)		;;
+	gnome)		;;
+	kde)		;;
+	kde+gnome)	;;
+	*)		#
+  if curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt" 2>&1> /dev/null; then
+    if [ -n "$(curl -s "$PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt" | \
+	    grep -v "^#" | cut -f1 | grep $PKGLINUX_MAKEUSB_TAG)" ]; then
+      echo "Found $PKGLINUX_MAKEUSB_TAG in $PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt"
+    else
+      echo "$PKGLINUX_MAKEUSB_TAG is invalid as it's not in $PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt"
+      exit 1
+    fi
+  else
+    echo "$PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt is not available. Network problem?"
+    echo "Couldn't validate the tag $PKGLINUX_MAKEUSB_TAG"
+    exit 1
+  fi
+			;;
+esac
+
+if ! [ "$PKGLINUX_MAKEUSB_PREFIX" = "LATEST" ]; then
+  PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf")
+fi
 PKGLINUX_MAKEUSB_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))/iso"
 PKGLINUX_MAKEUSB_IMG="pkglinux-$PKGLINUX_MAKEUSB_PREFIX-$PKGLINUX_MAKEUSB_TAG.usb"
+PKGLINUX_MAKEUSB_SFSFILE="pkglinux-$PKGLINUX_MAKEUSB_PREFIX-$PKGLINUX_MAKEUSB_TAG.sfs"
 
 if [ "$#" -gt 0 ]; then
   [[ "$1" == "/dev/"* ]] || { echo "$1 is not a device."; exit 1; }
   [ "$(lsblk -ndo tran $1)" = "usb" ] || [ "$(lsblk -ndo tran $1)" = "sata" ] || { echo "$1 is not a block device."; exit 1; }
   $PKGLINUX_MAKEUSB_FORCE || {
-      echo "Confirm to zap all data on $1 please use --force or -f. Please retype the command:"
-      echo "$0 --force $PKGLINUX_MAKEUSB_ARGS"
-      echo "$0 -f $PKGLINUX_MAKEUSB_ARGS"
-      exit 1
+    echo "Confirm to zap all data on $1 please use --force or -f. Please retype the command:"
+    echo "$0 --force $PKGLINUX_MAKEUSB_ARGS"
+    echo "$0 -f $PKGLINUX_MAKEUSB_ARGS"
+    exit 1
   }
 
-
   if [ -f ${PKGLINUX_MAKEUSB_IMG} ]; then
-    echo "Writting $PKGLINUX_MAKEUSB_IMG the block device $1 ..."
+    echo "$PKGLINUX_MAKEUSB_IMG exists in the current directory."
+    echo "Writting $PKGLINUX_MAKEUSB_IMG to the block device $1 ..."
     cat "${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
-  else
+  elif curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG" 2>&1> /dev/null; then
+    echo "$PKGLINUX_MAKEUSB_IMG doesn't exist in the current directory."
+    echo "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG is available."
     echo "Copying $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG to the block device $1 ..."
     curl "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
+  elif [ -f ${PKGLINUX_MAKEUSB_SFSFILE} ]; then
+    echo "$PKGLINUX_MAKEUSB_IMG doesn't exist in the current directory."
+    echo "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG is not available either."
+    echo "Most likely $PKGLINUX_MAKEUSB_PREFIX is not the latest one."
+    echo "However, $PKGLINUX_MAKEUSB_SFSFILE is found in the current directory."
+    echo "With this file existing, a $PKGLINUX_MAKEUSB_IMG file can easiy be created quickly."
+    echo "Retype the same $0 command and flags without specifying USBDEV as the last arguments."
+    exit 0
+  elif curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_SFSFILE" 2>&1> /dev/null; then
+    echo "$PKGLINUX_MAKEUSB_IMG doesn't exist in the current directory."
+    echo "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG is not available either."
+    echo "Most likely $PKGLINUX_MAKEUSB_PREFIX is not the latest one."
+    echo "$PKGLINUX_MAKEUSB_SFSFILE is not found in the current directory."
+    echo "However, $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_SFSFILE is available."
+    echo "With this file being available, a $PKGLINUX_MAKEUSB_IMG file can easiy be created locally."
+    echo "Retype the same $0 command and flags without specifying USBDEV as the last arguments."
+    exit 0
+  else
+    echo "$PKGLINUX_MAKEUSB_IMG doesn't exist in the current directory."
+    echo "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG is not available either."
+    echo "Most likely $PKGLINUX_MAKEUSB_PREFIX is not the latest one."
+    echo "$PKGLINUX_MAKEUSB_SFSFILE is not found in the current directory."
+    echo "Weird! $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_SFSFILE is NOT available."
+    echo "Most likely there is a network problem."
+    exit 1
   fi
+
   echo "Syncing disks ..."
   sync
   echo "Trying to enlarge the last partition of $1 ..."
@@ -143,7 +219,6 @@ $PKGLINUX_MAKEUSB_FORCE && rm $PKGLINUX_MAKEUSB_VERBOSE -f $PKGLINUX_MAKEUSB_IMG
 find /dev -type b -name "loop?p?" | xargs -I D umount $PKGLINUX_MAKEUSB_VERBOSE -f D
 losetup $PKGLINUX_MAKEUSB_VERBOSE -D
 
-PKGLINUX_MAKEUSB_SFSFILE="pkglinux-$PKGLINUX_MAKEUSB_PREFIX-$PKGLINUX_MAKEUSB_TAG.sfs"
 if [ -f ${PKGLINUX_MAKEUSB_SFSFILE} ]; then
   PKGLINUX_MAKEUSB_SIZE=$(($(stat -c%s "$PKGLINUX_MAKEUSB_SFSFILE")/1024/1024))
 else

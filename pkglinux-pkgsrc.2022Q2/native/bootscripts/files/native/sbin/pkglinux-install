@@ -286,6 +286,23 @@ shift "$(($OPTIND -1))"
 
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1
 
+PKGLINUX_INSTALL_REPO_ROOT="$(dirname $(dirname $PKGLINUX_INSTALL_REPO))/iso"
+
+if [[ "$PKGLINUX_INSTALL_PREFIX" =~ 20[2-9][0-9]Q[1-4] ]]; then
+  if curl --head --silent --fail "$PKGLINUX_INSTALL_REPO_ROOT/LATEST.txt" 2>&1> /dev/null; then
+     if [ -n "$(curl -s "$PKGLINUX_INSTALL_REPO_ROOT/LATEST.txt" | \
+	     grep -v "^#" | cut -f1 | grep $PKGLINUX_INSTALL_PREFIX)" ]; then
+       echo "Found $PKGLINUX_INSTALL_PREFIX in $PKGLINUX_INSTALL_REPO_ROOT/LATEST.txt"
+     else
+       echo "$PKGLINUX_INSTALL_PREFIX is invalid as it's not in $PKGLINUX_INSTALL_REPO_ROOT/LATEST.txt"
+       exit 1
+     fi
+   fi
+else
+  echo "$PKGLINUX_INSTALL_PREFIX is not a valid prefix."
+  exit 1
+fi
+
 $PKGLINUX_INSTALL_MIN && PKGLINUX_INSTALL_GNOME=false && PKGLINUX_INSTALL_KDE=false
 
 PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf")
