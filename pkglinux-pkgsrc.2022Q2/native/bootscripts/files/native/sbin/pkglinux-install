@@ -148,11 +148,14 @@ pkglinux-install-dir()
 }
 
 PKGLINUX_INSTALL_VERBOSE=""
-PKGLINUX_INSTALL_PREFIX="$(readlink /pkg)"
+PKGLINUX_INSTALL_PREFIX="2022Q2"
+[ -L /pkg ] && [ -d /pkg ] && PKGLINUX_INSTALL_PREFIX="$(readlink /pkg)"
+PKGLINUX_INSTALL_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_INSTALL_PREFIX/All"
+PKGLINUX_INSTALL_CONF="/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf"
+[ -f "$PKGLINUX_INSTALL_CONF" ] && PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_INSTALL_CONF")
 PKGLINUX_INSTALL_MIN=false
 PKGLINUX_INSTALL_GNOME=false
 PKGLINUX_INSTALL_KDE=false
-PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf")
 PKGLINUX_INSTALL_QCK=false
 PKGLINUX_INSTALL_SFS=false
 PKGLINUX_INSTALL_NONE=false
@@ -249,7 +252,7 @@ while getopts ':hvVr:p:mgkqsnw:f' OPTION; do
 			PKGLINUX_INSTALL_VERBOSE="-v"
 			;;
 		V)	# display version
-			echo "1.0"	
+			echo "2023.12"	
 			exit;;
 		r)	# set new repo
 			PKGLINUX_INSTALL_REPO="$OPTARG" ;;
@@ -305,7 +308,9 @@ fi
 
 $PKGLINUX_INSTALL_MIN && PKGLINUX_INSTALL_GNOME=false && PKGLINUX_INSTALL_KDE=false
 
-PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf")
+PKGLINUX_INSTALL_CONF="/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf"
+PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_INSTALL_CONF")
+PKGLINUX_INSTALL_REPO_ROOT="$(dirname $(dirname $PKGLINUX_INSTALL_REPO))/iso"
 PKGLINUX_INSTALL_TAG="std"
 $PKGLINUX_INSTALL_MIN && PKGLINUX_INSTALL_TAG="min"
 $PKGLINUX_INSTALL_GNOME && PKGLINUX_INSTALL_TAG="gnome"

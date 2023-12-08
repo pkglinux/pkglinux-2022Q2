@@ -24,10 +24,13 @@ MIT-LICENSE
 
 PKGLINUX_MAKEUSB_VERBOSE=""
 PKGLINUX_MAKEUSB_TAG="std"
-PKGLINUX_MAKEUSB_PREFIX="$(readlink /pkg)"
 PKGLINUX_MAKEUSB_KVER="$(uname -r)"
 PKGLINUX_MAKEUSB_BLANK="0"
-PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf")
+PKGLINUX_MAKEUSB_PREFIX="2022Q2"
+[ -L /pkg ] && [ -d /pkg ] && PKGLINUX_MAKEUSB_PREFIX="$(readlink /pkg)"
+PKGLINUX_MAKEUSB_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_MAKEUSB_PREFIX/All"
+PKGLINUX_MAKEUSB_CONF="/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf"
+[ -f "$PKGLINUX_MAKEUSB_CONF" ] && PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEUSB_CONF")
 PKGLINUX_MAKEUSB_WAIT="2"
 PKGLINUX_MAKEUSB_FORCE=false
 
@@ -79,7 +82,7 @@ while getopts ':hvVp:t:w:b:f' OPTION; do
 			PKGLINUX_MAKEUSB_VERBOSE="-v"
 			;;
 		V)	# display version
-			echo "1.0"	
+			echo "2023.12"	
 			exit;;
 		p)	# set new prefix
 			PKGLINUX_MAKEUSB_PREFIX="$OPTARG" ;;
@@ -148,8 +151,10 @@ case "$PKGLINUX_MAKEUSB_TAG" in
 			;;
 esac
 
-if ! [ "$PKGLINUX_MAKEUSB_PREFIX" = "LATEST" ]; then
-  PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf")
+PKGLINUX_MAKEUSB_CONF="/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf"
+
+if ! [ "$PKGLINUX_MAKEUSB_PREFIX" = "LATEST" ] && [ -f "$PKGLINUX_MAKEUSB_CONF" ]; then
+	PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEUSB_CONF")
 fi
 PKGLINUX_MAKEUSB_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))/iso"
 PKGLINUX_MAKEUSB_IMG="pkglinux-$PKGLINUX_MAKEUSB_PREFIX-$PKGLINUX_MAKEUSB_TAG.usb"

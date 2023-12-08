@@ -24,9 +24,12 @@ MIT-LICENSE
 
 PKGLINUX_MAKEISO_VERBOSE=""
 PKGLINUX_MAKEISO_TAG="std"
-PKGLINUX_MAKEISO_PREFIX="$(readlink /pkg)"
-PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf")
 PKGLINUX_MAKEISO_KVER="$(uname -r)"
+PKGLINUX_MAKEISO_PREFIX="2022Q2"
+[ -L /pkg ] && [ -d /pkg ] && PKGLINUX_MAKEISO_PREFIX="$(readlink /pkg)"
+PKGLINUX_MAKEISO_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_MAKEISO_PREFIX/All"
+PKGLINUX_MAKEISO_CONF="/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf"
+[ -f "$PKGLINUX_MAKEISO_CONF" ] && PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEISO_CONF")
 PKGLINUX_MAKEISO_WAIT="2"
 PKGLINUX_MAKEISO_LEVEL="1"
 PKGLINUX_MAKEISO_FORCE=false
@@ -78,7 +81,7 @@ while getopts ':hvVp:t:w:l:f' OPTION; do
 			PKGLINUX_MAKEISO_VERBOSE="-v"
 			;;
 		V)	# display version
-			echo "1.0"	
+			echo "2023.12"	
 			exit;;
 		p)	# set new prefix
 			PKGLINUX_MAKEISO_PREFIX="$OPTARG" ;;
@@ -150,8 +153,10 @@ case "$PKGLINUX_MAKEISO_TAG" in
 			;;
 esac
 
-if ! [ "$PKGLINUX_MAKEISO_PREFIX" = "LATEST" ]; then
-  PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf")
+PKGLINUX_MAKEISO_CONF="/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf"
+
+if ! [ "$PKGLINUX_MAKEISO_PREFIX" = "LATEST" ] && [ -f "$PKGLINUX_MAKEISO_CONF" ]; then
+	PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEISO_CONF")
 fi
 PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
 PKGLINUX_MAKEISO_FILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_TAG.iso"
