@@ -48,6 +48,9 @@ pkglinux-install-dir()
     if $PKGLINUX_INSTALL_GNOME; then
       pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in gnome -y
       pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in lm-sensors -y
+      pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in gnome-tweaks-tools -y
+      pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in extension-manager -y
+      pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in gnome-shell-extensions -y
     fi
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in xscreensaver -y
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in devilspie -y

@@ -5,7 +5,7 @@ CATEGORIES=	linux
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gnome-shell-extensions/40/}
 EXTRACT_SUFX=	.tar.xz
 
-MAINTAINER=	INSERT_YOUR_MAIL_ADDRESS_HERE # or use pkgsrc-users@NetBSD.org
+MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	https://download.gnome.org/sources/gnome-shell-extensions/40/ # TODO: check
 COMMENT=	additional and optional functionality to GNOME Shell
 LICENSE=	gnu-gpl-v2
