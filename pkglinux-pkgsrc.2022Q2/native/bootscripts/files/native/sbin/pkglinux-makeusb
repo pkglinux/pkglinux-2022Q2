@@ -27,11 +27,11 @@ PKGLINUX_MAKEUSB_TAG="std"
 PKGLINUX_MAKEUSB_KVER="$(uname -r)"
 PKGLINUX_MAKEUSB_BLANK="0"
 PKGLINUX_MAKEUSB_PREFIX="2022Q2"
-PKGLINUX_MAKEUSB_REPO_ROOT="https://repos.pkglinux.top/dist/iso"
-curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
-PKGLINUX_MAKEUSB_PREFIX="/$(curl -s "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
-[ -L /pkg ] && [ -d /pkg ] && PKGLINUX_MAKEUSB_PREFIX="$(readlink /pkg)"
 PKGLINUX_MAKEUSB_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_MAKEUSB_PREFIX/All"
+PKGLINUX_MAKEUSB_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))/iso"
+curl --head --silent --fail -k "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
+PKGLINUX_MAKEUSB_PREFIX="$(curl -sk "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
+[ -L /pkg ] && [ -d /pkg ] && PKGLINUX_MAKEUSB_PREFIX="$(readlink /pkg)"
 PKGLINUX_MAKEUSB_CONF="/$PKGLINUX_MAKEUSB_PREFIX/etc/pkgin/repositories.conf"
 [ -f "$PKGLINUX_MAKEUSB_CONF" ] && PKGLINUX_MAKEUSB_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEUSB_CONF")
 PKGLINUX_MAKEUSB_WAIT="2"
@@ -89,11 +89,6 @@ while getopts ':hvVp:t:w:b:f' OPTION; do
 			exit;;
 		p)	# set new prefix
 			PKGLINUX_MAKEUSB_PREFIX="$OPTARG"
-			[ "${PKGLINUX_MAKEUSB_PREFIX^^}" = "LATEST" ] &&
-			curl --head --silent --fail \
-			"$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
-			PKGLINUX_MAKEUSB_PREFIX= \
-			"/$(curl -s "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
 			;;
 		t)	# subtag different from "min", like "gnome","kde", or "gnome+kde"
 			PKGLINUX_MAKEUSB_TAG="$OPTARG" ;;
@@ -115,11 +110,14 @@ shift "$(($OPTIND -1))"
 
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
 
+[ "${PKGLINUX_MAKEUSB_PREFIX^^}" = "LATEST" ] &&
+curl --head --silent --fail -k "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
+PKGLINUX_MAKEUSB_PREFIX="$(curl -sk "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
 PKGLINUX_MAKEUSB_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))/iso"
 
 if [[ "$PKGLINUX_MAKEUSB_PREFIX" =~ 20[2-9][0-9]Q[1-4] ]]; then
-  if curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" 2>&1> /dev/null; then
-    if [ -n "$(curl -s "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" | \
+  if curl --head --silent --fail -k "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" 2>&1> /dev/null; then
+    if [ -n "$(curl -sk "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" | \
 	    grep -v "^#" | cut -f1 | grep $PKGLINUX_MAKEUSB_PREFIX)" ]; then
       echo "$PKGLINUX_MAKEUSB_PREFIX is in $PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt"
     else
@@ -139,8 +137,8 @@ case "$PKGLINUX_MAKEUSB_TAG" in
 	kde)		;;
 	kde+gnome)	;;
 	*)		#
-  if curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt" 2>&1> /dev/null; then
-    if [ -n "$(curl -s "$PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt" | \
+  if curl --head --silent --fail -k "$PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt" 2>&1> /dev/null; then
+    if [ -n "$(curl -sk "$PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt" | \
 	    grep -v "^#" | cut -f1 | grep $PKGLINUX_MAKEUSB_TAG)" ]; then
       echo "Found $PKGLINUX_MAKEUSB_TAG in $PKGLINUX_MAKEUSB_REPO_ROOT/TAGS.txt"
     else
@@ -176,11 +174,11 @@ if [ "$#" -gt 0 ]; then
     echo "$PKGLINUX_MAKEUSB_IMG exists in the current directory."
     echo "Writting $PKGLINUX_MAKEUSB_IMG to the block device $1 ..."
     cat "${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
-  elif curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG" 2>&1> /dev/null; then
+  elif curl --head --silent --fail -k "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG" 2>&1> /dev/null; then
     echo "$PKGLINUX_MAKEUSB_IMG doesn't exist in the current directory."
     echo "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG is available."
     echo "Copying $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG to the block device $1 ..."
-    curl "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
+    curl -k "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_IMG}" | dd bs=1M of=$1
   elif [ -f ${PKGLINUX_MAKEUSB_SFSFILE} ]; then
     echo "$PKGLINUX_MAKEUSB_IMG doesn't exist in the current directory."
     echo "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG is not available either."
@@ -189,7 +187,7 @@ if [ "$#" -gt 0 ]; then
     echo "With this file existing, a $PKGLINUX_MAKEUSB_IMG file can easiy be created quickly."
     echo "Retype the same $0 command and flags without specifying USBDEV as the last arguments."
     exit 0
-  elif curl --head --silent --fail "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_SFSFILE" 2>&1> /dev/null; then
+  elif curl --head --silent --fail -k "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_SFSFILE" 2>&1> /dev/null; then
     echo "$PKGLINUX_MAKEUSB_IMG doesn't exist in the current directory."
     echo "$PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_IMG is not available either."
     echo "Most likely $PKGLINUX_MAKEUSB_PREFIX is not the latest one."
@@ -229,7 +227,7 @@ losetup $PKGLINUX_MAKEUSB_VERBOSE -D
 if [ -f ${PKGLINUX_MAKEUSB_SFSFILE} ]; then
   PKGLINUX_MAKEUSB_SIZE=$(($(stat -c%s "$PKGLINUX_MAKEUSB_SFSFILE")/1024/1024))
 else
-  PKGLINUX_MAKEUSB_SIZE=$(($(curl -sLI $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_SFSFILE | grep -i content-length | cut -d' ' -f 2 | sed 's/[^0-9]*//g')/1024/1024))
+  PKGLINUX_MAKEUSB_SIZE=$(($(curl -skLI $PKGLINUX_MAKEUSB_REPO_ROOT/$PKGLINUX_MAKEUSB_SFSFILE | grep -i content-length | cut -d' ' -f 2 | sed 's/[^0-9]*//g')/1024/1024))
 fi
 [ $PKGLINUX_MAKEUSB_BLANK -ne 0 ] || PKGLINUX_MAKEUSB_BLANK=$(($PKGLINUX_MAKEUSB_SIZE/10+200));
 PKGLINUX_MAKEUSB_SIZE=$(($PKGLINUX_MAKEUSB_SIZE+$PKGLINUX_MAKEUSB_BLANK))
@@ -287,8 +285,8 @@ if [ -f ${PKGLINUX_MAKEUSB_SFSFILE} ]; then
 #  cat "${PKGLINUX_MAKEUSB_ISO}" | bsdtar -Oxf - */pkglinux.sfs > $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
   cp $PKGLINUX_MAKEUSB_VERBOSE $PKGLINUX_MAKEUSB_SFSFILE $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
 else
-#  curl "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_ISO}" | bsdtar -Oxf - */pkglinux.sfs > $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
-  curl "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_SFSFILE}" > $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
+#  curl -k "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_ISO}" | bsdtar -Oxf - */pkglinux.sfs > $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
+  curl -k "${PKGLINUX_MAKEUSB_REPO_ROOT}/${PKGLINUX_MAKEUSB_SFSFILE}" > $PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs
 fi
 
 PKGLINUX_MAKEUSB_SFSFILE="$PKGLINUX_MAKEUSB_TMPDIR3/$PKGLINUX_MAKEUSB_SFSID/pkglinux.sfs"

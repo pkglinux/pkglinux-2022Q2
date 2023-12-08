@@ -143,7 +143,7 @@ if [ ! -d /sfs.root/ ]; then
 		PKGLINUX_UPGRADE_SFILE="$(cat /proc/cmdline| tr ' ' '\n' | grep sfs= | cut -d'=' -f2)/pkglinux.sfs"
 	fi
 	if [ -n "$PKGLINUX_UPGRADE_SFILE" ]; then
-		if curl --head --silent --fail "$PKGLINUX_UPGRADE_REPO_SFSF" 2>&1> /dev/null; then
+		if curl --head --silent --fail -k "$PKGLINUX_UPGRADE_REPO_SFSF" 2>&1> /dev/null; then
 			echo "$PKGLINUX_UPGRADE_REPO_SFSF is available."
 			if type -P rsync >/dev/null; then
 				if [[ "$PKGLINUX_UPGRADE_REPO_HOST" == *"pkglinux.top" ]]; then
@@ -155,15 +155,15 @@ if [ ! -d /sfs.root/ ]; then
 						repos@$PKGLINUX_UPGRADE_REPO_HOST:~/iso/$PKGLINUX_UPGRADE_SFSF \
 						$PKGLINUX_UPGRADE_SFILE
 				fi
-			elif curl --head --silent --fail "$PKGLINUX_UPGRADE_REPO_SFSF.zsync" 2>&1> /dev/null; then
+			elif curl --head --silent --fail -k "$PKGLINUX_UPGRADE_REPO_SFSF.zsync" 2>&1> /dev/null; then
 				if command -v zsync >/dev/null; then
 					echo zsync "$PKGLINUX_UPGRADE_REPO_SFSF".zsync -o $PKGLINUX_UPGRADE_SFILE
 					zsync "$PKGLINUX_UPGRADE_REPO_SFSF".zsync -o $PKGLINUX_UPGRADE_SFILE
 				else	
-					curl $PKGLINUX_UPGRADE_REPO_SFSF > $PKGLINUX_UPGRADE_SFILE
+					curl -k $PKGLINUX_UPGRADE_REPO_SFSF > $PKGLINUX_UPGRADE_SFILE
 				fi
 			else	
-				curl $PKGLINUX_UPGRADE_REPO_SFSF > $PKGLINUX_UPGRADE_SFILE
+				curl -k $PKGLINUX_UPGRADE_REPO_SFSF > $PKGLINUX_UPGRADE_SFILE
 			fi
 		else
 			echo "$PKGLINUX_UPGRADE_REPO_SFSF is not available."
