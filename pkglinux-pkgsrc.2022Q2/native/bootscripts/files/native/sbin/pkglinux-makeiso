@@ -26,8 +26,12 @@ PKGLINUX_MAKEISO_VERBOSE=""
 PKGLINUX_MAKEISO_TAG="std"
 PKGLINUX_MAKEISO_KVER="$(uname -r)"
 PKGLINUX_MAKEISO_PREFIX="2022Q2"
+PKGLINUX_MAKEISO_REPO_ROOT="https://repos.pkglinux.top/dist/iso"
+curl --head --silent --fail "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
+PKGLINUX_MAKEISO_PREFIX="/$(curl -s "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
 [ -L /pkg ] && [ -d /pkg ] && PKGLINUX_MAKEISO_PREFIX="$(readlink /pkg)"
 PKGLINUX_MAKEISO_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_MAKEISO_PREFIX/All"
+PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
 PKGLINUX_MAKEISO_CONF="/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf"
 [ -f "$PKGLINUX_MAKEISO_CONF" ] && PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEISO_CONF")
 PKGLINUX_MAKEISO_WAIT="2"
@@ -84,7 +88,13 @@ while getopts ':hvVp:t:w:l:f' OPTION; do
 			echo "2023.12"	
 			exit;;
 		p)	# set new prefix
-			PKGLINUX_MAKEISO_PREFIX="$OPTARG" ;;
+			PKGLINUX_MAKEISO_PREFIX="$OPTARG"
+			[ "${PKGLINUX_MAKEISO_PREFIX^^}" = "LATEST" ] &&
+			curl --head --silent --fail \
+			"$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
+			PKGLINUX_MAKEISO_PREFIX= \
+			"/$(curl -s "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
+			;;
 		t)	# subtag other than "min", like "gnome","kde", or "gnome+kde"
 			PKGLINUX_MAKEISO_TAG="$OPTARG" ;;
 		w)	# seconds of rootdelay/rootwait
@@ -110,12 +120,7 @@ shift "$(($OPTIND -1))"
 
 PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
 
-if [ "$PKGLINUX_MAKEISO_PREFIX" = "LATEST" ]; then
-	if [ "$#" -lt 1 ]; then
-		echo "LATEST is only allowed when downloading for convenience sake."
-		exit 1
-	fi
-elif [[ "$PKGLINUX_MAKEISO_PREFIX" =~ 20[2-9][0-9]Q[1-4] ]]; then
+if [[ "$PKGLINUX_MAKEISO_PREFIX" =~ 20[2-9][0-9]Q[1-4] ]]; then
   if curl --head --silent --fail "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" 2>&1> /dev/null; then
     if [ -n "$(curl -s "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" | \
 	    grep -v "^#" | cut -f1 | grep $PKGLINUX_MAKEISO_PREFIX)" ]; then
@@ -155,9 +160,7 @@ esac
 
 PKGLINUX_MAKEISO_CONF="/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf"
 
-if ! [ "$PKGLINUX_MAKEISO_PREFIX" = "LATEST" ] && [ -f "$PKGLINUX_MAKEISO_CONF" ]; then
-	PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEISO_CONF")
-fi
+[ -f "$PKGLINUX_MAKEISO_CONF" ] && PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEISO_CONF")
 PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
 PKGLINUX_MAKEISO_FILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_TAG.iso"
 PKGLINUX_MAKEISO_SFSFILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_TAG.sfs"

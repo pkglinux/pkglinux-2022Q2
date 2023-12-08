@@ -149,8 +149,12 @@ pkglinux-install-dir()
 
 PKGLINUX_INSTALL_VERBOSE=""
 PKGLINUX_INSTALL_PREFIX="2022Q2"
+PKGLINUX_INSTALL_REPO_ROOT="https://repos.pkglinux.top/dist/iso"
+curl --head --silent --fail "$PKGLINUX_INSTALL_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
+PKGLINUX_INSTALL_PREFIX="/$(curl -s "$PKGLINUX_INSTALL_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
 [ -L /pkg ] && [ -d /pkg ] && PKGLINUX_INSTALL_PREFIX="$(readlink /pkg)"
 PKGLINUX_INSTALL_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_INSTALL_PREFIX/All"
+PKGLINUX_INSTALL_REPO_ROOT="$(dirname $(dirname $PKGLINUX_INSTALL_REPO))/iso"
 PKGLINUX_INSTALL_CONF="/$PKGLINUX_INSTALL_PREFIX/etc/pkgin/repositories.conf"
 [ -f "$PKGLINUX_INSTALL_CONF" ] && PKGLINUX_INSTALL_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_INSTALL_CONF")
 PKGLINUX_INSTALL_MIN=false
