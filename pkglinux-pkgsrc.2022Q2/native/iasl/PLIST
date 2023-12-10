@@ -1,0 +1,9 @@
+@comment $NetBSD$
+native/usr/bin/acpibin
+native/usr/bin/acpidump
+native/usr/bin/acpiexamples
+native/usr/bin/acpiexec
+native/usr/bin/acpihelp
+native/usr/bin/acpisrc
+native/usr/bin/acpixtract
+native/usr/bin/iasl

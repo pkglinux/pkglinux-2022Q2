@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (acpica-unix-20230628.tar.gz) = 214ab4e261d23338acdad2827e3780a91ab1561ca8fc53be564e7cf6e2b4f8c5
+SHA512 (acpica-unix-20230628.tar.gz) = d726e69ebd8b8110690e3aff8d1919b43b0a2185efdeb9131ea8d89d321ca3a318a89c721ea740ae366f31ed3d1c11c2906f8807ee8a190e6f67fe5b2023cea4
+Size (acpica-unix-20230628.tar.gz) = 1946751 bytes

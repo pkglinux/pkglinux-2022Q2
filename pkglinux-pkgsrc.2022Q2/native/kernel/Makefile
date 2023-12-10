@@ -62,27 +62,41 @@ MESSAGE_SUBST+=		PKGBASE=${PKGBASE}
 #MAKE_DIRS+=	${LINUXBASE}/lib/modules
 #MAKE_DIRS+=	${LINUXBASE}/boot
 
-BLDPRE=		${WRKSRC}${PREFIX}/native
+BLDPRE=		${WRKDIR}${PREFIX}/native
 DSTPRE=		${DESTDIR}${PREFIX}/native
 MAKE_ENV+=	INSTALL_MOD_PATH=${BLDPRE}
 
 #	cd ${WRKSRC} && patch -p1 < ${FILESDIR}/linux-hardened-5.15.98-hardened1.patch
-post-extract:
-	cd ${WRKSRC} && ${CAT} ${FILESDIR}/.configs > .config
+#post-extract:
+#	cd ${WRKSRC} && ${CAT} ${FILESDIR}/.configs > .config
 
 #	${CP} -v ${FILESDIR}/panda2_ascii_224.ppm ${WRKSRC}/drivers/video/logo/logo_linux_clut224.ppm
 
+#do-build:
+#	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} bzImage && \
+#	${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} modules
+#	${INSTALL_DATA_DIR} ${BLDPRE}/boot
+#	${CP} ${WRKSRC}/arch/x86/boot/bzImage \
+#		${BLDPRE}/boot/vmlinuz-${LINUX_VERSION}
+#	${CP} ${WRKSRC}/System.map \
+#		${BLDPRE}/boot/System.map-${LINUX_VERSION}
+#	${INSTALL_DATA} ${WRKSRC}/.config ${BLDPRE}/boot/${PKGNAME}.config
+#	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} modules_install
+
+WRKSRC2=	${PREFIX}/native/${DISTNAME}
+
+do-extract:
+
+do-patch:
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} bzImage && \
-	${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} modules
 	${INSTALL_DATA_DIR} ${BLDPRE}/boot
-	${CP} ${WRKSRC}/arch/x86/boot/bzImage \
+	${CP} ${WRKSRC2}/arch/x86/boot/bzImage \
 		${BLDPRE}/boot/vmlinuz-${LINUX_VERSION}
-	${CP} ${WRKSRC}/System.map \
+	${CP} ${WRKSRC2}/System.map \
 		${BLDPRE}/boot/System.map-${LINUX_VERSION}
-	${INSTALL_DATA} ${WRKSRC}/.config ${BLDPRE}/boot/${PKGNAME}.config
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} modules_install
+	${INSTALL_DATA} ${WRKSRC2}/.config ${BLDPRE}/boot/${PKGNAME}.config
+	cd ${WRKSRC2} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} modules_install
 
 do-install:
 	${MKDIR} -v ${DSTPRE}
