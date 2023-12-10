@@ -1,0 +1,6 @@
+@comment $NetBSD$
+bin/lzf
+include/lzf.h
+lib/liblzf.a
+lib/liblzf.so
+native/usr/bin/lzf

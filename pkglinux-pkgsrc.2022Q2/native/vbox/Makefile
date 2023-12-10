@@ -21,11 +21,11 @@ USE_LANGUAGES=		c c++
 USE_NATIVE_GCC=	yes
 #USE_NATIVE_GCC=	no
 USE_PKGSRC_GCC=		no
-#GCC_REQD+=		6
+#GCC_REQD+=		7
 
-PKGSRC_USE_SSP=		no
-MKPIE_SUPPORTED=	no
-PKGSRC_MKPIE=		no
+#PKGSRC_USE_SSP=		no
+#MKPIE_SUPPORTED=	no
+#PKGSRC_MKPIE=		no
 #STACK_CHECK_SUPPORTED=	no
 #PKGSRC_USE_STACK_CHECKD=	no
 #SSP_SUPPORTED=		yes
@@ -54,7 +54,8 @@ DEPENDS+=	makeself-[0-9]*:../../archivers/makeself
 #NO_CONFIGURE=		yes
 #GNU_CONFIGURE_PREDIR=	${PREFIX}
 PREDIR=			${PREFIX}/native
-BLDDIR=			${WRKDIR}/build
+#BLDDIR=		${WRKDIR}/build
+BLDDIR=			${WRKSRC}/
 BLDPRE=			${BLDDIR}${PREDIR}
 DSTPRE=			${DESTDIR}${PREDIR}
 
@@ -62,7 +63,7 @@ post-extract:
 	${MKDIR} -v ${BLDPRE}
 
 do-configure:
-	cd ${BLDDIR} && ${WRKSRC}/configure --disable-hardening
+	cd ${BLDDIR} && ./configure --disable-hardening
 
 do-build:
 	cd ${BLDDIR} && kmk -j${MAKE_JOBS}
@@ -74,6 +75,7 @@ do-install:
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
 
 .include "../../devel/bison/buildlink3.mk"
+.include "../../linux/liblzf-2015/buildlink3.mk"
 .include "../../textproc/libxml2/buildlink3.mk"
 .include "../../textproc/libxslt/buildlink3.mk"
 .include "../../x11/libXcursor/buildlink3.mk"
@@ -95,5 +97,6 @@ do-install:
 .include "../../graphics/MesaLib/buildlink3.mk"
 .include "../../linux/glslang/buildlink3.mk"
 .include "../../www/curl/buildlink3.mk"
+.include "../../multimedia/libvpx/buildlink3.mk"
 
 .include "../../mk/bsd.pkg.mk"

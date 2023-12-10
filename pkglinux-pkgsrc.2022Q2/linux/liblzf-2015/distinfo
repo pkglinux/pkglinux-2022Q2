@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (liblzf-2015.tar.gz) = b1935010a42e4c6f835a5c3c763df8d156d513e6ccf34ccfc3d36b7e2824b982
+SHA512 (liblzf-2015.tar.gz) = be2d67a9232f34480eb42c647b8f3c78ef94ed3e92b45e0403dfa1d48211fbeabbe43ff6248b9de8e5d41411447c00d201cd3d395acf275a9fc330288d088998
+Size (liblzf-2015.tar.gz) = 20937 bytes

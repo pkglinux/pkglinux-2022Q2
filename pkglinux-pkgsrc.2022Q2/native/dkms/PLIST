@@ -1,0 +1,12 @@
+@comment $NetBSD$
+native/etc/dkms/framework.conf
+native/etc/kernel/install.d/40-dkms.install
+native/etc/kernel/postinst.d/dkms
+native/etc/kernel/prerm.d/dkms
+native/usr/lib/dkms/common.postinst
+native/usr/lib/dkms/dkms_autoinstaller
+native/usr/sbin/dkms
+native/usr/share/bash-completion/completions/dkms
+native/usr/share/man/man8/dkms.8
+@pkgdir native/var/lib/dkms
+@pkgdir native/etc/dkms/framework.conf.d

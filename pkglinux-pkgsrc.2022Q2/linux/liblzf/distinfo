@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (liblzf-3.6.tar.gz) = 3d97de9adb1e0df54d057243b14f7f0a376db644bbac31bcc8728de82f088748
+SHA512 (liblzf-3.6.tar.gz) = 701f70245a11e7cf3412b14ed26bf7b1464512d5b0cf3f913e70ebfdfe20574b8ebbae5a78f4b56ac0034d54830380309cac3057ca00a8028edbde3d091141f5
+Size (liblzf-3.6.tar.gz) = 57120 bytes

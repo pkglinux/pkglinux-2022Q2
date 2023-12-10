@@ -1,0 +1,77 @@
+$NetBSD$
+
+--- configure.orig	2023-10-12 16:16:09.000000000 +0000
++++ configure
+@@ -134,8 +134,9 @@ LIBPTHREAD="-lpthread"
+ LIBCAP="-lcap"
+ GSOAP=""
+ GSOAP_IMPORT=""
+-INCX11="/usr/local/include"
+-LIBX11="-L/usr/X11R6/lib -L/usr/X11R6/lib64 -L/usr/local/lib -lXext -lX11"
++FLGX11=`pkg-config x11 --cflags`
++INCX11=`strip_I "$FLGX11"`
++LIBX11=`pkg-config x11 --libs`
+ LIBXCURSOR="-lXcursor"
+ LIBXMU="-lXmu"
+ LIBXINERAMA="-lXinerama"
+@@ -144,8 +145,9 @@ MAKESELF="makeself"
+ MESA="-lGL"
+ INCZ=""
+ LIBZ="-lz"
+-INCLZF="/usr/include/liblzf"
+-LIBLZF="-llzf"
++FLGLZF=`pkg-config liblzf --cflags`
++INCLZF=`strip_I "$FLGLZF"`
++LIBLZF=`pkg-config liblzf --libs`
+ INCVNCSERVER=""
+ LIBVNCSERVER="-lvncserver"
+ INCDEVMAPPER=""
+@@ -159,16 +161,22 @@ if [ "$OS" = "freebsd" ]; then
+   INCPNG="-I/usr/local/include"
+   LIBPNG="-L/usr/local/lib -lpng"
+ else
+-  INCCURL=""
+-  LIBCURL="-lcurl"
+-  INCPNG=""
+-  LIBPNG="-lpng"
++  FLGCURL=`pkg-config libcurl --cflags`
++  INCCURL=`strip_I "$FLGCURL"`
++  LIBCURL=`pkg-config libcurl --libs`
++  FLGPULSE=`pkg-config libpulse --cflags`
++  INCPULSE=`strip_I "$FLGPULSE"`
++  LIBPULSE=`pkg-config libpulse --libs`
++  FLGPNG=`pkg-config libpng --cflags`
++  INCPNG=`strip_I "$FLGPNG"`
++  LIBPNG=`pkg-config libpng --libs`
+ fi
+-INCVPX=""
+-LIBVPX="-lvpx"
++FLGVPX=`pkg-config vpx --cflags`
++INCVPX=`strip_I "$FLGVPX"`
++LIBVPX=`pkg-config vpx --libs`
+ PKGCONFIG="`which_wrapper pkg-config`"
+-PYTHONDIR="/usr /usr/local"
+-QT5DIR="/usr/lib/qt5 /usr/share/qt5 /usr/lib64/qt5 /usr /usr/local"
++PYTHONDIR="/root/pkglinux-pkgsrc/native/vbox/work/.buildlink"
++QT5DIR="/pkg/qt5 /usr/lib/qt5 /usr/share/qt5 /usr/lib64/qt5 /usr /usr/local"
+ QT5DIR_PKGCONFIG=1
+ QT5MAJ=5
+ QT5MIN=9
+@@ -1977,7 +1985,7 @@ EOF
+   echo "using the following command line:" >> $LOG
+   echo "$CC -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.c -nostdinc -I$LINUX/include " \
+       "-I$LINUX/include/generated/uapi" >> $LOG
+-  $CC -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.c -nostdinc -I$LINUX/include \
++  $CC -O -Wall -o $ODIR.tmp_out $ODIR.tmp_src.c -nostdinc -I$LINUX/usr/include \
+       -I$LINUX/include/generated/uapi >> $LOG 2>&1
+   if [ $? -ne 0 ]; then
+     echo
+@@ -2150,7 +2158,7 @@ check_python()
+   test_header "Python support"
+ 
+   # On darwin this is a on/off decision only
+-  if [ "$OS" = "darwin" ]; then
++  if true || [ "$OS" = "darwin" ]; then
+     echo "enabled"
+     cnf_append "VBOX_WITH_PYTHON"     "1"
+     return
