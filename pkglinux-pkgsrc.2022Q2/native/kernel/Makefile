@@ -83,7 +83,7 @@ MAKE_ENV+=	INSTALL_MOD_PATH=${BLDPRE}
 #	${INSTALL_DATA} ${WRKSRC}/.config ${BLDPRE}/boot/${PKGNAME}.config
 #	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} modules_install
 
-WRKSRC2=	${PREFIX}/native/${DISTNAME}
+WRKSRC2=	${PREFIX}/native/kernel-build-${LINUX_VERSION}
 
 do-extract:
 
