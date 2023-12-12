@@ -63,6 +63,10 @@ post-install:
 		${DESTDIR}${PREFIX}/${PKGMANDIR}/man1/xfreerdp2.1 || ${TRUE}
 	${MV} ${DESTDIR}${PREFIX}/bin/xfreerdp \
 		${DESTDIR}${PREFIX}/bin/xfreerdp2 || ${TRUE}
+	${MKDIR} ${DESTDIR}${PREFIX}/native/usr/bin/
+	lndir.sh -l sf ${PREFIX}/bin ${PREFIX}/native/usr/bin ${DESTDIR}
+	cd ${DESTDIR}${PREFIX}/native/usr/bin/ && ln -snvf xfreerdp2 xfreerdp
+	cd ${DESTDIR}${PREFIX}/lib/ && ln -snvf libfreerdp2.so libfreerdp.so
 
 .include "options.mk"
 .include "../../devel/libusb1/buildlink3.mk"
@@ -74,4 +78,5 @@ post-install:
 .include "../../devel/libepoll-shim/buildlink3.mk"
 .endif
 .include "../../mk/pam.buildlink3.mk"
+.include "../../linux/eudev/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

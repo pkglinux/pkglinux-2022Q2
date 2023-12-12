@@ -71,10 +71,9 @@ ZIC=			zic
 
 #	gsed -e '/NOTIFY_REMOVED)/s/)/ \&\& data.attr != NULL)/' \
 #	    -i ${WRKSRC}/sysdeps/unix/sysv/linux/mq_notify.c
-#	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/glibc-2.31-fhs-1.patch
 post-extract:
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/perlnever.patch
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/glibc-2.31-fhs-1.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/perlnever.patch
 	${MKDIR} -v ${BLDPRE}
 
 #	cd ${BLDDIR} && CC="/usr/pkg/gcc6/bin/gcc -fno-pie -fno-PIE -isystem /usr/pkg/lib/gcc/x86_64-unknown-linux/6.5.0/include -isystem /usr/pkg/include" \

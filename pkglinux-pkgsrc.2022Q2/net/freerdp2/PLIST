@@ -4,6 +4,12 @@ bin/freerdp-shadow-cli
 bin/winpr-hash
 bin/winpr-makecert
 ${PLIST.x11}bin/xfreerdp2
+native/usr/bin/freerdp-proxy
+native/usr/bin/freerdp-shadow-cli
+native/usr/bin/winpr-hash
+native/usr/bin/winpr-makecert
+native/usr/bin/xfreerdp
+native/usr/bin/xfreerdp2
 include/freerdp2/freerdp/addin.h
 include/freerdp2/freerdp/altsec.h
 include/freerdp2/freerdp/api.h
@@ -242,6 +248,7 @@ lib/libfreerdp-shadow-subsystem2.so.${PKGVERSION}
 lib/libfreerdp-shadow2.so
 lib/libfreerdp-shadow2.so.2
 lib/libfreerdp-shadow2.so.${PKGVERSION}
+lib/libfreerdp.so
 lib/libfreerdp2.so
 lib/libfreerdp2.so.2
 lib/libfreerdp2.so.${PKGVERSION}

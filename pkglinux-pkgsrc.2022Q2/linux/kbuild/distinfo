@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (kBuild-0.1.5-p2-src.tar.gz) = da075f72542db54eceb766fa64fe741a9bd220384e0bcad39b935a4dc27ecf1c
+SHA512 (kBuild-0.1.5-p2-src.tar.gz) = 819b9ab3ee453ef521a092caeb2f570bdffc81e068f365409ffa91e4a141f06d0f544a95db41610ae21b833d1bec12c9823c481d144d726024dfd9c67123c8d2
+Size (kBuild-0.1.5-p2-src.tar.gz) = 2433567 bytes

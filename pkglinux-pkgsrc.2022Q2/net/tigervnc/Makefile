@@ -83,7 +83,8 @@ XORG_CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${PREFIX}/${PKGMANDIR}
 XORG_CONFIGURE_ARGS+=	--disable-xwayland --disable-kdrive --disable-xephyr
 XORG_CONFIGURE_ARGS+=	--disable-static --disable-xinerama --without-dtrace
 XORG_CONFIGURE_ARGS+=	--disable-xorg --disable-xnest --disable-xvfb --disable-dmx
-XORG_CONFIGURE_ARGS+=	--disable-config-hal --disable-config-udev --with-pic
+#XORG_CONFIGURE_ARGS+=	--disable-config-hal --disable-config-udev --with-pic
+XORG_CONFIGURE_ARGS+=	--disable-config-hal --with-pic
 XORG_CONFIGURE_ARGS+=	--disable-unit-tests --disable-devel-docs --disable-selective-werror
 XORG_CONFIGURE_ARGS+=	--disable-dri --enable-dri2 --disable-dri3 --enable-glx --enable-glx-tls
 
@@ -144,4 +145,5 @@ BUILDLINK_API_DEPENDS.fltk+=	fltk>=1.3.3
 .include "../../x11/libxkbfile/buildlink3.mk"
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../security/openpam/buildlink3.mk"
+.include "../../linux/eudev/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
