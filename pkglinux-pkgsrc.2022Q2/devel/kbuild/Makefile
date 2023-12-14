@@ -18,9 +18,6 @@ COMMENT=	Framework for writing simple makefiles for complex tasks
 # but also various other licenses in 3rd party code
 LICENSE=	gnu-gpl-v3
 
-#GCC_REQD+=	10
-#FORTIFY_SUPPORTED=	no
-
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 MAKE_JOBS_SAFE=	no

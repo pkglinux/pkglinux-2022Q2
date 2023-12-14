@@ -1,15 +1,70 @@
 # $NetBSD$
 
-DISTNAME=	kBuild-0.1.5-p2-src
+DISTNAME=	kBuild-0.1.5-p2-all
+PKGNAME=	kBuild-0.1.5-p2
 CATEGORIES=	linux
 MASTER_SITES=	ftp://ftp.netlabs.org/pub/kbuild/
+CATEGORIES=	linux
 
-MAINTAINER=	INSERT_YOUR_MAIL_ADDRESS_HERE # or use pkgsrc-users@NetBSD.org
-HOMEPAGE=	ftp://ftp.netlabs.org/pub/kbuild/
-COMMENT=	TODO: Short description of the package
-#LICENSE=	# TODO: (see mk/license.mk)
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	http://trac.netlabs.org/kbuild/wiki/WikiStart
+COMMENT=	Framework for writing simple makefiles for complex tasks
+# but also various other licenses in 3rd party code
+LICENSE=	gnu-gpl-v3
 
-WRKSRC=			${WRKDIR}/kBuild-0.1.5-p2
-USE_PKGLOCALEDIR=	yes
+FORTIFY_SUPPORTED=	no
+
+#WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${PKGNAME}
+
+MAKE_JOBS_SAFE=	no
+
+USE_TOOLS+=	pax lex gmake autoconf autoreconf automake autopoint perl
+
+INSTALL_ENV+=	KBUILD_VERBOSE=2
+
+MAKE_ENV+=	KBUILD_LIB_SEARCH_PATHS="/lib /usr/lib ${X11BASE}/lib ${PREFIX}/lib"
+
+LDFLAGS+=	-lutil
+# honor CFLAGS and LDFLAGS
+MAKE_ENV+=	TEMPLATE_BIN-KMK_CFLAGS=${CFLAGS:Q}
+MAKE_ENV+=	TEMPLATE_BIN-KMK_LDFLAGS=${LDFLAGS:Q}
+MAKE_ENV+=	TEMPLATE_BIN_CFLAGS=${CFLAGS:Q}
+MAKE_ENV+=	TEMPLATE_BIN_LDFLAGS=${LDFLAGS:Q}
+
+INSTALL_ENV+=	TEMPLATE_BIN_CFLAGS=${CFLAGS:Q}
+INSTALL_ENV+=	TEMPLATE_BIN_LDFLAGS=${LDFLAGS:Q}
+INSTALL_ENV+=	TEMPLATE_BIN-THREADED_CFLAGS=${CFLAGS:Q}
+INSTALL_ENV+=	TEMPLATE_BIN-THREADED_LDFLAGS=${LDFLAGS:Q}
+INSTALL_ENV+=	kObjCache_LDFLAGS=${LDFLAGS:Q}
+INSTALL_ENV+=	kDepPre_LDFLAGS=${LDFLAGS:Q}
+INSTALL_ENV+=	kmk_sed_LDFLAGS=${LDFLAGS:Q}
+INSTALL_ENV+=	kmk_time_LDFLAGS=${LDFLAGS:Q}
+
+pre-build:
+# Remove prebuilt files
+	${RUN} cd ${WRKSRC} && rm -rf kBuild/bin/*
+
+do-build:
+	${RUN} cd ${WRKSRC} && \
+	${SETENV} ${MAKE_ENV} ./kBuild/env.sh \
+		--full ${GMAKE} -f bootstrap.gmk \
+		KBUILD_VERBOSE=2 && \
+	${SETENV} ${MAKE_ENV} ./kBuild/env.sh kmk \
+		NIX_INSTALL_DIR=${PREFIX} \
+		BUILD_TYPE=release \
+		MY_INST_MODE=${NONBINMODE} \
+		MY_INST_BIN_MODE=${BINMODE} \
+		rebuild
+
+do-install:
+	${RUN} cd ${WRKSRC} && \
+	${SETENV} ${INSTALL_ENV} ./kBuild/env.sh kmk \
+		NIX_INSTALL_DIR=${PREFIX} \
+		BUILD_TYPE=release \
+		MY_INST_MODE=${NONBINMODE} \
+		MY_INST_BIN_MODE=${BINMODE} \
+		PATH_INS=${DESTDIR} \
+		install
 
 .include "../../mk/bsd.pkg.mk"

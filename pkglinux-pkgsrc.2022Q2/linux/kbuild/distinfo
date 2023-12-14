@@ -1,5 +1,9 @@
 $NetBSD$
 
-BLAKE2s (kBuild-0.1.5-p2-src.tar.gz) = da075f72542db54eceb766fa64fe741a9bd220384e0bcad39b935a4dc27ecf1c
-SHA512 (kBuild-0.1.5-p2-src.tar.gz) = 819b9ab3ee453ef521a092caeb2f570bdffc81e068f365409ffa91e4a141f06d0f544a95db41610ae21b833d1bec12c9823c481d144d726024dfd9c67123c8d2
-Size (kBuild-0.1.5-p2-src.tar.gz) = 2433567 bytes
+BLAKE2s (kBuild-0.1.5-p2-all.tar.gz) = cf01b4a9dcf117981c22e442b0050b69b1f8f223c3c6b700904ac7a823c367f2
+SHA512 (kBuild-0.1.5-p2-all.tar.gz) = a007c21184c7b985c289f8393e43e22878613b0747e20059a3286b94bbc61fa536ffc2655df2592cef9259e181d7562a743a2a6fe368eaee409b5179735b2494
+Size (kBuild-0.1.5-p2-all.tar.gz) = 12850632 bytes
+SHA1 (patch-src_ash_output.c) = 51ad4d5fe0f5b6627f936c4a897211600ac6149d
+SHA1 (patch-src_ash_output.h) = 3555d7d714ad5cb870b106c30db5e73c0dcf3aec
+SHA1 (patch-src_kmk_default.c) = 4f5da9884293752d6e840089181b29f1848904eb
+SHA1 (patch-src_kmk_glob_glob.c) = f5326b95e91a520202fb209549686202d14480d2
