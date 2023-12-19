@@ -34,6 +34,8 @@ do-build:
 		cd ${WRKSRC} && ${GMAKE} -j${MAKE_JOBS}
 		cd ${WRKSRC} && ${GMAKE} DESTDIR=${BLDPRE} install
 		cd ${BLDPRE}/lib/ && ${CC} -shared -o liblzf.so liblzf.a
+		${MKDIR} -v ${BLDPRE}/native/usr/lib/
+		cd ${BLDPRE}/native/usr/lib/ && ${LN} -sfv ../../../lib/liblzf* .
 		${MKDIR} -v ${BLDPRE}/native/usr/bin/
 		cd ${BLDPRE}/native/usr/bin/ && ${LN} -sfv ../../../bin/lzf .
 

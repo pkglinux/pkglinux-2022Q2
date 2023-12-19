@@ -1,4 +1,6 @@
 @comment $NetBSD: PLIST,v 1.36 2020/03/04 10:31:11 wiz Exp $
+share/xml/docbook/stylesheet/docbook-xsl/html/titlepage.xml
+share/xml/docbook/stylesheet/docbook-xsl/html/titlepage.xsl
 share/examples/docbook-xsl/titlepage.xml
 share/examples/docbook-xsl/titlepage.xsl
 share/xsl/docbook/VERSION

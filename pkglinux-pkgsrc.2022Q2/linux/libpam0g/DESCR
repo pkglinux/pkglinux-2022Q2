@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README
+
+Hello!
+
+Thanks for downloading Linux-PAM.
+
+NOTES:
+
+How to use it is as follows:
+
+Please look at the ci/install-dependencies.sh for the necessary
+prerequisite packages to be able to build the Linux-PAM. The script
+is targeted at Debian based Linux distributions so the package
+names and availability might differ on other distributions.
+
+If you check out the sources from git, install Autotools and generate
+configuration scripts, ensuring you have the minimum packages installed,
+the ci scripts may help here:
+
+      ./autogen.sh
+
+Then compile:
+...

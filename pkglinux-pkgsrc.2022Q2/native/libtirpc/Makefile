@@ -1,6 +1,7 @@
 # $NetBSD$
 
 DISTNAME=	libtirpc-1.2.5
+#DISTNAME=	libtirpc-1.3.4
 CATEGORIES=	native
 MASTER_SITES=	https://downloads.sourceforge.net/libtirpc/
 EXTRACT_SUFX=	.tar.bz2

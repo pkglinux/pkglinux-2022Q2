@@ -4,3 +4,5 @@ include/lzf.h
 lib/liblzf.a
 lib/liblzf.so
 native/usr/bin/lzf
+native/usr/lib/liblzf.a
+native/usr/lib/liblzf.so

@@ -72,6 +72,8 @@ do-install:
 	    cd ${WRKSRC} && ${PAX} -rw -pp -pm $$d ${DESTDIR}${XSLDIR}/; \
 	done
 	${FIND} ${DESTDIR}${XSLDIR} -name '*.orig' -exec ${RM} {} \;
+	cd ${DESTDIR}${PREFIX} && ${MKDIR} -pv share/xml/docbook/stylesheet/docbook-xsl/html/
+	cd ${DESTDIR}${PREFIX}/share/ && cp -v examples/docbook-xsl/* xml/docbook/stylesheet/docbook-xsl/html/
 
 .include "../../textproc/xmlcatmgr/catalogs.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -199,6 +199,19 @@ GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} ${GCC_SUBPREFIX} \( -type f -o -type l \) -print | ${SORT};
 
+CONFIGURE_ARGS+=	--with-arch=k8 --with-tune=k8
+CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
+CONFIGURE_ARGS+=	--disable-libmpx --with-system-zlib
+CONFIGURE_ARGS+=        --with-gnu-as --with-as=${PREFIX}/bin/gas
+CONFIGURE_ARGS+=        --with-gnu-ld --with-ld=${PREFIX}/bin/gld
+BUILDLINK_DEPMETHOD.binutils=   full
+.  include "../../devel/binutils/buildlink3.mk"
+
+# pkgsrc gcc packages don't install libgcc_s on some platforms, to
+# avoid problems when mixing compiler versions.  This breaks our use
+# of pkgsrc gcc on EL.
+PKG_DEFAULT_OPTIONS+=   always-libgcc
+
 CHECK_BUILTIN.zlib:= yes
 .include "../../devel/zlib/builtin.mk"
 CHECK_BUILTIN.zlib:= no

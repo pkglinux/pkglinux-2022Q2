@@ -69,9 +69,14 @@ WRKSRC2=	${WRKDIR}/build
 post-extract:
 	mkdir -pv ${WRKSRC2}
 	cd ${WRKSRC2} && ${CAT} ${FILESDIR}/.configs > .config
-	cd ${WRKSRC2} && ${GMAKE} -j${MAKE_JOBS} -f ${WRKSRC}/Makefile menuconfig
+
+#	cd ${WRKSRC2} && ${GMAKE} -j${MAKE_JOBS} -f ${WRKSRC}/Makefile menuconfig
 
 do-build:
+	cd ${WRKSRC} && ${GMAKE} mrproper && ${GMAKE} -j${MAKE_JOBS} headers && \
+	${FIND} usr/include -name ".*" -exec ${RM} -rf {} \; && \
+	${RM} -f usr/include/Makefile
+
 	cd ${WRKSRC2} && ${GMAKE} -j${MAKE_JOBS} bzImage && \
 	${GMAKE} -j${MAKE_JOBS} modules
 	cd ${WRKSRC2} && ${LN} -snvf ${PREFIX}/native/kernel-source-${LINUX_VERSION} source

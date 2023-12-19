@@ -1,0 +1,63 @@
+
+Introduction
+
+This document describes how to install the latest source code for Open Watcom and how to compile the system. This document is intended to supplement the information on the Open Watcom website, not replace it. My focus here is on one specific configuration. In particular, I assume you will be using a modern Windows system (I build Open Watcom using Windows 10 and Windows 11) to compile Open Watcom and that you are trying to build all of Open Watcom. Many of these instructions will apply to other development systems besides Windows or other build configurations, but it is not my intention to make these instructions completely generic.
+Tools
+
+Open Watcom comes with essentially all the tools it needs during the build; those tools are compiled as part of the build process when they are required. However, there are some tools that you need (or may want) to install first.
+
+    Open Watcom. The Open Watcom system can be bootstrapped with Microsoft's Visual C/C++, gcc, or clang, but the primary bootstrap compiler for Open Watcom is Open Watcom itself. You will need to download and install a recent version of the compiler before you can build the latest development version. The compiler you use for building Open Watcom will be called the "build compiler" in this document.
+
+    When you install the build compiler, be sure to select all possible targets (assuming you want to build all possible compilers), including the experimental Linux target. However, you only need to select a single host. The archive linked above contains support for all targets and all hosts. Review and execute the appropriate script (contained in the archive) to configure the environment as needed.
+
+    Win32 Help Compiler. To build the on-line help you will need the appropriate help compilers. Open Watcom provides help compilers to build the DOS help files and the Win16 help files. These compilers are built during the normal build process and should be available automatically when the help files are constructed. However, to build the Win32 help files you'll need to download and install the 32-bit help compiler (setup program). It is provided free from Microsoft.
+
+    Unfortunately, the OS/2 help compiler will not run under Windows XP and Open Watcom has no cross-platform replacement. As a result, the OS/2 help files will fail to build. You should expect this.
+
+Getting the Source
+
+Clone the GitHub repository for Open Watcom v2 to your system.
+Setting the Environment
+
+Before you start the build process, you will need to configure your build environment. Now that you have the source code, look for the file setvars.bat in the root of the source tree. This file configures the environment as necessary for the build to work properly. Note that there are several different setvars files, one for each of several different build systems. The file setvars.bat is for use on Windows systems.
+
+Before executing setvars.bat you should make a copy of it and review its contents. You will need to edit the file to reflect your particular disk layout (and you should avoid editing files in the source tree to contain information specific to your system). The comments in the file provide instructions. Be sure the help compilers are located in directories mentioned in the path set up by setvars.bat.
+
+The setvars files assume the environment is already configured for the build compiler. Before running setvars take whatever steps are necessary to set up the environment for that compiler. This might involve running some other script (or not).
+
+I recommend creating a desktop icon that points at your modified copy of setvars.bat. Use a target of cmd.exe /k path\to\setvars. The /k option causes the window to remain open after the batch file executes. You can then do all your Open Watcom development at the command prompt of that window.
+Doing the Build
+
+All build operations should be done in your build environment as described above. You can find more information on the build process in the file readme.txt in the root of the source tree. In general, what needs to happen is
+
+    The builder tool needs to be built. This tool is used to coordinate the rest of the build process. It is essential.
+
+    The Waterloo TCP library needs to be built. This is necessary to build remote debugging support under DOS. If you build everything, you will want this. Since the Waterloo TCP library is a third party library, it is not automatically constructed during the main build.
+
+    Builder needs to be executed. This tool performs the main build. It supports a number of options for controlling how much is built and where the results are left.
+
+Instead of performing each of the setps above manually, you can use the file build.bat in the root of the Open Watcom source tree. This batch file must be executed in the build environment you created above. It attempts to build everything.
+
+Once the build completes, go to the bld folder in the Open Watcom source tree and execute builder cprel. This copies all the build artifacts to the rel folder in the Open Watcom source tree (which it creates if necessary). The rel folder is the full release of the system with all hosts and targets. You can copy the rel folder elsewhere as a simple way of installing Open Watcom on another system.
+
+Building all of Open Watcom is time-consuming. Even on a modern, fast machine, it can still take a couple of hours. On a moderately fast machine it might take several hours. The builder tool creates a log file bld\build.log in the source tree that records all of its activities. You can search this log file after the build is complete to see what projects, if any, failed to build. The build process normally continues after a failed project, so without the log file it would be very difficult to know what worked and what didn't. Search for "Error," "Warning," and "Can not" in the log file. The phrase "Can not" is used when builder is unable to copy a file to the rel tree. This is typically because something failed to compile or link, but sometimes it is due to other reasons. Note that there are a number of expected warnings and "Can not" messages, so don't be alarmed if you find a few of them. After a few builds, you'll get used to what messages are normal and what messages indicate problems.
+Testing the System
+
+After doing a build, you will probably want to run some tests so you can have confidence in the correctness of the new system. Of course, since the code you have just built is under development, it is possible that some tests will fail. However, most of the time all tests should pass. In any case, it is good to test the compiler(s) often so that any problems that appear are noticed early.
+
+To run the formal regression tests, you will need to create a test environment that is very much like the build environment. Some scripts and makefiles that control the regression tests assume that the build tools are available. I recommend that you copy your copy of setvars.bat to make another batch file for setting up a test environment. You might even want to create a desktop icon for it as well. In the test environment, point the WATCOM environment variable to the new compiler's folder structure under rel. There should be only one setting (as I recall) in setvars.bat that needs to be adjusted.
+
+Open Watcom does not currently have any kind of integrated test system similar to the builder tool (although there has been talk about creating such a system). Instead, each project has its own testing structure and each project is tested individually. Most likely, you will want to just run the tests for the projects that interest you. See, for example, the file bld\plustest\readme.txt to find out more information about how to run the C++ compiler tests.
+
+If you have bothered to download and build the latest source to Open Watcom, you are probably interested in using the development compiler in your day-to-day work. In fact, doing so would be helpful to the development effort. The more real code the compiler is forced to process, the more likely bugs will be found.
+
+Setting yourself up to use the new compiler is fairly easy. You only need to set some environment variables to point into the rel tree. The batch file useOW.bat demonstrates what needs to be done. Feel free to edit OW.bat to suit your needs.
+
+If you want to try using the experimental Linux host, zip up the rel2 tree you just built and expand it on a suitable Linux system. I typically install Open Watcom under /opt/OW. The shell script useOW.sh sets environment variables to make the compiler accessible. You will need to execute this script in the context of the calling shell using a command such as source useOW. Otherwise, the environment variables it creates will be lost when the script terminates.
+Communicating with the Open Watcom Developers
+
+Even if you don't expect to do any development yourself, we'd be happy to hear about any problems you have building or using the system. Certainly we would appreciate being told about any bugs you discover (you might browse the Open Watcom Bugzilla first to avoid reporting a bug that is already known).
+
+# [Open Watcom 1.9 Wiki](https://github.com/open-watcom/open-watcom-1.9/wiki)
+# [Open Watcom 1.0-1.9 download](https://github.com/open-watcom/open-watcom-1.9/releases)
+# [Open Watcom 1.9 git repository](https://github.com/open-watcom/owp4v1copy)

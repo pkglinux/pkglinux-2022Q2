@@ -20,6 +20,9 @@ fi
 alias ll='ls -la'
 alias vi='TERM=screen-256color vi'
 alias vim='TERM=screen-256color vim'
+alias rcd='_() { s=/pkg/etc/rc.d/$1; ! [[ ":ls:vi:cat:" =~ :$2: ]] && $s $2 || ${@:2} $s; unset -f _; }; _'
+alias rc='_() { ${@:1} /pkg/etc/rc.conf; unset -f _; }; _'
+alias rbox='_() { ip=$(/sbin/ip route get 1.1.1.1 | head -1 | cut -d" " -f 7); [ "$#" -gt 0 ] && ip="$1"; remotebox -H "${ip}" -u vbox -p 12345; unset -f _; }; _'
 
 eval `dircolors ~/dircolors.ansi-universal`
 
@@ -28,6 +31,8 @@ MANPATH=/pkg/man:/pkg/gnu/man:$MANPATH
 
 # for vscode
 export LD_LIBRARY_PATH="/pkg/lib:/pkg/lib/nss:/pkg/lib/nspr"
+# for virtualbox
+export LD_LIBRARY_PATH="/pkg/qt5/lib:$LD_LIBRARY_PATH"
 
 export LC_CTYPE=zh_CN.UTF-8
 export LANG=en_US.UTF-8

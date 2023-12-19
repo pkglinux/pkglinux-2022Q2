@@ -3,11 +3,17 @@ bin/soapcpp2
 bin/wsdl2h
 include/stdsoap2.h
 lib/libgsoap++.a
+lib/libgsoap++.so
 lib/libgsoap.a
+lib/libgsoap.so
 lib/libgsoapck++.a
+lib/libgsoapck++.so
 lib/libgsoapck.a
+lib/libgsoapck.so
 lib/libgsoapssl++.a
+lib/libgsoapssl++.so
 lib/libgsoapssl.a
+lib/libgsoapssl.so
 lib/pkgconfig/gsoap++.pc
 lib/pkgconfig/gsoap.pc
 lib/pkgconfig/gsoapck++.pc
