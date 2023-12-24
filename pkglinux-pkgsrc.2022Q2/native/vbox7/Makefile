@@ -70,9 +70,9 @@ do-install:
 	${CP} -v ${DSTPRE}/native/usr/lib/virtualbox/*.desktop ${DSTPRE}/share/applications/
 	${MKDIR} -v ${DSTPRE}/native/lib/modules/"`uname -r`"/misc/
 	${MV} -v ${DSTPRE}/native/usr/lib/virtualbox/src/*.ko.xz ${DSTPRE}/native/lib/modules/"`uname -r`"/misc/
-	${CP} -av ${FILESDIR}/vboxwebsrv ${DSTPRE}/native/usr/lib/virtualbox/
+	${CP} -av /root/sda3/vboxwebsrv ${DSTPRE}/native/usr/lib/virtualbox/
 	cd ${DSTPRE}/native/usr/lib/virtualbox/ExtensionPacks/Oracle_VM_VirtualBox_Extension_Pack/ && \
-	gtar -xzf ${FILESDIR}/Oracle_VM_VirtualBox_Extension_Pack-7.0.12.vbox-extpack
+	gtar -xzf /root/sda3/Oracle_VM_VirtualBox_Extension_Pack-7.0.12.vbox-extpack
 
 .include "../../devel/bison/buildlink3.mk"
 #.include "../../linux/liblzf-2015/buildlink3.mk"
