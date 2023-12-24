@@ -24,6 +24,7 @@ SHA1 (patch-libffi_testsuite_libffi.call_float2.c) = 89e2dd6aaf2c1f75726f02362d8
 SHA1 (patch-libgcc_config.host) = d40d4d08c807eeff98cc246d1ea756b5b2c749b0
 SHA1 (patch-libgcc_crtstuff.c) = a16d465039de00c195cf0694560140a9c38f3a25
 SHA1 (patch-libgfortran_io_io.h) = d44676239a7f45e42054d24bd5224f43c20055c0
+SHA1 (patch-libiberty_fibheap.c) = f4d41d19e069371c907c521b15741f0752995472
 SHA1 (patch-libquadmath_printf_quadmath-printf.c) = 78e09f1e6d61ee57cee83275093cf46b2335d204
 SHA1 (patch-libquadmath_strtod_strtod__l.c) = 6142c10d34174174cce7f06c37eab04dc431b2dc
 SHA1 (patch-libstdc++-v3_libsupc++_new__opa.cc) = 4183b00a5ee6e61524da4755c825a0c08fd01ed6

@@ -1,0 +1,98 @@
+9		3 Jul 2022
+	+ 29_all_msgfmt-libstdc++-link.patch
+
+8		26 Jun 2022
+
+	+ 28_all_drop_CFLAGS_sed.patch
+
+7		30 May 2022
+
+	U 26_all_enable-cet.patch
+
+6		29 May 2022
+
+	+ 26_all_enable-cet.patch
+
+5		25 Apr 2022
+
+	- 01_all_default-fortify-source.patch
+	- 03_all_default-warn-trampolines.patch
+	- 05_all_alpha-mieee-default.patch
+	- 06_all_ia64_note.GNU-stack.patch
+	- 08_all_libiberty-pic.patch
+	- 09_all_nopie-all-flags.patch
+	- 10_all_sh-drop-sysroot-suffix.patch
+	- 11_all_ia64-TEXTREL.patch
+	- 12_all_disable-systemtap-switch.patch
+	- 13_all_m68k-textrel-on-libgcc.patch
+	- 14_all_respect-build-cxxflags.patch
+	U 20_all_libstdcxx-no-vtv.patch
+	- 22_all_default_ssp-buffer-size.patch
+	- 23_all_EXTRA_OPTIONS-z-now.patch
+	- 24_all_EXTRA_OPTIONS-fstack-clash-protection.patch
+	- 26_all_plugin-objdump.patch
+
+4		26 Mar 2022
+
+	U 01_all_default-fortify-source.patch
+	U 03_all_default-warn-trampolines.patch
+	U 05_all_alpha-mieee-default.patch
+	U 06_all_ia64_note.GNU-stack.patch
+	U 08_all_libiberty-pic.patch
+	U 09_all_nopie-all-flags.patch
+	U 10_all_sh-drop-sysroot-suffix.patch
+	U 11_all_ia64-TEXTREL.patch
+	U 12_all_disable-systemtap-switch.patch
+	- 13_all_m68k-textrel-on-libgcc.patch
+	U 14_all_respect-build-cxxflags.patch
+	U 20_all_libstdcxx-no-vtv.patch
+	U 22_all_default_ssp-buffer-size.patch
+	U 23_all_EXTRA_OPTIONS-z-now.patch
+	U 24_all_EXTRA_OPTIONS-fstack-clash-protection.patch
+	U 26_all_plugin-objdump.patch
+
+3		5 Feb 2022
+
+	U 01_all_default-fortify-source.patch
+	U 02_all_default-warn-format-security.patch
+	U 04_all_nossp-on-nostdlib.patch
+	U 07_all_libiberty-asprintf.patch
+	U 11_all_ia64-TEXTREL.patch
+	- 15_all_libgomp-Werror.patch
+	- 16_all_libitm-Werror.patch
+	- 17_all_libatomic-Werror.patch
+	- 18_all_libbacktrace-Werror.patch
+	- 19_all_libsanitizer-Werror.patch
+	U 23_all_EXTRA_OPTIONS-z-now.patch
+	U 24_all_EXTRA_OPTIONS-fstack-clash-protection.patch
+
+2		28 July 2021
+	- 21_all_disable-riscv32-ABIs.patch
+
+1		20 Apr 2021
+	+ 01_all_default-fortify-source.patch
+	+ 02_all_default-warn-format-security.patch
+	+ 03_all_default-warn-trampolines.patch
+	+ 04_all_nossp-on-nostdlib.patch
+	+ 05_all_alpha-mieee-default.patch
+	+ 06_all_ia64_note.GNU-stack.patch
+	+ 07_all_libiberty-asprintf.patch
+	+ 08_all_libiberty-pic.patch
+	+ 09_all_nopie-all-flags.patch
+	+ 10_all_sh-drop-sysroot-suffix.patch
+	+ 11_all_ia64-TEXTREL.patch
+	+ 12_all_disable-systemtap-switch.patch
+	+ 13_all_m68k-textrel-on-libgcc.patch
+	+ 14_all_respect-build-cxxflags.patch
+	+ 15_all_libgomp-Werror.patch
+	+ 16_all_libitm-Werror.patch
+	+ 17_all_libatomic-Werror.patch
+	+ 18_all_libbacktrace-Werror.patch
+	+ 19_all_libsanitizer-Werror.patch
+	+ 20_all_libstdcxx-no-vtv.patch
+	+ 21_all_disable-riscv32-ABIs.patch
+	+ 22_all_default_ssp-buffer-size.patch
+	+ 23_all_EXTRA_OPTIONS-z-now.patch
+	+ 24_all_EXTRA_OPTIONS-fstack-clash-protection.patch
+	+ 25_all_lto-intl-workaround-PR95194.patch
+	+ 26_all_plugin-objdump.patch

@@ -1,0 +1,330 @@
+2023-01-12  Jakub Jelinek  <jakub@redhat.com>
+
+	PR c++/105593
+gcc/
+	* config/i386/xmmintrin.h (_mm_undefined_ps): Temporarily
+	disable -Winit-self using pragma GCC diagnostic ignored.
+	* config/i386/emmintrin.h (_mm_undefined_pd, _mm_undefined_si128):
+	Likewise.
+	* config/i386/avxintrin.h (_mm256_undefined_pd, _mm256_undefined_ps,
+	_mm256_undefined_si256): Likewise.
+	* config/i386/avx512fintrin.h (_mm512_undefined_pd,
+	_mm512_undefined_ps, _mm512_undefined_epi32): Likewise.
+	* config/i386/avx512fp16intrin.h (_mm_undefined_ph,
+	_mm256_undefined_ph, _mm512_undefined_ph): Likewise.
+gcc/c/
+	* c-parser.cc (c_parser_initializer): Check warning_enabled_at
+	at the DECL_SOURCE_LOCATION (decl) for OPT_Winit_self instead
+	of warn_init_self.
+gcc/cp/
+	* decl.cc (cp_finish_decl): Check warning_enabled_at
+	at the DECL_SOURCE_LOCATION (decl) for OPT_Winit_self instead
+	of warn_init_self.
+gcc/testsuite/
+	* c-c++-common/Winit-self3.c: New test.
+	* c-c++-common/Winit-self4.c: New test.
+	* c-c++-common/Winit-self5.c: New test.
+	* g++.target/i386/pr105593.C: New test.
+
+--- gcc/c/c-parser.cc.jj	2023-01-11 22:18:25.560492345 +0100
++++ gcc/c/c-parser.cc	2023-01-12 15:30:10.460233783 +0100
+@@ -5701,7 +5701,7 @@ c_parser_initializer (c_parser *parser,
+ 	  && !DECL_EXTERNAL (decl)
+ 	  && !TREE_STATIC (decl)
+ 	  && ret.value == decl
+-	  && !warn_init_self)
++	  && !warning_enabled_at (DECL_SOURCE_LOCATION (decl), OPT_Winit_self))
+ 	suppress_warning (decl, OPT_Winit_self);
+       if (TREE_CODE (ret.value) != STRING_CST
+ 	  && (TREE_CODE (ret.value) != COMPOUND_LITERAL_EXPR
+--- gcc/cp/decl.cc.jj	2023-01-04 18:42:24.597997547 +0100
++++ gcc/cp/decl.cc	2023-01-12 15:26:01.257817526 +0100
+@@ -8407,7 +8407,7 @@ cp_finish_decl (tree decl, tree init, bo
+       if (!DECL_EXTERNAL (decl)
+ 	  && !TREE_STATIC (decl)
+ 	  && decl == tree_strip_any_location_wrapper (init)
+-	  && !warn_init_self)
++	  && !warning_enabled_at (DECL_SOURCE_LOCATION (decl), OPT_Winit_self))
+ 	suppress_warning (decl, OPT_Winit_self);
+     }
+ 
+--- gcc/config/i386/xmmintrin.h.jj	2022-11-07 10:30:42.741629972 +0100
++++ gcc/config/i386/xmmintrin.h	2023-01-12 15:33:21.685483809 +0100
+@@ -112,7 +112,10 @@ typedef float __v4sf __attribute__ ((__v
+ extern __inline __m128 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+ _mm_undefined_ps (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m128 __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+--- gcc/config/i386/emmintrin.h.jj	2022-03-14 14:48:04.299055735 +0100
++++ gcc/config/i386/emmintrin.h	2023-01-12 15:33:04.148735997 +0100
+@@ -99,7 +99,10 @@ _mm_setr_pd (double __W, double __X)
+ extern __inline __m128d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+ _mm_undefined_pd (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m128d __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+@@ -785,7 +788,10 @@ _mm_move_epi64 (__m128i __A)
+ extern __inline __m128i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+ _mm_undefined_si128 (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m128i __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+--- gcc/config/i386/avxintrin.h.jj	2022-01-11 23:11:21.763298965 +0100
++++ gcc/config/i386/avxintrin.h	2023-01-12 15:34:15.395711408 +0100
+@@ -1207,21 +1207,30 @@ _mm256_movemask_ps (__m256 __A)
+ extern __inline __m256d __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+ _mm256_undefined_pd (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m256d __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+ extern __inline __m256 __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+ _mm256_undefined_ps (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m256 __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+ extern __inline __m256i __attribute__((__gnu_inline__, __always_inline__, __artificial__))
+ _mm256_undefined_si256 (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m256i __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+--- gcc/config/i386/avx512fintrin.h.jj	2022-04-25 13:54:38.277309716 +0200
++++ gcc/config/i386/avx512fintrin.h	2023-01-12 15:35:09.868928035 +0100
+@@ -185,7 +185,10 @@ extern __inline __m512
+ __attribute__ ((__gnu_inline__, __always_inline__, __artificial__))
+ _mm512_undefined_ps (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m512 __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+@@ -195,7 +198,10 @@ extern __inline __m512d
+ __attribute__ ((__gnu_inline__, __always_inline__, __artificial__))
+ _mm512_undefined_pd (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m512d __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+@@ -203,7 +209,10 @@ extern __inline __m512i
+ __attribute__ ((__gnu_inline__, __always_inline__, __artificial__))
+ _mm512_undefined_epi32 (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m512i __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+--- gcc/config/i386/avx512fp16intrin.h.jj	2022-11-21 10:28:24.284544313 +0100
++++ gcc/config/i386/avx512fp16intrin.h	2023-01-12 15:35:41.070479329 +0100
+@@ -204,7 +204,10 @@ extern __inline __m128h
+ __attribute__ ((__gnu_inline__, __always_inline__, __artificial__))
+ _mm_undefined_ph (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m128h __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+@@ -212,7 +215,10 @@ extern __inline __m256h
+ __attribute__ ((__gnu_inline__, __always_inline__, __artificial__))
+ _mm256_undefined_ph (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m256h __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+@@ -220,7 +226,10 @@ extern __inline __m512h
+ __attribute__ ((__gnu_inline__, __always_inline__, __artificial__))
+ _mm512_undefined_ph (void)
+ {
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
+   __m512h __Y = __Y;
++#pragma GCC diagnostic pop
+   return __Y;
+ }
+ 
+--- gcc/testsuite/c-c++-common/Winit-self3.c.jj	2023-01-12 15:49:56.759172518 +0100
++++ gcc/testsuite/c-c++-common/Winit-self3.c	2023-01-12 15:50:51.512384963 +0100
+@@ -0,0 +1,36 @@
++/* PR c++/105593 */
++/* { dg-do compile } */
++/* { dg-options "-W -Wall" } */
++
++void bar (int);
++
++static inline int
++baz (void)
++{
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
++  int u = u;		/* { dg-bogus "'u' is used uninitialized" } */
++#pragma GCC diagnostic pop
++  return u;
++}
++
++void
++foo (void)
++{
++  int u = baz ();
++  bar (u);
++}
++
++static inline int
++qux (void)
++{
++  int u = u;		/* { dg-warning "'u' is used uninitialized" "" { target c++ } } */
++  return u;		/* { dg-message "'u' was declared here" "" { target c++ } .-1 } */
++}
++
++void
++corge (void)
++{
++  int u = qux ();
++  bar (u);
++}
+--- gcc/testsuite/c-c++-common/Winit-self4.c.jj	2023-01-12 15:50:15.233906776 +0100
++++ gcc/testsuite/c-c++-common/Winit-self4.c	2023-01-12 15:50:42.445515372 +0100
+@@ -0,0 +1,36 @@
++/* PR c++/105593 */
++/* { dg-do compile } */
++/* { dg-options "-W -Wall -Winit-self" } */
++
++void bar (int);
++
++static inline int
++baz (void)
++{
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
++  int u = u;		/* { dg-bogus "'u' is used uninitialized" } */
++#pragma GCC diagnostic pop
++  return u;
++}
++
++void
++foo (void)
++{
++  int u = baz ();
++  bar (u);
++}
++
++static inline int
++qux (void)
++{
++  int u = u;		/* { dg-warning "'u' is used uninitialized" } */
++  return u;		/* { dg-message "'u' was declared here" "" { target *-*-* } .-1 } */
++}
++
++void
++corge (void)
++{
++  int u = qux ();
++  bar (u);
++}
+--- gcc/testsuite/c-c++-common/Winit-self5.c.jj	2023-01-12 15:51:01.045247847 +0100
++++ gcc/testsuite/c-c++-common/Winit-self5.c	2023-01-12 15:51:12.929076923 +0100
+@@ -0,0 +1,36 @@
++/* PR c++/105593 */
++/* { dg-do compile } */
++/* { dg-options "-W -Wall -Wno-init-self" } */
++
++void bar (int);
++
++static inline int
++baz (void)
++{
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
++  int u = u;		/* { dg-bogus "'u' is used uninitialized" } */
++#pragma GCC diagnostic pop
++  return u;
++}
++
++void
++foo (void)
++{
++  int u = baz ();
++  bar (u);
++}
++
++static inline int
++qux (void)
++{
++  int u = u;		/* { dg-bogus "'u' is used uninitialized" } */
++  return u;
++}
++
++void
++corge (void)
++{
++  int u = qux ();
++  bar (u);
++}
+--- gcc/testsuite/g++.target/i386/pr105593.C.jj	2023-01-12 15:58:59.668363504 +0100
++++ gcc/testsuite/g++.target/i386/pr105593.C	2023-01-12 16:01:17.785377769 +0100
+@@ -0,0 +1,20 @@
++// PR c++/105593
++// { dg-do compile { target c++11 } }
++// { dg-options "-mavx512fp16 -W -Wall -O2" }
++
++#include <x86intrin.h>
++
++auto f1 () { return _mm_undefined_pd (); }
++auto f2 () { return _mm_undefined_ps (); }
++auto f3 () { return _mm_undefined_si128 (); }
++auto f4 () { return _mm_undefined_ph (); }
++auto f5 () { return _mm256_undefined_pd (); }
++auto f6 () { return _mm256_undefined_ps (); }
++auto f7 () { return _mm256_undefined_si256 (); }
++auto f8 () { return _mm256_undefined_ph (); }
++auto f9 () { return _mm512_undefined_pd (); }
++auto f10 () { return _mm512_undefined_ps (); }
++auto f11 () { return _mm512_undefined_epi32 (); }
++auto f12 () { return _mm512_undefined_ph (); }
++
++// { dg-bogus "is used uninitialized" "" { target *-*-* } 0 }

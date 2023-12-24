@@ -26,7 +26,7 @@ TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 USE_TOOLS+=		gmake gsed:run pkgdiff
 WRKSRC=			${WRKDIR}/${DISTNAME}
 DSTPRE=			${DESTDIR}${PREFIX}
-RCD_SCRIPTS=		vbox
+RCD_SCRIPTS=		vboxws
 
 #.	if !exists(${WRKSRC}/configure.orig)
 #.	endif
@@ -39,6 +39,8 @@ RCD_SCRIPTS=		vbox
 #gsed -e 's|VBOX_WITH_WEBSERVICES = 1|VBOX_WITH_WEBSERVICES = 0|g' -i Config.kmk && \
 #pkgdiff Config.kmk > ../../patches/patch-Config.kmk-${DISTVER} && \
 
+#gsed -e 's|^BUILD_LIBSSL=|BUILD_LIBSSL=0|g' -i configure && \
+#
 do-configure:
 	cd ${WRKSRC} && [ -f configure.orig ] || ( \
 cp -av configure configure.orig && \
@@ -47,6 +49,7 @@ gsed -e 's|LIBPNG="-lpng"|LIBPNG="-lpng16"|g' -i configure && \
 gsed -e 's|^INCZ="|INCZ="-I/pkg/include |g' -i configure && \
 gsed -e 's|^LIBZ="|LIBZ="-lz |g' -i configure && \
 gsed -e 's|GSOAP="/usr"|GSOAP="/pkg"|g' -i configure && \
+gsed -e 's|cnf_append "VBOX_GSOAP_CXX_LIBS"    "`strip_l "$$GSOAP_CXX_LIBS"`"|cnf_append "VBOX_GSOAP_CXX_LIBS"    "`strip_l "$$GSOAP_CXX_LIBS"` z gnutls gcrypt gpg-error"|g' -i configure && \
 gsed -e 's|test_compile "|test_compile "-I/pkg/include -L/pkg/lib |g' -i configure && \
 pkgdiff configure > ../../patches/patch-configure-${DISTVER} && \
 ls -la ${WRKSRC}/../../patches/* \

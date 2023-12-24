@@ -13,7 +13,6 @@ native/etc/rc.d/rc4
 native/etc/rc.d/rc5
 native/etc/rc.d/rc6
 native/etc/rc.d/rcS
-native/etc/rc.local.orig
 native/etc/sysconfig/console
 native/sbin/lndir
 native/sbin/lndir.sh
@@ -25,6 +24,7 @@ native/sbin/pkglinux-makeusb
 native/sbin/pkglinux-upgrade
 native/sbin/pkg-strap
 native/sbin/pkg-sum
+native/sbin/powersave
 native/sbin/service
 native/sbin/wpa.sh
 native/usr/bin/which

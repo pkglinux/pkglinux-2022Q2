@@ -1,0 +1,90 @@
+11	3 Dec 2023
+
+	U 76_all_match.pd-don-t-emit-label-if-not-needed.patch
+	U 77_all_match.pd-Remove-commented-out-line-pragmas-unless-vv.patch
+	U 78_all_match.pd-CSE-the-dump-output-check.patch
+	U 79_all_genmatch-split-shared-code-to-gimple-match-exports.c.patch
+	U 80_all_match.pd-automatically-partition-match.cc-files.patch
+	U 81_all_match.pd-Use-splits-in-makefile-and-make-configurabl.patch
+	U 87_all_Remove-DEFAULT_MATCHPD_PARTITIONS-macro.patch
+	U 88_all_Makefile.in-Make-TM_P_H-depend-on-TREE_H-PR111021.patch
+	U 89_all_Makefile.in-Make-recog.h-depend-on-TREE_H-PR111021.patch
+	U 90_all_PR54179_genemit-Split-insn-emit.cc-into-ten-files.patch
+	+ 82_all_Makefile.in-clean-up-match.pd-related-dependencies.patch
+
+10	28 Oct 2023
+
+	U 90_all_PR54179_genemit-Split-insn-emit.cc-into-ten-files.patch
+
+9	16 Oct 2023
+
+	+ 86_all_build-Replace-seq-for-portability-with-GNU-Make-vari.patch
+	+ 87_all_Remove-DEFAULT_MATCHPD_PARTITIONS-macro.patch
+	+ 88_all_Makefile.in-Make-TM_P_H-depend-on-TREE_H-PR111021.patch
+	+ 89_all_Makefile.in-Make-recog.h-depend-on-TREE_H-PR111021.patch
+	+ 90_all_PR54179_genemit-Split-insn-emit.cc-into-ten-files.patch
+
+8	1 Oct 2023
+
+	U 31_all_gm2_make_P_var.patch
+	+ 50_all_system_cxx_headers_libcxx.patch
+	- 83_all_all_PR110315_crash_large_std_vector.patch
+
+7	13 Aug 2023
+	+ 85_all_x86_PR110792-Early-clobber-issues-with-rot32di2-test-fixup.patch
+
+6	13 Aug 2023
+	+ 84_all_x86_PR110792-Early-clobber-issues-with-rot32di2.patch
+
+5	05 Aug 2023
+	- 82_all_arm64_PR110280_ICE_fold-const.patch
+
+4	30 Jul 2023
+
+	U 31_all_gm2_make_P_var.patch
+	+ 82_all_arm64_PR110280_ICE_fold-const.patch
+	+ 83_all_all_PR110315_crash_large_std_vector.patch
+
+3	26 May 2023	
+
+	+ 76_all_match.pd-don-t-emit-label-if-not-needed.patch
+	+ 77_all_match.pd-Remove-commented-out-line-pragmas-unless-vv.patch
+	+ 78_all_match.pd-CSE-the-dump-output-check.patch
+	+ 79_all_genmatch-split-shared-code-to-gimple-match-exports.c.patch
+	+ 80_all_match.pd-automatically-partition-match.cc-files.patch
+	+ 81_all_match.pd-Use-splits-in-makefile-and-make-configurabl.patch
+
+2	29 Apr 2023
+
+	- 75_all_all_PR109573_13_ICE-in-vectorizable_live_operation.patch
+	- 76_all_all_PR109585_13_rtl-alias-analysis-typo.patch
+	- 77_all_all_PR109609_13_tail-call-fnspec.patch
+
+1	26 April 2023
+
+	+ 01_all_default-fortify-source.patch
+	+ 02_all_default-warn-format-security.patch
+	+ 03_all_default-warn-trampolines.patch
+	+ 04_all_nossp-on-nostdlib.patch
+	+ 05_all_alpha-mieee-default.patch
+	+ 06_all_ia64_note.GNU-stack.patch
+	+ 07_all_libiberty-asprintf.patch
+	+ 08_all_libiberty-pic.patch
+	+ 09_all_nopie-all-flags.patch
+	+ 10_all_sh-drop-sysroot-suffix.patch
+	+ 11_all_ia64-TEXTREL.patch
+	+ 14_all_respect-build-cxxflags.patch
+	+ 15_all_DEF_GENTOO_GLIBCXX_ASSERTIONS.patch
+	+ 20_all_libstdcxx-no-vtv.patch
+	+ 22_all_default_ssp-buffer-size.patch
+	+ 23_all_DEF_GENTOO_ZNOW-z-now.patch
+	+ 24_all_DEF_GENTOO_SCP-fstack-clash-protection.patch
+	+ 25_all_lto-intl-workaround-PR95194.patch
+	+ 26_all_enable-cet.patch
+	+ 28_all_drop_CFLAGS_sed.patch
+	+ 29_all_msgfmt-libstdc++-link.patch
+	+ 30_all_tar_libstdc++-link.patch
+	+ 31_all_gm2_make_P_var.patch
+	+ 75_all_all_PR109573_13_ICE-in-vectorizable_live_operation.patch
+	+ 76_all_all_PR109585_13_rtl-alias-analysis-typo.patch
+	+ 77_all_all_PR109609_13_tail-call-fnspec.patch

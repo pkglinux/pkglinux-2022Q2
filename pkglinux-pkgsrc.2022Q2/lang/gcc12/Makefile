@@ -28,6 +28,7 @@ NOT_FOR_PLATFORM=	Interix-*-*
 
 USE_LANGUAGES=		c99 c++
 USE_TOOLS+=		gmake makeinfo sed:run tar:build
+USE_TOOLS+=		autoconf autoreconf automake autopoint m4
 USE_TOOLS.NetBSD+=	gsed
 
 GNU_CONFIGURE=		yes
@@ -80,7 +81,29 @@ SUBST_SED.fixinc=	-e "s,\./fixinc.sh,-c true,"
 ## For graphite support.
 .if !empty(PKG_OPTIONS:Mgcc-graphite)
 
+#	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/01_all_default-fortify-source.patch
 post-extract:
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/02_all_default-warn-format-security.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/03_all_default-warn-trampolines.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/04_all_nossp-on-nostdlib.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/05_all_alpha-mieee-default.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/06_all_ia64_note.GNU-stack.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/07_all_libiberty-asprintf.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/08_all_libiberty-pic.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/09_all_nopie-all-flags.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/10_all_sh-drop-sysroot-suffix.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/11_all_ia64-TEXTREL.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/12_all_disable-systemtap-switch.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/14_all_respect-build-cxxflags.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/20_all_libstdcxx-no-vtv.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/22_all_default_ssp-buffer-size.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/23_all_EXTRA_OPTIONS-z-now.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/24_all_EXTRA_OPTIONS-fstack-clash-protection.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/25_all_lto-intl-workaround-PR95194.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/26_all_enable-cet.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/27_all_plugin-objdump.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/28_all_drop_CFLAGS_sed.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/29_all_msgfmt-libstdc++-link.patch
 	${TAR} -jxf ${DISTDIR}/${ISL16}.tar.bz2 -C ${WRKSRC}
 	${MV} ${WRKSRC}/${ISL16} ${WRKSRC}/isl
 .endif
@@ -178,6 +201,7 @@ CTF_FILES_SKIP+=	*/gengtype	# CPU limit exceeded
 
 pre-configure:
 	${RUN} cd ${WRKSRC} && ${MKDIR} ${OBJDIR}
+	${RUN} cd ${WRKSRC} && autoconf
 
 TEST_TARGET=	-j ${MAKE_JOBS} -k check || ${TRUE}
 TEST_DEPENDS+=	dejagnu-[0-9]*:../../devel/dejagnu
@@ -199,6 +223,7 @@ GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} ${GCC_SUBPREFIX} \( -type f -o -type l \) -print | ${SORT};
 
+CONFIGURE_ARGS+=	--disable-cet
 CONFIGURE_ARGS+=	--with-arch=k8 --with-tune=k8
 CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
 CONFIGURE_ARGS+=	--disable-libmpx --with-system-zlib
@@ -211,6 +236,7 @@ BUILDLINK_DEPMETHOD.binutils=   full
 # avoid problems when mixing compiler versions.  This breaks our use
 # of pkgsrc gcc on EL.
 PKG_DEFAULT_OPTIONS+=   always-libgcc
+MAKE_ENV+=	PWD_COMMAND=${PREFIX}/bin/gpwd
 
 CHECK_BUILTIN.zlib:= yes
 .include "../../devel/zlib/builtin.mk"

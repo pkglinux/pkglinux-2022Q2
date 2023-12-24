@@ -1,0 +1,201 @@
+# $NetBSD: Makefile.common,v 1.5 2023/08/29 09:48:46 nia Exp $
+# used by lang/gcc13-libjit/Makefile
+
+GCC_PKGNAME=		gcc13
+.include		"version.mk"
+
+DISTNAME=	gcc-${GCC13_DIST_VERSION}
+CATEGORIES=	lang
+MASTER_SITES=	${MASTER_SITE_GNU:=gcc/gcc-${GCC13_DIST_VERSION}/}
+EXTRACT_SUFX=	.tar.xz
+
+MAINTAINER=	pkgsrc-users@NetBSD.org
+HOMEPAGE=	https://gcc.gnu.org/
+LICENSE=	gnu-gpl-v2 AND gnu-gpl-v3 AND gnu-lgpl-v2 AND gnu-lgpl-v3
+
+DISTFILES=		${DEFAULT_DISTFILES}
+EXTRACT_ONLY=		${DEFAULT_DISTFILES}
+
+PATCHDIR=		${.CURDIR}/../../lang/gcc13/patches
+DISTINFO_FILE=		${.CURDIR}/../../lang/gcc13/distinfo
+
+# Relocations result in a linker error on AArch64, but not x86.
+MKPIE_SUPPORTED=	no
+CHECK_RELRO_SKIP+=	${GCC_PKGNAME}/lib/*
+
+NOT_FOR_PLATFORM=	Interix-*-*
+
+USE_LANGUAGES=		c c++
+USE_TOOLS+=		gmake makeinfo sed tar:build
+USE_TOOLS.NetBSD+=	gsed
+
+GNU_CONFIGURE=		yes
+GNU_CONFIGURE_STRICT=	no
+## Build outside ${WRKSRC}
+OBJDIR=			../build
+CONFIGURE_DIRS=		${OBJDIR}
+CONFIGURE_SCRIPT=	../${DISTNAME}/configure
+GCC_SUBPREFIX=		${GCC_PKGNAME}
+GCC_PREFIX=		${PREFIX}/${GCC_SUBPREFIX}
+GNU_CONFIGURE_PREFIX=	${GCC_PREFIX}
+INFO_FILES=		yes
+CONFIGURE_ARGS+=	--disable-libstdcxx-pch
+
+# error: 'for' loop initial declarations are only allowed in C99 mode
+USE_CC_FEATURES+=	c99
+FORCE_C_STD=		gnu99
+
+UNLIMIT_RESOURCES+=	datasize
+UNLIMIT_RESOURCES+=	stacksize
+
+CHECK_PORTABILITY_SKIP+=	contrib/*
+CHECK_PORTABILITY_SKIP+=	gcc/configure.orig_dist
+
+.include "../../mk/bsd.prefs.mk"
+
+.include "options.mk"
+
+#.if ${MACHINE_PLATFORM:MDarwin-*-aarch64}
+#BUILDLINK_TRANSFORM+=	rm:-nodefaultrpaths
+#CONFIGURE_ARGS+=	--disable-darwin-at-rpath
+#PATCHFILES=		gcc-13.2.0-arm.diff
+#PATCH_SITES=		https://raw.githubusercontent.com/Homebrew/formula-patches/1d184289/gcc/
+#PATCH_DIST_STRIP=	-p1
+#.endif
+
+## For graphite support.
+.if !empty(PKG_OPTIONS:Mgcc-graphite)
+
+EXTRACT_ONLY+=	${ISL24}.tar.xz
+
+#	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/01_all_default-fortify-source.patch
+post-extract:
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/02_all_default-warn-format-security.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/03_all_default-warn-trampolines.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/04_all_nossp-on-nostdlib.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/05_all_alpha-mieee-default.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/06_all_ia64_note.GNU-stack.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/07_all_libiberty-asprintf.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/08_all_libiberty-pic.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/09_all_nopie-all-flags.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/10_all_sh-drop-sysroot-suffix.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/11_all_ia64-TEXTREL.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/14_all_respect-build-cxxflags.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/15_all_DEF_GENTOO_GLIBCXX_ASSERTIONS.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/20_all_libstdcxx-no-vtv.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/22_all_default_ssp-buffer-size.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/23_all_DEF_GENTOO_ZNOW-z-now.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/24_all_DEF_GENTOO_SCP-fstack-clash-protection.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/25_all_lto-intl-workaround-PR95194.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/26_all_enable-cet.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/28_all_drop_CFLAGS_sed.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/29_all_msgfmt-libstdc++-link.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/30_all_tar_libstdc++-link.patch
+#	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/31_all_gm2_make_P_var.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/50_all_PR111632_system_cxx_headers_libcxx.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/76_all_match.pd-don-t-emit-label-if-not-needed.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/77_all_match.pd-Remove-commented-out-line-pragmas-unless-vv.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/78_all_match.pd-CSE-the-dump-output-check.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/79_all_genmatch-split-shared-code-to-gimple-match-exports.c.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/80_all_match.pd-automatically-partition-match.cc-files.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/81_all_match.pd-Use-splits-in-makefile-and-make-configurabl.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/82_all_Makefile.in-clean-up-match.pd-related-dependencies.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/84_all_x86_PR110792-Early-clobber-issues-with-rot32di2.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/85_all_x86_PR110792-Early-clobber-issues-with-rot32di2-test-fixup.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/86_all_build-Replace-seq-for-portability-with-GNU-Make-vari.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/87_all_Remove-DEFAULT_MATCHPD_PARTITIONS-macro.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/88_all_Makefile.in-Make-TM_P_H-depend-on-TREE_H-PR111021.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/89_all_Makefile.in-Make-recog.h-depend-on-TREE_H-PR111021.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/90_all_PR54179_genemit-Split-insn-emit.cc-into-ten-files.patch
+	${MV} ${WRKDIR}/${ISL24} ${WRKSRC}/isl
+.endif
+
+CONFIGURE_ARGS+=	--enable-long-long
+CONFIGURE_ARGS+=	--with-local-prefix=${GCC_PREFIX:Q}
+CONFIGURE_ARGS+=	--enable-threads=posix
+CONFIGURE_ARGS+=	--with-boot-ldflags=${BOOT_LDFLAGS:Q}
+CONFIGURE_ARGS+=	--without-zstd
+# causes build errors even when using lang/gcc13 to self-host.
+CONFIGURE_ARGS.SunOS+=	--disable-libsanitizer
+# multilib on Darwin requires fat-binaries
+CONFIGURE_ARGS.Darwin+=	--disable-multilib
+.if !empty(OSX_SDK_PATH)
+CONFIGURE_ARGS.Darwin+=	--with-sysroot=${OSX_SDK_PATH}
+.endif
+CONFIGURE_ARGS.NetBSD+=	--with-gnu-ld --with-ld=/usr/bin/ld
+CONFIGURE_ARGS.NetBSD+=	--with-gnu-as --with-as=/usr/bin/as
+MAKE_ENV.NetBSD+=	ac_cv_func_clock_gettime=yes
+MAKE_ENV.NetBSD+=	ac_cv_func_gethostbyname_r=no
+MAKE_ENV.NetBSD+=	ac_cv_func_freelocale=no
+MAKE_ENV.NetBSD+=	ac_cv_func_newlocale=no
+MAKE_ENV.NetBSD+=	ac_cv_func_uselocale=no
+MAKE_ENV.SunOS+=	ac_cv_func_mkostemp=no
+
+.if !empty(PKGSRC_COMPILER:Mclang) || ${OPSYS} == "DragonFly"
+CONFIGURE_ARGS+=	--disable-bootstrap
+.endif
+
+.if ${MACHINE_PLATFORM:MNetBSD-*-i386} || ${MACHINE_PLATFORM:MLinux-*-i386}
+CONFIGURE_ARGS+=	--with-arch=i486 --with-tune=i486
+.endif
+
+.if ${MACHINE_PLATFORM:MNetBSD-*-x86_64} || ${MACHINE_PLATFORM:MLinux-*-x86_64}
+CONFIGURE_ARGS+=	--with-arch=nocona --with-tune=nocona --with-fpmath=sse
+.endif
+
+.if ${MACHINE_PLATFORM:MDarwin-[0-8].*-*}
+CONFIGURE_ARGS+=	--with-dwarf2
+.endif
+
+# ${WRKSRC}/fixincludes/ looks for sed and compiles the path to sed into
+# a binary so we need to make sure we give it the installed sed and not
+# the tool wrapped one.
+MAKE_ENV+=		ac_cv_path_SED=${TOOLS_SED}
+MAKE_ENV+=		lt_cv_path_SED=${TOOLS_SED}
+
+# Determine whether to use binutils
+.if ${OPSYS} == "SunOS"
+.  if exists(/usr/sfw/bin/gobjdump)
+CONFIGURE_ENV+=		OBJDUMP=/usr/sfw/bin/gobjdump
+.  endif
+.  if exists(/usr/bin/ld)
+CONFIGURE_ARGS+=	--without-gnu-ld --with-ld=/usr/bin/ld
+.  else
+CONFIGURE_ARGS+=	--without-gnu-ld --with-ld=/usr/ccs/bin/ld
+.  endif
+.  if exists(/usr/sfw/bin/gas)
+CONFIGURE_ARGS+=	--with-gnu-as --with-as=/usr/sfw/bin/gas
+.  elif exists(/usr/ccs/bin/as)
+CONFIGURE_ARGS+=	--without-gnu-as --with-as=/usr/ccs/bin/as
+.  else
+BUILDLINK_DEPMETHOD.binutils=	full
+.    include "../../devel/binutils/buildlink3.mk"
+CONFIGURE_ARGS+=	--with-gnu-as --with-as=${PREFIX}/bin/gas
+.  endif
+.endif
+
+.if ${OPSYS} == "Linux"
+# glibc limitations, needs at least -O1
+FORTIFY_SUPPORTED=	no
+.endif
+
+.if ${OS_VARIANT} == "SmartOS"
+SUBST_CLASSES+=		ccs
+SUBST_STAGE.ccs=	pre-configure
+SUBST_FILES.ccs=	contrib/make_sunver.pl
+SUBST_SED.ccs=		-e 's,/usr/ccs/bin,/usr/bin,g'
+.endif
+
+pre-configure:
+	${RUN} cd ${WRKSRC} && ${MKDIR} ${OBJDIR}
+
+CHECK_BUILTIN.zlib:= yes
+.include "../../devel/zlib/builtin.mk"
+CHECK_BUILTIN.zlib:= no
+.if ${USE_BUILTIN.zlib:tl} == yes
+CONFIGURE_ARGS+=	--with-system-zlib
+.else
+CONFIGURE_ARGS+=	--without-system-zlib
+.endif
+.include "../../mk/dlopen.buildlink3.mk"
+.include "../../mk/pthread.buildlink3.mk"

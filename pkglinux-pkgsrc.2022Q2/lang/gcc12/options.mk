@@ -5,7 +5,8 @@ PKG_SUPPORTED_OPTIONS=	nls gcc-inplace-math gcc-c++ gcc-fortran \
 			gcc-go gcc-objc gcc-objc++ gcc-graphite \
 			always-libgcc
 PKG_SUGGESTED_OPTIONS=	gcc-c++ gcc-fortran gcc-objc gcc-objc++ \
-			gcc-graphite gcc-inplace-math
+			gcc-graphite
+#			gcc-graphite gcc-inplace-math
 
 .if ${OPSYS} == "NetBSD"
 PKG_SUGGESTED_OPTIONS+=	nls

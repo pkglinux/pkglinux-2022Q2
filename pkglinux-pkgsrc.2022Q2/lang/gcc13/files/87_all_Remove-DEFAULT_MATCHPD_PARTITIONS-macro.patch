@@ -1,0 +1,72 @@
+https://gcc.gnu.org/git/?p=gcc.git;a=commit;h=bc45e18d433f879a02e369d027829f90f9e85724
+
+From e351a8c9975b93e3e98e52342cb77b6a2969257f Mon Sep 17 00:00:00 2001
+From: Tamar Christina <tamar.christina@arm.com>
+Date: Mon, 12 Jun 2023 14:06:08 +0100
+Subject: [PATCH 10/14] Remove DEFAULT_MATCHPD_PARTITIONS macro
+
+As Jakub pointed out, DEFAULT_MATCHPD_PARTITIONS
+is now unused and can be removed.
+
+gcc/ChangeLog:
+
+	* config.in: Regenerate.
+	* configure: Regenerate.
+	* configure.ac: Remove DEFAULT_MATCHPD_PARTITIONS.
+
+(cherry picked from commit bc45e18d433f879a02e369d027829f90f9e85724)
+---
+ gcc/configure    | 9 ++-------
+ gcc/configure.ac | 2 --
+ 2 files changed, 2 insertions(+), 9 deletions(-)
+
+diff --git a/gcc/configure b/gcc/configure
+index 2c124f1b0337..61c18a13ab7b 100755
+--- a/gcc/configure
++++ b/gcc/configure
+@@ -7914,11 +7914,6 @@ if (test $DEFAULT_MATCHPD_PARTITIONS -lt 1); then
+ fi
+ 
+ 
+-cat >>confdefs.h <<_ACEOF
+-#define DEFAULT_MATCHPD_PARTITIONS $DEFAULT_MATCHPD_PARTITIONS
+-_ACEOF
+-
+-
+ 
+ # Enable __cxa_atexit for C++.
+ # Check whether --enable-__cxa_atexit was given.
+@@ -19873,7 +19868,7 @@ else
+   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
+   lt_status=$lt_dlunknown
+   cat > conftest.$ac_ext <<_LT_EOF
+-#line 19876 "configure"
++#line 19871 "configure"
+ #include "confdefs.h"
+ 
+ #if HAVE_DLFCN_H
+@@ -19979,7 +19974,7 @@ else
+   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
+   lt_status=$lt_dlunknown
+   cat > conftest.$ac_ext <<_LT_EOF
+-#line 19982 "configure"
++#line 19977 "configure"
+ #include "confdefs.h"
+ 
+ #if HAVE_DLFCN_H
+diff --git a/gcc/configure.ac b/gcc/configure.ac
+index 526ce0665a3e..c15b65367419 100644
+--- a/gcc/configure.ac
++++ b/gcc/configure.ac
+@@ -932,8 +932,6 @@ if (test $DEFAULT_MATCHPD_PARTITIONS -lt 1); then
+ 		Cannot be negative.]))
+ fi
+ 
+-AC_DEFINE_UNQUOTED(DEFAULT_MATCHPD_PARTITIONS, $DEFAULT_MATCHPD_PARTITIONS,
+-	[Define to larger than one set the number of match.pd partitions to make.])
+ AC_SUBST(DEFAULT_MATCHPD_PARTITIONS)
+ 
+ # Enable __cxa_atexit for C++.
+-- 
+2.43.0
+

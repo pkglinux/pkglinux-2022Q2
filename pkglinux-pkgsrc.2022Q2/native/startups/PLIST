@@ -21,6 +21,7 @@ share/examples/${PKGNAME}/native/etc/profile.d/readline.sh
 share/examples/${PKGNAME}/native/etc/profile.d/sh.local
 share/examples/${PKGNAME}/native/etc/profile.d/umask.sh
 share/examples/${PKGNAME}/native/etc/profile.d/which.sh
+share/examples/${PKGNAME}/native/etc/rc.local
 share/examples/${PKGNAME}/native/etc/resolv.conf
 share/examples/${PKGNAME}/native/etc/shells
 share/examples/${PKGNAME}/native/root/.bash_logout

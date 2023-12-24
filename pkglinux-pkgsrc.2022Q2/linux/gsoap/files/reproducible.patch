@@ -1,0 +1,33 @@
+Allow to override build date
+
+Without this patch, virtualbox gsoapH_from_gsoap.h file and resulting .so
+files (via NT_GNU_BUILD_ID) always differed between builds
+
+See https://reproducible-builds.org/ for why this is good
+and https://reproducible-builds.org/specs/source-date-epoch/
+for the definition of this variable.
+
+Index: gsoap-2.8.40/gsoap/wsdl/service.cpp
+===================================================================
+--- gsoap-2.8.40.orig/gsoap/wsdl/service.cpp
++++ gsoap-2.8.40/gsoap/wsdl/service.cpp
+@@ -4034,9 +4034,18 @@ static void banner(const char *text1, co
+     fprintf(stderr, "\n----<< %s: %s >>----\n\n", text1, text2 ? text2 : "");
+ }
+ 
++static time_t reproducible_time()
++{
++  time_t t;
++  const char *source_date_epoch = getenv("SOURCE_DATE_EPOCH");
++  if (source_date_epoch == NULL || (t = (time_t)strtoll(source_date_epoch, NULL, 10)) <= 0)
++    t = time(NULL);
++  return t;
++}
++
+ static void ident()
+ {
+-  time_t t = time(NULL), *p = &t;
++  time_t t = reproducible_time(), *p = &t;
+   char tmp[256];
+   int i;
+   strftime(tmp, 256, "%Y-%m-%d %H:%M:%S GMT", gmtime(p));

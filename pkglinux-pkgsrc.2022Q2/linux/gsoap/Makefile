@@ -28,12 +28,14 @@ PKGCONFIG_OVERRIDE+=	gsoapssl.pc.in
 
 #CFLAGS+=	"-DWITH_NO_C_LOCALE"
 #CXXFLAG+=	"-DWITH_NO_C_LOCALE"
+#CONFIGURE_ARGS+=	--disable-c-locale
+CONFIGURE_ARGS+=	--with-zlib=${PREFIX}
+CONFIGURE_ARGS+=	--with-openssl=${PREFIX}
+#build without TLS/SSL -- note: the wsse and wst examples will fail to build
+#CONFIGURE_ARGS+=	--disable-ssl
+CONFIGURE_ARGS+=	--enable-gnutls
 
-CONFIGURE_ARGS+=	--disable-c-locale
-
-INSTALLATION_DIRS=	share/doc/gsoap
-
-post-install:
+post-install0:
 	cd ${DESTDIR}${PREFIX}/lib/ && \
 		${CC} -shared -o libgsoap++.so    libgsoap++.a && \
 		${CC} -shared -o libgsoap.so      libgsoap.a && \
@@ -41,11 +43,16 @@ post-install:
 		${CC} -shared -o libgsoapck.so    libgsoapck.a && \
 		${CC} -shared -o libgsoapssl++.so libgsoapssl++.a &&\
 		${CC} -shared -o libgsoapssl.so   libgsoapssl.a
+
+post-install:
 	lndir.sh -l sf ${PREFIX}/bin ${PREFIX}/native/usr/bin ${DESTDIR}
+	lndir.sh -l sf ${PREFIX}/include ${PREFIX}/native/usr/include ${DESTDIR}
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/usr/lib ${DESTDIR}
-	lndir.sh -l sf ${PREFIX}/share/gsoap ${PREFIX}/native/usr/share/gsoap ${DESTDIR}
 
 .include "../../devel/bison/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
+.include "../../security/gnutls/buildlink3.mk"
+.include "../../security/libgcrypt/buildlink3.mk"
+.include "../../security/libgpg-error/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -35,6 +35,7 @@ pkglinux-install-dir()
   pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin up
   if $PKGLINUX_INSTALL_MIN; then
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in pkgiso -y
+    pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in firmware -y
   else
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in pkglinux -y
   fi

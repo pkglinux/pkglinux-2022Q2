@@ -8,6 +8,11 @@ LICENSE=	mit
 
 ONLY_FOR_PLATFORM=	Linux-*-*
 
+#TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
+#TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
+TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
+TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
+
 USE_LANGUAGES=	# none
 NO_CHECKSUM=		yes
 HAS_CONFIGURE=		no
@@ -18,22 +23,23 @@ GNU_CONFIGURE=		no
 # (cd files && find . -type f | sed 's/$/ \\/')
 STARTUP_FILES= \
 	native/root/.bashrc \
-	native/root/alex.bashrc \
 	native/root/watch.pl \
 	native/root/watch.desktop \
 	native/root/.profile \
 	native/root/wallpapers.desktop \
+	native/root/xinitrc.kde \
+	native/root/alex.bashrc \
 	native/root/.bash_profile \
 	native/root/.wallpapers \
 	native/root/.bash_logout \
-	native/root/.devilspie/Transparent.ds \
 	native/root/watch.sh \
-	native/root/xinitrc \
-	native/root/xinitrc.kde \
 	native/root/update.sh \
+	native/root/xinitrc \
 	native/root/dircolors.ansi-universal \
+	native/root/.devilspie/Transparent.ds \
 	native/etc/ld.so.conf \
 	native/etc/group \
+	native/etc/resolv.conf \
 	native/etc/profile.d/which.sh \
 	native/etc/profile.d/bash_completion.sh \
 	native/etc/profile.d/extrapaths.sh \
@@ -43,12 +49,12 @@ STARTUP_FILES= \
 	native/etc/profile.d/readline.sh \
 	native/etc/modprobe.d/blacklist.conf \
 	native/etc/modprobe.d/usb.conf \
+	native/etc/fstab.iso \
 	native/etc/profile \
-	native/etc/resolv.conf \
+	native/etc/rc.local \
 	native/etc/shells \
 	native/etc/lsb-release \
 	native/etc/fstab \
-	native/etc/fstab.iso \
 	native/etc/hostname \
 	native/etc/netgroup \
 	native/etc/hosts \
@@ -85,8 +91,8 @@ do-install:
 	lnks=`gfind . -type l`; \
 	for lnk in "$$lnks"; do \
 		d=`gdirname ${DESTDIR}${PREFIX}/"$$lnk"`; \
-		${MKDIR} -pv "$$d"; \
-		${CP} -av ${DESTDIR}${EGDIR}/"$$lnk" "$$d"; \
+		/pkg/bin/gmkdir -pv "$$d"; \
+		/pkg/bin/gcp -av ${DESTdiR}${EGDIR}/"$$lnk" "$$d"; \
 	done
 
 

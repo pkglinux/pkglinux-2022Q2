@@ -1,8 +1,8 @@
 #!@RCD_SCRIPTS_SHELL@
 #
-# $NetBSD: vbox.sh,v 2.31 2023/12/16 11:53:29 Exp $
+# $NetBSD: vboxws.sh,v 2.31 2023/12/16 11:53:29 Exp $
 #
-# PROVIDE: vbox
+# PROVIDE: vboxws
 # REQUIRE: DAEMON
 
 . /etc/rc.subr
@@ -21,7 +21,7 @@ then
 	run_rc_command "$1"
 else
 	case ${1:-start} in
-	start)
+	start|YES)
 		if [ -e ${pidfile} ]; then
 			echo -n "${name} is already running at "
 			cat ${pidfile}
@@ -35,7 +35,7 @@ else
 			cat ${pidfile}
 		fi
 		;;
-	stop)
+	stop|NO)
 		if [ -f ${pidfile} ]; then
 			pid=`/bin/head -1 ${pidfile}`
 			echo "Stopping ${name}."

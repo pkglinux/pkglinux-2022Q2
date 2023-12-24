@@ -1,0 +1,39 @@
+From 529909f9e92dd3b0ed0383f45a44d2b5f8a58958 Mon Sep 17 00:00:00 2001
+From: Roger Sayle <roger@nextmovesoftware.com>
+Date: Sun, 6 Aug 2023 23:19:10 +0100
+Subject: [PATCH] [Committed] Avoid FAIL of gcc.target/i386/pr110792.c
+
+My apologies (again), I managed to mess up the 64-bit version of the
+test case for PR 110792.  Unlike the 32-bit version, the 64-bit case
+contains exactly the same load instructions, just in a different order
+making the correct and incorrect behaviours impossible to distinguish
+with a scan-assembler-not.  Somewhere between checking that this test
+failed in a clean tree without the patch, and getting the escaping
+correct, I'd failed to notice that this also FAILs in the patched tree.
+Doh!  Instead of removing the test completely, I've left it as a
+compilation test.
+
+The original fix is tested by the 32-bit test case.
+
+Committed to mainline as obvious.  Sorry for the incovenience.
+
+2023-08-06  Roger Sayle  <roger@nextmovesoftware.com>
+
+gcc/testsuite/ChangeLog
+	PR target/110792
+	* gcc.target/i386/pr110792.c: Remove dg-final scan-assembler-not.
+---
+ gcc/testsuite/gcc.target/i386/pr110792.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/gcc/testsuite/gcc.target/i386/pr110792.c b/gcc/testsuite/gcc.target/i386/pr110792.c
+index b65125c48b62..eea4e1877dbb 100644
+--- a/gcc/testsuite/gcc.target/i386/pr110792.c
++++ b/gcc/testsuite/gcc.target/i386/pr110792.c
+@@ -15,4 +15,3 @@ unsigned __int128 whirl(unsigned char x0)
+    asm("":::"memory");
+    return tt;
+ }
+-/* { dg-final { scan-assembler-not "movq\tWHIRL_S\\+8\\(%rdi\\), %rdi" } } */
+-- 
+2.39.3

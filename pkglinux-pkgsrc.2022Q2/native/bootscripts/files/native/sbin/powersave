@@ -1,0 +1,45 @@
+#!/bin/sh -e
+
+# for hp
+#cpufreq-set -c 0 -g powersave
+#cpufreq-set -c 1 -g powersave
+#cpufreq-set -c 2 -g powersave
+#cpufreq-set -c 3 -g powersave
+#cpufreq-info
+
+# for dell
+#cpufreq-set -c 0 -g conservative
+#cpufreq-set -c 1 -g conservative
+#cpufreq-set -c 2 -g conservative
+#cpufreq-set -c 3 -g conservative
+#cpufreq-info
+
+: '
+CPU performance scaling enables the operating system to scale the CPU frequency up or down in order to save power or improve performance. Scaling can be done automatically in response to system load, adjust itself in response to ACPI events, or be manually changed by user space programs.
+
+The Linux kernel offers CPU performance scaling via the CPUFreq subsystem, which defines two layers of abstraction:
+	Scaling governors implement the algorithms to compute the desired CPU frequency,
+		potentially based off of the systems needs.
+	Scaling drivers interact with the CPU directly,
+		enacting the desired frequencies that the current governor is requesting.
+
+A default scaling driver and governor are selected automatically, but userspace tools like cpupower, acpid, Laptop Mode Tools, or GUI tools provided for your desktop environment, may still be used for advanced configuration. 
+
+Governor 	Description
+performance 	Run the CPU at the maximum frequency,
+		obtained from /sys/devices/system/cpu/cpuX/cpufreq/scaling_max_freq.
+powersave 	Run the CPU at the minimum frequency,
+		obtained from /sys/devices/system/cpu/cpuX/cpufreq/scaling_min_freq.
+userspace 	Run the CPU at user specified frequencies,
+		configurable via /sys/devices/system/cpu/cpuX/cpufreq/scaling_setspeed.
+ondemand 	Scales the frequency dynamically according to current load.
+		Jumps to the highest frequency and then possibly back off as the idle time increases.
+conservative 	Scales the frequency dynamically according to current load.
+		Scales the frequency more gradually than ondemand.
+schedutil 	Scheduler-driven CPU frequency selection. 
+'
+#cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+#echo powersave | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+for (( c=$(cat /proc/cpuinfo | grep processor | wc -l) - 1; c>=0; c--)); do
+	echo powersave > /sys/devices/system/cpu/cpu$c/cpufreq/scaling_governor
+done

@@ -1,0 +1,155 @@
+kub Jelinek  <jakub@redhat.com>
+
+	PR c++/105593
+gcc/c/
+	* c-parser.cc (c_parser_initializer): Check warning_enabled_at
+	at the DECL_SOURCE_LOCATION (decl) for OPT_Winit_self instead
+	of warn_init_self.
+gcc/cp/
+	* decl.cc (cp_finish_decl): Check warning_enabled_at
+	at the DECL_SOURCE_LOCATION (decl) for OPT_Winit_self instead
+	of warn_init_self.
+gcc/testsuite/
+	* c-c++-common/Winit-self3.c: New test.
+	* c-c++-common/Winit-self4.c: New test.
+	* c-c++-common/Winit-self5.c: New test.
+
+--- gcc/c/c-parser.cc.jj	2023-01-11 22:18:25.560492345 +0100
++++ gcc/c/c-parser.cc	2023-01-12 15:30:10.460233783 +0100
+@@ -5701,7 +5701,7 @@ c_parser_initializer (c_parser *parser,
+ 	  && !DECL_EXTERNAL (decl)
+ 	  && !TREE_STATIC (decl)
+ 	  && ret.value == decl
+-	  && !warn_init_self)
++	  && !warning_enabled_at (DECL_SOURCE_LOCATION (decl), OPT_Winit_self))
+ 	suppress_warning (decl, OPT_Winit_self);
+       if (TREE_CODE (ret.value) != STRING_CST
+ 	  && (TREE_CODE (ret.value) != COMPOUND_LITERAL_EXPR
+--- gcc/cp/decl.cc.jj	2023-01-04 18:42:24.597997547 +0100
++++ gcc/cp/decl.cc	2023-01-12 15:26:01.257817526 +0100
+@@ -8407,7 +8407,7 @@ cp_finish_decl (tree decl, tree init, bo
+       if (!DECL_EXTERNAL (decl)
+ 	  && !TREE_STATIC (decl)
+ 	  && decl == tree_strip_any_location_wrapper (init)
+-	  && !warn_init_self)
++	  && !warning_enabled_at (DECL_SOURCE_LOCATION (decl), OPT_Winit_self))
+ 	suppress_warning (decl, OPT_Winit_self);
+     }
+ 
+--- gcc/testsuite/c-c++-common/Winit-self3.c.jj	2023-01-12 15:49:56.759172518 +0100
++++ gcc/testsuite/c-c++-common/Winit-self3.c	2023-01-12 15:50:51.512384963 +0100
+@@ -0,0 +1,36 @@
++/* PR c++/105593 */
++/* { dg-do compile } */
++/* { dg-options "-W -Wall" } */
++
++void bar (int);
++
++static inline int
++baz (void)
++{
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
++  int u = u;		/* { dg-bogus "'u' is used uninitialized" } */
++#pragma GCC diagnostic pop
++  return u;
++}
++
++void
++foo (void)
++{
++  int u = baz ();
++  bar (u);
++}
++
++static inline int
++qux (void)
++{
++  int u = u;		/* { dg-warning "'u' is used uninitialized" "" { target c++ } } */
++  return u;		/* { dg-message "'u' was declared here" "" { target c++ } .-1 } */
++}
++
++void
++corge (void)
++{
++  int u = qux ();
++  bar (u);
++}
+--- gcc/testsuite/c-c++-common/Winit-self4.c.jj	2023-01-12 15:50:15.233906776 +0100
++++ gcc/testsuite/c-c++-common/Winit-self4.c	2023-01-12 15:50:42.445515372 +0100
+@@ -0,0 +1,36 @@
++/* PR c++/105593 */
++/* { dg-do compile } */
++/* { dg-options "-W -Wall -Winit-self" } */
++
++void bar (int);
++
++static inline int
++baz (void)
++{
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
++  int u = u;		/* { dg-bogus "'u' is used uninitialized" } */
++#pragma GCC diagnostic pop
++  return u;
++}
++
++void
++foo (void)
++{
++  int u = baz ();
++  bar (u);
++}
++
++static inline int
++qux (void)
++{
++  int u = u;		/* { dg-warning "'u' is used uninitialized" } */
++  return u;		/* { dg-message "'u' was declared here" "" { target *-*-* } .-1 } */
++}
++
++void
++corge (void)
++{
++  int u = qux ();
++  bar (u);
++}
+--- gcc/testsuite/c-c++-common/Winit-self5.c.jj	2023-01-12 15:51:01.045247847 +0100
++++ gcc/testsuite/c-c++-common/Winit-self5.c	2023-01-12 15:51:12.929076923 +0100
+@@ -0,0 +1,36 @@
++/* PR c++/105593 */
++/* { dg-do compile } */
++/* { dg-options "-W -Wall -Wno-init-self" } */
++
++void bar (int);
++
++static inline int
++baz (void)
++{
++#pragma GCC diagnostic push
++#pragma GCC diagnostic ignored "-Winit-self"
++  int u = u;		/* { dg-bogus "'u' is used uninitialized" } */
++#pragma GCC diagnostic pop
++  return u;
++}
++
++void
++foo (void)
++{
++  int u = baz ();
++  bar (u);
++}
++
++static inline int
++qux (void)
++{
++  int u = u;		/* { dg-bogus "'u' is used uninitialized" } */
++  return u;
++}
++
++void
++corge (void)
++{
++  int u = qux ();
++  bar (u);
++}

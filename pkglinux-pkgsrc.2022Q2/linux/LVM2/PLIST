@@ -1,4 +1,16 @@
 @comment $NetBSD$
+native/usr/include/libdevmapper.h
+native/usr/include/lvm2cmd.h
+native/usr/lib/libdevmapper.so
+native/usr/lib/libdevmapper.so.1.02
+native/usr/lib/liblvm2cmd.so
+native/usr/lib/liblvm2cmd.so.2.03
+native/usr/lib/pkgconfig/devmapper.pc
+native/usr/lib/udev/rules.d/10-dm.rules
+native/usr/lib/udev/rules.d/11-dm-lvm.rules
+native/usr/lib/udev/rules.d/13-dm-disk.rules
+native/usr/lib/udev/rules.d/69-dm-lvm-metad.rules
+native/usr/lib/udev/rules.d/95-dm-notify.rules
 include/libdevmapper.h
 include/lvm2cmd.h
 lib/libdevmapper.so

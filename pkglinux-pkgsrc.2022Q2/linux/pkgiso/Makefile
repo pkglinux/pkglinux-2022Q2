@@ -15,7 +15,7 @@ DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
 DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
-DEPENDS+=	firmware-[0-9]*:../../native/firmware
+#DEPENDS+=	firmware-[0-9]*:../../native/firmware
 DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
 
 DEPENDS+=	nawk-[0-9]*:../../lang/nawk

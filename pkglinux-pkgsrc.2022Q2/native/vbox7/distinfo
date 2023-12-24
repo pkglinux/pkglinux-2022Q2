@@ -3,4 +3,4 @@ $NetBSD$
 BLAKE2s (VirtualBox-7.0.12.tar.bz2) = 7fd689dec33dc0bb5d4affb7c02b878fc33b1d78faf975928c1298bec4d350dd
 SHA512 (VirtualBox-7.0.12.tar.bz2) = 9fe4511442eba788d02f932f5e98cfcc5aa4ebed41c00bd7333cf7e3f5de787e458f1f56930978283f041f403652c803143335fe9120ab63a2c113ca7b3f588f
 Size (VirtualBox-7.0.12.tar.bz2) = 175644088 bytes
-SHA1 (patch-configure-7.0.12) = 7acc2d95c9290d65839c6477889a0cdd0910b5b0
+SHA1 (patch-configure-7.0.12) = 7c4e01a587b9002d32dd8740739f0dc3e5f4ec19
