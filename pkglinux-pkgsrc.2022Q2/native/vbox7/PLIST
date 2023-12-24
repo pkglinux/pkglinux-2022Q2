@@ -1499,4 +1499,5 @@ native/usr/lib/virtualbox/virtualboxvm.desktop
 native/usr/lib/virtualbox/xpidl
 share/applications/virtualbox.desktop
 share/applications/virtualboxvm.desktop
+share/examples/rc.d/vboxdrv
 share/examples/rc.d/vboxws

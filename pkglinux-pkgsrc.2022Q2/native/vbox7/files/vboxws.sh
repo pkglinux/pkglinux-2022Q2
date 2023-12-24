@@ -1,27 +1,30 @@
-#!@RCD_SCRIPTS_SHELL@
+#!/bin/sh
 #
-# $NetBSD: vboxws.sh,v 2.31 2023/12/16 11:53:29 Exp $
+# $NetBSD: vboxws.sh,v 2.31 2023/03/07 11:53:29 Exp $
 #
 # PROVIDE: vboxws
-# REQUIRE: DAEMON
+# REQUIRE: sshd vboxdrv DAEMON LOGIN NETWORKING
 
 . /etc/rc.subr
 
-name="vboxwebsrv"
-rcvar=$name
+name="vboxws"
+rcvar=${name}
 vboxpath="@PREFIX@/native/usr/lib/virtualbox"
-command="${vboxpath}/${name}"
+command="${vboxpath}/vboxwebsrv"
 vbm="${vboxpath}/VBoxManage"
 required_files="${vbm}"
 pidfile="/run/${name}.pid"
 
 if [ -f /etc/rc.subr -a -f /etc/rc.conf -a -f /etc/rc.d/DAEMON ]
 then
-	load_rc_config $name
-	run_rc_command "$1"
-else
+	load_rc_config ${name}
+#	run_rc_command $1
+#else
 	case ${1:-start} in
-	start|YES)
+	start)
+		echo "Please use '/pkg/etc/rc.d/${name} run' to start ${command}."
+		;;
+	run)
 		if [ -e ${pidfile} ]; then
 			echo -n "${name} is already running at "
 			cat ${pidfile}
@@ -35,7 +38,15 @@ else
 			cat ${pidfile}
 		fi
 		;;
-	stop|NO)
+	status)
+		if [ -f ${pidfile} ]; then
+			pid=`/bin/head -1 ${pidfile}`
+			echo "${name} is running as pid ${pid}."
+		else
+			echo "${name} is not running."
+		fi
+		;;
+	stop)
 		if [ -f ${pidfile} ]; then
 			pid=`/bin/head -1 ${pidfile}`
 			echo "Stopping ${name}."
@@ -48,15 +59,7 @@ else
 	restart)
 		( $0 stop )
 		sleep 1
-		$0 start
-		;;
-	status)
-		if [ -f ${pidfile} ]; then
-			pid=`/bin/head -1 ${pidfile}`
-			echo "${name} is running as pid ${pid}."
-		else
-			echo "${name} is not running."
-		fi
+		$0 run
 		;;
 	enum)
 		${vbm} getextradata global enumerate 2> /dev/null

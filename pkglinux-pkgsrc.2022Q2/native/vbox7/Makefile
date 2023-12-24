@@ -6,7 +6,7 @@ DISTVER=	7.0.12
 #DISTVER=	6.1.38
 #DISTVER=	5.2.44
 DISTNAME=	VirtualBox-${DISTVER}
-PKGNAME=	virtualbox-ose-${DISTVER}
+PKGNAME=	vbox7-ose-${DISTVER}
 CATEGORIES=	native
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${DISTVER}/
 EXTRACT_SUFX=	.tar.bz2
@@ -26,7 +26,7 @@ TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 USE_TOOLS+=		gmake gsed:run pkgdiff
 WRKSRC=			${WRKDIR}/${DISTNAME}
 DSTPRE=			${DESTDIR}${PREFIX}
-RCD_SCRIPTS=		vboxws
+RCD_SCRIPTS=		vboxws vboxdrv
 
 #.	if !exists(${WRKSRC}/configure.orig)
 #.	endif
