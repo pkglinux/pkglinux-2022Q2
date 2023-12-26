@@ -1,0 +1,10 @@
+$NetBSD$
+
+BLAKE2s (VirtualBox-4.3.40.tar.bz2) = f9b18dc386ad99387357c78a5efcc225062cc1f80495c8f3cc3b7148ffa9f78b
+SHA512 (VirtualBox-4.3.40.tar.bz2) = 9af5266587206795b685f642633966d2d380130c559f64ce61d81137258b71fd7dfb9b97d67f54ddc2482c44bd226dee02b8ee1fb5f0ce0ec2044cfa1d364260
+Size (VirtualBox-4.3.40.tar.bz2) = 98760522 bytes
+SHA1 (patch-configure-4.3.40) = 9aa60f713b6c6f13ffd4fce00193ec03aabe664a
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_globals_UIImageTools.cpp) = da39a3ee5e6b4b0d3255bfef95601890afd80709
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_widgets_UIMiniToolBar.cpp) = da39a3ee5e6b4b0d3255bfef95601890afd80709
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_widgets_UIPopupBox.cpp) = da39a3ee5e6b4b0d3255bfef95601890afd80709
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_widgets_UIPopupBox.h) = 1774df022f711a9f11f25c5654cda497405439c2

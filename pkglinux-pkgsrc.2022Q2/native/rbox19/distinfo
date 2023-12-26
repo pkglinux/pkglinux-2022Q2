@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (RemoteBox-1.9.tar.bz2) = 81bc342e490b3de4874d308906e789562a41cde84c39ee9cc21ce6ca2b2ac039
+SHA512 (RemoteBox-1.9.tar.bz2) = 20a001e707d8ee27802d53a37fc9b0eec0247c0ea3ecf0c30f84f86a4e05776d915def8ddff0ccfaeb11cc47dfc1bd032d20d2896a0790a16f3fed4cb9620a78
+Size (RemoteBox-1.9.tar.bz2) = 730554 bytes

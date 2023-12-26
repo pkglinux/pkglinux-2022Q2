@@ -63,8 +63,11 @@ CONF_FILES_PERMS+=	${PREFIX}/${EGDIR}/pkgsrc-rc.d-boot \
 RCDBOOT_STYLE=		netbsd-native
 .elif ${OPSYS} == "OpenBSD" && exists(/etc/rc.d/rc.subr)
 RCDBOOT_STYLE=		openbsd-rcd
-.elif ${OPSYS} == "Linux" && exists(/etc/rc.d/rcS) && exists(/etc/rc.subr)
-RCDBOOT_STYLE=		pkglinux
+.elif ${OPSYS} == "Linux" && exists(/etc/rc.d/rcS) && exists(/etc/rc.subr) && exists(/usr/sbin/chkconfig)
+RCDBOOT_STYLE=		linux-sysv-rcd-pkglinux
+CONF_FILES_PERMS+=	${PREFIX}/${EGDIR}/pkgsrc-rc.d-boot \
+			${PREFIX}/native/etc/init.d/pkgsrc-rc.d-boot \
+			${REAL_ROOT_USER} ${REAL_ROOT_GROUP} ${RCD_SCRIPTS_MODE}
 .endif
 
 .if ${RCDBOOT_STYLE} == "unknown"

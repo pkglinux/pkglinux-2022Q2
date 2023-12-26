@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (chkconfig-1.25.tar.gz) = a21827f1d7553a0b484c056aa63971caa6c37afb8b99937e941415e123c53c93
+SHA512 (chkconfig-1.25.tar.gz) = 56ab80760da9690e837dc2955daf5031a3d629ce3e00cafba1bf6f888500946078f907b6262860b244cc0de65f8b075bc90bab68d061c2e48273ddf8e20075c6
+Size (chkconfig-1.25.tar.gz) = 190505 bytes
+SHA1 (patch-Makefile) = f717178be624fe40db479394b16aa68c345dfe1a

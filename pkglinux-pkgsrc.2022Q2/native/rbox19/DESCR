@@ -1,0 +1,40 @@
+
+What is RemoteBox?
+
+RemoteBox is an open-source VirtualBox client which means you can remotely administer (ie over the network) an installation of VirtualBox on a server, including its guests and interact with them as if they were running locally. VirtualBox is installed on the server machine and RemoteBox runs on the client machine. RemoteBox provides a complete Gtk 3 graphical interface with a look and feel similar to that of VirtualBox's native GUI and supports the vast majority of features.
+
+Why is this useful?
+
+VirtualBox is primarily intended to be a desktop virtualization solution. In other words, you install it on your desktop machine and and use it locally. With RemoteBox, you can install VirtualBox on a server and administer it and interfact with the guests as if they were running locally. This has many advantages.
+• Resources are consumed on the server which potentially has more resources than the client
+• If you disconnect or power off the client machine, your session is preserved and continues to run.
+• You can reconnect to your session from another machine or location
+• The operating system on the client and server machines are independent of each other. For example you may prefer the power of running VirtualBox on a Linux server, but wish to use Windows as the desktop
+• You can run multiple servers, potentially in vastly different locations
+
+How does it work?
+
+VirtualBox includes a special web service which exposes its API over the network using a protocol called SOAP. RemoteBox also speaks SOAP and communicates with VirtualBox to perform the various tasks such as creating or starting guests. When guests are powered on, they are started in a mode called headless. This essentially means the guest's display is hidden, however it is accessible using the Remote Desktop Protocol (RDP). RemoteBox uses an RDP client to present the display of a guest to the client machine so it can be used as if it was running locally. Furthermore when you disconnect, your session remains on the server meaning you can reconnect even from another machine or location. You do not need an RDP server software installed the guests, the RDP display is provided directly by VirtualBox
+
+What operating systems does RemoteBox support?
+
+RemoteBox is known to have ran on Linux, MacOS, Solaris, Windows and various modern flavours of BSD. You can connect to servers running Linux, Solaris, MacOS, Windows and FreeBSD. The client and server machines do not need to be running the same operating system.
+
+What licence is RemoteBox published under?
+
+RemoteBox is published under the terms of the GNU GENERAL PUBLIC LICENSE v2 or any later version. RemoteBox ships with icons which originate from the VirtualBox Open Source Edition, released under the GPL. 
+
+Available Downloads
+ 
+Download 		Required VirtualBox Version
+RemoteBox-3.2.tar.bz2 	VirtualBox 7.0.x
+RemoteBox-3.1.tar.bz2 	VirtualBox 6.1.x
+RemoteBox-2.6.tar.bz2 	VirtualBox 6.0.x
+RemoteBox-2.5.tar.bz2 	VirtualBox 5.2.x
+RemoteBox-2.3.tar.bz2 	VirtualBox 5.1.x
+RemoteBox-2.1.tar.bz2 	VirtualBox 5.0.x
+RemoteBox-1.9.tar.bz2 	VirtualBox 4.3.x
+RemoteBox-1.5.tar.bz2 	VirtualBox 4.2.x
+RemoteBox-1.3.tar.bz2 	VirtualBox 4.1.x
+RemoteBox-0.9.tar.bz2 	VirtualBox 4.0.x
+RemoteBox-0.5.tar.bz2 	VirtualBox 3.2.x

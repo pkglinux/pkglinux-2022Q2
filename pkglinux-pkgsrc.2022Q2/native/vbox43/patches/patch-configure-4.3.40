@@ -1,0 +1,306 @@
+$NetBSD$
+
+--- configure.orig	2016-08-22 14:16:03.000000000 +0000
++++ configure
+@@ -20,7 +20,7 @@ export LC_ALL
+ # append some extra paths
+ PATH="$PATH:/opt/gnome/bin"
+ # Solaris (order of paths important for tr, echo, grep, sed to work)
+-PATH="/usr/xpg4/bin:/usr/ucb:$PATH:/usr/local/bin:/usr/sfw/bin:/usr/ccs/bin"
++PATH="/usr/xpg4/bin:/usr/ucb:$PATH:/pkg/bin:/usr/sfw/bin:/usr/ccs/bin"
+ ORGPATH=$PATH
+ 
+ # Wrapper for ancient /usr/bin/which on darwin that always returns 0
+@@ -118,39 +118,39 @@ LIBPTHREAD="-lpthread"
+ LIBCAP="-lcap"
+ GSOAP=""
+ GSOAP_IMPORT=""
+-INCX11="/usr/local/include"
+-LIBX11="-L/usr/X11R6/lib -L/usr/X11R6/lib64 -L/usr/local/lib -lXext -lX11"
++INCX11="/pkg/include"
++LIBX11="-L/usr/X11R6/lib -L/usr/X11R6/lib64 -L/pkg/lib -lXext -lX11"
+ LIBXCURSOR="-lXcursor"
+ LIBXMU="-lXmu"
+ LIBXINERAMA="-lXinerama"
+ LIBXRANDR="-lXrandr"
+ MAKESELF="makeself"
+ MESA="-lGL"
+-INCZ=""
+-LIBZ="-lz"
++INCZ="-I/pkg/include "
++LIBZ="-lz -lz"
+ INCVNCSERVER=""
+ LIBVNCSERVER="-lvncserver"
+ INCDEVMAPPER=""
+ LIBDEVMAPPER="-ldevmapper"
+ CXX_FLAGS=""
+ if [ "$OS" = "freebsd" ]; then
+-  INCCURL="-I/usr/local/include"
+-  LIBCURL="-L/usr/local/lib -lcurl"
+-  INCPULSE="-I/usr/local/include"
+-  LIBPULSE="-L/usr/local/lib"
+-  INCPNG="-I/usr/local/include"
+-  LIBPNG="-L/usr/local/lib -lpng"
++  INCCURL="-I/pkg/include"
++  LIBCURL="-L/pkg/lib -lcurl"
++  INCPULSE="-I/pkg/include"
++  LIBPULSE="-L/pkg/lib"
++  INCPNG="-I/pkg/include"
++  LIBPNG="-L/pkg/lib -lpng"
+ else
+   INCCURL=""
+   LIBCURL="-lcurl"
+   INCPNG=""
+-  LIBPNG="-lpng"
++  LIBPNG="-lpng16"
+ fi
+ INCVPX=""
+ LIBVPX="-lvpx"
+ PKGCONFIG="`which_wrapper pkg-config`"
+-PYTHONDIR="/usr /usr/local"
+-QT4DIR="/usr/lib/qt4 /usr/share/qt4 /usr/lib64/qt4 /usr /usr/local"
++PYTHONDIR="/usr /pkg"
++QT4DIR="/usr/lib/qt4 /usr/share/qt4 /usr/lib64/qt4 /usr /pkg"
+ QT4DIR_PKGCONFIG=1
+ QT4UIC3DIR="/usr/bin"
+ KBUILDDIR="`cd \`dirname $0\`; pwd`/kBuild"
+@@ -676,7 +676,7 @@ extern "C" int main(void)
+ }
+ EOF
+         [ -n "$INCXML2" ] && I_INCXML2=`prefix_I "$INCXML2"`
+-        if test_compile "$LIBXML2 $LIBPTHREAD $I_INCXML2" xml2 xml2; then
++        if test_compile "-I/pkg/include -L/pkg/lib $LIBXML2 $LIBPTHREAD $I_INCXML2" xml2 xml2; then
+           if test_execute; then
+             cnf_append "SDK_VBOX_LIBXML2_INCS" "$INCXML2"
+             cnf_append "SDK_VBOX_LIBXML2_LIBS" "`strip_l "$LIBXML2"`"
+@@ -709,7 +709,7 @@ extern "C" int main(void)
+ }
+ EOF
+         [ -n "$INCXML2" ] && I_INCXML2=`prefix_I "$INCXML2"`
+-        if test_compile "$LIBXML2 $LIBPTHREAD $I_INCXML2" xml2 xml2; then
++        if test_compile "-I/pkg/include -L/pkg/lib $LIBXML2 $LIBPTHREAD $I_INCXML2" xml2 xml2; then
+           if test_execute; then
+             cnf_append "SDK_VBOX_LIBXML2_INCS" "$INCXML2"
+             cnf_append "SDK_VBOX_LIBXML2_LIBS" "`strip_l "$LIBXML2"`"
+@@ -798,7 +798,7 @@ int main()
+ }
+ }
+ EOF
+-  if test_compile "$LIBDEVMAPPER $INCDEVMAPPER" libdevmapper libdevmapper; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBDEVMAPPER $INCDEVMAPPER" libdevmapper libdevmapper; then
+     if test_execute; then
+       cnf_append "VBOX_WITH_DEVMAPPER" "1"
+     fi
+@@ -830,7 +830,7 @@ extern "C" int main(void)
+ #endif
+ }
+ EOF
+-    if test_compile "$INCCRYPTO $LIBCRYPTO" libcrypto openssl; then
++    if test_compile "-I/pkg/include -L/pkg/lib $INCCRYPTO $LIBCRYPTO" libcrypto openssl; then
+       if test_execute nofatal; then
+         cnf_append "SDK_VBOX_OPENSSL_INCS" "`strip_I "$INCCRYPTO"`"
+         cnf_append "SDK_VBOX_OPENSSL_LIBS" "`strip_l "$LIBCRYPTO"`"
+@@ -898,7 +898,7 @@ extern "C" int main(void)
+ }
+ EOF
+   [ -n "$INCZ" ] && I_INCZ=`prefix_I "$INCZ"`
+-  if test_compile "$LIBZ $I_INCZ" zlib zlib; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBZ $I_INCZ" zlib zlib; then
+     if test_execute; then
+       echo "if1of (\$(KBUILD_TARGET),darwin freebsd haiku linux)" >> $CNF
+       cnf_append " SDK_VBOX_ZLIB_LIBS" "`strip_l "$LIBZ"`"
+@@ -931,7 +931,7 @@ extern "C" int main(void)
+ }
+ EOF
+   [ -n "$INCPNG" ] && I_INCPNG=`prefix_I "$INCPNG"`
+-  if test_compile "$LIBPNG $I_INCPNG" libpng libpng; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBPNG $I_INCPNG" libpng libpng; then
+     if test_execute; then
+       cnf_append "SDK_VBOX_LIBPNG_LIBS" "`strip_l "$LIBPNG"`"
+       cnf_append "SDK_VBOX_LIBPNG_INCS" "$INCPNG"
+@@ -973,7 +973,7 @@ extern "C" int main()
+   }
+ }
+ EOF
+-  if test_compile "$LIBVNCSERVER $INCVNCSERVER" libvncserver libvncserver; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBVNCSERVER $INCVNCSERVER" libvncserver libvncserver; then
+     if test_execute; then
+       cnf_append "VBOX_WITH_EXTPACK_VNC" "1"
+     fi
+@@ -1003,7 +1003,7 @@ extern "C" int main(void)
+ }
+ EOF
+     [ -n "$INCCURL" ] && I_INCCURL=`prefix_I "$INCCURL"`
+-    if test_compile "$LIBCURL $I_INCCURL" libcurl libcurl; then
++    if test_compile "-I/pkg/include -L/pkg/lib $LIBCURL $I_INCCURL" libcurl libcurl; then
+       if test_execute; then
+         cnf_append "SDK_VBOX_LIBCURL_LIBS" "`strip_l "$LIBCURL"`"
+         cnf_append "SDK_VBOX_LIBCURL_INCS" "$INCCURL"
+@@ -1040,7 +1040,7 @@ extern "C" int main(void)
+   }
+ }
+ EOF
+-  if test_compile "-lpam" pam pam nofatal; then
++  if test_compile "-I/pkg/include -L/pkg/lib -lpam" pam pam nofatal; then
+     if test_execute nofatal; then
+       return 0;
+     fi
+@@ -1065,7 +1065,7 @@ extern "C" int main(void)
+   }
+ }
+ EOF
+-  if test_compile "-lpam" pam pam; then
++  if test_compile "-I/pkg/include -L/pkg/lib -lpam" pam pam; then
+     test_execute
+   fi
+ }
+@@ -1123,7 +1123,7 @@ extern "C" int main(int argc, char** arg
+ }
+ EOF
+     [ -n "$INCSDL" ] && I_INCSDL=`prefix_I "$INCSDL"`
+-    if test_compile "$LIBSDL $LIBSDLMAIN $I_INCSDL $FLDSDL" SDL SDL; then
++    if test_compile "-I/pkg/include -L/pkg/lib $LIBSDL $LIBSDLMAIN $I_INCSDL $FLDSDL" SDL SDL; then
+       if test_execute; then
+         cnf_append "LIB_SDK_LIBSDL_SDL"     "`strip_l "$LIBSDL"`"
+         cnf_append "SDK_LIBSDL_LIBPATH"     "`strip_L "$LIBSDL"`"
+@@ -1166,7 +1166,7 @@ extern "C" int main(void)
+ #endif
+ }
+ EOF
+-  if test_compile "-lSDL_ttf $I_INCSDL" SDL_ttf SDL_ttf nofatal; then
++  if test_compile "-I/pkg/include -L/pkg/lib -lSDL_ttf $I_INCSDL" SDL_ttf SDL_ttf nofatal; then
+     if ! test_execute nofatal; then
+       cnf_append "VBOX_WITH_SECURELABEL" ""
+     fi
+@@ -1199,7 +1199,7 @@ extern "C" int main(void)
+ #endif
+ }
+ EOF
+-  if test_compile "-lasound" asound asound; then
++  if test_compile "-I/pkg/include -L/pkg/lib -lasound" asound asound; then
+     test_execute
+   fi
+ }
+@@ -1226,7 +1226,7 @@ extern "C" int main(void)
+ #endif
+ }
+ EOF
+-  if test_compile "$INCPULSE $LIBPULSE -lpulse" pulse pulse; then
++  if test_compile "-I/pkg/include -L/pkg/lib $INCPULSE $LIBPULSE -lpulse" pulse pulse; then
+     test_execute
+   fi
+ }
+@@ -1258,7 +1258,7 @@ extern "C" int main(void)
+ }
+ EOF
+   [ -n "$INCX11" ] && I_INCX11=`prefix_I "$INCX11"`
+-  if test_compile "$LIBX11 $I_INCX11" Xlibs Xlibs; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBX11 $I_INCX11" Xlibs Xlibs; then
+     log_success "found"
+   fi
+ }
+@@ -1282,7 +1282,7 @@ extern "C" int main(void)
+ }
+ EOF
+   [ -n "$INCX11" ] && I_INCX11=`prefix_I "$INCX11"`
+-  if test_compile "$LIBX11 $LIBXCURSOR $I_INCX11" Xcursor Xcursor; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBX11 $LIBXCURSOR $I_INCX11" Xcursor Xcursor; then
+     log_success "found"
+     cnf_append "VBOX_XCURSOR_LIBS" "`strip_l "$LIBXCURSOR"`"
+   fi
+@@ -1311,7 +1311,7 @@ extern "C" int main(void)
+ }
+ EOF
+   [ -n "$INCX11" ] && I_INCX11=`prefix_I "$INCX11"`
+-  if test_compile "$LIBX11 $LIBXINERAMA $I_INCX11" Xinerama Xinerama; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBX11 $LIBXINERAMA $I_INCX11" Xinerama Xinerama; then
+     log_success "found"
+   fi
+ }
+@@ -1340,7 +1340,7 @@ extern "C" int main(void)
+ }
+ EOF
+   [ -n "$INCX11" ] && I_INCX11=`prefix_I "$INCX11"`
+-  if test_compile "$LIBX11 $LIBXRANDR $I_INCX11" Xrandr Xrandr; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBX11 $LIBXRANDR $I_INCX11" Xrandr Xrandr; then
+     log_success "found"
+   fi
+ }
+@@ -1395,7 +1395,7 @@ extern "C" int main(void)
+ }
+ EOF
+   [ -n "$INCX11" ] && I_INCX11=`prefix_I "$INCX11"`
+-  if test_compile "$LIBX11 $LIBXMU $I_INCX11" Xmu Xmu; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBX11 $LIBXMU $I_INCX11" Xmu Xmu; then
+     log_success "found"
+     cnf_append "VBOX_XMU_LIBS" "`strip_l "$LIBXMU"`"
+   fi
+@@ -1433,7 +1433,7 @@ extern "C" int main(void)
+ }
+ EOF
+   [ -n "$INCX11" ] && I_INCX11=`prefix_I "$INCX11"`
+-  if test_compile "$LIBX11 $MESA $I_INCX11" Mesa Mesa; then
++  if test_compile "-I/pkg/include -L/pkg/lib $LIBX11 $MESA $I_INCX11" Mesa Mesa; then
+     [ $PASSIVE_MESA -eq 1 ] && unset DISPLAY
+     test_execute
+   fi
+@@ -1526,12 +1526,12 @@ EOF
+         FLGQT4="-DQT_SHARED"
+         I_INCQT4=`prefix_I "$INCQT4"`
+         LIBQT4="-L$q/lib -lQtCoreVBox"
+-        if test_compile "$LIBQT4 $LIBPTHREAD $I_INCQT4 $FLGQT4" qt4 qt4 nofatal; then
++        if test_compile "-I/pkg/include -L/pkg/lib $LIBQT4 $LIBPTHREAD $I_INCQT4 $FLGQT4" qt4 qt4 nofatal; then
+           foundqt4=2
+           break;
+         fi
+         LIBQT4="-L$q/lib -lQtCore"
+-        if test_compile "$LIBQT4 $LIBPTHREAD $I_INCQT4 $FLGQT4" qt4 qt4 nofatal; then
++        if test_compile "-I/pkg/include -L/pkg/lib $LIBQT4 $LIBPTHREAD $I_INCQT4 $FLGQT4" qt4 qt4 nofatal; then
+           foundqt4=1
+           break;
+         fi
+@@ -1555,7 +1555,7 @@ extern "C" int main(void)
+ }
+ EOF
+     [ -n "$INCQT4" ] && I_INCQT4=`prefix_I "$INCQT4"`
+-    if test_compile "$LIBQT4 $LIBPTHREAD $I_INCQT4 $FLGQT4" qt4 qt4 nofatal; then
++    if test_compile "-I/pkg/include -L/pkg/lib $LIBQT4 $LIBPTHREAD $I_INCQT4 $FLGQT4" qt4 qt4 nofatal; then
+       if test_execute_path "`strip_L "$LIBQT4"`"; then
+         if [ "$OS" = "darwin" ]; then
+           # Successful build & run the test application so add the necessary
+@@ -1667,7 +1667,7 @@ extern "C" int main(void)
+ }
+ EOF
+       [ -n "$INCVPX" ] && I_INCVPX=`prefix_I "$INCVPX"`
+-      if test_compile "$LIBVPX $I_INCVPX" vpx vpx; then
++      if test_compile "-I/pkg/include -L/pkg/lib $LIBVPX $I_INCVPX" vpx vpx; then
+         if test_execute; then
+           cnf_append "SDK_VBOX_VPX_INCS" "$INCVPX"
+           cnf_append "SDK_VBOX_VPX_LIBS" "`strip_l "$LIBVPX"`"
+@@ -1695,7 +1695,7 @@ extern "C" int main(void)
+   return 0;
+ }
+ EOF
+-  if test_compile "$libstdcxx" libstdc++ libstdc++; then
++  if test_compile "-I/pkg/include -L/pkg/lib $libstdcxx" libstdc++ libstdc++; then
+     log_success "found"
+   fi
+ }
+@@ -2065,7 +2065,7 @@ check_gsoap()
+         else
+           cnf_append "VBOX_GSOAP_CXX_SOURCES" ""
+         fi
+-        cnf_append "VBOX_GSOAP_CXX_LIBS"    "`strip_l "$GSOAP_CXX_LIBS"`"
++        cnf_append "VBOX_GSOAP_CXX_LIBS"    "`strip_l "$GSOAP_CXX_LIBS"` z gnutls gcrypt gpg-error"
+         gsoap_version=`pkg-config gsoapssl++ --modversion`
+         log_success "found version $gsoap_version"
+         return
+@@ -2073,7 +2073,7 @@ check_gsoap()
+     fi
+   fi
+   if [ -z "$GSOAP" ]; then
+-    GSOAP="/usr"
++    GSOAP="/pkg"
+   fi
+   if which_wrapper "$GSOAP/bin/soapcpp2" > /dev/null; then
+     if which_wrapper "$GSOAP/bin/wsdl2h" > /dev/null; then

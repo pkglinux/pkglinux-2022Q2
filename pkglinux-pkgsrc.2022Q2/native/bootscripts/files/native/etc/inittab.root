@@ -1,0 +1,31 @@
+# Begin /etc/inittab
+# Use command "man inittab" to see format of the inittab
+# file sysv-compatible init programs from
+# http://download.savannah.gnu.org/releases/sysvinit/
+
+id:3:initdefault:
+
+si::sysinit:/etc/rc.d/rc S
+
+l0:0:wait:/etc/rc.d/rc0
+l1:1:wait:/etc/rc.d/rc1
+l2:2:wait:/etc/rc.d/rc2
+l3:3:wait:/etc/rc.d/rc3
+l4:4:wait:/etc/rc.d/rc4
+l5:5:wait:/etc/rc.d/rc5
+l6:6:wait:/etc/rc.d/rc6
+
+ca:12345:ctrlaltdel:/sbin/shutdown -t1 -a -r now
+
+su:S06:once:/sbin/sulogin
+s1:1:respawn:/sbin/sulogin
+
+#c1:2345:respawn:/sbin/agetty --noclear tty1 9600
+c1:2345:respawn:/sbin/agetty --autologin root --noclear tty1 38400
+c2:2345:respawn:/sbin/agetty tty2 9600
+c3:2345:respawn:/sbin/agetty tty3 9600
+c4:2345:respawn:/sbin/agetty tty4 9600
+c5:2345:respawn:/sbin/agetty tty5 9600
+c6:2345:respawn:/sbin/agetty tty6 9600
+
+# End /etc/inittab

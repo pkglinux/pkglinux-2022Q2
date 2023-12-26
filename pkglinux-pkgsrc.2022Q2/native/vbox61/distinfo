@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (VirtualBox-6.1.48.tar.bz2) = 67c70bfd6aa6ac986eaacaf67544decaa48668b8667a3515fae43a90d92b75ec
+SHA512 (VirtualBox-6.1.48.tar.bz2) = fff759f3871e4e8962536002f2bc13e5150a927e280493f5cb0abf06466ce66e45f4c6ef43489b5b3ed8682d8a3ac0eb6fb3dd7c4144924c81612553ec71a95f
+Size (VirtualBox-6.1.48.tar.bz2) = 165960987 bytes
+SHA1 (patch-configure-6.1.48) = fcbc797dc533ddee7a3cdd0aa3a5b0f2fb50ea39

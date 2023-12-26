@@ -111,6 +111,7 @@ DEPENDS+=	bind-[0-9]*:../../net/bind916
 DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
 DEPENDS+=	rc.d-boot-[0-9]*:../../pkgtools/rc.d-boot
+DEPENDS+=	chkconfig-[0-9]*:../../native/chkconfig
 DEPENDS+=	genfstab-[0-9]*:../../native/genfstab
 DEPENDS+=	mtools-[0-9]*:../../sysutils/mtools
 DEPENDS+=	libisoburn-[0-9]*:../../sysutils/libisoburn

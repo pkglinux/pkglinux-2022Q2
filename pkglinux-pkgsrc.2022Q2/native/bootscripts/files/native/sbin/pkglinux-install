@@ -130,7 +130,7 @@ pkglinux-install-dir()
     (cd $1/pkg/share/icons/; tar $PKGLINUX_INSTALL_VERBOSE -xJf $1/root/aero.txz)
   else
     (cd $1; ln $PKGLINUX_INSTALL_VERBOSE -snf pkg/native/boot; rm -vf libx32)
-    (cd $1/etc; cp $PKGLINUX_INSTALL_VERBOSE inittab.bsd inittab)
+    (cd $1/etc; cp $PKGLINUX_INSTALL_VERBOSE inittab.root inittab)
     (cd $1/etc; mv $PKGLINUX_INSTALL_VERBOSE fstab.iso fstab)
     (cd $1/lib/; ln $PKGLINUX_INSTALL_VERBOSE -snf ../etc/modprobe.d)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/dhcpcd .)

@@ -1,0 +1,11 @@
+$NetBSD$
+
+BLAKE2s (VirtualBox-5.2.44.tar.bz2) = 15301b15641157652e304e16ff1e5ca8a06fd2a4ae0fe08edd3f2d013ac59a81
+SHA512 (VirtualBox-5.2.44.tar.bz2) = 329b5f8bc4902214d740b2089731c41d1185e76621a5438045e13d03dae739f902fb159b70cb22d1fecbecdf5c2b516ef49ad426cdc606a018e65713dec4ed26
+Size (VirtualBox-5.2.44.tar.bz2) = 124016934 bytes
+SHA1 (patch-configure-5.2.44) = 4cdeae2c4bdb59e5403463ec0a349968b447a8bc
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_globals_UIImageTools.cpp) = 6e244e02b11d6116343b9ecbd2defdf21641f04e
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_widgets_UIMenuToolBar.cpp) = e6fb6575e5ab148e50da9d534ef3378d5a954c0f
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_widgets_UIMiniToolBar.cpp) = 205dfcb5cea0cc59df61567fed27ba4205396fd8
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_widgets_UIPopupBox.cpp) = 7db4c5d789e22a2a660e662a9e8df25e17ffa2f9
+SHA1 (patch-src_VBox_Frontends_VirtualBox_src_widgets_UIPopupBox.h) = db2e85714017e8011d7251890457ec5e79e8a1dc

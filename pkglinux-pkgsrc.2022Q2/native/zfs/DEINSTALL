@@ -1,0 +1,23 @@
+# $NetBSD: DEINSTALL,v 1.4 2023/12/28 20:24:02 Exp $
+
+ZFS_SYSV_RC1=@ZFS_SYSV_RC1@
+ZFS_SYSV_RC2=@ZFS_SYSV_RC2@
+ZFS_SYSV_RC3=@ZFS_SYSV_RC3@
+ZFS_SYSV_RC4=@ZFS_SYSV_RC4@
+ZFS_SYSV_RC5=@ZFS_SYSV_RC5@
+
+case "${STAGE}" in
+
+DEINSTALL)
+	chkconfig "${ZFS_SYSV_RC1}" off
+	chkconfig "${ZFS_SYSV_RC2}" off
+	chkconfig "${ZFS_SYSV_RC3}" off
+	chkconfig "${ZFS_SYSV_RC4}" off
+	chkconfig "${ZFS_SYSV_RC5}" off
+	chkconfig --del "${ZFS_SYSV_RC1}"
+	chkconfig --del "${ZFS_SYSV_RC2}"
+	chkconfig --del "${ZFS_SYSV_RC3}"
+	chkconfig --del "${ZFS_SYSV_RC4}"
+	chkconfig --del "${ZFS_SYSV_RC5}"
+	;;
+esac
