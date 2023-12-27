@@ -22,8 +22,11 @@ native/etc/rc5.d
 native/etc/rc6.d
 native/etc/rcS.d
 native/etc/sysconfig/console
-native/lib/lsb
-native/lib/services/init-functions
+native/lib/init/init-d-script
+native/lib/init/vars.sh
+native/lib/lsb/init-functions
+native/lib/lsb/init-functions.d/00-verbose
+native/lib/services
 native/sbin/lndir
 native/sbin/lndir.sh
 native/sbin/pkg-chroot
@@ -36,6 +39,7 @@ native/sbin/pkglinux-makeusb
 native/sbin/pkglinux-upgrade
 native/sbin/powersave
 native/sbin/service
+native/sbin/start-stop-daemon
 native/sbin/wpa.sh
 native/usr/bin/which
 native/usr/share/man/man1/pkg-chroot.1
@@ -53,3 +57,4 @@ native/usr/share/man/man1/pkglinux-upgrade.1
 @pkgdir native/etc/rc.d/rc2.d
 @pkgdir native/etc/rc.d/rc1.d
 @pkgdir native/etc/rc.d/rc0.d
+@pkgdir native/etc/rc.d/init.d

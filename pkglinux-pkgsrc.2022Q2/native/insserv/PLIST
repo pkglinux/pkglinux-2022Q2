@@ -1,0 +1,4 @@
+@comment $NetBSD$
+native/etc/insserv.conf
+native/usr/sbin/insserv
+native/usr/share/man/man8/insserv.8

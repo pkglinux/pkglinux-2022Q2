@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (insserv-1.24.0.tar.xz) = 4e4764fd33d48c5a703152ad990996b385fda5cf6fa7d2b79e2baaf47de31156
+SHA512 (insserv-1.24.0.tar.xz) = fbb22bee1f56255e9e31ac9af94d3a0e535455a97ef2e218951d5b32e734a619b6406445f4ad4334a64259821fbef696c3b5fe158ba6ea2fe37625ca8b697347
+Size (insserv-1.24.0.tar.xz) = 64560 bytes
