@@ -22,6 +22,9 @@ do-install:
 	${CP} -av ${FILESDIR}/lndir ${DESTDIR}${PREFIX}/native/sbin/
 	${CP} -av /pkg/sbin/start-stop-daemon ${DESTDIR}${PREFIX}/native/sbin/
 
+# make sure "/pkg/sbin/start-stop-daemon" is available
+BUILD_DEPENDS+=	dpkg-[0-9]*:../../linux/dpkg
+
 .include "../../native/debianutils/buildlink3.mk"
 .include "../../native/insserv/buildlink3.mk"
 .include "../../native/startpar/buildlink3.mk"
