@@ -22,6 +22,7 @@ do-install:
 	${CP} -av ${FILESDIR}/lndir ${DESTDIR}${PREFIX}/native/sbin/
 	${CP} -av /pkg/sbin/start-stop-daemon ${DESTDIR}${PREFIX}/native/sbin/
 
+.include "../../native/debianutils/buildlink3.mk"
 .include "../../native/insserv/buildlink3.mk"
 .include "../../native/startpar/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

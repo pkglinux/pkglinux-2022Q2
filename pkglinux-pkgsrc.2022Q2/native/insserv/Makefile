@@ -10,8 +10,6 @@ HOMEPAGE=	https://download-mirror.savannah.gnu.org/releases/sysvinit/
 COMMENT=	boot sequence organizer using LSB init.d script
 LICENSE=	gnu-gpl-v2
 
-ONLY_FOR_PLATFORM=	Linux-*-*
-
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
 TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
