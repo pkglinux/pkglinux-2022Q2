@@ -221,7 +221,7 @@ $PKGLINUX_MAKEUSB_FORCE && rm $PKGLINUX_MAKEUSB_VERBOSE -f $PKGLINUX_MAKEUSB_IMG
 
 [[ $PKGLINUX_MAKEUSB_BLANK =~ ^[0-9]+$ ]] || { echo "$PKGLINUX_MAKEUSB_BLANK is not a number." && exit 1; }
 
-find /dev -type b -name "loop?p?" | xargs -I D umount $PKGLINUX_MAKEUSB_VERBOSE -f D
+#find /dev -type b -name "loop?p?" | xargs -I D umount $PKGLINUX_MAKEUSB_VERBOSE -f D
 losetup $PKGLINUX_MAKEUSB_VERBOSE -D
 
 if [ -f ${PKGLINUX_MAKEUSB_SFSFILE} ]; then

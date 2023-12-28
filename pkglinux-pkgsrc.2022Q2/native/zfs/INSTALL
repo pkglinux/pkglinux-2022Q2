@@ -1,5 +1,6 @@
 # $NetBSD: INSTALL,v 1.6 2023/12/28 20:24:02 Exp $
 
+ZFS_SYSV_RC0=@ZFS_SYSV_RC0@
 ZFS_SYSV_RC1=@ZFS_SYSV_RC1@
 ZFS_SYSV_RC2=@ZFS_SYSV_RC2@
 ZFS_SYSV_RC3=@ZFS_SYSV_RC3@
@@ -9,15 +10,15 @@ ZFS_SYSV_RC5=@ZFS_SYSV_RC5@
 case "${STAGE}" in
 
 POST-INSTALL)
-	chkconfig --add "${ZFS_SYSV_RC1}"
-	chkconfig --add "${ZFS_SYSV_RC2}"
-	chkconfig --add "${ZFS_SYSV_RC3}"
-	chkconfig --add "${ZFS_SYSV_RC4}"
-	chkconfig --add "${ZFS_SYSV_RC5}"
-	chkconfig "${ZFS_SYSV_RC1}" on
-	chkconfig "${ZFS_SYSV_RC2}" on
-	chkconfig "${ZFS_SYSV_RC3}" on
-	chkconfig "${ZFS_SYSV_RC4}" on
-#	chkconfig "${ZFS_SYSV_RC5}" on
+	${ZFS_SYSV_RC0}/sbin/chkconfig --add "${ZFS_SYSV_RC1}"
+	${ZFS_SYSV_RC0}/sbin/chkconfig --add "${ZFS_SYSV_RC2}"
+	${ZFS_SYSV_RC0}/sbin/chkconfig --add "${ZFS_SYSV_RC3}"
+	${ZFS_SYSV_RC0}/sbin/chkconfig --add "${ZFS_SYSV_RC4}"
+	${ZFS_SYSV_RC0}/sbin/chkconfig --add "${ZFS_SYSV_RC5}"
+	${ZFS_SYSV_RC0}/sbin/chkconfig "${ZFS_SYSV_RC1}" on
+	${ZFS_SYSV_RC0}/sbin/chkconfig "${ZFS_SYSV_RC2}" on
+	${ZFS_SYSV_RC0}/sbin/chkconfig "${ZFS_SYSV_RC3}" on
+	${ZFS_SYSV_RC0}/sbin/chkconfig "${ZFS_SYSV_RC4}" on
+#	${ZFS_SYSV_RC0}/sbin/chkconfig "${ZFS_SYSV_RC5}" on
 	;;
 esac

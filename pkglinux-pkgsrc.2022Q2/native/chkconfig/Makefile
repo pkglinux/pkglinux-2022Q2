@@ -46,6 +46,10 @@ DSTPRE=			${DESTDIR}${PREDIR}
 post-extract:
 	${MKDIR} -v ${BLDPRE}
 
+post-patch:
+	cd ${WRKSRC} && \
+	gsed -e 's|#define RUNLEVELS "/etc"|#define RUNLEVELS "${PREFIX}/native/etc/rc.d"|g' -i leveldb.h
+
 do-build:
 	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
 	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDPRE} install-strip || ${GMAKE} DESTDIR=${BLDPRE} install)
