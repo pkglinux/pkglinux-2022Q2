@@ -32,6 +32,8 @@ if [ -x /etc/rc.shutdown ]; then
 	  /etc/rc.shutdown
 fi
 
+/etc/rc.d/rc ${@}
+
 echo "Saving random seed ..."
 /bin/dd if=/dev/urandom of=/var/tmp/random-seed count=1 &>/dev/null
 

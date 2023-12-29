@@ -22,5 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 MIT-LICENSE
 
+/etc/rc.d/rc ${@}
+
 [ -x /pkg/etc/rc.d/dhcpcd         ] && /pkg/etc/rc.d/dhcpcd        start || \
 [ -x /pkg/etc/rc.d/NetworkManager ] && /pkg/etc/rc.d/NetworkManger start
