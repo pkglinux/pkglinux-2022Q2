@@ -58,8 +58,8 @@ do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
 
-post-install:
-	lndir.sh -l sf ${PREFIX}/native/usr/sbin ${PREFIX}/native/sbin ${DESTDIR}
+#post-install:
+#	lndir.sh -l sf ${PREFIX}/native/usr/sbin ${PREFIX}/native/sbin ${DESTDIR}
 
 #	cd ${DSTPRE}/usr/ && ${RM} \
 #		sbin/alternatives \

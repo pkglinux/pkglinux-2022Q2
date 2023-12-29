@@ -1,9 +1,17 @@
 @comment $NetBSD$
+lib/udev/hwclock-set
+lib/udev/rules.d/85-hwclock.rules
 native/boot/grub/grub.cfg
 native/boot/syslinux/syslinux.cfg
+native/etc/default/devpts
+native/etc/default/halt
+native/etc/default/hwclock
+native/etc/default/rcS
+native/etc/default/tmpfs
 native/etc/init.d
 native/etc/inittab.alex
 native/etc/inittab.root
+native/etc/network/if-up.d/mountnfs
 native/etc/rc.d/rc
 native/etc/rc.d/rc0
 native/etc/rc.d/rc1
@@ -22,11 +30,18 @@ native/etc/rc5.d
 native/etc/rc6.d
 native/etc/rcS.d
 native/etc/sysconfig/console
+native/etc/udev/hwclock-set
+native/etc/udev/rules.d/85-hwclock.rules
+native/lib/init/bootclean.sh
 native/lib/init/init-d-script
+native/lib/init/mount-functions.sh
+native/lib/init/tmpfs.sh
 native/lib/init/vars.sh
 native/lib/lsb/init-functions
 native/lib/lsb/init-functions.d/00-verbose
 native/lib/services
+native/lib/udev/hwclock-set
+native/lib/udev/rules.d/85-hwclock.rules
 native/sbin/lndir
 native/sbin/lndir.sh
 native/sbin/pkg-chroot
@@ -42,6 +57,8 @@ native/sbin/service
 native/sbin/start-stop-daemon
 native/sbin/wpa.sh
 native/usr/bin/which
+native/usr/lib/udev/hwclock-set
+native/usr/lib/udev/rules.d/85-hwclock.rules
 native/usr/share/man/man1/pkg-chroot.1
 native/usr/share/man/man1/pkg-strap.1
 native/usr/share/man/man1/pkglinux-install.1

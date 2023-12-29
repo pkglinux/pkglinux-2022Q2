@@ -1,5 +1,4 @@
 @comment $NetBSD$
-native/sbin/chkconfig
 native/usr/share/man/man8/chkconfig.8
 native/usr/sbin/chkconfig
 native/usr/share/locale/ar/LC_MESSAGES/chkconfig.mo

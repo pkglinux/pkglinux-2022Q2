@@ -34,10 +34,6 @@ DEINSTALL)
 				&& ${MV} /etc/rc.conf.local.tmp /etc/rc.conf.local
 		done
 		;;
-	linux-sysv-rcd-pkglinux)
-		${RCD_SCRIPTS_DIR}/../../sbin/chkconfig pkgsrc-rc.d-boot off
-		${RCD_SCRIPTS_DIR}/../../sbin/chkconfig --del pkgsrc-rc.d-boot
-		;;
 	esac
 
 	case "${RCDBOOT_STYLE}" in

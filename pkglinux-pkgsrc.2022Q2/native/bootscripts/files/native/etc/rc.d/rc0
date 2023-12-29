@@ -27,6 +27,11 @@ if [ -x /pkg/sbin/rc.d-boot ]; then
   /pkg/sbin/rc.d-boot stop
 fi
 
+# Run rc.shutdown after stopping rc.d-boot daemon
+if [ -x /etc/rc.shutdown ]; then
+	  /etc/rc.shutdown
+fi
+
 echo "Saving random seed ..."
 /bin/dd if=/dev/urandom of=/var/tmp/random-seed count=1 &>/dev/null
 

@@ -52,6 +52,7 @@ STARTUP_FILES= \
 	native/etc/fstab.iso \
 	native/etc/profile \
 	native/etc/rc.local \
+	native/etc/rc.shutdown \
 	native/etc/shells \
 	native/etc/lsb-release \
 	native/etc/fstab \

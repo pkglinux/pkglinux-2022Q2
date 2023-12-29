@@ -33,10 +33,6 @@ POST-INSTALL)
 			> /etc/rc.conf.local.tmp \
 			&& ${MV} /etc/rc.conf.local.tmp /etc/rc.conf.local
 		;;
-	linux-sysv-rcd-pkglinux)
-		${RCD_SCRIPTS_DIR}/../../sbin/chkconfig --add pkgsrc-rc.d-boot
-		${RCD_SCRIPTS_DIR}/../../sbin/chkconfig pkgsrc-rc.d-boot on
-		;;
 	esac
 
 	;;

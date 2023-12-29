@@ -1,0 +1,57 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:            localnet
+# Required-Start:      mountdevsubfs
+# Should-Start:        modules
+# Required-Stop:
+# Should-Stop:
+# Default-Start:       S
+# Default-Stop:        0 6
+# Short-Description:   Starts the local network.
+# Description:         Sets the hostname of the machine and starts the
+#                      loopback interface.
+### END INIT INFO
+
+. /lib/lsb/init-functions
+[ -r /etc/sysconfig/network ] && . /etc/sysconfig/network
+[ -r /etc/hostname ] && HOSTNAME=`cat /etc/hostname`
+
+case "${1}" in
+   start)
+      log_action_begin_msg "Bringing up the loopback interface..."
+      ip addr add 127.0.0.1/8 label lo dev lo
+      ip link set lo up
+      log_end_msg $?
+
+      log_action_begin_msg "Setting hostname to ${HOSTNAME}..."
+      hostname ${HOSTNAME}
+      log_end_msg $?
+      ;;
+
+   stop)
+      log_action_begin_msg "Bringing down the loopback interface..."
+      ip link set lo down
+      log_end_msg $?
+      ;;
+
+   restart)
+      ${0} stop
+      sleep 1
+      ${0} start
+      ;;
+
+   status)
+      echo "Hostname is: $(hostname)"
+      ip link show lo
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop|restart|status}"
+      exit 1
+      ;;
+esac
+
+exit 0
+
+# End localnet

@@ -266,5 +266,3 @@ if [ "$security" == "selinux" ]; then
 fi
 
 udevadm control --reload-rules && udevadm trigger
-
-/etc/rc.d/rc S

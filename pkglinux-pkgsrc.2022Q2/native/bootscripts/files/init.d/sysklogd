@@ -1,0 +1,66 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:            $syslog
+# Required-Start:      $first localnet
+# Should-Start:
+# Required-Stop:       $local_fs
+# Should-Stop:         sendsignals
+# Default-Start:       2 3 4 5
+# Default-Stop:        0 1 6
+# Short-Description:   Starts kernel and system log daemons.
+# Description:         Starts kernel and system log daemons.
+#                      /etc/fstab.
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+case "${1}" in
+   start)
+      log_action_begin_msg "Starting system log daemon..."
+      parms=${SYSKLOGD_PARMS-'-m 0'}
+      start_daemon /sbin/syslogd $parms
+      log_end_msg $?
+
+      log_action_begin_msg "Starting kernel log daemon..."
+      start_daemon /sbin/klogd
+      log_end_msg $?
+      ;;
+
+   stop)
+      log_action_begin_msg "Stopping kernel log daemon..."
+      killproc /sbin/klogd
+      log_end_msg $?
+
+      log_action_begin_msg "Stopping system log daemon..."
+      killproc /sbin/syslogd
+      log_end_msg $?
+      ;;
+
+   reload)
+      log_action_begin_msg "Reloading system log daemon config file..."
+      pid=`pidofproc syslogd`
+      kill -HUP "${pid}"
+      log_end_msg $?
+      ;;
+
+   restart)
+      ${0} stop
+      sleep 1
+      ${0} start
+      ;;
+
+   status)
+      statusproc /sbin/syslogd
+      statusproc klogd
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop|reload|restart|status}"
+      exit 1
+      ;;
+esac
+
+exit 0
+
+# End sysklogd

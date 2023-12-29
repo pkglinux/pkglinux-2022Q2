@@ -24,5 +24,3 @@ MIT-LICENSE
 
 [ -x /pkg/etc/rc.d/dhcpcd         ] && /pkg/etc/rc.d/dhcpcd        start || \
 [ -x /pkg/etc/rc.d/NetworkManager ] && /pkg/etc/rc.d/NetworkManger start
-
-/etc/rc.d/rc 2

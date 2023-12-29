@@ -22,15 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 MIT-LICENSE
 
+/etc/rc.d/rc 3
+
 # Run rc.local before rc.d-boot daemon
-# Refer the rc.local service in rc.conf
 if [ -x /etc/rc.local ]; then
   /etc/rc.local
 fi
 
 # Run rc.d-boot daemon to start all bsd-style services
-#if [ -x /pkg/sbin/rc.d-boot ]; then
-#  /pkg/sbin/rc.d-boot start
-#fi
-
-/etc/rc.d/rc 3
+if [ -x /pkg/sbin/rc.d-boot ]; then
+  /pkg/sbin/rc.d-boot start
+fi

@@ -1,0 +1,61 @@
+#!/bin/sh
+
+### BEGIN INIT INFO
+# Provides:            sysctl
+# Required-Start:      mountdevsubfs
+# Should-Start:        console
+# Required-Stop:
+# Should-Stop:
+# Default-Start:       S
+# Default-Stop:
+# Short-Description:   Makes changes to the proc filesystem
+# Description:         Makes changes to the proc filesystem as defined in
+#                      /etc/sysctl.conf.  See 'man sysctl(8)'.
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+case "${1}" in
+   start)
+      if [ -f "/etc/sysctl.conf" ]; then
+         log_info_msg "Setting kernel runtime parameters..."
+         sysctl -q -p
+	 log_end_msg $?
+      fi
+
+      # Create symbolic link /pkglinux.sfs
+      sfs=""
+      sfs=$(cat /proc/cmdline| tr ' ' '\n' | grep sfs= | cut -d'=' -f2)
+      [ -n "$sfs" ] && [ -f "/sfs.root/$sfs/pkglinux.sfs" ] && ln -snvf /sfs.root/$sfs/pkglinux.sfs /pkglinux.sfs
+      [ -n "$sfs" ] && [ -f "/$sfs/pkglinux.sfs" ] && ln -snvf /$sfs/pkglinux.sfs /pkglinux.sfs
+
+      # Load a new SELinux policy into the kernel
+      echo "Load SELinux config and policy ..."
+      security="selinux"
+      selinux="1"
+      security=$(cat /proc/cmdline| tr ' ' '\n' | grep security= | cut -d'=' -f2)
+      if [ "$security" == "selinux" ]; then
+        selinux=$(cat /proc/cmdline| tr ' ' '\n' | grep selinux= | cut -d'=' -f2)
+	  if [ "$selinux" == "1" ]; then
+	      SELINUX="disabled"
+	      [ -e "/etc/selinux/config" ] && . /etc/selinux/config && \
+	      [ "$SELINUX" != "disabled" ] && load_policy -i && \
+	      [ -e /.autorelabel ] && restorecon -R /
+	  fi
+      fi
+
+      ;;
+
+   status)
+      sysctl -a
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|status}"
+      exit 1
+      ;;
+esac
+
+exit 0
+
+# End sysctl
