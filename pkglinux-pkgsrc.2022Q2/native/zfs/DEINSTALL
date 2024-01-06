@@ -1,6 +1,7 @@
 # $NetBSD: DEINSTALL,v 1.4 2023/12/28 20:24:02 Exp $
 
 MY_CHKCONFIG=@MY_CHKCONFIG@
+MY_RC_UPDATE=@MY_RC_UPDATE@
 ZFS_SYSV_RC1=@ZFS_SYSV_RC1@
 ZFS_SYSV_RC2=@ZFS_SYSV_RC2@
 ZFS_SYSV_RC3=@ZFS_SYSV_RC3@
@@ -10,15 +11,23 @@ ZFS_SYSV_RC5=@ZFS_SYSV_RC5@
 case "${STAGE}" in
 
 DEINSTALL)
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC1}" off
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC2}" off
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC3}" off
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC4}" off
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC5}" off
-	${MY_CHKCONFIG} --del "${ZFS_SYSV_RC1}"
-	${MY_CHKCONFIG} --del "${ZFS_SYSV_RC2}"
-	${MY_CHKCONFIG} --del "${ZFS_SYSV_RC3}"
-	${MY_CHKCONFIG} --del "${ZFS_SYSV_RC4}"
-	${MY_CHKCONFIG} --del "${ZFS_SYSV_RC5}"
+	if [ -x ${MY_CHKCONFIG} ]; then
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC1}" off
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC2}" off
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC3}" off
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC4}" off
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC5}" off
+		${MY_CHKCONFIG} --del "${ZFS_SYSV_RC1}"
+		${MY_CHKCONFIG} --del "${ZFS_SYSV_RC2}"
+		${MY_CHKCONFIG} --del "${ZFS_SYSV_RC3}"
+		${MY_CHKCONFIG} --del "${ZFS_SYSV_RC4}"
+		${MY_CHKCONFIG} --del "${ZFS_SYSV_RC5}"
+	elif [ -x ${MY_RC_UPDATE} ]; then
+		${MY_RC_UPDATE} del "${ZFS_SYSV_RC1}.openrc" default
+		${MY_RC_UPDATE} del "${ZFS_SYSV_RC2}.openrc" default
+		${MY_RC_UPDATE} del "${ZFS_SYSV_RC3}.openrc" default
+		${MY_RC_UPDATE} del "${ZFS_SYSV_RC4}.openrc" default
+		${MY_RC_UPDATE} del "${ZFS_SYSV_RC5}.openrc" default
+	fi
 	;;
 esac

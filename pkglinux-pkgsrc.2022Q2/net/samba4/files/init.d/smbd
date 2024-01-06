@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+command=/pkg/sbin/smbd
+pidfile=/run/smbd.pid
+command_args="-D"
+name="SMB/CIFS server"
+extra_commands="reload"
+
+depend() {
+	provide samba
+	need nmbd winbindd
+	use net
+	before local
+}
+
+start_pre() {
+	if ! [ -f /proc/cpuinfo ]; then
+		echo "WARNING: Samba requires a Linux-compatible procfs!"
+		echo "WARNING: Please mount /proc before starting Samba."
+	fi
+}

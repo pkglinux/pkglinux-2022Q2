@@ -165,6 +165,8 @@ post-configure:
 		< ${FILESDIR}/org.openssh.sshd.sb.in \
 		> ${WRKDIR}/org.openssh.sshd.sb
 
+INSTALLATION_DIRS+=	native/etc/init.d native/etc/conf.d native/etc/runlevels/default
+
 post-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${EGDIR}
 	cd ${WRKSRC}; for file in ${CONFS}; do				\
@@ -178,6 +180,9 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/org.openssh.sshd.sb \
 		${DESTDIR}${EGDIR}/org.openssh.sshd.sb
 .endif
+	${INSTALL_SCRIPT} ${FILESDIR}/init.d/sshd ${DESTDIR}${PREFIX}/native/etc/init.d
+	${INSTALL_DATA} ${FILESDIR}/conf.d/sshd ${DESTDIR}${PREFIX}/native/etc/conf.d
+	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/sshd .
 
 post-extract:
 	echo "#ServerAliveInterval 2" >> ${WRKSRC}/ssh_config

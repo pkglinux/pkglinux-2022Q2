@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+
+command=/pkg/sbin/winbindd
+pidfile=/run/winbindd.pid
+command_args="-D"
+name="Name Service Switch daemon"
+extra_commands="reload"
+
+depend() {
+	provide samba
+	need nmbd
+	use net
+	before local
+}
+
+start_pre() {
+	if ! [ -f /proc/cpuinfo ]; then
+		echo "WARNING: Samba requires a Linux-compatible procfs!"
+		echo "WARNING: Please mount /proc before starting Samba."
+	fi
+}

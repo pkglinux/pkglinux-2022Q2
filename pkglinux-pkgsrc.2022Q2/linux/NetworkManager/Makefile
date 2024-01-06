@@ -19,6 +19,11 @@ USE_TOOLS+=		gdbus-codegen
 USE_PKGLOCALEDIR=	yes
 USE_LANGUAGES=		c c++
 
+#TOOLS_PLATFORM.awk?=		/2022Q2/bin/nawk
+#TOOLS_PLATFORM.sed?=		/2022Q2/bin/nbsed
+TOOLS_PLATFORM.awk?=		/2022Q2/bin/gawk
+TOOLS_PLATFORM.sed?=		/2022Q2/bin/gsed
+
 MESON_ARGS+=		-Dlibaudit=no
 MESON_ARGS+=		-Dlibpsl=false
 MESON_ARGS+=		-Dnmtui=true
@@ -45,8 +50,12 @@ pre-configure:
 
 RCD_SCRIPTS+=		NetworkManager
 
+INSTALLATION_DIRS+=	native/etc/init.d native/etc/runlevels/default
+
 do-install:
 	${CP} -r ${FILESDIR}/conf/* ${DESTDIR}${PREFIX}/
+	${INSTALL_SCRIPT} ${FILESDIR}/init.d/NetworkManager ${DESTDIR}${PREFIX}/native/etc/init.d
+	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/NetworkManager .
 
 .include "../../devel/meson/build.mk"
 .include "../../devel/libuuid/buildlink3.mk"

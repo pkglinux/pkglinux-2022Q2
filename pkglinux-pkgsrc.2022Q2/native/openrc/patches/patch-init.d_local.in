@@ -1,0 +1,49 @@
+$NetBSD$
+
+--- init.d/local.in.orig	2023-11-17 05:29:09.000000000 +0000
++++ init.d/local.in
+@@ -20,8 +20,36 @@ depend()
+ 	keyword -timeout
+ }
+ 
++yes1() {
++    [ "$1" = "1" ] || [ "$1" = "yes" ] || [ "$1" = "true" ]
++}
++
+ start()
+ {
++	local sfs security selinux SELINUX
++	# Create symbolic link /pkglinux.sfs
++	sfs=""
++	sfs=$(cat /proc/cmdline| tr ' ' '\n' | grep sfs= | cut -d'=' -f2)
++	[ -n "$sfs" ] && [ -f "/sfs.root/$sfs/pkglinux.sfs" ] && ln -snvf /sfs.root/$sfs/pkglinux.sfs /pkglinux.sfs
++	[ -n "$sfs" ] && [ -f "/$sfs/pkglinux.sfs" ] && ln -snvf /$sfs/pkglinux.sfs /pkglinux.sfs
++
++	# Load a new SELinux policy into the kernel
++	echo "Load SELinux config and policy ..."
++	security="selinux"
++	selinux="1"
++	security=$(cat /proc/cmdline| tr ' ' '\n' | grep security= | cut -d'=' -f2)
++	if [ "$security" == "selinux" ]; then
++		selinux=$(cat /proc/cmdline| tr ' ' '\n' | grep selinux= | cut -d'=' -f2)
++		if [ "$selinux" == "1" ]; then
++			SELINUX="disabled"
++			[ -e "/etc/selinux/config" ] && . /etc/selinux/config && \
++			[ "$SELINUX" != "disabled" ] && load_policy -i && \
++			[ -e /.autorelabel ] && restorecon -R /
++		fi
++	fi
++	udevadm control --reload-rules && udevadm trigger
++	[ -x /sbin/rc.d-boot ] && /sbin/rc.d-boot start
++
+ 	local file has_errors redirect retval
+ 	has_errors=0
+ 	yesno $rc_verbose || redirect='> /dev/null 2>&1'
+@@ -61,6 +119,7 @@ start()
+ 
+ stop()
+ {
++	[ -x /sbin/rc.d-boot ] && /sbin/rc.d-boot stop
+ 	local file has_errors redirect retval
+ 	has_errors=0
+ 	yesno $rc_verbose || redirect='> /dev/null 2>&1'

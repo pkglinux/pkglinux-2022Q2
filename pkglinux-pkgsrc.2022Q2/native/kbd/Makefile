@@ -71,5 +71,6 @@ do-build:
 do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
+	cd ${DSTPRE}/usr/share/keymaps/ && ln -snvf i386 amd64
 
 .include "../../mk/bsd.pkg.mk"

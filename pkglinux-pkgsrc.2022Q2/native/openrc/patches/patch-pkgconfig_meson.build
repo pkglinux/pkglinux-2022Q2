@@ -1,0 +1,11 @@
+$NetBSD$
+
+--- pkgconfig/meson.build.orig	2023-11-17 05:29:09.000000000 +0000
++++ pkgconfig/meson.build
+@@ -1,5 +1,5 @@
+ if get_option('pkgconfig')
+-pkgconfig_dir =	get_option('libdir') / 'pkgconfig'
++pkgconfig_dir =	get_option('rootprefix') / get_option('libdir') / 'pkgconfig'
+ 
+ pkgconfig_conf_data = configuration_data()
+ if rootprefix != '/'

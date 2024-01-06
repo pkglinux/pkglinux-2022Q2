@@ -7,6 +7,7 @@ libexec/dhcpcd-run-hooks
 man/man5/dhcpcd.conf.5
 man/man8/dhcpcd-run-hooks.8
 man/man8/dhcpcd.8
+native/etc/init.d/dhcpcd
 sbin/dhcpcd
 share/examples/dhcpcd/dhcpcd.conf
 share/examples/dhcpcd/hooks/10-wpa_supplicant

@@ -178,6 +178,8 @@ CTF_FILES_SKIP+=	lib/libdcerpc-samr.so.*	# empty
 post-extract:
 	${CP} ${FILESDIR}/adduser.sh ${FILESDIR}/deluser.sh ${WRKDIR}
 
+INSTALLATION_DIRS+=	native/etc/init.d native/etc/runlevels/default
+
 post-install:
 	${RUN} cd ${WRKSRC}/docs-xml/registry; for f in *.reg; do \
 		${INSTALL_DATA} $${f} ${DESTDIR}${PREFIX}/${DOCDIR}/$${f}; \
@@ -190,6 +192,12 @@ post-install:
 		${DESTDIR}${PREFIX}/${EGDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/smb.conf.default \
 		${DESTDIR}${PREFIX}/${EGDIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/init.d/nmbd ${DESTDIR}${PREFIX}/native/etc/init.d
+	${INSTALL_SCRIPT} ${FILESDIR}/init.d/smbd ${DESTDIR}${PREFIX}/native/etc/init.d
+	${INSTALL_SCRIPT} ${FILESDIR}/init.d/winbindd ${DESTDIR}${PREFIX}/native/etc/init.d
+	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/nmbd .
+	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/smbd .
+	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/winbindd .
 
 REPLACE_PERL+=		librpc/tables.pl
 REPLACE_PERL+=		pidl/pidl

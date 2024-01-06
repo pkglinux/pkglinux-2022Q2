@@ -41,6 +41,8 @@ man/man1/dbus-send.1
 man/man1/dbus-test-tool.1
 man/man1/dbus-update-activation-environment.1
 man/man1/dbus-uuidgen.1
+native/etc/init.d/dbus
+native/etc/runlevels/default/dbus
 share/dbus-1/session.conf
 share/dbus-1/system.conf
 share/doc/dbus/dbus-cleanup-sockets.1.html

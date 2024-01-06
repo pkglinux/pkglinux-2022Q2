@@ -24,10 +24,10 @@ do-install:
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/etc ${DESTDIR}
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/lib ${DESTDIR}
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/usr/lib ${DESTDIR}
-	${CP} -av /pkg/sbin/start-stop-daemon ${DESTDIR}${PREFIX}/native/sbin/
 
+#	${CP} -av /pkg/sbin/start-stop-daemon ${DESTDIR}${PREFIX}/native/sbin/
 # make sure "/pkg/sbin/start-stop-daemon" is available
-BUILD_DEPENDS+=	dpkg-[0-9]*:../../linux/dpkg
+#BUILD_DEPENDS+=	dpkg-[0-9]*:../../linux/dpkg
 
 .include "../../native/debianutils/buildlink3.mk"
 .include "../../native/insserv/buildlink3.mk"

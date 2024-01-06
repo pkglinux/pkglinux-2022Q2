@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- init.d/mount-ro.in.orig	2023-11-17 05:29:09.000000000 +0000
++++ init.d/mount-ro.in
+@@ -33,7 +33,7 @@ start()
+ 	local rc_svcdir=$(echo $RC_SVCDIR | sed 's:/lib\(32\|64\)\?/:/lib(32|64)?/:g')
+ 
+ 	local m="/dev|/dev/.*|/proc|/proc.*|/sys|/sys/.*|/run|${rc_svcdir}" x= fs=
+-	m="$m|/bin|/sbin|/lib(32|64)?|/libexec"
++	m="$m|/|/2022Q2/native/(etc|bin|lib(32|64|x32)?|sbin|usr)|/etc|/lib|/usr|/bin|/sbin|/lib(32|64|x32)?|/libexec"
+ 	if [ -e "$rc_svcdir"/usr_premounted ]; then
+ 		m="$m|/usr"
+ 	fi

@@ -2,6 +2,8 @@
 man/man5/ntpd.conf.5
 man/man8/ntpctl.8
 man/man8/ntpd.8
+native/etc/init.d/ntpd
+native/etc/runlevels/default/ntpd
 sbin/ntpctl
 sbin/ntpd
 share/examples/openntpd/ntpd.conf

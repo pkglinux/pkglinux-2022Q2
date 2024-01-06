@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+
+command=/pkg/sbin/ntpd
+pidfile=/run/nptd.pid
+#command_args=-s -p ${pidfile}
+command_args="-p ${pidfile}"
+name="Open NTP Daemon"
+
+depend()
+{
+	provide ntpd
+	use net
+	before local
+}

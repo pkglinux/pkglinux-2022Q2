@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+
+command=/usr/sbin/nscd
+pidfile=/run/nscd/nscd.pid
+command_args="-f /etc/nscd.conf"
+name="NS Cache Daemon"
+extra_commands="reload"
+
+depend() {
+	before local
+}
+
+start_pre() {
+	mkdir -p /var/cache/nscd /var/run/nscd
+}

@@ -6,10 +6,15 @@ lib/udev/vdev_id
 lib/udev/zvol_id
 native/etc/default/zfs
 native/etc/init.d/zfs-import
-native/etc/init.d/zfs-load-key
+native/etc/init.d/zfs-import.openrc
 native/etc/init.d/zfs-mount
+native/etc/init.d/zfs-mount.openrc
+native/etc/init.d/zfs-load-key
+native/etc/init.d/zfs-load-key.openrc
 native/etc/init.d/zfs-share
+native/etc/init.d/zfs-share.openrc
 native/etc/init.d/zfs-zed
+native/etc/init.d/zfs-zed.openrc
 native/etc/sudoers.d/zfs
 native/etc/zfs/vdev_id.conf.alias.example
 native/etc/zfs/vdev_id.conf.multipath.example

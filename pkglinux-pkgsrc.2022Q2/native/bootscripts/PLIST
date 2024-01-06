@@ -8,10 +8,10 @@ native/etc/default/halt
 native/etc/default/hwclock
 native/etc/default/rcS
 native/etc/default/tmpfs
-native/etc/init.d
 native/etc/inittab.alex
 native/etc/inittab.root
 native/etc/network/if-up.d/mountnfs
+native/etc/rc.d/init.d
 native/etc/rc.d/rc
 native/etc/rc.d/rc0
 native/etc/rc.d/rc1
@@ -54,7 +54,6 @@ native/sbin/pkglinux-makeusb
 native/sbin/pkglinux-upgrade
 native/sbin/powersave
 native/sbin/service
-native/sbin/start-stop-daemon
 native/sbin/wpa.sh
 native/usr/bin/which
 native/usr/lib/udev/hwclock-set
@@ -74,4 +73,4 @@ native/usr/share/man/man1/pkglinux-upgrade.1
 @pkgdir native/etc/rc.d/rc2.d
 @pkgdir native/etc/rc.d/rc1.d
 @pkgdir native/etc/rc.d/rc0.d
-@pkgdir native/etc/rc.d/init.d
+@pkgdir native/etc/init.d

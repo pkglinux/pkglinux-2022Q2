@@ -394,6 +394,7 @@ native/usr/share/doc/kbd-${PKGVERSION}/utf/ethiopic
 native/usr/share/doc/kbd-${PKGVERSION}/utf/utfdemo
 native/usr/share/doc/kbd-${PKGVERSION}/utf/utflist
 native/usr/share/doc/kbd-${PKGVERSION}/utf/♪♬
+native/usr/share/keymaps/amd64
 native/usr/share/keymaps/amiga/amiga-de.map.gz
 native/usr/share/keymaps/amiga/amiga-us.map.gz
 native/usr/share/keymaps/atari/atari-de.map.gz

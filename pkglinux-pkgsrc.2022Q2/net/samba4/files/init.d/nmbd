@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+
+command=/pkg/sbin/nmbd
+pidfile=/run/nmbd.pid
+command_args="-D"
+name="NetBIOS name server"
+extra_commands="reload"
+
+depend() {
+	provide samba
+	use net
+	before local
+}
+
+start_pre() {
+	if ! [ -f /proc/cpuinfo ]; then
+		echo "WARNING: Samba requires a Linux-compatible procfs!"
+		echo "WARNING: Please mount /proc before starting Samba."
+	fi
+}

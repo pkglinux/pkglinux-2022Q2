@@ -3,8 +3,8 @@
 rescue()
 {
 	printf "This is the PID 1 rescue shell.\n"
-	printf "Manually /bin/mount a new rootfs and exec /sbin/switch_root to it.\n"
-	printf "OR exec /sbin/init to start /etc/inittab to reboot or poweroff.\n"
+	printf "Manually \\e[94m/bin/mount\\e[0m a new rootfs and exec \\e[94m/sbin/switch_root\\e[0m to it.\n"
+	printf "OR exec \\e[94m/sbin/init\\e[0m to start \\e[94m/etc/inittab\\e[0m to reboot or poweroff.\n"
 
 	# Set flag which indicates that we have obtained controlling terminal.
 	export PID1_SHELL=true
@@ -15,13 +15,13 @@ rescue()
 
 no_root()
 {
-	printf "The device %s supposed to contain the root FS not found.\n" 
+	printf "The device \\e[94m%s\\e[0m supposed to contain the root FS not found.\n" 
 	printf "Please fix this fatal problem and exit this shell.\n\n"
 }
 
 no_mount()
 {
-	printf "Could not mount device %s. This shouldn't happen.\n" 
+	printf "Could not mount device \\e[94m%s\\e[0m. This shouldn't happen.\n" 
 	printf "Please fix this fatal problem and exit this shell.\n\n"
 }
 
@@ -36,9 +36,9 @@ check_root()
 #		LABEL=*) eval $root; device="/dev/disk/by-label/$LABEL"        ;;
 		LABEL=*) eval $root; device="$(blkid --label ${LABEL})" ;;
 		PARTUUID=* ) eval $root; device="$(blkid | grep PARTUUID=\"${PARTUUID}\"  | cut -d':' -f1)"  ;;
-		""     ) echo "No root device specified." ; rescue             ;;
+		""     ) echo -e "No root device specified." ; rescue             ;;
 	esac
-	echo "New root device: $device"
+	echo -e "New root device: \\e[94m$device\\e[0m"
 
 	while [ ! -b "$device" ] ; do
 		no_root $device
@@ -46,7 +46,7 @@ check_root()
 	done
 
 	[ -n "$rootfstype" ] || rootfstype=$(blkid -o value -s TYPE $device)
-	echo "New root file system type: $rootfstype"
+	echo -e "New root file system type: \\e[94m$rootfstype\\e[0m"
 
 	[ -n "$rootflags" ] && rootflags="$rootflags,"
 	rootflags="$rootflags$ro"
@@ -72,7 +72,7 @@ mount_root()
 				sleep 1;
 			done
 		else
-			echo "Warning cannot find cryptsetup"
+			echo -e "Warning cannot find cryptsetup"
 			sleep 1
 		fi
 	fi
@@ -82,11 +82,11 @@ mount_root()
 		no_mount $1
 		rescue
 	else
-		echo "Successfully mounted device $root"
+		echo -e "Successfully mounted device $root"
 	fi
 }
 
-echo "SHELL @ PID 1 from initramfs"
+echo -e "PKGLINUX \\e[94minitramfs\\e[0m has started (SHELL @ PID 1) ..."
 
 mkdir -pv /dev /proc /tmp /sys /run /var/log
 
@@ -96,36 +96,36 @@ mount -n -t sysfs    sysfs    /sys
 mount -n -t tmpfs    tmpfs    /run
 mount -n -t tmpfs    tmpfs    /tmp
 
-#echo "Detecting and exporting hardware infomation ..."
+#echo -e "Detecting and exporting hardware infomation ..."
 #mdev -s
 #echo /sbin/mdev > /proc/sys/kernel/hotplug
 #find /sys/ -name modalias | xargs sort -u | xargs -n 1 /sbin/modprobe 2> /dev/null
 
 # This is needed since eudev (around version 3.0) because it no longer creates static devices nodes, like /dev/fuse and /dev/net/tun
-echo "Creating static device nodes ..."
+echo -e "Creating static device nodes ..."
 /bin/kmod static-nodes --format=tmpfiles | \
 while read type name mode uid gid age arg; do
   [ -e $name ] && continue
   case "$type" in
     c|b|c!|b!) mknod -m $mode $name $type $(echo $arg | sed 's/:/ /') ;;
     d|d!) mkdir $name ;;
-    *) echo "unparseable line ($type $name $mode $uid $gid $age $arg)" >&2 ;;
+    *) echo -e "unparseable line ($type $name $mode $uid $gid $age $arg)" >&2 ;;
   esac
 done
 
-#echo "echo /sbin/mdev > /proc/sys/kernel/hotplug"
+#echo -e "echo /sbin/mdev > /proc/sys/kernel/hotplug"
 #echo /sbin/mdev > /proc/sys/kernel/hotplug
-#echo "/sbin/mdev -s"
+#echo -e "/sbin/mdev -s"
 #/sbin/mdev -s
 
 # Detect and export hardware infomation
-echo "Starting udevd as a daemon ..."
+echo -e "Starting \\e[94mudevd\\e[0m as a daemon ..."
 udevd --daemon --resolve-names=never
 # Enable trigger event to autoload modules for devices
-echo "Triggering with udevadm ..."
+echo -e "Triggering with udevadm ..."
 udevadm trigger --action=add --type=subsystems
 udevadm trigger --action=add --type=devices
-echo "Settling with udevadm ..."
+echo -e "Settling with udevadm ..."
 udevadm settle
 
 # Load the dm-crypt module, if it is a module but don't show an error message when it doesn't exit (-q)
@@ -163,7 +163,7 @@ for param in $cmdline ; do
 done
 
 [ -n "$rootdelay" ] && sleep "$rootdelay"
-echo "Checking the new root ..."
+echo -e "Checking the root device ..."
 check_root
 
 [ -n "$rootdelay" ] && sleep "$rootdelay"
@@ -171,9 +171,9 @@ if [ -n "$sfs" ]; then
 	dev_mnt=/.tmp/dev_mnt
 	mkdir -p $dev_mnt
 	dev_fst=$(blkid -o value -s TYPE $device)
-	echo "Trying to mount device $device with file system type: $dev_fst"
+	echo -e "Trying to mount device $device with file system type: $dev_fst"
 	if mount -t $dev_fst $device $dev_mnt 2>/dev/null; then
-		echo "Mounted device $device with file system type: $dev_fst"
+		echo -e "Mounted device $device with file system type: $dev_fst"
 		[ -n "$prefix" -a -d "$dev_mnt/$prefix" ] && prefix_fail=false || prefix_fail=true
 		for prefix_dir in \
 			"$dev_mnt/pkg" \
@@ -197,15 +197,15 @@ if [ -n "$sfs" ]; then
 			fi
 		done
 		if $prefix_fail; then
-			echo "Checking $dev_mnt/$sfs/pkglinux.sfs"
+			echo -e "Checking $dev_mnt/$sfs/pkglinux.sfs"
 			if [ -d $dev_mnt/$sfs -a -f $dev_mnt/$sfs/pkglinux.sfs ] ; then
 				umount $dev_mnt 2>/dev/null
 				rm -rf $dev_mnt 2>/dev/null
 				exec /etc/init.sfs $device $sfs
 			fi
-			echo "$dev_mnt/$sfs/pkglinux.sfs not found. Try $dev_mnt/$prefix."
+			echo -e "$dev_mnt/$sfs/pkglinux.sfs not found. Try $dev_mnt/$prefix."
 		else
-			echo "$dev_mnt/$prefix OK to boot. Forget $dev_mnt/$sfs/pkglinux.sfs."
+			echo -e "$dev_mnt/$prefix OK to boot. Forget $dev_mnt/$sfs/pkglinux.sfs."
 		fi
 		umount $dev_mnt 2>/dev/null
 	fi
@@ -214,17 +214,17 @@ fi
 
 [ "$single" = "single" ] && rescue
 
-echo "Mounting the new root ..."
+echo -e "Mounting the root ..."
 mount_root
 
-echo "Binding to the new root ..."
+echo -e "Binding to the root ..."
 mount -v --bind /dev  /.root/dev
 mount -v --bind /proc /.root/proc
 mount -v --bind /sys  /.root/sys
 mount -v --bind /run  /.root/run
 mount -v --bind /tmp  /.root/tmp
 
-echo "Switching to the new root ..."
+echo -e "Switching to the root ..."
 
 [ ! -h "/.root/bin/"    ] && [ -d "/.root/bin/"    ] && mount --rbind "/.root/pkg/native/bin"    "/.root/bin"
 [ ! -h "/.root/etc/"    ] && [ -d "/.root/etc/"    ] && mount --rbind "/.root/pkg/native/etc"    "/.root/etc"
@@ -243,7 +243,7 @@ killall -w udevd
 
 exec switch_root /.root "$init" "$@"
 
-echo "/init has a serious bug."
+echo -e "/init has a serious bug."
 
 # Wait until any key has been pressed.
 read -n1 -s

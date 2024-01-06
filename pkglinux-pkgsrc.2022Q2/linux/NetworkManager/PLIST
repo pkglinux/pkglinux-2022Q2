@@ -140,6 +140,8 @@ libexec/nm-dhcp-helper
 libexec/nm-dispatcher
 libexec/nm-iface-helper
 libexec/nm-initrd-generator
+native/etc/init.d/NetworkManager
+native/etc/runlevels/default/NetworkManager
 sbin/NetworkManager
 share/bash-completion/completions/nmcli
 share/dbus-1/interfaces/org.freedesktop.NetworkManager.AccessPoint.xml

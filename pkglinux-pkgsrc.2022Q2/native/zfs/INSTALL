@@ -1,6 +1,7 @@
 # $NetBSD: INSTALL,v 1.6 2023/12/28 20:24:02 Exp $
 
 MY_CHKCONFIG=@MY_CHKCONFIG@
+MY_RC_UPDATE=@MY_RC_UPDATE@
 ZFS_SYSV_RC1=@ZFS_SYSV_RC1@
 ZFS_SYSV_RC2=@ZFS_SYSV_RC2@
 ZFS_SYSV_RC3=@ZFS_SYSV_RC3@
@@ -10,15 +11,23 @@ ZFS_SYSV_RC5=@ZFS_SYSV_RC5@
 case "${STAGE}" in
 
 POST-INSTALL)
-	${MY_CHKCONFIG} --add "${ZFS_SYSV_RC1}"
-	${MY_CHKCONFIG} --add "${ZFS_SYSV_RC2}"
-	${MY_CHKCONFIG} --add "${ZFS_SYSV_RC3}"
-	${MY_CHKCONFIG} --add "${ZFS_SYSV_RC4}"
-	${MY_CHKCONFIG} --add "${ZFS_SYSV_RC5}"
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC1}" on
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC2}" on
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC3}" on
-	${MY_CHKCONFIG} "${ZFS_SYSV_RC4}" on
-#	${MY_CHKCONFIG} "${ZFS_SYSV_RC5}" on
+	if [ -x ${MY_CHKCONFIG} ]; then
+		${MY_CHKCONFIG} --add "${ZFS_SYSV_RC1}"
+		${MY_CHKCONFIG} --add "${ZFS_SYSV_RC2}"
+		${MY_CHKCONFIG} --add "${ZFS_SYSV_RC3}"
+		${MY_CHKCONFIG} --add "${ZFS_SYSV_RC4}"
+		${MY_CHKCONFIG} --add "${ZFS_SYSV_RC5}"
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC1}" on
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC2}" on
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC3}" on
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC4}" on
+		${MY_CHKCONFIG} "${ZFS_SYSV_RC5}" on
+	elif [ -x ${MY_RC_UPDATE} ]; then
+		${MY_RC_UPDATE} add "${ZFS_SYSV_RC1}.openrc" default
+		${MY_RC_UPDATE} add "${ZFS_SYSV_RC2}.openrc" default
+		${MY_RC_UPDATE} add "${ZFS_SYSV_RC3}.openrc" default
+		${MY_RC_UPDATE} add "${ZFS_SYSV_RC4}.openrc" default
+		${MY_RC_UPDATE} add "${ZFS_SYSV_RC5}.openrc" default
+	fi
 	;;
 esac

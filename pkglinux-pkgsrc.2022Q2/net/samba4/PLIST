@@ -198,6 +198,12 @@ lib/pkgconfig/samba-util.pc
 lib/pkgconfig/samdb.pc
 lib/pkgconfig/smbclient.pc
 lib/pkgconfig/wbclient.pc
+native/etc/init.d/nmbd
+native/etc/init.d/smbd
+native/etc/init.d/winbindd
+native/etc/runlevels/default/nmbd
+native/etc/runlevels/default/smbd
+native/etc/runlevels/default/winbindd
 ${PYSITELIB}/samba/__init__.py
 ${PYSITELIB}/samba/_glue.so
 ${PYSITELIB}/samba/_ldb.so

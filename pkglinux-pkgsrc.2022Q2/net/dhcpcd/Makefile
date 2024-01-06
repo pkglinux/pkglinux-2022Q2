@@ -59,4 +59,9 @@ CONF_FILES+=		${EGDIR}/dhcpcd.conf ${PKG_SYSCONFDIR}/dhcpcd.conf
 
 RCD_SCRIPTS+=		dhcpcd
 
+INSTALLATION_DIRS+=	native/etc/init.d
+
+post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/init.d/dhcpcd ${DESTDIR}${PREFIX}/native/etc/init.d
+
 .include "../../mk/bsd.pkg.mk"

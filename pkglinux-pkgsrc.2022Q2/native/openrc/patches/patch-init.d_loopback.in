@@ -1,0 +1,12 @@
+$NetBSD$
+
+--- init.d/loopback.in.orig	2023-11-17 05:29:09.000000000 +0000
++++ init.d/loopback.in
+@@ -27,6 +27,7 @@ start()
+ 		else
+ 			ifconfig lo 127.0.0.1 netmask 255.0.0.0
+ 		fi
++		modprobe loop
+ 	else
+ 		ebegin "Bringing up network interface lo0"
+ 		ifconfig lo0 127.0.0.1 netmask 255.0.0.0

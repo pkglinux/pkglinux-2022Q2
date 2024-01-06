@@ -106,11 +106,15 @@ BUILDLINK_TRANSFORM.OpenBSD+=	rm:-lrt
 
 .include "options.mk"
 
+INSTALLATION_DIRS+=	native/etc/init.d native/etc/runlevels/default
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/introspect.* \
 		${DESTDIR}${PREFIX}/share/doc/dbus/
 	${RM} -f ${DESTDIR}${PREFIX}/etc/dbus-1/s*.conf
 	${RMDIR} ${DESTDIR}${PREFIX}/etc/dbus-1 || ${TRUE}
+	${INSTALL_SCRIPT} ${FILESDIR}/init.d/dbus ${DESTDIR}${PREFIX}/native/etc/init.d
+	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/dbus .
 
 CONFIGURE_ARGS+=	--enable-selinux
 CONFIGURE_ARGS+=	--enable-libaudit

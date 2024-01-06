@@ -1,0 +1,22 @@
+
+OpenRC README
+=============
+
+OpenRC is a dependency-based init system that works with the
+system-provided init program, normally `/sbin/init`.
+
+## building and installing
+
+OpenRC uses the  [meson](http://mesonbuild.com) build system, so use the
+usual methods for this build system to build and install.
+
+## Notes
+
+We don't support building a static OpenRC with PAM.
+
+`PKG_PREFIX` should be set to where packages install to by default.
+
+`LOCAL_PREFIX` should be set to where user maintained packages are.
+Only set `LOCAL_PREFIX` if different from `PKG_PREFIX`.
+
+...

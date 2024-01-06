@@ -16,7 +16,8 @@ LICENSE=	CDDL
 TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
 TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
 
-ZFS_SYSV_RC0=	unknown
+MY_CHKCONFIG=	unknown
+MY_RC_UPDATE=	unknown
 ZFS_SYSV_RC1=	unknown
 ZFS_SYSV_RC2=	unknown
 ZFS_SYSV_RC3=	unknown
@@ -24,6 +25,7 @@ ZFS_SYSV_RC4=	unknown
 ZFS_SYSV_RC5=	unknown
 
 FILES_SUBST+=	MY_CHKCONFIG=${MY_CHKCONFIG:Q}
+FILES_SUBST+=	MY_RC_UPDATE=${MY_RC_UPDATE:Q}
 FILES_SUBST+=	ZFS_SYSV_RC1=${ZFS_SYSV_RC1:Q}
 FILES_SUBST+=	ZFS_SYSV_RC2=${ZFS_SYSV_RC2:Q}
 FILES_SUBST+=	ZFS_SYSV_RC3=${ZFS_SYSV_RC3:Q}
@@ -31,13 +33,15 @@ FILES_SUBST+=	ZFS_SYSV_RC4=${ZFS_SYSV_RC4:Q}
 FILES_SUBST+=	ZFS_SYSV_RC5=${ZFS_SYSV_RC5:Q}
 
 MY_CHKCONFIG=	${PREFIX}/native/usr/sbin/chkconfig
+MY_RC_UPDATE=	${PREFIX}/native/sbin/rc-update
 ZFS_SYSV_RC1=	zfs-import
-ZFS_SYSV_RC2=	zfs-load-key
-ZFS_SYSV_RC3=	zfs-mount
-ZFS_SYSV_RC4=	zfs-share
-ZFS_SYSV_RC5=	zfs-zed
+ZFS_SYSV_RC2=	zfs-mount
+ZFS_SYSV_RC3=	zfs-load-key
+ZFS_SYSV_RC4=	zfs-zed
+ZFS_SYSV_RC5=	zfs-share
 
 BUILD_DEFS+=	MY_CHKCONFIG
+BUILD_DEFS+=	MY_RC_UPDATE
 BUILD_DEFS+=	ZFS_SYSV_RC1
 BUILD_DEFS+=	ZFS_SYSV_RC2
 BUILD_DEFS+=	ZFS_SYSV_RC3
@@ -45,7 +49,7 @@ BUILD_DEFS+=	ZFS_SYSV_RC4
 BUILD_DEFS+=	ZFS_SYSV_RC5
 
 WRKSRC=		${WRKDIR}/zfs-zfs-2.2.2
-USE_TOOLS+=	pkg-config gettext gmake gawk git m4 autoreconf autoconf automake intltools msgfmt xgettext perl
+USE_TOOLS+=	gsed pkg-config gettext gmake gawk git m4 autoreconf autoconf automake intltools msgfmt xgettext perl
 USE_LIBTOOL=	yes
 USE_PKGLOCALEDIR=	yes
 
@@ -80,6 +84,15 @@ do-install:
 	${CP} -av ${BLDPRE}/lib   ${DSTPRE}/
 	${CP} -av ${BLDPRE}/sbin  ${DSTPRE}/
 	${CP} -av ${BLDPRE}/usr   ${DSTPRE}/
+
+post-install:
+	cd ${DSTPRE}/etc/init.d/ && \
+		cp -v zfs-import   zfs-import.openrc && \
+		cp -v zfs-mount    zfs-mount.openrc && \
+		cp -v zfs-load-key zfs-load-key.openrc && \
+		cp -v zfs-zed      zfs-zed.openrc && \
+		cp -v zfs-share    zfs-share.openrc && \
+		gsed -e "s|#\!/bin/sh|#\!/sbin/openrc-run|g" -i *.openrc
 
 .include "../../lang/python/tool.mk"
 .include "../../devel/zlib/buildlink3.mk"

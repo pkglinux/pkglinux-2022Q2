@@ -1,0 +1,37 @@
+$NetBSD$
+
+--- init.d/localmount.in.orig	2023-11-17 05:29:09.000000000 +0000
++++ init.d/localmount.in
+@@ -62,7 +62,7 @@ stop()
+ 	local rc_svcdir=$(printf '%s\n' "$RC_SVCDIR" | sed 's:/lib\(32\|64\)\?/:/lib(32|64)?/:g')
+ 
+ 	local x= no_umounts_r="/|/dev|/dev/.*|${rc_svcdir}"
+-	no_umounts_r="${no_umounts_r}|/bin|/sbin|/lib(32|64)?|/libexec"
++	no_umounts_r="${no_umounts_r}|/|/2022Q2/native/(etc|bin|lib(32|64|x32)?|sbin|usr)|/etc|/lib|/usr|/bin|/sbin|/lib(32|64|x32)?|/libexec"
+ 	# RC_NO_UMOUNTS is an env var that can be set by plugins
+ 	local IFS="$IFS:"
+ 	for x in $no_umounts $RC_NO_UMOUNTS; do
+@@ -86,6 +86,23 @@ stop()
+ 		#if / is aufs we remount it noxino during shutdown
+ 		if mountinfo -q -f '^aufs$' / ; then
+ 			mount -o remount,noxino,rw /
++			if mountpoint -q /bin; then
++			    mount -n -o remount,rw /bin
++			fi; if mountpoint -q /etc; then
++			    mount -n -o remount,rw /etc
++			fi; if mountpoint -q /lib; then
++			    mount -n -o remount,rw /lib
++			fi; if mountpoint -q /lib32; then
++			    mount -n -o remount,rw /lib32
++			fi; if mountpoint -q /libx32; then
++			    mount -n -o remount,rw /libx32
++			fi; if mountpoint -q /lib64; then
++			    mount -n -o remount,rw /lib64
++			fi; if mountpoint -q /sbin; then
++			    mount -n -o remount,rw /sbin
++			fi; if mountpoint -q /usr; then
++			    mount -n -o remount,rw /usr
++			fi
+ 			sync
+ 		fi
+ 

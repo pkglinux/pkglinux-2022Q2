@@ -25,6 +25,9 @@ man/man8/ssh-keysign.8
 man/man8/ssh-pkcs11-helper.8
 man/man8/ssh-sk-helper.8
 man/man8/sshd.8
+native/etc/init.d/sshd
+native/etc/conf.d/sshd
+native/etc/runlevels/default/sshd
 sbin/sshd
 share/examples/openssh/moduli
 ${PLIST.darwin}share/examples/openssh/org.openssh.sshd.sb

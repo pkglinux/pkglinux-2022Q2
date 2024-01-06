@@ -45,6 +45,7 @@ OWN_DIRS=		${VARBASE}/chroot/ntpd ${VARBASE}/db/openntpd
 AUTO_MKDIRS=		yes
 
 INSTALLATION_DIRS+=	sbin ${PKGMANDIR}/man5 ${PKGMANDIR}/man8 ${EGDIR}
+INSTALLATION_DIRS+=	native/etc/init.d native/etc/runlevels/default
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ntpd ${DESTDIR}${PREFIX}/sbin/ntpd
@@ -53,5 +54,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/src/ntpctl.8 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man8/ntpctl.8
 	${INSTALL_MAN} ${WRKSRC}/src/ntpd.conf.5 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man5/ntpd.conf.5
 	${INSTALL_DATA} ${WRKSRC}/ntpd.conf ${DESTDIR}${EGDIR}/ntpd.conf
+	${INSTALL_SCRIPT} ${FILESDIR}/init.d/ntpd ${DESTDIR}${PREFIX}/native/etc/init.d
+	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/ntpd .
 
 .include "../../mk/bsd.pkg.mk"
