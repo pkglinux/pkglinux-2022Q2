@@ -195,9 +195,10 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/init.d/nmbd ${DESTDIR}${PREFIX}/native/etc/init.d
 	${INSTALL_SCRIPT} ${FILESDIR}/init.d/smbd ${DESTDIR}${PREFIX}/native/etc/init.d
 	${INSTALL_SCRIPT} ${FILESDIR}/init.d/winbindd ${DESTDIR}${PREFIX}/native/etc/init.d
-	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/nmbd .
-	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/smbd .
-	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/winbindd .
+
+#	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/nmbd .
+#	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/smbd .
+#	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/winbindd .
 
 REPLACE_PERL+=		librpc/tables.pl
 REPLACE_PERL+=		pidl/pidl
