@@ -8,8 +8,9 @@ Source code for [**pkgLinux**](https://www.pkglinux.top/) (see [**https://www.pk
 - Use the entire [**pkgsrc**](http://www.pkgsrc.org) as the package manager with minimal changes
 - Use [**pkgsrc**](http://www.pkgsrc.org)'s bmake to build binary packages from source packages
 - Use [**pkgin**](https://pkgin.net) to manage fetching and installing binary packages over the Internet
-- BSD rcd style service management and concise sysv init scripts
-- Use ConsoleKit2 instead of Systemd
+- Use [**OpenRC**](https://github.com/OpenRC/openrc) parallel init system
+- With concise sysvinit scripts and BSD rcd style service management as options
+- Use ConsoleKit2 for desktop like GNOME
 - With pure X11 and without supporting wayland/xwayland
 - With [**Gnome**](https://www.gnome.org)3 desktop built up and heavily tested
 - With [**KDE**](https//kde.org)4 desktop built up and tested
