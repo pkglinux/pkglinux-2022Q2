@@ -11,7 +11,6 @@ native/etc/default/tmpfs
 native/etc/inittab.alex
 native/etc/inittab.root
 native/etc/network/if-up.d/mountnfs
-native/etc/rc.d/init.d
 native/etc/rc.d/rc
 native/etc/rc.d/rc0
 native/etc/rc.d/rc1
@@ -21,14 +20,6 @@ native/etc/rc.d/rc4
 native/etc/rc.d/rc5
 native/etc/rc.d/rc6
 native/etc/rc.d/rcS
-native/etc/rc0.d
-native/etc/rc1.d
-native/etc/rc2.d
-native/etc/rc3.d
-native/etc/rc4.d
-native/etc/rc5.d
-native/etc/rc6.d
-native/etc/rcS.d
 native/etc/sysconfig/console
 native/etc/udev/hwclock-set
 native/etc/udev/rules.d/85-hwclock.rules
@@ -65,6 +56,7 @@ native/usr/share/man/man1/pkglinux-makeall.1
 native/usr/share/man/man1/pkglinux-makeiso.1
 native/usr/share/man/man1/pkglinux-makeusb.1
 native/usr/share/man/man1/pkglinux-upgrade.1
+@pkgdir native/etc/rc.d/init.d
 @pkgdir native/etc/rc.d/rcS.d
 @pkgdir native/etc/rc.d/rc6.d
 @pkgdir native/etc/rc.d/rc5.d
@@ -73,4 +65,3 @@ native/usr/share/man/man1/pkglinux-upgrade.1
 @pkgdir native/etc/rc.d/rc2.d
 @pkgdir native/etc/rc.d/rc1.d
 @pkgdir native/etc/rc.d/rc0.d
-@pkgdir native/etc/init.d

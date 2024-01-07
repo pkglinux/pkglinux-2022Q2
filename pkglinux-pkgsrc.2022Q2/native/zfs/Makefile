@@ -87,12 +87,7 @@ do-install:
 
 post-install:
 	cd ${DSTPRE}/etc/init.d/ && \
-		cp -v zfs-import   zfs-import.openrc && \
-		cp -v zfs-mount    zfs-mount.openrc && \
-		cp -v zfs-load-key zfs-load-key.openrc && \
-		cp -v zfs-zed      zfs-zed.openrc && \
-		cp -v zfs-share    zfs-share.openrc && \
-		gsed -e "s|#\!/bin/sh|#\!/sbin/openrc-run|g" -i *.openrc
+		gsed -e "s|#\!/bin/sh|#\!/sbin/openrc-run|g" -i zfs-*
 
 .include "../../lang/python/tool.mk"
 .include "../../devel/zlib/buildlink3.mk"

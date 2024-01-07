@@ -47,4 +47,5 @@ post-install: enable-manz-by-replacing-roff-includes-with-symlinks
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf ${DESTDIR}${EGDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh ${DESTDIR}${EGDIR}
 
+.include "../../linux/libcap-ng/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

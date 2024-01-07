@@ -8,6 +8,11 @@ LICENSE=	mit
 
 ONLY_FOR_PLATFORM=	Linux-*-*
 
+#TOOLS_PLATFORM.awk?=		/2022Q2/bin/nawk
+#TOOLS_PLATFORM.sed?=		/2022Q2/bin/nbsed
+TOOLS_PLATFORM.awk?=		/2022Q2/bin/gawk
+TOOLS_PLATFORM.sed?=		/2022Q2/bin/gsed
+
 USE_LANGUAGES=	# none
 NO_CHECKSUM=		yes
 HAS_CONFIGURE=		no
@@ -29,7 +34,7 @@ do-install:
 # make sure "/pkg/sbin/start-stop-daemon" is available
 #BUILD_DEPENDS+=	dpkg-[0-9]*:../../linux/dpkg
 
-.include "../../native/debianutils/buildlink3.mk"
-.include "../../native/insserv/buildlink3.mk"
-.include "../../native/startpar/buildlink3.mk"
+#.include "../../native/debianutils/buildlink3.mk"
+#.include "../../native/insserv/buildlink3.mk"
+#.include "../../native/startpar/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

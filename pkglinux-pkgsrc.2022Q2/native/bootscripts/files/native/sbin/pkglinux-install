@@ -33,17 +33,25 @@ pkglinux-install-dir()
   pkg-strap $PKGLINUX_INSTALL_VERBOSE -p $PKGLINUX_INSTALL_PREFIX -d $1 $PKGLINUX_INSTALL_REPO
   
   pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin up
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in nawk -y
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in nbsed -y
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in bootscripts -y
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in diffutils -y
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 cp -a /pkg/gnu/bin/* /usr/bin/
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 cp -a /pkg/gnu/bin/* /bin/
   if $PKGLINUX_INSTALL_MIN; then
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in pkgiso -y
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in firmware -y
   else
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in pkglinux -y
   fi
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 cp -a /pkg/gnu/bin/* /usr/bin/
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 cp -a /pkg/gnu/bin/* /bin/
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in openntpd -y
+  pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in NetworkManager -y
   pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 depmod -a
   pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 passwd -d root
   if $PKGLINUX_INSTALL_GNOME || $PKGLINUX_INSTALL_KDE; then
-    pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in openntpd -y
-    pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in NetworkManager -y
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in modular-xorg -y
     pkg-chroot $PKGLINUX_INSTALL_VERBOSE -d $1 /pkg/bin/pkgin in profile-data -y
     if $PKGLINUX_INSTALL_GNOME; then
@@ -84,6 +92,7 @@ pkglinux-install-dir()
     (cd $1; ln $PKGLINUX_INSTALL_VERBOSE -snf pkg/native/boot; rm -vf libx32)
     (cd $1/etc; mv $PKGLINUX_INSTALL_VERBOSE inittab.alex inittab)
     (cd $1/etc; mv $PKGLINUX_INSTALL_VERBOSE fstab.iso fstab)
+    (cd $1/etc/conf.d; echo "agetty_options=\"--autologin alex --delay 1 --noclear tty1 38400\"" >> agetty.tty1)
     (cd $1/pkg/native/etc; ln -snf ../usr/share/zoneinfo/Asia/Shanghai localtime)
     (cd $1/lib/; ln $PKGLINUX_INSTALL_VERBOSE -snf ../etc/modprobe.d)
     (cd $1/pkg/etc/polkit-1/rules.d/; cp $PKGLINUX_INSTALL_VERBOSE /root/lfs/49-nopasswd_global.rules .)
@@ -132,6 +141,7 @@ pkglinux-install-dir()
     (cd $1; ln $PKGLINUX_INSTALL_VERBOSE -snf pkg/native/boot; rm -vf libx32)
     (cd $1/etc; cp $PKGLINUX_INSTALL_VERBOSE inittab.root inittab)
     (cd $1/etc; mv $PKGLINUX_INSTALL_VERBOSE fstab.iso fstab)
+    (cd $1/etc/conf.d; echo "agetty_options=\"--autologin root --delay 1 --noclear tty1 38400\"" >> agetty.tty1)
     (cd $1/lib/; ln $PKGLINUX_INSTALL_VERBOSE -snf ../etc/modprobe.d)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/dhcpcd .)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/NetworkManager .)
