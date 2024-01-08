@@ -10,6 +10,11 @@ native/etc/init.d/zfs-mount
 native/etc/init.d/zfs-load-key
 native/etc/init.d/zfs-share
 native/etc/init.d/zfs-zed
+native/etc/rc.d/init.d/zfs-import
+native/etc/rc.d/init.d/zfs-mount
+native/etc/rc.d/init.d/zfs-load-key
+native/etc/rc.d/init.d/zfs-share
+native/etc/rc.d/init.d/zfs-zed
 native/etc/sudoers.d/zfs
 native/etc/zfs/vdev_id.conf.alias.example
 native/etc/zfs/vdev_id.conf.multipath.example

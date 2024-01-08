@@ -115,7 +115,7 @@ pkglinux-install-dir()
     (cd $1/root; cp $PKGLINUX_INSTALL_VERBOSE alex.bashrc .bashrc)
     (cd $1/home/alex; cp $PKGLINUX_INSTALL_VERBOSE $1/root/.bashrc .)
     (cd $1/home/alex; cp $PKGLINUX_INSTALL_VERBOSE $1/root/.bash_profile .)
-    (cd $1/home/alex; sed -i 's:echo startx:sleep 2; startx #echo startx:g' .bash_profile)
+    (cd $1/home/alex; sed -i 's:echo startx:startx &> /dev/null #echo startx:g' .bash_profile)
     (cd $1/home/alex; cp $PKGLINUX_INSTALL_VERBOSE -r $1/root/.devilspie .)
     (cd $1/home/alex; cp $PKGLINUX_INSTALL_VERBOSE $1/root/dircolors.ansi-universal .)
     if $PKGLINUX_INSTALL_GNOME; then

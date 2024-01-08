@@ -86,6 +86,13 @@ do-install:
 	${CP} -av ${BLDPRE}/usr   ${DSTPRE}/
 
 post-install:
+	${MKDIR} -v ${DSTPRE}/etc/rc.d/init.d/
+	cd ${DSTPRE}/etc/rc.d/init.d/ && \
+		cp -v ../../init.d/zfs-import   . && \
+		cp -v ../../init.d/zfs-mount    . && \
+		cp -v ../../init.d/zfs-zed      . && \
+		cp -v ../../init.d/zfs-load-key . && \
+		cp -v ../../init.d/zfs-share    .
 	cd ${DSTPRE}/etc/init.d/ && \
 		gsed -e "s|#\!/bin/sh|#\!/sbin/openrc-run|g" -i zfs-*
 

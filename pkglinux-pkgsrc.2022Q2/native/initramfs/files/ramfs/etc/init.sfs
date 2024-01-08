@@ -35,7 +35,7 @@ for DEV in $1 /dev/* ; do
 		continue
 	fi
 	if [ -d $DEV_MNT/$SFSID -a -f $DEV_MNT/$SFSID/pkglinux.sfs ] ; then
-		echo -e "\\tFound \\e[94m/$SFSID/pkglinux.sfs\\e[0m image on device \\e[31m$DEV\\e[0m."
+		echo -e "\\tFound \\e[94m/$SFSID/pkglinux.sfs\\e[0m image on device \\e[92m$DEV\\e[0m."
 		LWR=/.tmp/sfs
 		mkdir -p $LWR
 		mount -t squashfs $DEV_MNT/$SFSID/pkglinux.sfs $LWR
@@ -60,19 +60,19 @@ for DEV in $1 /dev/* ; do
 		mount -t overlay -o lowerdir=$LWR,upperdir=$UPP,workdir=$WRK overlay /.root 2>/dev/null
 		OUT=$?
 		if [ ! "$OUT" = "0" ] ; then
-			echo -e "\\t\\e[31mMount failed (probably on vfat).\\e[0m"
+			echo -e "\\t\\e[92mMount failed (probably on vfat).\\e[0m"
 			rmdir $lwr 2>/dev/null
 			rmdir $upp 2>/dev/null
 			rmdir $wrk 2>/dev/null
 		else
 			# All done, time to go.
-			echo -e "/$SFSID/pkglinux.sfs from device \\e[31m$DEV\\e[0m has been merged."
+			echo -e "/$SFSID/pkglinux.sfs from device \\e[92m$DEV\\e[0m has been merged."
 			mkdir -v -p /.root/sfs.root
 			mount -v --bind $DEV_MNT /.root/sfs.root 2>/dev/null
 			break
 		fi
 	else
-		echo -e "\\tDevice \\e[31m$DEV\\e[0m has no /$SFSID/pkglinux.sfs."
+		echo -e "\\tDevice \\e[92m$DEV\\e[0m has no /$SFSID/pkglinux.sfs."
 	fi
 
 	umount $DEV_MNT 2>/dev/null

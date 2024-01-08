@@ -34,7 +34,7 @@ $NetBSD$
 +		fi
 +	fi
 +	udevadm control --reload-rules && udevadm trigger
-+	[ -x /sbin/rc.d-boot ] && /sbin/rc.d-boot start
++	[ -x /sbin/rc.d-boot ] && /sbin/rc.d-boot start || echo "/sbin/rc.d-boot doesn't exist."
 +
  	local file has_errors redirect retval
  	has_errors=0
@@ -43,7 +43,7 @@ $NetBSD$
  
  stop()
  {
-+	[ -x /sbin/rc.d-boot ] && /sbin/rc.d-boot stop
++	[ -x /sbin/rc.d-boot ] && /sbin/rc.d-boot stop || echo "/sbin/rc.d-boot doesn't exist."
  	local file has_errors redirect retval
  	has_errors=0
  	yesno $rc_verbose || redirect='> /dev/null 2>&1'
