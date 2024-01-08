@@ -10,5 +10,5 @@ term_type="linux"
 
 # extra options to pass to agetty for this port
 #agetty_options=""
-#agetty_options="--autologin root --delay 1 --noclear tty1 38400"
-#agetty_options="--autologin alex --delay 1 --noclear tty1 38400"
+#agetty_options="--autologin root --delay 1 --noclear tty1 38400 linux"
+#agetty_options="--autologin alex --delay 1 --noclear tty1 38400 linux"

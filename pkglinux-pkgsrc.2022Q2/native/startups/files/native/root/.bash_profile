@@ -30,6 +30,8 @@ if [[ $EUID -gt 0 ]] && [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
   #[[ $(fgconsole 2>/dev/null) == 1 ]] && exec startx -- vt1 &> /dev/null
   echo startx
 
+elif [[ $EUID -eq 0 ]] && [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+  echo -e "To connect to WIFI, use \\e[92mnmtui\\e[0m', the tool from NetworkManager."
 fi
 
 # End ~/.bash_profile
