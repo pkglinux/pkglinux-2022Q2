@@ -27,7 +27,7 @@ PKGLINUX_MAKEUSB_TAG="std"
 PKGLINUX_MAKEUSB_KVER="$(uname -r)"
 PKGLINUX_MAKEUSB_BLANK="0"
 PKGLINUX_MAKEUSB_PREFIX="2022Q2"
-PKGLINUX_MAKEUSB_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_MAKEUSB_PREFIX/All"
+PKGLINUX_MAKEUSB_REPO="https://repos.pkglinux.top/dist/$(uname -m)/packages.$PKGLINUX_MAKEUSB_PREFIX/All"
 PKGLINUX_MAKEUSB_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEUSB_REPO))/iso"
 curl --head --silent --fail -k "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
 PKGLINUX_MAKEUSB_PREFIX="$(curl -sk "$PKGLINUX_MAKEUSB_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"

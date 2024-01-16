@@ -62,30 +62,27 @@ MESSAGE_SUBST+=		PKGBASE=${PKGBASE}
 DSTPRE=		${DESTDIR}${PREFIX}/native
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
-WRKSRC2=	${WRKDIR}/build
-#WRKSRC2=	${PREFIX}/native/kernel-source-${LINUX_VERSION}
-
+WRKBLD=		${WRKDIR}/build
+#WRKBLD=	${PREFIX}/native/kernel-source-${LINUX_VERSION}
 
 post-extract:
-	mkdir -pv ${WRKSRC2}
-	cd ${WRKSRC2} && ${CAT} ${FILESDIR}/.configs > .config
+	mkdir -pv ${WRKBLD}
+	cd ${WRKBLD} && ${CAT} ${FILESDIR}/.configs > .config
+	cd ${WRKBLD} && ${GMAKE} -j${MAKE_JOBS} -f ${WRKSRC}/Makefile menuconfig
 
-#	cd ${WRKSRC2} && ${GMAKE} -j${MAKE_JOBS} -f ${WRKSRC}/Makefile menuconfig
-
+#	cd ${WRKSRC} && ${GMAKE} mrproper && ${GMAKE} -j${MAKE_JOBS} headers && \
+#	${FIND} usr/include -name ".*" -exec ${RM} -rf {} \; && \
+#	${RM} -f usr/include/Makefile
 do-build:
-	cd ${WRKSRC} && ${GMAKE} mrproper && ${GMAKE} -j${MAKE_JOBS} headers && \
-	${FIND} usr/include -name ".*" -exec ${RM} -rf {} \; && \
-	${RM} -f usr/include/Makefile
-
-	cd ${WRKSRC2} && ${GMAKE} -j${MAKE_JOBS} bzImage && \
+	cd ${WRKSRC} && ${GMAKE} mrproper && \
+	cd ${WRKBLD} && ${GMAKE} -j${MAKE_JOBS} bzImage && \
 	${GMAKE} -j${MAKE_JOBS} modules
-	cd ${WRKSRC2} && ${LN} -snvf ${PREFIX}/native/kernel-source-${LINUX_VERSION} source
-	${CP} -av ${FILESDIR}/Makefile ${WRKSRC2}/
 
 do-install:
 	${MKDIR} -pv ${DSTPRE}/
-	${CP} -av ${WRKSRC2} ${DSTPRE}/${PKGNAME}
-
-#	cd ${DSTPRE}/${PKGNAME} && find . -name ".tmp*" | xargs -I& rm -v &
+	${CP} -av ${WRKBLD} ${DSTPRE}/${PKGNAME}
+	cd ${DSTPRE}/${PKGNAME} && ${LN} -snvf ${PREFIX}/native/kernel-source-${LINUX_VERSION} source
+	${CP} -av ${FILESDIR}/Makefile ${DSTPRE}/${PKGNAME}
+	cd ${DSTPRE}/${PKGNAME} && find . -name ".tmp*" | xargs -I& rm -v &
 
 .include "../../mk/bsd.pkg.mk"

@@ -103,7 +103,6 @@ post-install:
 .include "../../sysutils/attr/buildlink3.mk"
 #.include "../../devel/libelf/buildlink3.mk"
 .include "../../linux/elfutils/buildlink3.mk"
-.include "../../devel/libelf/buildlink3.mk"
 .include "../../linux/libtirpc/buildlink3.mk"
 .include "../../devel/libffi/buildlink3.mk"
 .include "../../devel/libblkid/buildlink3.mk"

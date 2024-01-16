@@ -15,6 +15,10 @@ LICENSE=	gnu-gpl-v2
 
 ONLY_FOR_PLATFORM=	Linux-*-*
 
+DISTINFO_FILE?=		${.CURDIR}/../../native/kernel-build/distinfo
+PATCHDIR?=		${.CURDIR}/../../native/kernel-build/patches
+FILESDIR=		${.CURDIR}/../../native/kernel-build/files
+
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
 #TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
@@ -29,5 +33,6 @@ DSTPRE=		${DESTDIR}${PREFIX}/native
 do-install:
 	${MKDIR} -pv ${DSTPRE}/${PKGNAME}
 	${CP} -av ${WRKSRC}/* ${DSTPRE}/${PKGNAME}/
+	cd ${DSTPRE}/${PKGNAME}/ && ${CAT} ${FILESDIR}/.configs > .config
 
 .include "../../mk/bsd.pkg.mk"

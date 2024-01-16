@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (udftools-2.3.tar.gz) = bb38c72238e3dab9a3f24ab7e87071cdbfbd7d8983c0a5df6d9c48659bb786b0
+SHA512 (udftools-2.3.tar.gz) = 17304264388ae53e348d6aa870f0d23c29477344fee848236b46886c086221941872073974f804c0735eafd0cf9f7acdac7988132f03c0a87dba37467b5bda95
+Size (udftools-2.3.tar.gz) = 581756 bytes
