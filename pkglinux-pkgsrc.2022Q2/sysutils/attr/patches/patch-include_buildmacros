@@ -1,0 +1,17 @@
+$NetBSD$
+
+--- include/buildmacros.orig	2013-05-19 05:07:22.000000000 +0000
++++ include/buildmacros
+@@ -54,10 +54,10 @@ LIBNAME = $(basename $(LTLIBRARY))
+ LTOBJECTS = $(OBJECTS:.o=.lo)
+ LTVERSION = $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+-LTLINK = $(LIBTOOL) --mode=link $(CC)
++LTLINK = $(LIBTOOL) --mode=link --tag=CC $(CCF)
+ LTEXEC = $(LIBTOOL) --mode=execute
+ LTINSTALL = $(LIBTOOL) --mode=install $(INSTALL)
+-LTCOMPILE = $(LIBTOOL) --mode=compile $(CCF)
++LTCOMPILE = $(LIBTOOL) --mode=compile --tag=CC $(CCF)
+ 
+ ifeq ($(ENABLE_SHARED),yes)
+ LTLDFLAGS += -rpath $(PKG_LIB_DIR)

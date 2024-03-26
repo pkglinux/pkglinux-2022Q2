@@ -1,13 +1,14 @@
 # $NetBSD$
 
-DISTNAME=	gcc-6.5.0
-PKGNAME=	native-gcc6-6.5.0
+NATIVE_GCC_VER=	6.5.0
+DISTNAME=	gcc-${NATIVE_GCC_VER}
+PKGNAME=	native-gcc6-${NATIVE_GCC_VER}
 CATEGORIES=	native
-MASTER_SITES=	http://ftp.gnu.org/gnu/gcc/gcc-6.5.0/
+MASTER_SITES=	http://ftp.gnu.org/gnu/gcc/${DISTNAME}/
 EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	use pkgsrc-users@NetBSD.org
-HOMEPAGE=	http://ftp.gnu.org/gnu/gcc/gcc-6.5.0/
+HOMEPAGE=	http://ftp.gnu.org/gnu/gcc/gcc-${NATIVE_GCC_VER}/
 COMMENT=	The GNU Compiler Collection (GCC)
 LICENSE=	gnu-gpl-v2 AND gnu-gpl-v3 AND gnu-lgpl-v2 AND gnu-lgpl-v3
 
@@ -30,8 +31,14 @@ PKGSRC_USE_SSP=		no
 #STACK_CHECK_SUPPORTED=	no
 #PKGSRC_USE_STACK_CHECKD=	no
 
+#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
+#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/gsed
+
 USE_TOOLS+=		gmake makeinfo sed:run tar:build perl
 USE_TOOLS+=		pkg-config
+USE_TOOLS+=		gpwd gmkdir
 #USE_LIBTOOL=		yes
 #HAS_CONFIGURE=		no
 #NO_BUILD=		yes
@@ -46,6 +53,8 @@ DSTPRE=			${DESTDIR}${PREDIR}
 .include "../../devel/gmp/inplace.mk"
 .include "../../math/mpfr/inplace.mk"
 .include "../../math/mpcomplex/inplace.mk"
+
+ISL14 =		isl-0.14
 
 #	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/01_all_default-fortify-source.patch
 post-extract:
@@ -80,45 +89,185 @@ post-extract:
 	cd ${WRKSRC} && gsed	-e '/m64=/s/lib64/lib/' \
 				-i.orig gcc/config/i386/t-linux64
 	${MKDIR} -v ${BLDPRE}
+	${TAR} -jxf ${DISTDIR}/${ISL14}.tar.bz2 -C ${WRKSRC}
+	${MV} ${WRKSRC}/${ISL14} ${WRKSRC}/isl
 
-#	cd ${BLDDIR} && SED=sed CC="cc -specs=${FILESDIR}/gcc6.specs" \
-#	cd ${BLDDIR} && SED=sed CC="cc -specs=${FILESDIR}/gcc6.specs -fgnu-tm" \
-#	cd ${BLDDIR} && SED=sed \
+#	${TAR} -jxf ${DISTDIR}/gmp-6.2.1.tar.bz2 -C ${WRKSRC}
+#	${MV} ${WRKSRC}/gmp-6.2.1 ${WRKSRC}/gmp
+#	${TAR} -jxf ${DISTDIR}/mpfr-4.1.0.tar.bz2 -C ${WRKSRC}
+#	${MV} ${WRKSRC}/mpfr-4.1.0 ${WRKSRC}/mpfr
+#	${TAR} -zxf ${DISTDIR}/mpc-1.1.0.tar.gz -C ${WRKSRC}
+#	${MV} ${WRKSRC}/mpc-1.1.0 ${WRKSRC}/mpc
+
+CONFIG_ENV+=	SED=${PREFIX}/bin/gsed
+CONFIG_ENV+=	AWK=${PREFIX}/bin/gawk
+CONFIG_ENV+=	GAWK=${PREFIX}/bin/gawk
+CONFIG_ENV+=	BISON=${PREFIX}/bin/bison
+CONFIG_ENV+=	FLEX=${PREFIX}/bin/flex
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#https://gcc.gnu.org/bugzilla/show_bug.cgi?id=65794
+#https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67590
+pre-configure:
+	gsed -e "s|\$$gcc_cv_objdump |${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump |g" -i ${WRKSRC}/libcc1/configure
+
+#	cd ${WRKSRC} && \
+#		echo -en '\n#undef STANDARD_STARTFILE_PREFIX_1\n#define STANDARD_STARTFILE_PREFIX_1 \
+#			"${TOOLDIR}/sysroot/lib/"\n' >> gcc/config/linux.h && \
+#		echo -en '\n#undef STANDARD_STARTFILE_PREFIX_2\n#define STANDARD_STARTFILE_PREFIX_2 \
+#			""\n' >> gcc/config/linux.h
+
+MAKE_ENV+= 		PWD_COMMAND=${PREFIX}/bin/gpwd
+MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+.if !empty(MACHINE_GNU_PLATFORM:Marm*)
+MAK_ENV+= 		PWD_COMMAND=${PREFIX}/bin/gpwd
+MAK_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+MAK_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+MAK_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+CONFIG_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+#CONFIG_ENV+=		CPPFLAGS="-I${TOOLS_CROSS_DESTDIR}/usr/include $$CPPFLAGS"
+#CONFIG_ENV+= 		CPPFLAGS=${CPPFLAGS:S/\/usr\/include/./}
+#CONFIG_ENV+=		CC_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+#CONFIG_ENV+=		GCC_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+#CONFIG_ENV+=		CXX_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++"
+#CONFIG_ENV+=		AR_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ar"
+#CONFIG_ENV+=		NM_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-nm"
+#CONFIG_ENV+=		OBJCOPY_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objcopy"
+#CONFIG_ENV+=		OBJDUMP_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump"
+#CONFIG_ENV+=		STRIP_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-strip"
+#CONFIG_ENV+=		RANLIB_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ranlib"
+#CONFIG_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+#CONFIG_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+CONFIG_ENV+=		CC="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIG_ENV+=		GCC="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIG_ENV+=		CXX="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++"
+CONFIG_ENV+=		AR="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ar"
+CONFIG_ENV+=		NM="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-nm"
+CONFIG_ENV+=		OBJCOPY="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objcopy"
+CONFIG_ENV+=		OBJDUMP="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump"
+CONFIG_ENV+=		STRIP="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-strip"
+CONFIG_ENV+=		RANLIB="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ranlib"
+CONFIG_ENV+=		READELF="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-readelf"
+CONFIG_ENV+=		AS="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+CONFIG_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+.endif
+CONFIG_ENV+=		PWD_COMMAND=${PREFIX}/bin/gpwd
+CONFIG_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+CONFIG_ENV+=		GCC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+CONFIG_ENV+=		CXX_FOR_BUILD=${PREFIX}/gcc6/bin/g++
+CONFIG_ENV+=		AR_FOR_BUILD=${PREFIX}/bin/gar
+CONFIG_ENV+=		AS_FOR_BUILD=${PREFIX}/bin/gas
+CONFIG_ENV+=		LD_FOR_BUILD=${PREFIX}/bin/gld
+CONFIG_ENV+=		NM_FOR_BUILD=${PREFIX}/bin/gnm
+CONFIG_ENV+=		OBJCOPY_FOR_BUILD=${PREFIX}/bin/gobjcopy
+CONFIG_ENV+=		OBJDUMP_FOR_BUILD=${PREFIX}/bin/gobjdump
+CONFIG_ENV+=		READELF_FOR_BUILD=${PREFIX}/bin/greadelf
+CONFIG_ENV+=		RANLIB_FOR_BUILD=${PREFIX}/bin/granlib
+CONFIG_ENV+=		STRIP_FOR_BUILD=${PREFIX}/bin/gstrip
+CONFIG_ARGS+=		--prefix=${PREDIR}/usr
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--target=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--with-build-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIG_ARGS+=		--disable-bootstrap
+CONFIG_ARGS+=		--enable-threads=posix
+CONFIG_ARGS+=		--enable-languages=c,c++
+#CONFIG_ARGS+=		--oldincludedir=${TOOLS_CROSS_DESTDIR}/usr/include
+.if !empty(MACHINE_GNU_PLATFORM:MarmXXX*)
+CONFIG_ARGS+=		--with-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIG_ARGS+=		--disable-libiberty
+CONFIG_ARGS+=		--disable-libbacktrace
+#MAK_ENV+=		CXXFLAGS="-I${TOOLDIR}/${TARGET}/include/c++/6.5.0/${TARGET} -g -O2 -D_GNU_SOURCE -fno-omit-frame-pointer"
+#CONFIG_ARGS+=		--with-native-system-header-dir=${TOOLS_CROSS_DESTDIR}/usr/include
+CONFIG_ARGS+=		--disable-multilib
+#CONFIG_ARGS+=		--enable-__cxa_atexit
+#CONFIG_ARGS+=		--disable-sjlj-exceptions
+#CONFIG_ARGS+=		--disable-tm-clone-registry
+CONFIG_ARGS+=		--disable-libsanitizer
+#CONFIG_ARGS+=		--disable-libmudflap
+#CONFIG_ARGS+=		--disable-libgomp
+CONFIG_ARGS+=		--disable-libssp
+CONFIG_ARGS+=		--disable-libquadmath
+CONFIG_ARGS+=		--disable-libquadmath-support
+CONFIG_ARGS+=		--disable-libmpx
+CONFIG_ARGS+=		--disable-libitm
+#CONFIG_ARGS+=		--with-system-zlib
+#CONFIG_ARGS+=		--enable-checking=release
+CONFIG_ARGS+=		--disable-libstdcxx-pch
+#CONFIG_ARGS+=		--without-zstd
+#CONFIG_ARGS+=		--enable-target-optspace
+#CONFIG_ARGS+=		--enable-plugin
+#CONFIG_ARGS+=		--enable-gold
+#CONFIG_ARGS+=		--enable-libstdcxx-time
+#CONFIG_ARGS+=		--disable-libstdcxx
+#CONFIG_ARGS+=		--disable-libstdc++-v3
+#CONFIG_ARGS+=		--enable-long-long
+
+#CONFIG_ARGS+=		--without-long-double-128
+#CONFIG_ARGS+=		--without-dwarf2
+#CONFIG_ARGS+=		--enable-obsolete
+#CONFIG_ARGS+=		--disable-libiberty
+#CONFIG_ARGS+=		--disable-static
+#CONFIG_ARGS+=		--with-libiconv-prefix=/${MACHINE_GNU_PLATFORM}
+#CONFIG_ARGS+=		--with-libiconv-prefix=${TOOLS_CROSS_DESTDIR}/sysroot/${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--build=x86_64-unknown-linux
+.else
+CONFIG_ARGS+=		--build=x86_64-unknown-linux
+.endif
+.if !empty(MACHINE_GNU_PLATFORM:M*-gnueabi)
+CONFIG_ARGS+=		--with-float=soft
+.endif
+.else
+CONFIG_ARGS+=		--prefix=${PREDIR}/usr
+CONFIG_ARGS+=		--build=x86_64-unknown-linux
+CONFIG_ARGS+=		--enable-multilib
+CONFIG_ARGS+=		--with-multilib-list=m64,m32,mx32
+CONFIG_ARGS+=		--with-arch=k8
+CONFIG_ARGS+=		--with-tune=k8
+CONFIG_ARGS+=		--enable-threads=posix
+CONFIG_ARGS+=		--enable-libssp	
+CONFIG_ARGS+=		--enable-libmpx	
+CONFIG_ARGS+=		--with-system-zlib
+CONFIG_ARGS+=		--enable-languages=c,c++
+.endif
 
 do-configure:
-	cd ${BLDDIR} && SED=gsed \
-	${WRKSRC}/configure				\
-		--build=x86_64-unknown-linux		\
-		--prefix=${PREDIR}/usr			\
-		--enable-multilib			\
-		--with-multilib-list=m64,m32,mx32	\
-		--with-arch=k8 \
-		--with-tune=k8 \
-		--enable-threads=posix			\
-		--enable-libssp				\
-		--enable-libmpx				\
-		--with-system-zlib			\
-		--enable-languages=c,c++
+	cd ${BLDDIR} && ${SETENV} ${CONFIG_ENV} ${WRKSRC}/configure ${CONFIG_ARGS}
+
+.if !empty(MACHINE_GNU_PLATFORM:Marm*)
 
 do-build:
-	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
-	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDDIR} install-strip || ${GMAKE} DESTDIR=${BLDDIR} install)
-	${MKDIR} -v ${BLDPRE}/usr/share/gdb/auto-load/usr/lib/
-	${MV} -v ${BLDPRE}/usr/lib/*gdb.py ${BLDPRE}/usr/share/gdb/auto-load/usr/lib
-	chown -v -R root:root \
-		${BLDPRE}/usr/lib/gcc/x86_64-*-linux*/6.5.0/include{,-fixed}
-	${RM} -rf ${BLDPRE}/usr/lib/gcc/$(gcc -dumpmachine)/6.5.0/include-fixed/bits/
+	cd ${BLDDIR} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && (${SETENV} ${MAK_ENV} ${GMAKE} DESTDIR=${BLDDIR} install-strip || ${SETENVI} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDDIR} install)
+
+.else
+
+do-build:
+	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && (${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDDIR} install-strip || ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDDIR} install)
+
+.endif
+
+pre-install:
 	${MKDIR} -v ${BLDPRE}/lib/
-	${LN} -sv ../usr/bin/cpp ${BLDPRE}/lib
-	${LN} -sv gcc ${BLDPRE}/usr/bin/cc
+	${LN} -svf ../usr/bin/cpp ${BLDPRE}/lib
+	${LN} -svf gcc ${BLDPRE}/usr/bin/cc
 	${INSTALL_DATA_DIR} -v -m755 ${BLDPRE}/usr/lib/bfd-plugins/
-	${LN} -sfv ../../libexec/gcc/$(gcc -dumpmachine)/6.5.0/liblto_plugin.so \
+	${LN} -sfv ../../libexec/gcc/${MACHINE_GNU_PLATFORM}/${NATIVE_GCC_VER}/liblto_plugin.so \
 		${BLDPRE}/usr/lib/bfd-plugins/
 
 do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
 
+GENERATE_PLIST+= \
+ 	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
+
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+.include "../../mk/dlopen.buildlink3.mk"
+.include "../../mk/pthread.buildlink3.mk"
+.else
+.include "../../mk/pthread.buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
@@ -127,4 +276,5 @@ do-install:
 .include "../../lang/python/application.mk"
 .include "../../mk/dlopen.buildlink3.mk"
 .include "../../mk/pthread.buildlink3.mk"
+.endif
 .include "../../mk/bsd.pkg.mk"

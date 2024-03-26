@@ -15,8 +15,8 @@ ONLY_FOR_PLATFORM=	Linux-*-*
 
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
-TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
-TOOLS_PLATFORM.sed=		/pkg/bin/gsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+TOOLS_PLATFORM.sed=		${PREFIX}/bin/gsed
 
 USE_TOOLS+=		autoconf automake gmake m4 makeinfo sed:run tar:build perl
 

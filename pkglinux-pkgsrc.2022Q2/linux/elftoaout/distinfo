@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (elftoaout-2_3-1_1.tar.gz) = cbe36f475e50611bcdde38cd3b15b8063accedc73dbe27933cb8299ad585b63e
+SHA512 (elftoaout-2_3-1_1.tar.gz) = 7a9c6b001063e5524e04106d179f4c7cc832c60a7e0d6f274e0a565323e906276c0a950581dea534260ba6c03f4db70441df059c88784ddf85981b34ba0af372
+Size (elftoaout-2_3-1_1.tar.gz) = 1061 bytes

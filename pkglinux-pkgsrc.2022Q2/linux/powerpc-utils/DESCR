@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README
+
+powerpc-utils package
+==========================
+
+Mailing List: powerpc-utils-devel@googlegroups.com
+Subscribe: https://groups.google.com/forum/#!forum/powerpc-utils-devel/join
+
+This package contains utilities which are intended for maintenance of IBM 
+powerpc platforms that follow the POWER Architecture Platform Reference (PAPR),
+This package requires the librtas package in order to function properly.
+All of these utilities must be run as root.
+
+The virtual IO administration utilities included in this package require the 
+systool application.
+
+Further documentation for each of these utilities is available in their
+corresponding man pages.
+
+update_flash:  system firmware update utility
+------------
+A script that uses the rtas_flash kernel module to flash firmware.
+...

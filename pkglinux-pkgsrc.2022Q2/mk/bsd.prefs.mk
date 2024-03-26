@@ -542,7 +542,7 @@ _MAKE_PACKAGE_AS_ROOT?=	yes
 MACHINE_ARCH=	${TARGET_ARCH}
 .  endif
 CROSS_DESTDIR?=	${MAKEOBJDIR}/destdir.${MACHINE_ARCH}
-.  if !exists(${CROSS_DESTDIR}/usr/include/stddef.h)
+.  if !exists(${CROSS_DESTDIR}/usr/include/linux/stddef.h)
 PKG_FAIL_REASON+=	"The cross-compiling root ${CROSS_DESTDIR:Q} is incomplete"
 .  else
 _CROSS_DESTDIR=	${CROSS_DESTDIR}

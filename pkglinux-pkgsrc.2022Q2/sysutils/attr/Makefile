@@ -40,9 +40,9 @@ post-install:
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/include/attr/
 	cd ${DESTDIR}${PREFIX}/ && find include/attr/* | xargs -I F ${LN} -sfv ${PREFIX}/F native/usr/F
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/lib/
-	cd ${DESTDIR}${PREFIX}/ && find lib/libattr* | xargs -I F ${LN} -sfv ${PREFIX}/F native/usr/F
+	cd ${DESTDIR}${PREFIX}/ && find lib/* | xargs -I F ${LN} -sfv ${PREFIX}/F native/usr/F
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/lib/
-	cd ${DESTDIR}${PREFIX}/ && find lib/libattr* | xargs -I F ${LN} -sfv ${PREFIX}/F native/F
+	cd ${DESTDIR}${PREFIX}/ && find lib/* | xargs -I F ${LN} -sfv ${PREFIX}/F native/F
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/bin/
 	cd ${DESTDIR}${PREFIX}/ && find bin/{attr,getfattr,setfattr} | xargs -I F ${LN} -sfv ${PREFIX}/F native/F
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/include/attr/
@@ -53,6 +53,13 @@ post-install:
 #	cd ${DESTDIR}${PREFIX}/native/lib/ && ${LN} -sfv ../../lib/libattr* .
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/bin/
 #	cd ${DESTDIR}${PREFIX}/native/bin/ && ${LN} -sfv ../../bin/{attr,getfattr,setfattr} .
+
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+GENERATE_PLIST+= \
+  	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
+.endif
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

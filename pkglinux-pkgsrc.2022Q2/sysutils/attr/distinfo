@@ -5,3 +5,5 @@ SHA512 (attr-2.4.47.src.tar.gz) = 2a333f63655758298650cf8f89c175efdc0112dcc4013e
 Size (attr-2.4.47.src.tar.gz) = 343692 bytes
 SHA1 (patch-aa) = 82dc4a892b3d87f9cba9e4542f502ccf5ce7f59c
 SHA1 (patch-ab) = 72ce83dfd9b15ff2a3bd81d27d436b6d8d324342
+SHA1 (patch-include_buildmacros) = 6741656a601ffce87c1233ab8a555a08a1ad559f
+SHA1 (patch-m4__package_utilies.m4) = b56b690493dbdcc680858cd62a0947b02997f695

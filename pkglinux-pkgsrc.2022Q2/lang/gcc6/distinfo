@@ -40,6 +40,7 @@ SHA1 (patch-libgo_Makefile.in) = 612987541f745c7be6835ce7fb7119884db294c3
 SHA1 (patch-libjava_boehm.cc) = bf5564261b02523927685340f59ce8faf7f84ace
 SHA1 (patch-libjava_configure) = 48ea2baffe87e09dda8133d286bd9b1bfe4c3f8a
 SHA1 (patch-libjava_contrib_rebuild-gcj-db.in) = bb01d738fc7db05046ae37e8ade32574de1d8297
+SHA1 (patch-libsanitizer_configure.tgt) = 0aff54104734b2cb21090e33f9304738946ea5a0
 SHA1 (patch-libstdc++-v3_config_os_bsd_netbsd_ctype__base.h) = 014d442c885b9c51d1a4af05205279c274a9559d
 SHA1 (patch-libstdc++-v3_config_os_bsd_netbsd_ctype__configure__char.cc) = b63c2682336c9b6f0e0d7b900d6f40ad6e7a5ec4
 SHA1 (patch-libstdc++-v3_config_os_bsd_netbsd_ctype__inline.h) = 626fc1f9c035ac5cef30a92d525af4e778835ebf

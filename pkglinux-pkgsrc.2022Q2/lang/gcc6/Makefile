@@ -46,6 +46,10 @@ INFO_FILES=		yes
 CONFIGURE_ARGS+=	--disable-libstdcxx-pch
 GCC_TARGET_MACHINE=	${MACHINE_GNU_PLATFORM}
 
+# error: 'for' loop initial declarations are only allowed in C99 mode
+USE_CC_FEATURES+=	c99
+FORCE_C_STD=		gnu99	
+
 UNLIMIT_RESOURCES+=	datasize
 UNLIMIT_RESOURCES+=	stacksize
 
@@ -79,6 +83,11 @@ BOOT_LDFLAGS+=		${LDFLAGS:M-Wl,-syslibroot*}
 # GCC does not understand this option; remove it, or stage build will fail
 BUILDLINK_TRANSFORM+=	rm:-stdlib=libc++
 
+.if ${OPSYS} == "Linux"
+# glibc limitations, needs at least -O
+FORTIFY_SUPPORTED=	no
+.endif
+
 # Disable fixincludes on SmartOS, header changes result in broken includes
 # being generated, see https://github.com/joyent/pkgsrc-legacy/issues/270
 .if ${OS_VARIANT} == "SmartOS"
@@ -93,7 +102,6 @@ SUBST_SED.fixinc=	-e "s,\./fixinc.sh,-c true,"
 ## For graphite support.
 .if !empty(PKG_OPTIONS:Mgcc-graphite)
 
-post-extract:
 #	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/01_all_default-fortify-source.patch
 post-extract:
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/02_all_default-warn-format-security.patch
@@ -217,8 +225,15 @@ SUBST_SED.ccs=		-e 's,/usr/ccs/bin,/usr/bin,g'
 
 CTF_FILES_SKIP+=	*/gengtype	# CPU limit exceeded
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 pre-configure:
 	${RUN} cd ${WRKSRC} && ${MKDIR} ${OBJDIR}
+	#https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67590
+	gsed -e "s|\$$gcc_cv_objdump |${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump |g" -i ${WRKSRC}/libcc1/configure
+.else
+pre-configure:
+	${RUN} cd ${WRKSRC} && ${MKDIR} ${OBJDIR}
+.endif
 
 TEST_TARGET=	-k check || ${TRUE}
 pre-test:
@@ -250,20 +265,102 @@ GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && 					\
 	${FIND} ${GCC_SUBPREFIX} \( -type f -o -type l \) -print | ${SORT} ;
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+.if !empty(MACHINE_ARCHM:M*64*)
+CONFIGURE_ARGS+=	--enable-multilib
+.endif
+.else
 CONFIGURE_ARGS+=	--enable-bootstrap
+.if !empty(MACHINE_PLATFORM:MNetBSD-*-x86_64) || !empty(MACHINE_PLATFORM:MLinux-*-x86_64)
+#CONFIGURE_ENV+=		CC=/usr/bin/gcc CXX=/usr/bin/g++	
+CONFIGURE_ARGS+=	--build=x86_64-unknown-linux
+CONFIGURE_ARGS+=	--without-dwarf2
 CONFIGURE_ARGS+=	--enable-libssp
 CONFIGURE_ARGS+=	--with-arch=k8 --with-tune=k8 --with-fpmath=sse
 CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
-CONFIGURE_ARGS+=	--enable-libmpx --with-system-zlib
+#CONFIGURE_ARGS+=	--disable-cxx-exceptions
+.endif
+CONFIGURE_ARGS+=	--enable-libmpx
+CONFIGURE_ARGS+=	--with-system-zlib
 CONFIGURE_ARGS+=        --with-gnu-as --with-as=${PREFIX}/bin/gas
 CONFIGURE_ARGS+=        --with-gnu-ld --with-ld=${PREFIX}/bin/gld
 BUILDLINK_DEPMETHOD.binutils=   full
 .  include "../../devel/binutils/buildlink3.mk"
+.endif
 
 # pkgsrc gcc packages don't install libgcc_s on some platforms, to
 # avoid problems when mixing compiler versions.  This breaks our use
 # of pkgsrc gcc on EL.
 PKG_DEFAULT_OPTIONS+=   always-libgcc
+
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIGURE_ARGS+=	--build=x86_64-unknown-linux
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--target=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-build-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIGURE_ARGS+=	--disable-bootstrap
+#CONFIGURE_ARGS+=	--disable-multilib
+#Your libunwind C++ exception-handling runtime is conflicting with the C++ language runtime supplied by the compiler.
+#I suspect using the libunwind C++ runtime is not what you really want. Building it is disabled by default for x86_64.
+#I suggest you pass --disable-cxx-exceptions (or --enable-cxx-exceptions=no) to configure to disable building the C++ runtime component and see if it resolves your problem. If that fixes the problem, configure.ac can be tweaked to make disabling that features the default for RISC-V too.
+#CONFIGURE_ARGS+=	--disable-cxx-exceptions
+#CONFIGURE_ARGS+=	--enable-languages=c,c++,fortran,objc,obj-c++,java,go # removing objc,obj-c++,java,go
+#CONFIGURE_ARGS+=	--with-system-libunwind=no 
+.if !empty(USE_CROSS_COMPILE:Marm*)
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+#CONFIGURE_ARGS+=		--with-native-system-header-dir=${TOOLS_CROSS_DESTDIR}/usr/include
+CONFIGURE_ARGS+=		--disable-multilib
+#CONFIGURE_ARGS+=		--enable-__cxa_atexit
+#CONFIGURE_ARGS+=		--disable-sjlj-exceptions
+#CONFIGURE_ARGS+=		--disable-tm-clone-registry
+CONFIGURE_ARGS+=		--disable-libsanitizer
+#CONFIGURE_ARGS+=		--with-float=soft
+#CONFIGURE_ARGS+=		--disable-libmudflap
+#CONFIGURE_ARGS+=		--disable-libgomp
+CONFIGURE_ARGS+=		--disable-libssp
+CONFIGURE_ARGS+=		--disable-libquadmath
+CONFIGURE_ARGS+=		--disable-libquadmath-support
+CONFIGURE_ARGS+=		--disable-libmpx
+CONFIGURE_ARGS+=		--disable-libitm
+CONFIGURE_ENV+=		CC_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIGURE_ENV+=		GCC_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIGURE_ENV+=		CXX_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++"
+CONFIGURE_ENV+=		AR_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ar"
+CONFIGURE_ENV+=		NM_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-nm"
+CONFIGURE_ENV+=		OBJCOPY_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objcopy"
+CONFIGURE_ENV+=		OBJDUMP_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump"
+CONFIGURE_ENV+=		STRIP_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-strip"
+CONFIGURE_ENV+=		RANLIB_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ranlib"
+CONFIGURE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+CONFIGURE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+CONFIGURE_ENV+=		CC="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIGURE_ENV+=		GCC="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIGURE_ENV+=		CXX="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++"
+CONFIGURE_ENV+=		AR="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ar"
+CONFIGURE_ENV+=		NM="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-nm"
+CONFIGURE_ENV+=		OBJCOPY="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objcopy"
+CONFIGURE_ENV+=		OBJDUMP="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump"
+CONFIGURE_ENV+=		STRIP="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-strip"
+CONFIGURE_ENV+=		RANLIB="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ranlib"
+CONFIGURE_ENV+=		AS="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+CONFIGURE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+#MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+#MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+#MAKE_ENV+=		AS="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+#MAKE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+.endif
+CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		GCC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		CXX_FOR_BUILD=${PREFIX}/gcc6/bin/g++
+CONFIGURE_ENV+=		AR_FOR_BUILD=${PREFIX}/bin/gar
+CONFIGURE_ENV+=		AS_FOR_BUILD=${PREFIX}/bin/gas
+CONFIGURE_ENV+=		LD_FOR_BUILD=${PREFIX}/bin/gld
+CONFIGURE_ENV+=		NM_FOR_BUILD=${PREFIX}/bin/gnm
+CONFIGURE_ENV+=		PWD_COMMAND=${PREFIX}/bin/pwd
+MAKE_ENV+=		CXXFLAGS="-I${TOOLDIR}/${TARGET}/include/c++/6.5.0/${TARGET} -g -O2 -D_GNU_SOURCE -fno-omit-frame-pointer"
+MAKE_ENV+=		PATH=${TOOLDIR}/bin:$$PATH
+
+.endif
 
 .include "../../mk/dlopen.buildlink3.mk"
 .include "../../mk/pthread.buildlink3.mk"

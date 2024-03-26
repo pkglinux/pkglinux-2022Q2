@@ -19,10 +19,10 @@ USE_TOOLS+=		gdbus-codegen
 USE_PKGLOCALEDIR=	yes
 USE_LANGUAGES=		c c++
 
-#TOOLS_PLATFORM.awk?=		/2022Q2/bin/nawk
-#TOOLS_PLATFORM.sed?=		/2022Q2/bin/nbsed
-TOOLS_PLATFORM.awk?=		/2022Q2/bin/gawk
-TOOLS_PLATFORM.sed?=		/2022Q2/bin/gsed
+#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+TOOLS_PLATFORM.sed?=		${PREFIX}/bin/gsed
 
 MESON_ARGS+=		-Dlibaudit=no
 MESON_ARGS+=		-Dlibpsl=false

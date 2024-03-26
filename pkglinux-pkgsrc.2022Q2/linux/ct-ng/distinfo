@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (crosstool-ng-1.26.0.tar.xz) = 8b372e3bf6e40d1d4a082ce39d03308b266eb0d735a9e2d080dff2436f64c7b7
+SHA512 (crosstool-ng-1.26.0.tar.xz) = 7834184ae5792fd347455f9f48fee826248dcb82d271954ed4304b1a18f63995ff8a2c3b817564dcf147ac7e16e02d779195b26d97eb57db27f1118a1837002a
+Size (crosstool-ng-1.26.0.tar.xz) = 1144720 bytes

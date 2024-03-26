@@ -32,7 +32,7 @@ for arg in "$@"; do
 	esac
 done
 
-_basedir="/root/current/$(uname -m)"
+_basedir="/root/current"
 
 while getopts 'b:' OPTION; do
 	case "$OPTION" in
@@ -49,9 +49,9 @@ shift "$(($OPTIND -1))"
 
 [[ "$#" -lt 1 ]] && { echo "Usage: $0 [ -b basedir ] prefix" >&2; exit 1; }
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
-[[ -d "$_basedir/packages.$1" ]] ||  { echo "$_basedir/packages.$1 is not a directory.";exit 1; }
+[[ -d "$_basedir/packages.$1/$(uname -m)" ]] ||  { echo "$_basedir/packages.$1/$(uname -m) is not a directory.";exit 1; }
 
-pushd $_basedir/packages.$1/All/
+pushd $_basedir/packages.$1/$(uname -m)/All/
 pwd
 find . -name '*.tgz' -exec pkg_info -X {} \; > pkg_summary
 gzip -f pkg_summary

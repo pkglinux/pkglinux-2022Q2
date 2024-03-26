@@ -26,7 +26,8 @@ PKGLINUX_MAKEISO_VERBOSE=""
 PKGLINUX_MAKEISO_TAG="std"
 PKGLINUX_MAKEISO_KVER="$(uname -r)"
 PKGLINUX_MAKEISO_PREFIX="2022Q2"
-PKGLINUX_MAKEISO_REPO="https://repos.pkglinux.top/dist/$(uname -m)/packages.$PKGLINUX_MAKEISO_PREFIX/All"
+PKGLINUX_MAKEISO_ARCH="$(uname -m)"
+PKGLINUX_MAKEISO_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_MAKEISO_PREFIX/$PKGLINUX_MAKEISO_ARCH/All"
 PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
 curl --head --silent --fail -k "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
 PKGLINUX_MAKEISO_PREFIX="$(curl -sk "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
@@ -42,12 +43,13 @@ pkglinux-makeiso-usage()
 	# Display Help
 	echo "Create ISO-9660 file or write it to usb device."
 	echo
-	echo "Syntax: $0 [ -h|v|V|p|t|w|l|f ] [ --help|verbose|version|prefix|tag|wait|rootwait|rootdelay|level|force ] [ usbdev ]"
+	echo "Syntax: $0 [ -h|v|V|p|t|w|l|f ] [ --help|verbose|version|prefix|arch|tag|wait|rootwait|rootdelay|level|force ] [ usbdev ]"
 	echo "options:"
 	echo "h     Print this help."
 	echo "v     Verbose mode."
 	echo "V     Print software version and exit."
 	echo "p     Set new prefix."
+	echo "m     Set new machine architecture."
 	echo "t     Sub tag name for target iso file."
 	echo "w     Seconds of rootdelay/rootwait."
 	echo "l     iso-level (default 1)."
@@ -65,6 +67,7 @@ for arg in "$@"; do
 		"--verbose")	set -- "$@" "-v" ;;
 		"--version")	set -- "$@" "-V" ;;
 		"--prefix")	set -- "$@" "-p" ;;
+		"--arch")	set -- "$@" "-m" ;;
 		"--tag")	set -- "$@" "-t" ;;
 		"--wait")	set -- "$@" "-w" ;;
 		"--rootwait")	set -- "$@" "-w" ;;
@@ -75,7 +78,7 @@ for arg in "$@"; do
 	esac
 done
 
-while getopts ':hvVp:t:w:l:f' OPTION; do
+while getopts ':hvVp:m:t:w:l:f' OPTION; do
 	case "$OPTION" in
 		h)	# display usage
 			pkglinux-makeiso-usage
@@ -88,6 +91,9 @@ while getopts ':hvVp:t:w:l:f' OPTION; do
 			exit;;
 		p)	# set new prefix
 			PKGLINUX_MAKEISO_PREFIX="$OPTARG"
+			;;
+		m)	# set new machine architeture
+			PKGLINUX_MAKEISO_ARCH="$OPTARG"
 			;;
 		t)	# subtag other than "min", like "gnome","kde", or "gnome+kde"
 			PKGLINUX_MAKEISO_TAG="$OPTARG" ;;
@@ -159,8 +165,8 @@ PKGLINUX_MAKEISO_CONF="/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf"
 
 [ -f "$PKGLINUX_MAKEISO_CONF" ] && PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEISO_CONF")
 PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
-PKGLINUX_MAKEISO_FILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_TAG.iso"
-PKGLINUX_MAKEISO_SFSFILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_TAG.sfs"
+PKGLINUX_MAKEISO_FILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_ARCH-$PKGLINUX_MAKEISO_TAG.iso"
+PKGLINUX_MAKEISO_SFSFILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_ARCH-$PKGLINUX_MAKEISO_TAG.sfs"
 
 if [ "$#" -gt 0 ]; then
   [[ "$1" == "/dev/"* ]] || { echo "$1 is not a device."; exit 1; }

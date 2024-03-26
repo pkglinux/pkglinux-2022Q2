@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (gcc-6.5.0.tar.xz) = c1527dc077b3957812936b12b19bbc777cfd7c5d2169b3ff8641363e761e1161
+SHA512 (gcc-6.5.0.tar.xz) = ce046f9a50050fd54b870aab764f7db187fe7ea92eb4aaffb7c3689ca623755604e231f2af97ef795f41c406bb80c797dd69957cfdd51dfa2ba60813f72b7eac
+Size (gcc-6.5.0.tar.xz) = 74355588 bytes

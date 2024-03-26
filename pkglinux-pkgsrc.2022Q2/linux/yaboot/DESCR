@@ -1,0 +1,22 @@
+
+Yaboot  -- PowerPC GNU/Linux OpenFirmware bootloader
+-------------------------------------------------------------------
+
+Please read the "COPYING" file for licence informations.
+
+-------------------------------------------------------------------
+
+Yaboot is an OpenFirmware bootloader for Open Firmware based
+machines. It is known to work on "NewWorld" class powermacs (iMac and
+all machines released after it), RS/6000, and possibly other OF based
+CHRP machines. "OldWorld" PowerMacs (with the built-in MacOS ROM)
+are not supported.
+
+This README serves as a quick-start introduction to yaboot and its
+installation utilities. For a more complete usage and installation
+guide, see yaboot-howto.html/index.en.html in the same folder where
+this README is located, or else inside the doc folder in this
+directory. For documentation about all the options available, see the
+man pages (bootstrap, yaboot, yaboot.conf, ybin, mkofboot, ofpath,
+yabootconfig).
+...

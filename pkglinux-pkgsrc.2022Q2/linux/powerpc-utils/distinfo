@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (powerpc-utils_1.3.11.orig.tar.gz) = 964006ec70be0d219a15e8102b7e66c59570dfa70c4d5f7a76dc915dafc362da
+SHA512 (powerpc-utils_1.3.11.orig.tar.gz) = 448fbbd707a4ad734db79206fabc01f76a41738ce54d6dea86573bf4b7ea8e98e4efe99b1173d91dc0c0f4ee4312c044a7bf087a2a5f50c7e9089f81b1425921
+Size (powerpc-utils_1.3.11.orig.tar.gz) = 397192 bytes

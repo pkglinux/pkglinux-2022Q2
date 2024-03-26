@@ -219,8 +219,12 @@ TOOLS_PLATFORM.soelim?=		${_path}/soelim
 .  if exists(${_path}/sort)
 TOOLS_PLATFORM.sort?=		${_path}/sort
 .  endif
+.  if !empty(TOOLS_USE_CROSS_COMPILE:M[yY][eE][sS])
+TOOLS_PLATFORM.strip?=		${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-strip
+.  else
 .  if exists(${_path}/strip)
 TOOLS_PLATFORM.strip?=		${_path}/strip
+.  endif
 .  endif
 .  if exists(${_path}/tail)
 TOOLS_PLATFORM.tail?=		${_path}/tail
@@ -302,4 +306,36 @@ TOOLS_PLATFORM.bzcat?=		${TOOLS_PLATFORM.bzip2} -cd
 .endif
 .if !empty(TOOLS_PLATFORM.gzip)
 TOOLS_PLATFORM.zcat?=		${TOOLS_PLATFORM.gzip} -cd
+.endif
+
+
+.if !empty(TOOLS_USE_CROSS_COMPILE:M[yY][eE][sS])
+.  for _t_ in ar as ld nm objcopy objdump ranlib readelf strip
+TOOLS_PATH.${MACHINE_GNU_PLATFORM}-${_t_}?=	\
+	${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-${_t_}
+TOOLS_CREATE+=	${MACHINE_GNU_PLATFORM}-${_t_}
+.  endfor
+
+TOOLS_PATH.ar?=		${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ar
+TOOLS_CREATE+=			ar
+TOOLS_PATH.ranlib?=		${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ranlib
+TOOLS_CREATE+=			ranlib
+TOOLS_PATH.readelf?=		${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-readelf
+TOOLS_CREATE+=			readelf
+
+NATIVE_CC:=	/usr/bin/cc -B /usr/libexec -B /usr/bin
+#NATIVE_CC:=	${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc
+CC=		${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc
+
+NATIVE_CXX:=	/usr/bin/c++ -B /usr/libexec -B /usr/bin
+#NATIVE_CXX:=	${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++
+CXX=		${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++
+
+NATIVE_LD:=	/usr/bin/ld
+#NATIVE_LD:=	${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld
+LD=		${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld
+
+NATIVE_AR:=	/usr/bin/ar
+NATIVE_RANLIB:=	/usr/bin/ranlib
+
 .endif

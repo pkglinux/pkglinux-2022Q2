@@ -1,0 +1,20 @@
+$NetBSD$
+
+BLAKE2s (binutils-2.38.tar.bz2) = 80609a31f2040a8418a2004cb9de8b3d409e954c7c1d17afef8e9237227d00ee
+SHA512 (binutils-2.38.tar.bz2) = 7690b4158bd6587a85c6b98903980b9ac6f16b47f7fd1e60986b0a70388bedcfdc05d75597aa49c81fec1609ce24bed6c26583f76fd2471a9d63394fd9798afc
+Size (binutils-2.38.tar.bz2) = 34866647 bytes
+SHA1 (patch-bfd_cache.c) = e2d96bad350552eacdffa83532f9dc9e15ee9be9
+SHA1 (patch-gold_Makefile.in) = e01d973f9625a1653851f796c123efec37102fbd
+SHA1 (patch-gold_options.h) = 03816bbf157d781820d96a4d3af0885dc2bbbaa9
+SHA1 (patch-gold_system.h) = 9b4130b5315763daa66e0a91a8be6d1df0d10344
+SHA1 (patch-gold_testsuite_Makefile.in) = 24ede750675829281436d728d77073638f58d6b9
+SHA1 (patch-include_safe-ctype.h) = 66e636f8200ff5e9b4bfa0a5aee13cd072a23887
+SHA1 (patch-ld_Makefile.am) = 944ddf3d44b3a3f57ef2ec8ddd6b9ba653b7dbbb
+SHA1 (patch-ld_Makefile.in) = 3ddcb2fa4ebf336be547ec7bec918942668c99b0
+SHA1 (patch-ld_configure.tgt) = 99304d60f50078e2b97341fa8ccb63a6813e2309
+SHA1 (patch-ld_emulparams_aarch64nbsd.sh) = 6489e5996eefdb8ba66c73d7425443109d47e6a9
+SHA1 (patch-ld_emulparams_aarch64nbsdb.sh) = 9980f3ca8cb7cac1b56c71c482b691fa2f7659a1
+SHA1 (patch-ld_emulparams_armelf__nbsd__eabi.sh) = 464b0957f95a1a8ba6a92ee0091b929d9c980470
+SHA1 (patch-ld_emulparams_armelf__nbsd__eabihf.sh) = 972678f6bab6e910fe7ac29c6c06f1a438d308a0
+SHA1 (patch-ld_emulparams_armelfb__nbsd__eabi.sh) = 67a519cac8986ab2520861bbd1100782295637d2
+SHA1 (patch-ld_emulparams_armelfb__nbsd__eabihf.sh) = 6f58d6aa6d601544d9ad00a9ac4fdc704390a42c

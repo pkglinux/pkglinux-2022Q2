@@ -21,4 +21,8 @@ do-install:
 	${MKDIR} -pv ${DESTDIR}${PREFIX}/native/
 	cd ${DESTDIR}${PREFIX}/native/ && gtar -xJvf /root/dist/pkglinux-pkgsrc.${PREFIX:S/\///}.txz
 
+GENERATE_PLIST+= \
+    	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
+
 .include "../../mk/bsd.pkg.mk"

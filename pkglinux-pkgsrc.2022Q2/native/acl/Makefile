@@ -25,7 +25,7 @@ PKGCONFIG_OVERRIDE+=	libacl.pc.in
 ONLY_FOR_PLATFORM=	Linux-*-* # Uses Linux kernel headers
 
 USE_LANGUAGES=		c c++
-USE_NATIVE_GCC=	yes
+USE_NATIVE_GCC=		yes
 #USE_NATIVE_GCC=	no
 USE_PKGSRC_GCC=		no
 #GCC_REQD+=		6
@@ -49,14 +49,19 @@ DSTPRE=			${DESTDIR}${PREDIR}
 post-extract:
 	${MKDIR} -v ${BLDPRE}
 
+CONFIG_ARGS+=		--prefix=/usr
+CONFIG_ARGS+=		--bindir=/bin
+CONFIG_ARGS+=		--disable-static
+CONFIG_ARGS+=		--libexecdir=/usr/lib
+CONFIG_ARGS+=		--docdir=/usr/share/doc/${DISTNAME}
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--with-sysroot=${TOOLS_CROSS_DESTDIR}
+.endif
+
 do-configure:
-	cd ${BLDDIR} && \
-	${WRKSRC}/configure			\
-		--prefix=/usr			\
-		--bindir=/bin			\
-		--disable-static		\
-		--libexecdir=/usr/lib		\
-		--docdir=/usr/share/doc/${DISTNAME}
+	cd ${BLDDIR} && ${WRKSRC}/configure ${CONFIG_ARGS}
 
 do-build:
 	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
@@ -68,4 +73,5 @@ do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
 
+.include "../../sysutils/attr/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

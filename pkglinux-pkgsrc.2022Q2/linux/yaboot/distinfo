@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (yaboot-1.3.17.tar.gz) = 2122b8d3549573f79fe815596fdbb7575aa8fbc4594fd9e92095e79eeb3a5409
+SHA512 (yaboot-1.3.17.tar.gz) = 2503204a56b7432b993f816947c945cfbdc0f1ca57f200c715f9def12138f81f0bd0cf2adf8a7aa4297d619d6cabac0065a714b5c9948acd00b26f3ed18fb6ea
+Size (yaboot-1.3.17.tar.gz) = 225837 bytes

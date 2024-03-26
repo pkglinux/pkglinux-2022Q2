@@ -1,13 +1,14 @@
 # $NetBSD$
 
-DISTNAME=	gcc-7.5.0
-PKGNAME=	native-gcc7-7.5.0
+NATIVE_GCC_VER=	7.5.0
+DISTNAME=	gcc-${NATIVE_GCC_VER}
+PKGNAME=	native-gcc7-${NATIVE_GCC_VER}
 CATEGORIES=	native
-MASTER_SITES=	http://ftp.gnu.org/gnu/gcc/gcc-7.5.0/
+MASTER_SITES=	http://ftp.gnu.org/gnu/gcc/${DISTNAME}/
 EXTRACT_SUFX=	.tar.xz
 
 MAINTAINER=	use pkgsrc-users@NetBSD.org
-HOMEPAGE=	http://ftp.gnu.org/gnu/gcc/gcc-7.5.0/
+HOMEPAGE=	http://ftp.gnu.org/gnu/gcc/gcc-${NATIVE_GCC_VER}/
 COMMENT=	The GNU Compiler Collection (GCC)
 LICENSE=	gnu-gpl-v2 AND gnu-gpl-v3 AND gnu-lgpl-v2 AND gnu-lgpl-v3
 
@@ -30,8 +31,14 @@ PKGSRC_USE_SSP=		no
 #STACK_CHECK_SUPPORTED=	no
 #PKGSRC_USE_STACK_CHECKD=	no
 
+#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
+#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/gsed
+
 USE_TOOLS+=		gmake makeinfo sed:run tar:build perl
 USE_TOOLS+=		pkg-config
+USE_TOOLS+=		gpwd gmkdir
 #USE_LIBTOOL=		yes
 #HAS_CONFIGURE=		no
 #NO_BUILD=		yes
@@ -47,74 +54,188 @@ DSTPRE=			${DESTDIR}${PREDIR}
 .include "../../math/mpfr/inplace.mk"
 .include "../../math/mpcomplex/inplace.mk"
 
+ISL14 =		isl-0.14
+
 #	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/01_all_default-fortify-source.patch
 post-extract:
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/02_all_default-warn-format-security.patch
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/03_all_default-warn-trampolines.patch
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/04_all_default-ssp-fix.patch
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/05_all_alpha-mieee-default.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/06_all_ia64_note.GNU-stack.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/07_all_libiberty-asprintf.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/08_all_libiberty-pic.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/09_all_nopie-all-flags.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/10_all_extra-options.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/11_all_pr55930-dependency-tracking.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/12_all_sh-drop-sysroot-suffix.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/13_all_respect-build-cxxflags.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/14_all_libgfortran-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/15_all_libgomp-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/16_all_libitm-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/17_all_libatomic-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/18_all_libbacktrace-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/19_all_libsanitizer-libbacktrace-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/20_all_libstdcxx-no-vtv.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/21_all_lto-ctor-dtor-target.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/22_all_libsanitizer-p1.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/23_all_libsanitizer-p2.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/24_all_libcpp-ar.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/25_all_plugin-objdump.patch
-	cd ${WRKSRC} && sed	-e '/m64=/s/lib64/lib/' \
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/06_all_arm_armv4t-default.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/07_all_ia64_note.GNU-stack.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/08_all_superh_default-multilib.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/09_all_libiberty-asprintf.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/10_all_libiberty-pic.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/11_all_nopie-all-flags.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/12_all_extra-options.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/13_all_pr55930-dependency-tracking.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/14_all_asan-signal_h.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/15_all_respect-build-cxxflags.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/16_all_libgfortran-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/17_all_libgomp-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/18_all_libitm-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/19_all_libatomic-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/20_all_libbacktrace-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/21_all_libsanitizer-libbacktrace-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/22_all_libstdcxx-no-vtv.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/23_all_std_pair_ABI.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/24_all_libsanitizer-p1.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/25_all_libsanitizer-p2.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/26_all_libcpp-ar.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/27_all_whitespace-pa.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/28_all_libjava-multilib.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/29_all_plugin-objdump.patch
+	cd ${WRKSRC} && gsed	-e '/m64=/s/lib64/lib/' \
 				-i.orig gcc/config/i386/t-linux64
 	${MKDIR} -v ${BLDPRE}
+	${TAR} -jxf ${DISTDIR}/${ISL14}.tar.bz2 -C ${WRKSRC}
+	${MV} ${WRKSRC}/${ISL14} ${WRKSRC}/isl
 
-#	cd ${BLDDIR} && SED=sed CC="cc -specs=${FILESDIR}/gcc6.specs" \
-#	cd ${BLDDIR} && SED=sed CC="cc -specs=${FILESDIR}/gcc6.specs -fgnu-tm" \
-#	cd ${BLDDIR} && SED=sed \
+CONFIG_ENV+=	SED=${PREFIX}/bin/gsed
+CONFIG_ENV+=	AWK=${PREFIX}/bin/gawk
+CONFIG_ENV+=	GAWK=${PREFIX}/bin/gawk
+CONFIG_ENV+=	BISON=${PREFIX}/bin/bison
+CONFIG_ENV+=	FLEX=${PREFIX}/bin/flex
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#https://gcc.gnu.org/bugzilla/show_bug.cgi?id=65794
+#https://gcc.gnu.org/bugzilla/show_bug.cgi?id=67590
+pre-configure:
+	gsed -e "s|\$$gcc_cv_objdump |${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump |g" -i ${WRKSRC}/libcc1/configure
+
+#	cd ${WRKSRC} && \
+#		echo -en '\n#undef STANDARD_STARTFILE_PREFIX_1\n#define STANDARD_STARTFILE_PREFIX_1 \
+#			"${TOOLDIR}/sysroot/lib/"\n' >> gcc/config/linux.h && \
+#		echo -en '\n#undef STANDARD_STARTFILE_PREFIX_2\n#define STANDARD_STARTFILE_PREFIX_2 \
+#			""\n' >> gcc/config/linux.h
+
+MAKE_ENV+= 		PWD_COMMAND=${PREFIX}/bin/gpwd
+MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+.if !empty(MACHINE_GNU_PLATFORM:Marm*)
+MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+CONFIG_ENV+=		CC_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIG_ENV+=		GCC_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIG_ENV+=		CXX_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++"
+CONFIG_ENV+=		AR_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ar"
+CONFIC_ENV+=		NM_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-nm"
+CONFIC_ENV+=		OBJCOPY_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objcopy"
+CONFIC_ENV+=		OBJDUMP_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump"
+CONFIC_ENV+=		STRIP_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-strip"
+CONFIC_ENV+=		RANLIB_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ranlib"
+CONFIG_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+CONFIG_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+CONFIG_ENV+=		CC="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIG_ENV+=		GCC="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
+CONFIG_ENV+=		CXX="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++"
+CONFIG_ENV+=		AR="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ar"
+CONFIC_ENV+=		NM="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-nm"
+CONFIC_ENV+=		OBJCOPY="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objcopy"
+CONFIC_ENV+=		OBJDUMP="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-objdump"
+CONFIC_ENV+=		STRIP="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-strip"
+CONFIC_ENV+=		RANLIB="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ranlib"
+CONFIG_ENV+=		AS="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+CONFIG_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+.endif
+CONFIG_ENV+=		PWD_COMMAND=${PREFIX}/bin/gpwd
+CONFIG_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+CONFIG_ENV+=		GCC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+CONFIG_ENV+=		CXX_FOR_BUILD=${PREFIX}/gcc6/bin/g++
+CONFIG_ENV+=		AR_FOR_BUILD=${PREFIX}/bin/gar
+CONFIG_ENV+=		AS_FOR_BUILD=${PREFIX}/bin/gas
+CONFIG_ENV+=		LD_FOR_BUILD=${PREFIX}/bin/gld
+CONFIG_ENV+=		NM_FOR_BUILD=${PREFIX}/bin/gnm
+CONFIG_ENV+=		OBJCOPY_FOR_BUILD=${PREFIX}/bin/gobjcopy
+CONFIG_ENV+=		OBJDUMP_FOR_BUILD=${PREFIX}/bin/gobjdump
+CONFIG_ENV+=		RANLIB_FOR_BUILD=${PREFIX}/bin/granlib
+CONFIG_ENV+=		STRIP_FOR_BUILD=${PREFIX}/bin/gstrip
+CONFIG_ARGS+=		--prefix=${PREDIR}/usr
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--target=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--with-build-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIG_ARGS+=		--disable-bootstrap
+CONFIG_ARGS+=		--enable-threads=posix
+CONFIG_ARGS+=		--enable-languages=c,c++
+.if !empty(MACHINE_GNU_PLATFORM:Marm*)
+CONFIG_ARGS+=		--disable-multilib
+CONFIG_ARGS+=		--enable-__cxa_atexit
+CONFIG_ARGS+=		--disable-sjlj-exceptions
+CONFIG_ARGS+=		--disable-tm-clone-registry
+CONFIG_ARGS+=		--disable-libsanitizer
+CONFIG_ARGS+=		--disable-libmudflap
+CONFIG_ARGS+=		--disable-libgomp
+CONFIG_ARGS+=		--disable-libssp
+CONFIG_ARGS+=		--disable-libquadmath
+CONFIG_ARGS+=		--disable-libquadmath-support
+CONFIG_ARGS+=		--disable-libmpx
+CONFIG_ARGS+=		--with-system-zlib
+CONFIG_ARGS+=		--enable-checking=release
+CONFIG_ARGS+=		--disable-libstdcxx-pch
+CONFIG_ARGS+=		--without-zstd
+CONFIG_ARGS+=		--enable-target-optspace
+CONFIG_ARGS+=		--enable-plugin
+CONFIG_ARGS+=		--enable-gold
+#CONFIG_ARGS+=		--enable-libstdcxx-time
+CONFIG_ARGS+=		--disable-libstdcxx
+CONFIG_ARGS+=		--disable-libstdc++-v3
+#CONFIG_ARGS+=		--enable-long-long
+#CONFIG_ARGS+=		--enable-obsolete
+#CONFIG_ARGS+=		--disable-libiberty
+#CONFIG_ARGS+=		--disable-static
+#CONFIG_ARGS+=		--with-libiconv-prefix=/${MACHINE_GNU_PLATFORM}
+#CONFIG_ARGS+=		--with-libiconv-prefix=${TOOLS_CROSS_DESTDIR}/sysroot/${MACHINE_GNU_PLATFORM}
+.else
+CONFIG_ARGS+=		--build=x86_64-unknown-linux
+.endif
+.if !empty(MACHINE_GNU_PLATFORM:M*-gnueabi)
+CONFIG_ARGS+=		--with-float=soft
+.endif
+.else
+CONFIG_ARGS+=		--prefix=${PREDIR}/usr
+CONFIG_ARGS+=		--build=x86_64-unknown-linux
+CONFIG_ARGS+=		--enable-multilib
+CONFIG_ARGS+=		--with-multilib-list=m64,m32,mx32
+CONFIG_ARGS+=		--with-arch=k8
+CONFIG_ARGS+=		--with-tune=k8
+CONFIG_ARGS+=		--enable-threads=posix
+CONFIG_ARGS+=		--enable-libssp	
+CONFIG_ARGS+=		--enable-libmpx	
+CONFIG_ARGS+=		--with-system-zlib
+CONFIG_ARGS+=		--enable-languages=c,c++
+.endif
 
 do-configure:
-	cd ${BLDDIR} && SED=sed \
-	${WRKSRC}/configure				\
-		--build=x86_64-unknown-linux		\
-		--prefix=${PREDIR}/usr			\
-		--enable-multilib			\
-		--with-multilib-list=m64,m32,mx32	\
-		--with-arch=k8 \
-		--with-tune=k8 \
-		--enable-threads=posix			\
-		--enable-libssp				\
-		--enable-libmpx				\
-		--with-system-zlib			\
-		--enable-languages=c,c++
+	cd ${BLDDIR} && ${SETENV} ${CONFIG_ENV} ${WRKSRC}/configure ${CONFIG_ARGS}
 
 do-build:
-	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
-	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDDIR} install-strip || ${GMAKE} DESTDIR=${BLDDIR} install)
-	${MKDIR} -v ${BLDPRE}/usr/share/gdb/auto-load/usr/lib/
-	${MV} -v ${BLDPRE}/usr/lib/*gdb.py ${BLDPRE}/usr/share/gdb/auto-load/usr/lib
-	chown -v -R root:root \
-		${BLDPRE}/usr/lib/gcc/x86_64-*-linux*/7.5.0/include{,-fixed}
-	${RM} -rf ${BLDPRE}/usr/lib/gcc/$(gcc -dumpmachine)/7.5.0/include-fixed/bits/
+	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && (${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDDIR} install-strip || ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDDIR} install)
+
+pre-install:
 	${MKDIR} -v ${BLDPRE}/lib/
-	${LN} -sv ../usr/bin/cpp ${BLDPRE}/lib
-	${LN} -sv gcc ${BLDPRE}/usr/bin/cc
+	${LN} -svf ../usr/bin/cpp ${BLDPRE}/lib
+	${LN} -svf gcc ${BLDPRE}/usr/bin/cc
 	${INSTALL_DATA_DIR} -v -m755 ${BLDPRE}/usr/lib/bfd-plugins/
-	${LN} -sfv ../../libexec/gcc/$(gcc -dumpmachine)/7.5.0/liblto_plugin.so \
+	${LN} -sfv ../../libexec/gcc/${MACHINE_GNU_PLATFORM}/${NATIVE_GCC_VER}/liblto_plugin.so \
 		${BLDPRE}/usr/lib/bfd-plugins/
 
 do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
 
+GENERATE_PLIST+= \
+ 	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
+
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+.include "../../mk/dlopen.buildlink3.mk"
+.include "../../mk/pthread.buildlink3.mk"
+#.if !empty(MACHINE_GNU_PLATFORM:Marm*)
+#.include "../../converters/libiconv/buildlink3.mk"
+#.endif
+.else
+.include "../../mk/pthread.buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
@@ -123,4 +244,5 @@ do-install:
 .include "../../lang/python/application.mk"
 .include "../../mk/dlopen.buildlink3.mk"
 .include "../../mk/pthread.buildlink3.mk"
+.endif
 .include "../../mk/bsd.pkg.mk"
