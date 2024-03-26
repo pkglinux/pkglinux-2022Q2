@@ -216,8 +216,12 @@ if [ "$#" -gt 0 ]; then
   sync
   echo "Trying to enlarge the last partition of $1 ..."
   echo "- +" | sfdisk --force --no-reread --no-tell-kernel -N 3 $1
+  echo "Syncing disks ..."
+  sync
   echo "Trying to resize the file system of the last partition of $1 ..."
   resize2fs "$1""3"
+  echo "Syncing disks ..."
+  sync
   sync
   exit 0
 fi
