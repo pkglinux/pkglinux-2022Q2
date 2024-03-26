@@ -28,7 +28,7 @@ PKGLINUX_MAKEISO_KVER="$(uname -r)"
 PKGLINUX_MAKEISO_PREFIX="2022Q2"
 PKGLINUX_MAKEISO_ARCH="$(uname -m)"
 PKGLINUX_MAKEISO_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_MAKEISO_PREFIX/$PKGLINUX_MAKEISO_ARCH/All"
-PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
+PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $(dirname $PKGLINUX_MAKEISO_REPO)))/iso"
 curl --head --silent --fail -k "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
 PKGLINUX_MAKEISO_PREFIX="$(curl -sk "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
 [ -L /pkg ] && [ -d /pkg ] && PKGLINUX_MAKEISO_PREFIX="$(readlink /pkg)"
@@ -121,7 +121,7 @@ shift "$(($OPTIND -1))"
 [ "${PKGLINUX_MAKEISO_PREFIX^^}" = "LATEST" ] &&
 curl --head --silent --fail -k "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" 2>&1> /dev/null &&
 PKGLINUX_MAKEISO_PREFIX="$(curl -sk "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" | grep -v "^#" | cut -f1 | tail -1)"
-PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
+PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $(dirname $PKGLINUX_MAKEISO_REPO)))/iso"
 
 if [[ "$PKGLINUX_MAKEISO_PREFIX" =~ 20[2-9][0-9]Q[1-4] ]]; then
   if curl --head --silent --fail -k "$PKGLINUX_MAKEISO_REPO_ROOT/LATEST.txt" 2>&1> /dev/null; then
@@ -164,7 +164,7 @@ esac
 PKGLINUX_MAKEISO_CONF="/$PKGLINUX_MAKEISO_PREFIX/etc/pkgin/repositories.conf"
 
 [ -f "$PKGLINUX_MAKEISO_CONF" ] && PKGLINUX_MAKEISO_REPO=$(grep -v -e "^#" -e "^$" "$PKGLINUX_MAKEISO_CONF")
-PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $PKGLINUX_MAKEISO_REPO))/iso"
+PKGLINUX_MAKEISO_REPO_ROOT="$(dirname $(dirname $(dirname $PKGLINUX_MAKEISO_REPO)))/iso"
 PKGLINUX_MAKEISO_FILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_ARCH-$PKGLINUX_MAKEISO_TAG.iso"
 PKGLINUX_MAKEISO_SFSFILE="pkglinux-$PKGLINUX_MAKEISO_PREFIX-$PKGLINUX_MAKEISO_ARCH-$PKGLINUX_MAKEISO_TAG.sfs"
 
