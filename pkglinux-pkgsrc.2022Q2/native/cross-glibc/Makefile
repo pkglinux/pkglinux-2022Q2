@@ -82,6 +82,9 @@ CONFIG_ARGS+=		--prefix=${PREDIR}/sysroot/usr
 .if !empty(CROSS_TARGET:Msparc-*)
 CONFIG_ARGS+=		--host=${CROSS_TARGET:S/sparc-/sparcv9-/}
 CONFIG_ARGS+=		--target=${CROSS_TARGET:S/sparc-/sparcv9-/}
+.elif !empty(CROSS_TARGET:Msh-*)
+CONFIG_ARGS+=		--host=${CROSS_TARGET:S/sh-/sh4-/}
+CONFIG_ARGS+=		--target=${CROSS_TARGET:S/sh-/sh4-/}
 .else
 CONFIG_ARGS+=		--host=${CROSS_TARGET}
 CONFIG_ARGS+=		--target=${CROSS_TARGET}

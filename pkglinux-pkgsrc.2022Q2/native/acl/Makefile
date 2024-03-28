@@ -67,7 +67,7 @@ do-build:
 	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
 	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDPRE} install-strip || ${GMAKE} DESTDIR=${BLDPRE} install)
 	${MKDIR} -pv ${BLDPRE}/lib/
-	cd ${BLDPRE}/lib/ && ${LN} -sfv ../usr/lib/libacl.so* .
+	cd ${BLDPRE}/lib/ && ${LN} -sfv ../usr/lib/libacl.* .
 
 do-install:
 	${MKDIR} -v ${DSTPRE}

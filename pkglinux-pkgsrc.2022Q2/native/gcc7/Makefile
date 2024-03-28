@@ -54,7 +54,7 @@ DSTPRE=			${DESTDIR}${PREDIR}
 .include "../../math/mpfr/inplace.mk"
 .include "../../math/mpcomplex/inplace.mk"
 
-ISL14 =		isl-0.14
+ISL18 =		isl-0.18
 
 #	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/01_all_default-fortify-source.patch
 post-extract:
@@ -62,35 +62,31 @@ post-extract:
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/03_all_default-warn-trampolines.patch
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/04_all_default-ssp-fix.patch
 	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/05_all_alpha-mieee-default.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/06_all_arm_armv4t-default.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/07_all_ia64_note.GNU-stack.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/08_all_superh_default-multilib.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/09_all_libiberty-asprintf.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/10_all_libiberty-pic.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/11_all_nopie-all-flags.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/12_all_extra-options.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/13_all_pr55930-dependency-tracking.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/14_all_asan-signal_h.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/15_all_respect-build-cxxflags.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/16_all_libgfortran-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/17_all_libgomp-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/18_all_libitm-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/19_all_libatomic-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/20_all_libbacktrace-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/21_all_libsanitizer-libbacktrace-Werror.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/22_all_libstdcxx-no-vtv.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/23_all_std_pair_ABI.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/24_all_libsanitizer-p1.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/25_all_libsanitizer-p2.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/26_all_libcpp-ar.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/27_all_whitespace-pa.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/28_all_libjava-multilib.patch
-	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/29_all_plugin-objdump.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/06_all_ia64_note.GNU-stack.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/07_all_libiberty-asprintf.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/08_all_libiberty-pic.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/09_all_nopie-all-flags.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/10_all_extra-options.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/11_all_pr55930-dependency-tracking.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/12_all_sh-drop-sysroot-suffix.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/13_all_respect-build-cxxflags.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/14_all_libgfortran-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/15_all_libgomp-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/16_all_libitm-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/17_all_libatomic-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/18_all_libbacktrace-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/19_all_libsanitizer-libbacktrace-Werror.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/20_all_libstdcxx-no-vtv.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/21_all_lto-ctor-dtor-target.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/22_all_libsanitizer-p1.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/23_all_libsanitizer-p2.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/24_all_libcpp-ar.patch
+	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/25_all_plugin-objdump.patch
 	cd ${WRKSRC} && gsed	-e '/m64=/s/lib64/lib/' \
 				-i.orig gcc/config/i386/t-linux64
 	${MKDIR} -v ${BLDPRE}
-	${TAR} -jxf ${DISTDIR}/${ISL14}.tar.bz2 -C ${WRKSRC}
-	${MV} ${WRKSRC}/${ISL14} ${WRKSRC}/isl
+	${TAR} -jxf ${DISTDIR}/${ISL18}.tar.bz2 -C ${WRKSRC}
+	${MV} ${WRKSRC}/${ISL18} ${WRKSRC}/isl
 
 CONFIG_ENV+=	SED=${PREFIX}/bin/gsed
 CONFIG_ENV+=	AWK=${PREFIX}/bin/gawk
@@ -186,7 +182,11 @@ CONFIG_ARGS+=		--disable-libstdc++-v3
 #CONFIG_ARGS+=		--with-libiconv-prefix=/${MACHINE_GNU_PLATFORM}
 #CONFIG_ARGS+=		--with-libiconv-prefix=${TOOLS_CROSS_DESTDIR}/sysroot/${MACHINE_GNU_PLATFORM}
 .else
+.if !empty(MACHINE_GNU_PLATFORM:Mmips64-*)
+CONFIG_ARGS+=		--disable-selftest
+.else
 CONFIG_ARGS+=		--build=x86_64-unknown-linux
+.endif
 .endif
 .if !empty(MACHINE_GNU_PLATFORM:M*-gnueabi)
 CONFIG_ARGS+=		--with-float=soft

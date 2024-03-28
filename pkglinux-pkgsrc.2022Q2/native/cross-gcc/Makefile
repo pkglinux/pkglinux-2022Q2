@@ -239,10 +239,7 @@ CONFIG_ARGS+=		--disable-libstdcxx-pch
 .if !empty(CROSS_TARGET:Mx86_64-*)
 CONFIG_ARGS+=		--disable-multilib
 .endif
-.if !empty(CROSS_TARGET:Mmips64el-*)
-CONFIG_ARGS+=		--disable-multilib
-.endif
-.if !empty(CROSS_TARGET:Mmips64-*)
+.if !empty(CROSS_TARGET:Mmips64*-*)
 CONFIG_ARGS+=		--disable-multilib
 .endif
 .if !empty(CROSS_TARGET:Msparc64-*)
@@ -260,7 +257,8 @@ CONFIG_ARGS+=		--disable-multilib
 .if !empty(CROSS_TARGET:Msparc-*)
 CONFIG_ARGS+=		--with-cpu=v9
 .endif
-.if !empty(CROSS_TARGET:Marm*) || !empty(CROSS_TARGET:Msh*)
+#.if !empty(CROSS_TARGET:Marm*) || !empty(CROSS_TARGET:Msh*)
+.if !empty(CROSS_TARGET:Marm*)
 CONFIG_ARGS+=		--disable-multilib
 CONFIG_ARGS+=		--enable-__cxa_atexit
 CONFIG_ARGS+=		--disable-sjlj-exceptions
@@ -278,15 +276,14 @@ CONFIG_ARGS+=		--enable-target-optspace
 CONFIG_ARGS+=		--enable-plugin
 CONFIG_ARGS+=		--enable-gold
 CONFIG_ARGS+=		--enable-long-long
+.endif
 .if !empty(CROSS_TARGET:Msh*)
-CONFIG_ARGS+=		--disable-multiarch
+CONFIG_ARGS+=		--enable-multiarch
 CONFIG_ARGS+=		--with-cpu=sh4
-.if !empty(CROSS_TARGET:Mshbe*)
-CONFIG_ARGS+=		--with-endian=big
-.else
-CONFIG_ARGS+=		--with-endian=little
-.endif
-.endif
+CONFIG_ARGS+=		--with-endian=little,big
+CONFIG_ARGS+=		--with-multilib-list=m4-nofpu,m4a,m3
+#CONFIG_ARGS+=		--disable-bootstrap
+#CONFIG_ARGS+=		--enable-long-long
 .endif
 .if !empty(CROSS_TARGET:Marmeb-*)
 CONFIG_ARGS+=		--with-arch=armv5te
@@ -358,14 +355,10 @@ CONFIG_ARGS+=		--disable-multilib
 CONFIG_ARGS+=		--with-cpu=v9
 .endif
 .if !empty(CROSS_TARGET:Msh*)
-CONFIG_ARGS+=		--disable-multiarch
+CONFIG_ARGS+=		--enable-multiarch
 CONFIG_ARGS+=		--with-cpu=sh4
-#CONFIG_ARGS+=		--with-endian=little,big
-.if !empty(CROSS_TARGET:Mshbe*)
-CONFIG_ARGS+=		--with-endian=big
-.else
-CONFIG_ARGS+=		--with-endian=little
-.endif
+CONFIG_ARGS+=		--with-endian=little,big
+CONFIG_ARGS+=		--with-multilib-list=m4-nofpu,m4a,m3
 .endif
 .if !empty(CROSS_TARGET:Marm-*-*-gnueabi)
 CONFIG_ARGS+=		--with-float=soft

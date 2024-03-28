@@ -75,6 +75,18 @@ CONFIG_ARGS+=		--without-zstd
 .if !empty(CROSS_TARGET:Marm-*-gnueabi)
 CONFIG_ARGS+=		--with-float=soft
 .endif
+.if !empty(CROSS_TARGET:Msh-*)
+CONFIG_ARGS+=		--disable-werror
+CONFIG_ARGS+=		--enable-ld=yes
+CONFIG_ARGS+=		--enable-gold=no
+CONFIG_ARGS+=		--enable-plugins
+CONFIG_ARGS+=		--enable-deterministic-archives
+CONFIG_ARGS+=		--enable-multilib
+CONFIG_ARGS+=		--disable-sim
+CONFIG_ARGS+=		--disable-gdb
+CONFIG_ARGS+=		--disable-nls
+CONFIG_ARGS+=		--without-zstd
+.endif
 
 do-configure:
 	cd ${BLDDIR} && ${SETENV} ${CONFIG_ENV} ${WRKSRC}/configure ${CONFIG_ARGS}

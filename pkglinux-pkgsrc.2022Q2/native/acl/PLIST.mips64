@@ -2,10 +2,8 @@
 native/bin/chacl
 native/bin/getfacl
 native/bin/setfacl
+native/lib/libacl.a
 native/lib/libacl.la
-native/lib/libacl.so
-native/lib/libacl.so.1
-native/lib/libacl.so.1.1.2253
 native/usr/include/acl/libacl.h
 native/usr/include/sys/acl.h
 native/usr/lib/libacl.la

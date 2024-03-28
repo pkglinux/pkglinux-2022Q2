@@ -1,7 +1,7 @@
 
-#CROSS_TARGET?=		aarch64-unknown-linux-gnu
+CROSS_TARGET?=		aarch64-unknown-linux-gnu
 #CROSS_TARGET?=		arm-unknown-linux-gnueabi
-CROSS_TARGET?=		armeb-unknown-linux-gnueabi
+#CROSS_TARGET?=		armeb-unknown-linux-gnueabi
 #CROSS_TARGET?=		armv6-unknown-linux-gnueabi
 #CROSS_TARGET?=		armv6-unknown-linux-gnueabihf
 #CROSS_TARGET?=		armv7-rpi2-linux-gnueabihf
@@ -18,7 +18,6 @@ CROSS_TARGET?=		armeb-unknown-linux-gnueabi
 #CROSS_TARGET?=		riscv64-unknown-linux-gnu
 #CROSS_TARGET?=		s390-unknown-linux-gnu
 #CROSS_TARGET?=		s390x-unknown-linux-gnu
-#CROSS_TARGET?=		sh-unknown-linux-gnu
 #CROSS_TARGET?=		sparc-unknown-linux-gnu
 #CROSS_TARGET?=		sparc64-unknown-linux-gnu
 CROSS_MNAME?=		cross-${CROSS_TARGET:S/-linux-gnu//:S/-unknown//}

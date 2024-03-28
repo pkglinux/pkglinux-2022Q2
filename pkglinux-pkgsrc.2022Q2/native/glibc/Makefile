@@ -109,7 +109,24 @@ CONFIG_ARGS+=		--enable-stack-protector=strong
 CONFIG_ARGS+=		--enable-shared
 CONFIG_ARGS+=		libc_cv_slibdir=${PREDIR}/lib
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+.if !empty(CROSS_TARGET:Msparc-*)
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM:S/sparc-/sparcv9-/}
+.elif !empty(CROSS_TARGET:Msh-*)
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM:S/sh-/sh4-/}
+#CONFIG_ARGS+=		--disable-werror
+#CONFIG_ARGS+=		--with-fp
+#CONFIG_ARGS+=		--without-cvs
+#CONFIG_ARGS+=		--disable-profile
+#CONFIG_ARGS+=		--without-gd
+#CONFIG_ARGS+=		--disable-debug
+#CONFIG_ARGS+=		--disable-sanity-checks
+#CONFIG_ARGS+=		--enable-obsolete-rpc
+#CONFIG_ARGS+=		--with-__thread
+#CONFIG_ARGS+=		--with-tls
+#CONFIG_ARGS+=		--enable-add-ons=no
+.else
 CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+.endif
 CONFIG_ARGS+=		--with-build-sysroot=${TOOLS_CROSS_DESTDIR}
 .if !empty(MACHINE_GNU_PLATFORM:Marm-*-*-gnueabi)
 #CONFIG_ARGS+=		libc_cv_with_fp=no
