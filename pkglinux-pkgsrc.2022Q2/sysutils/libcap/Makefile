@@ -14,6 +14,11 @@ USE_TOOLS+=	pkg-config gmake gsed perl
 
 ONLY_FOR_PLATFORM=	Linux-*-*
 
+#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
+TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
+TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
+
 PKGCONFIG_OVERRIDE+=	libcap/libcap.pc.in
 PKGCONFIG_OVERRIDE+=	libcap/libpsx.pc.in
 
@@ -42,5 +47,15 @@ post-install:
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/lib/pkgconfig/
 #	cd ${DESTDIR}${PREFIX}/native/usr/lib/pkgconfig/ && ${LN} -sfv ../../../../lib/pkgconfig/*.pc .
 #	cd ${DESTDIR}${PREFIX}/native/usr/lib/ && ${LN} -sfv ../../../lib/lib* .
+
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+MAKE_ENV+=	BUILD_CC=${NATIVE_CC:Q}
+MAKE_ENV+=	PAM_CAP=no
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
 
 .include "../../mk/bsd.pkg.mk"

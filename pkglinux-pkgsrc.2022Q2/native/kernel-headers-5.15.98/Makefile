@@ -44,6 +44,9 @@ GNU_CONFIGURE=		no
 
 #GNU_CONFIGURE_PREFIX=	${PREFIX}/native
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+
 do-build:
 	cd ${WRKSRC} && ${GMAKE} mrproper && ${GMAKE} -j${MAKE_JOBS} headers && \
 	${FIND} usr/include -name ".*" -exec ${RM} -rf {} \; && \
@@ -54,5 +57,8 @@ do-install:
 	cd ${WRKSRC} && ${CP} -rv usr/include ${DESTDIR}${PREFIX}/native/usr/
 	${CP} -v ${FILESDIR}/cyclades.h ${DESTDIR}${PREFIX}/native/usr/include/linux/
 
+GENERATE_PLIST+= \
+ 	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
 
 .include "../../mk/bsd.pkg.mk"

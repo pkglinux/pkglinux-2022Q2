@@ -53,7 +53,7 @@ shift "$(($OPTIND -1))"
 [ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
 basedir=""
 [[ "$#" -gt 2 ]] && { basedir=$3; }
-[[ -d $1 ]] ||  { echo "$1 is not a directory.";exit 1; }
+[[ -d $basedir$1 ]] ||  { echo "$basedir$1 is not a directory.";exit 1; }
 ( cd $basedir$1 && find . -type d          | eval $filter | xargs -I F mkdir -p $basedir$2/F )
 ( cd $basedir$1 && find . -type l -xtype d | cut -c3- | eval $filter | xargs -I F cp -a $basedir$1/F $basedir$2/F )
 ( cd $basedir$1 && find . -type l -xtype f | cut -c3- | eval $filter | xargs -I F ln -$lnflag $1/F $basedir$2/F )

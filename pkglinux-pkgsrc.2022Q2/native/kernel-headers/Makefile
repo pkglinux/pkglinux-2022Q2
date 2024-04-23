@@ -53,5 +53,4 @@ do-install:
 	cd ${WRKSRC} && ${CP} -rv usr/include ${DESTDIR}${PREFIX}/native/usr/
 	${CP} -v ${FILESDIR}/cyclades.h ${DESTDIR}${PREFIX}/native/usr/include/linux/
 
-
 .include "../../mk/bsd.pkg.mk"

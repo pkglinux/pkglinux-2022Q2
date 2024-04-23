@@ -19,7 +19,9 @@ USE_TOOLS+=		msgfmt
 CONFIGURE_ARGS+=	--enable-nls
 CONFIGURE_ENV+=		gt_cv_func_gnugettext1_libintl=yes
 .include "../../devel/gettext-lib/buildlink3.mk"
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 .include "../../devel/gettext-tools/buildlink3.mk"
+.endif
 PLIST.nls=		yes
 .else
 CONFIGURE_ARGS+=	--disable-nls

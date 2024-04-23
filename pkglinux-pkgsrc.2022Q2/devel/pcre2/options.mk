@@ -6,6 +6,7 @@ PKG_SUPPORTED_OPTIONS=	pcre2-jit
 .if (${MACHINE_ARCH} == "i386" || \
     ${MACHINE_ARCH} == "x86_64" || \
     ${MACHINE_ARCH} == "mips" || \
+    ${MACHINE_ARCH} == "mips64" || \
     ${MACHINE_ARCH} == "powerpc" || \
     ${MACHINE_ARCH} == "sparc" || \
     (!empty(MACHINE_ARCH:M*arm*) && empty(MACHINE_ARCH:M*armv4*)))

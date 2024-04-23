@@ -16,7 +16,12 @@ COMMENT=	GNU Standards-compliant Makefile generator
 LICENSE=	gnu-gpl-v2
 
 AUTOCONF_REQD=	2.62
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_TOOLS+=	autoconf gm4 perl
+.else
 USE_TOOLS+=	autoconf gm4:run perl:run
+.endif
 
 PLIST_SUBST+=		PKG_DIR_VERSION=1.16
 GNU_CONFIGURE=		YES

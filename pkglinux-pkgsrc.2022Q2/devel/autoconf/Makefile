@@ -13,10 +13,19 @@ HOMEPAGE=		https://www.gnu.org/software/autoconf/autoconf.html
 COMMENT=		Generates automatic source code configuration scripts
 LICENSE=		gnu-gpl-v3 AND gnu-fdl-v1.3
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+TOOL_DEPENDS+=		help2man-[0-9]*:../../converters/help2man
+.else
 BUILD_DEPENDS+=		help2man-[0-9]*:../../converters/help2man
+.endif
 
 # XXX: needs m4>1.4.6; wants m4>1.4.13
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_TOOLS+=		gm4 perl
+.else
 USE_TOOLS+=		gm4:run perl:run
+.endif
 
 # The next line is for conflicts with old versions of this package,
 # which had autoconf-devel as PKGNAME.

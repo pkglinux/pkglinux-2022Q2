@@ -56,15 +56,27 @@ post-extract:
 	sed -i 's/resizecons.8 //' ${WRKSRC}/docs/man/man8/Makefile.in
 	${MKDIR} -v ${BLDPRE}
 
+CONFIG_ARGS+=		--prefix=/usr
+CONFIG_ARGS+=		--disable-vlock
+CONFIG_ENV+=		PKG_CONFIG_PATH=/usr/lib/pkgconfig
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--with-sysroot=${TOOLS_CROSS_DESTDIR}
+.endif
+
+#do-configure:
+#	cd ${BLDDIR} && PKG_CONFIG_PATH=/usr/lib/pkgconfig \
+#	${WRKSRC}/configure			\
+#		--prefix=/usr			\
+#		--disable-vlock
+
 do-configure:
-	cd ${BLDDIR} && PKG_CONFIG_PATH=/usr/lib/pkgconfig \
-	${WRKSRC}/configure			\
-		--prefix=/usr			\
-		--disable-vlock
+	cd ${BLDDIR} && ${SETENV} ${CONFIG_ENV} ${WRKSRC}/configure ${CONFIG_ARGS}
 
 do-build:
-	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
-	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDPRE} install-strip || ${GMAKE} DESTDIR=${BLDPRE} install)
+	cd ${BLDDIR} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && (${SETENV} ${MAK_ENV} ${GMAKE} DESTDIR=${BLDPRE} install-strip || ${SETENV} ${MAK_ENV} ${GMAKE} DESTDIR=${BLDPRE} install)
 	${MKDIR} -v ${BLDPRE}/usr/share/doc/${DISTNAME}/
 	${CP} -av ${WRKSRC}/docs/doc/* ${BLDPRE}/usr/share/doc/${DISTNAME}/
 

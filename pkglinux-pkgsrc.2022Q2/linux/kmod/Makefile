@@ -17,8 +17,8 @@ USE_TOOLS+=	pkg-config gmake gsed
 
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
-TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
-TOOLS_PLATFORM.sed=		/pkg/bin/gsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+TOOLS_PLATFORM.sed=		${PREFIX}/bin/gsed
 
 USE_PKGLOCALEDIR=	yes
 
@@ -62,14 +62,49 @@ post-install:
 #	cd ${DESTDIR}${PREFIX}/native/lib/ && ${LN} -sfv ../../lib/lib* .
 #	cd ${DESTDIR}${PREFIX}/native/lib/pkgconfig/ && ${LN} -sfv ../../../lib/pkgconfig/*.pc .
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#USE_CWRAPPERS=	yes
+USE_LIBTOOL=	yes
+#CONFIGURE_ARGS+=	libzstd_CFLAGS="${PREFIX}/sysroot/${PREFIX}/include"
+#CONFIGURE_ARGS+=	liblzma_CFLAGS="${PREFIX}/sysroot/${PREFIX}/include"
+#CONFIGURE_ARGS+=	zlib_CFLAGS="${PREFIX}/sysroot/${PREFIX}/include"
+#CONFIGURE_ARGS+=	libzstd_LIBS="${PREFIX}/sysroot/${PREFIX}/lib"
+#CONFIGURE_ARGS+=	liblzma_LIBS="${PREFIX}/sysroot/${PREFIX}/lib"
+#CONFIGURE_ARGS+=	zlib_LIBS="${PREFIX}/sysroot/${PREFIX}/lib"
+#CONFIGURE_ARGS+=	libzstd_CFLAGS="${PREFIX}/include"
+#CONFIGURE_ARGS+=	liblzma_CFLAGS="${PREFIX}/include"
+#CONFIGURE_ARGS+=	zlib_CFLAGS="${PREFIX}/include"
+#CONFIGURE_ARGS+=	libzstd_LIBS="${PREFIX}/lib"
+#CONFIGURE_ARGS+=	liblzma_LIBS="${PREFIX}/lib"
+#CONFIGURE_ARGS+=	zlib_LIBS="${PREFIX}/lib"
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+#CONFIGURE_ARGS+=	--without-xz
+#CONFIGURE_ARGS+=	--without-zstd
+#CONFIGURE_ARGS+=	--without-zlib
+#CONFIGURE_ARGS+=	--with-rootlibdir==${PREFIX}/sysroot/${PREFIX}/lib
+#CONFIGURE_ARGS+=	--libdir=${PREFIX}/sysroot/${PREFIX}/lib
+#CONFIGURE_ARGS+=	--enable-static
+#ABI=	64
+CONFIGURE_ARGS+=	--without-openssl
+MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
 .include "../../linux/semodule-utils/buildlink3.mk"
+.include "../../security/openssl/buildlink3.mk"
+.endif
 
 .include "../../archivers/xz/buildlink3.mk"
 .include "../../archivers/zstd/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
-.include "../../security/openssl/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

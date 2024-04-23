@@ -21,7 +21,6 @@ USE_TOOLS+=	pkg-config
 PKGCONFIG_OVERRIDE+=	pkgconfig/einfo.pc.in
 PKGCONFIG_OVERRIDE+=	pkgconfig/openrc.pc.in
 
-MESON_ARGS+=	-Dselinux=enabled
 MESON_ARGS+=	-Dos=Linux
 MESON_ARGS+=	-Dpam=false
 MESON_ARGS+=	-Dsysvinit=true
@@ -61,7 +60,17 @@ post-install:
 	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default/ &&  ln -snvf ../../init.d/nscd .
 	gsed -e '/^#rc_parallel="NO"/{n;s/^/rc_parallel="YES"\n/;}' -i ${DESTDIR}${PREFIX}/native/etc/rc.conf
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
+MESON_ARGS+=	-Dselinux=enabled
 .include "../../sysutils/libcap/buildlink3.mk"
 .include "../../linux/selinux-libselinux/buildlink3.mk"
+.endif
+
 .include "../../devel/meson/build.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -57,6 +57,13 @@ post-install:
 #	cd ${DESTDIR}${PREFIX}/native/lib/ && ${LN} -sfv ../../lib/lib* .
 #	cd ${DESTDIR}${PREFIX}/native/usr/lib/ && ${LN} -sfv ../../../lib/libncurses* .
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+  	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../devel/ncurses/buildlink3.mk"
 
 .include "../../mk/bsd.pkg.mk"

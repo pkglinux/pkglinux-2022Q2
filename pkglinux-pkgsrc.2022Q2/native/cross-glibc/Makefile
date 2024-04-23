@@ -64,6 +64,12 @@ post-extract:
 		sed 's/\\$$(pwd)/`pwd`/' timezone/Makefile.orig > timezone/Makefile
 
 CONFIG_ENV+=		SED=${PREFIX}/bin/gsed
+# N32 is a minor variation on the high performance 64-bit ABI.
+# All the performance of the hardware is available to the program and existing 32-bit ABI programs are easily ported.
+#.if !empty(CROSS_TARGET:Mmips64*)
+## The special value ‘from-abi’ selects the most compatible architecture for the selected ABI (that is, ‘mips1’ for 32-bit ABIs and ‘mips3’ for 64-bit ABIs
+#BUILD64= -mabi=64
+#.endif
 .if !empty(CROSS_TARGET:Mriscv*)
 CONFIG_ENV+=		BUILD_CC="${PREFIX}/gcc7/bin/gcc"
 .else
@@ -158,7 +164,12 @@ do-build:
 	cd ${BLDDIR} && (${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDDIR} install-strip || ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDDIR} install)
 
 post-build:
-.if !empty(CROSS_TARGET:M*64*)
+.if !empty(CROSS_TARGET:Mmips64*-gnuabin32)
+	${MKDIR} -v ${BLDPRE}/sysroot/usr/lib32/
+	cd ${BLDPRE}/sysroot/usr/lib32/ && ln -snvf ../lib/* .
+	${MKDIR} -v ${BLDPRE}/sysroot/lib32/
+	cd ${BLDPRE}/sysroot/lib32/ && ln -snvf ../usr/lib/* .
+.elif !empty(CROSS_TARGET:M*64*)
 	${MKDIR} -v ${BLDPRE}/sysroot/usr/lib64/
 	cd ${BLDPRE}/sysroot/usr/lib64/ && ln -snvf ../lib/* .
 	${MKDIR} -v ${BLDPRE}/sysroot/lib64/

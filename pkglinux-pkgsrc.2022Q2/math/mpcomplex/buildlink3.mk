@@ -1,17 +1,30 @@
-# $NetBSD: buildlink3.mk,v 1.6 2019/11/02 16:16:20 rillig Exp $
+# $NetBSD$
+# XXX
+# XXX This file was created automatically using createbuildlink-3.18.
+# XXX After this file has been verified as correct, the comment lines
+# XXX beginning with "XXX" should be removed.  Please do not commit
+# XXX unverified buildlink3.mk files.
+# XXX
+# XXX Packages that only install static libraries or headers should
+# XXX include the following line:
+# XXX
+# XXX	BUILDLINK_DEPMETHOD.mpcomplex?=	build
 
 BUILDLINK_TREE+=	mpcomplex
 
 .if !defined(MPCOMPLEX_BUILDLINK3_MK)
 MPCOMPLEX_BUILDLINK3_MK:=
 
-BUILDLINK_API_DEPENDS.mpcomplex+=	mpcomplex>=0.8.2
-BUILDLINK_ABI_DEPENDS.mpcomplex?=	mpcomplex>=1.0.3nb1
-BUILDLINK_PKGSRCDIR.mpcomplex?=		../../math/mpcomplex
+BUILDLINK_API_DEPENDS.mpcomplex+=	mpcomplex>=1.1.0
+BUILDLINK_PKGSRCDIR.mpcomplex?=	../../math/mpcomplex
 
-BUILDLINK_API_DEPENDS.gmp+=	gmp>=4.3.2
+# XXX
+# XXX Uncomment and keep only the buildlink3 lines below which are directly
+# XXX needed for dependencies to compile, link, and run.  If this package
+# XXX provides a wrappered API or otherwise does not expose the APIs of the
+# XXX buildlink3 lines below to dependencies, remove them.
+# XXX
 .include "../../devel/gmp/buildlink3.mk"
-BUILDLINK_API_DEPENDS.mpfr+=	mpfr>=2.4.2
 .include "../../math/mpfr/buildlink3.mk"
 .endif	# MPCOMPLEX_BUILDLINK3_MK
 

@@ -35,6 +35,15 @@ post-install:
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/lib/
 #	cd ${DESTDIR}${PREFIX}/native/lib/ && ${LN} -sfv ../../lib/libmpfr* .
 
+#.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#CONFIGURE_ARGS+=        --disable-float128
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 BUILDLINK_API_DEPENDS.gmp+=	gmp>=5.0
 .include "../../devel/gmp/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

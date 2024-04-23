@@ -17,4 +17,7 @@ ONLY_FOR_PLATFORM=	Linux-*-*
 NO_CONFIGURE=		yes
 USE_TOOLS+=		gmake
 
+post-extract:
+	cd ${WRKSRC} && gsed -e "s:ifndef PREFIX:PREFIX = \$$\(DESTDIR\)${PREFIX}\nifndef PREFIX:g" -i Makefile
+
 .include "../../mk/bsd.pkg.mk"

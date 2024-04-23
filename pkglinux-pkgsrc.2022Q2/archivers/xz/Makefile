@@ -58,5 +58,13 @@ post-install:
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/bin/
 #	cd ${DESTDIR}${PREFIX}/native/bin/ && ${LN} -sfv ../../bin/{lzma,unlzma,lzcat,xz,unxz,xzcat} .
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

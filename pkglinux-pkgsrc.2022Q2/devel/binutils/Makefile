@@ -118,6 +118,7 @@ post-install:
 	fi
 .endfor
 
+#.include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 #CONFIGURE_ARGS+=	--build=${NATIVE_MACHINE_GNU_PLATFORM}
 #CONFIGURE_ARGS+=	--target=${MACHINE_GNU_PLATFORM}
@@ -126,6 +127,10 @@ CONFIGURE_ARGS+=	--with-build-sysroot=${TOOLS_CROSS_DESTDIR}
 #MAKE_ENV+=		HOST_CC=/usr/bin/gcc
 #CONFIGURE_ENV+=	HOST_CC=${PREFIX}/gcc6/bin/gcc
 CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+PLIST_SRC=
+GENERATE_PLIST+= \
+ 	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
 .endif
 
 .include "../../mk/dlopen.buildlink3.mk"

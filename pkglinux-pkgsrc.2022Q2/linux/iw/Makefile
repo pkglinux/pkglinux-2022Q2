@@ -16,6 +16,11 @@ NO_CONFIGURE=		yes
 USE_TOOLS+=		gmake pkg-config
 USE_LANGUAGES=		c c++
 
+#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
+TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
+TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
+
 USE_PKGLOCALEDIR=	yes
 
 MAKE_ENV+=		PREFIX=${PREFIX}

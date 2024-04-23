@@ -1,0 +1,3 @@
+bootstrap	digest>=20211023	../../pkgtools/digest
+tool	nbpatch-[0-9]*	../../devel/nbpatch
+full	ncurses>=6.0	../../devel/ncurses

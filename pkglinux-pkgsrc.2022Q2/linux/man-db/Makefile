@@ -27,7 +27,21 @@ USE_TOOLS+=		grep gmake makeinfo sed:run tar:build m4 autoconf automake
 USE_TOOLS+=		pkg-config intltools msgfmt xgettext perl
 TOOLS_PLATFORM.msgfmt=
 
+# Fix PKG_FAIL_REASON+="No usable termcap library found on the system."
+.include "../../mk/termcap.buildlink3.mk"
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+# Fix linking error
+USE_LIBTOOL=		yes
+TOOL_DEPENDS+=		bison-[0-9]*:../../devel/bison
+.include "../../databases/gdbm/buildlink3.mk"
+#AKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+#MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+#MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+#CONFIGURE_ARGS+=	--disable-nls
+.else
 BUILD_DEPENDS+=		bison-[0-9]*:../../devel/bison
+.endif
 
 GNU_CONFIGURE=		yes
 USE_PKGLOCALEDIR=	yes

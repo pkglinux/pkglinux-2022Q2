@@ -8,10 +8,10 @@ LICENSE=	mit
 
 ONLY_FOR_PLATFORM=	Linux-*-*
 
-#TOOLS_PLATFORM.awk?=		/2022Q2/bin/nawk
-#TOOLS_PLATFORM.sed?=		/2022Q2/bin/nbsed
-TOOLS_PLATFORM.awk?=		/2022Q2/bin/gawk
-TOOLS_PLATFORM.sed?=		/2022Q2/bin/gsed
+#TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
+#TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
+TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
+TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
 
 USE_LANGUAGES=	# none
 NO_CHECKSUM=		yes

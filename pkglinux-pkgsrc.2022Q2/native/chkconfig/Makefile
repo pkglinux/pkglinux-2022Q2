@@ -75,11 +75,19 @@ do-install:
 #MAKE_ENV+=	LDFLAGS+=`pkg-config --libs libsepol`
 #MAKE_ENV+=	LDFLAGS+=-L${PREFIX}/lib
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 #.include "../../linux/selinux-libsemanage/buildlink3.mk"
 #.include "../../linux/audit/buildlink3.mk"
 #.include "../../linux/semodule-utils/buildlink3.mk"
+.endif
 
 .include "../../devel/popt/buildlink3.mk"
 #.include "../../linux/newt/buildlink3.mk"

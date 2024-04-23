@@ -29,7 +29,11 @@ LINUX_VERSION=		5.18.17
 DISTNAME=		${LINUX_NAME}-${LINUX_VERSION}
 CATEGORY=		native
 CATEGORIES=		${CATEGORY}
+.if !empty(NATIVE:M[yY][eE][sS])
+PKGNAME=		native-linux-API-headers-${LINUX_VERSION}
+.else
 PKGNAME=		${CROSS_MNAME}-headers-${LINUX_VERSION}
+.endif
 MASTER_SITES=		http://www.kernel.org/pub/linux/kernel/v5.x/
 EXTRACT_SUFX=		.tar.xz
 MAINTAINER=		pkgsrc-users@NetBSD.org
@@ -56,10 +60,21 @@ USE_LANGUAGES=		c
 #USE_PKGSRC_GCC=	yes
 #GCC_REQD+=		6
 
+.if !empty(NATIVE:M[yY][eE][sS])
+
+do-install:
+	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/
+	cd ${WRKSRC} && ${GMAKE} mrproper && ${GMAKE} -j${MAKE_JOBS} ARCH=${CROSS_KARCH} \
+	INSTALL_HDR_PATH=${DESTDIR}${PREFIX}/native/usr headers_install
+
+.else
+
 do-install:
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/${CROSS_MNAME}/
 	cd ${WRKSRC} && ${GMAKE} mrproper && ${GMAKE} -j${MAKE_JOBS} ARCH=${CROSS_KARCH} \
 	INSTALL_HDR_PATH=${DESTDIR}${PREFIX}/native/${CROSS_MNAME}/sysroot/usr headers_install
+
+.endif
 
 GENERATE_PLIST+= \
    	cd ${DESTDIR}${PREFIX} && \

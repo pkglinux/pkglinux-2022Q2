@@ -24,6 +24,8 @@ MAKE_ENV+=		PKGLOCALEDIR=${PKGLOCALEDIR}
 LDFLAGS.IRIX+=		-lgen
 CPPFLAGS.OSF1+=		-D_OSF_SOURCE
 
+# Fix PKG_FAIL_REASON+="No usable termcap library found on the system."
+.include "../../mk/termcap.buildlink3.mk"
 .include "../../mk/bsd.prefs.mk"
 
 .include "options.mk"
@@ -47,6 +49,16 @@ INSTALLATION_DIRS+=	${PKGGNUDIR}bin ${PKGGNUDIR}${PKGMANDIR}/man1
 post-install:
 	${LN} -fs ${PREFIX}/bin/gawk ${DESTDIR}${PREFIX}/${PKGGNUDIR}bin/awk
 	${LN} -fs ${PREFIX}/${PKGMANDIR}/man1/gawk.1 ${DESTDIR}${PREFIX}/${PKGGNUDIR}${PKGMANDIR}/man1/awk.1
+
+#.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIGURE_ENV+=		CC_FOR_BUILD=${NATIVE_CC:Q}
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../devel/gmp/buildlink3.mk"

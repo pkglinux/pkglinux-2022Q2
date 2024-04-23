@@ -239,7 +239,14 @@ CONFIG_ARGS+=		--disable-libstdcxx-pch
 .if !empty(CROSS_TARGET:Mx86_64-*)
 CONFIG_ARGS+=		--disable-multilib
 .endif
-.if !empty(CROSS_TARGET:Mmips64*-*)
+.if !empty(CROSS_TARGET:Mmips64*-gnuabi64)
+CONFIG_ARGS+=		--with-abi=64
+CONFIG_ARGS+=		--disable-multilib
+# The special value ‘from-abi’ selects the most compatible architecture for the selected ABI (that is, ‘mips1’ for 32-bit ABIs and ‘mips3’ for 64-bit ABIs
+#CONFIG_ARGS+=		--with-arch=mips3
+#CONFIG_ARGS+=		--with-tune=mips3
+.elif !empty(CROSS_TARGET:Mmips64*-gnuabin32)
+CONFIG_ARGS+=		--with-abi=n32
 CONFIG_ARGS+=		--disable-multilib
 .endif
 .if !empty(CROSS_TARGET:Msparc64-*)
@@ -348,6 +355,16 @@ CONFIG_ARGS+=		--enable-checking=release
 #CONFIG_ARGS+=		--enable-lto
 CONFIG_ARGS+=		--enable-languages=c
 CONFIG_ARGS+=		--disable-libstdcxx-pch
+.if !empty(CROSS_TARGET:Mmips64*-gnuabi64)
+CONFIG_ARGS+=		--with-abi=64
+CONFIG_ARGS+=		--disable-multilib
+# The special value ‘from-abi’ selects the most compatible architecture for the selected ABI (that is, ‘mips1’ for 32-bit ABIs and ‘mips3’ for 64-bit ABIs
+#CONFIG_ARGS+=		--with-arch=mips3
+#CONFIG_ARGS+=		--with-tune=mips3
+.elif !empty(CROSS_TARGET:Mmips64*-gnuabin32)
+CONFIG_ARGS+=		--with-abi=n32
+CONFIG_ARGS+=		--disable-multilib
+.endif
 .if !empty(CROSS_TARGET:Mx86_64-*)
 CONFIG_ARGS+=		--disable-multilib
 .endif

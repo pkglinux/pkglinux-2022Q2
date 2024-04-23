@@ -33,6 +33,18 @@ TEST_TARGET=		check
 
 .include "options.mk"
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PREFER_PKGSRC=		yes
+#MKPIE_SUPPORTED=	yes
+#PKGSRC_MKPIE=		yes
+CFLAGS+=		-fPIC
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../archivers/bzip2/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

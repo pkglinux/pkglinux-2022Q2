@@ -18,7 +18,12 @@ ONLY_FOR_PLATFORM=	Linux-*-*
 TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
 TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 
+#USE_CWRAPPERS=		no
+#USE_NATIVE_GCC=		yes
+#USE_PKGSRC_GCC=		no
 USE_TOOLS+=		gmake asciidoc
+
+WRKSRC=			${WRKDIR}/${DISTNAME}
 
 DEPENDS+=	asciidoc-[0-9]*:../../textproc/asciidoc
 
@@ -27,14 +32,29 @@ HAS_CONFIGURE=		no
 NO_CONFIGURE=		yes
 GNU_CONFIGURE=		no
 
-BLDPRE=		${WRKDIR}${PREFIX}/native
+BLDPRE=		${WRKSRC}${PREFIX}/native
 DSTPRE=		${DESTDIR}${PREFIX}/native
 
+#MAKE_ENV+=	XML_CATALOG_FILES=${PREFIX}/etc/xml/catalog
+MAKE_ENV+=	XML_CATALOG_FILES=/pkg/etc/xml/catalog
+
+do-extract:
+		@${CP} -R ${FILESDIR} ${WRKSRC}
+		${MKDIR} -p ${BLDPRE}
+
+#post-extract:
+#		cd ${WRKSRC} && gsed -e "s:a2x --no-xmllint --asciidoc-opts:a2x --asciidoc-opts:g" -i Makefile
+
+#		cd ${WRKSRC} && gsed -e "s:a2x --no-xmllint --asciidoc-opts:a2x --dblatex-opts \"--param toc.section.depth=0\" --no-xmllint --asciidoc-opts:g" -i Makefile
+#		cd ${WRKSRC} && gsed -e "s:a2x --no-xmllint --asciidoc-opts:a2x --xsltproc-opts \"--stringparam toc.section.depth 0\" --no-xmllint --asciidoc-opts:g" -i Makefile
+#		cd ${WRKSRC} && gsed -e "s:a2x --no-xmllint --asciidoc-opts:/pkg/bin/a2x --no-xmllint --asciidoc-opts:g" -i Makefile
+
 do-build:
-	cd ${WRKDIR} && ${GMAKE} -j${MAKE_JOBS} DESTDIR=${BLDPRE} install
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS} DESTDIR=${BLDPRE} install
 
 do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
 
+#.include "../../textproc/libxslt/xsltproc-nonet.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -15,7 +15,7 @@ LICENSE=	gnu-gpl-v2
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
 GNU_CONFIGURE=		yes
-USE_TOOLS+=		gmake pkgconfig
+USE_TOOLS+=		gmake pkg-config
 USE_TOOLS+=		autoconf automake
 USE_LIBTOOL=		yes
 

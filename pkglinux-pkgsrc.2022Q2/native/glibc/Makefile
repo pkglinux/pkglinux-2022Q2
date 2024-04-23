@@ -163,7 +163,9 @@ do-build:
 
 post-build:
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-.if !empty(MACHINE_GNU_PLATFORM:M*64*)
+.if !empty(MACHINE_GNU_PLATFORM:Mmips64-*gnuabin32)
+	${LN} -sfv lib ${BLDPRE}/lib32
+.elif !empty(MACHINE_GNU_PLATFORM:M*64*)
 	${LN} -sfv lib ${BLDPRE}/lib64
 .endif
 .else

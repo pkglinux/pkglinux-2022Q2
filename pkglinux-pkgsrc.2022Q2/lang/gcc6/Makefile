@@ -266,8 +266,10 @@ GENERATE_PLIST+= \
 	${FIND} ${GCC_SUBPREFIX} \( -type f -o -type l \) -print | ${SORT} ;
 
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-.if !empty(MACHINE_ARCHM:M*64*)
-CONFIGURE_ARGS+=	--enable-multilib
+.if !empty(MACHINE_GNU_PLATFORM:Mmips64-*-gnuabi64)
+CONFIGURE_ARGS+=	--with-abi=64
+.elif !empty(MACHINE_GNU_PLATFORM:Mmips64-*-gnuabin32)
+CONFIGURE_ARGS+=	--with-abi=n32
 .endif
 .else
 CONFIGURE_ARGS+=	--enable-bootstrap
@@ -306,22 +308,22 @@ CONFIGURE_ARGS+=	--disable-bootstrap
 #CONFIGURE_ARGS+=	--disable-cxx-exceptions
 #CONFIGURE_ARGS+=	--enable-languages=c,c++,fortran,objc,obj-c++,java,go # removing objc,obj-c++,java,go
 #CONFIGURE_ARGS+=	--with-system-libunwind=no 
-.if !empty(USE_CROSS_COMPILE:Marm*)
+.if !empty(MACHINE_GNU_PLATFORM:MMarm*)
 CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
-#CONFIGURE_ARGS+=		--with-native-system-header-dir=${TOOLS_CROSS_DESTDIR}/usr/include
-CONFIGURE_ARGS+=		--disable-multilib
-#CONFIGURE_ARGS+=		--enable-__cxa_atexit
-#CONFIGURE_ARGS+=		--disable-sjlj-exceptions
-#CONFIGURE_ARGS+=		--disable-tm-clone-registry
-CONFIGURE_ARGS+=		--disable-libsanitizer
-#CONFIGURE_ARGS+=		--with-float=soft
-#CONFIGURE_ARGS+=		--disable-libmudflap
-#CONFIGURE_ARGS+=		--disable-libgomp
-CONFIGURE_ARGS+=		--disable-libssp
-CONFIGURE_ARGS+=		--disable-libquadmath
-CONFIGURE_ARGS+=		--disable-libquadmath-support
-CONFIGURE_ARGS+=		--disable-libmpx
-CONFIGURE_ARGS+=		--disable-libitm
+#CONFIGURE_ARGS+=	--with-native-system-header-dir=${TOOLS_CROSS_DESTDIR}/usr/include
+CONFIGURE_ARGS+=	--disable-multilib
+#CONFIGURE_ARGS+=	--enable-__cxa_atexit
+#CONFIGURE_ARGS+=	--disable-sjlj-exceptions
+#CONFIGURE_ARGS+=	--disable-tm-clone-registry
+CONFIGURE_ARGS+=	--disable-libsanitizer
+#CONFIGURE_ARGS+=	--with-float=soft
+#CONFIGURE_ARGS+=	--disable-libmudflap
+#CONFIGURE_ARGS+=	--disable-libgomp
+CONFIGURE_ARGS+=	--disable-libssp
+CONFIGURE_ARGS+=	--disable-libquadmath
+CONFIGURE_ARGS+=	--disable-libquadmath-support
+CONFIGURE_ARGS+=	--disable-libmpx
+CONFIGURE_ARGS+=	--disable-libitm
 CONFIGURE_ENV+=		CC_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
 CONFIGURE_ENV+=		GCC_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-gcc"
 CONFIGURE_ENV+=		CXX_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-g++"

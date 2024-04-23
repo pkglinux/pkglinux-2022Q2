@@ -1,0 +1,5 @@
+for arg do
+	case $arg in
+	*)	;;
+	esac
+done

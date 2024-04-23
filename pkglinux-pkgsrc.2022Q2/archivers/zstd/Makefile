@@ -40,7 +40,11 @@ MAKE_FLAGS=		MANDIR=${PREFIX}/${PKGMANDIR}
 MAKE_FLAGS+=		mandir=${PREFIX}/${PKGMANDIR}
 MAKE_FLAGS+=		INSTALL=${INSTALL:Q}
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+BUILD_TARGET=		allzstd
+.else
 BUILD_TARGET=		allmost
+.endif
 TEST_TARGET=		test
 
 # Needed for nanosleep() on Solaris 10, PR pkg/56225
@@ -54,6 +58,14 @@ post-install:
 #	lndir.sh ${DESTDIR}${PREFIX}/bin ${DESTDIR}${PREFIX}/native/usr/bin
 #	lndir.sh ${DESTDIR}${PREFIX}/include ${DESTDIR}${PREFIX}/native/usr/include
 #	lndir.sh ${DESTDIR}${PREFIX}/lib ${DESTDIR}${PREFIX}/native/usr/lib
+
+#.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
 
 .include "../../archivers/lz4/buildlink3.mk"
 .include "../../archivers/xz/buildlink3.mk"

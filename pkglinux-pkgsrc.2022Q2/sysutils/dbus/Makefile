@@ -116,6 +116,13 @@ post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/init.d/dbus ${DESTDIR}${PREFIX}/native/etc/init.d
 	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default && ln -snvf ${PREFIX}/native/etc/init.d/dbus .
 
+#.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
 CONFIGURE_ARGS+=	--enable-selinux
 CONFIGURE_ARGS+=	--enable-libaudit
 CONFIGURE_ARGS+=	--with-selinux
@@ -123,6 +130,7 @@ CONFIGURE_ARGS+=	--with-selinux
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
+.endif
 
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"

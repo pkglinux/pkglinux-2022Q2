@@ -14,5 +14,6 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-readline
 INFO_FILES=		yes
 
+.include "../../mk/termcap.buildlink3.mk"
 .include "../../mk/readline.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

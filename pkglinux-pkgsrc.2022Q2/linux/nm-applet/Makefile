@@ -17,9 +17,23 @@ USE_PKGLOCALEDIR=	yes
 
 # Disables AppIndicator support because it requires libindicator
 #MESON_ARGS+=		-Dappindicator=no
-MESON_ARGS+=		-Dselinux=true
 # Disable WWAN support if you do not have ModemManager installed. 
 #MESON_ARGS+=		-Dwwan=false	
+
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
+MESON_ARGS+=		-Dselinux=true
+.include "../../linux/selinux-libselinux/buildlink3.mk"
+.include "../../linux/selinux-libsepol/buildlink3.mk"
+.include "../../linux/selinux-libsemanage/buildlink3.mk"
+.include "../../linux/audit/buildlink3.mk"
+.include "../../linux/semodule-utils/buildlink3.mk"
+.endif
 
 .include "../../devel/meson/build.mk"
 
@@ -35,12 +49,6 @@ MESON_ARGS+=		-Dselinux=true
 .include "../../linux/ModemManager/buildlink3.mk"
 .include "../../linux/eudev/buildlink3.mk"
 .include "../../linux/libgudev/buildlink3.mk"
-
-.include "../../linux/selinux-libselinux/buildlink3.mk"
-.include "../../linux/selinux-libsepol/buildlink3.mk"
-.include "../../linux/selinux-libsemanage/buildlink3.mk"
-.include "../../linux/audit/buildlink3.mk"
-.include "../../linux/semodule-utils/buildlink3.mk"
 
 .include "../../mk/bsd.pkg.mk"
 

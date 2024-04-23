@@ -19,4 +19,9 @@ TEST_TARGET=		test
 # Needed for nanosleep() on Solaris 10, PR pkg/56226
 LDFLAGS.SunOS+=		-lrt
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+post-extract:
+	gsed -e "s:\$$(CXX):${PREFIX}/gcc6/bin/g++:g" -i ${WRKSRC}/contrib/gen_manual/Makefile
+.endif
 .include "../../mk/bsd.pkg.mk"

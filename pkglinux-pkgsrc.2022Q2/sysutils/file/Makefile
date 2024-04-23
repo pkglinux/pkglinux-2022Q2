@@ -38,6 +38,8 @@ BUILDLINK_TRANSFORM+=	rm:-Wunused-parameter
 CFLAGS.AIX+=	-D_LINUX_SOURCE_COMPAT
 
 post-install:
+	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/bin/
+	cd ${DESTDIR}${PREFIX}/ && find bin/file | xargs -I F ${LN} -sfv ${PREFIX}/F native/usr/F
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/include/
 	cd ${DESTDIR}${PREFIX}/ && find include/magic.h | xargs -I F ${LN} -sfv ${PREFIX}/F native/usr/F
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/lib/pkgconfig/
@@ -46,6 +48,17 @@ post-install:
 #	cd ${DESTDIR}${PREFIX}/native/usr/include/ && ${LN} -sfv ../../../include/magic.h .
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/lib/pkgconfig/
 #	cd ${DESTDIR}${PREFIX}/native/usr/lib/pkgconfig/ && ${LN} -sfv ../../../../lib/pkgconfig/libmagic.pc .
+
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+post-patch:
+	cd ${WRKSRC}/magic/ && gsed -e "s:./file:/pkg/bin/file:g" -i myfile
+
+PLIST_SRC=
+GENERATE_PLIST+= \
+ 	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
 
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

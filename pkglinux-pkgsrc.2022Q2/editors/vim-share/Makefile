@@ -8,6 +8,16 @@ COMMENT=		Data files for the vim editor (vi clone)
 CONFIGURE_ARGS+=	--disable-gui
 CONFIGURE_ARGS+=	--without-x
 
+# Fix PKG_FAIL_REASON+="No usable termcap library found on the system."
+.include "../../mk/termcap.buildlink3.mk"
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#configure: error: cross-compiling: please set 'vim_cv_toupper_broken'
+CONFIGURE_ARGS+=	vim_cv_toupper_broken=yes
+CONFIGURE_ARGS+=	-with-tlib=ncurses
+CONFIGURE_ARGS+=	vim_cv_terminfo=yes
+.endif
+
 BUILD_TARGET=		vim
 INSTALL_TARGET=		installruntime installmacros installtutor installtools
 USE_TOOLS+=		awk

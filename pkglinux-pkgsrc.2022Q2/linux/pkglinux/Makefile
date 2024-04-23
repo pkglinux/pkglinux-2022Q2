@@ -9,20 +9,28 @@ COMMENT=	Meta-package for the PKGtOP Linux desktop environment
 
 META_PACKAGE=	yes
 
+.include "../../mk/bsd.prefs.mk"
+
 DEPENDS+=	bootscripts-[0-9]*:../../native/bootscripts
 DEPENDS+=	startups-[0-9]*:../../native/startups
 DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
+.endif
 DEPENDS+=	native-gcc6-[0-9]*:../../native/gcc6
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	native-linux-API-headers-[0-9]*:../../native/kernel-headers
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
 DEPENDS+=	linux-firmware-[0-9]*:../../native/linux-firmware
 DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
+.endif
 
 DEPENDS+=	nawk-[0-9]*:../../lang/nawk
 DEPENDS+=	nbsed-[0-9]*:../../textproc/nbsed
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	pkgin-[0-9]*:../../pkgtools/pkgin
+.endif
 
 DEPENDS+=	man-pages-[0-9]*:../../native/man-pages
 DEPENDS+=	zlib-[0-9]*:../../devel/zlib
@@ -56,8 +64,10 @@ DEPENDS+=	gdbm-[0-9]*:../../databases/gdbm
 DEPENDS+=	gperf-[0-9]*:../../devel/gperf
 DEPENDS+=	expat-[0-9]*:../../textproc/expat
 DEPENDS+=	inetutils-[0-9]*:../../net/inetutils
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	perl-[0-9]*:../../lang/perl5
 DEPENDS+=	p5-XML-Parser-[0-9]*:../../textproc/p5-XML-Parser
+.endif
 DEPENDS+=	intltool-[0-9]*:../../textproc/intltool
 DEPENDS+=	autoconf-[0-9]*:../../devel/autoconf
 DEPENDS+=	automake-[0-9]*:../../devel/automake
@@ -65,18 +75,22 @@ DEPENDS+=	kmod-[0-9]*:../../linux/kmod
 DEPENDS+=	gettext-[0-9]*:../../devel/gettext
 DEPENDS+=	libffi-[0-9]*:../../devel/libffi
 DEPENDS+=	elfutils-[0-9]*:../../linux/elfutils
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	openssl-[0-9]*:../../security/openssl
 DEPENDS+=	python39-[0-9]*:../../lang/python39
 DEPENDS+=	ninja-build-[0-9]*:../../devel/ninja-build
 DEPENDS+=	meson-[0-9]*:../../devel/meson
+.endif
 DEPENDS+=	coreutils-[0-9]*:../../sysutils/coreutils
 DEPENDS+=	check-[0-9]*:../../devel/check
 DEPENDS+=	diffutils-[0-9]*:../../devel/diffutils
 DEPENDS+=	gawk-[0-9]*:../../lang/gawk
 DEPENDS+=	groff-[0-9]*:../../native/groff
 DEPENDS+=	findutils-[0-9]*:../../sysutils/findutils
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	grub2-[0-9]*:../../sysutils/grub2
 DEPENDS+=	grub-efi-[0-9]*:../../linux/grub-efi
+.endif
 DEPENDS+=	less-[0-9]*:../../misc/less
 DEPENDS+=	gzip-[0-9]*:../../archivers/gzip
 DEPENDS+=	zstd-[0-9]*:../../archivers/zstd
@@ -93,8 +107,11 @@ DEPENDS+=	nano-[0-9]*:../../editors/nano
 DEPENDS+=	procps-ng-[0-9]*:../../linux/procps-ng
 DEPENDS+=	util-linux-[0-9]*:../../native/util-linux
 DEPENDS+=	e2fsprogs-[0-9]*:../../native/e2fsprogs
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	sysklogd-[0-9]*:../../native/sysklogd
-#DEPENDS+=	sysvinit-[0-9]*:../../native/sysvinit
+.else
+DEPENDS+=	sysvinit-[0-9]*:../../native/sysvinit
+.endif
 DEPENDS+=	openrc-[0-9]*:../../native/openrc
 DEPENDS+=	eudev-[0-9]*:../../linux/eudev
 DEPENDS+=	rpcsvc-proto-[0-9]*:../../native/rpcsvc-proto
@@ -102,7 +119,6 @@ DEPENDS+=	libtirpc-[0-9]*:../../linux/libtirpc
 DEPENDS+=	dhcpcd-[0-9]*:../../net/dhcpcd
 DEPENDS+=	openssh-[0-9]*:../../security/openssh
 DEPENDS+=	ntfs-3g-[0-9]*:../../linux/ntfs-3g
-DEPENDS+=	dosfstools-[0-9]*:../../sysutils/dosfstools
 DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
 DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
 DEPENDS+=	pigz-[0-9]*:../../linux/pigz
@@ -114,18 +130,21 @@ DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
 DEPENDS+=	rc.d-boot-[0-9]*:../../pkgtools/rc.d-boot
 DEPENDS+=	genfstab-[0-9]*:../../native/genfstab
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+DEPENDS+=	dosfstools-[0-9]*:../../sysutils/dosfstools
 DEPENDS+=	mtools-[0-9]*:../../sysutils/mtools
 DEPENDS+=	libisoburn-[0-9]*:../../sysutils/libisoburn
 DEPENDS+=	cdrtools-[0-9]*:../../sysutils/cdrtools
-DEPENDS+=	squashfs-tools-ng-[0-9]*:../../linux/squashfs-tools-ng
-DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
 DEPENDS+=	syslinux-[0-9]*:../../native/syslinux
-DEPENDS+=	rsync-[0-9]*:../../net/rsync
-DEPENDS+=	zsync-[0-9]*:../../net/zsync
 #DEPENDS+=	NetworkManager-[0-9]*:../../linux/NetworkManager
 DEPENDS+=	iw-[0-9]*:../../linux/iw
 DEPENDS+=	wireless-tools-[0-9]*:../../linux/wireless-tools
 #DEPENDS+=	busybox-[0-9]*:../../native/busybox
+.endif
+DEPENDS+=	squashfs-tools-ng-[0-9]*:../../linux/squashfs-tools-ng
+DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
+DEPENDS+=	rsync-[0-9]*:../../net/rsync
+DEPENDS+=	zsync-[0-9]*:../../net/zsync
 #DEPENDS+=	profile-data-[0-9]*:../../native/profile-data
 
 .include "../../mk/bsd.pkg.mk"

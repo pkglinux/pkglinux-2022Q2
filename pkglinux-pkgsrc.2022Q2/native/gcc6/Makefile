@@ -33,8 +33,8 @@ PKGSRC_USE_SSP=		no
 
 #TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
 #TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
-#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
-#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/gsed
+TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
+TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
 
 USE_TOOLS+=		gmake makeinfo sed:run tar:build perl
 USE_TOOLS+=		pkg-config
@@ -119,7 +119,11 @@ pre-configure:
 
 MAKE_ENV+= 		PWD_COMMAND=${PREFIX}/bin/gpwd
 MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
-.if !empty(MACHINE_GNU_PLATFORM:Marm*)
+.if !empty(MACHINE_GNU_PLATFORM:Mmips64-*-gnuabi64)
+CONFIG_ARGS+=		--with-abi=64
+.elif !empty(MACHINE_GNU_PLATFORM:Mmips64-*-gnuabin32)
+CONFIG_ARGS+=		--with-abi=n32
+.elif !empty(MACHINE_GNU_PLATFORM:Marm*)
 MAK_ENV+= 		PWD_COMMAND=${PREFIX}/bin/gpwd
 MAK_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 MAK_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"

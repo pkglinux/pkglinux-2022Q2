@@ -29,8 +29,6 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ARGS+=	--enable-manpages
 CONFIGURE_ARGS+=	--enable-blkid
 CONFIGURE_ARGS+=	--enable-kmod
-#CONFIGURE_ARGS+=	--disable-selinux
-CONFIGURE_ARGS+=	--enable-selinux
 CONFIGURE_ARGS+=	--enable-static-programs=udevd,udevadm
 
 PKGCONFIG_OVERRIDE+=	src/libudev/libudev.pc.in
@@ -47,11 +45,27 @@ post-install:
 #	lndir.sh ${DESTDIR}${PREFIX}/lib/udev ${DESTDIR}${PREFIX}/native/lib/udev
 #	lndir.sh ${DESTDIR}${PREFIX}/lib ${DESTDIR}${PREFIX}/native/usr/lib
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#CONFIGURE_ARGS+=	--disable-selinux
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
+CONFIGURE_ARGS+=	--enable-selinux
+
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
 .include "../../linux/semodule-utils/buildlink3.mk"
+.endif
 
 .include "../../devel/gperf/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"

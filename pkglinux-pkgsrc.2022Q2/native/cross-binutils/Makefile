@@ -53,11 +53,13 @@ CONFIG_ENV+=		AS=as
 CONFIG_ARGS+=		--prefix=${PREDIR}
 CONFIG_ARGS+=		--target=${CROSS_TARGET}
 CONFIG_ARGS+=		--disable-werror
-CONFIG_ARGS+=		--disable-static
+#CONFIG_ARGS+=		--disable-static
 CONFIG_ARGS+=		--enable-gold=yes
 CONFIG_ARGS+=		--disable-nls
 CONFIG_ARGS+=		--enable-ld=default
-.if !empty(CROSS_TARGET:M*64*)
+.if !empty(CROSS_TARGET:Mmips64*-gnuabin32)
+CONFIG_ARGS+=		--enable-64-bit-bfd=no
+.elif !empty(CROSS_TARGET:M*64*)
 CONFIG_ARGS+=		--enable-64-bit-bfd
 .endif
 CONFIG_ARGS+=		--with-lib-path=/usr/lib

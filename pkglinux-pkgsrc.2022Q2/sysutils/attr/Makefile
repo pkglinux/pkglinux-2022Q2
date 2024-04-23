@@ -54,5 +54,15 @@ post-install:
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/bin/
 #	cd ${DESTDIR}${PREFIX}/native/bin/ && ${LN} -sfv ../../bin/{attr,getfattr,setfattr} .
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#CFLAGS+=	-fPIC
+CPPFLAGS+=	-fPIC
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

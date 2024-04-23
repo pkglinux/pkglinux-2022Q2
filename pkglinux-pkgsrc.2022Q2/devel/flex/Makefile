@@ -10,7 +10,11 @@ HOMEPAGE=	https://github.com/westes/flex
 COMMENT=	Fast clone of lex(1), the lexical scanner generator
 LICENSE=	2-clause-bsd
 
-BUILD_DEPENDS+=		help2man-[0-9]*:../../converters/help2man
+#BUILD_DEPENDS+=		help2man-[0-9]*:../../converters/help2man
+# Cross-compilation in pkgsrc (user's guide)
+# Use TOOL_DEPENDS, not BUILD_DEPENDS, for cwrappers
+# revert cwrappers version dependency to what it was before. But keep it as TOOL_DEPENDS, not BUILD_DEPENDS.
+TOOL_DEPENDS+=		help2man-[0-9]*:../../converters/help2man
 
 # wants stdbool
 USE_LANGUAGES=		c99 c++
@@ -47,6 +51,19 @@ post-install:
 #	cd ${DESTDIR}${PREFIX}/native/usr/bin/ && ${LN} -sfv ../../../bin/* .
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/lib/
 #	cd ${DESTDIR}${PREFIX}/native/usr/lib/ && ${LN} -sfv ../../../lib/* .
+
+#.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+# When cross compiling, the configure script does not determine the correct values for the following.
+# Set the values manually:
+CONFIGURE_ENV+=		ac_cv_func_malloc_0_nonnull=yes
+CONFIGURE_ENV+=		ac_cv_func_realloc_0_nonnull=yes
+CONFIGURE_ARGS+=	--disable-bootstrap
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

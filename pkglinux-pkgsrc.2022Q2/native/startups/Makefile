@@ -93,7 +93,7 @@ do-install:
 	for lnk in "$$lnks"; do \
 		d=`gdirname ${DESTDIR}${PREFIX}/"$$lnk"`; \
 		/pkg/bin/gmkdir -pv "$$d"; \
-		/pkg/bin/gcp -av ${DESTdiR}${EGDIR}/"$$lnk" "$$d"; \
+		/pkg/bin/gcp -av ${DESTDIR}${EGDIR}/"$$lnk" "$$d"; \
 	done
 
 

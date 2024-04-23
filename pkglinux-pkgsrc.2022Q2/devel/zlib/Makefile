@@ -44,7 +44,7 @@ do-extract:
 	${CP} -r ${FILESDIR} ${WRKSRC}
 
 do-install:
-	${LIBTOOL} --mode=install ${INSTALL_LIB} ${WRKSRC}/libz.la ${DESTDIR}${PREFIX}/lib
+	${LIBTOOL} --mode=install --tag=CC ${INSTALL_LIB} ${WRKSRC}/libz.la ${DESTDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${WRKSRC}/zlib.3 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man3
 	${INSTALL_DATA} ${WRKSRC}/zconf.h ${DESTDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/zlib.h ${DESTDIR}${PREFIX}/include
@@ -57,7 +57,7 @@ post-install:
 	cd ${DESTDIR}${PREFIX}/ && find lib/libz.* | xargs -I F ${LN} -sfv ${PREFIX}/F native/F
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/lib/pkgconfig/
 	cd ${DESTDIR}${PREFIX}/ && find lib/pkgconfig/zlib.pc | xargs -I F ${LN} -sfv ${PREFIX}/F native/usr/F
-	cd ${DESTDIR}${PREFIX}/ && find lib/libz.so | xargs -I F ${LN} -sfv ${PREFIX}/F native/usr/F
+	cd ${DESTDIR}${PREFIX}/ && find lib/libz.* | xargs -I F ${LN} -sfv ${PREFIX}/F native/usr/F
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/include/
 #	cd ${DESTDIR}${PREFIX}/native/usr/include/ && ${LN} -sfv ../../../include/* .
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/lib/
@@ -65,5 +65,16 @@ post-install:
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/lib/pkgconfig/
 #	cd ${DESTDIR}${PREFIX}/native/usr/lib/pkgconfig/ && ${LN} -sfv ../../../../lib/pkgconfig/zlib.pc .
 #	cd ${DESTDIR}${PREFIX}/native/usr/lib/ && ${LN} -sfv ../../../lib/libz.so .
+
+#.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#CFLAGS+=	-fPIC
+#CPPFLAGS+=	-fPIC
+CONFIGURE_ENV+= CC_FOR_BUILD=${NATIVE_CC:Q}
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
 
 .include "../../mk/bsd.pkg.mk"

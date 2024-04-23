@@ -1,0 +1,38 @@
+#!/bin/sh
+tools_wrapper_sed=/2022Q2-mips64abi64/bin/nbsed
+shquote()
+{
+	shquoted=$1
+	case $shquoted in
+	*\'*)
+		shquoted=`$tools_wrapper_sed -e "s,','\\\\\\\\'',g" <<EOF
+$shquoted
+EOF`
+	esac
+	case $shquoted in
+	(*[!!%+,\-./0-9:=@A-Z_a-z]*|'')
+		case $shquoted in
+		(*=*)	lhs=${shquoted%%=*}
+			case $lhs in
+			(*[!!%+,\-./0-9:=@A-Z_a-z]*|'') ;;
+			(*)	shquoted="$lhs='${shquoted#*=}'"
+				return
+			esac
+		esac
+		shquoted="'$shquoted'"
+	esac
+}
+shquote_args() {
+	shquoted_args=''
+	for arg in "$@"; do
+		shquote "$arg"
+		shquoted_args="$shquoted_args $shquoted"
+	done
+}
+wrapperlog="${TOOLS_WRAPPER_LOG-/sda3/jails/current/pkglinux-pkgsrc.2022Q2/editors/vim-share/work.mips64/.work.log}"
+shquote_args "$@"
+echo "[*] "/sda3/jails/current/pkglinux-pkgsrc.2022Q2/editors/vim-share/work.mips64/.tools/bin/automake-1.12"$shquoted_args" >> $wrapperlog
+logprefix="set args$shquoted_args; shift; "
+logmain=/sda3/jails/current/pkglinux-pkgsrc.2022Q2/mk/gnu-config/missing\ automake
+echo '<.>' "$logprefix$logmain" >> $wrapperlog
+/sda3/jails/current/pkglinux-pkgsrc.2022Q2/mk/gnu-config/missing automake

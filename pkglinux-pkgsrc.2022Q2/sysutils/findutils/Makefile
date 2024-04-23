@@ -29,11 +29,19 @@ post-install:
 .endfor
 	${LN} -sf ${PREFIX}/${PKGMANDIR}/man5/glocatedb.5 ${DESTDIR}${PREFIX}/${PKGGNUDIR}${PKGMANDIR}/man5/locatedb.5
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#PLIST_SRC=
+#GENERATE_PLIST+= \
+#	cd ${DESTDIR}${PREFIX} && \
+#	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
 CONFIGURE_ARGS+=	--with-selinux
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
+.endif
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

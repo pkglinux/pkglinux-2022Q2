@@ -6,6 +6,7 @@ lib/pkgconfig/libmagic.pc
 man/man1/file.1
 man/man3/libmagic.3
 man/man5/magic.5
+native/usr/bin/file
 share/misc/magic.mgc
 @pkgdir man/man4
 native/usr/include/magic.h

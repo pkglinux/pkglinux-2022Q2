@@ -11,14 +11,31 @@ HOMEPAGE=		https://launchpad.net/intltool/
 COMMENT=		Internationalization Tool Collection
 LICENSE=		gnu-gpl-v2
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+TOOL_DEPENDS+=		p5-XML-Parser>=2.34nb4:../../textproc/p5-XML-Parser
+.else
 DEPENDS+=		p5-XML-Parser>=2.34nb4:../../textproc/p5-XML-Parser
+.endif
 
 CONFLICTS=		xml-i18n-tools-[0-9]*
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_TOOLS+=		gmake perl
+.else
 USE_TOOLS+=		gmake perl:run
+.endif
 GNU_CONFIGURE=		YES
 CHECK_INTERPRETER_SKIP=	share/intltool/*.in
 TEST_TARGET=		check
+
+#.include "../../mk/bsd.prefs.mk"
+#.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#PLIST_SRC=
+#GENERATE_PLIST+= \
+# 	cd ${DESTDIR}${PREFIX} && \
+#	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+#.endif
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"

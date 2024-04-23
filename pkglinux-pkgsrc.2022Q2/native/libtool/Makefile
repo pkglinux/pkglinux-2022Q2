@@ -44,12 +44,19 @@ DSTPRE=			${DESTDIR}${PREDIR}
 post-extract:
 	${MKDIR} -v ${BLDPRE}
 
+CONFIG_ARGS+=		--prefix=/usr
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--with-sysroot=${TOOLS_CROSS_DESTDIR}
+.endif
+
 do-configure:
-	cd ${BLDDIR} && ${WRKSRC}/configure --prefix=/usr
+	cd ${BLDDIR} && ${SETENV} ${CONFIG_ENV} ${WRKSRC}/configure ${CONFIG_ARGS}
 
 do-build:
-	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
-	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDPRE} install-strip || ${GMAKE} DESTDIR=${BLDPRE} install)
+	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && (${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install-strip || ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install)
 	${RM} ${BLDPRE}/usr/share/info/dir
 
 do-install:

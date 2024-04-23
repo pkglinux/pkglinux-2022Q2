@@ -18,12 +18,13 @@ ONLY_FOR_PLATFORM=	Linux-*-* # Linux shadow format
 TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
 TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 
-USE_LIBTOOL=	yes
+#USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 USE_TOOLS+=	pkg-config gmake gsed
 
 PKGCONFIG_OVERRIDE+=	libacl.pc.in
 
+USE_CWRAPPERS=		no
 USE_LANGUAGES=		c c++
 USE_NATIVE_GCC=	yes
 #USE_NATIVE_GCC=	no
@@ -57,12 +58,20 @@ post-extract:
 	cd ${WRKSRC} && sed -i 's/1000/999/' etc/useradd
 	${MKDIR} -v ${BLDPRE}
 
+.include "../../mk/bsd.prefs.mk"
+CONFIG_ARGS+=		--sysconfdir=/etc
+CONFIG_ARGS+=		--without-libpam
+CONFIG_ARGS+=		--without-libcrack
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=		--with-selinux=no
+.else
+CONFIG_ARGS+=		--with-selinux=yes
+.endif
+CONFIG_ARGS+=		--with-group-name-max-length=32
+
 do-configure:
-	cd ${BLDDIR} && \
-	${WRKSRC}/configure			\
-		--sysconfdir=/etc		\
-		--with-selinux=yes		\
-		--with-group-name-max-length=32
+	cd ${BLDDIR} && ${WRKSRC}/configure ${CONFIG_ARGS}
 
 do-build:
 	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
@@ -80,8 +89,17 @@ do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
 
+#.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
+.endif
+.include "../../linux/libcap-ng/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -1,4 +1,4 @@
-@comment $NetBSD: PLIST,v 1.2 2020/10/16 22:33:49 mcf Exp $
+@comment $NetBSD$
 include/sys/capability.h
 include/sys/psx_syscall.h
 lib/libcap.a
@@ -8,6 +8,7 @@ lib/libcap.so.${PKGVERSION}
 lib/libpsx.a
 lib/pkgconfig/libcap.pc
 lib/pkgconfig/libpsx.pc
+lib/security/pam_cap.so
 man/man1/capsh.1
 man/man3/cap_clear.3
 man/man3/cap_clear_flag.3
@@ -50,10 +51,6 @@ man/man3/psx_syscall6.3
 man/man8/getcap.8
 man/man8/getpcaps.8
 man/man8/setcap.8
-sbin/capsh
-sbin/getcap
-sbin/getpcaps
-sbin/setcap
 native/usr/include/sys/capability.h
 native/usr/include/sys/psx_syscall.h
 native/usr/lib/libcap.a
@@ -67,3 +64,7 @@ native/usr/sbin/capsh
 native/usr/sbin/getcap
 native/usr/sbin/getpcaps
 native/usr/sbin/setcap
+sbin/capsh
+sbin/getcap
+sbin/getpcaps
+sbin/setcap

@@ -42,11 +42,19 @@ post-install:
 	cd ${DESTDIR}${PREFIX}/ && find bin/* | xargs -I F ${LN} -sfv ${PREFIX}/F native/F
 #	cd ${DESTDIR}${PREFIX}/native/bin/ && ${LN} -sfv ../../bin/* .
 
+#.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
 CONFIGURE_ARGS+=	--with-selinux
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
+.endif
 
 .include "../../mk/termcap.buildlink3.mk"
 .include "../../devel/libgetopt/buildlink3.mk"

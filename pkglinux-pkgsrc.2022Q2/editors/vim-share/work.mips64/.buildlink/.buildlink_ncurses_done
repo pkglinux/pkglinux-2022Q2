@@ -1,0 +1,71 @@
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/cursesapp.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/cursesf.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/curses.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/cursesm.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/cursesp.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/cursesw.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/cursslk.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/eti.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/etip.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/form.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/menu.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/nc_tparm.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/ncurses_dll.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/ncurses.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/panel.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/termcap.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/term_entry.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/term.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/tic.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/include/ncurses/unctrl.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libgnuform.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libgnuform.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libgnumenu.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libgnumenu.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libgnupanel.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libgnupanel.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libncurses++.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libncurses.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libncurses++.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/libncurses.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/pkgconfig/gnuform.pc
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/pkgconfig/gnumenu.pc
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/pkgconfig/gnupanel.pc
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/pkgconfig/ncurses++.pc
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/lib/pkgconfig/ncurses.pc
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libgnuform.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libgnuform.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libgnumenu.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libgnumenu.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libgnupanel.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libgnupanel.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libncurses++.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libncurses.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libncurses++.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/lib/libncurses.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/cursesapp.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/cursesf.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/curses.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/cursesm.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/cursesp.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/cursesw.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/cursslk.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/eti.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/etip.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/form.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/menu.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/nc_tparm.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/ncurses_dll.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/ncurses.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/panel.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/termcap.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/term_entry.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/term.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/tic.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/unctrl.h
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/lib/libncurses++.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/lib/libncurses.a
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/lib/libncurses++.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/lib/libncurses.la (created)
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/lib/pkgconfig/ncurses++.pc
+/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/lib/pkgconfig/ncurses.pc
