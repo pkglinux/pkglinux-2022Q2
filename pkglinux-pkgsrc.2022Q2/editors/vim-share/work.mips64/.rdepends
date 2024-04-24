@@ -1,3 +1,0 @@
-bootstrap	digest>=20211023	digest-20220214
-tool	nbpatch-[0-9]*	nbpatch-20151107
-full	ncurses>=6.0	ncurses-6.3

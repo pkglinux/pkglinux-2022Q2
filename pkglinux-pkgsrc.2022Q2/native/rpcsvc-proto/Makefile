@@ -45,19 +45,26 @@ BLDDIR=			${WRKDIR}/build
 BLDPRE=			${BLDDIR}${PREDIR}
 DSTPRE=			${DESTDIR}${PREDIR}
 
+.include "../../mk/bsd.prefs.mk"
 post-extract:
 	${MKDIR} -v ${BLDPRE}
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+	cd ${WRKSRC} && gcp ${FILESDIR}/Makefile.am.cross rpcsvc/Makefile.am
+.endif
+
+CONFIG_ARGS+=		--prefix=/usr
+CONFIG_ARGS+=		--sysconfdir=/etc
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+.endif
 
 do-configure:
 	cd ${WRKSRC} && autoreconf -fiv
-	cd ${BLDDIR} && \
-	${WRKSRC}/configure			\
-		--prefix=/usr			\
-		--sysconfdir=/etc
+	cd ${BLDDIR} && ${SETENV} ${CONFIG_ENV} ${WRKSRC}/configure ${CONFIG_ARGS}
 
 do-build:
-	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
-	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDPRE} install-strip || ${GMAKE} DESTDIR=${BLDPRE} install)
+	cd ${BLDDIR} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && (${SETENV} ${MAK_ENV} ${GMAKE} DESTDIR=${BLDPRE} install-strip || ${SETENV} ${MAK_ENV} ${GMAKE} DESTDIR=${BLDPRE} install)
 
 do-install:
 	${MKDIR} -v ${DSTPRE}

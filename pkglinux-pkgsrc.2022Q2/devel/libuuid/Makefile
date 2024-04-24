@@ -10,6 +10,7 @@ LICENSE=	modified-bsd
 
 CONFIGURE_ARGS+=	--enable-libuuid
 CONFIGURE_ARGS+=	--enable-uuidgen
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
 PKGCONFIG_OVERRIDE+=	libuuid/uuid.pc.in
 

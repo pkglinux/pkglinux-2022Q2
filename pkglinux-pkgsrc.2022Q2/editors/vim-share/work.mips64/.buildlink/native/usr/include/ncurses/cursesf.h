@@ -1,1 +1,0 @@
-/2022Q2-mips64abi64/sysroot/2022Q2-mips64abi64/native/usr/include/ncurses/cursesf.h

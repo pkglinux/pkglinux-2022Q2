@@ -43,6 +43,21 @@ post-install:
 #	${MKDIR} -v ${DESTDIR}${PREFIX}/native/sbin/
 #	cd ${DESTDIR}${PREFIX}/native/sbin/ && ${LN} -sfv ../../sbin/* .
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ARGS+=	--disable-libselinux
+CONFIGURE_ARGS+=	--disable-watch8bit
+CONFIGURE_ARGS+=	--without-systemd
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../devel/ncurses/buildlink3.mk"
 .include "../../devel/ncursesw/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
