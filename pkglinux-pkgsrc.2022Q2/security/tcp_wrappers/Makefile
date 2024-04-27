@@ -62,13 +62,13 @@ DOCDIR=			${PREFIX}/share/doc/tcp_wrappers
 INSTALLATION_DIRS+=	${DOCDIR}
 
 do-install:
-	${LIBTOOL} --mode=install ${INSTALL_LIB} \
+	${LIBTOOL} --mode=install --tag=CC ${INSTALL_LIB} \
 		${WRKSRC}/libwrap.la ${DESTDIR}${PREFIX}/lib
-	${LIBTOOL} --mode=install ${INSTALL_PROGRAM} \
+	${LIBTOOL} --mode=install --tag=CC ${INSTALL_PROGRAM} \
 		${WRKSRC}/tcpdchk ${WRKSRC}/tcpdmatch ${WRKSRC}/try-from \
 		${WRKSRC}/safe_finger ${DESTDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/tcpd.h ${DESTDIR}${PREFIX}/include
-	${LIBTOOL} --mode=install ${INSTALL_PROGRAM} \
+	${LIBTOOL} --mode=install --tag=CC ${INSTALL_PROGRAM} \
 		${WRKSRC}/tcpd ${DESTDIR}${PREFIX}/libexec
 	${INSTALL_DATA} ${WRKSRC}/*.3 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man3
 	${INSTALL_DATA} ${WRKSRC}/*.5 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man5

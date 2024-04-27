@@ -28,15 +28,18 @@ $NetBSD$
  
  subdirs:
  	for d in $(SUBDIRS); do \
-@@ -28,20 +24,9 @@ subdirs:
- chkconfig: $(OBJS)
- 	$(CC) $(LDFLAGS) -o chkconfig $(OBJS) -lpopt -lselinux -lsepol
+@@ -26,22 +22,11 @@ subdirs:
+ 	done && test -z "$$fail"
  
+ chkconfig: $(OBJS)
+-	$(CC) $(LDFLAGS) -o chkconfig $(OBJS) -lpopt -lselinux -lsepol
+-
 -alternatives: alternatives.o
 -
 -ntsysv: $(NTOBJS)
 -	$(CC) $(LDFLAGS) -o ntsysv $(NTOBJS) -lnewt -lpopt $(LIBMHACK) -lselinux -lsepol
--
++	$(CC) $(LDFLAGS) -o chkconfig $(OBJS) -lpopt -lselinux -lsepol -ldl
+ 
  chkconfig.o: chkconfig.c leveldb.h
  	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c chkconfig.c
  

@@ -39,5 +39,20 @@ post-install:
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/usr/lib ${DESTDIR}
 #	lndir.sh ${DESTDIR}${PREFIX}/lib ${DESTDIR}${PREFIX}/native/usr/lib
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIGURE_ARGS+=	--enable-really-static
+CONFIGURE_ARGS+=	--disable-ntfsprogs
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../devel/libuuid/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

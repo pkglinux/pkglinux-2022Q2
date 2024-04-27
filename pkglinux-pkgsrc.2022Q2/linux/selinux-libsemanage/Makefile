@@ -32,6 +32,21 @@ post-install:
 	lndir.sh -l sf ${PREFIX}/libexec ${PREFIX}/native/usr/libexec ${DESTDIR}
 	lndir.sh -l sf ${PREFIX}/share ${PREFIX}/native/usr/share ${DESTDIR}
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#BUILDLINK_DEPMETHOD.bzip2?=	build
+CFLAGS+=	--shared -fPIC
+USE_LIBTOOL=		yes
+USE_BUILTIN.bzip2=	no
+MAKE_ENV+=		PREFIX=${PREFIX}
+MAKE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+MAKE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../archivers/bzip2/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
 .include "../../linux/selinux-libselinux/buildlink3.mk"

@@ -28,10 +28,7 @@ post-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-PREFER_PKGSRC=		yes
-#MKPIE_SUPPORTED=	yes
-#PKGSRC_MKPIE=		yes
-#CFLAGS+=		-fPIC
+CFLAGS+=	--shared -fPIC
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \

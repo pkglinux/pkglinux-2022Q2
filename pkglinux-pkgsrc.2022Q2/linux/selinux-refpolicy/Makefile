@@ -17,6 +17,11 @@ ONLY_FOR_PLATFORM=	Linux-*-*
 
 USE_LANGUAGES=	c,c++
 
+#TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
+#TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+TOOLS_PLATFORM.sed=		${PREFIX}/bin/gsed
+
 USE_TOOLS+=	gmake pkg-config m4 intltools msgfmt xgettext perl
 USE_PKGLOCALEDIR=	yes
 

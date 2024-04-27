@@ -107,12 +107,12 @@ DEPENDS+=	nano-[0-9]*:../../editors/nano
 DEPENDS+=	procps-ng-[0-9]*:../../linux/procps-ng
 DEPENDS+=	util-linux-[0-9]*:../../native/util-linux
 DEPENDS+=	e2fsprogs-[0-9]*:../../native/e2fsprogs
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	sysklogd-[0-9]*:../../native/sysklogd
-.else
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	sysvinit-[0-9]*:../../native/sysvinit
-.endif
+.else
 DEPENDS+=	openrc-[0-9]*:../../native/openrc
+.endif
 DEPENDS+=	eudev-[0-9]*:../../linux/eudev
 DEPENDS+=	rpcsvc-proto-[0-9]*:../../native/rpcsvc-proto
 DEPENDS+=	libtirpc-[0-9]*:../../linux/libtirpc
@@ -130,9 +130,9 @@ DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
 DEPENDS+=	rc.d-boot-[0-9]*:../../pkgtools/rc.d-boot
 DEPENDS+=	genfstab-[0-9]*:../../native/genfstab
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	dosfstools-[0-9]*:../../sysutils/dosfstools
 DEPENDS+=	mtools-[0-9]*:../../sysutils/mtools
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	libisoburn-[0-9]*:../../sysutils/libisoburn
 DEPENDS+=	cdrtools-[0-9]*:../../sysutils/cdrtools
 DEPENDS+=	syslinux-[0-9]*:../../native/syslinux

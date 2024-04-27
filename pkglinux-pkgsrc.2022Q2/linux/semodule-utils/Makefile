@@ -20,4 +20,18 @@ USE_PKGLOCALEDIR=	yes
 post-install:
 	lndir.sh -l sf ${PREFIX}/bin ${PREFIX}/native/usr/bin ${DESTDIR}
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+LDFLAGS+=	-ldl
+CFLAGS+=	--shared -fPIC
+#.include "../../linux/selinux-libselinux/buildlink3.mk"
+.include "../../linux/selinux-libsepol/buildlink3.mk"
+#.include "../../linux/audit/buildlink3.mk"
+#.include "../../linux/selinux-libsemanage/buildlink3.mk"
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../mk/bsd.pkg.mk"

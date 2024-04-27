@@ -36,6 +36,19 @@ CONFIGURE_ARGS+=	--with-zstd
 #	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/0004-libsqfs-Fix-an-overzealous-bounds-check-in-the-block.patch
 #	cd ${WRKSRC} && patch -Np1 -i ${FILESDIR}/0005-libsqfs-Initialize-the-return-value-in-sqfs_compress.patch
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CFLAGS+=	--shared -fPIC
+USE_LIBTOOL=		yes
+USE_BUILTIN.bzip2=	no
+MAKE_ENV+=		PREFIX=${PREFIX}
+MAKE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+MAKE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
 
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../archivers/bzip2/buildlink3.mk"

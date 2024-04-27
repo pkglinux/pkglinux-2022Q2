@@ -25,7 +25,7 @@ USE_TOOLS+=		gmake asciidoc
 
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
-DEPENDS+=	asciidoc-[0-9]*:../../textproc/asciidoc
+TOOL_DEPENDS+=		asciidoc-[0-9]*:../../textproc/asciidoc
 
 HAS_CONFIGURE=		no
 #NO_BUILD=		yes

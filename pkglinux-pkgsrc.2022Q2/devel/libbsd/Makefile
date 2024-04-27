@@ -13,4 +13,16 @@ LICENSE=	original-bsd
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../mk/bsd.pkg.mk"

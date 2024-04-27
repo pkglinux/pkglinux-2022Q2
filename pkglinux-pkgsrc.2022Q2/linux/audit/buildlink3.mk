@@ -24,7 +24,7 @@ BUILDLINK_PKGSRCDIR.audit-userspace?=	../../linux/audit
 # XXX provides a wrappered API or otherwise does not expose the APIs of the
 # XXX buildlink3 lines below to dependencies, remove them.
 # XXX
-.include "../../security/openssl/buildlink3.mk"
+#.include "../../security/openssl/buildlink3.mk"
 .endif	# AUDIT_USERSPACE_BUILDLINK3_MK
 
 BUILDLINK_TREE+=	-audit-userspace

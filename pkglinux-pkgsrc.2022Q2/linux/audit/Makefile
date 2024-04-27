@@ -67,10 +67,26 @@ post-install:
 	lndir.sh -l sf ${PREFIX}/share ${PREFIX}/native/usr/share ${DESTDIR}
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/usr/lib ${DESTDIR}
 
-#.include "../../databases/openldap-client/buildlink3.mk"
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CFLAGS+=	--shared -fPIC
+USE_LIBTOOL=		yes
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIGURE_ARGS+=	--with-libcap-ng=no
+#CONFIGURE_ARGS+=	--enable-gssapi-krb5=no
+CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
 .include "../../linux/libcap-ng/buildlink3.mk"
-.include "../../security/openssl/buildlink3.mk"
 .include "../../lang/python/tool.mk"
+.include "../../security/openssl/buildlink3.mk"
+.endif
+#.include "../../databases/openldap-client/buildlink3.mk"
 #.include "../../devel/py-cython/tool.mk"
 #.include "../../devel/py-cython/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

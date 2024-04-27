@@ -34,9 +34,9 @@ WRKSRC=		${SQUASH_DIR}/squashfs-tools
 BROKEN_ON_PLATFORM=	Darwin-*-*
 
 do-install:
-	${LIBTOOL} --mode=install ${INSTALL_PROGRAM} \
+	${LIBTOOL} --mode=install --tag=CC ${INSTALL_PROGRAM} \
 		${WRKSRC}/mksquashfs ${DESTDIR}${PREFIX}/bin
-	${LIBTOOL} --mode=install ${INSTALL_PROGRAM} \
+	${LIBTOOL} --mode=install --tag=CC ${INSTALL_PROGRAM} \
 		${WRKSRC}/unsquashfs ${DESTDIR}${PREFIX}/bin
 	cd ${DESTDIR}${PREFIX}/bin/ && gstrip mksquashfs
 	cd ${DESTDIR}${PREFIX}/bin/ && gstrip unsquashfs

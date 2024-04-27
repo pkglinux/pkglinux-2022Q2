@@ -77,18 +77,19 @@ do-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CFLAGS+=	--shared -fPIC
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
-.else
+.include "../../mk/dlopen.buildlink3.mk"
+.endif
+
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 #.include "../../linux/selinux-libsemanage/buildlink3.mk"
 #.include "../../linux/audit/buildlink3.mk"
 #.include "../../linux/semodule-utils/buildlink3.mk"
-.endif
-
 .include "../../devel/popt/buildlink3.mk"
 #.include "../../linux/newt/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

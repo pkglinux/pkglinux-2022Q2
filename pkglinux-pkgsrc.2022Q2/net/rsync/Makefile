@@ -33,6 +33,28 @@ SUBST_SED.paths+=	-e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g'
 
 .include "options.mk"
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
+#TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+TOOLS_PLATFORM.sed=		${PREFIX}/bin/gsed
+CFLAGS+=	--shared -fPIC
+USE_LANGUAGES=		c c++
+USE_LIBTOOL=		yes
+USE_BUILTIN.openssl=	no
+MAKE_ENV+=		PREFIX=${PREFIX}
+CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+ONFIGURE_ARGS+=		--disable-acl-support
+ONFIGURE_ARGS+=		--disable-openssl
+ONFIGURE_ARGS+=		--disable-zstd
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.endif
+
 .include "../../archivers/lz4/buildlink3.mk"
 .include "../../archivers/zstd/buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"
