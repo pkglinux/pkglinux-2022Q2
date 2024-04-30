@@ -17,6 +17,13 @@ CONFIGURE_ARGS+=	--with-openssl=${BUILDLINK_PREFIX.openssl}
 
 BUILDLINK_TRANSFORM+=	rm:-Werror
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CFLAGS+=	--shared -fPIC
+USE_BUILTIN.bzip2=	no
+USE_BUILTIN.zlib=	no
+USE_BUILTIN.openssl=	no
+.endif
 .include "../../archivers/bzip2/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"

@@ -104,11 +104,28 @@ VERSION!=		${AWK} '/PKGTOOLS_VERSION/ {print $$3}' \
 # Requires 3.x filter API and bugfixes.
 BUILDLINK_API_DEPENDS.libarchive+=	libarchive>=3.3.1
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIGURE_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS.libarchive+=	--host=${MACHINE_GNU_PLATFORM}
+.endif
+.if !empty(1USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_BUILTIN.bzip2=	no
+USE_BUILTIN.xz=		no
+USE_BUILTIN.libarchive=	no
+USE_BUILTIN.zlib=	no
+USE_BUILTIN.openssl=	no
+.include "../../archivers/bzip2/buildlink3.mk"
+.include "../../archivers/xz/buildlink3.mk"
+.include "../../archivers/libarchive/buildlink3.mk"
+.include "../../devel/zlib/buildlink3.mk"
+.include "../../security/openssl/buildlink3.mk"
+.else
 .include "../../archivers/bzip2/builtin.mk"
 .include "../../archivers/xz/builtin.mk"
 .include "../../archivers/libarchive/builtin.mk"
 .include "../../devel/zlib/builtin.mk"
 .include "../../security/openssl/builtin.mk"
+.endif
 
 .include "options.mk"
 

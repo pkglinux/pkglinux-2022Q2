@@ -20,6 +20,8 @@ PKGCONFIG_OVERRIDE+=	sqlite3.pc.in
 
 INSTALLATION_DIRS+=	${PKGMANDIR}/man1
 
+# Fix PKG_FAIL_REASON+="No usable termcap library found on the system."
+.include "../../mk/termcap.buildlink3.mk"
 .include "../../mk/bsd.prefs.mk"
 
 # In the past, Linux had database corruption issues with pread, so

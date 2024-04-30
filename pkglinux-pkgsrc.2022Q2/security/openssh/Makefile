@@ -30,6 +30,10 @@ BUILD_DEFS+=		VARBASE
 
 INSTALL_TARGET=		install-nokeys
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_BUILTIN.openssl=		no
+.endif
 .include "options.mk"
 
 # fixes: dyld: Symbol not found: _allow_severity
@@ -198,7 +202,9 @@ post-extract:
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 USE_LIBTOOL=		yes
-CFLAGS+=	--shared -fPIC
+#CFLAGS+=	--shared -fPIC
+#CONFIGURE_ARGS+=	--with-pie
+#CONFIGURE_ARGS+=	--with-ssl-dir=${BUILDLINK_PREFIX.openssl}
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
 CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
@@ -212,12 +218,12 @@ GENERATE_PLIST+= \
 USE_BUILTIN.openssl=		no
 .include "../../security/openssl/buildlink3.mk"
 .include "../../mk/pthread.buildlink3.mk"
-.else
+.endif
+
 CONFIGURE_ARGS+=	--with-selinux
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
-.endif
 
 .include "../../mk/bsd.pkg.mk"

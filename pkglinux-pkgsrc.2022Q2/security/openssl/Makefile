@@ -119,13 +119,20 @@ post-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(MACHINE_GNU_PLATFORM:Marm*)
-#USE_LANGUAGES=		c c++
+USE_LIBTOOL=		yes
+# openssh: configure:error:*** working libcrypto not found,check config.log
+# openssh: config.log: error adding symbols:Bad value
+# Position Independent Code
+CFLAGS+=	--shared -fPIC
 MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.elif !empty(MACHINE_GNU_PLATFORM:Mmips64-*)
+pre-build:
+	gsed -e "s:-m64::g" -i ${WRKSRC}/Makefile
 .endif
 
 .include "../../mk/dlopen.buildlink3.mk"

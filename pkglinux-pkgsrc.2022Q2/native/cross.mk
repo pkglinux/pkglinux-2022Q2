@@ -11,9 +11,9 @@
 #CROSS_TARGET?=		i686-unknown-linux-gnu
 #CROSS_TARGET?=		mipseb-unknown-linux-gnu
 #CROSS_TARGET?=		mipsel-unknown-linux-gnu
-CROSS_TARGET?=		mips64-unknown-linux-gnuabin32
+#CROSS_TARGET?=		mips64-unknown-linux-gnuabin32
 #CROSS_TARGET?=		mips64el-unknown-linux-gnuabin32
-#CROSS_TARGET?=		mips64-unknown-linux-gnuabi64
+CROSS_TARGET?=		mips64-unknown-linux-gnuabi64
 #CROSS_TARGET?=		mips64el-unknown-linux-gnuabi64
 #CROSS_TARGET?=		powerpc-unknown-linux-gnu
 #CROSS_TARGET?=		powerpc64-unknown-linux-gnu

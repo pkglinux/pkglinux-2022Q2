@@ -91,19 +91,19 @@ CONFIGURE_ARGS+=	--without-openssl
 MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+USE_BUILTIN.openssl=	no
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
-.else
+.endif
+
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
 .include "../../linux/semodule-utils/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
-.endif
-
 .include "../../archivers/xz/buildlink3.mk"
 .include "../../archivers/zstd/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"

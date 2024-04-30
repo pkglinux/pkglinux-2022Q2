@@ -46,7 +46,15 @@ SUBST_SED.osrel=	-e "s|@OSREL@|${OS_VERSION:C/_.*//}|"
 
 CFLAGS.SunOS+=		-D_FILE_OFFSET_BITS=64
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+USE_BUILTIN.openssl=	no
+USE_BUILTIN.libarchive=	no
+.include "../../archivers/libarchive/buildlink3.mk"
+.else
 DEPENDS+=		pkg_install>=20200701:../../pkgtools/pkg_install
+.endif
 
 .include "options.mk"
 

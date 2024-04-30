@@ -21,4 +21,12 @@ CONFIGURE_ARGS+=	--enable-db
 do-extract:
 	@${CP} -R ${FILESDIR} ${WRKSRC}
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_LIBTOOL=		yes
+CFLAGS+=	--shared -fPIC
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+.endif
+
 .include "../../mk/bsd.pkg.mk"

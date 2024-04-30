@@ -29,6 +29,33 @@ do-extract:
 	${CP} -r ${FILESDIR} ${WRKSRC}
 	${TOUCH} ${WRKSRC}/fetch.cat3
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#.include "../../pkgtools/libnbcompat/buildlink3.mk"
+#CFLAGS+=	--shared -fPIC
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+.if !empty(MACHINE_GNU_PLATFORM:Mmips64-*-gnuabi64)
+# /pkg/native/cross-mips64abi64/bin/mips64-unknown-linux-gnuabi64-ld --print-output-format
+# elf32-ntradbigmips
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+MAKE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+BSD_MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+BSD_MAKE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+CONFIGURE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+CONFIGURE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+.elif !empty(MACHINE_GNU_PLATFORM:Mmips64el-*-gnuabi64)
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+MAKE_ENV+=		LD="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+BSD_MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+BSD_MAKE_ENV+=		LD="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+CONFIGURE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+CONFIGURE_ENV+=		LD="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+.endif
+USE_BUILTIN.openssl=	no
+.include "../../security/openssl/buildlink3.mk"
+.endif
 .include "options.mk"
 
 .include "../../mk/bsd.pkg.mk"
