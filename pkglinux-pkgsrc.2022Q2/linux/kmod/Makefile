@@ -87,7 +87,7 @@ CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
 #CONFIGURE_ARGS+=	--libdir=${PREFIX}/sysroot/${PREFIX}/lib
 #CONFIGURE_ARGS+=	--enable-static
 #ABI=	64
-CONFIGURE_ARGS+=	--without-openssl
+#CONFIGURE_ARGS+=	--without-openssl
 MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"

@@ -201,15 +201,30 @@ post-extract:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-USE_LIBTOOL=		yes
-#CFLAGS+=	--shared -fPIC
+#USE_LIBTOOL=		yes
+#CFLAGS+=	--shared -fPIC -DWORDS_BIGENDIAN=1 -DFMT_SCALED_STRSIZE=7
+CFLAGS+=	-DFMT_SCALED_STRSIZE=7
+.if !empty(MACHINE_GNU_PLATFORM:Mmips64-*-gnuabi64)
+CFLAGS+=	-DWORDS_BIGENDIAN=1
+.endif
+#LDFLAGS+=	-lpthread -ldl -Lopenbsd-compat/
+#LDFLAGS+=	-lpthread -ldl
+LDFLAGS+=	-lpthread
 #CONFIGURE_ARGS+=	--with-pie
-#CONFIGURE_ARGS+=	--with-ssl-dir=${BUILDLINK_PREFIX.openssl}
+#CONFIGURE_ARGS+=	cross_compiling=yes
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
-CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
-CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
-CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+#CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+#CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+#CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+#CONFIGURE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+#CONFIGURE_ARGS+=	--without-xauth
+#CONFIGURE_ARGS+=	--without-shadow
+#CONFIGURE_ARGS+=	--without-xauth
+#CONFIGURE_ARGS+=	--enable-libutil
 #CONFIGURE_ARGS+=	--without-openssl-header-check
+#MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+#MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+#MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
