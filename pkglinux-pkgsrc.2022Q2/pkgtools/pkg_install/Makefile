@@ -104,11 +104,25 @@ VERSION!=		${AWK} '/PKGTOOLS_VERSION/ {print $$3}' \
 # Requires 3.x filter API and bugfixes.
 BUILDLINK_API_DEPENDS.libarchive+=	libarchive>=3.3.1
 
+.include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-CONFIGURE_ARGS+=		--host=${MACHINE_GNU_PLATFORM}
-CONFIGURE_ARGS.libarchive+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+.if !empty(MACHINE_GNU_PLATFORM:Mmips64-*-gnuabi64)
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+MAKE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+BSD_MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+BSD_MAKE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+CONFIGURE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+CONFIGURE_ENV+=		LD="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld --oformat elf64-tradbigmips"
+.elif !empty(MACHINE_GNU_PLATFORM:Mmips64el-*-gnuabi64)
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+MAKE_ENV+=		LD="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+BSD_MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+BSD_MAKE_ENV+=		LD="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+CONFIGURE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
+CONFIGURE_ENV+=		LD="${TOOLDIR}/${MACHINE_GNU_PLATFORM}/bin/ld --oformat elf64-tradlittlemips"
 .endif
-.if !empty(1USE_CROSS_COMPILE:M[yY][eE][sS])
 USE_BUILTIN.bzip2=	no
 USE_BUILTIN.xz=		no
 USE_BUILTIN.libarchive=	no
@@ -211,6 +225,17 @@ pre-configure:
 	cd ${WRKDIR}/zlib && ${BUILD_MAKE_CMD} libz.a
 .endif
 .if empty(USE_BUILTIN.libarchive:M[yY][eE][sS])
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+	cd ${WRKDIR}/libarchive && ${SETENV} ${_CONFIGURE_SCRIPT_ENV}	\
+		${CONFIG_SHELL} ${CONFIG_SHELL_FLAGS} ./configure	\
+		--host=${MACHINE_GNU_PLATFORM} \
+		--disable-bsdcpio --disable-bsdtar --disable-shared	\
+		--disable-dependency-tracking --without-expat		\
+		--disable-maintainer-mode				\
+		--without-iconv --without-lzo2 --without-nettle		\
+		--without-xml2 --without-lz4 --without-zstd		\
+		${LIBARCHIVE_CONFIGURE_ARGS}
+.else
 	cd ${WRKDIR}/libarchive && ${SETENV} ${_CONFIGURE_SCRIPT_ENV}	\
 		${CONFIG_SHELL} ${CONFIG_SHELL_FLAGS} ./configure	\
 		--disable-bsdcpio --disable-bsdtar --disable-shared	\
@@ -219,6 +244,7 @@ pre-configure:
 		--without-iconv --without-lzo2 --without-nettle		\
 		--without-xml2 --without-lz4 --without-zstd		\
 		${LIBARCHIVE_CONFIGURE_ARGS}
+.endif
 	cd ${WRKDIR}/libarchive && ${BUILD_MAKE_CMD}
 .endif
 	cd ${WRKDIR}/libfetch && ${TOUCH} fetch.cat3 &&			\

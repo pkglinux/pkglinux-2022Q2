@@ -63,7 +63,6 @@ post-extract:
 #		--disable-mcookie \
 #		--disable-getopt \
 
-.include "../../mk/bsd.prefs.mk"
 CONFIG_ARGS+=		ADJTIME_PATH=/var/lib/hwclock/adjtime
 CONFIG_ARGS+=		--libdir=/usr/lib
 CONFIG_ARGS+=		--docdir=/usr/share/doc/${DISTNAME}
@@ -80,11 +79,7 @@ CONFIG_ARGS+=		--without-systemd
 CONFIG_ARGS+=		--without-systemdsystemunitdir
 CONFIG_ARGS+=		--enable-static
 CONFIG_ARGS+=		--enable-static-programs=blkid,mount
-.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-CONFIG_ARGS+=		--with-selinux=no
-.else
 CONFIG_ARGS+=		--with-selinux=yes
-.endif
 CONFIG_ARGS+=		runstatedir=/run
 
 do-configure:
@@ -103,19 +98,27 @@ do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDDIR}/* ${DESTDIR}
 
-#.include "../../mk/bsd.prefs.mk"
+.include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_LIBTOOL=		yes
+CFLAGS+=		-fPIC
+LDFLAGS+=		-lpthread -ldl
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+USE_BUILTIN.zlib=	no
+USE_BUILTIN.readline=	no
+
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
-.else
+.endif
+
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
 .include "../../linux/semodule-utils/buildlink3.mk"
-.endif
 
 .include "../../linux/eudev/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"

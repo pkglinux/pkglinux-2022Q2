@@ -64,8 +64,9 @@ post-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-#USE_CWRAPPERS=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL=		yes
+CFLAGS+=		-fPIC
+LDFLAGS+=		-lpthread -ldl
 #CONFIGURE_ARGS+=	libzstd_CFLAGS="${PREFIX}/sysroot/${PREFIX}/include"
 #CONFIGURE_ARGS+=	liblzma_CFLAGS="${PREFIX}/sysroot/${PREFIX}/include"
 #CONFIGURE_ARGS+=	zlib_CFLAGS="${PREFIX}/sysroot/${PREFIX}/include"
@@ -92,6 +93,8 @@ MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
 USE_BUILTIN.openssl=	no
+USE_BUILTIN.zlib=	no
+USE_BUILTIN.xz=		no
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \

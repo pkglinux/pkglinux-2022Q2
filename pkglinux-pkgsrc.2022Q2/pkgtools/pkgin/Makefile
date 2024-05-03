@@ -47,14 +47,22 @@ SUBST_SED.osrel=	-e "s|@OSREL@|${OS_VERSION:C/_.*//}|"
 CFLAGS.SunOS+=		-D_FILE_OFFSET_BITS=64
 
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_LIBTOOL=		yes
+CFLAGS+=		-fPIC
+LDFLAGS+=		-lpthread -ldl
+# Uses dlopen and friends but doesn't use -ldl on Linux.
+# See http://www.sqlite.org/cvstrac/tktview?tn=3555
+LIBS+=			${BUILDLINK_LDADD.dl}
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
 USE_BUILTIN.openssl=	no
 USE_BUILTIN.libarchive=	no
+USE_BUILTIN.sqlite3=	no
+.include "../../security/openssl/buildlink3.mk"
 .include "../../archivers/libarchive/buildlink3.mk"
-.else
-DEPENDS+=		pkg_install>=20200701:../../pkgtools/pkg_install
+.include "../../databases/sqlite3/buildlink3.mk"
 .endif
+DEPENDS+=		pkg_install>=20200701:../../pkgtools/pkg_install
 
 .include "options.mk"
 
@@ -74,6 +82,11 @@ post-install:
 		${DESTDIR}${EGDIR}/repositories.conf.example
 	${INSTALL_DATA} ${WRKSRC}/preferred.conf			\
 		${DESTDIR}${EGDIR}/preferred.conf.example
+
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CFLAGS+=	--shared -fPIC
+.endif
 
 .include "../../archivers/libarchive/buildlink3.mk"
 .include "../../databases/sqlite3/buildlink3.mk"

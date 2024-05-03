@@ -30,6 +30,7 @@ CONFIGURE_ARGS+=	--enable-manpages
 CONFIGURE_ARGS+=	--enable-blkid
 CONFIGURE_ARGS+=	--enable-kmod
 CONFIGURE_ARGS+=	--enable-static-programs=udevd,udevadm
+CONFIGURE_ARGS+=	--enable-selinux
 
 PKGCONFIG_OVERRIDE+=	src/libudev/libudev.pc.in
 PKGCONFIG_OVERRIDE+=	src/udev/udev.pc.in
@@ -48,24 +49,29 @@ post-install:
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 #CONFIGURE_ARGS+=	--disable-selinux
+USE_LIBTOOL=		yes
+#CFLAGS+=		--shared -fPIC
+CFLAGS+=		-fPIC
+LDFLAGS+=		-lpthread -ldl
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
 MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
+USE_BUILTIN.zlib=	no
+USE_BUILTIN.xz=		no
+USE_BUILTIN.libuuid=	no
+USE_BUILTIN.openssl=	no
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
-.else
-CONFIGURE_ARGS+=	--enable-selinux
+.endif
 
 .include "../../linux/selinux-libselinux/buildlink3.mk"
 .include "../../linux/selinux-libsepol/buildlink3.mk"
 .include "../../linux/selinux-libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
-.include "../../linux/semodule-utils/buildlink3.mk"
-.endif
 
 .include "../../devel/gperf/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"

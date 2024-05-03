@@ -51,6 +51,11 @@ LIBS+=			${BUILDLINK_LDADD.dl}
 LDFLAGS.SCO_SV+=	-lpthread
 .endif
 
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CFLAGS+=	--shared -fPIC
+.endif
+
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/readline.buildlink3.mk"
 .include "../../mk/dlopen.buildlink3.mk"
