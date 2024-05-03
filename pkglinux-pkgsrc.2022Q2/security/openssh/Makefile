@@ -203,9 +203,11 @@ post-extract:
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 #USE_LIBTOOL=		yes
 #CFLAGS+=	--shared -fPIC -DWORDS_BIGENDIAN=1 -DFMT_SCALED_STRSIZE=7
+#CFLAGS+=	-DHAVE_FMT_SCALED=0
+#CFLAGS+=	-DHAVE_SCAN_SCALED=0
 CFLAGS+=	-DFMT_SCALED_STRSIZE=7
 .if !empty(MACHINE_GNU_PLATFORM:Mmips64-*-gnuabi64)
-CFLAGS+=	-DWORDS_BIGENDIAN=1
+#CFLAGS+=	-DWORDS_BIGENDIAN=1
 .endif
 #LDFLAGS+=	-lpthread -ldl -Lopenbsd-compat/
 #LDFLAGS+=	-lpthread -ldl
@@ -225,10 +227,10 @@ CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 #MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 #MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 #MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
-PLIST_SRC=
-GENERATE_PLIST+= \
-	cd ${DESTDIR}${PREFIX} && \
-	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+#PLIST_SRC=
+#GENERATE_PLIST+= \
+#	cd ${DESTDIR}${PREFIX} && \
+#	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
 
 USE_BUILTIN.openssl=		no
 .include "../../security/openssl/buildlink3.mk"
