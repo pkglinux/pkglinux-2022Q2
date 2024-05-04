@@ -100,11 +100,15 @@ do-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-USE_LIBTOOL=		yes
-CFLAGS+=		-fPIC
+pre-configure:
+	cd ${WRKSRC} && ./autogen.sh -fiv
+
+TOOL_DEPENDS+=		gtexinfo-[0-9]*:../../devel/gtexinfo
+#USE_LIBTOOL=		yes
+CFLAGS+=		--shared -fPIC
 LDFLAGS+=		-lpthread -ldl
-CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
-CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIG_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
 USE_BUILTIN.zlib=	no
 USE_BUILTIN.readline=	no
 
@@ -112,6 +116,8 @@ PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
+.include "../../devel/gtexinfo/buildlink3.mk"
 .endif
 
 .include "../../linux/selinux-libselinux/buildlink3.mk"
@@ -123,7 +129,6 @@ GENERATE_PLIST+= \
 .include "../../linux/eudev/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../devel/ncursesw/buildlink3.mk"
-.include "../../devel/gtexinfo/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 #.include "../../sysutils/libcap/buildlink3.mk"
 .include "../../linux/libcap-ng/buildlink3.mk"

@@ -1,0 +1,29 @@
+$NetBSD$
+
+--- configure.ac.orig	2021-08-16 13:23:44.275017690 +0000
++++ configure.ac
+@@ -1741,7 +1741,23 @@ UL_REQUIRES_BUILD([prlimit], [libsmartco
+ UL_REQUIRES_SYSCALL_CHECK([prlimit], [UL_CHECK_SYSCALL([prlimit64])], [prlimit64])
+ AM_CONDITIONAL([BUILD_PRLIMIT], [test "x$build_prlimit" = xyes])
+ AS_IF([test "x$build_prlimit" = xyes], [
+-  AC_CHECK_FUNCS([prlimit])
++  dnl check for valid prlimit() function
++  AC_MSG_CHECKING([for valid prlimit() function])
++  AC_LINK_IFELSE([AC_LANG_PROGRAM([[
++#include <sys/types.h>
++#include <sys/time.h>
++#include <sys/resource.h>
++#include <stddef.h>
++]],[[
++   int ret;
++   ret = prlimit(0, RLIMIT_AS, NULL, NULL);
++   if (ret != 0) {
++      return 1;
++   }
++   ]])],[
++  AC_MSG_RESULT([yes])
++  AC_DEFINE([HAVE_PRLIMIT], [1], [Have valid prlimit() function])],[
++  AC_MSG_RESULT([no])])
+ ])
+ 
+ 

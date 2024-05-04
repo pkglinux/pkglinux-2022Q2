@@ -41,17 +41,39 @@ MAKE_ENV+=		PKGSRC_INFOPATH=${PKGSRC_INFOPATH:Q}
 
 REPLACE_SH+=		util/texi2dvi
 
+.include "../../mk/bsd.prefs.mk"
 post-install:
 	lndir.sh -l sf ${PREFIX}/bin ${PREFIX}/native/usr/bin ${DESTDIR}
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/usr/lib ${DESTDIR}
+.endif
 #	lndir.sh ${DESTDIR}${PREFIX}/bin ${DESTDIR}${PREFIX}/native/usr/bin
 #	lndir.sh ${DESTDIR}${PREFIX}/lib ${DESTDIR}${PREFIX}/native/usr/lib
 
-.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_BUILTIN.gettext-lib=	no
+.endif
 .include "options.mk"
 
 #.include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+TOOL_DEPENDS+=		p5-Locale-libintl-[0-9]*:../../misc/p5-Locale-libintl
+TOOL_DEPENDS+=		p5-Text-Unidecode-[0-9]*:../../textproc/p5-Text-Unidecode
+TOOL_DEPENDS+=		p5-Unicode-EastAsianWidth-[0-9]*:../../converters/p5-Unicode-EastAsianWidth
+USE_TOOLS+=		gperf
+#CONFIGURE_ARGS+=	--disable-selinux
+USE_LIBTOOL=		yes
+#CFLAGS+=		--shared -fPIC
+CFLAGS+=		-fPIC
+LDFLAGS+=		-lpthread -ldl
+CONFIGURE_ARGS+=	--with-pic
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
+MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
+MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \

@@ -27,10 +27,8 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/sbin
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ARGS+=	--enable-manpages
-CONFIGURE_ARGS+=	--enable-blkid
-CONFIGURE_ARGS+=	--enable-kmod
-CONFIGURE_ARGS+=	--enable-static-programs=udevd,udevadm
 CONFIGURE_ARGS+=	--enable-selinux
+CONFIGURE_ARGS+=	--enable-static-programs=udevd,udevadm
 
 PKGCONFIG_OVERRIDE+=	src/libudev/libudev.pc.in
 PKGCONFIG_OVERRIDE+=	src/udev/udev.pc.in
@@ -48,13 +46,17 @@ post-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_TOOLS+=		gperf
 #CONFIGURE_ARGS+=	--disable-selinux
 USE_LIBTOOL=		yes
 #CFLAGS+=		--shared -fPIC
 CFLAGS+=		-fPIC
 LDFLAGS+=		-lpthread -ldl
+CONFIGURE_ARGS+=	--with-pic
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
 MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
@@ -66,6 +68,12 @@ PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
+CONFIGURE_ARGS+=	--enable-kmod
+CONFIGURE_ARGS+=	--enable-blkid
+.include "../../linux/kmod/buildlink3.mk"
+.include "../../devel/libblkid/buildlink3.mk"
+.include "../../devel/libuuid/buildlink3.mk"
 .endif
 
 .include "../../linux/selinux-libselinux/buildlink3.mk"
@@ -76,7 +84,4 @@ GENERATE_PLIST+= \
 .include "../../devel/gperf/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../archivers/xz/buildlink3.mk"
-.include "../../linux/kmod/buildlink3.mk"
-.include "../../devel/libblkid/buildlink3.mk"
-.include "../../devel/libuuid/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
