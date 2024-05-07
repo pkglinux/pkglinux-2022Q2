@@ -63,6 +63,7 @@ post-extract:
 #		--disable-mcookie \
 #		--disable-getopt \
 
+.include "../../mk/bsd.prefs.mk"
 CONFIG_ARGS+=		ADJTIME_PATH=/var/lib/hwclock/adjtime
 CONFIG_ARGS+=		--libdir=/usr/lib
 CONFIG_ARGS+=		--docdir=/usr/share/doc/${DISTNAME}
@@ -81,13 +82,24 @@ CONFIG_ARGS+=		--enable-static
 CONFIG_ARGS+=		--enable-static-programs=blkid,mount
 CONFIG_ARGS+=		--with-selinux=yes
 CONFIG_ARGS+=		runstatedir=/run
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#CONFIG_ENV+=	SUID_CFLAGS="-static"
+#CONFIG_ENV+=	SUID_LDFLAGS="-static"
+#CONFIG_ENV+=	SUID_CFLAGS="-fpie"
+#CONFIG_ENV+=	SUID_LDFLAGS="-pie"
+CONFIG_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIG_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+#CONFIG_ARGS+=	--disable-unshare
+#CONFIG_ARGS+=	--without-tinfo
+#CONFIG_ARGS+=		--enable-largefile
+.endif
 
 do-configure:
 	cd ${BLDDIR} && ${WRKSRC}/configure ${CONFIG_ARGS}
 
 do-build:
-	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
-	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDPRE} install-strip || ${GMAKE} DESTDIR=${BLDPRE} install)
+	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && (${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install-strip || ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install)
 	${MKDIR} -v ${BLDDIR}/${PREFIX}/lib/pkgconfig/
 	${CP} -v ${BLDPRE}/usr/lib/pkgconfig/mount.pc ${BLDDIR}/${PREFIX}/lib/pkgconfig/
 
@@ -98,17 +110,30 @@ do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDDIR}/* ${DESTDIR}
 
-.include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh -fiv
 
+# Trys to fix "prlimit unshare setns follows non-static declaration"
+# The patch doesn't work
+post-configure:
+	cd ${WRKDIR}/build && echo "#define HAVE_PRLIMIT 1" >> config.h 
+	cd ${WRKDIR}/build && echo "#define HAVE_SETNS 1" >> config.h 
+	cd ${WRKDIR}/build && echo "#define HAVE_UNSHARE 1" >> config.h 
+
 TOOL_DEPENDS+=		gtexinfo-[0-9]*:../../devel/gtexinfo
 #USE_LIBTOOL=		yes
 CFLAGS+=		--shared -fPIC
+#CFLAGS+=		-fPIC
+#CFLAGS+=		-DHAVE_PRLIMIT=1
+#CFLAGS+=		-DHAVE_UNSHARE=1
+#CFLAGS+=		-DHAVE_SETNS=1
+#CFLAGS+=		-D__USE_FILE_OFFSET64=1
 LDFLAGS+=		-lpthread -ldl
-CONFIG_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
-CONFIG_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+#CFLAGS+=		-static
+#LDFLAGS+=		-static
+#CPPFLAGS+=		-static
+CONFIG_ARGS+=		--with-selinux=no
 USE_BUILTIN.zlib=	no
 USE_BUILTIN.readline=	no
 

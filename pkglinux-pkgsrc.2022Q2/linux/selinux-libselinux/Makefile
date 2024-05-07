@@ -29,6 +29,8 @@ post-install:
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 CFLAGS+=	--shared -fPIC
+LDFLAGS+=	-ldl
+MAKE_ENV+=	PREFIX=${PREFIX}
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
