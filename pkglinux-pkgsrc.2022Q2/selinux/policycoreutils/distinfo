@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (selinux/policycoreutils-3.5.tar.gz) = 9c7098ba22cb1382ad8556163d45f14a3d9d4f7667d0e79dc7a7a5d4ab064c49
+SHA512 (selinux/policycoreutils-3.5.tar.gz) = 7978ef6b7a278c6384c9b397734d03c4932c8aefecceaa1e6a1345be27b253dbe276fdcd219ce83ad732c6ed55d53bbc3254e39bccadd67d2cd1152a14749444
+Size (selinux/policycoreutils-3.5.tar.gz) = 775639 bytes

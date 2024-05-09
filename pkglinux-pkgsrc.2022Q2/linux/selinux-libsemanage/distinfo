@@ -1,5 +1,0 @@
-$NetBSD$
-
-BLAKE2s (selinux/libsemanage-3.5.tar.gz) = befc1ad974ec970e32d351240a02d02e51e2fa64fa0875918ce6578eb7645b24
-SHA512 (selinux/libsemanage-3.5.tar.gz) = 959fbd0d6bc6849da6caa13dc41c3f8818cbbd29f04b5d2ac7246c4b395b4f370f113a04cc9cfcb52be2afebfa636013ac4ad4011384c58c7ce066a45cae2751
-Size (selinux/libsemanage-3.5.tar.gz) = 185060 bytes

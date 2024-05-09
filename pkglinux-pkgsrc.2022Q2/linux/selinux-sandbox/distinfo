@@ -1,5 +1,0 @@
-$NetBSD$
-
-BLAKE2s (selinux-sandbox-3.5.tar.gz) = 5147649a049297cd46a6e23aa3fddad5b16030a46f0451203c98223ab1839a71
-SHA512 (selinux-sandbox-3.5.tar.gz) = dc7b87a8189ddacccec1f8227c07d2448ce175836ef14aaca3adb03eeaf7fa3e8ea943a9a963aa03a42d85c0a629494b4f99379243df0d05e7f953050a2a3a6e
-Size (selinux-sandbox-3.5.tar.gz) = 46773 bytes

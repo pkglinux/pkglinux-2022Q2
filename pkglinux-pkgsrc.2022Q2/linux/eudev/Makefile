@@ -76,9 +76,9 @@ CONFIGURE_ARGS+=	--enable-blkid
 .include "../../devel/libuuid/buildlink3.mk"
 .endif
 
-.include "../../linux/selinux-libselinux/buildlink3.mk"
-.include "../../linux/selinux-libsepol/buildlink3.mk"
-.include "../../linux/selinux-libsemanage/buildlink3.mk"
+.include "../../selinux/libselinux/buildlink3.mk"
+.include "../../selinux/libsepol/buildlink3.mk"
+.include "../../selinux/libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
 
 .include "../../devel/gperf/buildlink3.mk"

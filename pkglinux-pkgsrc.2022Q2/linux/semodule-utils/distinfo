@@ -1,5 +1,0 @@
-$NetBSD$
-
-BLAKE2s (selinux/semodule-utils-3.5.tar.gz) = 24095f6890b130ad88ee74fe2cb1de345d9051323f825c304196bd3b4d1e60f4
-SHA512 (selinux/semodule-utils-3.5.tar.gz) = 7c32f425ae71745040d1c6a6585149a1efb319913aa9d4c8bf185b0a4216dc66378fa38595b171614ee3ae4ade997d3ae56a060346e334faec55c419a87d71dd
-Size (selinux/semodule-utils-3.5.tar.gz) = 14383 bytes

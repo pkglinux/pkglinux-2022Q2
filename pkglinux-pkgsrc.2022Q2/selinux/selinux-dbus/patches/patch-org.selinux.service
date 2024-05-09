@@ -1,0 +1,10 @@
+$NetBSD$
+
+--- org.selinux.service.orig	2023-02-23 13:16:11.000000000 +0000
++++ org.selinux.service
+@@ -1,4 +1,4 @@
+ [D-BUS Service]
+ Name=org.selinux
+-Exec=/usr/share/system-config-selinux/selinux_server.py
++Exec=/pkg/share/system-config-selinux/selinux_server.py
+ User=root

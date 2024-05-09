@@ -1,0 +1,15 @@
+$NetBSD$
+
+--- Makefile.orig	2023-02-23 13:16:11.000000000 +0000
++++ Makefile
+@@ -5,8 +5,8 @@ PCRE_LDLIBS := $(shell $(PKG_CONFIG) --l
+ export PCRE_MODULE PCRE_CFLAGS PCRE_LDLIBS
+ 
+ all: 
+-	$(MAKE) -C src 
+-	$(MAKE) -C utils
++	env PCRE_MODULE="libpcre2-8" PCRE_CFLAGS="-DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -I/2022Q2/include" PCRE_LDLIBS="-Wl,-R/2022Q2/lib -L/2022Q2/lib -lpcre2-8" $(MAKE) -C src 
++	env PCRE_MODULE="libpcre2-8" PCRE_CFLAGS="-DUSE_PCRE2 -DPCRE2_CODE_UNIT_WIDTH=8 -I/2022Q2/include" PCRE_LDLIBS="-Wl,-R/2022Q2/lib -L/2022Q2/lib -lpcre2-8" $(MAKE) -C utils
+ 
+ install: 
+ 	$(MAKE) -C src install

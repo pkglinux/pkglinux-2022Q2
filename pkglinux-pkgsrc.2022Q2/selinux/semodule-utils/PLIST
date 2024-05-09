@@ -1,0 +1,17 @@
+@comment $NetBSD$
+bin/semodule_expand
+bin/semodule_link
+bin/semodule_package
+bin/semodule_unpackage
+native/usr/bin/semodule_expand
+native/usr/bin/semodule_link
+native/usr/bin/semodule_package
+native/usr/bin/semodule_unpackage
+share/man/man8/semodule_expand.8
+share/man/man8/semodule_link.8
+share/man/man8/semodule_package.8
+share/man/man8/semodule_unpackage.8
+share/man/ru/man8/semodule_expand.8
+share/man/ru/man8/semodule_link.8
+share/man/ru/man8/semodule_package.8
+share/man/ru/man8/semodule_unpackage.8

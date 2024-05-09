@@ -1,6 +1,0 @@
-$NetBSD$
-
-BLAKE2s (libselinux-3.5.tar.gz) = fefa314f6a1e07edd36fd9ab0db12dffd8ee823b5b3124704aa7aa3bdb62210e
-SHA512 (libselinux-3.5.tar.gz) = 4e13261a5821018a5f3cdce676f180bb62e5bc225981ca8a498ece0d1c88d9ba8eaa0ce4099dd0849309a8a7c5a9a0953df841a9922f2c284e5a109e5d937ba7
-Size (libselinux-3.5.tar.gz) = 211453 bytes
-SHA1 (patch-src_Makefile) = 017fe27b8c6d1dd4c4e8692617db146639d1b973

@@ -79,9 +79,9 @@ GENERATE_PLIST+= \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
 .else
 CONFIGURE_ARGS+=	--with-selinux
-.include "../../linux/selinux-libselinux/buildlink3.mk"
-.include "../../linux/selinux-libsepol/buildlink3.mk"
-.include "../../linux/selinux-libsemanage/buildlink3.mk"
+.include "../../selinux/libselinux/buildlink3.mk"
+.include "../../selinux/libsepol/buildlink3.mk"
+.include "../../selinux/libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
 .endif
 

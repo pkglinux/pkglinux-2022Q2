@@ -1,6 +1,0 @@
-$NetBSD$
-
-BLAKE2s (selinux/restorecond-3.5.tar.gz) = 9e048aa486a5e20db66fa8f9c3a6f9e28abef39305c696f8935e9b688555cd47
-SHA512 (selinux/restorecond-3.5.tar.gz) = 80cb84e62c7072a12fe57ebaafc0bcb441c853862c67f9ea35b86faa2d8e49ea22a70b9e05a3ff24e8ce08ca2999604d7961efd534f89167cd6fcb05c852de40
-Size (selinux/restorecond-3.5.tar.gz) = 19070 bytes
-SHA1 (patch-Makefile) = a5cc84bbe1c6079ecf3350c8273d1f2be23fb82e

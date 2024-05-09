@@ -69,7 +69,7 @@ GENERATE_PLIST+= \
 .else
 MESON_ARGS+=	-Dselinux=enabled
 .include "../../sysutils/libcap/buildlink3.mk"
-.include "../../linux/selinux-libselinux/buildlink3.mk"
+.include "../../selinux/libselinux/buildlink3.mk"
 .endif
 
 .include "../../devel/meson/build.mk"

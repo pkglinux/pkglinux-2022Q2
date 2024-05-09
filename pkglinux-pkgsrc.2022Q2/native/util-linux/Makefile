@@ -16,10 +16,11 @@ LICENSE=	gnu-gpl-v2
 
 ONLY_FOR_PLATFORM=	Linux-*-* # Uses Linux kernel headers
 
-#TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
-#TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
+#TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
 TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
-TOOLS_PLATFORM.sed=		/pkg/bin/gsed
+TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
+
 
 USE_LANGUAGES=		c c++
 USE_NATIVE_GCC=	yes
@@ -116,24 +117,23 @@ pre-configure:
 
 # Trys to fix "prlimit unshare setns follows non-static declaration"
 # The patch doesn't work
-post-configure:
-	cd ${WRKDIR}/build && echo "#define HAVE_PRLIMIT 1" >> config.h 
-	cd ${WRKDIR}/build && echo "#define HAVE_SETNS 1" >> config.h 
-	cd ${WRKDIR}/build && echo "#define HAVE_UNSHARE 1" >> config.h 
+#post-configure:
+#	cd ${WRKDIR}/build && echo "#define HAVE_PRLIMIT 1" >> config.h 
+#	cd ${WRKDIR}/build && echo "#define HAVE_SETNS 1" >> config.h 
+#	cd ${WRKDIR}/build && echo "#define HAVE_UNSHARE 1" >> config.h 
 
 TOOL_DEPENDS+=		gtexinfo-[0-9]*:../../devel/gtexinfo
-#USE_LIBTOOL=		yes
-CFLAGS+=		--shared -fPIC
+USE_LIBTOOL=		yes
 #CFLAGS+=		-fPIC
+CFLAGS+=		--shared -fPIC
 #CFLAGS+=		-DHAVE_PRLIMIT=1
 #CFLAGS+=		-DHAVE_UNSHARE=1
 #CFLAGS+=		-DHAVE_SETNS=1
-#CFLAGS+=		-D__USE_FILE_OFFSET64=1
 LDFLAGS+=		-lpthread -ldl
 #CFLAGS+=		-static
 #LDFLAGS+=		-static
 #CPPFLAGS+=		-static
-CONFIG_ARGS+=		--with-selinux=no
+#CONFIG_ARGS+=		--with-selinux=no
 USE_BUILTIN.zlib=	no
 USE_BUILTIN.readline=	no
 
@@ -145,9 +145,9 @@ GENERATE_PLIST+= \
 .include "../../devel/gtexinfo/buildlink3.mk"
 .endif
 
-.include "../../linux/selinux-libselinux/buildlink3.mk"
-.include "../../linux/selinux-libsepol/buildlink3.mk"
-.include "../../linux/selinux-libsemanage/buildlink3.mk"
+.include "../../selinux/libselinux/buildlink3.mk"
+.include "../../selinux/libsepol/buildlink3.mk"
+.include "../../selinux/libsemanage/buildlink3.mk"
 .include "../../linux/audit/buildlink3.mk"
 .include "../../linux/semodule-utils/buildlink3.mk"
 

@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (refpolicy-2.20221101.tar.bz2) = f33a72b616dcb649daf33775ecb56c11fc6ccad0877472961881db34d1e2ca17
+SHA512 (refpolicy-2.20221101.tar.bz2) = 29e5a29d90f714018c88fead2d5006ea90338fb5b7a1e4e98cb2e588c96cd861871d32176f6cc6f7c4e864ce5acae1aeed85d4c706ce2da8168986535baaf3a6
+Size (refpolicy-2.20221101.tar.bz2) = 583183 bytes
+SHA1 (patch-Makefile) = 2539c1402d128135fe7a3c24f51ff16b9c5ce722

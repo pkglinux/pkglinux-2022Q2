@@ -1,0 +1,15 @@
+$NetBSD$
+
+--- Makefile.orig	2023-02-23 13:16:11.000000000 +0000
++++ Makefile
+@@ -5,8 +5,8 @@ all:
+ clean:
+ 
+ install:
+-	-mkdir -p $(DESTDIR)/etc/dbus-1/system.d/
+-	install -m 644 org.selinux.conf $(DESTDIR)/etc/dbus-1/system.d/
++	-mkdir -p $(DESTDIR)$(PREFIX)/etc/dbus-1/system.d/
++	install -m 644 org.selinux.conf $(DESTDIR)$(PREFIX)/etc/dbus-1/system.d/
+ 	-mkdir -p $(DESTDIR)$(PREFIX)/share/dbus-1/system-services
+ 	install -m 644 org.selinux.service $(DESTDIR)$(PREFIX)/share/dbus-1/system-services
+ 	-mkdir -p $(DESTDIR)$(PREFIX)/share/polkit-1/actions/

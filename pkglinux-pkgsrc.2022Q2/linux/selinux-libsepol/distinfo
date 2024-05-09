@@ -1,5 +1,0 @@
-$NetBSD$
-
-BLAKE2s (selinux/libsepol-3.5.tar.gz) = 1919d77266abee22bc0a1eb38e07009d3f47806ddffea53ecbdc434ff16e8bd3
-SHA512 (selinux/libsepol-3.5.tar.gz) = 66f45a9f4951589855961955db686b006b4c0cddead6ac49ad238a0e4a34775905bd10fb8cf0c0ff2ab64f9b7d8366b97fcd5b19c382dec39971a2835cc765c8
-Size (selinux/libsepol-3.5.tar.gz) = 497522 bytes

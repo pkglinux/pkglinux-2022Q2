@@ -1,0 +1,18 @@
+@comment $NetBSD$
+etc/rc.d/init.d/restorecond
+etc/selinux/restorecond.conf
+etc/selinux/restorecond_user.conf
+etc/xdg/autostart/restorecond.desktop
+lib/systemd/system/restorecond.service
+lib/systemd/user/restorecond_user.service
+man/man8/restorecond.8
+man/ru/man8/restorecond.8
+native/etc/rc.d/init.d/restorecond
+native/etc/selinux/restorecond.conf
+native/etc/selinux/restorecond_user.conf
+native/etc/xdg/autostart/restorecond.desktop
+native/usr/sbin/restorecond
+sbin/restorecond
+share/dbus-1/services/org.selinux.Restorecond.service
+share/man/man8/restorecond.8
+share/man/ru/man8/restorecond.8

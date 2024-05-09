@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (audit-userspace-3.1.tar.gz) = d15451c53364346fb6a4ee09c81627264b4b7dc5177fadf5e3dcc6241aa93e4e
+SHA512 (audit-userspace-3.1.tar.gz) = c21be7da557a2f0f2576645db23626785955190599e1b417252424eaefa7284da8e2e915cf2599f28078ee507d83497eb6cbbdb1b1459a0fabd62e235b34e7b9
+Size (audit-userspace-3.1.tar.gz) = 596607 bytes

@@ -1,5 +1,0 @@
-@comment $NetBSD$
-etc/dbus-1/system.d/org.selinux.conf
-share/dbus-1/system-services/org.selinux.service
-share/polkit-1/actions/org.selinux.policy
-share/system-config-selinux/selinux_server.py
