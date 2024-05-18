@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (waydroid/1.4.2.tar.gz) = 762b68d70e0c372afa4b62485726bf3cf2e1c2aa7ee908048495bedc1129e78a
+SHA512 (waydroid/1.4.2.tar.gz) = 0d3eba799895c853545b7087e3c07160d593d4a3166822039973669bc0ee93a8a6b9c394a7d982e57cfbbfbd8df1ba7991dd33b1b1517d79fcbe191d8a86890a
+Size (waydroid/1.4.2.tar.gz) = 242536 bytes

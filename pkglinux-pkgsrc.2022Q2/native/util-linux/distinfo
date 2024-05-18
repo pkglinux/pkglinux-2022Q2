@@ -4,4 +4,4 @@ SHA1 (util-linux-2.37.2.tar.xz) = 4e85e2f533ef0fe79a4505695453a91f25e87605
 RMD160 (util-linux-2.37.2.tar.xz) = aaab241c3395e2a9aa5c2bc5c1b6a5a7217c8474
 SHA512 (util-linux-2.37.2.tar.xz) = 38f0fe820445e3bfa79550e6581c230f98c7661566ccc4daa51c7208a5f972c61b4e57dfc86bed074fdbc7c40bc79f856be8f6a05a8860c1c0cecc4208e8b81d
 Size (util-linux-2.37.2.tar.xz) = 5621624 bytes
-SHA1 (patch-configure.ac) = e088b2304bb885422e40787db512ccaf1f787c1e
+SHA1 (patch-configure.ac) = 313381e0d87f006bede95f36bffd7bf8b47faee7

@@ -19,7 +19,7 @@ ONLY_FOR_PLATFORM=	Linux-*-*
 TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
 TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 
-USE_TOOLS+=		autoconf automake gmake pkg-config
+USE_TOOLS+=		autoconf automake gmake pkg-config gperf
 USE_LIBTOOL=		yes
 GNU_CONFIGURE=		yes
 USE_LANGUAGES=		c c++
@@ -27,13 +27,17 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--bindir=${PREFIX}/sbin
 CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ARGS+=	--enable-manpages
+CONFIGURE_ARGS+=	--enable-kmod
 CONFIGURE_ARGS+=	--enable-selinux
 CONFIGURE_ARGS+=	--enable-static-programs=udevd,udevadm
+CONFIGURE_ARGS+=	--enable-blkid
 
 PKGCONFIG_OVERRIDE+=	src/libudev/libudev.pc.in
 PKGCONFIG_OVERRIDE+=	src/udev/udev.pc.in
 
 post-install:
+	${MKDIR} ${DESTDIR}${PREFIX}/lib/udev/rules.d/
+	${MKDIR} ${DESTDIR}${PREFIX}/sbin/
 	${CP} -v ${FILESDIR}/lib/udev/rules.d/* ${DESTDIR}${PREFIX}/lib/udev/rules.d/
 	lndir.sh -l sf ${PREFIX}/sbin ${PREFIX}/native/sbin ${DESTDIR}
 	lndir.sh -l sf ${PREFIX}/etc/udev ${PREFIX}/native/etc/udev ${DESTDIR}
@@ -48,8 +52,11 @@ post-install:
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 USE_TOOLS+=		gperf
 #CONFIGURE_ARGS+=	--disable-selinux
+CONFIGURE_ARGS+=	--disable-kmod
+#CONFIGURE_ARGS+=	--disable-programs
 USE_LIBTOOL=		yes
 #CFLAGS+=		--shared -fPIC
+#CFLAGS+=		-fPIC -DHAVE_SELINUX=1 -UHAVE_MALLINFO2
 CFLAGS+=		-fPIC
 LDFLAGS+=		-lpthread -ldl
 CONFIGURE_ARGS+=	--with-pic
@@ -57,6 +64,7 @@ CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
 CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
 CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		PWD_COMMAND=${PREFIX}/bin/gpwd
 MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
@@ -68,20 +76,17 @@ PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
-.else
-CONFIGURE_ARGS+=	--enable-kmod
-CONFIGURE_ARGS+=	--enable-blkid
+.endif
 .include "../../linux/kmod/buildlink3.mk"
 .include "../../devel/libblkid/buildlink3.mk"
 .include "../../devel/libuuid/buildlink3.mk"
-.endif
 
 .include "../../selinux/libselinux/buildlink3.mk"
 .include "../../selinux/libsepol/buildlink3.mk"
 .include "../../selinux/libsemanage/buildlink3.mk"
-.include "../../linux/audit/buildlink3.mk"
+.include "../../selinux/audit/buildlink3.mk"
 
-.include "../../devel/gperf/buildlink3.mk"
+#.include "../../devel/gperf/buildlink3.mk"
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../archivers/xz/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

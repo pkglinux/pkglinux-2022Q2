@@ -37,18 +37,36 @@ SUBST_SED.paths+=	-e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g'
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
 TOOLS_PLATFORM.sed=		${PREFIX}/bin/gsed
+#CFLAGS+=	-fPIC
+#CFLAGS+=	--shared -fPIC -UHAVE_STRLCPY
 CFLAGS+=	--shared -fPIC
 USE_LANGUAGES=		c c++
 USE_LIBTOOL=		yes
 USE_BUILTIN.openssl=	no
-MAKE_ENV+=		PREFIX=${PREFIX}
+USE_BUILTIN.zlib=	no
+USE_BUILTIN.iconv=	no
+#MAKE_ENV+=		PREFIX=${PREFIX}
 CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
 CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
-ONFIGURE_ARGS+=		--disable-acl-support
-ONFIGURE_ARGS+=		--disable-openssl
-ONFIGURE_ARGS+=		--disable-zstd
+#CONFIGURE_ARGS+=	--disable-acl-support
+#CONFIGURE_ARGS+=	--disable-openssl
+#CONFIGURE_ARGS+=	--disable-zstd
+#CONFIGURE_ARGS+=	--disable-lz4
+#CONFIGURE_ARGS+=	--disable-xxhash
+#CONFIGURE_ARGS+=	--disable-md2man
+#CONFIGURE_ARGS+=	--disable-iconv
+#CONFIGURE_ARGS+=	--disable-iconv-open
+#USE_TOOLS+=		gmake pkg-config autoconf automake m4 intltools msgfmt xgettext
+#pre-configure:
+#	cd ${WRKSRC} && autoconf -f
+
+USE_FEATURES=		nbcompat
+
+.include "../../archivers/zstd/buildlink3.mk"
+.include "../../sysutils/attr/buildlink3.mk"
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \

@@ -1,0 +1,22 @@
+$NetBSD$
+
+--- xbmc/network/WebServer.cpp.orig	2017-05-24 20:49:32.000000000 +0000
++++ xbmc/network/WebServer.cpp
+@@ -347,7 +347,7 @@ int CWebServer::HandlePartialRequest(str
+                 StringUtils::EqualsNoCase(contentType, MHD_HTTP_POST_ENCODING_MULTIPART_FORMDATA))
+             {
+               // Get a new MHD_PostProcessor
+-              conHandler->postprocessor = MHD_create_post_processor(connection, MAX_POST_BUFFER_SIZE, &CWebServer::HandlePostField, (void*)conHandler.get());
++              conHandler->postprocessor = MHD_create_post_processor(connection, MAX_POST_BUFFER_SIZE, (MHD_Result (*)(void*, MHD_ValueKind, const char*, const char*, const char*, const char*, const char*, long unsigned int, long unsigned int))&CWebServer::HandlePostField, (void*)conHandler.get());
+ 
+               // MHD doesn't seem to be able to handle this post request
+               if (conHandler->postprocessor == nullptr)
+@@ -1142,7 +1142,7 @@ struct MHD_Daemon* CWebServer::StartMHD(
+                           port,
+                           nullptr,
+                           nullptr,
+-                          &CWebServer::AnswerToConnection,
++                          (MHD_Result (*)(void*, MHD_Connection*, const char*, const char*, const char*, const char*, long unsigned int*, void**))&CWebServer::AnswerToConnection,
+                           this,
+ 
+ #if (MHD_VERSION >= 0x00040002) && (MHD_VERSION < 0x00090B01)

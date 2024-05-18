@@ -24,7 +24,7 @@ BUILDLINK_PKGSRCDIR.semodule-utils?=	../../selinux/semodule-utils
 # XXX provides a wrappered API or otherwise does not expose the APIs of the
 # XXX buildlink3 lines below to dependencies, remove them.
 # XXX
-.include "../../selinux/selinux-libsepol/buildlink3.mk"
+.include "../../selinux/libsepol/buildlink3.mk"
 .endif	# SEMODULE_UTILS_BUILDLINK3_MK
 
 BUILDLINK_TREE+=	-semodule-utils

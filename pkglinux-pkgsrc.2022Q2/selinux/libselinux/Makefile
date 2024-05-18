@@ -28,16 +28,18 @@ post-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-CFLAGS+=	--shared -fPIC
-LDFLAGS+=	-ldl -lpthread
+#CFLAGS+=	--shared -fPIC
+CFLAGS+=	-fPIC
+LDFLAGS+=	-ldl -lpthread -L${CROSS_DESTDIR}/lib
 MAKE_ENV+=	PREFIX=${PREFIX}
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
+.else
+.include "../../mk/dlopen.buildlink3.mk"
 .endif
 
 .include "../../selinux/libsepol/buildlink3.mk"
 .include "../../devel/pcre2/buildlink3.mk"
-.include "../../mk/dlopen.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

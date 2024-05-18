@@ -9,7 +9,7 @@ $NetBSD$
 -AC_CHECK_FUNCS([unshare])
 +AS_IF([test "x$build_unshare" = xyes], [
 +  AC_MSG_CHECKING([for valid unshare() function])
-+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
++  AC_LINK_IFELSE([AC_LANG_PROGRAM([[
 +#include <sched.h>
 +]],[[
 +   long ret;
@@ -33,7 +33,7 @@ $NetBSD$
 -AC_CHECK_FUNCS([setns])
 +AS_IF([test "x$build_nsenter" = xyes], [
 +  AC_MSG_CHECKING([for valid setns() function])
-+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
++  AC_LINK_IFELSE([AC_LANG_PROGRAM([[
 +#include <sched.h>
 +#include <errno.h>
 +]],[[
@@ -56,7 +56,7 @@ $NetBSD$
  AS_IF([test "x$build_prlimit" = xyes], [
 -  AC_CHECK_FUNCS([prlimit])
 +  AC_MSG_CHECKING([for valid prlimit() function])
-+  AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
++  AC_LINK_IFELSE([AC_LANG_PROGRAM([[
 +  #include <stdio.h>
 +  #include <sys/time.h>
 +  #include <sys/resource.h>

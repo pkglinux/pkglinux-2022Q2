@@ -11,15 +11,13 @@ META_PACKAGE=	yes
 
 .include "../../mk/bsd.prefs.mk"
 
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	bootscripts-[0-9]*:../../native/bootscripts
 DEPENDS+=	startups-[0-9]*:../../native/startups
 DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
-.endif
 DEPENDS+=	native-gcc6-[0-9]*:../../native/gcc6
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	native-linux-API-headers-[0-9]*:../../native/kernel-headers
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
 DEPENDS+=	linux-firmware-[0-9]*:../../native/linux-firmware
@@ -140,10 +138,10 @@ DEPENDS+=	syslinux-[0-9]*:../../native/syslinux
 DEPENDS+=	iw-[0-9]*:../../linux/iw
 DEPENDS+=	wireless-tools-[0-9]*:../../linux/wireless-tools
 #DEPENDS+=	busybox-[0-9]*:../../native/busybox
-.endif
-DEPENDS+=	squashfs-tools-ng-[0-9]*:../../linux/squashfs-tools-ng
 DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
 DEPENDS+=	rsync-[0-9]*:../../net/rsync
+.endif
+DEPENDS+=	squashfs-tools-ng-[0-9]*:../../linux/squashfs-tools-ng
 DEPENDS+=	zsync-[0-9]*:../../net/zsync
 #DEPENDS+=	profile-data-[0-9]*:../../native/profile-data
 
