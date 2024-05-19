@@ -3,7 +3,7 @@
 DISTNAME=	rsync-3.2.4
 CATEGORIES=	net
 MASTER_SITES=	http://rsync.samba.org/ftp/rsync/
-MASTER_SITES+=	http://rsync.samba.org/ftp/rsync/old-versions/
+MASTER_SITES+=	http://rsync.samba.org/ftp/rsync/src/
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	https://rsync.samba.org/
@@ -48,10 +48,10 @@ USE_LIBTOOL=		yes
 USE_BUILTIN.openssl=	no
 USE_BUILTIN.zlib=	no
 USE_BUILTIN.iconv=	no
+USE_BUILTIN.gettext=	no
 #MAKE_ENV+=		PREFIX=${PREFIX}
 CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
 CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
-#CONFIGURE_ARGS+=	--disable-acl-support
 #CONFIGURE_ARGS+=	--disable-openssl
 #CONFIGURE_ARGS+=	--disable-zstd
 #CONFIGURE_ARGS+=	--disable-lz4
@@ -59,14 +59,17 @@ CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
 #CONFIGURE_ARGS+=	--disable-md2man
 #CONFIGURE_ARGS+=	--disable-iconv
 #CONFIGURE_ARGS+=	--disable-iconv-open
+#CONFIGURE_ARGS+=	--disable-acl-support
+#CONFIGURE_ARGS+=	--disable-xattr-support
 #USE_TOOLS+=		gmake pkg-config autoconf automake m4 intltools msgfmt xgettext
 #pre-configure:
 #	cd ${WRKSRC} && autoconf -f
 
-USE_FEATURES=		nbcompat
+#USE_FEATURES=		nbcompat
 
 .include "../../archivers/zstd/buildlink3.mk"
 .include "../../sysutils/attr/buildlink3.mk"
+.include "../../linux/acl/buildlink3.mk"
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \

@@ -1,0 +1,172 @@
+From: Dave Taht <d@taht.net>
+
+In the bufferbloat age, anything that can make for a kinder, gentler bulk
+transfer protocol seems desirable.
+
+This add support for user and server selectable congestion control algorithms.
+
+For example:
+    --congestion-alg=lp # For the tcp-lp algorithm on the command line
+
+And diffserv support:
+    --diffserv=8 for setting the CS1 bit
+
+Also available in rsync daemon modules:
+
+[mystuff]
+    congestion alg = westwood # for a wireless connection
+    diffserv = 8
+
+This could be improved by being able to specify a list of congestion algorithms
+to try, symbolic names for diffserv (CS1), a better name than 'congestion-alg',
+and some error checking.
+
+To use this patch, run these commands for a successful build:
+
+    patch -p1 <patches/congestion.diff
+    ./configure                         (optional if already run)
+    make
+
+based-on: 0ac7ebceef70417355f25daf9e2fd94e84c49749
+diff --git a/daemon-parm.txt b/daemon-parm.txt
+--- a/daemon-parm.txt
++++ b/daemon-parm.txt
+@@ -18,6 +18,7 @@ Locals: =================================================================
+ STRING	auth_users		NULL
+ STRING	charset			NULL
+ STRING	comment			NULL
++STRING	congestion_alg		NULL
+ STRING	dont_compress		DEFAULT_DONT_COMPRESS
+ STRING	early_exec		NULL
+ STRING	exclude			NULL
+@@ -45,6 +46,7 @@ STRING	uid			NULL
+ PATH	path			NULL
+ PATH	temp_dir		NULL
+ 
++INTEGER	diffserv		8
+ INTEGER	max_connections		0
+ INTEGER	max_verbosity		1
+ INTEGER	timeout			0
+diff --git a/options.c b/options.c
+--- a/options.c
++++ b/options.c
+@@ -76,6 +76,8 @@ int delete_during = 0;
+ int delete_before = 0;
+ int delete_after = 0;
+ int delete_excluded = 0;
++int diffserv = 8;
++char *congestion_alg = NULL;
+ int remove_source_files = 0;
+ int one_file_system = 0;
+ int protocol_version = PROTOCOL_VERSION;
+@@ -825,6 +827,8 @@ static struct poptOption long_options[] = {
+   {"outbuf",           0,  POPT_ARG_STRING, &outbuf_mode, 0, 0, 0 },
+   {"remote-option",   'M', POPT_ARG_STRING, 0, 'M', 0, 0 },
+   {"protocol",         0,  POPT_ARG_INT,    &protocol_version, 0, 0, 0 },
++  {"congestion-alg",   0,  POPT_ARG_STRING, &congestion_alg, 0, 0, 0 },
++  {"diffserv",         0,  POPT_ARG_INT,    &diffserv, 0, 0, 0 },
+   {"checksum-seed",    0,  POPT_ARG_INT,    &checksum_seed, 0, 0, 0 },
+   {"server",           0,  POPT_ARG_NONE,   0, OPT_SERVER, 0, 0 },
+   {"sender",           0,  POPT_ARG_NONE,   0, OPT_SENDER, 0, 0 },
+diff --git a/rsync.1.md b/rsync.1.md
+--- a/rsync.1.md
++++ b/rsync.1.md
+@@ -450,6 +450,8 @@ has its own detailed description later in this manpage.
+ --address=ADDRESS        bind address for outgoing socket to daemon
+ --port=PORT              specify double-colon alternate port number
+ --sockopts=OPTIONS       specify custom TCP options
++--diffserv=[0-63]        specify diffserv setting
++--congestion-alg=STRING  choose a congestion algo
+ --blocking-io            use blocking I/O for the remote shell
+ --outbuf=N|L|B           set out buffering to None, Line, or Block
+ --stats                  give some file-transfer stats
+diff --git a/socket.c b/socket.c
+--- a/socket.c
++++ b/socket.c
+@@ -40,6 +40,8 @@ extern char *sockopts;
+ extern int default_af_hint;
+ extern int connect_timeout;
+ extern int pid_file_fd;
++extern int diffserv;
++extern char *congestion_alg;
+ 
+ #ifdef HAVE_SIGACTION
+ static struct sigaction sigact;
+@@ -166,6 +168,37 @@ static void contimeout_handler(UNUSED(int val))
+ 	connect_timeout = -1;
+ }
+ 
++/* Set special socket options
++ *
++ * Diffserv is a value in the range of 0-63, and needs to be shifted left
++ *          2 places AND treated differently for ipv4 and ipv6.
++ * Setting TCP congestion control is rather Linux specific (at the moment)
++ * and sends a varying length string to setsockopt rather than an integer
++ * or character.
++*/
++
++void set_special_sockopts(int s)
++{
++#if defined(TCP_CONGESTION)
++	if (congestion_alg) {
++		if (setsockopt(s, SOL_TCP, TCP_CONGESTION, congestion_alg, strlen(congestion_alg)) == -1)
++			rprintf(FINFO, "Couldn't set %s congestion algorithm\n", congestion_alg);
++	}
++#endif
++
++/* setting the diffserv/tos bits is different on ipv6 and
++ *  ipv4, so we just hammer down on both and ignore the result
++ *  And ipv6 demands an int for v. I didn't write the spec.
++ */
++	if (diffserv) {
++		int v = (diffserv & 63) <<2;
++		setsockopt(s,IPPROTO_IP, IP_TOS, &v, sizeof(v));
++#if defined(IPV6_TCLASS)
++		setsockopt(s,IPPROTO_IPV6, IPV6_TCLASS, &v, sizeof(v));
++#endif
++	}
++}
++
+ /* Open a socket to a tcp remote host with the specified port.
+  *
+  * Based on code from Warren.  Proxy support by Stephen Rothwell.
+@@ -272,6 +305,7 @@ int open_socket_out(char *host, int port, const char *bind_addr, int af_hint)
+ 			alarm(connect_timeout);
+ 		}
+ 
++		set_special_sockopts(s);
+ 		set_socket_options(s, sockopts);
+ 		while (connect(s, res->ai_addr, res->ai_addrlen) < 0) {
+ 			if (connect_timeout < 0)
+@@ -440,6 +474,7 @@ static int *open_socket_in(int type, int port, const char *bind_addr,
+ 			continue;
+ 		}
+ 
++		set_special_sockopts(s);
+ 		setsockopt(s, SOL_SOCKET, SO_REUSEADDR,
+ 			   (char *)&one, sizeof one);
+ 		if (sockopts)
+diff -Nurp a/rsync.1 b/rsync.1
+--- a/rsync.1
++++ b/rsync.1
+@@ -527,6 +527,8 @@ has its own detailed description later i
+ --address=ADDRESS        bind address for outgoing socket to daemon
+ --port=PORT              specify double-colon alternate port number
+ --sockopts=OPTIONS       specify custom TCP options
++--diffserv=[0-63]        specify diffserv setting
++--congestion-alg=STRING  choose a congestion algo
+ --blocking-io            use blocking I/O for the remote shell
+ --outbuf=N|L|B           set out buffering to None, Line, or Block
+ --stats                  give some file-transfer stats
+diff -Nurp a/rsync.1.html b/rsync.1.html
+--- a/rsync.1.html
++++ b/rsync.1.html
+@@ -445,6 +445,8 @@ has its own detailed description later i
+ --address=ADDRESS        bind address for outgoing socket to daemon
+ --port=PORT              specify double-colon alternate port number
+ --sockopts=OPTIONS       specify custom TCP options
++--diffserv=[0-63]        specify diffserv setting
++--congestion-alg=STRING  choose a congestion algo
+ --blocking-io            use blocking I/O for the remote shell
+ --outbuf=N|L|B           set out buffering to None, Line, or Block
+ --stats                  give some file-transfer stats

@@ -17,6 +17,14 @@ ACL_BUILDLINK3_MK:=
 
 BUILDLINK_API_DEPENDS.acl+=	acl>=2.2.53
 BUILDLINK_PKGSRCDIR.acl?=	../../linux/acl
+
+# XXX
+# XXX Uncomment and keep only the buildlink3 lines below which are directly
+# XXX needed for dependencies to compile, link, and run.  If this package
+# XXX provides a wrappered API or otherwise does not expose the APIs of the
+# XXX buildlink3 lines below to dependencies, remove them.
+# XXX
+.include "../../sysutils/attr/buildlink3.mk"
 .endif	# ACL_BUILDLINK3_MK
 
 BUILDLINK_TREE+=	-acl

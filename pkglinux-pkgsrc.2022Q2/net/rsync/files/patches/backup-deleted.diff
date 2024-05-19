@@ -1,0 +1,170 @@
+This patches adds the --backup-deleted option, as proposed by Jonathan
+Kames in bug 7889.
+
+To use this patch, run these commands for a successful build:
+
+    patch -p1 <patches/backup-deleted.diff
+    ./configure                                 (optional if already run)
+    make
+
+based-on: 0ac7ebceef70417355f25daf9e2fd94e84c49749
+diff --git a/generator.c b/generator.c
+--- a/generator.c
++++ b/generator.c
+@@ -1843,7 +1843,7 @@ static void recv_generator(char *fname, struct file_struct *file, int ndx,
+ 		goto notify_others;
+ 
+ 	if (read_batch || whole_file) {
+-		if (inplace && make_backups > 0 && fnamecmp_type == FNAMECMP_FNAME) {
++		if (inplace && make_backups > 1 && fnamecmp_type == FNAMECMP_FNAME) {
+ 			if (!(backupptr = get_backup_name(fname)))
+ 				goto cleanup;
+ 			if (!(back_file = make_file(fname, NULL, NULL, 0, NO_FILTERS)))
+@@ -1879,7 +1879,7 @@ static void recv_generator(char *fname, struct file_struct *file, int ndx,
+ 		goto notify_others;
+ 	}
+ 
+-	if (inplace && make_backups > 0 && fnamecmp_type == FNAMECMP_FNAME) {
++	if (inplace && make_backups > 1 && fnamecmp_type == FNAMECMP_FNAME) {
+ 		if (!(backupptr = get_backup_name(fname))) {
+ 			goto cleanup;
+ 		}
+@@ -1999,7 +1999,7 @@ int atomic_create(struct file_struct *file, char *fname, const char *slnk, const
+ 		skip_atomic = 0;
+ 
+ 	if (del_for_flag) {
+-		if (make_backups > 0 && !dir_in_the_way) {
++		if (make_backups > 1 && !dir_in_the_way) {
+ 			if (!make_backup(fname, skip_atomic))
+ 				return 0;
+ 		} else if (skip_atomic) {
+diff --git a/options.c b/options.c
+--- a/options.c
++++ b/options.c
+@@ -772,7 +772,8 @@ static struct poptOption long_options[] = {
+   {"no-i",             0,  POPT_ARG_VAL,    &itemize_changes, 0, 0, 0 },
+   {"bwlimit",          0,  POPT_ARG_STRING, &bwlimit_arg, OPT_BWLIMIT, 0, 0 },
+   {"no-bwlimit",       0,  POPT_ARG_VAL,    &bwlimit, 0, 0, 0 },
+-  {"backup",          'b', POPT_ARG_VAL,    &make_backups, 1, 0, 0 },
++  {"backup",          'b', POPT_ARG_VAL,    &make_backups, 2, 0, 0 },
++  {"backup-deleted",   0,  POPT_ARG_VAL,    &make_backups, 1, 0, 0 },
+   {"no-backup",        0,  POPT_ARG_VAL,    &make_backups, 0, 0, 0 },
+   {"backup-dir",       0,  POPT_ARG_STRING, &backup_dir, 0, 0, 0 },
+   {"suffix",           0,  POPT_ARG_STRING, &backup_suffix, 0, 0, 0 },
+@@ -2760,6 +2761,10 @@ void server_options(char **args, int *argc_p)
+ 		args[ac++] = safe_arg("--compress-choice", compress_choice);
+ 
+ 	if (am_sender) {
++		/* A remote sender just needs the above -b option.
++		 * A remote receiver will override that with this option. */
++		if (make_backups == 1)
++			args[ac++] = "--backup-deleted";
+ 		if (max_delete > 0) {
+ 			if (asprintf(&arg, "--max-delete=%d", max_delete) < 0)
+ 				goto oom;
+diff --git a/receiver.c b/receiver.c
+--- a/receiver.c
++++ b/receiver.c
+@@ -426,7 +426,7 @@ static void handle_delayed_updates(char *local_name)
+ 		struct file_struct *file = cur_flist->files[ndx];
+ 		fname = local_name ? local_name : f_name(file, NULL);
+ 		if ((partialptr = partial_dir_fname(fname)) != NULL) {
+-			if (make_backups > 0 && !make_backup(fname, False))
++			if (make_backups > 1 && !make_backup(fname, False))
+ 				continue;
+ 			if (DEBUG_GTE(RECV, 1)) {
+ 				rprintf(FINFO, "renaming %s to %s\n",
+@@ -745,7 +745,7 @@ int recv_files(int f_in, int f_out, char *local_name)
+ 		} else {
+ 			/* Reminder: --inplace && --partial-dir are never
+ 			 * enabled at the same time. */
+-			if (inplace && make_backups > 0) {
++			if (inplace && make_backups > 1) {
+ 				if (!(fnamecmp = get_backup_name(fname)))
+ 					fnamecmp = fname;
+ 				else
+diff --git a/rsync.1.md b/rsync.1.md
+--- a/rsync.1.md
++++ b/rsync.1.md
+@@ -348,6 +348,7 @@ has its own detailed description later in this manpage.
+ --relative, -R           use relative path names
+ --no-implied-dirs        don't send implied dirs with --relative
+ --backup, -b             make backups (see --suffix & --backup-dir)
++--backup-deleted         make backups only of deleted files
+ --backup-dir=DIR         make backups into hierarchy based in DIR
+ --suffix=SUFFIX          backup suffix (default ~ w/o --backup-dir)
+ --update, -u             skip files that are newer on the receiver
+@@ -914,6 +915,13 @@ your home directory (remove the '=' for that).
+     rules specify a trailing inclusion/exclusion of `*`, the auto-added rule
+     would never be reached).
+ 
++0.  `--backup-deleted`
++
++    With this option, deleted destination files are renamed, while modified
++    destination files are not. Otherwise, this option behaves the same as
++    [`--backup`](#opt), described above.  Note that if [`--backup`](#opt) is
++    also specified, whichever option is specified last takes precedence.
++
+ 0.  `--backup-dir=DIR`
+ 
+     This implies the [`--backup`](#opt) option, and tells rsync to store all
+diff --git a/rsync.c b/rsync.c
+--- a/rsync.c
++++ b/rsync.c
+@@ -733,7 +733,7 @@ int finish_transfer(const char *fname, const char *fnametmp,
+ 		goto do_set_file_attrs;
+ 	}
+ 
+-	if (make_backups > 0 && overwriting_basis) {
++	if (make_backups > 1 && overwriting_basis) {
+ 		int ok = make_backup(fname, False);
+ 		if (!ok)
+ 			exit_cleanup(RERR_FILEIO);
+diff -Nurp a/rsync.1 b/rsync.1
+--- a/rsync.1
++++ b/rsync.1
+@@ -425,6 +425,7 @@ has its own detailed description later i
+ --relative, -R           use relative path names
+ --no-implied-dirs        don't send implied dirs with --relative
+ --backup, -b             make backups (see --suffix & --backup-dir)
++--backup-deleted         make backups only of deleted files
+ --backup-dir=DIR         make backups into hierarchy based in DIR
+ --suffix=SUFFIX          backup suffix (default ~ w/o --backup-dir)
+ --update, -u             skip files that are newer on the receiver
+@@ -997,6 +998,11 @@ manually insert your own exclude/protect
+ list so that it has a high enough priority to be effective (e.g. if your
+ rules specify a trailing inclusion/exclusion of \fB*\fP, the auto-added rule
+ would never be reached).
++.IP "\fB\-\-backup-deleted\fP"
++With this option, deleted destination files are renamed, while modified
++destination files are not. Otherwise, this option behaves the same as
++\fB\-\-backup\fP, described above.  Note that if \fB\-\-backup\fP is
++also specified, whichever option is specified last takes precedence.
+ .IP "\fB\-\-backup-dir=DIR\fP"
+ This implies the \fB\-\-backup\fP option, and tells rsync to store all
+ backups in the specified directory on the receiving side.  This can be used
+diff -Nurp a/rsync.1.html b/rsync.1.html
+--- a/rsync.1.html
++++ b/rsync.1.html
+@@ -343,6 +343,7 @@ has its own detailed description later i
+ --relative, -R           use relative path names
+ --no-implied-dirs        don't send implied dirs with --relative
+ --backup, -b             make backups (see --suffix &amp; --backup-dir)
++--backup-deleted         make backups only of deleted files
+ --backup-dir=DIR         make backups into hierarchy based in DIR
+ --suffix=SUFFIX          backup suffix (default ~ w/o --backup-dir)
+ --update, -u             skip files that are newer on the receiver
+@@ -893,6 +894,13 @@ rules specify a trailing inclusion/exclu
+ would never be reached).</p>
+ </dd>
+ 
++<dt id="opt--backup-deleted"><code>--backup-deleted</code><a href="#opt--backup-deleted" class="tgt"></a></dt><dd>
++<p>With this option, deleted destination files are renamed, while modified
++destination files are not. Otherwise, this option behaves the same as
++<a href="#opt--backup"><code>--backup</code></a>, described above.  Note that if <a href="#opt--backup"><code>--backup</code></a> is
++also specified, whichever option is specified last takes precedence.</p>
++</dd>
++
+ <dt id="opt--backup-dir"><code>--backup-dir=DIR</code><a href="#opt--backup-dir" class="tgt"></a></dt><dd>
+ <p>This implies the <a href="#opt--backup"><code>--backup</code></a> option, and tells rsync to store all
+ backups in the specified directory on the receiving side.  This can be used

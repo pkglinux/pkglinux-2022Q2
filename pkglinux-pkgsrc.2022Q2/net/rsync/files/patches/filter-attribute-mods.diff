@@ -1,0 +1,580 @@
+From: Matt McCutchen <matt@mattmccutchen.net>
+
+Implement the "m", "o", "g" include modifiers to tweak the permissions,
+owner, or group of matching files.
+
+To use this patch, run these commands for a successful build:
+
+    patch -p1 <patches/filter-attribute-mods.diff
+    ./configure                         (optional if already run)
+    make
+
+based-on: 0ac7ebceef70417355f25daf9e2fd94e84c49749
+diff --git a/exclude.c b/exclude.c
+--- a/exclude.c
++++ b/exclude.c
+@@ -45,10 +45,13 @@ filter_rule_list filter_list = { .debug_type = "" };
+ filter_rule_list cvs_filter_list = { .debug_type = " [global CVS]" };
+ filter_rule_list daemon_filter_list = { .debug_type = " [daemon]" };
+ 
++filter_rule *last_hit_filter_rule;
++
+ int saw_xattr_filter = 0;
+ 
+-/* Need room enough for ":MODS " prefix plus some room to grow. */
+-#define MAX_RULE_PREFIX (16)
++/* Need room enough for ":MODS " prefix, which can now include
++ * chmod/user/group values. */
++#define MAX_RULE_PREFIX (256)
+ 
+ #define SLASH_WILD3_SUFFIX "/***"
+ 
+@@ -127,8 +130,27 @@ static void teardown_mergelist(filter_rule *ex)
+ 		mergelist_cnt--;
+ }
+ 
++static struct filter_chmod_struct *ref_filter_chmod(struct filter_chmod_struct *chmod)
++{
++	chmod->ref_cnt++;
++	assert(chmod->ref_cnt != 0); /* Catch overflow. */
++	return chmod;
++}
++
++static void unref_filter_chmod(struct filter_chmod_struct *chmod)
++{
++	chmod->ref_cnt--;
++	if (chmod->ref_cnt == 0) {
++		free(chmod->modestr);
++		free_chmod_mode(chmod->modes);
++		free(chmod);
++	}
++}
++
+ static void free_filter(filter_rule *ex)
+ {
++	if (ex->rflags & FILTRULE_CHMOD)
++		unref_filter_chmod(ex->chmod);
+ 	if (ex->rflags & FILTRULE_PERDIR_MERGE)
+ 		teardown_mergelist(ex);
+ 	free(ex->pattern);
+@@ -726,7 +748,9 @@ static void report_filter_result(enum logcode code, char const *name,
+ 
+ /* This function is used to check if a file should be included/excluded
+  * from the list of files based on its name and type etc.  The value of
+- * filter_level is set to either SERVER_FILTERS or ALL_FILTERS. */
++ * filter_level is set to either SERVER_FILTERS or ALL_FILTERS.
++ * "last_hit_filter_rule" will be set to the operative filter, or NULL if none. */
++
+ int name_is_excluded(const char *fname, int name_flags, int filter_level)
+ {
+ 	if (daemon_filter_list.head && check_filter(&daemon_filter_list, FLOG, fname, name_flags) < 0) {
+@@ -735,6 +759,9 @@ int name_is_excluded(const char *fname, int name_flags, int filter_level)
+ 		return 1;
+ 	}
+ 
++	/* Don't leave a daemon include in last_hit_filter_rule. */
++	last_hit_filter_rule = NULL;
++
+ 	if (filter_level != ALL_FILTERS)
+ 		return 0;
+ 
+@@ -745,7 +772,8 @@ int name_is_excluded(const char *fname, int name_flags, int filter_level)
+ }
+ 
+ /* Return -1 if file "name" is defined to be excluded by the specified
+- * exclude list, 1 if it is included, and 0 if it was not matched. */
++ * exclude list, 1 if it is included, and 0 if it was not matched.
++ * Sets last_hit_filter_rule to the filter that was hit, or NULL if none. */
+ int check_filter(filter_rule_list *listp, enum logcode code,
+ 		 const char *name, int name_flags)
+ {
+@@ -768,10 +796,12 @@ int check_filter(filter_rule_list *listp, enum logcode code,
+ 		}
+ 		if (rule_matches(name, ent, name_flags)) {
+ 			report_filter_result(code, name, ent, name_flags, listp->debug_type);
++			last_hit_filter_rule = ent;
+ 			return ent->rflags & FILTRULE_INCLUDE ? 1 : -1;
+ 		}
+ 	}
+ 
++	last_hit_filter_rule = NULL;
+ 	return 0;
+ }
+ 
+@@ -788,9 +818,45 @@ static const uchar *rule_strcmp(const uchar *str, const char *rule, int rule_len
+ 	return NULL;
+ }
+ 
++static char *grab_paren_value(const uchar **s_ptr)
++{
++	const uchar *start, *end;
++	int val_sz;
++	char *val;
++
++	if ((*s_ptr)[1] != '(')
++		return NULL;
++	start = (*s_ptr) + 2;
++
++	for (end = start; *end != ')'; end++)
++		if (!*end || *end == ' ' || *end == '_')
++			return NULL;
++
++	val_sz = end - start + 1;
++	val = new_array(char, val_sz);
++	strlcpy(val, (const char *)start, val_sz);
++	*s_ptr = end; /* remember ++s in parse_rule_tok */
++	return val;
++}
++
++static struct filter_chmod_struct *make_chmod_struct(char *modestr)
++{
++	struct filter_chmod_struct *chmod;
++	struct chmod_mode_struct *modes = NULL;
++
++	if (!parse_chmod(modestr, &modes))
++		return NULL;
++
++	chmod = new(struct filter_chmod_struct);
++	chmod->ref_cnt = 1;
++	chmod->modestr = modestr;
++	chmod->modes = modes;
++	return chmod;
++}
++
+ #define FILTRULES_FROM_CONTAINER (FILTRULE_ABS_PATH | FILTRULE_INCLUDE \
+ 				| FILTRULE_DIRECTORY | FILTRULE_NEGATE \
+-				| FILTRULE_PERISHABLE)
++				| FILTRULE_PERISHABLE | FILTRULES_ATTRS)
+ 
+ /* Gets the next include/exclude rule from *rulestr_ptr and advances
+  * *rulestr_ptr to point beyond it.  Stores the pattern's start (within
+@@ -805,6 +871,7 @@ static filter_rule *parse_rule_tok(const char **rulestr_ptr,
+ 				   const char **pat_ptr, unsigned int *pat_len_ptr)
+ {
+ 	const uchar *s = (const uchar *)*rulestr_ptr;
++	char *val;
+ 	filter_rule *rule;
+ 	unsigned int len;
+ 
+@@ -823,6 +890,12 @@ static filter_rule *parse_rule_tok(const char **rulestr_ptr,
+ 	/* Inherit from the template.  Don't inherit FILTRULES_SIDES; we check
+ 	 * that later. */
+ 	rule->rflags = template->rflags & FILTRULES_FROM_CONTAINER;
++	if (template->rflags & FILTRULE_CHMOD)
++		rule->chmod = ref_filter_chmod(template->chmod);
++	if (template->rflags & FILTRULE_FORCE_OWNER)
++		rule->force_uid = template->force_uid;
++	if (template->rflags & FILTRULE_FORCE_GROUP)
++		rule->force_gid = template->force_gid;
+ 
+ 	/* Figure out what kind of a filter rule "s" is pointing at.  Note
+ 	 * that if FILTRULE_NO_PREFIXES is set, the rule is either an include
+@@ -968,11 +1041,63 @@ static filter_rule *parse_rule_tok(const char **rulestr_ptr,
+ 					goto invalid;
+ 				rule->rflags |= FILTRULE_EXCLUDE_SELF;
+ 				break;
++			case 'g': {
++				gid_t gid;
++
++				if (!(val = grab_paren_value(&s)))
++					goto invalid;
++				if (group_to_gid(val, &gid, True)) {
++					rule->rflags |= FILTRULE_FORCE_GROUP;
++					rule->force_gid = gid;
++				} else {
++					rprintf(FERROR,
++						"unknown group '%s' in filter rule: %s\n",
++						val, *rulestr_ptr);
++					exit_cleanup(RERR_SYNTAX);
++				}
++				free(val);
++				break;
++			}
++			case 'm': {
++				struct filter_chmod_struct *chmod;
++
++				if (!(val = grab_paren_value(&s)))
++					goto invalid;
++				if ((chmod = make_chmod_struct(val))) {
++					if (rule->rflags & FILTRULE_CHMOD)
++						unref_filter_chmod(rule->chmod);
++					rule->rflags |= FILTRULE_CHMOD;
++					rule->chmod = chmod;
++				} else {
++					rprintf(FERROR,
++						"unparseable chmod string '%s' in filter rule: %s\n",
++						val, *rulestr_ptr);
++					exit_cleanup(RERR_SYNTAX);
++				}
++				break;
++			}
+ 			case 'n':
+ 				if (!(rule->rflags & FILTRULE_MERGE_FILE))
+ 					goto invalid;
+ 				rule->rflags |= FILTRULE_NO_INHERIT;
+ 				break;
++			case 'o': {
++				uid_t uid;
++
++				if (!(val = grab_paren_value(&s)))
++					goto invalid;
++				if (user_to_uid(val, &uid, True)) {
++					rule->rflags |= FILTRULE_FORCE_OWNER;
++					rule->force_uid = uid;
++				} else {
++					rprintf(FERROR,
++						"unknown user '%s' in filter rule: %s\n",
++						val, *rulestr_ptr);
++					exit_cleanup(RERR_SYNTAX);
++				}
++				free(val);
++				break;
++			}
+ 			case 'p':
+ 				rule->rflags |= FILTRULE_PERISHABLE;
+ 				break;
+@@ -1286,6 +1411,23 @@ char *get_rule_prefix(filter_rule *rule, const char *pat, int for_xfer,
+ 		else if (am_sender)
+ 			return NULL;
+ 	}
++	if (rule->rflags & FILTRULES_ATTRS) {
++		if (!for_xfer || protocol_version >= 31) {
++			if (rule->rflags & FILTRULE_CHMOD)
++				if (!snappendf(&op, (buf + sizeof buf) - op,
++					"m(%s)", rule->chmod->modestr))
++					return NULL;
++			if (rule->rflags & FILTRULE_FORCE_OWNER)
++				if (!snappendf(&op, (buf + sizeof buf) - op,
++					"o(%u)", (unsigned)rule->force_uid))
++					return NULL;
++			if (rule->rflags & FILTRULE_FORCE_GROUP)
++				if (!snappendf(&op, (buf + sizeof buf) - op,
++					"g(%u)", (unsigned)rule->force_gid))
++					return NULL;
++		} else if (!am_sender)
++			return NULL;
++	}
+ 	if (op - buf > legal_len)
+ 		return NULL;
+ 	if (legal_len)
+diff --git a/flist.c b/flist.c
+--- a/flist.c
++++ b/flist.c
+@@ -85,6 +85,7 @@ extern struct chmod_mode_struct *chmod_modes;
+ 
+ extern filter_rule_list filter_list;
+ extern filter_rule_list daemon_filter_list;
++extern filter_rule *last_hit_filter_rule;
+ 
+ #ifdef ICONV_OPTION
+ extern int filesfrom_convert;
+@@ -1244,7 +1245,7 @@ struct file_struct *make_file(const char *fname, struct file_list *flist,
+ 	} else if (readlink_stat(thisname, &st, linkname) != 0) {
+ 		int save_errno = errno;
+ 		/* See if file is excluded before reporting an error. */
+-		if (filter_level != NO_FILTERS
++		if (filter_level != NO_FILTERS && filter_level != ALL_FILTERS_NO_EXCLUDE
+ 		 && (is_excluded(thisname, 0, filter_level)
+ 		  || is_excluded(thisname, 1, filter_level))) {
+ 			if (ignore_perishable && save_errno != ENOENT)
+@@ -1289,6 +1290,12 @@ struct file_struct *make_file(const char *fname, struct file_list *flist,
+ 
+ 	if (filter_level == NO_FILTERS)
+ 		goto skip_filters;
++	if (filter_level == ALL_FILTERS_NO_EXCLUDE) {
++		/* Call only for the side effect of setting last_hit_filter_rule to
++		 * any operative include filter, which might affect attributes. */
++		is_excluded(thisname, S_ISDIR(st.st_mode) != 0, ALL_FILTERS);
++		goto skip_filters;
++	}
+ 
+ 	if (S_ISDIR(st.st_mode)) {
+ 		if (!xfer_dirs) {
+@@ -1521,12 +1528,23 @@ static struct file_struct *send_file_name(int f, struct file_list *flist,
+ 					  int flags, int filter_level)
+ {
+ 	struct file_struct *file;
++	BOOL can_tweak_mode;
+ 
+ 	file = make_file(fname, flist, stp, flags, filter_level);
+ 	if (!file)
+ 		return NULL;
+ 
+-	if (chmod_modes && !S_ISLNK(file->mode) && file->mode)
++	can_tweak_mode = !S_ISLNK(file->mode) && file->mode;
++	if ((filter_level == ALL_FILTERS || filter_level == ALL_FILTERS_NO_EXCLUDE)
++		&& last_hit_filter_rule) {
++		if ((last_hit_filter_rule->rflags & FILTRULE_CHMOD) && can_tweak_mode)
++			file->mode = tweak_mode(file->mode, last_hit_filter_rule->chmod->modes);
++		if ((last_hit_filter_rule->rflags & FILTRULE_FORCE_OWNER) && uid_ndx)
++			F_OWNER(file) = last_hit_filter_rule->force_uid;
++		if ((last_hit_filter_rule->rflags & FILTRULE_FORCE_GROUP) && gid_ndx)
++			F_GROUP(file) = last_hit_filter_rule->force_gid;
++	}
++	if (chmod_modes && can_tweak_mode)
+ 		file->mode = tweak_mode(file->mode, chmod_modes);
+ 
+ 	if (f >= 0) {
+@@ -2428,7 +2446,7 @@ struct file_list *send_file_list(int f, int argc, char *argv[])
+ 			struct file_struct *file;
+ 			file = send_file_name(f, flist, fbuf, &st,
+ 					      FLAG_TOP_DIR | FLAG_CONTENT_DIR | flags,
+-					      NO_FILTERS);
++					      ALL_FILTERS_NO_EXCLUDE);
+ 			if (!file)
+ 				continue;
+ 			if (inc_recurse) {
+@@ -2442,7 +2460,7 @@ struct file_list *send_file_list(int f, int argc, char *argv[])
+ 			} else
+ 				send_if_directory(f, flist, file, fbuf, len, flags);
+ 		} else
+-			send_file_name(f, flist, fbuf, &st, flags, NO_FILTERS);
++			send_file_name(f, flist, fbuf, &st, flags, ALL_FILTERS_NO_EXCLUDE);
+ 	}
+ 
+ 	if (reenable_multiplex >= 0)
+diff --git a/rsync.1.md b/rsync.1.md
+--- a/rsync.1.md
++++ b/rsync.1.md
+@@ -1417,7 +1417,9 @@ your home directory (remove the '=' for that).
+     >     --chmod=D2775,F664
+ 
+     It is also legal to specify multiple `--chmod` options, as each additional
+-    option is just appended to the list of changes to make.
++    option is just appended to the list of changes to make.  To change
++    permissions of files matching a pattern, use an include filter with the `m`
++    modifier, which takes effect before any `--chmod` options.
+ 
+     See the [`--perms`](#opt) and [`--executability`](#opt) options for how the
+     resulting permission value can be applied to the files in the transfer.
+@@ -2847,6 +2849,10 @@ your home directory (remove the '=' for that).
+     avoid a complaint about wildcard characters, but a modern rsync handles
+     this automatically.
+ 
++    To change ownership of files matching a pattern, use an include filter with
++    a `o` or `g` modifier, which take effect before uid/gid mapping and
++    therefore *can* be mixed with [`--usermap` & `--groupmap`](#opt--usermap).
++
+ 0.  `--timeout=SECONDS`
+ 
+     This option allows you to set a maximum I/O timeout in seconds.  If no data
+@@ -3910,6 +3916,15 @@ The following modifiers are accepted after a "`+`" or "`-`":
+   like "CVS" and "`*.o`" are marked as perishable, and will not prevent a
+   directory that was removed on the source from being deleted on the
+   destination.
++- An `m(CHMOD)` on an include rule tweaks the permissions of matching source
++  files in the same way as [`--chmod`](#opt).  This happens before any tweaks
++  requested via [`--chmod`](#opt).
++- An `o(USER)` on an include rule pretends that matching source files are owned
++  by `USER` (a name or numeric uid).  This happens before any uid mapping by
++  name or [`--usermap`](#opt).
++- A `g(GROUP)` on an include rule pretends that matching source files are owned
++  by `GROUP` (a name or numeric gid).  This happens before any gid mapping by
++  name or [`--groupmap`](#opt--usermap).
+ - An `x` indicates that a rule affects xattr names in xattr copy/delete
+   operations (and is thus ignored when matching file/dir names).  If no
+   xattr-matching rules are specified, a default xattr filtering rule is used
+@@ -3967,6 +3982,12 @@ The following modifiers are accepted after a merge or dir-merge rule:
+   rules in the file must not specify sides (via a modifier or a rule prefix
+   such as `hide`).
+ 
++The attribute-affecting modifiers `m`, `o`, and `g` work only in client filters
++(not in daemon filters), and only the modifiers of the first matching rule are
++applied.  As an example, assuming [`--super`](#opt) is enabled, the rule
++"`+o(root),g(root),m(go=) *~`" would ensure that all "backup"
++files belong to root and are not accessible to anyone else.
++
+ Per-directory rules are inherited in all subdirectories of the directory where
+ the merge-file was found unless the 'n' modifier was used.  Each subdirectory's
+ rules are prefixed to the inherited per-directory rules from its parents, which
+diff --git a/rsync.h b/rsync.h
+--- a/rsync.h
++++ b/rsync.h
+@@ -181,6 +181,9 @@
+ #define NO_FILTERS	0
+ #define SERVER_FILTERS	1
+ #define ALL_FILTERS	2
++/* Don't let the file be excluded, but check for a filter that might affect
++ * its attributes via FILTRULES_ATTRS. */
++#define ALL_FILTERS_NO_EXCLUDE	3
+ 
+ #define XFLG_FATAL_ERRORS	(1<<0)
+ #define XFLG_OLD_PREFIXES	(1<<1)
+@@ -984,6 +987,8 @@ struct map_struct {
+ 	int status;		/* first errno from read errors		*/
+ };
+ 
++struct chmod_mode_struct;
++
+ #define NAME_IS_FILE		(0)    /* filter name as a file */
+ #define NAME_IS_DIR		(1<<0) /* filter name as a dir */
+ #define NAME_IS_XATTR		(1<<2) /* filter name as an xattr */
+@@ -1009,8 +1014,18 @@ struct map_struct {
+ #define FILTRULE_CLEAR_LIST	(1<<18)/* this item is the "!" token */
+ #define FILTRULE_PERISHABLE	(1<<19)/* perishable if parent dir goes away */
+ #define FILTRULE_XATTR		(1<<20)/* rule only applies to xattr names */
++#define FILTRULE_CHMOD		(1<<21)/* chmod-tweak matching files */
++#define FILTRULE_FORCE_OWNER	(1<<22)/* force owner of matching files */
++#define FILTRULE_FORCE_GROUP	(1<<23)/* force group of matching files */
+ 
+ #define FILTRULES_SIDES (FILTRULE_SENDER_SIDE | FILTRULE_RECEIVER_SIDE)
++#define FILTRULES_ATTRS (FILTRULE_CHMOD | FILTRULE_FORCE_OWNER | FILTRULE_FORCE_GROUP)
++
++struct filter_chmod_struct {
++	unsigned int ref_cnt;
++	char *modestr;
++	struct chmod_mode_struct *modes;
++};
+ 
+ typedef struct filter_struct {
+ 	struct filter_struct *next;
+@@ -1020,6 +1035,11 @@ typedef struct filter_struct {
+ 		int slash_cnt;
+ 		struct filter_list_struct *mergelist;
+ 	} u;
++	/* TODO: Use an "extras" mechanism to avoid
++	 * allocating this memory when we don't need it. */
++	struct filter_chmod_struct *chmod;
++	uid_t force_uid;
++	gid_t force_gid;
+ } filter_rule;
+ 
+ typedef struct filter_list_struct {
+diff --git a/util1.c b/util1.c
+--- a/util1.c
++++ b/util1.c
+@@ -919,6 +919,25 @@ size_t stringjoin(char *dest, size_t destsize, ...)
+ 	return ret;
+ }
+ 
++/* Append formatted text at *dest_ptr up to a maximum of sz (like snprintf).
++ * On success, advance *dest_ptr and return True; on overflow, return False. */
++BOOL snappendf(char **dest_ptr, size_t sz, const char *format, ...)
++{
++	va_list ap;
++	size_t len;
++
++	va_start(ap, format);
++	len = vsnprintf(*dest_ptr, sz, format, ap);
++	va_end(ap);
++
++	if (len >= sz)
++		return False;
++	else {
++		*dest_ptr += len;
++		return True;
++	}
++}
++
+ int count_dir_elements(const char *p)
+ {
+ 	int cnt = 0, new_component = 1;
+diff -Nurp a/rsync.1 b/rsync.1
+--- a/rsync.1
++++ b/rsync.1
+@@ -1518,7 +1518,9 @@ Using octal mode numbers is also allowed
+ .RE
+ .IP
+ It is also legal to specify multiple \fB\-\-chmod\fP options, as each additional
+-option is just appended to the list of changes to make.
++option is just appended to the list of changes to make.  To change
++permissions of files matching a pattern, use an include filter with the \fBm\fP
++modifier, which takes effect before any \fB\-\-chmod\fP options.
+ .IP
+ See the \fB\-\-perms\fP and \fB\-\-executability\fP options for how the
+ resulting permission value can be applied to the files in the transfer.
+@@ -2899,6 +2901,10 @@ implied \fB\-\-owner\fP and/or \fB\-\-gr
+ An older rsync client may need to use \fB\-\-protect-args\fP (\fB\-s\fP) to
+ avoid a complaint about wildcard characters, but a modern rsync handles
+ this automatically.
++.IP
++To change ownership of files matching a pattern, use an include filter with
++a \fBo\fP or \fBg\fP modifier, which take effect before uid/gid mapping and
++therefore \fIcan\fP be mixed with \fB\-\-usermap\fP & \fB\-\-groupmap\fP.
+ .IP "\fB\-\-timeout=SECONDS\fP"
+ This option allows you to set a maximum I/O timeout in seconds.  If no data
+ is transferred for the specified time then rsync will exit.  The default is
+@@ -4008,6 +4014,18 @@ like "CVS" and "\fB*.o\fP" are marked as
+ directory that was removed on the source from being deleted on the
+ destination.
+ .IP o
++An \fBm(CHMOD)\fP on an include rule tweaks the permissions of matching source
++files in the same way as \fB\-\-chmod\fP.  This happens before any tweaks
++requested via \fB\-\-chmod\fP.
++.IP o
++An \fBo(USER)\fP on an include rule pretends that matching source files are owned
++by \fBUSER\fP (a name or numeric uid).  This happens before any uid mapping by
++name or \fB\-\-usermap\fP.
++.IP o
++A \fBg(GROUP)\fP on an include rule pretends that matching source files are owned
++by \fBGROUP\fP (a name or numeric gid).  This happens before any gid mapping by
++name or \fB\-\-groupmap\fP.
++.IP o
+ An \fBx\fP indicates that a rule affects xattr names in xattr copy/delete
+ operations (and is thus ignored when matching file/dir names).  If no
+ xattr-matching rules are specified, a default xattr filtering rule is used
+@@ -4076,6 +4094,12 @@ specifies sides to affect (via the \fBs\
+ rules in the file must not specify sides (via a modifier or a rule prefix
+ such as \fBhide\fP).
+ .P
++The attribute-affecting modifiers \fBm\fP, \fBo\fP, and \fBg\fP work only in client filters
++(not in daemon filters), and only the modifiers of the first matching rule are
++applied.  As an example, assuming \fB\-\-super\fP is enabled, the rule
++"\fB+o(root),g(root),m(go=)\ *~\fP" would ensure that all "backup"
++files belong to root and are not accessible to anyone else.
++.P
+ Per-directory rules are inherited in all subdirectories of the directory where
+ the merge-file was found unless the 'n' modifier was used.  Each subdirectory's
+ rules are prefixed to the inherited per-directory rules from its parents, which
+diff -Nurp a/rsync.1.html b/rsync.1.html
+--- a/rsync.1.html
++++ b/rsync.1.html
+@@ -1359,7 +1359,9 @@ consistent executability across all bits
+ </code></pre>
+ </blockquote>
+ <p>It is also legal to specify multiple <code>--chmod</code> options, as each additional
+-option is just appended to the list of changes to make.</p>
++option is just appended to the list of changes to make.  To change
++permissions of files matching a pattern, use an include filter with the <code>m</code>
++modifier, which takes effect before any <code>--chmod</code> options.</p>
+ <p>See the <a href="#opt--perms"><code>--perms</code></a> and <a href="#opt--executability"><code>--executability</code></a> options for how the
+ resulting permission value can be applied to the files in the transfer.</p>
+ </dd>
+@@ -2670,6 +2672,9 @@ implied <a href="#opt--owner"><code>--ow
+ <p>An older rsync client may need to use <a href="#opt--protect-args"><code>--protect-args</code></a> (<code>-s</code>) to
+ avoid a complaint about wildcard characters, but a modern rsync handles
+ this automatically.</p>
++<p>To change ownership of files matching a pattern, use an include filter with
++a <code>o</code> or <code>g</code> modifier, which take effect before uid/gid mapping and
++therefore <u>can</u> be mixed with <a href="#opt--usermap"><code>--usermap</code> &amp; <code>--groupmap</code></a>.</p>
+ </dd>
+ 
+ <dt id="opt--timeout"><code>--timeout=SECONDS</code><a href="#opt--timeout" class="tgt"></a></dt><dd>
+@@ -3668,6 +3673,15 @@ directories that are being deleted.  For
+ like &quot;CVS&quot; and &quot;<code>*.o</code>&quot; are marked as perishable, and will not prevent a
+ directory that was removed on the source from being deleted on the
+ destination.</li>
++<li>An <code>m(CHMOD)</code> on an include rule tweaks the permissions of matching source
++files in the same way as <a href="#opt--chmod"><code>--chmod</code></a>.  This happens before any tweaks
++requested via <a href="#opt--chmod"><code>--chmod</code></a>.</li>
++<li>An <code>o(USER)</code> on an include rule pretends that matching source files are owned
++by <code>USER</code> (a name or numeric uid).  This happens before any uid mapping by
++name or <a href="#opt--usermap"><code>--usermap</code></a>.</li>
++<li>A <code>g(GROUP)</code> on an include rule pretends that matching source files are owned
++by <code>GROUP</code> (a name or numeric gid).  This happens before any gid mapping by
++name or <a href="#opt--usermap"><code>--groupmap</code></a>.</li>
+ <li>An <code>x</code> indicates that a rule affects xattr names in xattr copy/delete
+ operations (and is thus ignored when matching file/dir names).  If no
+ xattr-matching rules are specified, a default xattr filtering rule is used
+@@ -3723,6 +3737,11 @@ specifies sides to affect (via the <code
+ rules in the file must not specify sides (via a modifier or a rule prefix
+ such as <code>hide</code>).</li>
+ </ul>
++<p>The attribute-affecting modifiers <code>m</code>, <code>o</code>, and <code>g</code> work only in client filters
++(not in daemon filters), and only the modifiers of the first matching rule are
++applied.  As an example, assuming <a href="#opt--super"><code>--super</code></a> is enabled, the rule
++&quot;<code>+o(root),g(root),m(go=) *~</code>&quot; would ensure that all &quot;backup&quot;
++files belong to root and are not accessible to anyone else.</p>
+ <p>Per-directory rules are inherited in all subdirectories of the directory where
+ the merge-file was found unless the 'n' modifier was used.  Each subdirectory's
+ rules are prefixed to the inherited per-directory rules from its parents, which
