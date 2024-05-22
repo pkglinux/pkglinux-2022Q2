@@ -52,6 +52,15 @@ CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
 CONFIGURE_ARGS+=	--disable-libselinux
 CONFIGURE_ARGS+=	--disable-watch8bit
 CONFIGURE_ARGS+=	--without-systemd
+CONFIGURE_ARGS+=	--with-pic
+USE_BUILTIN.ncurses=	no
+USE_BUILTIN.ncursesw=	no
+#CFLAGS+=		-fPIC
+#LDFLAGS+=		-ldl -lpthread
+post-configure:
+	cd ${WRKSRC} && gsed -e "s:#define malloc rpl_malloc:#undef malloc:g" -i config.h
+	cd ${WRKSRC} && gsed -e "s:#define realloc rpl_realloc:#undef realloc:g" -i config.h
+
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \

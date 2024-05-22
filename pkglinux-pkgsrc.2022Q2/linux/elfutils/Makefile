@@ -26,8 +26,8 @@ PKGCONFIG_OVERRIDE+=	config/libdw.pc.in
 PKGCONFIG_OVERRIDE+=	config/libelf.pc.in
 
 CONFIGURE_ARGS+=	--disable-debuginfod
-CONFIGURE_ARGS+=	--disable-compat
 CONFIGURE_ARGS+=	--disable-shared
+CONFIGURE_ARGS+=	--disable-compat
 CONFIGURE_ARGS+=	--disable-nls
 
 post-install:
@@ -39,11 +39,15 @@ post-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_BUILTIN.zlib=	no
 .include "../../devel/zlib/buildlink3.mk"
-.include "../../mk/pthread.buildlink3.mk"
-.include "../../mk/dlopen.buildlink3.mk"
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 CONFIGURE_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
+CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+#CFLAGS+=		--shared -fPIC
+CFLAGS+=		-fPIC
+LDFLAGS+=		-ldl -lpthread
 #MAKE_ENV+= 		PATH=${TOOLDIR}/bin:$$PATH
 #MAKE_ENV+=		AS_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-as"
 #MAKE_ENV+=		LD_FOR_TARGET="${TOOLDIR}/bin/${MACHINE_GNU_PLATFORM}-ld"
@@ -51,8 +55,6 @@ PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
-.else
-CONFIGURE_ARGS+=	--disable-shared
 .endif
 
 .include "../../mk/bsd.pkg.mk"

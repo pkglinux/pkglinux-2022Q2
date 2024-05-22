@@ -116,13 +116,15 @@ DEPENDS+=	rpcsvc-proto-[0-9]*:../../native/rpcsvc-proto
 DEPENDS+=	libtirpc-[0-9]*:../../linux/libtirpc
 DEPENDS+=	dhcpcd-[0-9]*:../../net/dhcpcd
 DEPENDS+=	openssh-[0-9]*:../../security/openssh
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	ntfs-3g-[0-9]*:../../linux/ntfs-3g
-DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
 DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
+DEPENDS+=	bind-[0-9]*:../../net/bind916
+.endif
+DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
 DEPENDS+=	pigz-[0-9]*:../../linux/pigz
 DEPENDS+=	pixz-[0-9]*:../../linux/pixz
 DEPENDS+=	screen-[0-9]*:../../misc/screen
-DEPENDS+=	bind-[0-9]*:../../net/bind916
 DEPENDS+=	chkconfig-[0-9]*:../../native/chkconfig
 DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
@@ -139,8 +141,8 @@ DEPENDS+=	iw-[0-9]*:../../linux/iw
 DEPENDS+=	wireless-tools-[0-9]*:../../linux/wireless-tools
 #DEPENDS+=	busybox-[0-9]*:../../native/busybox
 DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
-DEPENDS+=	rsync-[0-9]*:../../net/rsync
 .endif
+DEPENDS+=	rsync-[0-9]*:../../net/rsync
 DEPENDS+=	squashfs-tools-ng-[0-9]*:../../linux/squashfs-tools-ng
 DEPENDS+=	zsync-[0-9]*:../../net/zsync
 #DEPENDS+=	profile-data-[0-9]*:../../native/profile-data

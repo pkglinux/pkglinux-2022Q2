@@ -40,7 +40,6 @@ SUBST_SED.paths+=	-e 's|/usr/bin/rsync|${PREFIX}/bin/rsync|g'
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
 TOOLS_PLATFORM.sed=		${PREFIX}/bin/gsed
-CFLAGS+=	--shared -fPIC -Wno-implicit-function-declaration
 USE_LANGUAGES=		c c++
 USE_LIBTOOL=		yes
 USE_BUILTIN.openssl=	no
@@ -60,6 +59,7 @@ CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
 #CONFIGURE_ARGS+=	--disable-acl-support
 #CONFIGURE_ARGS+=	--disable-xattr-support
 USE_TOOLS+=		gmake pkg-config autoconf automake m4 intltools msgfmt xgettext
+CFLAGS+=	--shared -fPIC -Wno-implicit-function-declaration
 pre-configure:
 	cd ${WRKSRC} && autoconf
 post-configure:
