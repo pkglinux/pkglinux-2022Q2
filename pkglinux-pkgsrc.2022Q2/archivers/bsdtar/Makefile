@@ -3,6 +3,14 @@
 .include "../../archivers/libarchive/Makefile.common"
 .include "../../mk/bsd.prefs.mk"
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+USE_BUILTIN.zlib=	no
+USE_BUILTIN.bzip2=	no
+USE_BUILTIN.libarchive=	no
+USE_BUILTIN.openssl=	no
+
+.endif
 PKGNAME=	${DISTNAME:S/libarchive/bsdtar/}
 COMMENT=	Fast multi-format tape archiver
 

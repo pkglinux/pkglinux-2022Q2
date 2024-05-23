@@ -19,6 +19,23 @@ BIND_VERSION=	9.16.30
 
 BUILD_DEFS+=	BIND_DIR VARBASE
 
+# Fix PKG_FAIL_REASON+="No usable termcap library found on the system."
+USE_BUILTIN.zlib=	no
+USE_BUILTIN.openssl=	no
+USE_BUILTIN.readline=	no
+USE_BUILTIN.ncurses=	no
+USE_BUILTIN.ncursesw=	no
+.include "../../mk/termcap.buildlink3.mk"
+.include "../../mk/bsd.prefs.mk"
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+#USE_LANGUAGES=		c c++
+CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
+CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
+CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+.include "../../sysutils/libcap/buildlink3.mk"
+.include "../../security/openssl/buildlink3.mk"
+.endif
+
 .include "options.mk"
 
 USE_TOOLS+=		autoconf pax perl pkg-config

@@ -118,9 +118,9 @@ DEPENDS+=	dhcpcd-[0-9]*:../../net/dhcpcd
 DEPENDS+=	openssh-[0-9]*:../../security/openssh
 .if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	ntfs-3g-[0-9]*:../../linux/ntfs-3g
-DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
 DEPENDS+=	bind-[0-9]*:../../net/bind916
 .endif
+DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
 DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
 DEPENDS+=	pigz-[0-9]*:../../linux/pigz
 DEPENDS+=	pixz-[0-9]*:../../linux/pixz
