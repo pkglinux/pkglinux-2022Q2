@@ -1,8 +1,11 @@
-$NetBSD$
+$NetBSD: patch-configure.ac,v 1.2 2022/03/31 12:16:24 jperkin Exp $
 
---- configure.ac.orig	2022-06-02 19:34:02.000000000 +0000
+Add support for blocklist(blacklist).
+Fix linker flags on SunOS.
+
+--- configure.ac.orig	2022-03-07 08:48:03.000000000 +0000
 +++ configure.ac
-@@ -706,6 +706,16 @@ AC_CHECK_FUNCS([sched_yield pthread_yiel
+@@ -721,6 +721,16 @@ AC_CHECK_FUNCS([sched_yield pthread_yiel
  AC_CHECK_FUNCS([pthread_setname_np pthread_set_name_np])
  AC_CHECK_HEADERS([pthread_np.h], [], [], [#include <pthread.h>])
  
@@ -19,83 +22,7 @@ $NetBSD$
  # libuv
  AC_MSG_CHECKING(for libuv)
  PKG_CHECK_MODULES([LIBUV], [libuv >= 1.0.0], [],
-@@ -832,7 +842,6 @@ AC_COMPILE_IFELSE(
- # Check for functions added in OpenSSL or LibreSSL
- #
- 
--AC_CHECK_FUNCS([OPENSSL_init_ssl OPENSSL_init_crypto OPENSSL_cleanup])
- AC_CHECK_FUNCS([CRYPTO_zalloc])
- AC_CHECK_FUNCS([EVP_CIPHER_CTX_new EVP_CIPHER_CTX_free])
- AC_CHECK_FUNCS([EVP_MD_CTX_new EVP_MD_CTX_free EVP_MD_CTX_reset])
-@@ -847,67 +856,21 @@ AC_CHECK_FUNCS([SSL_CTX_set_min_proto_ve
- # Check for algorithm support in OpenSSL
- #
- 
--AC_CHECK_FUNCS([ECDSA_sign ECDSA_verify], [:],
--	       [AC_MSG_FAILURE([ECDSA support in OpenSSL is mandatory.])])
--
--AC_MSG_CHECKING([for ECDSA P-256 support])
--AC_COMPILE_IFELSE(
--    [AC_LANG_PROGRAM([[#include <openssl/evp.h>
--		       #include <openssl/ec.h>]],
--		     [[EC_KEY *key = EC_KEY_new_by_curve_name(NID_X9_62_prime256v1);]])],
--    [AC_MSG_RESULT([yes])],
--    [AC_MSG_FAILURE([not found.  ECDSA P-256 support in OpenSSL is mandatory.])])
--
--AC_MSG_CHECKING([for ECDSA P-384 support])
--AC_COMPILE_IFELSE(
--    [AC_LANG_PROGRAM([[#include <openssl/evp.h>
--		       #include <openssl/ec.h>]],
--		     [[EC_KEY *key = EC_KEY_new_by_curve_name(NID_secp384r1);]])],
--    [AC_MSG_RESULT([yes])],
--    [AC_MSG_FAILURE([not found.  ECDSA P-384 support in OpenSSL is mandatory.])])
--
--AC_MSG_CHECKING([for Ed25519 support])
--AC_COMPILE_IFELSE(
--    [AC_LANG_PROGRAM([[#include <openssl/evp.h>
--		       #include <openssl/ec.h>]],
--		     [[EC_KEY *key = EC_KEY_new_by_curve_name(NID_ED25519);]])],
--    [AC_DEFINE([HAVE_OPENSSL_ED25519], [1], [define if OpenSSL supports Ed25519])
--     AC_MSG_RESULT([yes])],
--    [AC_MSG_RESULT([no])])
--
--AC_MSG_CHECKING([for Ed448 support])
--AC_COMPILE_IFELSE(
--    [AC_LANG_PROGRAM([[#include <openssl/evp.h>
--		       #include <openssl/ec.h>]],
--		     [[EC_KEY *key = EC_KEY_new_by_curve_name(NID_ED448);]])],
--    [AC_DEFINE([HAVE_OPENSSL_ED448], [1], [define if OpenSSL supports Ed448])
--     AC_MSG_RESULT([yes])],
--    [AC_MSG_RESULT([no])])
--
- #
- # Check for OpenSSL SHA-1 support
- #
--AC_CHECK_FUNCS([EVP_sha1], [:],
--	       [AC_MSG_FAILURE([SHA-1 support in OpenSSL is mandatory.])])
- 
- #
- # Check for OpenSSL SHA-2 support
- #
--AC_CHECK_FUNCS([EVP_sha224 EVP_sha256 EVP_sha384 EVP_sha512], [:],
--	       [AC_MSG_FAILURE([SHA-2 support in OpenSSL is mandatory.])])
- 
- #
- # Check for OpenSSL AES support
- #
--AC_CHECK_FUNCS([EVP_aes_128_ecb EVP_aes_192_ecb EVP_aes_256_ecb], [:],
--	       [AC_MSG_FAILURE([AES support in OpenSSL is mandatory.])])
- 
- #
- # Check for OpenSSL 1.1.x/LibreSSL functions
- #
--AC_CHECK_FUNCS([DH_get0_key ECDSA_SIG_get0 RSA_set0_key])
--
--AC_CHECK_FUNCS([TLS_server_method TLS_client_method])
- 
- #
- # Check whether FIPS mode is available and whether we should enable it
-@@ -1379,6 +1342,18 @@ AS_CASE([$with_libxml2],
+@@ -1388,6 +1398,18 @@ AS_CASE([$with_libxml2],
  				 [AC_DEFINE([HAVE_LIBXML2], [1], [Use libxml2 library])])],
  	[AC_MSG_ERROR([Specifying libxml2 installation path is not supported, adjust PKG_CONFIG_PATH instead])])
  
@@ -114,7 +41,7 @@ $NetBSD$
  #
  # DEPRECATED
  #
-@@ -2514,9 +2489,9 @@ AS_IF([test "$with_dlopen" = "yes"],
+@@ -2523,9 +2545,9 @@ AS_IF([test "$with_dlopen" = "yes"],
  		       ])
  	       ],
  	       [*-solaris*],[

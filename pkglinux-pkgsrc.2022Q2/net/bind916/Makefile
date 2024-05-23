@@ -28,12 +28,27 @@ USE_BUILTIN.ncursesw=	no
 .include "../../mk/termcap.buildlink3.mk"
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+
 #USE_LANGUAGES=		c c++
 CONFIGURE_ARGS+=	--host=${MACHINE_GNU_PLATFORM}
 CONFIGURE_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
 CONFIGURE_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
+CFLAGS+=	-DHAVE_OPENSSL_INIT_CRYPTO=1
+CFLAGS+=	-DHAVE_OPENSSL_INIT_SSL=1
+CFLAGS+=	-DHAVE_EVP_CIPHER_CTX_NEW=1
+CFLAGS+=	-DHAVE_EVP_CIPHER_CTX_FREE=1
+CFLAGS+=	-DHAVE_EVP_MD_CTX_NEW=1
+CFLAGS+=	-DHAVE_EVP_MD_CTX_FREE=1
+CFLAGS+=	-DHAVE_EVP_MD_CTX_RESET=1
+CFLAGS+=	-DHAVE_HMAC_CTX_NEW=1
+CFLAGS+=	-DHAVE_HMAC_CTX_FREE=1
+CFLAGS+=	-DHAVE_HMAC_CTX_RESET=1
+CFLAGS+=	-DHAVE_HMAC_CTX_GET_MD=1
+CFLAGS+=	-DHAVE_DH_GET0_KEY=1
+CFLAGS+=	-DHAVE_BN_GENCB_NEW=1
+CFLAGS+=	-DHAVE_ECDSA_SIG_GET0=1
+CFLAGS+=	-DHAVE_RSA_SET0_KEY=1
 .include "../../sysutils/libcap/buildlink3.mk"
-.include "../../security/openssl/buildlink3.mk"
 .endif
 
 .include "options.mk"
@@ -87,6 +102,9 @@ CONF_FILES+=		share/examples/bind9/bind.keys \
 INSTALLATION_DIRS+=	${DOCDIR}
 
 pre-configure:
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+	cd ${WRKSRC} && cp -v ${FILESDIR}/configure.ac.cross configure.ac
+.endif
 	cd ${WRKSRC} && autoconf -f
 
 post-install:
