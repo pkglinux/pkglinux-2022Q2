@@ -1,0 +1,13 @@
+while ! queue_is_empty cmdbuf; do
+	pop_queue cmdbuf arg
+	$debug_log $wrapperlog "    (cmd-sink) pop: $arg"
+	case $arg in
+	-isystem,*)
+		dir="${arg#-isystem,}"
+		arg="-isystem"
+		. $buildcmd
+		arg="$dir"
+		;;
+	esac
+	. $buildcmd
+done

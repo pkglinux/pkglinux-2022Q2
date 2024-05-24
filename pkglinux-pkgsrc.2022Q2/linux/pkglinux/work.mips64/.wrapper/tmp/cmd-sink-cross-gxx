@@ -1,0 +1,26 @@
+arg="--sysroot=/2022Q2-mips64abi64/sysroot"
+$debug_log $wrapperlog "    (cmd-sink-native-cxx) pop: $arg"
+. $buildcmd
+while ! queue_is_empty cmdbuf; do
+	pop_queue cmdbuf arg
+	case $arg in
+	-R*|-Wl,-R*|-Wl,-rpath,*|-Wl,--rpath,*)
+		$debug_log $wrapperlog "    (cmd-sink-native-cxx) pop: $arg"
+		. $buildcmd
+		case $arg in
+		-R*)			R="-R" ;;
+		-Wl,-R*)		R="-Wl,-R" ;;
+		-Wl,-rpath,*)		R="-Wl,-rpath," ;;
+		-Wl,--rpath,*)		R="-Wl,--rpath," ;;
+		esac
+		dir="${arg#$R}"
+		arg="-Wl,-rpath-link,/2022Q2-mips64abi64/sysroot${dir}"
+		$debug_log $wrapperlog "    (cmd-sink-native-cxx) pop: $arg"
+		. $buildcmd
+		;;
+	*)
+		$debug_log $wrapperlog "    (cmd-sink-native-cxx) pop:  $arg"
+		. $buildcmd
+		;;
+	esac
+done

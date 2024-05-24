@@ -1,0 +1,129 @@
+transform_setname "transform-gcc"
+case $arg in
+-[EcgOos]		|\
+-[DILlU]?*		|\
+-O[01]			) transform_pass ;;
+-V			|\
+-v			|\
+--version		) transform_pass ;;
+-specs=*		|\
+-specs			) transform_pass ;;
+-			|\
+-dynamic		|\
+-export-dynamic		|\
+-falign-functions=*	|\
+-falign-loops=*		|\
+-falign-jumps=*		|\
+-fexpensive-optimizations |\
+-ffast-math		|\
+-ffloat-store		|\
+-fhonour-copts		|\
+-finline-functions	|\
+-fno-align-*		|\
+-fno-builtin*		|\
+-fno-common		|\
+-fno-implicit-templates	|\
+-fno-inline-functions	|\
+-fno-strict-aliasing	|\
+-fomit-frame-pointer	|\
+-fPIC			|\
+-fpic			|\
+-fPIE			|\
+-fpie			|\
+-fpcc-struct-return	|\
+-freg-struct-return	|\
+-frename-registers	|\
+-fsigned-char		|\
+-fstack-protector	|\
+-fstack-protector-all	|\
+-funroll-loops		|\
+-funsigned-char		|\
+-fweb			|\
+-fwrapv			|\
+-ggdb			|\
+-isystem,*		|\
+-M			|\
+-M[DFMPT]		|\
+-MMD			|\
+-m32			|\
+-m64			|\
+-mabi=*			|\
+-march=*		|\
+-mcpu=*			|\
+-momit-leaf-frame-pointer |\
+-mpreferred-stack-boundary=* |\
+-mpush-args		|\
+-mschedule=*		|\
+-mieee-fp		|\
+-O[23s]			|\
+-pedantic		|\
+-pedantic-errors	|\
+-pie			|\
+-pipe			|\
+-pthread		|\
+-print-prog-name=*	|\
+-print-search-dirs	|\
+-S			|\
+-shared			|\
+-shared-gcc		|\
+-shared-libgcc		|\
+-static			|\
+-std=c99		|\
+-std=gnu89		|\
+-std=gnu99		|\
+-W			|\
+-W[cLlS],*		|\
+-Wall			|\
+-Wbounded		|\
+-Wcast-align		|\
+-Wcast-qual		|\
+-Wchar-subscripts	|\
+-Wconversion		|\
+-Wextra			|\
+-Werror			|\
+-Werror-implicit-function-declaration |\
+-Werror=*		|\
+-Wformat*		|\
+-Winline		|\
+-Wmissing-declarations	|\
+-Wmissing-format-attribute |\
+-Wmissing-prototypes	|\
+-Wnested-externs	|\
+-Wno-*			|\
+-Wparentheses		|\
+-Wpointer-arith		|\
+-Wredundant-decls	|\
+-Wreturn-type		|\
+-Wshadow		|\
+-Wsign-compare		|\
+-Wstrict-aliasing	|\
+-Wstrict-prototypes	|\
+-Wswitch		|\
+-Wtrigraphs		|\
+-Wunused		|\
+-Wundef			|\
+-Wwrite-strings		) transform_pass ;;
+-w			) transform_discard ;;
+-fexceptions		|\
+-fmessage-length=*	|\
+-fno-check-new		|\
+-fno-exceptions		|\
+-fno-rtti		|\
+-Wno-non-virtual-dtor	|\
+-ftemplate-depth=*	) transform_pass ;;
+-fgnu-runtime		|\
+-fconstant-string-class=* ) transform_pass ;;
+-R*			) transform_to "-Wl,$arg" ;;
+-Kpic			|\
+-kpic			|\
+-KPIC			|\
+-kPIC			) transform_to "-fPIC" ;;
+-mt			) transform_discard ;;
+-64			) transform_to "-m64" ;;
+-errwarn=*		|\
+-errwarn		) transform_discard_with_warning ;;
+-fno-pie		|\
+-fno-PIE		|\
+-nopie			) MKPIE_CFLAGS=; MKPIE_LDFLAGS=; transform_pass ;;
+-*			) transform_pass_with_warning ;;
+esac

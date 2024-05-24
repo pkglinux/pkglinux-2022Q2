@@ -103,7 +103,7 @@ INSTALLATION_DIRS+=	${DOCDIR}
 
 pre-configure:
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-	cd ${WRKSRC} && cp -v ${FILESDIR}/configure.ac.cross configure.ac
+	gsed '/Check for algorithm support in OpenSSL/,/AES support in OpenSSL is mandatory/d' -i ${WRKSRC}/configure.ac
 .endif
 	cd ${WRKSRC} && autoconf -f
 

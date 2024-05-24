@@ -26,9 +26,7 @@ DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
 
 DEPENDS+=	nawk-[0-9]*:../../lang/nawk
 DEPENDS+=	nbsed-[0-9]*:../../textproc/nbsed
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	pkgin-[0-9]*:../../pkgtools/pkgin
-.endif
 
 DEPENDS+=	man-pages-[0-9]*:../../native/man-pages
 DEPENDS+=	zlib-[0-9]*:../../devel/zlib
@@ -73,8 +71,8 @@ DEPENDS+=	kmod-[0-9]*:../../linux/kmod
 DEPENDS+=	gettext-[0-9]*:../../devel/gettext
 DEPENDS+=	libffi-[0-9]*:../../devel/libffi
 DEPENDS+=	elfutils-[0-9]*:../../linux/elfutils
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	openssl-[0-9]*:../../security/openssl
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	python39-[0-9]*:../../lang/python39
 DEPENDS+=	ninja-build-[0-9]*:../../devel/ninja-build
 DEPENDS+=	meson-[0-9]*:../../devel/meson

@@ -1,0 +1,8 @@
+arg="--sysroot=/2022Q2-mips64abi64/sysroot"
+$debug_log $wrapperlog "    (cmd-sink-native-cc) pop: $arg"
+. $buildcmd
+while ! queue_is_empty cmdbuf; do
+	pop_queue cmdbuf arg
+	$debug_log $wrapperlog "    (cmd-sink-native-cc) pop:  $arg"
+	. $buildcmd
+done

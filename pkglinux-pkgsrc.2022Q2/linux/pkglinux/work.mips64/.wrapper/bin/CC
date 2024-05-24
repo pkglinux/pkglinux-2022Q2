@@ -1,0 +1,85 @@
+#! /bin/sh
+empty_file=""
+arg_pp="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/empty"
+arg_pp_main="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/arg-pp-main"
+arg_source="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/arg-source"
+buildcmd="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/buildcmd"
+cache="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/cache"
+cache_body="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/cache-body"
+cleanup="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/empty"
+cmd_sink="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/cmd-sink-cross-gxx"
+logic="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/logic"
+reorderlibs="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/reorderlibs"
+shell_lib="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/shell-lib"
+scan="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/scan"
+transform="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/transform-gcc"
+transform_sed=" -f /sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/transform.sed"
+wrapper_subr_sh="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.wrapper/tmp/wrapper-subr.sh"
+wrapper_abi=""		# see ABI in mk/defaults/mk.conf
+wrapper_type="CXX"	# one of AS, CC, CXX, FC, IMAKE, LD, LIBTOOL.
+wrapperlog="${WRAPPER_LOG-/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.work.log}"
+skip_transform="${WRAPPER_SKIP_TRANSFORM-no}"
+debug="${WRAPPER_DEBUG-no}"
+cat="/bin/cat"
+echo="echo"
+expr="/bin/expr"
+mv="/bin/mv"
+sed="/2022Q2-mips64abi64/bin/nbsed"
+test="test"
+Xsed="$sed -e 1s/^X//"
+. $shell_lib
+. "$wrapper_subr_sh"
+updatecache=${WRAPPER_UPDATE_CACHE-yes}
+reorder=${WRAPPER_REORDER-no}
+case $debug in
+yes)	debug_log="msg_log" ;;
+*)	debug_log=":" ;;
+esac
+qcmd="$0"; for arg in ${1+"$@"}; do shquote "$arg"; qcmd="$qcmd $shquoted"; done
+msg_log "$wrapperlog" "[*] $0 $qcmd"
+cmd="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.compiler/bin/c++-fail-wrapper"
+case "$*" in
+--wrappee-name) $echo $cmd ; exit ;;
+esac
+libs=""
+rellpath=""
+do_transform=yes
+init_queue argbuf
+init_queue cmdbuf
+append_extra_args=yes
+. $scan
+case $append_extra_args in
+yes)
+	$debug_log $wrapperlog "    (wrapper.sh) append args: -I/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.buildlink/include -L/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.buildlink/lib"
+	set -- "$@" -I/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.buildlink/include -L/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.buildlink/lib
+	;;
+*)
+	;;
+esac
+. $arg_source
+. $logic
+. $cmd_sink
+case $reorder in
+yes)
+	if $test -n "$libs"; then
+		. $reorderlibs
+	fi
+	;;
+esac
+cmdline="$cmd $libs"
+PATH="/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.buildlink/bin:/sda3/jails/current/pkglinux-pkgsrc.2022Q2/linux/pkglinux/work.mips64/.tools/bin:/2022Q2-mips64abi64/bin:/2022Q2-mips64abi64/sbin:/2022Q2-mips64abi64/bin:/pkg/qt5/bin:/bin:/usr/bin:/sbin:/usr/sbin:/pkg/sbin:/pkg/bin:/sda4/sda3/go/bin"; export PATH
+msg_log $wrapperlog "<.>" "$cmdline"
+if [ "${empty_file}" = "${cleanup}" ] && [ "$debug" != "yes" ]; then
+	eval "exec $cmdline"
+	wrapper_result=$?
+else
+	wrapper_result=0
+	eval "$cmdline" || wrapper_result="$?"
+fi
+. $cleanup
+[ $wrapper_result -eq 0 ] || [ "$debug" != "yes" ] || {
+	echo ""
+	echo "[wrapper.sh] note: The real command line, after the pkgsrc wrapper, was:"
+	echo "$cmdline"
+} 1>&2
+exit ${wrapper_result}
