@@ -11,16 +11,16 @@ META_PACKAGE=	yes
 
 .include "../../mk/bsd.prefs.mk"
 
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	bootscripts-[0-9]*:../../native/bootscripts
 DEPENDS+=	startups-[0-9]*:../../native/startups
 DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
-DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 DEPENDS+=	native-gcc6-[0-9]*:../../native/gcc6
+DEPENDS+=	linux-firmware-[0-9]*:../../native/linux-firmware
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 DEPENDS+=	native-linux-API-headers-[0-9]*:../../native/kernel-headers
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
-DEPENDS+=	linux-firmware-[0-9]*:../../native/linux-firmware
 DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
 .endif
 
@@ -104,19 +104,14 @@ DEPENDS+=	procps-ng-[0-9]*:../../linux/procps-ng
 DEPENDS+=	util-linux-[0-9]*:../../native/util-linux
 DEPENDS+=	e2fsprogs-[0-9]*:../../native/e2fsprogs
 DEPENDS+=	sysklogd-[0-9]*:../../native/sysklogd
-.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-DEPENDS+=	sysvinit-[0-9]*:../../native/sysvinit
-.else
+#DEPENDS+=	sysvinit-[0-9]*:../../native/sysvinit
 DEPENDS+=	openrc-[0-9]*:../../native/openrc
-.endif
 DEPENDS+=	eudev-[0-9]*:../../linux/eudev
 DEPENDS+=	rpcsvc-proto-[0-9]*:../../native/rpcsvc-proto
 DEPENDS+=	libtirpc-[0-9]*:../../linux/libtirpc
 DEPENDS+=	dhcpcd-[0-9]*:../../net/dhcpcd
 DEPENDS+=	openssh-[0-9]*:../../security/openssh
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-DEPENDS+=	ntfs-3g-[0-9]*:../../linux/ntfs-3g
-.endif
+DEPENDS+=	ntfsprogs-[0-9]*:../../sysutils/ntfsprogs
 DEPENDS+=	bind-[0-9]*:../../net/bind916
 DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
 DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
@@ -138,9 +133,9 @@ DEPENDS+=	syslinux-[0-9]*:../../native/syslinux
 DEPENDS+=	iw-[0-9]*:../../linux/iw
 DEPENDS+=	wireless-tools-[0-9]*:../../linux/wireless-tools
 #DEPENDS+=	busybox-[0-9]*:../../native/busybox
-DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
 .endif
 DEPENDS+=	rsync-[0-9]*:../../net/rsync
+DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
 DEPENDS+=	squashfs-tools-ng-[0-9]*:../../linux/squashfs-tools-ng
 DEPENDS+=	zsync-[0-9]*:../../net/zsync
 #DEPENDS+=	profile-data-[0-9]*:../../native/profile-data

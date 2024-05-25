@@ -9,14 +9,18 @@ COMMENT=	Meta-package for the PKGtOP Linux desktop environment
 
 META_PACKAGE=	yes
 
+.include "../../mk/bsd.prefs.mk"
+
 DEPENDS+=	bootscripts-[0-9]*:../../native/bootscripts
 DEPENDS+=	startups-[0-9]*:../../native/startups
 DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
 #DEPENDS+=	firmware-[0-9]*:../../native/firmware
 DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
+.endif
 
 DEPENDS+=	nawk-[0-9]*:../../lang/nawk
 DEPENDS+=	nbsed-[0-9]*:../../textproc/nbsed
@@ -43,21 +47,27 @@ DEPENDS+=	grep-[0-9]*:../../textproc/grep
 DEPENDS+=	bash-[0-9]*:../../shells/bash
 DEPENDS+=	dialog-[0-9]*:../../misc/dialog
 DEPENDS+=	inetutils-[0-9]*:../../net/inetutils
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	perl-[0-9]*:../../lang/perl5
 DEPENDS+=	p5-XML-Parser-[0-9]*:../../textproc/p5-XML-Parser
+.endif
 DEPENDS+=	kmod-[0-9]*:../../linux/kmod
 DEPENDS+=	gettext-[0-9]*:../../devel/gettext
 DEPENDS+=	libffi-[0-9]*:../../devel/libffi
 DEPENDS+=	elfutils-[0-9]*:../../linux/elfutils
 DEPENDS+=	openssl-[0-9]*:../../security/openssl
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	python39-[0-9]*:../../lang/python39
+.endif
 DEPENDS+=	coreutils-[0-9]*:../../sysutils/coreutils
 DEPENDS+=	diffutils-[0-9]*:../../devel/diffutils
 DEPENDS+=	gawk-[0-9]*:../../lang/gawk
 DEPENDS+=	groff-[0-9]*:../../native/groff
 DEPENDS+=	findutils-[0-9]*:../../sysutils/findutils
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	grub2-[0-9]*:../../sysutils/grub2
 DEPENDS+=	grub-efi-[0-9]*:../../linux/grub-efi
+.endif
 DEPENDS+=	less-[0-9]*:../../misc/less
 DEPENDS+=	gzip-[0-9]*:../../archivers/gzip
 DEPENDS+=	zstd-[0-9]*:../../archivers/zstd
@@ -82,7 +92,7 @@ DEPENDS+=	rpcsvc-proto-[0-9]*:../../native/rpcsvc-proto
 DEPENDS+=	libtirpc-[0-9]*:../../linux/libtirpc
 DEPENDS+=	dhcpcd-[0-9]*:../../net/dhcpcd
 DEPENDS+=	openssh-[0-9]*:../../security/openssh
-DEPENDS+=	ntfs-3g-[0-9]*:../../linux/ntfs-3g
+DEPENDS+=	ntfsprogs-[0-9]*:../../sysutils/ntfsprogs
 DEPENDS+=	dosfstools-[0-9]*:../../sysutils/dosfstools
 DEPENDS+=	gcpio-[0-9]*:../../archivers/gcpio
 DEPENDS+=	bsdtar-[0-9]*:../../archivers/bsdtar
@@ -94,16 +104,18 @@ DEPENDS+=	rcorder-[0-9]*:../../pkgtools/rcorder
 DEPENDS+=	rc.subr-[0-9]*:../../pkgtools/rc.subr
 DEPENDS+=	rc.d-boot-[0-9]*:../../pkgtools/rc.d-boot
 DEPENDS+=	genfstab-[0-9]*:../../native/genfstab
-DEPENDS+=	mtools-[0-9]*:../../sysutils/mtools
-DEPENDS+=	libisoburn-[0-9]*:../../sysutils/libisoburn
-DEPENDS+=	cdrtools-[0-9]*:../../sysutils/cdrtools
 DEPENDS+=	squashfs-tools-ng-[0-9]*:../../linux/squashfs-tools-ng
 DEPENDS+=	squashfs-[0-9]*:../../linux/squashfs
+DEPENDS+=	mtools-[0-9]*:../../sysutils/mtools
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+DEPENDS+=	libisoburn-[0-9]*:../../sysutils/libisoburn
+DEPENDS+=	cdrtools-[0-9]*:../../sysutils/cdrtools
 DEPENDS+=	syslinux-[0-9]*:../../native/syslinux
-DEPENDS+=	rsync-[0-9]*:../../net/rsync
-DEPENDS+=	zsync-[0-9]*:../../net/zsync
 #DEPENDS+=	NetworkManager-[0-9]*:../../linux/NetworkManager
 DEPENDS+=	iw-[0-9]*:../../linux/iw
 DEPENDS+=	wireless-tools-[0-9]*:../../linux/wireless-tools
+.endif
+DEPENDS+=	rsync-[0-9]*:../../net/rsync
+DEPENDS+=	zsync-[0-9]*:../../net/zsync
 
 .include "../../mk/bsd.pkg.mk"

@@ -9,10 +9,14 @@ COMMENT=	Meta-package for linux native tool chain
 
 META_PACKAGE=	yes
 
+.include "../../mk/bsd.prefs.mk"
+
 DEPENDS+=	genfstab-[0-9]*:../../native/genfstab
 DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
+.endif
 
 
 DEPENDS+=	zlib-[0-9]*:../../devel/zlib

@@ -62,15 +62,16 @@ post-install:
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+LDFLAGS+=	-ldl
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \
 	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
 .else
+.include "../../mk/dlopen.buildlink3.mk"
+.endif
 MESON_ARGS+=	-Dselinux=enabled
 .include "../../sysutils/libcap/buildlink3.mk"
 .include "../../selinux/libselinux/buildlink3.mk"
-.endif
-
 .include "../../devel/meson/build.mk"
 .include "../../mk/bsd.pkg.mk"

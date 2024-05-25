@@ -42,7 +42,7 @@ post-extract:
 
 do-build:
 	${MKDIR} -v ${BLDPRE}/sbin/
-	cd ${BLDDIR}/Xvnc/config/util/mkshadow/ && gcc -o mkshadow mkshadow.c savedir.c wildmat.c
+	cd ${BLDDIR}/Xvnc/config/util/mkshadow/ && ${CC} -o mkshadow mkshadow.c savedir.c wildmat.c
 	${CP} -v ${BLDDIR}/Xvnc/config/util/mkshadow/mkshadow ${BLDPRE}/sbin/
 
 do-install:

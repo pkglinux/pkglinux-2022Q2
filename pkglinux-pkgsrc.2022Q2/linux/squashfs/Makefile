@@ -38,8 +38,8 @@ do-install:
 		${WRKSRC}/mksquashfs ${DESTDIR}${PREFIX}/bin
 	${LIBTOOL} --mode=install --tag=CC ${INSTALL_PROGRAM} \
 		${WRKSRC}/unsquashfs ${DESTDIR}${PREFIX}/bin
-	cd ${DESTDIR}${PREFIX}/bin/ && gstrip mksquashfs
-	cd ${DESTDIR}${PREFIX}/bin/ && gstrip unsquashfs
+	cd ${DESTDIR}${PREFIX}/bin/ && ${STRIP} mksquashfs
+	cd ${DESTDIR}${PREFIX}/bin/ && ${STRIP} unsquashfs
 	cd ${DESTDIR}${PREFIX}/bin/ && ln -sf unsquashfs sqfscat
 	cd ${DESTDIR}${PREFIX}/bin/ && ln -sf mksquashfs sqfstar
 	${INSTALL_MAN} ${SQUASH_DIR}/manpages/mksquashfs.1 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man1/
