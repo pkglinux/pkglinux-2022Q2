@@ -17,11 +17,11 @@ DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
 DEPENDS+=	native-gcc6-[0-9]*:../../native/gcc6
 DEPENDS+=	linux-firmware-[0-9]*:../../native/linux-firmware
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 DEPENDS+=	native-linux-API-headers-[0-9]*:../../native/kernel-headers
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
 DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 .endif
 
 DEPENDS+=	nawk-[0-9]*:../../lang/nawk

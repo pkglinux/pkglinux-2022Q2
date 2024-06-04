@@ -22,6 +22,7 @@ USE_TOOLS+=		gmake perl
 
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
+TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 
 #BUILD_DEPENDS+=	kmod-[0-9]*:../../linux/kmod
 
@@ -44,70 +45,8 @@ GNU_CONFIGURE=		no
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-
-CROSS_MARCH?=		${MACHINE_GNU_PLATFORM:C/-.*-linux-gnu.*//g}
-.if !empty(CROSS_MARCH:Mi[3-6]86)
-CROSS_KARCH?=		${CROSS_MARCH:C/i[3-6]86/i386/g}
-# i386 is not supported by glibc
-.elif ${CROSS_MARCH} == "x86_64"
-CROSS_KARCH?=		x86_64
-.elif ${CROSS_MARCH} == "ia64"
-CROSS_KARCH?=		ia64
-.elif !empty(CROSS_MARCH:Marm*)
-CROSS_KARCH?=		arm
-.elif ${CROSS_MARCH} == "aarch64"
-CROSS_KARCH?=		${CROSS_MARCH:S/aarch/arm/}
-.elif !empty(CROSS_MARCH:Mmips*)
-CROSS_KARCH?=		mips
-.elif !empty(CROSS_MARCH:Mriscv*)
-CROSS_KARCH?=		riscv
-.elif ${CROSS_MARCH} == "s390x"
-CROSS_KARCH?=		s390
-.elif !empty(CROSS_MARCH:Msh*)
-CROSS_KARCH?=		sh
-.else
-CROSS_KARCH?=		${CROSS_MARCH:S/64//}
-.endif
-
-MAK_ENV+=		BUILD_CC=${PREFIX}/gcc6/bin/gcc
-MAK_ENV+=		HOSTCC=${PREFIX}/gcc6/bin/gcc
-MAK_ENV+=		CC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
-MAK_ENV+=		GCC_FOR_BUILD=${PREFIX}/gcc6/bin/gcc
-MAK_ENV+=		CXX_FOR_BUILD=${PREFIX}/gcc6/bin/g++
-MAK_ENV+=		AR_FOR_BUILD=${PREFIX}/bin/gar
-MAK_ENV+=		AS_FOR_BUILD=${PREFIX}/bin/gas
-MAK_ENV+=		LD_FOR_BUILD=${PREFIX}/bin/gld
-MAK_ENV+=		NM_FOR_BUILD=${PREFIX}/bin/gnm
-MAK_ENV+=		OBJCOPY_FOR_BUILD=${PREFIX}/bin/gobjcopy
-MAK_ENV+=		OBJDUMP_FOR_BUILD=${PREFIX}/bin/gobjdump
-MAK_ENV+=		READELF_FOR_BUILD=${PREFIX}/bin/greadelf
-MAK_ENV+=		RANLIB_FOR_BUILD=${PREFIX}/bin/granlib
-MAK_ENV+=		STRIP_FOR_BUILD=${PREFIX}/bin/gstrip
-MAK_ENV+=		CC_FOR_TARGET=${PREFIX}/gcc6/bin/gcc
-MAK_ENV+=		GCC_FOR_TARGET=${PREFIX}/gcc6/bin/gcc
-MAK_ENV+=		CXX_FOR_TARGET=${PREFIX}/gcc6/bin/g++
-MAK_ENV+=		AR_FOR_TARGET=${PREFIX}/bin/gar
-MAK_ENV+=		AS_FOR_TARGET=${PREFIX}/bin/gas
-MAK_ENV+=		LD_FOR_TARGET=${PREFIX}/bin/gld
-MAK_ENV+=		NM_FOR_TARGET=${PREFIX}/bin/gnm
-MAK_ENV+=		OBJCOPY_FOR_TARGET=${PREFIX}/bin/gobjcopy
-MAK_ENV+=		OBJDUMP_FOR_TARGET=${PREFIX}/bin/gobjdump
-MAK_ENV+=		READELF_FOR_TARGET=${PREFIX}/bin/greadelf
-MAK_ENV+=		RANLIB_FOR_TARGET=${PREFIX}/bin/granlib
-MAK_ENV+=		STRIP_FOR_TARGET=${PREFIX}/bin/gstrip
-MAK_ENV+=		CC=${PREFIX}/gcc6/bin/gcc
-MAK_ENV+=		GCC=${PREFIX}/gcc6/bin/gcc
-MAK_ENV+=		CXX=${PREFIX}/gcc6/bin/g++
-MAK_ENV+=		AR=${PREFIX}/bin/gar
-MAK_ENV+=		AS=${PREFIX}/bin/gas
-MAK_ENV+=		LD=${PREFIX}/bin/gld
-MAK_ENV+=		NM=${PREFIX}/bin/gnm
-MAK_ENV+=		OBJCOPY=${PREFIX}/bin/gobjcopy
-MAK_ENV+=		OBJDUMP=${PREFIX}/bin/gobjdump
-MAK_ENV+=		READELF=${PREFIX}/bin/greadelf
-MAK_ENV+=		RANLIB=${PREFIX}/bin/granlib
-MAK_ENV+=		STRIP=${PREFIX}/bin/gstrip
-
+.include "../kross.mk"
+MAK_ENV+= 		PATH=${PREFIX}/sbin:${PREFIX}/bin:${PREFIX}/gcc6/bin:${TOOLDIR}/bin:$$PATH
 NO_BUILD=		yes
 USE_LANGUAGES=		c
 
@@ -124,8 +63,6 @@ GENERATE_PLIST+= \
 	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
 
 .else
-
-TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 
 do-build:
 	cd ${WRKSRC} && ${GMAKE} mrproper && ${GMAKE} -j${MAKE_JOBS} headers && \

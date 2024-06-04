@@ -15,11 +15,11 @@ DEPENDS+=	bootscripts-[0-9]*:../../native/bootscripts
 DEPENDS+=	startups-[0-9]*:../../native/startups
 DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
-.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
-DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
 #DEPENDS+=	firmware-[0-9]*:../../native/firmware
 DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
+.if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
 .endif
 
 DEPENDS+=	nawk-[0-9]*:../../lang/nawk

@@ -66,6 +66,60 @@ BLDPRE=		${WRKDIR}${PREFIX}/native
 DSTPRE=		${DESTDIR}${PREFIX}/native
 MAKE_ENV+=	INSTALL_MOD_PATH=${BLDPRE}
 
+.if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+.include "../kross.mk"
+
+HAS_CONFIGURE=		no
+#NO_BUILD=		yes
+NO_CONFIGURE=		yes
+GNU_CONFIGURE=		no
+USE_PKGSRC_GCC=		no
+
+#MAK_ENV+= 	PATH=${PREFIX}/sbin:${PREFIX}/bin:${PREFIX}/gcc6/bin:${TOOLDIR}/bin:/pkg/sbin:/pkg/bin:$$PATH
+MAK_ENV+= 	PATH=/pkg/gcc6/bin:/pkg/sbin:/pkg/bin:${TOOLDIR}/bin:$$PATH
+MAK_ENV+=	ARCH=${CROSS_KARCH} CROSS_COMPILE=${MACHINE_GNU_PLATFORM}-
+MAK_ENV+=	INSTALL_MOD_PATH=${BLDPRE}
+#CFLAGS+=	-Werror
+
+# INSTALL_MOD_PATH=./2022Q2-mips64abi64/native ARCH=mips CROSS_COMPILE=/pkg/native/cross-mips64abi64/bin/mips64-unknown-linux-gnuabi64- make -j12 modules
+# ARCH=mips CROSS_COMPILE=/pkg/native/cross-mips64abi64/bin/mips64-unknown-linux-gnuabi64- make -j12 menuconfig
+
+#	cd ${WRKSRC} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS} allmodconfig
+#	cd ${WRKSRC} && ${CAT} .config > ${MACHINE_GNU_PLATFORM:C/-.*-linux-gnu//g}.config
+#	cd ${WRKSRC} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS} defconfig
+#	cd ${WRKSRC} && ${CAT} .config | ggrep -v "is not set" >> ${MACHINE_GNU_PLATFORM:C/-.*-linux-gnu//g}.config
+#	cd ${WRKSRC} && ${CAT} ${MACHINE_GNU_PLATFORM:C/-.*-linux-gnu//g}.config > .config
+#	cd ${WRKSRC} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS} menuconfig
+#	cd ${WRKSRC} && ${CAT} .config > ${FILESDIR}/${MACHINE_GNU_PLATFORM:C/-.*-linux-gnu//g}.config
+
+post-patch:
+	cd ${WRKSRC} && ${CAT} ${FILESDIR}/${MACHINE_GNU_PLATFORM:C/-.*-linux-gnu//g}.config > .config
+	cd ${WRKSRC} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS} menuconfig
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS} vmlinuz
+	cd ${WRKSRC} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS} modules
+
+post-build:
+	${INSTALL_DATA_DIR} ${BLDPRE}/boot
+	${CP} ${WRKSRC}/vmlinuz \
+		${BLDPRE}/boot/vmlinuz-${LINUX_VERSION}
+	${CP} ${WRKSRC}/System.map \
+		${BLDPRE}/boot/System.map-${LINUX_VERSION}
+	${INSTALL_DATA} ${WRKSRC}/.config ${BLDPRE}/boot/${PKGNAME}.config
+	cd ${WRKSRC} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS} modules_install
+
+do-install:
+	${MKDIR} -v ${DSTPRE}
+	${CP} -av ${BLDPRE}/* ${DSTPRE}
+
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
+
+.else
+
 #	cd ${WRKSRC} && patch -p1 < ${FILESDIR}/linux-hardened-5.15.98-hardened1.patch
 #post-extract:
 #	cd ${WRKSRC} && ${CAT} ${FILESDIR}/.configs > .config
@@ -101,5 +155,7 @@ do-build:
 do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
+
+.endif
 
 .include "../../mk/bsd.pkg.mk"
