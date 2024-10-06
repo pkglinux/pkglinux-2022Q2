@@ -1,6 +1,7 @@
 # $NetBSD: Makefile,v 1.54 2022/06/02 18:52:06 bsiegert Exp $
 
-DISTNAME=	fzf-0.29.0
+#DISTNAME=	fzf-0.29.0
+DISTNAME=	fzf-0.55.0
 PKGREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GITHUB:=junegunn/}
@@ -14,7 +15,7 @@ USE_TOOLS+=	bash:run
 
 GO_BUILD_PATTERN=	.
 
-.include "go-modules.mk"
+#.include "go-modules.mk"
 
 REPLACE_BASH+=	bin/fzf-tmux
 

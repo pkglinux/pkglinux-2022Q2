@@ -1,0 +1,12 @@
+/DESCR/1.1/Tue Sep  6 10:36:49 2016//Tpkgsrc-2023Q1
+/Makefile/1.278/Tue Mar 28 09:06:15 2023//Tpkgsrc-2023Q1
+/buildlink3.mk/1.11/Mon Jan 23 18:49:03 2023//Tpkgsrc-2023Q1
+/cargo.mk/1.33/Tue Mar 21 19:53:25 2023//Tpkgsrc-2023Q1
+/cross.mk/1.10/Mon Jan 23 18:49:03 2023//Tpkgsrc-2023Q1
+/distinfo/1.155/Mon Mar 13 14:52:31 2023//Tpkgsrc-2023Q1
+/do-cross.mk/1.6/Mon Jan 23 18:49:03 2023//Tpkgsrc-2023Q1
+/options.mk/1.30/Tue Nov 15 23:11:14 2022//Tpkgsrc-2023Q1
+/platform.mk/1.18/Mon Jan 23 18:49:03 2023//Tpkgsrc-2023Q1
+/rust.mk/1.8/Fri Jul  1 06:58:18 2022//Tpkgsrc-2023Q1
+D/files////
+D/patches////

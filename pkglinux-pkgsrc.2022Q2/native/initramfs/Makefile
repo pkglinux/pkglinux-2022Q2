@@ -217,6 +217,8 @@ do-install:
 .endif
 
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
+USE_LIBTOOL=	yes
+.include "../../devel/libblkid/buildlink3.mk"
 PLIST_SRC=
 GENERATE_PLIST+= \
 	cd ${DESTDIR}${PREFIX} && \

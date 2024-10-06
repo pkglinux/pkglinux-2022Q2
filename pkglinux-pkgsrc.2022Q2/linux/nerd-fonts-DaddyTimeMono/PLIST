@@ -1,0 +1,4 @@
+@comment $NetBSD: PLIST,v 1.2 2023/06/01 08:10:39 wiz Exp $
+share/fonts/X11/TTF/DaddyTimeMonoNerdFont-Regular.ttf
+share/fonts/X11/TTF/DaddyTimeMonoNerdFontMono-Regular.ttf
+share/fonts/X11/TTF/DaddyTimeMonoNerdFontPropo-Regular.ttf

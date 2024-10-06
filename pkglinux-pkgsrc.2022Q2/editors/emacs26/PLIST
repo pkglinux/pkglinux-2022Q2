@@ -70,7 +70,7 @@ info/wisent.info.gz
 info/woman.info.gz
 lib/systemd/user/emacs.service
 libexec/emacs/${PKGVERSION}/${MACHINE_GNU_PLATFORM}/hexl
-libexec/emacs/${PKGVERSION}/${MACHINE_GNU_PLATFORM}/movemail
+@comment libexec/emacs/${PKGVERSION}/${MACHINE_GNU_PLATFORM}/movemail
 libexec/emacs/${PKGVERSION}/${MACHINE_GNU_PLATFORM}/profile
 libexec/emacs/${PKGVERSION}/${MACHINE_GNU_PLATFORM}/rcs2log
 man/man1/ctags.1

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (bkcrack-1.7.0.tar.gz) = 34af0cf94431d512bdb7fedcadfff5cce421d79a3d0cd625454cf5ac1f0023f0
+SHA512 (bkcrack-1.7.0.tar.gz) = d9b3144396ad406df1f448c0d73e6b5c380159b223a855c971c547a055db5558561d87f9561c47ff24f2854659cb7aed50017a76ed313a3eae822ae070b717cd
+Size (bkcrack-1.7.0.tar.gz) = 106018 bytes

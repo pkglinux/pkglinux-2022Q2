@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.2 2023/06/01 08:10:38 wiz Exp $
+share/fonts/X11/TTF/BigBlueTerm437NerdFont-Regular.ttf
+share/fonts/X11/TTF/BigBlueTerm437NerdFontMono-Regular.ttf
+share/fonts/X11/TTF/BigBlueTerm437NerdFontPropo-Regular.ttf
+share/fonts/X11/TTF/BigBlueTermPlusNerdFont-Regular.ttf
+share/fonts/X11/TTF/BigBlueTermPlusNerdFontMono-Regular.ttf
+share/fonts/X11/TTF/BigBlueTermPlusNerdFontPropo-Regular.ttf

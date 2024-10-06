@@ -1,0 +1,7 @@
+@comment $NetBSD: PLIST,v 1.2 2023/06/01 08:10:38 wiz Exp $
+share/fonts/X11/TTF/AgaveNerdFont-Bold.ttf
+share/fonts/X11/TTF/AgaveNerdFont-Regular.ttf
+share/fonts/X11/TTF/AgaveNerdFontMono-Bold.ttf
+share/fonts/X11/TTF/AgaveNerdFontMono-Regular.ttf
+share/fonts/X11/TTF/AgaveNerdFontPropo-Bold.ttf
+share/fonts/X11/TTF/AgaveNerdFontPropo-Regular.ttf

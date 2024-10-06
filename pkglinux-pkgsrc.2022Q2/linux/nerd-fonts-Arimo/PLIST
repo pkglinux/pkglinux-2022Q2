@@ -1,0 +1,9 @@
+@comment $NetBSD: PLIST,v 1.2 2023/06/01 08:10:38 wiz Exp $
+share/fonts/X11/TTF/ArimoNerdFont-Bold.ttf
+share/fonts/X11/TTF/ArimoNerdFont-BoldItalic.ttf
+share/fonts/X11/TTF/ArimoNerdFont-Italic.ttf
+share/fonts/X11/TTF/ArimoNerdFont-Regular.ttf
+share/fonts/X11/TTF/ArimoNerdFontPropo-Bold.ttf
+share/fonts/X11/TTF/ArimoNerdFontPropo-BoldItalic.ttf
+share/fonts/X11/TTF/ArimoNerdFontPropo-Italic.ttf
+share/fonts/X11/TTF/ArimoNerdFontPropo-Regular.ttf

@@ -1,0 +1,13 @@
+@comment $NetBSD: PLIST,v 1.2 2023/06/01 08:10:38 wiz Exp $
+share/fonts/X11/TTF/BitstromWeraNerdFont-Bold.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFont-BoldOblique.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFont-Oblique.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFont-Regular.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFontMono-Bold.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFontMono-BoldOblique.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFontMono-Oblique.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFontMono-Regular.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFontPropo-Bold.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFontPropo-BoldOblique.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFontPropo-Oblique.ttf
+share/fonts/X11/TTF/BitstromWeraNerdFontPropo-Regular.ttf
