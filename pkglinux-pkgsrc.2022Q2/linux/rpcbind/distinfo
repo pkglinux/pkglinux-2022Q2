@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (rpcbind-1.2.7.tar.bz2) = 3393eff11f2c27d7bf97ce01f958cd58a3f45b9972b77be68860a2ba8ef30c43
+SHA512 (rpcbind-1.2.7.tar.bz2) = ca1517bdab86221d13c645042cc31b25b4d2b574d63ebaa20da4f5392b611cf58811f267214293e953f504d364e5daaa5875eab7aa68a04b89e68fd5508e3926
+Size (rpcbind-1.2.7.tar.bz2) = 125792 bytes

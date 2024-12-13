@@ -23,9 +23,9 @@ TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 USE_TOOLS+=		gmake perl
 PLIST_SUBST+=		LINUX_VERSION=${LINUX_VERSION:Q}
 
-#DISTINFO_FILE?=		${.CURDIR}/../../native/kernel-build/distinfo
-#PATCHDIR?=		${.CURDIR}/../../native/kernel-build/patches
-#FILESDIR=		${.CURDIR}/../../native/kernel-build/files
+DISTINFO_FILE?=		${.CURDIR}/../../native/kernel-build/distinfo
+PATCHDIR?=		${.CURDIR}/../../native/kernel-build/patches
+FILESDIR=		${.CURDIR}/../../native/kernel-build/files
 
 #BUILD_DEPENDS+=	kmod-[0-9]*:../../linux/kmod
 
@@ -66,10 +66,12 @@ WRKBLD=		${WRKDIR}/build
 #WRKBLD=	${PREFIX}/native/kernel-source-${LINUX_VERSION}
 
 post-extract:
+	cd ${WRKSRC} && patch -Np1 < ${FILESDIR}/bottomspeakers-for-14iap7-kernel-518.patch
 	mkdir -pv ${WRKBLD}
-	cd ${WRKBLD} && ${CAT} ${FILESDIR}/.configs > .config
+	cd ${WRKBLD} && ${CAT} ${FILESDIR}/.config.nonfsdv4 > .config
 	cd ${WRKBLD} && ${GMAKE} -j${MAKE_JOBS} -f ${WRKSRC}/Makefile menuconfig
 
+#	cd ${WRKBLD} && ${CAT} ${FILESDIR}/.configs > .config
 #	cd ${WRKSRC} && ${GMAKE} mrproper && ${GMAKE} -j${MAKE_JOBS} headers && \
 #	${FIND} usr/include -name ".*" -exec ${RM} -rf {} \; && \
 #	${RM} -f usr/include/Makefile

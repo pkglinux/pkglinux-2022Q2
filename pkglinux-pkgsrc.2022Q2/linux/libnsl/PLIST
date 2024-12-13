@@ -8,3 +8,4 @@ include/rpcsvc/yppasswd.x
 include/rpcsvc/ypupd.h
 lib/libnsl.la
 lib/pkgconfig/libnsl.pc
+native/usr/lib/libnsl.a

@@ -3974,10 +3974,10 @@ native/lib/modules/${PKGVERSION}/kernel/fs/cramfs/cramfs.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/dlm/dlm.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/ecryptfs/ecryptfs.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/f2fs/f2fs.ko.xz
-native/lib/modules/${PKGVERSION}/kernel/fs/fscache/fscache.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/fat/fat.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/fat/msdos.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/fat/vfat.ko.xz
+native/lib/modules/${PKGVERSION}/kernel/fs/fscache/fscache.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/fuse/cuse.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/fuse/fuse.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/fs/gfs2/gfs2.ko.xz
@@ -4639,6 +4639,7 @@ native/lib/modules/${PKGVERSION}/kernel/sound/pci/hda/snd-hda-codec-ca0132.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/sound/pci/hda/snd-hda-codec-cirrus.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/sound/pci/hda/snd-hda-codec-cmedia.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/sound/pci/hda/snd-hda-codec-conexant.ko.xz
+native/lib/modules/${PKGVERSION}/kernel/sound/pci/hda/snd-hda-codec-cs8409.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/sound/pci/hda/snd-hda-codec-generic.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/sound/pci/hda/snd-hda-codec-hdmi.ko.xz
 native/lib/modules/${PKGVERSION}/kernel/sound/pci/hda/snd-hda-codec-idt.ko.xz

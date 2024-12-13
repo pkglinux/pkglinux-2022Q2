@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (lsof-4.99.3.tar.gz) = 8c693ab31c5acf576324a861b14898f88269307ea906b36c5471d066a5edc4e1
+SHA512 (lsof-4.99.3.tar.gz) = 83f62f62fa273becfdded4e553d398bafebf0186c7f8ac86a800dabf63ef0614c3c546b6dcd6d13f30c97ab33088a82e1e6b66cc8ed61f700c54487cab19d009
+Size (lsof-4.99.3.tar.gz) = 1131470 bytes

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (rimage-1.6.tar.gz) = 2b5d65b537236673dd2bcc104dab310be244692b51c3d35df3d7ad0f2fbba0db
+SHA512 (rimage-1.6.tar.gz) = 13dd2ce823b464ebb2d341546e2281091687b0a108473a80ed9fc8583da81b4208ae72c69ef7c0b1916c92a9c3b71f7ed9beaa9f0e77ee65d6178c439fb6b2df
+Size (rimage-1.6.tar.gz) = 111132 bytes

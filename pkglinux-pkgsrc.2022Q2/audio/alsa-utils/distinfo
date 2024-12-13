@@ -3,7 +3,7 @@ $NetBSD: distinfo,v 1.16 2022/01/24 10:09:30 wiz Exp $
 BLAKE2s (alsa-utils-1.2.6.tar.bz2) = 9cf4cf315025288901f28a31cad5d77188577d220475d4a4c170a24eeb08f56d
 SHA512 (alsa-utils-1.2.6.tar.bz2) = 6842f0f4c2f7cc5ac3ba94736ee259d9988b5d3e0d2b522f858d712e16938d2845fa9ef64f4aa60222b8ef6738e053f9113a5ea24a197f2c0d6c4dbd70030f5e
 Size (alsa-utils-1.2.6.tar.bz2) = 1334063 bytes
-SHA1 (patch-aa) = c1f3ef3636640d7ccdc2430b4b6b417f3ea1363f
+SHA1 (patch-aa) = bbe60dce761d2918d30e3fbeef77b28125e1d6ca
 SHA1 (patch-ab) = a24b76ddf0573679113d99e428229c5c81a486eb
 SHA1 (patch-ac) = 19f9570bedfb00068aad244033eb6e6436a6546d
 SHA1 (patch-ad) = 4da5adfbd3fcc0611c6394bf00f2b684e735dbd2

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (libnfs-5.0.3.tar.gz) = 599468f1d6d674467fce84cf6409cd1f9b4cb7e9b77fe3dcb7fe1405c1cefa32
+SHA512 (libnfs-5.0.3.tar.gz) = 1581c4a599e7b2a837553df2a4e1e4255a726907cd54ce3e82b0b725c79e2fd15d7ed921dbe9519d73204f5ca735d27b347888d3f1162c4c2144e9d72e327ff1
+Size (libnfs-5.0.3.tar.gz) = 291079 bytes

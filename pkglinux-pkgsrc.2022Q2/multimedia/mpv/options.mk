@@ -15,7 +15,8 @@ PKG_SUPPORTED_OPTIONS+=		sdl2
 # misc
 PKG_SUPPORTED_OPTIONS+=		bluray lua
 
-PKG_SUGGESTED_OPTIONS=		bluray lua sdl2 sixel
+#PKG_SUGGESTED_OPTIONS=		bluray lua sdl2 sixel
+PKG_SUGGESTED_OPTIONS=		bluray lua sixel
 PKG_SUGGESTED_OPTIONS.Linux+=	alsa pulseaudio
 
 .include "../../mk/bsd.fast.prefs.mk"
@@ -39,8 +40,9 @@ PKG_SUGGESTED_OPTIONS+=		vdpau
 .endif
 
 .if ${OPSYS} == "Linux"
-PKG_SUPPORTED_OPTIONS+=		wayland
-PKG_SUGGESTED_OPTIONS+=		wayland
+#PKG_SUPPORTED_OPTIONS+=		wayland
+#PKG_SUGGESTED_OPTIONS+=		wayland
+PKG_SUGGESTED_OPTIONS+=		opengl libdrm x11
 .endif
 
 .include "../../mk/bsd.options.mk"

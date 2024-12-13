@@ -7,7 +7,7 @@ $NetBSD: patch-aa,v 1.4 2021/05/12 14:13:22 ryoon Exp $
  fi
  
 -ALSA_LIBS="$ALSA_LIBS -lasound -lm $LIBDL -lpthread"
-+ALSA_LIBS="$(pkg-config --libs alsa)"
++ALSA_LIBS="$(pkg-config --libs alsa alsa-topology fftw3) -lm $LIBDL -lpthread"
  LIBS="$ALSA_LIBS $LIBS"
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ALSA_LIBS" >&5
  $as_echo "$ALSA_LIBS" >&6; }

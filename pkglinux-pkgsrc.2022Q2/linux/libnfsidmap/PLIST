@@ -1,0 +1,8 @@
+@comment $NetBSD$
+include/nfsidmap.h
+lib/libnfsidmap.la
+lib/libnfsidmap/nsswitch.la
+lib/libnfsidmap/static.la
+lib/pkgconfig/libnfsidmap.pc
+man/man3/nfs4_uid_to_name.3
+man/man5/idmapd.conf.5

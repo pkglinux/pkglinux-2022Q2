@@ -100,4 +100,7 @@ opt:
 	cd ${WRKSRC} && cd ${dir} &&		\
 	${TEST_MAKE_CMD} opt
 .endfor
+CFLAGS+=	-ltirpc
+LDFLAGS+=	-ltirpc
+.include "../../linux/libtirpc/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -72,5 +72,5 @@ do-install:
 .include "../../x11/gtk3/buildlink3.mk"
 .include "../../x11/fltk13/buildlink3.mk"
 .include "../../audio/alsa-lib/buildlink3.mk"
-.include "../../linux/alsa-utils/buildlink3.mk"
+.include "../../audio/alsa-utils/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

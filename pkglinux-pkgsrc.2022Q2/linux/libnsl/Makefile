@@ -19,6 +19,10 @@ ONLY_FOR_PLATFORM=	Linux-*-*
 
 PKGCONFIG_OVERRIDE=	libnsl.pc.in
 
+post-install:
+	${MKDIR} ${DESTDIR}${PREFIX}/native/usr/lib
+	cp -v ${WRKSRC}/src/.libs/libnsl.a ${DESTDIR}${PREFIX}/native/usr/lib
+
 .include "../../linux/libtirpc/buildlink3.mk"
 .include "../../mk/krb5.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -23,7 +23,11 @@ SUBST_STAGE.conf-path=	pre-configure
 SUBST_FILES.conf-path=	src/conf/alsa.conf
 SUBST_VARS.conf-path=	VARBASE PKG_SYSCONFDIR
 
+CONFIGURE_ARGS+=	--prefix=${PREFIX}
+CONFIGURE_ARGS+=	--with-plugindir=${PREFIX}/lib/alsa-lib
 CONFIGURE_ARGS+=	--disable-python
+CONFIGURE_ARGS+=	--enable-ucm
+#CONFIGURE_ARGS+=	--without-libdl
 
 CPPFLAGS.SunOS+=	-D__EXTENSIONS__ -DBSD_COMP -DMAP_FILE=0
 CPPFLAGS.SunOS+=	-D_XOPEN_SOURCE=600
@@ -40,8 +44,8 @@ CONFIGURE_ARGS.SunOS+=		--without-versioned
 BUILDLINK_TRANSFORM.SunOS+=	rm:-Wl,--version-script=Versions
 
 #USE_BUILTIN.dl= yes
-.include "../../mk/dlopen.buildlink3.mk"
-BUILDLINK_TRANSFORM+=	opt:-ldl:${BUILDLINK_LDADD.dl:M*}
+#.include "../../mk/dlopen.buildlink3.mk"
+#BUILDLINK_TRANSFORM+=	opt:-ldl:${BUILDLINK_LDADD.dl:M*}
 
 .include "../../mk/pthread.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

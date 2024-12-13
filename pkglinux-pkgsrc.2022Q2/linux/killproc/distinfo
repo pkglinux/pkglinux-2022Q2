@@ -1,0 +1,9 @@
+$NetBSD$
+
+BLAKE2s (killproc-2.24.tar.gz) = 34c42d8b464e6e73216165dbee3e9952d084e8700d454db0a6855ae65f666631
+SHA512 (killproc-2.24.tar.gz) = a4177865b99fc11e7370cef5741246e889342fe881e5ba450bef21dc1d3f26482c542a995e89864a87d1af77fad07d464d3bfe9663cb96c66a50595a3994b4e9
+Size (killproc-2.24.tar.gz) = 54126 bytes
+SHA1 (patch-Makefile) = e414e13f1544d8fdb2877c9db2f6c0babc59dffd
+SHA1 (patch-libinit.c) = 40930a696fbf5c694712c5098aa737c56c7b901e
+SHA1 (patch-mkill.c) = 9b342d199d972a0ae5a4309c87f25e3a6d004adf
+SHA1 (patch-vhangup.c) = 404fed8298cb62e5c82db2a949c9e0005beead45

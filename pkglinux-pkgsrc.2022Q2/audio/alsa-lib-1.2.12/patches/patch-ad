@@ -1,0 +1,20 @@
+$NetBSD: patch-ad,v 1.9 2024/02/21 08:58:00 wiz Exp $
+
+SunOS needs alloca.h.
+
+--- include/global.h.orig	2024-01-29 16:16:07.000000000 +0000
++++ include/global.h
+@@ -30,6 +30,13 @@
+ 
+ /* for timeval and timespec */
+ #include <time.h>
++#if defined(__FreeBSD__)
++#include <sys/timespec.h>
++#endif
++
++#ifdef __sun
++#include <alloca.h>
++#endif
+ 
+ #ifdef __cplusplus
+ extern "C" {

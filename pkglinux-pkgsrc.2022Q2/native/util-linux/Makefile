@@ -95,7 +95,7 @@ CONFIG_ARGS+=	--with-sysroot=${TOOLS_CROSS_DESTDIR}
 CONFIG_ARGS+=		--without-udev
 #CONFIG_ARGS+=		--disable-static
 .else
-CONFIG_ARGS+=		--disable-static
+#CONFIG_ARGS+=		--disable-static
 CONFIG_ARGS+=		--enable-static
 CONFIG_ARGS+=		--enable-static-programs=blkid,mount
 .endif

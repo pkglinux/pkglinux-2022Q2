@@ -1,6 +1,6 @@
-$NetBSD: patch-ae,v 1.1 2004/11/20 22:07:49 jmmv Exp $
+$NetBSD$
 
---- nanohttp.c.orig	2000-06-28 20:33:46.000000000 +0200
+--- nanohttp.c.orig	2000-06-28 18:33:46.000000000 +0000
 +++ nanohttp.c
 @@ -161,6 +161,7 @@ xmlNanoHTTPScanURL(xmlNanoHTTPCtxtPtr ct
      const char *cur = URL;
@@ -45,3 +45,12 @@ $NetBSD: patch-ae,v 1.1 2004/11/20 22:07:49 jmmv Exp $
          if ((cur[0] == ':') && (cur[1] == '/') && (cur[2] == '/')) {
  	    buf[index] = 0;
  	    index = 0;
+@@ -1182,7 +1184,7 @@ xmlNanoHTTPSave(void *ctxt, const char *
+     if (!strcmp(filename, "-")) 
+         fd = 0;
+     else {
+-        fd = open(filename, O_CREAT | O_WRONLY);
++        fd = open(filename, O_CREAT | O_WRONLY, 00644);
+ 	if (fd < 0) {
+ 	    xmlNanoHTTPClose(ctxt);
+ 	    return(-1);

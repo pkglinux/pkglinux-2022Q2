@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README
+
+[![Circle CI](https://circleci.com/gh/lsof-org/lsof.svg?style=svg)](https://circleci.com/gh/lsof-org/lsof)
+[![Cirrus CI](https://img.shields.io/cirrus/github/lsof-org/lsof)](https://cirrus-ci.com/github/lsof-org/lsof)
+[![builds.sr.ht status](https://builds.sr.ht/~jiegec/lsof.svg)](https://builds.sr.ht/~jiegec/lsof?)
+[![Read the Docs](https://readthedocs.org/projects/lsof/badge/?version=latest)](https://lsof.readthedocs.io/en/latest/)
+
+# lsof
+
+[lsof](https://en.wikipedia.org/wiki/Lsof) is a command listing open files.
+
+## How it works:
+
+```
+$ cat > /tmp/LOG &
+cat > /tmp/LOG &
+[1] 18083
+$ lsof -p 18083
+lsof -p 18083
+COMMAND   PID   USER   FD   TYPE DEVICE  SIZE/OFF     NODE NAME
+cat     18083 yamato  cwd    DIR   0,44      1580 43460784 /tmp/lsof
+cat     18083 yamato  rtd    DIR  253,2      4096        2 /
+...

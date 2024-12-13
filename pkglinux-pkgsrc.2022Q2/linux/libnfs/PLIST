@@ -1,0 +1,23 @@
+@comment $NetBSD$
+bin/nfs-cat
+bin/nfs-cp
+bin/nfs-ls
+bin/nfs-stat
+include/nfsc/libnfs-raw-mount.h
+include/nfsc/libnfs-raw-nfs.h
+include/nfsc/libnfs-raw-nfs4.h
+include/nfsc/libnfs-raw-nlm.h
+include/nfsc/libnfs-raw-nsm.h
+include/nfsc/libnfs-raw-portmap.h
+include/nfsc/libnfs-raw-rquota.h
+include/nfsc/libnfs-raw.h
+include/nfsc/libnfs-zdr.h
+include/nfsc/libnfs.h
+lib/cmake/libnfs/FindNFS.cmake
+lib/cmake/libnfs/libnfs-config-noconfig.cmake
+lib/cmake/libnfs/libnfs-config-version.cmake
+lib/cmake/libnfs/libnfs-config.cmake
+lib/libnfs.so
+lib/libnfs.so.11.2.0
+lib/libnfs.so.${PKGVERSION}
+lib/pkgconfig/libnfs.pc

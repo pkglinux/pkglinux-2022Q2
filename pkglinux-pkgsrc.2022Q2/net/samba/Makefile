@@ -167,5 +167,5 @@ BUILDLINK_API_DEPENDS.tdb+= tdb>=1.2.10
 .include "../../devel/zlib/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
 .include "../../linux/libtirpc/buildlink3.mk"
-LDFLAGS+=	-Wl,-R/2022Q2/lib -L/2022Q2/lib -ltirpc
+LDFLAGS+=	-Wl,-R${PREFIX}/lib -L${PREFIX}/lib -ltirpc
 .include "../../mk/bsd.pkg.mk"

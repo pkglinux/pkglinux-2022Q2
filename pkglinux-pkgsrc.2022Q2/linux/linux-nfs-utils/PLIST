@@ -1,0 +1,19 @@
+@comment $NetBSD$
+sbin/exportfs
+sbin/nfsstat
+sbin/nhfsgraph
+sbin/nhfsnums
+sbin/nhfsrun
+sbin/nhfsstone
+sbin/rpc.lockd
+sbin/rpc.mountd
+sbin/rpc.nfsd
+sbin/rpc.rquotad
+sbin/rpc.statd
+sbin/showmount
+var/lib/nfs/etab
+var/lib/nfs/rmtab
+var/lib/nfs/state
+var/lib/nfs/xtab
+@pkgdir var/lib/nfs/sm.bak
+@pkgdir var/lib/nfs/sm

@@ -1,0 +1,14 @@
+$NetBSD: distinfo,v 1.2 2004/05/11 03:29:09 jeremy-c-reed Exp $
+
+BLAKE2s (nfs-utils-1.0.6.tar.gz) = 87c820a11b6609c34c6215b0d1f0a0a5faed4fbd054fccd281ce10d2f950f3e4
+SHA512 (nfs-utils-1.0.6.tar.gz) = 6efcb46b7d6718a4ef99f91efb4660e116e437eaa0ca62306899099aa4323be595969092f451d17a1d874bcb03b8d9b9326f0732b1770221797716226b4b1e03
+Size (nfs-utils-1.0.6.tar.gz) = 265964 bytes
+SHA1 (patch-aa) = 06683c80749c79d184684c6f5b98ea2a7755cf98
+SHA1 (patch-ab) = 198956c2437177b66be4ed9a6e0852e405e0cb32
+SHA1 (patch-ac) = 7ae2b9bb9911e3abd7cc68b4dba95ae4b0a2b4a1
+SHA1 (patch-ad) = ba672f1435a11c7a5bcbc7e67636a6bae2991885
+SHA1 (patch-support_nfs_nfsexport.c) = 531de8c20a7e4be768f5ea9c741e6b43d9c0825b
+SHA1 (patch-support_nfs_xio.c) = 0285b9d4e013f5dac362f4cd1ee8baa4484d78d9
+SHA1 (patch-tools_getiversion_getiversion.c) = af2d1cfc20536ae99a8e589573d5bf921052ad69
+SHA1 (patch-tools_getkversion_getkversion.c) = cb324d336e7dc3293a80f27f5a9d315a2ed67e31
+SHA1 (patch-utils_mountd_cache.c) = 2479f7389564708c5d12727ea1b3a4b051f4bfae

@@ -1,6 +1,5 @@
 $NetBSD$
 
-SHA1 (alsa-plugins-1.2.1.tar.bz2) = 99f3d72cac19eb10982e033eb468446c0cc94c78
-RMD160 (alsa-plugins-1.2.1.tar.bz2) = 2fa1a9c5061953c479d3efdae5b6970d51f49495
-SHA512 (alsa-plugins-1.2.1.tar.bz2) = a49ef9290b66855112e301a5fd5a0932f13a50254e164f3340f2b342a36469532ee783beabfe5e95870dbf4cd81ca1e8d0415d94c8c7ee963133fb3c343721de
-Size (alsa-plugins-1.2.1.tar.bz2) = 406309 bytes
+BLAKE2s (alsa-plugins-1.2.6.tar.bz2) = 1a899cb3b45a0ebb298d7434ca15c33471cc8e4f2c419b305a54fd1d81753e76
+SHA512 (alsa-plugins-1.2.6.tar.bz2) = ac54a6f227f1ca5f6e01e08d869e7c06f4bcd68f148932e1902a6fcf3e5ccd3667ac4d8c1a00b77e4b5cb27e17c01cf7526ded4aaf35c4b26fc69e14e6e341f9
+Size (alsa-plugins-1.2.6.tar.bz2) = 408596 bytes

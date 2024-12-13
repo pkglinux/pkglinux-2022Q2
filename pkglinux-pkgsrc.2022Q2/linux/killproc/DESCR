@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README.md
+
+# Install
+
+Edit the Makefile (set **INITDIR** to the path of the
+boot scripts used by the system during boot time),
+type ```make``` and ```make install```.
+
+# Processes controlling
+
+This small package provides three tools for process controlling
+in scripts by using the virtuell file system /proc/.
+
+These programs 1994 had been initally written 1994 during the
+migration from the BSD boot scripts of an old slackware to a
+System V R4 boot scheme.
+
+## The syntax is simple
+
+starting programs with checking:
+
+```
+...

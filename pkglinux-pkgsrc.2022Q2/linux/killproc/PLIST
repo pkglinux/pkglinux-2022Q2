@@ -1,0 +1,21 @@
+@comment $NetBSD$
+bin/fsync
+bin/usleep
+sbin/checkproc
+sbin/killproc
+sbin/mkill
+sbin/pidofproc
+sbin/rvmtab
+sbin/start_daemon
+sbin/startproc
+sbin/vhangup
+share/man/man1/fsync.1
+share/man/man1/usleep.1
+share/man/man8/checkproc.8
+share/man/man8/killproc.8
+share/man/man8/mkill.8
+share/man/man8/pidofproc.8
+share/man/man8/rvmtab.8
+share/man/man8/start_daemon.8
+share/man/man8/startproc.8
+share/man/man8/vhangup.8

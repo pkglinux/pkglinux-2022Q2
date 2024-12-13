@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (sof-firmware-1.4.2.tar.bz2) = 4f418f8ccd788ab4c37567ef121ff3cd61ba3d79dc77c74c0872116bf3f959c6
+SHA512 (sof-firmware-1.4.2.tar.bz2) = 58e9ef29453d14557f26aed1a67cd3bfa5865034de5f19a9f5041be5af02cc72c2eb21393e3d997fd59dd10c244408a0d78310803379d35c892cba8981a6c59e
+Size (sof-firmware-1.4.2.tar.bz2) = 1036448 bytes

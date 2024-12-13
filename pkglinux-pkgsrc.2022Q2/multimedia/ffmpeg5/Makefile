@@ -20,6 +20,14 @@ CONFIGURE_ARGS+=	--enable-cross-compile
 CONFIGURE_ARGS+=	--host-cc=${NATIVE_CC:Q}
 CONFIGURE_ARGS+=	--host-ld=${NATIVE_CC:Q}
 CONFIGURE_ARGS+=	--target-os=${LOWER_OPSYS}
+.else
+CONFIGURE_ARGS+=	--enable-libsmbclient
+# libsmbclient is version3 and --enable-version3 is not specified.
+CONFIGURE_ARGS+=	--enable-version3
+.include "../../net/samba4/buildlink3.mk"
+CONFIGURE_ARGS+=	--enable-libssh
+.include "../../security/libssh/buildlink3.mk"
+.include "../../security/libssh2/buildlink3.mk"
 .endif
 
 PRINT_PLIST_AWK+=	/html/ { $$0 = "$${PLIST.doc}" $$0 }

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (sof-2.11.2.tar.gz) = 19bfdf09e68fbd360d862c975f365c62dda4870dc49ab400f40c9378201aae9d
+SHA512 (sof-2.11.2.tar.gz) = f358a8b2fbe71c673b4b4e5ba75aab50bccb5fa03134191a96be3bfc915360f15a4248e1fbcaa597ca71286a9d5c2ac62fe74cfc36fdea48d761d9f06326e9e5
+Size (sof-2.11.2.tar.gz) = 3590880 bytes

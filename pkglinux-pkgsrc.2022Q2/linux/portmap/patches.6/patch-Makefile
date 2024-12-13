@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- Makefile.orig	2014-06-23 01:19:03.000000000 +0000
++++ Makefile
+@@ -20,7 +20,7 @@ FACILITY=LOG_DAEMON
+ 
+ ifeq ($(NO_TCP_WRAPPER),)
+ CPPFLAGS += -DHOSTS_ACCESS
+-WRAP_LIB  = -lwrap
++WRAP_LIB  = -lwrap -ltirpc -lpthread
+ ifdef USE_DNS
+ CPPFLAGS += -DENABLE_DNS
+ MAN_SED += -e 's/USE_DNS/yes/'

@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (libnfsidmap-0-25.tar.gz) = 5aec62850debd00ff11b0e8d3e24e42d28464212e436f0e3ea929d48020d33b1
+SHA512 (libnfsidmap-0-25.tar.gz) = 121eefac698c37ae8178173e2e5711a5c1851c5e98f1fa88c85c237b8a32a722d869bdf66250680e29e9a25a8c91728f12fbf07badc59f6203cce455b4197d68
+Size (libnfsidmap-0-25.tar.gz) = 43309 bytes

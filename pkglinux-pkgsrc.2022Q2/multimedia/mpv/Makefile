@@ -11,6 +11,7 @@ HOMEPAGE=	https://mpv.io/
 COMMENT=	Video player based on MPlayer and mplayer2
 LICENSE=	gnu-gpl-v2 AND gnu-lgpl-v2.1
 
+
 # needs sem_timedwait(3)
 NOT_FOR_PLATFORM=	NetBSD-[1-6].*-*
 
@@ -81,4 +82,5 @@ post-install:
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"
 .include "../../mk/jpeg.buildlink3.mk"
 .include "../../mk/atomic64.mk"
+.include "../../linux/eudev/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

@@ -1,0 +1,34 @@
+$NetBSD$
+
+--- Makefile.orig	2024-08-13 07:29:45.000000000 +0000
++++ Makefile
+@@ -9,7 +9,6 @@ DISTRO	 =	SUSE
+ INITDIR  =	/etc/init.d
+ #DEBUG	 =	-DDEBUG=1
+ #DESTDIR =	/tmp/root
+-PREFIX	 =	/usr
+ DEBUG	 =
+ DESTDIR	 =
+ VERSION	 =	2.23
+@@ -18,8 +17,8 @@ STATX	 =	$(shell (test -d /lib64 && nm -
+ SYSSTATX =      $(shell echo -e '#include <sys/syscall.h>\nint main () {return SYS_statx;}'|gcc -x c -o /dev/null -P - 2>/dev/null && echo 1 || echo 0)
+ OSTATX   =
+ 
+-  LIBS  +=	-lblogger -lpthread
+-  COPTS +=	-std=gnu89 -DUSE_BLOGD
++  LIBS  +=	-lpthread
++  COPTS +=	-std=gnu89
+ ifeq ($(STATX),1)
+   COPTS +=	-DHAVE_STATX
+ endif
+@@ -52,8 +51,8 @@ endif
+ #
+ 	SDOCDIR = $(DESTDIR)$(PREFIX)/share/man/man8
+ 	UDOCDIR = $(DESTDIR)$(PREFIX)/share/man/man1
+-	SBINDIR = $(DESTDIR)/sbin
+-	UBINDIR = $(DESTDIR)/bin
++	SBINDIR = $(DESTDIR)$(PREFIX)/sbin
++	UBINDIR = $(DESTDIR)$(PREFIX)/bin
+ #
+ #
+ #

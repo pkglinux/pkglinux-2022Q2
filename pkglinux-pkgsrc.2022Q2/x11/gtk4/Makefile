@@ -23,10 +23,8 @@ USE_LANGUAGES=		c c++
 
 #MESON_ARGS+=		-Dsassc=disabled
 MESON_ARGS+=		-Dgtk_doc=false
+# needs gstreamer-gl
 MESON_ARGS+=		-Dmedia-gstreamer=disabled
-#MESON_ARGS+=		-Ddemos=false
-#MESON_ARGS+=		-Dbuild-examples=false
-#MESON_ARGS+=		-Dbuild-tests=false
 MESON_ARGS+=		-Dbroadway-backend=false
 
 

@@ -18,6 +18,13 @@ INSTALLATION_DIRS+=	bin
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mplayer ${DESTDIR}${PREFIX}/bin
 
+#multimedia/mplayer
+#multimedia/gmplayer
+#~/.mplayer/config
+#nolirc=yes
+#put the line: nolirc=yes to /etc/mplayer/mplayer.conf.
+#by default mplayer try to open lirc use a socket.
+
 .include "../../graphics/MesaLib/buildlink3.mk"
 .include "../../multimedia/mplayer-share/depends.mk"
 .include "../../x11/libXScrnSaver/buildlink3.mk"

@@ -142,6 +142,7 @@ lib/pulse-${PKGVERSION}/modules/module-zeroconf-publish.so
 lib/pulseaudio/libpulsecommon-${PKGVERSION}.so
 lib/pulseaudio/libpulsecore-${PKGVERSION}.so
 lib/pulseaudio/libpulsedsp.so
+lib/udev/rules.d/90-pulseaudio.rules
 man/man1/pacat.1
 man/man1/pacmd.1
 man/man1/pactl.1
@@ -158,6 +159,8 @@ man/man5/default.pa.5
 man/man5/pulse-cli-syntax.5
 man/man5/pulse-client.conf.5
 man/man5/pulse-daemon.conf.5
+native/lib/udev/rules.d/90-pulseaudio.rules
+native/usr/lib/udev/rules.d/90-pulseaudio.rules
 share/bash-completion/completions/pacat
 share/bash-completion/completions/pacmd
 share/bash-completion/completions/pactl

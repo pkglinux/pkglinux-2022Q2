@@ -42,6 +42,10 @@ MESON_ARGS+=		--sysconfdir=${PKG_SYSCONFBASEDIR}
 MESON_ARGS+=		-Dfftw=disabled
 MESON_ARGS+=		-Ddoxygen=false
 MESON_ARGS+=		-Dtests=false
+MESON_ARGS+=		-Dalsa=enabled
+MESON_ARGS+=		-Ddbus=enabled
+MESON_ARGS+=		-Dudev=enabled
+MESON_ARGS+=		-Dsystemd=disabled
 PKGCONFIG_OVERRIDE+=	libpulse-mainloop-glib.pc.in
 PKGCONFIG_OVERRIDE+=	libpulse-simple.pc.in
 PKGCONFIG_OVERRIDE+=	libpulse.pc.in
@@ -136,10 +140,19 @@ PKG_USERS=		${PULSE_USER}:${PULSE_GROUP}
 
 BUILDLINK_TRANSFORM.SunOS+=	rm:-Wl,-version-script=${WRKSRC}/src/pulse/map-file
 
+post-install:
+	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX}/lib/udev/rules.d/
+	${INSTALL_DATA} ${WRKSRC}/src/modules/alsa/90-pulseaudio.rules ${DESTDIR}${PREFIX}/lib/udev/rules.d/
+	lndir.sh -l sf ${PREFIX}/lib/udev ${PREFIX}/native/lib/udev ${DESTDIR}
+	lndir.sh -l sf ${PREFIX}/lib/udev ${PREFIX}/native/usr/lib/udev ${DESTDIR}
+
+	
+
 .include "../../devel/meson/build.mk"
 .if ${OPSYS} != Linux && ${OPSYS} != "Darwin"
 .include "../../sysutils/consolekit/buildlink3.mk"
 .endif
+.include "../../sysutils/consolekit/buildlink3.mk"
 .include "../../audio/libsndfile/buildlink3.mk"
 .include "../../audio/speexdsp/buildlink3.mk"
 .include "../../databases/tdb/buildlink3.mk"
@@ -150,5 +163,6 @@ BUILDLINK_TRANSFORM.SunOS+=	rm:-Wl,-version-script=${WRKSRC}/src/pulse/map-file
 .include "../../security/openssl/buildlink3.mk"
 .include "../../sysutils/dbus/buildlink3.mk"
 .include "../../linux/eudev/buildlink3.mk"
+.include "../../linux/libevdev/buildlink3.mk"
 .include "../../mk/oss.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

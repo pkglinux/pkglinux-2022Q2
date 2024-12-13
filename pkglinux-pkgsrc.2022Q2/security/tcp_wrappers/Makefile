@@ -75,5 +75,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/*.8 ${DESTDIR}${PREFIX}/${PKGMANDIR}/man8
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.NIS \
 		${WRKSRC}/README.ipv6 ${DESTDIR}${DOCDIR}
+	${MKDIR} ${DESTDIR}${PREFIX}/native/usr/lib
+	cp -v ${WRKSRC}/.libs/libwrap.a ${DESTDIR}${PREFIX}/native/usr/lib
 
 .include "../../mk/bsd.pkg.mk"

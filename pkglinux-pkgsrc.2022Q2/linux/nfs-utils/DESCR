@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README
+
+This is nfs-utils, the Linux NFS userland utility package.
+
+
+0. PROJECT RESOURCES
+
+Home page:  http://sourceforge.net/projects/nfs/
+
+To use the 'gss' support you must have kerberos-5 development 
+libraries installed.
+Otherwise use  "--disable-gss"
+
+To use nfsv4 support you need libevent and libnfsidmap development
+libraries.  They are available from 
+   http://www.monkey.org/~provos/libevent/
+   http://www.citi.umich.edu/projects/nfsv4/linux/libnfsidmap/
+Otherwise use --disable-nfsv4
+
+To use the nfsdcld tracking daemon, nfsv4 support must be enabled,
+and the libsqlite3 development libraries must be installed.
+
+...

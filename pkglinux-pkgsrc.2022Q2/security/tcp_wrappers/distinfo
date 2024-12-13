@@ -12,3 +12,4 @@ SHA1 (patch-ah) = fa829052d466a4597c1cec528ab02c9d2ea98a60
 SHA1 (patch-ai) = f5a675f8fd1cc7e4e735dc8a9804f1dcf8d276bc
 SHA1 (patch-aj) = 6332edd3e464d0f68bfa10dc6724346d0bc05f1f
 SHA1 (patch-fix_options.c) = ce49ff5b4b1e26eb7634e61fa33ad4697917fbcb
+SHA1 (patch-tcpd.c) = 3cef55da538cb72dc7a50b1f440808de8beeb781

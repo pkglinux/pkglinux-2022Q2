@@ -6,8 +6,8 @@ EXTRACT_SUFX=	.tar.xz
 USE_LANGUAGES=	c gnu++17
 
 GCC_REQD+=	7
-TOOLS_PLATFORM.awk?=		/2022Q2/bin/nawk
-TOOLS_PLATFORM.sed?=		/2022Q2/bin/nbsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
+TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
 
 BUILD_DEPENDS+=	${PYPKGPREFIX}-expat>=0:../../textproc/py-expat
 

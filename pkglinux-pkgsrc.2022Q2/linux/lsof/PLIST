@@ -1,0 +1,6 @@
+@comment $NetBSD$
+bin/lsof
+include/lsof.h
+include/lsof_fields.h
+lib/liblsof.la
+man/man8/lsof.8

@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (keyutils-1.6.3.tar.gz) = 018f0aabf08cbe74717192fa0c56c18e5192100d74397be78324ee10294a0492
+SHA512 (keyutils-1.6.3.tar.gz) = f65965b8566037078b8eeffa66c6fdbe121c8c2bea7fa5bce04cf7ba5ccc50d5b48e51f4a67ca91e4d5d9a12469e7e3eb3036c920ab25e3feba6e93b4c149cf9
+Size (keyutils-1.6.3.tar.gz) = 137022 bytes
+SHA1 (patch-Makefile) = 7d0affc8b80c39349809e9c269e224e95c19db2b

@@ -62,6 +62,12 @@ native/usr/lib/libacl.so
 native/usr/lib/libacl.so.1
 native/usr/lib/libacl.so.1.1.2253
 native/usr/lib/pkgconfig/libacl.pc
+share/doc/${PKGNAME}/CHANGES
+share/doc/${PKGNAME}/COPYING
+share/doc/${PKGNAME}/COPYING.LGPL
+share/doc/${PKGNAME}/PORTING
+share/doc/${PKGNAME}/extensions.txt
+share/doc/${PKGNAME}/libacl.txt
 share/locale/de/LC_MESSAGES/acl.mo
 share/locale/en@boldquot/LC_MESSAGES/acl.mo
 share/locale/en@quot/LC_MESSAGES/acl.mo

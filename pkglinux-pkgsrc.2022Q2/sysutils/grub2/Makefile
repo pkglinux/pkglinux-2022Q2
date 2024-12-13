@@ -24,8 +24,8 @@ RELRO_SUPPORTED=	no
 USE_LANGUAGES+=		c c++
 USE_TOOLS+=		gmake flex bison gettext:run awk pkg-config
 
-TOOLS_PLATFORM.awk?=		/2022Q2/bin/nawk
-#TOOLS_PLATFORM.sed?=		/2022Q2/bin/nbsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/nawk
+#TOOLS_PLATFORM.sed?=		${PREFIX}/bin/nbsed
 
 .include "../../lang/python/tool.mk"
 PYTHON_FOR_BUILD_ONLY=	tool

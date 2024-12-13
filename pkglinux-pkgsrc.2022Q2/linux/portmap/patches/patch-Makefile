@@ -1,0 +1,13 @@
+$NetBSD$
+
+--- Makefile.orig	2024-11-06 04:48:01.302645685 +0000
++++ Makefile
+@@ -110,7 +110,7 @@ GLIBC=$(shell grep -s -c __GLIBC__ /usr/
+ ifeq ($(GLIBC),0)
+ LIBS   += # -lbsd
+ else
+-LIBS   += -lnsl
++LIBS   += -lnsl -ltirpc -lpthread
+ endif
+ 
+ 

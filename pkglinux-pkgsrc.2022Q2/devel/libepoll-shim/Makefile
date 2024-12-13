@@ -21,7 +21,7 @@ CMAKE_ARGS+=	-DBUILD_TESTING=OFF
 .include "../../mk/bsd.prefs.mk"
 
 .if !defined(OPSYS_HAS_KQUEUE)
-PKG_SKIP_REASON+=	"Requires a kqueue implementation"
+#PKG_SKIP_REASON+=	"Requires a kqueue implementation"
 .endif
 
 PLIST_VARS+=	eventfd timerfd

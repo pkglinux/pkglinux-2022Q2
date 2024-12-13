@@ -29,6 +29,7 @@ libexec/gvfsd-localtest
 libexec/gvfsd-metadata
 libexec/gvfsd-mtp
 libexec/gvfsd-network
+libexec/gvfsd-nfs
 libexec/gvfsd-recent
 libexec/gvfsd-sftp
 libexec/gvfsd-smb
@@ -58,6 +59,7 @@ share/gvfs/mounts/http.mount
 share/gvfs/mounts/localtest.mount
 share/gvfs/mounts/mtp.mount
 share/gvfs/mounts/network.mount
+share/gvfs/mounts/nfs.mount
 share/gvfs/mounts/recent.mount
 share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/smb-browse.mount

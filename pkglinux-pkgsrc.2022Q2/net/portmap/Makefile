@@ -19,6 +19,7 @@ INSTALLATION_DIRS+=	sbin share/doc/portmap
 MAKE_FLAGS+=		WRAP_DIR=${BUILDLINK_PREFIX.tcp_wrappers}/lib
 NO_CONFIGURE=		yes
 RCD_SCRIPTS=		portmap
+CFLAGS+=		-Wimplicit-int
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/portmap ${DESTDIR}${PREFIX}/sbin/
@@ -27,4 +28,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DESTDIR}${PREFIX}/share/doc/portmap/
 
 .include "../../security/tcp_wrappers/buildlink3.mk"
+.include "../../linux/libnsl/buildlink3.mk"
+.include "../../linux/libtirpc/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

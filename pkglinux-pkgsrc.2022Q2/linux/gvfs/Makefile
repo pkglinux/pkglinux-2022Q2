@@ -31,6 +31,7 @@ MESON_ARGS+=      -Dtmpfilesdir=no
 MESON_ARGS+=      -Dsystemduserunitdir=no
 MESON_ARGS+=      -Dlogind=false
 #MESON_ARGS+=      -Dkeyring=false
+MESON_ARGS+=      -Dnfs=true
 
 post-install:
 	${MKDIR} -v ${DESTDIR}${PREFIX}/lib/
@@ -69,5 +70,6 @@ BUILDLINK_API_DEPENDS.libsoup+=	libsoup>=2.26.0
 .include "../../security/libgnome-keyring/buildlink3.mk"
 .include "../../security/openssl/buildlink3.mk"
 .include "../../sysutils/attr/buildlink3.mk"
+.include "../../linux/libnfs/buildlink3.mk"
 
 .include "../../mk/bsd.pkg.mk"

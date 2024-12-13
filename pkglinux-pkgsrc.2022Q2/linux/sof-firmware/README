@@ -1,0 +1,26 @@
+Discontinued: Intel releases signed firmware files with
+the topology binary files on github (search through branches):
+
+https://github.com/thesofproject/sof-bin
+
+------
+
+This directory contains SOF firmware files compiled in docker
+and combined with the binary signed firmware files from Intel.
+
+Source and binary files are downloaded from:
+
+https://github.com/thesofproject/sof
+https://github.com/thesofproject/sof/blob/master/LICENCE
+https://github.com/thesofproject/sof/releases
+
+Latest:
+
+- added snd-cml.ri and snd-cfl.ri symlinks to snd-cnl.ri
+- fixed the sof/gcc tree (wrong symlinks instead binaries)
+
+md5sum   0911cc060766245b1e2aa8129601594e  sof-firmware-1.4.1.tar.bz2
+
+Previous:
+
+md5sum   00233289e569acd30069b4cb36d6e591  sof-firmware-1.4.1.tar.bz2

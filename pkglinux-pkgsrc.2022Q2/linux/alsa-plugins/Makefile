@@ -1,6 +1,6 @@
 # $NetBSD$
 
-DISTNAME=	alsa-plugins-1.2.1
+DISTNAME=	alsa-plugins-1.2.6
 CATEGORIES=	linux
 MASTER_SITES=	https://www.alsa-project.org/files/pub/plugins/
 EXTRACT_SUFX=	.tar.bz2

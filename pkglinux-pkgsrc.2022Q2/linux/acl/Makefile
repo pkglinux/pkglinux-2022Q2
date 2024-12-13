@@ -16,8 +16,8 @@ USE_PKGLOCALEDIR=	yes
 PKGCONFIG_OVERRIDE+=	libacl.pc.in
 
 CONFIGURE_ARGS+=	--disable-static
-CONFIGURE_ARGS+=	--libexecdir=/usr/lib
-CONFIGURE_ARGS+=	--docdir=/usr/share/doc/${DISTNAME}
+CONFIGURE_ARGS+=	--libexecdir=${PREFIX}/lib
+CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/${DISTNAME}
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 CONFIG_ARGS+=		--host=${MACHINE_GNU_PLATFORM}

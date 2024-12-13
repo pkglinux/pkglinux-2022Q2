@@ -1,0 +1,13 @@
+$NetBSD: patch-ah,v 1.5 2023/11/23 16:15:04 ryoon Exp $
+
+--- src/pcm/pcm.c.orig	2023-05-04 07:16:16.000000000 +0000
++++ src/pcm/pcm.c
+@@ -662,6 +662,8 @@ playback devices.
+ #include <string.h>
+ #if HAVE_MALLOC_H
+ #include <malloc.h>
++#else
++#include <stdlib.h>
+ #endif
+ #include <stdarg.h>
+ #include <signal.h>
