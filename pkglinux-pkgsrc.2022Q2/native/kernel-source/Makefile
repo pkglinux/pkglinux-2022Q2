@@ -33,6 +33,11 @@ DSTPRE=		${DESTDIR}${PREFIX}/native
 do-install:
 	${MKDIR} -pv ${DSTPRE}/${PKGNAME}
 	${CP} -av ${WRKSRC}/* ${DSTPRE}/${PKGNAME}/
-	cd ${DSTPRE}/${PKGNAME}/ && ${CAT} ${FILESDIR}/.configs > .config
+	cd ${DSTPRE}/${PKGNAME}/ && ${CAT} ${FILESDIR}/.config.nonfsdv4 > .config
+
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
 
 .include "../../mk/bsd.pkg.mk"

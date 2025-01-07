@@ -1,6 +1,15 @@
 @comment $NetBSD$
 native/etc/environment
+native/etc/pam.d/chfn
+native/etc/pam.d/chsh
+native/etc/pam.d/crond
 native/etc/pam.d/other
+native/etc/pam.d/screen
+native/etc/pam.d/sshd
+native/etc/pam.d/su
+native/etc/pam.d/sudo
+native/etc/pam.d/sudo-i
+native/etc/pam.d/su-l
 native/etc/pam.d/system-account
 native/etc/pam.d/system-auth
 native/etc/pam.d/system-password

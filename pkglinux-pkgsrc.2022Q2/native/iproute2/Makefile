@@ -14,8 +14,8 @@ ONLY_FOR_PLATFORM=	Linux-*-*
 
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
-TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
-TOOLS_PLATFORM.sed=		/pkg/bin/gsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gsed
 
 USE_LANGUAGES=		c c++
 
@@ -59,9 +59,9 @@ DSTPRE=			${DESTDIR}${PREDIR}
 
 .include "../../mk/bsd.prefs.mk"
 post-extract:
-	sed -i /ARPD/d ${WRKSRC}/Makefile
+	gsed -i /ARPD/d ${WRKSRC}/Makefile
 	rm -fv ${WRKSRC}/man/man8/arpd.8
-	sed -i 's/.m_ipt.o//' ${WRKSRC}/tc/Makefile
+	gsed -i 's/.m_ipt.o//' ${WRKSRC}/tc/Makefile
 	${MKDIR} -v ${BLDPRE}
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 	rm -rf ${WRKSRC}/testsuite
@@ -88,5 +88,9 @@ do-build:
 do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
+
+post-install:
+	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/
+	${MV} -v ${DESTDIR}${PREFIX}/native/${PREFIX}/* ${DESTDIR}${PREFIX}/native/usr/
 
 .include "../../mk/bsd.pkg.mk"

@@ -33,6 +33,7 @@ native/lib/lsb/init-functions.d/00-verbose
 native/lib/services
 native/lib/udev/hwclock-set
 native/lib/udev/rules.d/85-hwclock.rules
+native/sbin/chkpass
 native/sbin/lndir
 native/sbin/lndir.sh
 native/sbin/pkg-chroot
@@ -44,6 +45,7 @@ native/sbin/pkglinux-makeiso
 native/sbin/pkglinux-makeusb
 native/sbin/pkglinux-upgrade
 native/sbin/powersave
+native/sbin/run-parts
 native/sbin/service
 native/sbin/wpa.sh
 native/usr/bin/which
@@ -56,6 +58,7 @@ native/usr/share/man/man1/pkglinux-makeall.1
 native/usr/share/man/man1/pkglinux-makeiso.1
 native/usr/share/man/man1/pkglinux-makeusb.1
 native/usr/share/man/man1/pkglinux-upgrade.1
+native/usr/share/man/man1/run-parts.1
 @pkgdir native/etc/rc.d/init.d
 @pkgdir native/etc/rc.d/rcS.d
 @pkgdir native/etc/rc.d/rc6.d

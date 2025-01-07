@@ -22,7 +22,8 @@ POST-INSTALL)
 		${MY_CHKCONFIG} "${ZFS_SYSV_RC3}" on
 		${MY_CHKCONFIG} "${ZFS_SYSV_RC4}" on
 		${MY_CHKCONFIG} "${ZFS_SYSV_RC5}" on
-	elif [ -x ${MY_RC_UPDATE} ]; then
+	fi
+	if [ -x ${MY_RC_UPDATE} ]; then
 		${MY_RC_UPDATE} add "${ZFS_SYSV_RC1}" sysinit
 		${MY_RC_UPDATE} add "${ZFS_SYSV_RC2}" sysinit
 		${MY_RC_UPDATE} add "${ZFS_SYSV_RC3}" default

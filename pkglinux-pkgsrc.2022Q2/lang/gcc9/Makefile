@@ -204,7 +204,8 @@ GENERATE_PLIST+= \
 
 .if ${MACHINE_PLATFORM:MNetBSD-*-x86_64} || ${MACHINE_PLATFORM:MLinux-*-x86_64}
 CONFIGURE_ARGS+=	--with-arch=k8 --with-tune=k8
-CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
+#CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
+CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32
 .endif
 CONFIGURE_ARGS+=	--disable-libmpx --with-system-zlib
 CONFIGURE_ARGS+=        --with-gnu-as --with-as=${PREFIX}/bin/gas

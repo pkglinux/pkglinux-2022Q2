@@ -95,9 +95,7 @@ pkglinux-install-dir()
     (cd $1/etc/conf.d; echo "agetty_options=\"--autologin alex --delay 1 --noclear tty1 38400 linux\"" >> agetty.tty1)
     (cd $1/pkg/native/etc; ln -snf ../usr/share/zoneinfo/Asia/Shanghai localtime)
     (cd $1/lib/; ln $PKGLINUX_INSTALL_VERBOSE -snf ../etc/modprobe.d)
-    (cd $1/pkg/etc/polkit-1/rules.d/; cp $PKGLINUX_INSTALL_VERBOSE /root/lfs/49-nopasswd_global.rules .)
-    (cd $1/pkg/etc/polkit-1/rules.d/; cp $PKGLINUX_INSTALL_VERBOSE /root/lfs/51-android.rules .)
-    (cd $1/pkg/etc/polkit-1/rules.d/; cp $PKGLINUX_INSTALL_VERBOSE /root/lfs/55-inhibit-shutdown.rules .)
+    (cd $1/pkg/etc/polkit-1/rules.d/; cp $PKGLINUX_INSTALL_VERBOSE /pkg/etc/polkit-1/rules.d/* .)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/dhcpcd .)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/NetworkManager .)
     (cd $1/pkg/etc/rc.d; cp $PKGLINUX_INSTALL_VERBOSE ../../share/examples/rc.d/dbus .)
@@ -162,7 +160,7 @@ pkglinux-install-dir()
 }
 
 PKGLINUX_INSTALL_VERBOSE=""
-PKGLINUX_INSTALL_PREFIX="2022Q2"
+PKGLINUX_INSTALL_PREFIX="yyyyQq"
 PKGLINUX_INSTALL_ARCH="$(uname -m)"
 PKGLINUX_INSTALL_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_INSTALL_PREFIX/$PKGLINUX_INSTALL_ARCH/All"
 PKGLINUX_INSTALL_REPO_ROOT="$(dirname $(dirname $(dirname $PKGLINUX_INSTALL_REPO)))/iso"

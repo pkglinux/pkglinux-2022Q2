@@ -48,6 +48,7 @@ BUILD_DEPENDS+=		unifont-[0-9]*:../../fonts/unifont
 
 post-install:
 	cd ${DESTDIR}${PREFIX}/ && ${RM} -rfv share
+	cd ${DESTDIR}${PREFIX}/gnu/share && ${LN} -snvf ../../share/locale .
 
 .include "../../devel/gettext-lib/buildlink3.mk"
 .include "../../archivers/xz/buildlink3.mk"

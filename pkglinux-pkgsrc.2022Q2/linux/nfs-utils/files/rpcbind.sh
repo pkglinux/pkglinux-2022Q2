@@ -34,14 +34,14 @@ case ${1:-start} in
 		echo "Starting rpcbind..."
 		modprobe nfsd
 		modprobe nfsv3
-		start_daemon $command
+		@PREFIX@/sbin/start_daemon $command
 		;;
 	status)
 		statusproc $command
 		;;
 	stop)
 		echo "Stopping rpcbind..."
-		killproc $command
+		@PREFIX@/sbin/killproc $command
 		;;
 	restart)
 		$0 stop

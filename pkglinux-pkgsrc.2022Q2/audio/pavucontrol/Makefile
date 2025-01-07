@@ -19,8 +19,7 @@ USE_TOOLS+=	pkg-config gmake intltool perl msgfmt
 CONFIGURE_ARGS+=	--disable-lynx
 
 .include "../../audio/libcanberra/buildlink3.mk"
-#.include "../../audio/pulseaudio/buildlink3.mk"
-.include "../../linux/pipewire/buildlink3.mk"
+.include "../../audio/pulseaudio/buildlink3.mk"
 .include "../../converters/libiconv/buildlink3.mk"
 .include "../../devel/libsigc++/buildlink3.mk"
 .include "../../sysutils/desktop-file-utils/desktopdb.mk"

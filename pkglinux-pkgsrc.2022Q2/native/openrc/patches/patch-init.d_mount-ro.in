@@ -7,7 +7,7 @@ $NetBSD$
  
  	local m="/dev|/dev/.*|/proc|/proc.*|/sys|/sys/.*|/run|${rc_svcdir}" x= fs=
 -	m="$m|/bin|/sbin|/lib(32|64)?|/libexec"
-+	m="$m|/|/2022Q2/native/(etc|bin|lib(32|64|x32)?|sbin|usr)|/etc|/lib|/usr|/bin|/sbin|/lib(32|64|x32)?|/libexec"
++	m="$m|/|/yyyyQq/native/(etc|bin|lib(32|64|x32)?|sbin|usr)|/etc|/lib|/usr|/bin|/sbin|/lib(32|64|x32)?|/libexec"
  	if [ -e "$rc_svcdir"/usr_premounted ]; then
  		m="$m|/usr"
  	fi

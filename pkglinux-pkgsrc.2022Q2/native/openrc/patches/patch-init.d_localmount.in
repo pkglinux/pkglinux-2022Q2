@@ -7,7 +7,7 @@ $NetBSD$
  
  	local x= no_umounts_r="/|/dev|/dev/.*|${rc_svcdir}"
 -	no_umounts_r="${no_umounts_r}|/bin|/sbin|/lib(32|64)?|/libexec"
-+	no_umounts_r="${no_umounts_r}|/|/2022Q2/native/(etc|bin|lib(32|64|x32)?|sbin|usr)|/etc|/lib|/usr|/bin|/sbin|/lib(32|64|x32)?|/libexec"
++	no_umounts_r="${no_umounts_r}|/|/yyyyQq/native/(etc|bin|lib(32|64|x32)?|sbin|usr)|/etc|/lib|/usr|/bin|/sbin|/lib(32|64|x32)?|/libexec"
  	# RC_NO_UMOUNTS is an env var that can be set by plugins
  	local IFS="$IFS:"
  	for x in $no_umounts $RC_NO_UMOUNTS; do

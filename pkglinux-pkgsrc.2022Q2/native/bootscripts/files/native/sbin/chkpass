@@ -1,0 +1,107 @@
+#!/bin/bash -ue
+
+<< MIT-LICENSE
+Copyright (c) 2023 Jianjun Liu<jianjunliu@126.com> https://www.pkglinux.top
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+MIT-LICENSE
+
+VERBOSE=""
+USER="root"
+PASS=""
+
+usage()
+{
+	# Display Help
+	echo "Authenticate username against the shadow file.";
+	echo
+	echo "Syntax: $0 [ -h|v|V|u|p ] [ --help|verbose|version|user|username|pass|password ]"
+	echo "options:"
+	echo "h     Print this help."
+	echo "v     Verbose mode."
+	echo "V     Print software version and exit."
+	echo "u     Set user name."
+	echo "p     Set password."
+	echo
+}
+
+echo Starting $0 $@
+
+for arg in "$@"; do
+	shift
+	case "$arg" in
+		"--help")	set -- "$@" "-h" ;;
+		"--verbose")	set -- "$@" "-v" ;;
+		"--version")	set -- "$@" "-V" ;;
+		"--user")	set -- "$@" "-u" ;;
+		"--username")	set -- "$@" "-u" ;;
+		"--pass")	set -- "$@" "-p" ;;
+		"--password")	set -- "$@" "-p" ;;
+		*)		set -- "$@" "$arg"
+	esac
+done
+
+while getopts ':hvVu:p:' OPTION; do
+	case "$OPTION" in
+		h)	# display usage
+			usage
+			exit;;
+		v)	# verbose mode
+			VERBOSE="-v"
+			;;
+		V)	# display version
+			echo "2022Q2"
+			exit;;
+		u)	# user name
+			USER="$OPTARG" ;;
+		p)	# password
+			PASS="$OPTARG" ;;
+		\?)	# Invalid option
+	                echo "Error: Invalid option"
+			exit;;
+	esac
+done
+
+shift "$(($OPTIND -1))"
+
+[ "$#" -gt 0 ] && usage && exit 1;
+
+[ ${UID} -ne 0 ] && echo "$0 will not be performed when not running as root" && exit 1;
+
+
+LINE_STRING=$(getent passwd $USER);
+if [ $? -ne 0 ]; then
+	echo "Couldn't find user $USER in shadow file";
+	exit 1;
+fi;
+
+IFS=':' read -r -a LINE_ARRAY <<< "$LINE_STRING";
+HASH_STRING="${LINE_ARRAY[1]}";
+IFS='$' read -r -a HASH_ARRAY <<< "${HASH_STRING}";
+
+ALGO="${HASH_ARRAY[1]}";
+SALT="${HASH_ARRAY[2]}";
+
+CHCK_STRING="$(echo $PASS | openssl passwd -$ALGO -salt $SALT -stdin)"
+if [ "$CHCK_STRING" != "$HASH_STRING" ]; then
+	echo -e "\nHashes don't match.\nuser \"$USER\" wasn't able to authenticate against shadow file\n";
+	exit 1;
+fi
+echo "Success. User \"$USER\" authenticated against shadow.";
+exit 0;

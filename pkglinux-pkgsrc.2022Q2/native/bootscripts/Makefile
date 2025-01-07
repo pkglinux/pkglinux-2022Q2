@@ -10,8 +10,10 @@ ONLY_FOR_PLATFORM=	Linux-*-*
 
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
-TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
-TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
+TOOLS_PLATFORM.awk=		/pkg/bin/gawk
+TOOLS_PLATFORM.sed=		/pkg/bin/gsed
+
+USE_TOOLS+=		gsed:run
 
 USE_LANGUAGES=	# none
 NO_CHECKSUM=		yes
@@ -24,6 +26,8 @@ RCD_SCRIPTS=		nscd
 
 do-install:
 	${CP} -av ${FILESDIR}/native ${DESTDIR}${PREFIX}/
+	cd ${DESTDIR}${PREFIX}/native/sbin/ && \
+		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
 	${CP} -av ${FILESDIR}/lndir ${DESTDIR}${PREFIX}/native/sbin/
 	${CP} -av ${FILESDIR}/lib ${DESTDIR}${PREFIX}/
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/etc ${DESTDIR}

@@ -65,9 +65,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 WRKBLD=		${WRKDIR}/build
 #WRKBLD=	${PREFIX}/native/kernel-source-${LINUX_VERSION}
 
+#	cd ${WRKBLD} && ${CAT} ${FILESDIR}/.configs > .config
 post-extract:
 	cd ${WRKSRC} && patch -Np1 < ${FILESDIR}/bottomspeakers-for-14iap7-kernel-518.patch
 	mkdir -pv ${WRKBLD}
+	cd ${WRKSRC} && ${GMAKE} mrproper && \
 	cd ${WRKBLD} && ${CAT} ${FILESDIR}/.config.nonfsdv4 > .config
 	cd ${WRKBLD} && ${GMAKE} -j${MAKE_JOBS} -f ${WRKSRC}/Makefile menuconfig
 
@@ -76,7 +78,7 @@ post-extract:
 #	${FIND} usr/include -name ".*" -exec ${RM} -rf {} \; && \
 #	${RM} -f usr/include/Makefile
 do-build:
-	cd ${WRKSRC} && ${GMAKE} mrproper && \
+	cd ${WRKBLD} && ${GMAKE} modules_prepare && \
 	cd ${WRKBLD} && ${GMAKE} -j${MAKE_JOBS} bzImage && \
 	${GMAKE} -j${MAKE_JOBS} modules
 
@@ -84,7 +86,13 @@ do-install:
 	${MKDIR} -pv ${DSTPRE}/
 	${CP} -av ${WRKBLD} ${DSTPRE}/${PKGNAME}
 	cd ${DSTPRE}/${PKGNAME} && ${LN} -snvf ${PREFIX}/native/kernel-source-${LINUX_VERSION} source
-	${CP} -av ${FILESDIR}/Makefile ${DSTPRE}/${PKGNAME}
+	echo "# Automatically generated for ${PKGNAME}: don't edit" >> ${DSTPRE}/${PKGNAME}/Makefile
+	echo "include ${PREFIX}/native/kernel-source-${LINUX_VERSION}/Makefile" >> ${DSTPRE}/${PKGNAME}/Makefile
 	cd ${DSTPRE}/${PKGNAME} && find . -name ".tmp*" | xargs -I& rm -v &
+
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
 
 .include "../../mk/bsd.pkg.mk"

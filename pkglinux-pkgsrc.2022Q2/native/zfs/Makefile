@@ -1,8 +1,17 @@
 # $NetBSD$
 
 GITHUB_PROJECT=	zfs
-GITHUB_TAG=	refs/tags/zfs-2.2.2
-DISTNAME=	zfs-2.2.2
+#GITHUB_TAG=	refs/tags/zfs-2.2.2
+#DISTNAME=	zfs-2.2.2
+#GITHUB_TAG=	refs/tags/zfs-2.2.7
+#DISTNAME=	zfs-2.2.7
+#GITHUB_TAG=	refs/tags/zfs-2.3.0-rc4
+#DISTNAME=	zfs-2.3.0-rc4
+#GITHUB_TAG=	refs/tags/zfs-2.1.16
+#DISTNAME=	zfs-2.1.16
+GITHUB_TAG=	refs/tags/zfs-2.2.7
+DISTNAME=	zfs-2.2.7
+PKGNAME=	zfs-2.2.7
 CATEGORIES=	linux
 MASTER_SITES=	${MASTER_SITE_GITHUB:=openzfs/}
 
@@ -11,10 +20,10 @@ HOMEPAGE=	https://github.com/openzfs/zfs/
 COMMENT=	Advanced file system and volume manager
 LICENSE=	CDDL
 
-#TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
-#TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
-TOOLS_PLATFORM.awk?=		/pkg/bin/gawk
-TOOLS_PLATFORM.sed?=		/pkg/bin/gsed
+#TOOLS_PLATFORM.awk?=		${_PREFIX}/bin/nawk
+#TOOLS_PLATFORM.sed?=		${_PREFIX}/bin/nbsed
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+TOOLS_PLATFORM.sed?=		${PREFIX}/bin/gsed
 
 MY_CHKCONFIG=	unknown
 MY_RC_UPDATE=	unknown
@@ -48,8 +57,17 @@ BUILD_DEFS+=	ZFS_SYSV_RC3
 BUILD_DEFS+=	ZFS_SYSV_RC4
 BUILD_DEFS+=	ZFS_SYSV_RC5
 
-WRKSRC=		${WRKDIR}/zfs-zfs-2.2.2
-USE_TOOLS+=	gsed pkg-config gettext gmake gawk git m4 autoreconf autoconf automake intltools msgfmt xgettext perl
+#WRKSRC=	${WRKDIR}/zfs-zfs-2.2.2
+WRKSRC=		${WRKDIR}/zfs-2.2.7
+#WRKSRC=	${WRKDIR}/zfs-2.3.0-rc4
+#WRKSRC=	${WRKDIR}/zfs-2.1.16
+#WRKSRC=	${WRKDIR}/zfs-zfs-2.2.7
+#GNU_CONFIGURE=	no
+#NO_CONFIGURE=	yes
+USE_NATIVE_GCC=	yes
+#USE_LANGUAGES=	c c+
+#USE_LANGUAGES+=	c99
+USE_TOOLS+=	gsed pkg-config ggettext gmake gm4 autoreconf autoconf automake intltools msgfmt xgettext perl
 USE_LIBTOOL=	yes
 USE_PKGLOCALEDIR=	yes
 
@@ -58,27 +76,44 @@ PKGCONFIG_OVERRIDE+=	lib/libzfs_core/libzfs_core.pc.in
 PKGCONFIG_OVERRIDE+=	lib/libzfsbootenv/libzfsbootenv.pc.in
 
 PREDIR=			${PREFIX}/native
-BLDDIR=			${WRKDIR}/build
+#BLDDIR=		${WRKDIR}/build
+BLDDIR=			${WRKSRC}
 BLDPRE=			${BLDDIR}${PREDIR}
 DSTPRE=			${DESTDIR}${PREDIR}
 
 post-extract:
 	${MKDIR} -v ${BLDPRE}
 
-pre-configure:
+CONFIGURE_ARGS+=	--prefix=/usr
+CONFIGURE_ARGS+=	--sysconfdir=/etc
+CONFIGURE_ARGS+=	--disable-systemd
+#CONFIGURE_ARGS+=	--disable-pam
+CONFIGURE_ARGS+=	--with-config=user
+#CONFIGURE_ARGS+=	--with-linux=${PREFIX}/native/lib/modules/"`uname -r`"/source
+#CONFIGURE_ARGS+=	--with-linux-obj=${PREFIX}/native/lib/modules/"`uname -r`"/build
+#CONFIGURE_ARGS+=	--enable-debug
+#CONFIGURE_ARGS+=	--enable-linux-builtin
+
+do-configure0:
 	cd ${WRKSRC} && ./autogen.sh
+	cd ${BLDDIR} && ${SETENV} ${CONFIGURE_ENV} ${WRKSRC}/configure ${CONFIGURE_ARGS}
 
-do-configure:
-	cd ${BLDDIR} && ${WRKSRC}/configure --prefix=/usr --sysconfdir=/etc
+do-build0:
+	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS}
+	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install-strip
 
+#	ssh localhost "cd ${WRKSRC}; ./autogen.sh"
 do-build:
-	cd ${BLDDIR} && ${GMAKE} -j${MAKE_JOBS}
-	cd ${BLDDIR} && (${GMAKE} DESTDIR=${BLDPRE} install-strip || ${GMAKE} DESTDIR=${BLDPRE} install)
+	cd ${WRKSRC} && ./autogen.sh
+	ssh localhost "cd ${BLDDIR} && ./configure --prefix=/usr --sysconfdir=/etc --disable-systemd --disable-pam"
+	ssh localhost "cd ${BLDDIR}; make -j${MAKE_JOBS}"
+	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install-strip
+
+#	ssh localhost "cd ${BLDDIR}; make DESTDIR=${BLDPRE} install-strip"
 
 do-install:
 	${MKDIR} -v ${DESTDIR}${PREFIX}/lib/
 	${CP} -av ${BLDPRE}/lib/udev ${DESTDIR}${PREFIX}/lib/
-#	${CP} -av ${BLDPRE}${PREFIX}/* ${DESTDIR}${PREFIX}/
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/etc   ${DSTPRE}/
 	${CP} -av ${BLDPRE}/lib   ${DSTPRE}/
@@ -94,13 +129,24 @@ post-install:
 		cp -v ../../init.d/zfs-load-key . && \
 		cp -v ../../init.d/zfs-share    .
 	cd ${DSTPRE}/etc/init.d/ && \
-		gsed -e "s|#\!/bin/sh|#\!/sbin/openrc-run|g" -i zfs-*
+		gsed -e "s|#\!/bin/sh|#\!/sbin/openrc-run|g" -i zfs-* && \
+		gsed -e "s|if true|if [ ! -e /sbin/openrc-run ]|g" -i zfs-*
+
+#	${MKDIR} -v ${DSTPRE}/lib/modules/"`uname -r`"/extra/
+#	cd ${DSTPRE}/lib/modules/"`uname -r`"/extra/ && ${CP} -av ${FILESDIR}/*.ko.xz .
+
+PLIST_SRC=
+GENERATE_PLIST+= \
+ 	cd ${DESTDIR}${PREFIX} && \
+	${FIND} * \( -type f -o -type l \) -print | ${SORT} ;
 
 .include "../../lang/python/tool.mk"
+.include "../../lang/python/application.mk"
 .include "../../devel/zlib/buildlink3.mk"
-#.include "../../security/openpam/buildlink3.mk"
-.include "../../native/linux-pam/buildlink3.mk"
+.include "../../archivers/xz/buildlink3.mk"
 .include "../../sysutils/attr/buildlink3.mk"
+#.include "../../security/openpam/buildlink3.mk"
+#.include "../../native/linux-pam/buildlink3.mk"
 #.include "../../devel/libelf/buildlink3.mk"
 .include "../../linux/elfutils/buildlink3.mk"
 .include "../../linux/libtirpc/buildlink3.mk"

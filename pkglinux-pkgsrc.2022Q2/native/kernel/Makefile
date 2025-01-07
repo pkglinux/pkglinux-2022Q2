@@ -81,7 +81,7 @@ MAK_ENV+=	ARCH=${CROSS_KARCH} CROSS_COMPILE=${MACHINE_GNU_PLATFORM}-
 MAK_ENV+=	INSTALL_MOD_PATH=${BLDPRE}
 #CFLAGS+=	-Werror
 
-# INSTALL_MOD_PATH=./2022Q2-mips64abi64/native ARCH=mips CROSS_COMPILE=/pkg/native/cross-mips64abi64/bin/mips64-unknown-linux-gnuabi64- make -j12 modules
+# INSTALL_MOD_PATH=./-mips64abi64/native ARCH=mips CROSS_COMPILE=/pkg/native/cross-mips64abi64/bin/mips64-unknown-linux-gnuabi64- make -j12 modules
 # ARCH=mips CROSS_COMPILE=/pkg/native/cross-mips64abi64/bin/mips64-unknown-linux-gnuabi64- make -j12 menuconfig
 
 #	cd ${WRKSRC} && ${SETENV} ${MAK_ENV} ${GMAKE} -j${MAKE_JOBS} allmodconfig
@@ -112,11 +112,6 @@ post-build:
 do-install:
 	${MKDIR} -v ${DSTPRE}
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
-
-PLIST_SRC=
-GENERATE_PLIST+= \
-	cd ${DESTDIR}${PREFIX} && \
-	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
 
 .else
 
@@ -157,5 +152,10 @@ do-install:
 	${CP} -av ${BLDPRE}/* ${DSTPRE}
 
 .endif
+
+PLIST_SRC=
+GENERATE_PLIST+= \
+	cd ${DESTDIR}${PREFIX} && \
+	${FIND} native \( -type f -o -type l \) -print | ${SORT} ;
 
 .include "../../mk/bsd.pkg.mk"

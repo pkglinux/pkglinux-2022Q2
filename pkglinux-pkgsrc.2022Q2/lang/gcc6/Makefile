@@ -279,7 +279,8 @@ CONFIGURE_ARGS+=	--build=x86_64-unknown-linux
 CONFIGURE_ARGS+=	--without-dwarf2
 CONFIGURE_ARGS+=	--enable-libssp
 CONFIGURE_ARGS+=	--with-arch=k8 --with-tune=k8 --with-fpmath=sse
-CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
+#CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
+CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32
 #CONFIGURE_ARGS+=	--disable-cxx-exceptions
 .endif
 CONFIGURE_ARGS+=	--enable-libmpx

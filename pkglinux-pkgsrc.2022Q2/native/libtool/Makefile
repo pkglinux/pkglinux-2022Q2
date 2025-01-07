@@ -58,6 +58,9 @@ do-build:
 	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} -j${MAKE_JOBS}
 	cd ${BLDDIR} && (${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install-strip || ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install)
 	${RM} ${BLDPRE}/usr/share/info/dir
+	/bin/sed -i "s:${TOOLS_DIR}::g" ${BLDPRE}/usr/bin/libtool
+	/bin/sed -i "s:${TOOLS_DIR}::g" ${BLDPRE}/usr/bin/libtoolize
+
 
 do-install:
 	${MKDIR} -v ${DSTPRE}

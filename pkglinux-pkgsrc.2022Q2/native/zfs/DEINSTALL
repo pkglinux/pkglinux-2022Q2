@@ -22,7 +22,8 @@ DEINSTALL)
 		${MY_CHKCONFIG} --del "${ZFS_SYSV_RC3}"
 		${MY_CHKCONFIG} --del "${ZFS_SYSV_RC4}"
 		${MY_CHKCONFIG} --del "${ZFS_SYSV_RC5}"
-	elif [ -x ${MY_RC_UPDATE} ]; then
+	fi
+	if [ -x ${MY_RC_UPDATE} ]; then
 		${MY_RC_UPDATE} del "${ZFS_SYSV_RC1}" sysinit
 		${MY_RC_UPDATE} del "${ZFS_SYSV_RC2}" sysinit
 		${MY_RC_UPDATE} del "${ZFS_SYSV_RC3}" default

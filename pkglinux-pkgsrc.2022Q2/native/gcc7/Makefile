@@ -195,7 +195,8 @@ CONFIG_ARGS+=		--with-float=soft
 CONFIG_ARGS+=		--prefix=${PREDIR}/usr
 CONFIG_ARGS+=		--build=x86_64-unknown-linux
 CONFIG_ARGS+=		--enable-multilib
-CONFIG_ARGS+=		--with-multilib-list=m64,m32,mx32
+#CONFIG_ARGS+=		--with-multilib-list=m64,m32,mx32
+CONFIG_ARGS+=		--with-multilib-list=m64,m32
 CONFIG_ARGS+=		--with-arch=k8
 CONFIG_ARGS+=		--with-tune=k8
 CONFIG_ARGS+=		--enable-threads=posix

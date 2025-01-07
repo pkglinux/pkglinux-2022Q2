@@ -42,6 +42,8 @@ post-install:
 		rm -v agetty.tty4 && cp -v agetty agetty.tty4 && \
 		rm -v agetty.tty5 && cp -v agetty agetty.tty5 && \
 		rm -v agetty.tty6 && cp -v agetty agetty.tty6
+	cd ${DESTDIR}${PREFIX}/native/etc/init.d/ && \
+		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
 	cp -v ${FILESDIR}/conf.d/agetty.tty1 ${DESTDIR}${PREFIX}/native/etc/conf.d/
 	cp -v ${FILESDIR}/conf.d/consolefont ${DESTDIR}${PREFIX}/native/etc/conf.d/
 	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/boot/ &&  ln -snvf ../../init.d/consolefont .
@@ -59,6 +61,8 @@ post-install:
 	cp -v ${FILESDIR}/init.d/nscd ${DESTDIR}${PREFIX}/native/etc/init.d/
 	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/default/ &&  ln -snvf ../../init.d/nscd .
 	gsed -e '/^#rc_parallel="NO"/{n;s/^/rc_parallel="YES"\n/;}' -i ${DESTDIR}${PREFIX}/native/etc/rc.conf
+	cp -av ${FILESDIR}/local.d/rc.local.start ${DESTDIR}${PREFIX}/native/etc/local.d/
+	cp -av ${FILESDIR}/local.d/rc.local.stop ${DESTDIR}${PREFIX}/native/etc/local.d/
 
 .include "../../mk/bsd.prefs.mk"
 .if !empty(USE_CROSS_COMPILE:M[yY][eE][sS])

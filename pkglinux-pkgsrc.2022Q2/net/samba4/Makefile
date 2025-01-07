@@ -12,6 +12,9 @@ LICENSE=	gnu-gpl-v3
 
 CONFLICTS+=	ja-samba-[0-9]* winbind-[0-9]*
 
+TOOLS_PLATFORM.awk?=		${PREFIX}/bin/gawk
+TOOLS_PLATFORM.sed?=		${PREFIX}/bin/gsed
+
 PYTHON_VERSIONS_INCOMPATIBLE=	27
 
 GCC_REQD+=	4.4

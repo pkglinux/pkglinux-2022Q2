@@ -26,6 +26,7 @@ DEPENDS+=	nawk-[0-9]*:../../lang/nawk
 DEPENDS+=	nbsed-[0-9]*:../../textproc/nbsed
 DEPENDS+=	pkgin-[0-9]*:../../pkgtools/pkgin
 
+DEPENDS+=	native-acl-[0-9]*:../../native/acl
 DEPENDS+=	man-pages-[0-9]*:../../native/man-pages
 DEPENDS+=	zlib-[0-9]*:../../devel/zlib
 DEPENDS+=	bzip2-[0-9]*:../../archivers/bzip2
@@ -35,8 +36,8 @@ DEPENDS+=	readline-[0-9]*:../../devel/readline
 DEPENDS+=	bc-[0-9]*:../../math/bc
 DEPENDS+=	binutils-[0-9]*:../../devel/binutils
 DEPENDS+=	attr-[0-9]*:../../sysutils/attr
-DEPENDS+=	acl-[0-9]*:../../linux/acl
 DEPENDS+=	native-shadow-[0-9]*:../../native/shadow
+DEPENDS+=	Linux-PAM-[0-9]*:../../native/linux-pam
 DEPENDS+=	ncurses-[0-9]*:../../devel/ncurses
 DEPENDS+=	ncursesw-[0-9]*:../../devel/ncursesw
 DEPENDS+=	libcap-[0-9]*:../../sysutils/libcap

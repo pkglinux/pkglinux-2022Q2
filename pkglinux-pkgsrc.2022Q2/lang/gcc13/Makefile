@@ -81,7 +81,8 @@ GENERATE_PLIST+= \
 	${FIND} ${GCC_SUBPREFIX} \( -type f -o -type l \) -print | ${SORT};
 
 CONFIGURE_ARGS+=	--with-arch=k8 --with-tune=k8
-CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
+#CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32,mx32
+CONFIGURE_ARGS+=	--enable-multilib --with-multilib-list=m64,m32
 CONFIGURE_ARGS+=	--disable-libmpx --with-system-zlib
 CONFIGURE_ARGS+=        --with-gnu-as --with-as=${PREFIX}/bin/gas
 CONFIGURE_ARGS+=        --with-gnu-ld --with-ld=${PREFIX}/bin/gld

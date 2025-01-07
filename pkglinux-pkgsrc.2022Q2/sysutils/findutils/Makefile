@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--with-selinux
 .include "../../selinux/libselinux/buildlink3.mk"
 .include "../../selinux/libsepol/buildlink3.mk"
 .include "../../selinux/libsemanage/buildlink3.mk"
-.include "../../linux/audit/buildlink3.mk"
+.include "../../selinux/audit/buildlink3.mk"
 .endif
 
 .include "../../devel/gettext-lib/buildlink3.mk"

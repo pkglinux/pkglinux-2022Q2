@@ -26,7 +26,7 @@ PKGLINUX_MAKEUSB_VERBOSE=""
 PKGLINUX_MAKEUSB_TAG="std"
 PKGLINUX_MAKEUSB_KVER="$(uname -r)"
 PKGLINUX_MAKEUSB_BLANK="0"
-PKGLINUX_MAKEUSB_PREFIX="2022Q2"
+PKGLINUX_MAKEUSB_PREFIX="yyyyQq"
 PKGLINUX_MAKEUSB_ARCH="$(uname -m)"
 PKGLINUX_MAKEUSB_REPO="https://repos.pkglinux.top/dist/packages.$PKGLINUX_MAKEUSB_PREFIX/$PKGLINUX_MAKEUSB_ARCH/All"
 PKGLINUX_MAKEUSB_REPO_ROOT="$(dirname $(dirname $(dirname $PKGLINUX_MAKEUSB_REPO)))/iso"
@@ -212,6 +212,11 @@ if [ "$#" -gt 0 ]; then
     exit 1
   fi
 
+  echo "Trying to resize the file system of the last partition of $1 ..."
+  echo "Umount the last partition of $1 in case it's mounted ..."
+  findmnt -S "$1""3"&& umount -f "$1""3"
+  echo "Syncing disks ..."
+  sync
   echo "Syncing disks ..."
   sync
   echo "Trying to enlarge the last partition of $1 ..."
@@ -286,7 +291,7 @@ cat > $PKGLINUX_MAKEUSB_TMPDIR2/boot/grub/device.map <<EOF
   (hd0) $PKGLINUX_MAKEUSB_LOOP0
 EOF
 set +e
-grub-install-efi $PKGLINUX_MAKEUSB_VERBOSE --force --boot-directory=$PKGLINUX_MAKEUSB_TMPDIR1/boot --efi-directory=$PKGLINUX_MAKEUSB_TMPDIR1 --target=x86_64-efi $PKGLINUX_MAKEUSB_LOOP0
+grub-install-efi $PKGLINUX_MAKEUSB_VERBOSE --force --boot-directory=$PKGLINUX_MAKEUSB_TMPDIR1/boot --efi-directory=$PKGLINUX_MAKEUSB_TMPDIR1 --target=x86_64-efi --no-nvram $PKGLINUX_MAKEUSB_LOOP0
 set -e
 mkdir $PKGLINUX_MAKEUSB_VERBOSE -p $PKGLINUX_MAKEUSB_TMPDIR1/EFI/BOOT
 cp $PKGLINUX_MAKEUSB_VERBOSE $PKGLINUX_MAKEUSB_TMPDIR1/EFI/grub/grubx64.efi $PKGLINUX_MAKEUSB_TMPDIR1/EFI/BOOT/BOOTx64.EFI

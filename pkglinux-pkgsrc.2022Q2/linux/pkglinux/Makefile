@@ -4,14 +4,15 @@ PKGNAME=	pkglinux-2022Q2
 CATEGORIES=	linux
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
-HOMEPAGE=	https://www.pkgtop.org/
-COMMENT=	Meta-package for the PKGtOP Linux desktop environment
+HOMEPAGE=	https://www.pkglinux.org/
+COMMENT=	Meta-package for the pkgLinux desktop environment
 
 META_PACKAGE=	yes
 
 .include "../../mk/bsd.prefs.mk"
 
 DEPENDS+=	bootscripts-[0-9]*:../../native/bootscripts
+DEPENDS+=	debianutils-[0-9]*:../../native/debianutils
 DEPENDS+=	startups-[0-9]*:../../native/startups
 DEPENDS+=	mkshadow-[0-9]*:../../native/mkshadow
 DEPENDS+=	native-glibc-[0-9]*:../../native/glibc
@@ -19,6 +20,9 @@ DEPENDS+=	native-gcc6-[0-9]*:../../native/gcc6
 DEPENDS+=	linux-firmware-[0-9]*:../../native/linux-firmware
 DEPENDS+=	native-linux-API-headers-[0-9]*:../../native/kernel-headers
 DEPENDS+=	native-linux-kernel-[0-9]*:../../native/kernel
+DEPENDS+=	cryptsetup-[0-9]*:../../linux/cryptsetup
+DEPENDS+=	LVM2-[0-9]*:../../linux/LVM2
+DEPENDS+=	libgetopt-[0-9]*:../../devel/libgetopt
 DEPENDS+=	initramfs-[0-9]*:../../native/initramfs
 .if empty(USE_CROSS_COMPILE:M[yY][eE][sS])
 DEPENDS+=	native-glibc-m32-[0-9]*:../../native/glibc-m32
@@ -28,6 +32,7 @@ DEPENDS+=	nawk-[0-9]*:../../lang/nawk
 DEPENDS+=	nbsed-[0-9]*:../../textproc/nbsed
 DEPENDS+=	pkgin-[0-9]*:../../pkgtools/pkgin
 
+DEPENDS+=	native-acl-[0-9]*:../../native/acl
 DEPENDS+=	man-pages-[0-9]*:../../native/man-pages
 DEPENDS+=	zlib-[0-9]*:../../devel/zlib
 DEPENDS+=	bzip2-[0-9]*:../../archivers/bzip2
@@ -41,8 +46,8 @@ DEPENDS+=	gmp-[0-9]*:../../devel/gmp
 DEPENDS+=	mpfr-[0-9]*:../../math/mpfr
 DEPENDS+=	mpcomplex-[0-9]*:../../math/mpcomplex
 DEPENDS+=	attr-[0-9]*:../../sysutils/attr
-DEPENDS+=	acl-[0-9]*:../../linux/acl
 DEPENDS+=	native-shadow-[0-9]*:../../native/shadow
+DEPENDS+=	Linux-PAM-[0-9]*:../../native/linux-pam
 DEPENDS+=	pkgconf-[0-9]*:../../devel/pkgconf
 DEPENDS+=	ncurses-[0-9]*:../../devel/ncurses
 DEPENDS+=	ncursesw-[0-9]*:../../devel/ncursesw

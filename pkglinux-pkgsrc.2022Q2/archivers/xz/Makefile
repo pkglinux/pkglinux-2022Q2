@@ -34,6 +34,7 @@ CONFIGURE_ENV.SunOS+=	gl_cv_cc_visibility=no
 
 .include "options.mk"
 
+CONFIGURE_ENV+=	ac_cv_have_decl_optreset=no
 post-install:
 	${MKDIR} -v ${DESTDIR}${PREFIX}/native/usr/include/
 	cd ${DESTDIR}${PREFIX}/ && ${LN} -sfv ${PREFIX}/include/{lzma.h,lzma} native/usr/include/

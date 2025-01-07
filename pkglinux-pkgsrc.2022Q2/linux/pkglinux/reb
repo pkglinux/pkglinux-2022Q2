@@ -17,7 +17,7 @@ rei native/mkshadow
 rei native/gcc6
 rei native/glibc
 rei native/glibc-m32
-rei native/glibc-x32
+#rei native/glibc-x32
 #rei native/kernel-headers
 #rei native/kernel
 #rei native/linux-firmware

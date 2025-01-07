@@ -52,6 +52,7 @@ STARTUP_FILES= \
 	native/etc/fstab.iso \
 	native/etc/profile \
 	native/etc/rc.local \
+	native/etc/rc.local.d/powersave.sh \
 	native/etc/rc.shutdown \
 	native/etc/shells \
 	native/etc/lsb-release \
@@ -73,6 +74,7 @@ STARTUP_DIRS= \
 	native/etc \
 	native/etc/profile.d \
 	native/etc/modprobe.d \
+	native/etc/rc.local.d \
 
 
 EGDIR=			${PREFIX}/share/examples/${PKGNAME}
@@ -87,6 +89,8 @@ REQD_FILES+=	${EGDIR}/${f} ${PREFIX}/${f}
 do-install:
 	${MKDIR} -pv ${DESTDIR}${EGDIR}/
 	${CP} -av ${FILESDIR}/* ${DESTDIR}${EGDIR}/
+	cd ${DESTDIR}${EGDIR}/ && \
+		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
 	set -e; \
 	cd ${DESTDIR}${EGDIR}/; \
 	lnks=`gfind . -type l`; \

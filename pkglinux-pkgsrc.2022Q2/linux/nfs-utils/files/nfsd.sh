@@ -62,13 +62,13 @@ then
 	case ${1:-start} in
 		start)
 			echo "Starting NFS rpcbind..."
-			/pkg/etc/rc.d/rpcbind start
+			@PREFIX@/etc/rc.d/rpcbind start
 			echo "Starting NFS statd..."
-			start_daemon @PREFIX@/sbin/rpc.statd --no-notify
+			@PREFIX@/sbin/start_daemon @PREFIX@/sbin/rpc.statd --no-notify
 			echo "Starting NFS nfsd..."
-			start_daemon @PREFIX@/sbin/rpc.nfsd -t -u
+			@PREFIX@/sbin/start_daemon @PREFIX@/sbin/rpc.nfsd -t -u
 			echo "Starting NFS mountd..."
-			start_daemon @PREFIX@/sbin/rpc.mountd
+			@PREFIX@/sbin/start_daemon @PREFIX@/sbin/rpc.mountd
 			# Make certain that the list is refreshed on a restart.
 			echo "Exporting NFS Filesystems..."
 			@PREFIX@/sbin/exportfs -r 2>&1 > /dev/null
@@ -84,11 +84,11 @@ then
 			echo "Removing NFS Exported Filesystems..."
 			@PREFIX@/sbin/exportfs -au 2>&1 > /dev/null
 			echo "Stopping NFS statd..."
-			killproc @PREFIX@/sbin/rpc.statd
+			@PREFIX@/sbin/killproc @PREFIX@/sbin/rpc.statd
 			echo "Stopping NFS nfsd..."
 			$command 0
 			echo "Stopping NFS mountd..."
-			killproc @PREFIX@/sbin/rpc.mountd
+			@PREFIX@/sbin/killproc @PREFIX@/sbin/rpc.mountd
 			# Remove a pid file that isn't done automatically
 			if [ -f /run/rpc.statd.pid ]; then
 				echo "Removing the rpc.statd pid file if it exists"

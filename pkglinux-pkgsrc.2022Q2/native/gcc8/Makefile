@@ -93,13 +93,14 @@ post-extract:
 				-i.orig gcc/config/i386/t-linux64
 	${MKDIR} -v ${BLDPRE}
 
+#		--with-multilib-list=m64,m32,mx32	\
 do-configure:
 	cd ${BLDDIR} && SED=sed \
 	${WRKSRC}/configure				\
 		--build=x86_64-unknown-linux		\
 		--prefix=${PREDIR}/usr			\
 		--enable-multilib			\
-		--with-multilib-list=m64,m32,mx32	\
+		--with-multilib-list=m64,m32		\
 		--with-arch=k8 \
 		--with-tune=k8 \
 		--enable-threads=posix			\

@@ -21,7 +21,6 @@ USE_LANGUAGES=		c c++
 USE_TOOLS+=		gmake
 INSTALLATION_DIRS+=	sbin share/doc/portmap
 #MAKE_FLAGS+=		WRAP_DIR=${BUILDLINK_PREFIX.tcp_wrappers}/lib
-#MAKE_FLAGS+=		LIBS= -lwrap -Wl,-R/2022Q2/lib -lnsl -Wl,-R/2022Q2/native/lib
 #MAKE_FLAGS+=		LIBS= -lwrap -Wl,-R${PREFIX}/lib -lnsl -Wl,-R${PREFIX}/native/lib
 #MAKE_ENV+=		LIBS=" -L/lib -lnsl -L/pkg/lib -lwrap"
 #MAKE_ENV+=		LIBS="-L${BUILDLINK_PREFIX}/lib"

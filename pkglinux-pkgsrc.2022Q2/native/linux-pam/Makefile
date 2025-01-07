@@ -28,16 +28,19 @@ PKGCONFIG_OVERRIDE+=	libpamc/pamc.pc.in
 USE_LANGUAGES=		c c++
 #GCC_REQD+=		6	
 
-#USE_LIBTOOL=		yes
+USE_LIBTOOL=		yes
 
 #TOOLS_PLATFORM.awk?=		/pkg/bin/nawk
 #TOOLS_PLATFORM.sed?=		/pkg/bin/nbsed
+TOOLS_PLATFORM.awk=		/pkg/bin/gawk
 TOOLS_PLATFORM.sed=		/pkg/bin/gsed
 
 PREDIR=			${PREFIX}/native
 BLDDIR=			${WRKDIR}/build
 BLDPRE=			${BLDDIR}${PREDIR}
 DSTPRE=			${DESTDIR}${PREDIR}
+
+MAKE_ENV+=	CFLAGS+= -fPIC
 
 post-extract:
 	${MKDIR} -v ${BLDPRE}/
@@ -62,8 +65,8 @@ do-install:
 	${CP} -av ${BLDPRE}/* ${DSTPRE}/
 	${CP} -av ${FILESDIR}/* ${DSTPRE}/
 
-.include "../../linux/libnsl/buildlink3.mk"
+#.include "../../linux/libnsl/buildlink3.mk"
 .include "../../linux/libtirpc/buildlink3.mk"
-.include "../../linux/audit/buildlink3.mk"
+.include "../../selinux/audit/buildlink3.mk"
 .include "../../databases/db4/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"

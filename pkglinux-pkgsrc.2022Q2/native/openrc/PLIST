@@ -74,6 +74,8 @@ native/etc/init.d/udev
 native/etc/init.d/udev-settle
 native/etc/init.d/udev-trigger
 native/etc/local.d/README
+native/etc/local.d/rc.local.start
+native/etc/local.d/rc.local.stop
 native/etc/rc.conf
 native/etc/runlevels/boot/binfmt
 native/etc/runlevels/boot/bootmisc

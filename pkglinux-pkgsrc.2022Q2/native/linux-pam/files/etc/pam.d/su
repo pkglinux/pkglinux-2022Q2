@@ -1,0 +1,19 @@
+#%PAM-1.0
+auth		sufficient	pam_rootok.so
+# checks if the target user is alex, if it is, the service checks the current user, otherwise, the default=1 line is skipped and the normal authentication steps are executed.
+auth       [success=ignore default=1] pam_succeed_if.so user = root 
+# checks if the current user is in the group alex, if yes, the authentication process is considered successful and returns sufficient as a result. Otherwise, the normal authentication steps are executed.
+auth       sufficient   pam_succeed_if.so use_uid user ingroup root 
+
+# Uncomment the following line to implicitly trust users in the "wheel" group.
+#auth		sufficient	pam_wheel.so trust use_uid
+# Uncomment the following line to require a user to be in the "wheel" group.
+#auth		required	pam_wheel.so use_uid
+auth		substack	system-auth
+auth		include		postlogin
+account		sufficient	pam_succeed_if.so uid = 0 use_uid quiet
+account		include		system-auth
+password	include		system-auth
+session		include		system-auth
+session		include		postlogin
+session		optional	pam_xauth.so

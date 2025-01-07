@@ -3,7 +3,7 @@
 PKGNAME=	pkglinux-pkgsrc-${PREFIX:S/\///}
 CATEGORIES=	native
 MAINTAINER=	pkgsrc-users@NetBSD.org
-COMMENT=	pkgsrc-2022Q2 modified for pkglinux
+COMMENT=	pkgsrc modified for pkglinux
 LICENSE=	modified-bsd
 
 ONLY_FOR_PLATFORM=	Linux-*-*

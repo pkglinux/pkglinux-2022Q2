@@ -31,6 +31,7 @@ gnu/share/info/grub-dev.info
 gnu/share/info/grub.info
 gnu/share/info/grub.info-1
 gnu/share/info/grub.info-2
+gnu/share/locale
 lib/grub/x86_64-efi/acpi.mod
 lib/grub/x86_64-efi/acpi.module-efi
 lib/grub/x86_64-efi/adler32.mod
