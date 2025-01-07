@@ -87,7 +87,7 @@ while getopts ':hvVp:m:t:w:l:f' OPTION; do
 			PKGLINUX_MAKEISO_VERBOSE="-v"
 			;;
 		V)	# display version
-			echo "2023.12"	
+			echo "yyyyQq"	
 			exit;;
 		p)	# set new prefix
 			PKGLINUX_MAKEISO_PREFIX="$OPTARG"

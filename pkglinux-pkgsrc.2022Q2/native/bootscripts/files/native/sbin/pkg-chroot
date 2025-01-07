@@ -64,7 +64,7 @@ while getopts ":hvVl:d:" option; do
 			PKG_CHROOT_VERBOSE="-v"
 			;;
 		V)	# version
-			echo "1.0"	
+			echo "yyyyQq"	
 			exit;;
 		l)	# replace default command
 			PKG_CHROOT_COMMAND="$OPTARG";;

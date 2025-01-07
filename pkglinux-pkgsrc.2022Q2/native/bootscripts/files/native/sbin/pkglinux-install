@@ -213,7 +213,7 @@ while [ "$#" -gt 0 ]; do
 			shift 1
 			;;
 		-V|--version)
-			echo "1.0"	
+			echo "yyyyQq"	
 			shift 1
 			exit;;
 		-r|--repo)
@@ -268,7 +268,7 @@ while getopts ':hvVr:p:mgkqsnw:f' OPTION; do
 			PKGLINUX_INSTALL_VERBOSE="-v"
 			;;
 		V)	# display version
-			echo "2023.12"	
+			echo "yyyyQq"	
 			exit;;
 		r)	# set new repo
 			PKGLINUX_INSTALL_REPO="$OPTARG" ;;

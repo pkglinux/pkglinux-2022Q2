@@ -88,7 +88,7 @@ while getopts ':hvVp:m:t:w:b:f' OPTION; do
 			PKGLINUX_MAKEUSB_VERBOSE="-v"
 			;;
 		V)	# display version
-			echo "2023.12"	
+			echo "yyyyQq"	
 			exit;;
 		p)	# set new prefix
 			PKGLINUX_MAKEUSB_PREFIX="$OPTARG"
