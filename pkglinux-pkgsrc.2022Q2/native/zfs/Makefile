@@ -105,8 +105,8 @@ do-build0:
 #	ssh localhost "cd ${WRKSRC}; ./autogen.sh"
 do-build:
 	cd ${WRKSRC} && ./autogen.sh
-	ssh localhost "cd ${BLDDIR} && ./configure --prefix=/usr --sysconfdir=/etc --disable-systemd --disable-pam"
-	ssh localhost "cd ${BLDDIR}; make -j${MAKE_JOBS}"
+	ssh alex@localhost "cd ${BLDDIR} && sudo ./configure --prefix=/usr --sysconfdir=/etc --disable-systemd --disable-pam"
+	ssh alex@localhost "cd ${BLDDIR} && sudo make -j${MAKE_JOBS}"
 	cd ${BLDDIR} && ${SETENV} ${MAKE_ENV} ${GMAKE} DESTDIR=${BLDPRE} install-strip
 
 #	ssh localhost "cd ${BLDDIR}; make DESTDIR=${BLDPRE} install-strip"
