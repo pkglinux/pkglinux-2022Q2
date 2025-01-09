@@ -34,6 +34,7 @@ MESON_ARGS+=	--sysconfdir ${PREFIX}/native/etc
 MESON_ARGS+=	--datadir ${PREFIX}/native/usr/share
 MESON_ARGS+=	--mandir ${PREFIX}/native/usr/share/man
 
+#		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
 post-install:
 	cd ${DESTDIR}${PREFIX}/native/etc/init.d/ && \
 		rm -v agetty.tty1 && cp -v agetty agetty.tty1 && \
@@ -43,7 +44,7 @@ post-install:
 		rm -v agetty.tty5 && cp -v agetty agetty.tty5 && \
 		rm -v agetty.tty6 && cp -v agetty agetty.tty6
 	cd ${DESTDIR}${PREFIX}/native/etc/init.d/ && \
-		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
+		find . -type f -exec gsed -e 's|yyyyQq|${PREFIX:S/\///}|g' -i {} \;
 	cp -v ${FILESDIR}/conf.d/agetty.tty1 ${DESTDIR}${PREFIX}/native/etc/conf.d/
 	cp -v ${FILESDIR}/conf.d/consolefont ${DESTDIR}${PREFIX}/native/etc/conf.d/
 	cd ${DESTDIR}${PREFIX}/native/etc/runlevels/boot/ &&  ln -snvf ../../init.d/consolefont .

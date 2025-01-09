@@ -55,10 +55,11 @@ CONFIGURE_ARGS+=	--with-browser=${PREFIX}/bin/lynx
 CONFIGURE_ARGS+=	--with-vgrind=${PREFIX}/bin/vgrind
 CONFIGURE_ARGS+=	--with-grap=${PREFIX}/bin/grap
 
+#		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
 post-install:
 	${CAT} ${FILESDIR}/pkglinux_man_db.conf >> ${DESTDIR}${PREFIX}/etc/man_db.conf
 	cd ${DESTDIR}${PREFIX}/etc/ && \
-		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
+		find . -type f -exec gsed -e 's|yyyyQq|${PREFIX:S/\///}|g' -i {} \;
 
 .include "../../linux/libpipeline/buildlink3.mk"
 .include "../../devel/gettext-lib/buildlink3.mk"

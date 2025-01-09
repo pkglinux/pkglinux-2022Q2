@@ -86,11 +86,12 @@ REQD_DIRS+=	${EGDIR}/${d} ${PREFIX}/${d}
 REQD_FILES+=	${EGDIR}/${f} ${PREFIX}/${f}
 .endfor
 
+#		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
 do-install:
 	${MKDIR} -pv ${DESTDIR}${EGDIR}/
 	${CP} -av ${FILESDIR}/* ${DESTDIR}${EGDIR}/
 	cd ${DESTDIR}${EGDIR}/ && \
-		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
+		find . -type f -exec gsed -e 's|yyyyQq|${PREFIX:S/\///}|g' -i {} \;
 	set -e; \
 	cd ${DESTDIR}${EGDIR}/; \
 	lnks=`gfind . -type l`; \

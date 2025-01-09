@@ -24,10 +24,11 @@ GNU_CONFIGURE=		no
 
 RCD_SCRIPTS=		nscd
 
+#		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
 do-install:
 	${CP} -av ${FILESDIR}/native ${DESTDIR}${PREFIX}/
 	cd ${DESTDIR}${PREFIX}/native/sbin/ && \
-		find . -type f -exec gawk -i inplace '{gsub(/yyyyQq/, "${PREFIX:S/\///}"); print}' {} \;
+		find . -type f -exec gsed -e 's|yyyyQq|${PREFIX:S/\///}|g' -i {} \;
 	${CP} -av ${FILESDIR}/lndir ${DESTDIR}${PREFIX}/native/sbin/
 	${CP} -av ${FILESDIR}/lib ${DESTDIR}${PREFIX}/
 	lndir.sh -l sf ${PREFIX}/lib ${PREFIX}/native/etc ${DESTDIR}
