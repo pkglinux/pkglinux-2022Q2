@@ -1,0 +1,31 @@
+@comment $NetBSD$
+2022Q2/bin/lolcat
+2022Q2/lib/ruby/gems/2.7.0/cache/${PKGNAME}.gem
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lol/cat%21-c.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lol/cat-c.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lol/cdesc-Lol.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lol/println-c.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lol/println_ani-c.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lol/println_plain-c.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lol/rainbow-c.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lol/set_mode-c.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/Lolcat/cdesc-Lolcat.ri
+2022Q2/lib/ruby/gems/2.7.0/doc/${PKGNAME}/ri/cache.ri
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/.gitignore
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/Gemfile
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/LICENSE
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/README.md
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/Rakefile
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/ass/nom.jpg
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/ass/screenshot.png
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/bin/lolcat
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/lib/lolcat.rb
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/lib/lolcat/cat.rb
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/lib/lolcat/lol.rb
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/lib/lolcat/version.rb
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/lolcat.gemspec
+2022Q2/lib/ruby/gems/2.7.0/gems/${PKGNAME}/man/lolcat.6
+2022Q2/lib/ruby/gems/2.7.0/specifications/${PKGNAME}.gemspec
+2022Q2/share/man/man6/lolcat.6
+@pkgdir 2022Q2/lib/ruby/gems/2.7.0/extensions
+@pkgdir 2022Q2/lib/ruby/gems/2.7.0/build_info

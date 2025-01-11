@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (lolcat-100.0.1.tar.gz) = 36ad37088ba5eddee01b53f70ec8e1060320264e368adb47daaf64507fc66eb5
+SHA512 (lolcat-100.0.1.tar.gz) = 23775e63e6265dc7fadc0849dffa79812c2a7e5ddd5301355e03a05388a64689cd6d830820852ae198cb719ab2161effb85d5c1a33f83d5d1c5cd8d8a774acb0
+Size (lolcat-100.0.1.tar.gz) = 117259 bytes

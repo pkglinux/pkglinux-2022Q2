@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README.md
+
+# What?
+
+![](https://raw.githubusercontent.com/jaseg/lolcat/master/LOLCat-Rainbow.jpg)
+
+## Screenshot
+
+![](https://raw.githubusercontent.com/jaseg/lolcat/master/screenshot.png)
+
+![](./sl.gif)
+
+## Installation
+
+### Archlinux
+
+There's an [AUR package](https://aur.archlinux.org/packages/c-lolcat):
+
+```bash
+$ git clone https://aur.archlinux.org/packages/c-lolcat
+$ cd c-lolcat
+$ makepkg -csi
+...

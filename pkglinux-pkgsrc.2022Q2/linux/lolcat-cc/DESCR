@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README.md
+
+# 🌈 What?
+
+![](./mascot.png)
+
+## Usage 
+```bash
+$ lolcat-cc -h
+lolcat-cc is a cross-platform c++ implementation of lolcat, 
+which writes output to the terminal with rainbow colours
+=> usage:
+ command | lolcat-cc (options)
+ lolcat-cc (options) file
+=> options:
+      -f: format
+  -g=[d]: set gradient
+     -ln: line numbers
+     -ps: powershell colours
+ -tw=[i]: set tab width
+      -v: print version
+  -w=[i]: set width
+...
