@@ -1,0 +1,7 @@
+$NetBSD$
+
+BLAKE2s (rig-1.11.tar.gz) = f97e9c2438fbbe128cf8791894a6920b9bafc2d5c731feeba12fcbf8f05d34a6
+SHA512 (rig-1.11.tar.gz) = 95bab873404fd4498f7895026b7cdda5b182dd3c33a17c4ad81389f5ed6cc0e9429cd1abaa51a023fedc472c611a66674c698d23b57515ed30d7f92e5f280b87
+Size (rig-1.11.tar.gz) = 23112 bytes
+SHA1 (patch-Makefile) = 42ec6546704026307482c2b2f6ec95754a6fb168
+SHA1 (patch-rig.cc) = 1a94fd4bf558e5c4e9577e0ab50ecd038737844c

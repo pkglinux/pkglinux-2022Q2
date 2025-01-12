@@ -1,0 +1,8 @@
+@comment $NetBSD$
+bin/rig
+man/man6/rig.6
+share/rig/fnames.idx
+share/rig/lnames.idx
+share/rig/locdata.idx
+share/rig/mnames.idx
+share/rig/street.idx

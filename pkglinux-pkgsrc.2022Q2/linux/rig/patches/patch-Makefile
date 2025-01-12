@@ -1,0 +1,25 @@
+$NetBSD$
+
+--- Makefile.orig	2002-06-05 02:07:50.000000000 +0000
++++ Makefile
+@@ -1,4 +1,4 @@
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ BINDIR=${PREFIX}/bin
+ MANDIR=${PREFIX}/man
+ DATADIR=${PREFIX}/share/rig
+@@ -11,10 +11,10 @@ rig.6: rig.6.in
+ 	sed s@DATADIR@"$(DATADIR)"@g < rig.6.in > rig.6
+ 
+ install: rig rig.6
+-	install -g 0 -m 755 -o 0 -s rig $(BINDIR)
+-	install -g 0 -m 644 -o 0 rig.6 $(MANDIR)/man6/rig.6
+-	install -g 0 -m 755 -o 0 -d $(DATADIR)
+-	install -g 0 -m 644 -o 0 data/*.idx $(DATADIR)
++	install -g 0 -m 755 -o 0 -s rig $(DESTDIR)$(BINDIR)
++	install -g 0 -m 644 -o 0 rig.6 $(DESTDIR)$(MANDIR)/man6/rig.6
++	install -g 0 -m 755 -o 0 -d $(DESTDIR)$(DATADIR)
++	install -g 0 -m 644 -o 0 data/*.idx $(DESTDIR)$(DATADIR)
+ 
+ clean:
+ 	rm -rf *~ *.rej *.orig *.o rig rig.6

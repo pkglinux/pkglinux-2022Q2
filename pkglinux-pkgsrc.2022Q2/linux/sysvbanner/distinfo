@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (sysvbanner-1.0.tar.gz) = 4c1dbcd82c1257dd0e5b40c20db18e3982c4b0c1c755a21033ded44dae305fa4
+SHA512 (sysvbanner-1.0.tar.gz) = 3635b6aeafdf29917b031d97533d4fd951bba639fb3604a99a0101dd5789db3631b9dde33765d76feeee9827dec2d201b09c5915763cf76778dffc8060810138
+Size (sysvbanner-1.0.tar.gz) = 1781 bytes
