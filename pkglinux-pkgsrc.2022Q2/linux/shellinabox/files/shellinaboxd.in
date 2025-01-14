@@ -34,7 +34,7 @@ shellinaboxd_port=${shellinaboxd_port:-"4200"}
 
 pidfile=${shellinaboxd_pidfile:-"/var/run/shellinaboxd.pid"}
 
-command_args="--disable-ssl --css @PREFIX@/share/shellinabox/white-on-black.css --user=${shellinaboxd_user} --group=${shellinaboxd_group} --port=${shellinaboxd_port} --background=${pidfile}"
+command_args="--disable-ssl --user-css Normal:-@PREFIX@/share/${name}/black-on-white.css,Reverse:+@PREFIX@/share/${name}/white-on-black.css --user=${shellinaboxd_user} --group=${shellinaboxd_group} --port=${shellinaboxd_port} --background=${pidfile}"
 
 # avoid unnecessary su(1) initiated by rc.subr
 unset shellinaboxd_user shellinaboxd_group

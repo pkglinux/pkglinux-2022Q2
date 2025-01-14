@@ -57,8 +57,11 @@ pre-configure:
 		automake --copy --add-missing --foreign
 
 post-install:
-	${MKDIR} -pv ${DESTDIR}${PREFIX}/share/shellinabox/
-	${CP} -av ${WRKSRC}/shellinabox/*.css ${DESTDIR}${PREFIX}/share/shellinabox/
+	${MKDIR} -pv ${DESTDIR}${PREFIX}/share/shellinaboxd/
+	${CP} -av ${WRKSRC}/shellinabox/black-on-white.css ${DESTDIR}${PREFIX}/share/shellinaboxd/
+	${CP} -av ${WRKSRC}/shellinabox/white-on-black.css ${DESTDIR}${PREFIX}/share/shellinaboxd/
+
+#	${CP} -av ${FILESDIR}/shellinabox-themes/build/* ${DESTDIR}${PREFIX}/share/shellinaboxd/
 
 .include "../../security/openssl/buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
