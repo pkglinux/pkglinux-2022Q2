@@ -21,7 +21,7 @@ then
 			cat ${pidfile}
 		elif [ -x ${command} ];then
 			echo "Starting ${name}."
-			nohup $command --writable /bin/login &
+			nohup $command --writable /bin/login &> /var/log/${name}.log &
 			echo $! > "$pidfile"
 			echo -n "${name} started at "
 			cat ${pidfile}
