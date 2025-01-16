@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# depo = day-execute-per-onetime = execute onetime per day
+# add argumets whose execute onetime per day
+
+# Example: ./depo "uname -a" # let's try run twotimes
+
+if [ $# = 0 ]; then
+    echo "Missing arguments, add one or more commands what you want to execute. Like $ depo \"uname -a\" date";
+    exit;
+fi;
+
+TODAY=`date +%Y-%m-%d`
+HOME_DIR="$HOME/.depo/"
+COMMAND=`echo $@ | sha1sum | cut -d ' ' -f1`
+
+SYNC_FILE="$HOME_DIR/$COMMAND"
+mkdir -p "$HOME_DIR"
+touch "$SYNC_FILE"
+
+SYNC_DATE=`cat "$SYNC_FILE"`
+if [ "$SYNC_DATE" == "$TODAY" ]; then
+    echo "\"$@\" onetime per day only unless \"rm -v $HOME/.depo/$COMMAND\"."
+    exit
+fi
+
+for arg; do
+   eval $arg
+done
+
+echo $TODAY > "$SYNC_FILE"

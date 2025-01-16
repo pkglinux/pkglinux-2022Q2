@@ -12,7 +12,7 @@ rcvar=$name
 command="@PREFIX@/bin/${name}"
 pidfile="/run/${name}.pid"
 
-if [ -f /etc/rc.subr -a -f /etc/rc.conf -a -f /etc/rc.d/DAEMON ]
+if [ -f /etc/rc.subr -a -f @PREFIX@/etc/rc.conf -a -f @PREFIX@/etc/rc.d/DAEMON ]
 then
 	case ${1:-start} in
 	start)

@@ -34,6 +34,7 @@ native/lib/services
 native/lib/udev/hwclock-set
 native/lib/udev/rules.d/85-hwclock.rules
 native/sbin/chkpass
+native/sbin/depo
 native/sbin/lndir
 native/sbin/lndir.sh
 native/sbin/pkg-chroot

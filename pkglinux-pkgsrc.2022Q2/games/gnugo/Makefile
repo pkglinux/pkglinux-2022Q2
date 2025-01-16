@@ -16,5 +16,8 @@ INFO_FILES=	yes
 
 TEST_TARGET=	check
 
+CONFIGURE_ARGS+=	--enable-chinese-rules
+CONFIGURE_ARGS+=	--enable-alternate-connections
+
 .include "../../mk/termcap.buildlink3.mk"
 .include "../../mk/bsd.pkg.mk"
