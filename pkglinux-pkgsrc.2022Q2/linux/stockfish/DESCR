@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README.md
+
+<div align="center">
+
+  [![Stockfish][stockfish128-logo]][website-link]
+
+  <h3>Stockfish</h3>
+
+  A free and strong UCI chess engine.
+  <br>
+  <strong>[Explore Stockfish docs »][wiki-link]</strong>
+  <br>
+  <br>
+  [Report bug][issue-link]
+  ·
+  [Open a discussion][discussions-link]
+  ·
+  [Discord][discord-link]
+  ·
+  [Blog][website-blog-link]
+
+  [![Build][build-badge]][build-link]
+...

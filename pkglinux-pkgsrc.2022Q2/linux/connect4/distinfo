@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (connect4.tar.gz) = 52ba5aafb572e8c993c40e082532ab6574787b39e017a52b5933d0c70fc2c715
+SHA512 (connect4.tar.gz) = ad5d8db9752e359a2dae6fde8468417e27c68214ba8a950cf107b6822d0bd869e86a47a4b5681487879b90dc927a851bf29d3d4aa40c159b5888a62bb4413ad2
+Size (connect4.tar.gz) = 6590 bytes

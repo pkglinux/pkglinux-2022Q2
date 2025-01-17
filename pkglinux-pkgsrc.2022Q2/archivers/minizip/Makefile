@@ -4,7 +4,7 @@ DISTNAME=	zlib-1.2.12
 PKGNAME=	${DISTNAME:S/zlib-/minizip-/1}
 CATEGORIES=	archivers
 MASTER_SITES=	http://zlib.net/
-EXTRACT_SUFX=	.tar.xz
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	pkgsrc-users@NetBSD.org
 HOMEPAGE=	http://www.winimage.com/zLibDll/minizip.html

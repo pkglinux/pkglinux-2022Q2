@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (Stockfish/sf_17.tar.gz) = b002dab7869701cf16c66bb75754bc9e2c0c482d786d7780d65d18237bf83e32
+SHA512 (Stockfish/sf_17.tar.gz) = 2736c7e78a30670704b4400e20a4a5bb5b07b2e3a14d19149eccea9ba45cda5b9b42034b1ae40ef1f49c87fc1b0bc1750e998ff732da8c5fe45dd8bdbf90f9cc
+Size (Stockfish/sf_17.tar.gz) = 204647 bytes
+SHA1 (patch-Makefile) = 10e0e978af1270afaeb15b7dc2dc7a2045939280
