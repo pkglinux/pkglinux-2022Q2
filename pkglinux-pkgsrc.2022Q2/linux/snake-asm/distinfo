@@ -1,0 +1,5 @@
+$NetBSD$
+
+BLAKE2s (snake-asm-0.4.1.tar.gz) = 2decdd1d2a697631f2d6ffc5438d09d90e12645e98b8b69a3dbd3942b5dcc9f1
+SHA512 (snake-asm-0.4.1.tar.gz) = d69290a1b16e66f2c44867542d4af8952962535a7825ed989069d51a93f5c44fbd9e16a4933ad850aedf10fad4cb937815d32de1872145e2456fc3d702e17a42
+Size (snake-asm-0.4.1.tar.gz) = 218166 bytes

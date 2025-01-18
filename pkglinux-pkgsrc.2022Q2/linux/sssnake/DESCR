@@ -1,0 +1,23 @@
+TODO: Adjust the following lines from README.md
+
+# sssnake
+The classic snake game for the terminal that can play itself and be used like a screensaver.
+[![asciicast](https://asciinema.org/a/477685.svg)](https://asciinema.org/a/477685)
+## Installation
+
+You need ncurses :
+
+```
+apt install libncurses-dev       #Debian/Ubuntu/Mint
+yum install ncurses-devel        #RHEL/CentOS/Fedora and Rocky Linux/AlmaLinux
+pacman -S ncurses                #Arch Linux
+zypper install ncurses-devel     #OpenSUSE 
+xbps-install -S ncurses-devel    #Void linux
+```
+
+With that you can just do:
+
+
+```
+git clone https://github.com/AngelJumbo/sssnake.git
+...

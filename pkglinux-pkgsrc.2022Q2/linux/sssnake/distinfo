@@ -1,0 +1,6 @@
+$NetBSD$
+
+BLAKE2s (sssnake-0.3.2.tar.gz) = 33e3ccd2eebab5b40e778a68ee49d1abd2546bb83c7dc519f804feb67b5e0ec3
+SHA512 (sssnake-0.3.2.tar.gz) = 742a187beb1df8828c1cfdc77effbc9ff5abd1da34942f87cf567d51dcc4cf9a5e7cfb2c921090efdc606758c89df81f1751de3fc0380a011c9c4645014a14bf
+Size (sssnake-0.3.2.tar.gz) = 20460 bytes
+SHA1 (patch-makefile) = caf2f1f06abf2f7e74b8bf1fe4e772ee0626a9a3

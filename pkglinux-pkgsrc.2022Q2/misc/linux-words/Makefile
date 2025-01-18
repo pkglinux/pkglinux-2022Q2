@@ -29,4 +29,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README2.linux.words \
 	    ${DESTDIR}${PREFIX}/share/doc/linux-words/
 
+post-install:
+	lndir.sh -l sf ${PREFIX}/share ${PREFIX}/native/usr/share ${DESTDIR}
+
 .include "../../mk/bsd.pkg.mk"

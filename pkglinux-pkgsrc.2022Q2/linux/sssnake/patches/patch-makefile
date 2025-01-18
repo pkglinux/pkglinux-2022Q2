@@ -1,0 +1,10 @@
+$NetBSD$
+
+--- makefile.orig	2022-10-09 06:17:14.000000000 +0000
++++ makefile
+@@ -1,4 +1,4 @@
+-PREFIX = /usr/local
++PREFIX? = /usr/local
+ MANDIR = $(PREFIX)/share/man
+ 
+ sssnake: main.c autopilot.c xymap.c structs.c snake.c draw.c 

@@ -1,4 +1,8 @@
 @comment $NetBSD: PLIST,v 1.3 2018/01/01 22:29:44 rillig Exp $
+native/usr/share/dict/linux.words
+native/usr/share/dict/words
+native/usr/share/doc/linux-words/README.linux.words
+native/usr/share/doc/linux-words/README2.linux.words
 share/dict/linux.words
 share/dict/words
 share/doc/linux-words/README.linux.words
